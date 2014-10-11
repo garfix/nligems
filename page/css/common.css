@@ -1,0 +1,50 @@
+/* BODY */
+
+body {
+	background-color: #F1E7D9;
+	color: #343240;
+}
+
+/* PAGE */
+
+div.page {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+div.header {
+	position: absolute;
+	background-color: #D3BECF;
+	top: 0;
+	height: 100px;
+	left: 0;
+	right: 0;
+	border-bottom: 5px solid #343240;
+}
+
+div.header img {
+	float: right;
+}
+
+div.header h1 {
+	font-family: 'Domine', serif;
+	font-size: 40px;
+	color: #343240;
+	margin: 10px 0 5px 10px;
+}
+
+div.header h3 {
+	font-family: 'Domine', serif;
+	font-size: 18px;
+	color: #8B668B;
+	margin: 0 0 5px 10px;
+}
+
+/* MISC */
+
+.hidden {
+	display: none;
+}

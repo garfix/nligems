@@ -1,0 +1,120 @@
+* A: general
+	+ NAME: name (use this name to refer to other systems as well)
+	+ FIRST-YEAR: first year of active development (just the year)
+	+ LAST-YEAR: last year of active development (just the year)
+	+ CONTRIBUTORS: contributors (full names, comma separated)
+	+ INSTITUTIONS: institutions (where do the contributors work?, abbreviation, comma separated)
+	+ INFLUENCED-BY: influenced by these systems (see: name, comma separated)
+	+ NAT-LANGS: natural languages supported (Possible values: English, French, ...)
+	+ PROG-LANGS: programming language (possible values: Lisp, Prolog, Pascal)
+	+ WEBSITE: hyperlink for more information
+	+ KB-TYPE: knowledge base type (relational, inference engine, triple store, tree-based, semantic net)
+	+ KB-TYPE-DESC: knowledge base type description (free style: Relational)
+	+ SENTENCE-TYPES: sentence types supported: (question, declarative, imperative)
+	+ ARTICLES: books, articles
+	+ NAME-DESC: description of the name
+	+ LONG-DESC: distinguishing characteristics (free text)
+
+* Z: syntax coverage
+	+ NP: noun phrases
+	+ VP: verb phrases
+	+ PP: prepositional phrases
+	+ DP: determiner phrases
+	+ ADVP: adverbial phrases
+	+ ADJP: adjective phrases
+	+ RC: relative clauses
+	+ NEG: negation
+	+ CONJ: conjunction
+	+ ANAPHORA: anaphora
+	+ AUX: auxiliaries
+	+ MODALS: modals
+	+ COMP-EXP: comparative expressions
+	+ PASSIVES: passives
+	+ CLEFTS: clefts
+	+ THERE: there-clauses
+	+ ELLIPSIS: ellipsis
+
+* B: natural language question form
+
+	+ TOKENIZE-HEADER: tokenizer name
+	- DO-TOKENIZE: tokenize
+	- DO-DICT-LOOKUP: dictionary lookup
+	- DO-MORPH-ANA: morphemic analysis
+	- DO-WORD-SEPA: semantic word separation, i.e. everybody => every body (free style)
+	- DO-SPELL-CORR: spelling correction
+	- DO-OPEN-ENDED: recognition of open-ended tokens like dates and numbers
+	- DO-PROP-NAME-KB: proper name recognition by knowledge base lookup
+	- DO-PROP-NAME-MAT: proper name recognition by matching
+	- DO-QUOTED-STRINGS: treat quoted strings as single tokens
+
+* C: tokens
+
+	+ PARSE-HEADER: parser name (free style)
+	- DO-PARSE: parsing
+	+ GRAMMAR-TYPE: type of grammar (possible values: Systemic Grammar, Generalized Phrase Structure Grammar, Case Grammar, Logical Description Grammar, ...)
+	+ PARSER-TYPE: parser type (possible values: Earley)
+
+* D: syntactic form
++ SYNTACTIC-FORM-TYPE: syntactic form type (possible values: parse trees)
+
+	+ INTERPRET-HEADER: interpreter name
+	- DO-SEMANTIC-ATTACH: semantic attachment
+	- DO-SEMANTIC-COMP: semantic composition
+	+ SEMANTIC-COMP-TYPE: semantic composition type (possible values: lambda calculus, unification, custom)
+	- DO-SEMANTIC-CONFLICT: semantic conflict detection
+	- DO-QUANTIFIER-SCOPE: quantifier scoping
+	- DO-ANAPHORA-RESOL: anaphora resolution
+	- DO-PLAUSIB-JUDGE: plausibility judgement
+	- DO-UNIFORM-REWRITES: uniformization rewrites
+
+* E: semantic form
++ SEMANTIC-FORM-TYPE: semantic form type (possible values: logical, relational, semantic net, procedural)
++ SEMANTIC-FORM-DESC: semantic form description (free style: FOPC with extensions, Tuple calculus, Planner)
++ EVENT-BASED: event-based semantics used (possible values: yes, no)
++ PROPER-NOUN-CNST: proper nouns represented as constants (possible values: yes, no)
++ ONTOLOGY-USED: ontology used (possible values: yes, no)
++ STD-ONTOLOGY: standard ontology used (names of standard ontologies, comma separated)
+
+	+ CONVERT-HEADER: semantic to knowledge base transformation description (free style)
+	- DO-SYNTACTIC-REWRITE: syntactic rewrite
+	- DO-OPTIMIZE-QUERY: optimize query for speed
+	+ CONVERT-TYPE: semantic to knowledge base transformation type (possible values: declarative, hard-coded)
+	+ KB-METADATA: data source metadata (free style)
+	- DO-INFORMATION-RESTRUCT: information restructuring
+
+* F: knowlegde base language form
++ KB-LANGS: knowledge base language name
++ KB-AGGREGATIONS: supports aggregations
+
+	+ EXECUTE-HEADER: executer name
+	- DO-EXECUTE: perform knowledge base action
+	- DO-LOGICAL-REASON: logical reasoning
+
+* G: knowledge base answers
+
+	+ GENERATE-HEADER: generate natural language answers description
+	- DO-GENERATE: generate natural language answers
+
+* H: natural language answer form
+
+Legend
+
+* = main process
+- = sub process
++ = property
+
+How to use the template:
+- Create a file some_system.txt for the NLI system
+- Add entries like this:
+
+NAME: 1972
+DO-WORD-SEPA: yes
+
+and multi-line entries like this:
+
+WEBSITE: -
+This system excels in the field of precision.
+However, it is not very limited in scope.
+-
+
+^ note: ends with a dash

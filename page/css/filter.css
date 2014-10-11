@@ -1,0 +1,88 @@
+/* https://kuler.adobe.com/nyc-evening-color-theme-4333556/edit/ */
+
+/* FILTERBAR */
+
+div.filterbar {
+	position: absolute;
+	top: 100px;
+	bottom: 0;
+	left: 0;
+	width: 420px;
+	margin: 20px;
+	overflow: auto;
+}
+
+h2.filter {
+	font-size: 16px;
+	cursor: pointer;
+	color: #343240;
+	padding: 5px 10px 0 10px;
+	border-bottom: 5px solid #343240;
+	margin: 0 10px 10px 0;
+}
+
+div.filter {
+	margin-bottom: 10px;
+}
+
+div.filter h3 {
+	margin: 5px 0 0 0;
+}
+
+h2.general {
+	background-color: #F39B7C;
+}
+
+h2.process {
+	background-color: #F26057;
+}
+
+h2.data {
+	background-color: #BF5451;
+}
+
+/* RESULTSET */
+
+div.resultset {
+	position: absolute;
+	background-color: #8BCCC1;
+	left: 450px;
+	right: 0;
+	top: 100px;
+	bottom: 0;
+	margin: 20px 20px 20px 0;
+	overflow: auto;
+	padding: 10px;
+}
+
+table.system {
+	border-spacing: 0;
+	width: 100%;
+}
+
+table.system tr.empty td {
+	height: 10px;
+	padding: 0;
+}
+
+table.system tr.used td {
+	background-color: #E6EDE4;
+	vertical-align: top;
+	text-align: left;
+	border-bottom: 5px solid #343240;
+	padding: 10px;
+}
+
+table.system td.gem {
+	width: 41px;
+}
+
+table.system td.systemName {
+	font-size: 30px;
+	font-weight: bold;
+	width: 150px;
+}
+
+table.system td.systemDescription {
+}
+

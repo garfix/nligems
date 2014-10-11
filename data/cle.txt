@@ -1,0 +1,89 @@
+NAME: CLE
+FIRST-YEAR: 1986
+LAST-YEAR: 1989
+CONTRIBUTORS: Hiyan Alshawi, David Carter, Jan van Eijk, Björn Gambäck, Robert C. Moore, Douglas B. Moran, Fernando C.N. Pereira, Stephen G. Pulman, Manny Rayner, Arnold G. Smith
+INSTITUTIONS: SRI, CUCL
+INFLUENCED-BY:
+NAT-LANGS: English
+PROG-LANGS: Prolog
+WEBSITE:
+KB-TYPE: infererence engine
+KB-TYPE-DESC: Custom Prolog database
+SENTENCE-TYPES: question, declarative, imperative
+ARTICLES: The Core Language Engine
+NAME-DESC: Core Language Engine
+GEM-IMAGE: coral.png
+LONG-DESC: -
+CLE distinguishes several distinct stages in the processing of the semantic representation.
+CLE uses unification for semantic composition.
+-
+
+NP: yes
+VP: yes
+PP: yes
+DP: yes
+ADVP: yes
+ADJP:
+RC: yes
+NEG:
+CONJ: yes
+ANAPHORA: yes
+AUX: yes
+MODALS:
+COMP-EXP: yes
+PASSIVES: yes
+CLEFTS: yes
+THERE: yes
+ELLIPSIS: yes
+
+TOKENIZE-HEADER:
+DO-TOKENIZE: yes
+DO-DICT-LOOKUP: yes
+DO-MORPH-ANA: yes
+DO-WORD-SEPA:
+DO-SPELL-CORR:
+DO-OPEN-ENDED:
+DO-PROP-NAME-KB:
+DO-PROP-NAME-MAT:
+DO-QUOTED-STRINGS:
+
+PARSE-HEADER:
+DO-PARSE: yes
+GRAMMAR-TYPE: Generalized Phrase Structure Grammar
+PARSER-TYPE: A "left corner" parser with top-down filtering
+
+SYNTACTIC-FORM-TYPE: parse trees
+
+INTERPRET-HEADER:
+DO-SEMANTIC-ATTACH: yes
+DO-SEMANTIC-COMP: yes
+SEMANTIC-COMP-TYPE: unification
+DO-SEMANTIC-CONFLICT: yes
+DO-QUANTIFIER-SCOPE: yes
+DO-ANAPHORA-RESOL: yes
+DO-PLAUSIB-JUDGE: yes
+DO-UNIFORM-REWRITES:
+
+SEMANTIC-FORM-TYPE: logical
+SEMANTIC-FORM-DESC: FOPC with extensions
+EVENT-BASED: yes
+PROPER-NOUN-CNST: yes
+ONTOLOGY-USED: yes
+STD-ONTOLOGY:
+
+CONVERT-HEADER:
+DO-SYNTACTIC-REWRITE: yes
+DO-OPTIMIZE-QUERY:
+CONVERT-TYPE: hard-coded
+KB-METADATA:
+DO-INFORMATION-RESTRUCT:
+
+KB-LANGS: Logical Form
+KB-AGGREGATIONS:
+
+EXECUTE-HEADER: A Prolog database
+DO-EXECUTE: yes
+DO-LOGICAL-REASON:
+
+GENERATE-HEADER:
+DO-GENERATE: yes
