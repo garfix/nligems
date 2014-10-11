@@ -71,6 +71,14 @@ class Section
 		return $match;
 	}
 
+
+	public function storeMatches(NliSystem $System)
+	{
+		foreach ($this->components as $Component) {
+			$Component->storeMatches($System);
+		}
+	}
+
 	public function __toString()
 	{
 		$H2 = new HtmlElement('H2');

@@ -41,6 +41,10 @@ h2.data {
 	background-color: #BF5451;
 }
 
+.greyedOut {
+	color: #bbb;
+}
+
 /* RESULTSET */
 
 div.resultset {

@@ -16,6 +16,9 @@ class CheckboxGroup extends Component
 	/** @var array  */
 	protected $value = [];
 
+	/** @var NliSystem[][] */
+	private $runningSystemsPerOption = [];
+
 	/**
 	 * @param $id
 	 * @param $description
@@ -43,12 +46,38 @@ class CheckboxGroup extends Component
 			$Element->addAttribute('name', $this->id . '[]');
 			$Element->addAttribute('value', $id);
 
-			if (in_array($id, $this->value)) {
-				$Element->addAttribute('checked', 1);
-			}
-
 			$OptionContainer->addChildNode($Element);
-			$OptionContainer->addChildText($description);
+
+			if (in_array($id, $this->value)) {
+
+				$Element->addAttribute('checked', 1);
+				$OptionContainer->addChildText($description);
+
+			} else {
+
+				$count = 0;
+
+				if (isset($this->runningSystemsPerOption[$id])) {
+					$count = count($this->runningSystemsPerOption[$id]);
+				}
+
+				$description .= ' ( ' . $count . ' )';
+
+				if ($count == 0) {
+
+					$Span = new HtmlElement('span');
+					$Span->addClass('greyedOut');
+					$Element->addAttribute('disabled', 1);
+
+					$Span->addChildText($description);
+					$OptionContainer->addChildNode($Span);
+
+				} else {
+
+					$OptionContainer->addChildText($description);
+
+				}
+			}
 
 			$Container->addChildNode($OptionContainer);
 		}
@@ -63,9 +92,22 @@ class CheckboxGroup extends Component
 	public function matches(NliSystem $System)
 	{
 		if ($this->value) {
-			return count(array_intersect($System->get($this->id), $this->value)) > 0;
+			return count(array_intersect($System->get($this->id), $this->value)) == count($this->value);
 		} else {
 			return true;
+		}
+	}
+
+	public function storeMatches(NliSystem $System)
+	{
+		// find the values that are not in use yet
+		$diff = array_diff(array_keys($this->options), $this->value);
+
+		// and are available in the system
+		$intersection = array_intersect($System->get($this->id), $diff);
+
+		foreach ($intersection as $option) {
+			$this->runningSystemsPerOption[$option][] = $System;
 		}
 	}
 }

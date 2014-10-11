@@ -6,6 +6,7 @@ use nligems\api\component\HtmlElement;
 use nligems\api\component\LinkBar;
 use nligems\api\component\Header;
 use nligems\api\LinkApi;
+use nligems\api\page\Page;
 
 /**
  * @author Patrick van Bergen

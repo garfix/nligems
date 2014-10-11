@@ -48,4 +48,9 @@ class Component
 	{
 		return true;
 	}
+
+	public function storeMatches(NliSystem $System)
+	{
+
+	}
 }

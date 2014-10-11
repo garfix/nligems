@@ -13,6 +13,11 @@ class Checkbox extends Component
 	/** @var bool  */
 	protected $value = false;
 
+	/**
+	 * @var NliSystem[]
+	 */
+	private $runningSystems = array();
+
 	public function __toString()
 	{
 		$Container = new HtmlElement('div');
@@ -21,12 +26,40 @@ class Checkbox extends Component
 		$Element->addAttribute('type', 'checkbox');
 		$Element->addAttribute('name', $this->id);
 
-		if ($this->value) {
-			$Element->addAttribute('checked', 1);
-		}
-
 		$Container->addChildNode($Element);
-		$Container->addChildText($this->description);
+
+		$description = $this->description;
+
+		if ($this->value) {
+
+			$Element->addAttribute('checked', 1);
+			$Container->addChildText($description);
+
+		} else {
+
+			$count = 0;
+
+			if (isset($this->runningSystems)) {
+				$count = count($this->runningSystems);
+			}
+
+			$description .= ' ( ' . $count . ' )';
+
+			if ($count == 0) {
+
+				$Span = new HtmlElement('span');
+				$Span->addClass('greyedOut');
+				$Element->addAttribute('disabled', 1);
+
+				$Span->addChildText($description);
+				$Container->addChildNode($Span);
+
+			} else {
+
+				$Container->addChildText($description);
+
+			}
+		}
 
 		return  (string)$Container;
 	}
@@ -41,6 +74,14 @@ class Checkbox extends Component
 			return $System->get($this->id) == $this->value;
 		} else {
 			return true;
+		}
+	}
+
+	public function storeMatches(NliSystem $System)
+	{
+		// if this checkbox is not checked, and the system's value is set, keep the system in the running
+		if (!$this->value && $System->get($this->id)) {
+			$this->runningSystems[] = $System;
 		}
 	}
 }

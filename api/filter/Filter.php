@@ -50,6 +50,13 @@ class Filter
 		return $match;
 	}
 
+	public function storeMatches(NliSystem $System)
+	{
+		foreach ($this->sections as $Section) {
+			$Section->storeMatches($System);
+		}
+	}
+
 	public function __toString()
 	{
 		$Form = new HtmlElement('form');

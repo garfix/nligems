@@ -1,6 +1,6 @@
 <?php
 
-namespace nligems\page;
+namespace nligems\api\page;
 
 /**
  * @author Patrick van Bergen
@@ -67,7 +67,7 @@ abstract class Page
 
 	private function getTemplate()
 	{
-		return file_get_contents(__DIR__ . '/template/' . $this->template . '.html');
+		return file_get_contents(__DIR__ . '/' . $this->template . '.html');
 	}
 
 	protected abstract function getBody();

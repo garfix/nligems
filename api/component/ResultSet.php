@@ -2,7 +2,6 @@
 
 namespace nligems\api\component;
 
-use nligems\api\component\HtmlElement;
 use nligems\api\filter\Filter;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
@@ -15,7 +14,13 @@ class ResultSet
 	/** @var NliSystem[] */
 	private $systems = [];
 
-	public function filterResults(NliSystemApi $NliSystemApi, Filter $Filter, array $values)
+	/**
+	 * @param NliSystemApi $NliSystemApi
+	 * @param Filter $Filter
+	 * @param array $values
+	 * @return NliSystem[]
+	 */
+	public function filterResults(NliSystemApi $NliSystemApi, Filter $Filter)
 	{
 		$systems = $NliSystemApi->getAllSystems();
 		$selectedSystems = [];
@@ -32,6 +37,8 @@ class ResultSet
 		ksort($selectedSystems);
 
 		$this->systems = $selectedSystems;
+
+		return $this->systems;
 	}
 
 	public function __toString()

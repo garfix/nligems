@@ -9,7 +9,7 @@ PROG-LANGS: Lisp
 WEBSITE:
 KB-TYPE: infererence engine
 KB-TYPE-DESC:
-SENTENCE-TYPES:
+SENTENCE-TYPES: question
 ARTICLES: Semantics and quantification in natural language question answering
 GEM-IMAGE: pearl.png
 NAME-DESC:

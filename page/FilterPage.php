@@ -3,7 +3,6 @@
 namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
-use nligems\api\filter\AtLeast;
 use nligems\api\filter\Checkbox;
 use nligems\api\filter\CheckboxGroup;
 use nligems\api\filter\Filter;
@@ -12,6 +11,7 @@ use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
 use nligems\api\component\ResultSet;
+use nligems\api\page\Page;
 
 /**
  * @author Patrick van Bergen
@@ -35,7 +35,11 @@ class FilterPage extends Page
 		$this->Filter->setValues($_REQUEST);
 
 		$this->ResultSet = new ResultSet();
-		$this->ResultSet->filterResults($NliSystemApi, $this->Filter, $_REQUEST);
+		$filteredSystems = $this->ResultSet->filterResults($NliSystemApi, $this->Filter, $_REQUEST);
+
+		foreach ($filteredSystems as $System) {
+			$this->Filter->storeMatches($System);
+		}
 
 		$this->addStyleSheet('common');
 		$this->addStyleSheet('filter');
@@ -161,11 +165,6 @@ class FilterPage extends Page
 		foreach ($NliSystemApi->getAllFeatureValues($feature) as $value) {
 			$Component->addOption($value, $value);
 		}
-	}
-
-	private function addAtLeastField(NliSystemApi $NliSystemApi, Section $Section, $feature)
-	{
-		$Section->addComponent(new AtLeast($feature, $NliSystemApi->getFeatureName($feature)));
 	}
 
 }
