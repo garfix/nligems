@@ -3,6 +3,7 @@
 namespace nligems\api\component;
 
 use nligems\api\filter\Filter;
+use nligems\api\LinkApi;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 
@@ -43,6 +44,8 @@ class ResultSet
 
 	public function __toString()
 	{
+		$LinkApi = new LinkApi();
+
 		$Table = new HtmlElement('table');
 		$Table->addClass('system');
 
@@ -60,9 +63,13 @@ class ResultSet
 			$Gem->addChildNode($Img);
 			$Row->addChildNode($Gem);
 
+			$Link = new HtmlElement('a');
+			$Link->addAttribute('href', $LinkApi->getLink('system', array('id' => $System->getId())));
+			$Link->addChildText($System->getName());
+
 			$Name = new HtmlElement('td');
 			$Name->addClass('systemName');
-			$Name->addChildText($System->getName());
+			$Name->addChildNode($Link);
 			$Row->addChildNode($Name);
 
 			$Desc = new HtmlElement('td');

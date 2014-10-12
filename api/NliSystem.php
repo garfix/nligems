@@ -104,6 +104,14 @@ class NliSystem
 	/**
 	 * @return string
 	 */
+	public function getId()
+	{
+		return $this->getValue('id');
+	}
+
+	/**
+	 * @return string
+	 */
 	public function getName()
 	{
 		return $this->getValue('NAME');
@@ -146,7 +154,7 @@ class NliSystem
 	 */
 	public function getInstitutions()
 	{
-		return array_map('trim', explode(',', $this->getValue('INSTITUTIONS')));
+		return $this->getValue(NliSystem::INSTITUTIONS);
 	}
 
 	/**
@@ -154,7 +162,7 @@ class NliSystem
 	 */
 	public function getInfluences()
 	{
-		return array_map('trim', explode(',', $this->getValue('INFLUENCED-BY')));
+		return $this->getValue('INFLUENCED-BY');
 	}
 
 	/**
@@ -162,7 +170,7 @@ class NliSystem
 	 */
 	public function getNaturalLanguages()
 	{
-		return array_map('trim', explode(',', $this->getValue('NAT-LANGS')));
+		return $this->getValue('NAT-LANGS');
 	}
 
 	/**
@@ -170,7 +178,7 @@ class NliSystem
 	 */
 	public function getProgrammingLanguages()
 	{
-		return array_map('trim', explode(',', $this->getValue('PROG-LANGS')));
+		return $this->getValue('PROG-LANGS');
 	}
 
 	/**
@@ -210,7 +218,7 @@ class NliSystem
 	 */
 	public function getArticles()
 	{
-		return array_map('trim', explode(',', $this->getValue('ARTICLES')));
+		return $this->getValue('ARTICLES');
 	}
 
 	public function getParserName()

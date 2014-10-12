@@ -18,11 +18,11 @@ class IndexPage extends Page
 
     public function __construct()
    	{
-        $this->Header = new Header('Home');
-        $this->LinkBar = new LinkBar();
-
         $LinkApi = new LinkApi();
 
+        $this->Header = new Header('Home');
+
+        $this->LinkBar = new LinkBar();
         $this->LinkBar->addLink('Filter', $LinkApi->getLink('filter'));
         $this->LinkBar->addLink('Time line', $LinkApi->getLink('timeline'));
 

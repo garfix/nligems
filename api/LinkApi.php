@@ -10,9 +10,9 @@ class LinkApi
 	public function getLink($page, $params = [])
 	{
 		if ($page == 'image') {
-			$rel = 'img/' . $params['name'] . '.jpg';
+			$rel = 'page/img/people/' . $params['name'] . '.jpg';
 			if (!file_exists(__DIR__ . '/../' . $rel)) {
-				$rel = 'img/unknown.jpg';
+				$rel = 'page/img/people/unknown.jpg';
 			}
 
 			return $rel;

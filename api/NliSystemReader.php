@@ -16,7 +16,7 @@ class NliSystemReader
 			preg_match('#/([^/.]+)\.txt#', $path, $matches);
 			$id = $matches[1];
 
-			$systems[$id] = $this->readSystem($path);
+			$systems[$id] = $this->readSystem($id, $path);
 		}
 
 		return $systems;
@@ -26,6 +26,7 @@ class NliSystemReader
 	{
 		return array(
 			NliSystem::CONTRIBUTORS,
+			NliSystem::INSTITUTIONS,
 			NliSystem::KNOWLEDGE_BASE_TYPE,
 			NliSystem::INSTITUTIONS,
 			NliSystem::PARSER_TYPE,
@@ -40,9 +41,12 @@ class NliSystemReader
 		);
 	}
 
-	private function readSystem($filename)
+	private function readSystem($id, $filename)
 	{
 		$System = new NliSystem();
+
+		$System->set('id', $id);
+
 		$lines = file($filename);
 
 		for ($i = 0; $i < count($lines); $i++) {

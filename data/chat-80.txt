@@ -14,7 +14,7 @@ ARTICLES: An efficient easily adaptable system for interpreting natual language 
 GEM-IMAGE: cats-eye.png
 NAME-DESC:
 LONG-DESC: -
-The code of Chat-80 was circulated widely, and formed the basis of severa other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)
+The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)
 -
 
 NP: yes
