@@ -24,7 +24,7 @@ class Image
         $Div = new HtmlElement('div');
         $Div->addClass('imageContainer');
 
-        $Img = new HtmlElement('img');
+        $Img = new HtmlElement('img', false);
         $Img->addAttribute('src', $this->link);
         $Div->addChildNode($Img);
 

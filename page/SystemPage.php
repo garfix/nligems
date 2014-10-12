@@ -54,6 +54,9 @@ class SystemPage extends Page
 
         $ImageBar = new HtmlElement('div');
         $ImageBar->addClass('imagePanel');
+        if (count($System->getContributors()) == 1) {
+            $ImageBar->addClass('thin');
+        }
         $ImageBar->addChildHtml((string)$this->ImageBar);
         $Page->addChildNode($ImageBar);
 
