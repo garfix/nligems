@@ -8,6 +8,7 @@ use nligems\api\component\ImageBar;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
 use nligems\api\page\Page;
+use nligems\api\PageApi;
 
 /**
  * @author Patrick van Bergen
@@ -16,9 +17,6 @@ class SystemPage extends Page
 {
     /** @var  NliSystem */
     private $System;
-
-    /** @var  Header */
-   	protected $Header;
 
     /** @var ImageBar */
     private $ImageBar;
@@ -29,7 +27,7 @@ class SystemPage extends Page
 
         $this->System = $NliSystem;
 
-        $this->Header = new Header($NliSystem->getName());
+        $this->Header = new Header($NliSystem->getName(), $this->getBackPage());
 
         $this->ImageBar = new ImageBar();
         foreach ($NliSystem->getContributors() as $contributor) {
@@ -106,5 +104,12 @@ class SystemPage extends Page
 
 
         return (string)$Page;
+    }
+
+    public function getBackPage()
+    {
+        $PageApi = new PageApi();
+
+        return $PageApi->getSecondaryPage();
     }
 }

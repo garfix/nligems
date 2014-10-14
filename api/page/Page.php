@@ -2,11 +2,16 @@
 
 namespace nligems\api\page;
 
+use nligems\api\component\Header;
+
 /**
  * @author Patrick van Bergen
  */
 abstract class Page
 {
+	/** @var  Header */
+	 protected $Header;
+
 	/** @var string  */
 	protected $template = 'nligems';
 

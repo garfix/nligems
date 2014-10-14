@@ -1,0 +1,12 @@
+/* TEXT-PAGE */
+
+div.textPage {
+    position: absolute;
+    font-family: sans-serif;
+    margin: 20px;
+   	top: 100px;
+   	bottom: 0;
+   	width: 800px;
+   	left: 0;
+	overflow: auto;
+}

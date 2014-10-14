@@ -1,8 +1,8 @@
 <?php
 
 namespace nligems\api\component;
-
-use nligems\api\component\HtmlElement;
+use nligems\api\LinkApi;
+use nligems\api\PageApi;
 
 /**
  * @author Patrick van Bergen
@@ -12,15 +12,22 @@ class Header
     /** @var  string */
     private $pageTitle;
 
-    public function __construct($pageTitle)
+    /** @var  string */
+    private $backPage;
+
+    public function __construct($pageTitle, $backPage)
     {
         $this->pageTitle = $pageTitle;
+        $this->backPage = $backPage;
     }
 
     public function __toString()
     {
-        $Img = new HtmlElement('img', false);
-        $Img->addAttribute('src', 'page/img/gems.jpg');
+        $LinkApi = new LinkApi();
+
+        $GemsImage = new HtmlElement('img', false);
+        $GemsImage->addAttribute('src', 'page/img/gems.jpg');
+        $GemsImage->addClass('decoration');
 
         $H1 = new HtmlElement('h1');
         $H1->addChildText('Natural Language Interface Gems');
@@ -30,7 +37,21 @@ class Header
 
         $Header = new HtmlElement('div');
         $Header->addAttribute('class', 'header');
-        $Header->addChildNode($Img);
+
+        $Header->addChildNode($GemsImage);
+
+        if ($this->backPage) {
+
+            $Link = new HtmlElement('a');
+            $Link->addAttribute('href', $LinkApi->getLink($this->backPage));
+            $Link->addClass('backButton');
+            $Header->addChildNode($Link);
+
+            $BackImage = new HtmlElement('img', false);
+            $BackImage->addAttribute('src', 'page/img/back.png');
+            $Link->addChildNode($BackImage);
+        }
+
         $Header->addChildNode($H1);
         $Header->addChildNode($SubTitle);
 

@@ -18,9 +18,6 @@ use nligems\api\page\Page;
  */
 class FilterPage extends Page
 {
-	/** @var  Header */
-	protected $Header;
-
 	/** @var  Filter */
 	private $Filter;
 
@@ -29,7 +26,7 @@ class FilterPage extends Page
 
 	public function __construct(NliSystemApi $NliSystemApi)
 	{
-		$this->Header = new Header('Filter by property');
+		$this->Header = new Header('Filter by property', 'index');
 
 		$this->Filter = $this->getFilter($NliSystemApi);
 		$this->Filter->setValues($_REQUEST);

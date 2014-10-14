@@ -8,8 +8,8 @@ require __DIR__ . '/autoload.php';
 $NliSystemApi = new NliSystemApi();
 $PageApi = new PageApi();
 
-$Page = $PageApi->getFilterPage($NliSystemApi);
+$Page = $PageApi->getTimeLinePage($NliSystemApi);
 
 echo (string)$Page;
 
-$PageApi->setSecondaryPage('filter');
+$PageApi->setSecondaryPage('timeline');

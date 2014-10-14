@@ -13,14 +13,11 @@ use nligems\api\page\Page;
  */
 class IndexPage extends Page
 {
-    /** @var  Header */
-   	protected $Header;
-
     public function __construct()
    	{
         $LinkApi = new LinkApi();
 
-        $this->Header = new Header('Home');
+        $this->Header = new Header('Home', null);
 
         $this->LinkBar = new LinkBar();
         $this->LinkBar->addLink('Filter', $LinkApi->getLink('filter'));
