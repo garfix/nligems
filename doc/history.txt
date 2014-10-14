@@ -2,8 +2,6 @@
 1968 Fillmore develops Case Grammar http://en.wikipedia.org/wiki/Case_grammar
 1970 ? Codd develops the relational model
 1969 Carl Hewitt publishes Planner http://en.wikipedia.org/wiki/Planner_programming_language
-1969 SHRDLU (uses Planner)
 1972 Creation of the first Prolog system (influenced by Planner)
 1974 Montague publishes?
 
-dependency chart?

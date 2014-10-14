@@ -10,3 +10,28 @@ div.textPage {
    	left: 0;
 	overflow: auto;
 }
+
+/* TIME TABLE */
+
+ul.yearList {
+	list-style: none;
+	padding: 0;
+	margin-right: 20px;
+	background-color: #E6EDE4;
+}
+
+ul.yearList h2 {
+	padding-top: 10px;
+	color: #343240;
+	background-color: #8BCCC1;
+	border-bottom: 5px solid #343240;
+	margin: 0;
+}
+
+ul.yearList ul {
+}
+
+ul.yearList ul li {
+	list-style: square;
+	padding: 10px 5px 10px 5px;
+}

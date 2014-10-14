@@ -21,7 +21,7 @@ class IndexPage extends Page
 
         $this->LinkBar = new LinkBar();
         $this->LinkBar->addLink('Filter', $LinkApi->getLink('filter'));
-        $this->LinkBar->addLink('Time line', $LinkApi->getLink('timeline'));
+        $this->LinkBar->addLink('Timeline', $LinkApi->getLink('timeline'));
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('index');

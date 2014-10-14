@@ -20,6 +20,7 @@ class TimeTable
         ksort($entries);
 
         $YearList = new HtmlElement('ul');
+        $YearList->addClass('yearList');
 
         foreach ($entries as $year => $entriesPerYear) {
 

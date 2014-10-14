@@ -18,7 +18,7 @@ class TimeLinePage extends Page
 
     public function __construct(NliSystemApi $NliSystemApi)
     {
-        $this->Header = new Header('History of NLI', 'index');
+        $this->Header = new Header('Timeline', 'index');
 
         $this->TimeTable = new TimeTable();
 
@@ -34,7 +34,7 @@ class TimeLinePage extends Page
         $NliSystemApi = new NliSystemApi();
 
         foreach ($NliSystemApi->getAllSystems() as $System) {
-            $TimeTable->addEntry($System->getFirstYear(), $System->getName());
+            $TimeTable->addEntry($System->getFirstYear(), 'Start of ' . $System->getName());
         }
     }
 
