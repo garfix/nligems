@@ -2,11 +2,13 @@
 
 namespace nligems\page;
 
+use nligems\api\component\DefinitionList;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\ImageBar;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
+use nligems\api\NliSystemApi;
 use nligems\api\page\Page;
 use nligems\api\PageApi;
 
@@ -40,6 +42,8 @@ class SystemPage extends Page
 
     protected function getBody()
     {
+        $NliSystemApi = new NliSystemApi();
+
         $System = $this->System;
 
         $Page = new HtmlElement('div');
@@ -78,8 +82,13 @@ class SystemPage extends Page
         $Body->addChildNode($Desc);
 
         if ($nameDescription = $System->getNameDescription()) {
+
+            $H2 = new HtmlElement('h2');
+            $H2->addChildText('An explanation of the name');
+            $Body->addChildNode($H2);
+
             $P = new HtmlElement('p');
-            $P->addChildText($System->getNameDescription());
+            $P->addChildText($nameDescription);
             $Body->addChildNode($P);
         }
 
@@ -88,20 +97,31 @@ class SystemPage extends Page
         $Body->addChildNode($H2);
 
         $P = new HtmlElement('p');
-        $P->addChildText($System->getLongDescription());
+        $P->addChildHtml(str_replace("\n\n", '<br><br>', $System->getLongDescription()));
         $Body->addChildNode($P);
 
+        $H2 = new HtmlElement('h2');
+        $H2->addChildText('Characteristics');
+        $Body->addChildNode($H2);
 
+        $fields = array(
+            NliSystem::PROGRAMMING_LANGUAGES,
+            NliSystem::GRAMMAR_TYPE,
+            NliSystem::INFLUENCED_BY,
+            NliSystem::NATURAL_LANGUAGES,
+            NliSystem::ARTICLES,
+        );
 
-// getInfluences()
-// getNaturalLanguages()
-// getProgrammingLanguages()
-// getWebsite()
-// getKnowledgeBaseType()
-// getKnowledgeBaseTypeDescription()
-// getSentenceTypes()
-// getArticles()
-
+        $DL = new DefinitionList();
+        foreach ($fields as $field) {
+            $name = $NliSystemApi->getFeatureName($field);
+            $value = $System->get($field);
+            if ($value) {
+                $serialized = is_array($value) ? implode("<br>", $value) : $value;
+                $DL->addItem($name, $serialized);
+            }
+        }
+        $Body->addChildHtml($DL);
 
         return (string)$Page;
     }

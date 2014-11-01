@@ -32,6 +32,7 @@ class NliSystemApi
 			NliSystem::KNOWLEDGE_BASE_TYPE => 'Knowledge base type',
 			NliSystem::KNOWLEDGE_BASE_DESCRIPTION => 'Knowledge base description',
 			NliSystem::SENTENCE_TYPES => 'Sentence types',
+			NliSystem::ARTICLES => 'Articles',
 
 			NliSystem::DICTIONARY_LOOKUP => 'Dictionary lookup',
 			NliSystem::MORPHOLOGICAL_ANALYSIS => 'Morphological analysis',

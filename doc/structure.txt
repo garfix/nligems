@@ -114,7 +114,7 @@ and multi-line entries like this:
 
 WEBSITE: -
 This system excels in the field of precision.
-However, it is not very limited in scope.
+However, it is very limited in scope.
 -
 
 ^ note: ends with a dash

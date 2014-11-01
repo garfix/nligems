@@ -38,6 +38,7 @@ class NliSystemReader
 			NliSystem::STANDARD_ONTOLOGY,
 			NliSystem::GRAMMAR_TYPE,
 			NliSystem::SEMANTIC_FORM_TYPE,
+			NliSystem::ARTICLES,
 		);
 	}
 
@@ -84,7 +85,7 @@ class NliSystemReader
 					$value = '';
 					$i++;
 					while ($i < count($lines) && ($line = trim($lines[$i])) != '-') {
-						$value .= ($line ? "\n" : "") . $line;
+						$value .= ($value ? "\n" : "") . $line;
 						$i++;
 					}
 				}

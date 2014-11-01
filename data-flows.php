@@ -9,7 +9,6 @@ $NliSystemApi = new NliSystemApi();
 $ComponentApi = new ComponentApi();
 
 $systems = $NliSystemApi->getAllSystems();
-$SystemInfo = $NliSystemApi->getSystemInformation();
 
 $Table = $ComponentApi->createTable(13, count($systems));
 $Table->setCaption('Data flow charts');
@@ -50,11 +49,11 @@ foreach ($systems as $id => $System) {
 
 	$List = $ComponentApi->createDefinitionList();
 
-	if ($type = $System->getParserType()) {
+	if ($type = implode(',', $System->getParserType())) {
 		$List->addItem('Parser type', $type);
 	}
 
-	if ($type = $System->getGrammarType()) {
+	if ($type = implode(',', $System->getGrammarType())) {
 		$List->addItem('Grammar type', $type);
 	}
 
@@ -95,7 +94,7 @@ foreach ($systems as $id => $System) {
 		}
 
 		if ($ontology = $System->useOntology()) {
-			if ($ontology = $System->getStandardOntology()) {
+			if ($ontology = implode(',', $System->getStandardOntology())) {
 				$Bullets->addItem("Ontology: " . $ontology);
 			} else {
 				$Bullets->addItem("Custom ontology");
@@ -124,7 +123,7 @@ foreach ($systems as $id => $System) {
 
 	}
 
-	$name = $System->getKnowledgeBaseLanguageName();
+	$name = implode(',', $System->getKnowledgeBaseLanguageName());
 
 	$content = "Knowledge source form" . ($name ? "\n(" . $name . ")" : "");
 
@@ -177,8 +176,9 @@ foreach ($systems as $id => $System) {
 
 $body = (string)$Table;
 
-$page = file_get_contents(__DIR__ . '/nligems.html');
+$page = file_get_contents(__DIR__ . '/api/page/nligems.html');
 
+$page = str_replace('##styles##', "<link rel='stylesheet' type='text/css' href='page/css/style.css' />", $page);
 $page = str_replace('##body##', $body, $page);
 
 echo $page;

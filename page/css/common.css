@@ -7,6 +7,14 @@ body {
 	color: #343240;
 }
 
+a {
+	color: #5F445F;
+}
+
+a:visited {
+	color: #8B668B;
+}
+
 /* HEADER */
 
 a.backButton {
