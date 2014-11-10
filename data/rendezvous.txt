@@ -21,6 +21,9 @@ In contrast to other systems, this system does not parse the user's sentence int
 In stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.
 -
 
+ANALYSIS: transformation
+DO-DIALOG: yes
+
 NP: yes
 VP: yes
 PP: yes
@@ -51,7 +54,6 @@ DO-PROP-NAME-MAT: no
 DO-QUOTED-STRINGS: no
 
 PARSE-HEADER:
-DO-PARSE: no
 GRAMMAR-TYPE:
 PARSER-TYPE:
 

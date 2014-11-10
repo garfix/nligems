@@ -15,6 +15,9 @@ GEM-IMAGE: pearl.png
 NAME-DESC:
 LONG-DESC:
 
+ANALYSIS: parse and interpret
+DO-DIALOG: no
+
 NP: yes
 VP:
 PP: yes
@@ -45,7 +48,6 @@ DO-PROP-NAME-MAT:
 DO-QUOTED-STRINGS:
 
 PARSE-HEADER:
-DO-PARSE:
 GRAMMAR-TYPE: Augmented Transition Network
 PARSER-TYPE:
 

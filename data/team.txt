@@ -17,6 +17,9 @@ LONG-DESC: -
 Team was designed to be easily configurable by database administrators with no knowledge of NliDbs (Androutsopoulos etc., 1994)
 -
 
+ANALYSIS: parse and interpret
+DO-DIALOG: no
+
 NP: yes
 VP: yes
 PP: yes
@@ -47,7 +50,6 @@ DO-PROP-NAME-MAT:
 DO-QUOTED-STRINGS:
 
 PARSE-HEADER: DIALOGIC
-DO-PARSE: yes
 GRAMMAR-TYPE: DIAGRAM: Augmented Phrase Structure Grammar
 PARSER-TYPE: DIAMOND
 
@@ -63,7 +65,7 @@ DO-ANAPHORA-RESOL:
 DO-PLAUSIB-JUDGE:
 DO-UNIFORM-REWRITES:
 
-SEMANTIC-FORM-TYPE: logical
+SEMANTIC-FORM-TYPE: relational
 SEMANTIC-FORM-DESC: First-order logic with extensions
 EVENT-BASED: no
 PROPER-NOUN-CNST:

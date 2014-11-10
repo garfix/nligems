@@ -18,6 +18,9 @@ CLE distinguishes several distinct stages in the processing of the semantic repr
 CLE uses unification for semantic composition.
 -
 
+ANALYSIS: parse and interpret
+DO-DIALOG: no
+
 NP: yes
 VP: yes
 PP: yes
@@ -48,7 +51,6 @@ DO-PROP-NAME-MAT:
 DO-QUOTED-STRINGS:
 
 PARSE-HEADER:
-DO-PARSE: yes
 GRAMMAR-TYPE: Generalized Phrase Structure Grammar
 PARSER-TYPE: A "left corner" parser with top-down filtering
 
@@ -64,7 +66,7 @@ DO-ANAPHORA-RESOL: yes
 DO-PLAUSIB-JUDGE: yes
 DO-UNIFORM-REWRITES:
 
-SEMANTIC-FORM-TYPE: logical
+SEMANTIC-FORM-TYPE: procedural
 SEMANTIC-FORM-DESC: FOPC with extensions
 EVENT-BASED: yes
 PROPER-NOUN-CNST: yes

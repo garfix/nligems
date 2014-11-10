@@ -10,12 +10,15 @@ WEBSITE: https://web.archive.org/web/20131003031250/http://www.cis.upenn.edu/~pe
 KB-TYPE:
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
-ARTICLES: An efficient easily adaptable system for interpreting natual language queries
+ARTICLES: An efficient easily adaptable system for interpreting natural language queries
 GEM-IMAGE: cats-eye.png
 NAME-DESC:
 LONG-DESC: -
 The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)
 -
+
+ANALYSIS: parse and interpret
+DO-DIALOG: no
 
 NP: yes
 VP: yes
@@ -47,7 +50,6 @@ DO-PROP-NAME-MAT:
 DO-QUOTED-STRINGS:
 
 PARSE-HEADER:
-DO-PARSE: yes
 GRAMMAR-TYPE: Extraposition Grammars
 PARSER-TYPE: Top-down backtracking
 
@@ -63,7 +65,7 @@ DO-ANAPHORA-RESOL:
 DO-PLAUSIB-JUDGE:
 DO-UNIFORM-REWRITES:
 
-SEMANTIC-FORM-TYPE: logical
+SEMANTIC-FORM-TYPE: procedural
 SEMANTIC-FORM-DESC: FOPC with extensions
 EVENT-BASED:
 PROPER-NOUN-CNST: yes

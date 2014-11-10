@@ -5,6 +5,7 @@ namespace nligems\page;
 use nligems\api\component\HtmlElement;
 use nligems\api\filter\Checkbox;
 use nligems\api\filter\CheckboxGroup;
+use nligems\api\filter\CheckboxHeader;
 use nligems\api\filter\Filter;
 use nligems\api\filter\Section;
 use nligems\api\NliSystem;
@@ -70,17 +71,20 @@ class FilterPage extends Page
 	{
 		$Filter = new Filter();
 
-		$Filter->addSection($Section = new Section('General', Section::TYPE_GENERAL));
+		$Filter->addSection($Section = new Section('Code', Section::TYPE_GENERAL));
 
-//			$this->addAtLeastField($NliSystemApi, $Section, NliSystem::FIRST_YEAR);
-//			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::INSTITUTIONS);
-//			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::INFLUENCED_BY);
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::PROGRAMMING_LANGUAGES);
-			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_TYPE);
-			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SENTENCE_TYPES);
+
+		$Filter->addSection($Section = new Section('Structure', Section::TYPE_GENERAL));
+
+			$this->addCheckboxHeader($Section, 'Main features');
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
+
+			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::ANALYSIS);
 
 		$Filter->addSection($Section = new Section('Supported constructs', Section::TYPE_GENERAL));
 
+			$this->addCheckboxHeader($Section, 'Phrase types');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NP);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::VP);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::PP);
@@ -99,8 +103,11 @@ class FilterPage extends Page
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::THERE_BES);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ELLIPSIS);
 
+			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SENTENCE_TYPES);
+
 		$Filter->addSection($Section = new Section('Tokenization', Section::TYPE_PROCESS));
 
+			$this->addCheckboxHeader($Section, 'Tokenization features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::DICTIONARY_LOOKUP);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::MORPHOLOGICAL_ANALYSIS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::WORD_SEPARATION);
@@ -117,6 +124,7 @@ class FilterPage extends Page
 
 		$Filter->addSection($Section = new Section('Interpretation', Section::TYPE_PROCESS));
 
+			$this->addCheckboxHeader($Section, 'Interpretation features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_ATTACHMENT);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_COMPOSITION);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_CONFLICT_DETECTION);
@@ -127,17 +135,20 @@ class FilterPage extends Page
 
 		$Filter->addSection($Section = new Section('Conversion to knowledge base form', Section::TYPE_PROCESS));
 
+			$this->addCheckboxHeader($Section, 'Conversion features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SYNTACTIC_REWRITE);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::OPTIMIZE_QUERY);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::RESTRUCTURE_INFORMATION);
 
 		$Filter->addSection($Section = new Section('Knowledge base execution', Section::TYPE_PROCESS));
 
+			$this->addCheckboxHeader($Section, 'Execution features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::LOGICAL_REASONING);
 
 		$Filter->addSection($Section = new Section('Semantic form', Section::TYPE_DATA));
 
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SEMANTIC_FORM_TYPE);
+			$this->addCheckboxHeader($Section, 'Semantic features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::EVENT_BASED);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::PROPER_NOUN_CONSTANTS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ONTOLOGY_USED);
@@ -145,10 +156,17 @@ class FilterPage extends Page
 
 		$Filter->addSection($Section = new Section('Knowledge base form', Section::TYPE_DATA));
 
+			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_TYPE);
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_LANGUAGES);
+			$this->addCheckboxHeader($Section, 'Knowledge base features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_AGGREGATION);
 
 		return $Filter;
+	}
+
+	private function addCheckboxHeader(Section $Section, $header)
+	{
+		$Section->addComponent(new CheckboxHeader($header));
 	}
 
 	private function addCheckbox(NliSystemApi $NliSystemApi, Section $Section, $feature)

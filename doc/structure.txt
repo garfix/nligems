@@ -15,6 +15,10 @@
 	+ NAME-DESC: description of the name
 	+ LONG-DESC: distinguishing characteristics (free text)
 
+* structure
+	+ DO-PARSE: creates a parse tree
+	+ DO-DIALOG: engages in clarification dialog with the user
+
 * Z: syntax coverage
 	+ NP: noun phrases
 	+ VP: verb phrases

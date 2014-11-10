@@ -15,6 +15,9 @@ GEM-IMAGE: blue-sapphire.png
 NAME-DESC: "Thus analysis components must be robust, seeking out near misses when input is less than ideal and the system must be adaptable, making it easy for authors to patch running systems to catch unanticipated phrasings. The name C-Phrase is derived from ‘catch phrase’, which we interpret literally as ‘catching phrases’."
 LONG-DESC:
 
+ANALYSIS: parse and interpret
+DO-DIALOG: yes
+
 NP: yes
 VP: yes
 PP: yes
@@ -45,7 +48,6 @@ DO-PROP-NAME-MAT:
 DO-QUOTED-STRINGS: yes
 
 PARSE-HEADER:
-DO-PARSE:
 GRAMMAR-TYPE: Synchronous context-free grammars
 PARSER-TYPE: A fuzzy chart parser
 
