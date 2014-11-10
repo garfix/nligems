@@ -3,6 +3,7 @@
 namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
+use nligems\api\component\Link;
 use nligems\api\component\TimeTable;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
@@ -40,12 +41,25 @@ class TimeLinePage extends Page
 
     private function fillTimeTableWithEvents(TimeTable $TimeTable)
     {
-        foreach (file(__DIR__ . '/../doc/history.txt') as $line) {
-            if (preg_match('/^(\d+) (.*)/', $line, $matches)) {
-                $year = $matches[1];
-                $content = $matches[2];
-                $TimeTable->addEntry($year, $content);
+        $events = json_decode(file_get_contents(__DIR__ . '/../doc/history.json'), true);
+
+        foreach ($events as $event) {
+            $year = $event['year'];
+            $content = $event['desc'];
+
+            if (isset($event['links'])) {
+                foreach ($event['links'] as $text => $link) {
+
+                    $Link = new HtmlElement('a');
+                    $Link->addAttribute('href', $link);
+                    $Link->addAttribute('target', '_blank');
+                    $Link->addChildText($text);
+
+                    $content .= ' [' . (string)$Link . ']';
+                }
             }
+
+            $TimeTable->addEntry($year, $content);
         }
     }
 

@@ -37,7 +37,7 @@ class TimeTable
             foreach ($entriesPerYear as $entry) {
 
                 $Entry = new HtmlElement('li');
-                $Entry->addChildText($entry);
+                $Entry->addChildHtml($entry);
                 $EntryList->addChildNode($Entry);
             }
         }
