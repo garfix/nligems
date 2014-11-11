@@ -1,6 +1,6 @@
 [
     {
-        "token": "synstruct",
+        "id": "synstruct",
         "year": "1957",
         "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he describes Phrase Structure Grammars and introduces Transformational Grammar. This is the start of modern linguistics.",
         "links": {
@@ -8,7 +8,7 @@
         }
     },
     {
-        "token": "casegrammar",
+        "id": "casegrammar",
         "year": "1968",
         "desc": "Case Grammar was developed by Charles J. Fillmore. It emphasises semantic roles of a sentence, Agent, Object, Benefactor, Location or Instrument.",
         "links": {
@@ -16,12 +16,12 @@
         }
     },
     {
-        "token": "relational",
+        "id": "relational",
         "year": "1970",
         "desc": "E.F. Codd (IBM) publishes \"A Relational Model of Data for Large Shared Data Banks\". The basis of modern relational databases."
     },
     {
-        "token": "planner",
+        "id": "planner",
         "year": "1969",
         "desc": "Planner was created by Carl Hewitt (MIT), a theorem proving, procedural, programming language. It was used by SHRDLU.",
         "links": {
@@ -29,12 +29,12 @@
         }
     },
     {
-        "token": "prolog",
+        "id": "prolog",
         "year": "1972",
         "desc": "Prolog was created around by Alain Colmerauer and Philippe Roussel."
     },
     {
-        "token": "mont1",
+        "id": "mont1",
         "year": "1974",
         "desc": "Montague publishes ..."
     }

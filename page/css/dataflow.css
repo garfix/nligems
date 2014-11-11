@@ -1,48 +1,34 @@
-body {
-	font-family: Oswald, sans-serif;
-	background-color: #fff;
-}
 
-table caption {
+/** table.dataflow */
+
+table.dataflow caption {
 	text-align: left;
 	font-weight: bold;
 }
 
-table th {
+table.dataflow th {
 	text-align: left;
 	vertical-align: top;
 	font-weight: normal;
 }
 
-table td.sideHeader {
+table.dataflow td.sideHeader {
 	font-weight: bold;
 	text-align: left;
 }
 
-table td {
+table.dataflow td {
 	padding: 10px;
 	text-align: center;
 	vertical-align: top;
 }
 
-/* table.data */
-
-table.data {
-	border-spacing: 5px;
-}
-
-table.data tr.odd {
-	background-color: #c0c0c0;
-}
-
-table.data tr.even {
-	background-color: #80FFFF;
-}
-
-/** table.dataflow */
-
 table.dataflow {
 	border-spacing: 0;
+}
+
+table.dataflow td {
+    font-family: Oswald, sans-serif;
 }
 
 table.dataflow td {
@@ -57,7 +43,7 @@ table.dataflow ul {
 }
 
 table.dataflow div.gsProcessContent ul {
-	color: #006400;
+	color: #730E3D;
 }
 
 table.dataflow div.gsDataStoreInside ul {
@@ -66,13 +52,13 @@ table.dataflow div.gsDataStoreInside ul {
 
 table.dataflow dl {
 	text-align: left;
-	color: #71c971;
+	color: #A68F81;
 	margin-top: 10px;
 }
 
 table.dataflow dd {
 	margin-left: 10px;
-	color: #006400;
+	color: #730E3D;
 }
 
 
@@ -85,7 +71,7 @@ div.gsExternalBelow {
 	margin: 0 10px 10px 0;
 }
 div.gsExternalAbove {
-	background-color: #80FFFF;
+    background-color: #F2C84B;
 	border: 1px solid #000;
 	padding: 5px;
 	position: relative;
@@ -94,7 +80,7 @@ div.gsExternalAbove {
 }
 
 div.gsDataStoreOutside {
-	background-color: #FF0000;
+    background-color: #BF2A61;
 	border: 1px solid #000;
 	border-right: 0;
 }
@@ -107,7 +93,7 @@ div.gsDataStoreInside {
 }
 
 div.gsProcessOutside {
-	background-color: #C0FF40;
+    background-color: #F2E852;
 	border: 1px solid #000;
 	border-radius: 5px;
 }

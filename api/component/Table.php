@@ -14,6 +14,7 @@ class Table
 	private $sideHeadersUsed = false;
 	private $cells = array();
 	private $class = '';
+	private $skipEmptyRows = false;
 
 	public function __construct($rows, $columns)
 	{
@@ -71,6 +72,11 @@ class Table
 		return $this->sideHeaders;
 	}
 
+	public function skipEmptyRows($skip = true)
+	{
+		$this->skipEmptyRows = $skip;
+	}
+
 	public function __toString()
 	{
 		$class = $this->class;
@@ -98,6 +104,11 @@ class Table
 
 			if ($this->sideHeadersUsed) {
 				$html .= "<td class='sideHeader'>" . htmlspecialchars($this->sideHeaders[$row]) . "</td>";
+			}
+
+			$filteredCells = array_filter($cells);
+			if ($this->skipEmptyRows && empty($filteredCells)) {
+				continue;
 			}
 
 			foreach ($cells as $cell) {

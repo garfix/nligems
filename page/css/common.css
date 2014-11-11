@@ -4,6 +4,7 @@
 
 body {
 	background-color: #F1E7D9;
+	font-family: Oswald, sans-serif;
 	color: #343240;
 }
 
@@ -66,3 +67,4 @@ div.header h3 {
 .hidden {
 	display: none;
 }
+

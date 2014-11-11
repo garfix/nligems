@@ -2,6 +2,7 @@
 
 namespace nligems\page;
 
+use nligems\api\component\DataFlow;
 use nligems\api\component\DefinitionList;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
@@ -38,6 +39,7 @@ class SystemPage extends Page
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('system');
+        $this->addStyleSheet('dataflow');
    	}
 
     protected function getBody()
@@ -122,6 +124,15 @@ class SystemPage extends Page
             }
         }
         $Body->addChildHtml($DL);
+
+        $H2 = new HtmlElement('h2');
+        $H2->addChildText('Data flow');
+        $Body->addChildNode($H2);
+
+        $DataFlow = new DataFlow();
+        $DataFlow->setShowHeaders(false);
+        $DataFlow->addSystem($System);
+        $Body->addChildHtml("<CENTER>" .  $DataFlow . "</CENTER>");
 
         return (string)$Page;
     }
