@@ -13,12 +13,11 @@ use nligems\api\NliSystemApi;
 class ResultSet
 {
 	/** @var NliSystem[] */
-	private $systems = [];
+	private $filteredSystems = [];
 
 	/**
 	 * @param NliSystemApi $NliSystemApi
 	 * @param Filter $Filter
-	 * @param array $values
 	 * @return NliSystem[]
 	 */
 	public function filterResults(NliSystemApi $NliSystemApi, Filter $Filter)
@@ -29,30 +28,39 @@ class ResultSet
 		foreach ($systems as $System) {
 
 			if ($Filter->matches($System)) {
-				$sortKey = $System->getFirstYear() . $System->getName();
-				$selectedSystems[$sortKey] = $System;
+				$selectedSystems[] = $System;
 			}
 		}
 
-		// sort by date
-		ksort($selectedSystems);
+		$this->filteredSystems = $selectedSystems;
 
-		$this->systems = $selectedSystems;
-
-		return $this->systems;
+		return $this->filteredSystems;
 	}
 
 	public function __toString()
 	{
 		$LinkApi = new LinkApi();
+		$NliSystemApi = new NliSystemApi();
+
+		// sort all systems
+		$allSystems = array();
+		foreach ($NliSystemApi->getAllSystems() as $System) {
+			$sortKey = $System->getFirstYear() . $System->getName();
+			$allSystems[$sortKey] = $System;
+		}
+		ksort($allSystems);
 
 		$Table = new HtmlElement('table');
 		$Table->addClass('system');
 
-		foreach ($this->systems as $System) {
+		foreach ($allSystems as $System) {
 
 			$Row = new HtmlElement('tr');
-			$Row->addClass('used');
+			if (in_array($System, $this->filteredSystems)) {
+				$Row->addClass('used');
+			} else {
+				$Row->addClass('unused');
+			}
 			$Table->addChildNode($Row);
 
 			$Img = new HtmlElement('img');

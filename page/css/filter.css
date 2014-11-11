@@ -75,6 +75,26 @@ table.system tr.used td {
 	padding: 10px;
 }
 
+table.system tr.unused td {
+	background-color: #e0e0e0;
+	vertical-align: top;
+	text-align: left;
+	border-bottom: 5px solid #808080;
+	padding: 10px;
+}
+
+table.system tr.unused td a {
+	color: #c0c0c0;
+}
+
+table.system tr.unused td {
+	color: #c0c0c0;
+}
+
+table.system tr.unused td.gem img {
+	visibility: hidden;
+}
+
 table.system td.gem {
 	width: 41px;
 }
