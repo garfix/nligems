@@ -43,11 +43,9 @@ table.dataflow ul {
 }
 
 table.dataflow div.gsProcessContent ul {
-	color: #730E3D;
 }
 
 table.dataflow div.gsDataStoreInside ul {
-	color: #606060;
 }
 
 table.dataflow dl {
@@ -58,7 +56,7 @@ table.dataflow dl {
 
 table.dataflow dd {
 	margin-left: 10px;
-	color: #730E3D;
+	color: #343240;
 }
 
 
@@ -66,13 +64,13 @@ table.dataflow dd {
 
 div.gsExternalBelow {
 	background-color: #666;
-	border: 1px solid #000;
+	border: 1px solid #343240;
 	position: relative;
 	margin: 0 10px 10px 0;
 }
 div.gsExternalAbove {
-    background-color: #F2C84B;
-	border: 1px solid #000;
+    background-color: #BF2A61;
+	border: 1px solid #343240;
 	padding: 5px;
 	position: relative;
 	left: 10px;
@@ -81,24 +79,24 @@ div.gsExternalAbove {
 
 div.gsDataStoreOutside {
     background-color: #BF2A61;
-	border: 1px solid #000;
+	border: 1px solid #343240;
 	border-right: 0;
 }
 
 div.gsDataStoreInside {
 	background-color: #FFF;
-	border-left: 1px solid #000;
+	border-left: 1px solid #343240;
 	margin-left: 20px;
 	padding: 5px;
 }
 
 div.gsProcessOutside {
     background-color: #F2E852;
-	border: 1px solid #000;
+	border: 1px solid #343240;
 	border-radius: 5px;
 }
 
 div.gsProcessContent {
-	border-top: 1px solid #000;
+	border-top: 1px solid #343240;
 	padding: 5px;
 }
