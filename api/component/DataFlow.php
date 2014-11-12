@@ -11,7 +11,7 @@ use nligems\api\NliSystem;
 class DataFlow
 {
     /** NliSystem[] */
-    private $systems;
+    private $systems = array();
 
 	/** bool */
 	private $showHeaders = true;

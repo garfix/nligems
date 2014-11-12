@@ -33,7 +33,7 @@ var Filter = function() {
 
 	function addCheckboxClickHandlers()
 	{
-		var inputs = document.getElementsByTagName('input');
+		var inputs = document.querySelectorAll('.filterbar input');
 
 		for (var i = 0; i < inputs.length; i++) {
 			var element = inputs[i];

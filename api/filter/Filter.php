@@ -65,7 +65,7 @@ class Filter
 			$Form->addChildHtml((string)$Section);
 		}
 
-		$Submit = new HtmlElement('input');
+		$Submit = new HtmlElement('input', false);
 		$Submit->addAttribute('type', 'submit');
 		$Submit->addAttribute('name', 'fire');
 		$Submit->addAttribute('value', 'Apply');

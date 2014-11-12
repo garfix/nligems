@@ -1,0 +1,44 @@
+/* SYSTEM NAMES */
+
+div.systemNames {
+    position: absolute;
+    font-family: sans-serif;
+   	top: 100px;
+   	height: 130px;
+   	left: 0;
+    min-width: 3000px;
+	overflow: hidden;
+    margin: 0 20px 0 20px;
+}
+
+div.systemNames div {
+    font-family: Oswald;
+    display: inline-block;
+    width: 300px;
+    min-width: 300px;
+    padding: 10px 10px 10px 10px;
+}
+
+/* BODY */
+
+div.body {
+    position: absolute;
+    font-family: sans-serif;
+    margin: 20px;
+   	top: 130px;
+   	bottom: 0;
+   	left: 0;
+    right: 0;
+	overflow: auto;
+}
+
+/* DATAFLOW */
+
+table.dataflow thead th {
+    display: none;
+}
+
+table.dataflow td {
+    width: 300px;
+    min-width: 300px;
+}

@@ -18,11 +18,15 @@ class Table
 
 	public function __construct($rows, $columns)
 	{
-		$this->headers = array_fill(0, $columns, '');
+		$this->headers = $columns ? array_fill(0, $columns, '') : array();
 		$this->sideHeaders = array_fill(0, $rows, '');
 
 		for ($r = 0; $r < $rows; $r++) {
-			$this->cells[] = array_fill(0, $columns, '');
+			if ($columns == 0) {
+				$this->cells[] = array();
+			} else {
+				$this->cells[] = array_fill(0, $columns, '');
+			}
 		}
 	}
 

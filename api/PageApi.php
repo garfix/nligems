@@ -2,6 +2,7 @@
 
 namespace nligems\api;
 
+use nligems\page\ComparePage;
 use nligems\page\FilterPage;
 use nligems\page\IndexPage;
 use nligems\page\SystemPage;
@@ -51,6 +52,15 @@ class PageApi
 	public function getSystemPage(NliSystem $NliSystem)
 	{
 		return new SystemPage($NliSystem);
+	}
+
+	/**
+	 * @param int[] $systemIds
+	 * @return ComparePage
+	 */
+	public function getComparePage($systemIds)
+	{
+		return new ComparePage($systemIds);
 	}
 
 	public function setSecondaryPage($page)

@@ -25,10 +25,6 @@ class Header
     {
         $LinkApi = new LinkApi();
 
-        $GemsImage = new HtmlElement('img', false);
-        $GemsImage->addAttribute('src', 'page/img/gems.jpg');
-        $GemsImage->addClass('decoration');
-
         $H1 = new HtmlElement('h1');
         $H1->addChildText('Natural Language Interface Gems');
 
@@ -37,8 +33,6 @@ class Header
 
         $Header = new HtmlElement('div');
         $Header->addAttribute('class', 'header');
-
-        $Header->addChildNode($GemsImage);
 
         if ($this->backPage) {
 

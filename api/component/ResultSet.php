@@ -50,9 +50,24 @@ class ResultSet
 		}
 		ksort($allSystems);
 
+		$Form = new HtmlElement('form');
+		$Form->addAttribute('action', $LinkApi->getLink('compare'));
+		$Form->addAttribute('method', 'get');
+
 		$Table = new HtmlElement('table');
 		$Table->addClass('system');
 
+		$Submit = new HtmlElement('button');
+		$Submit->addAttribute('type', 'submit');
+		$Submit->addChildHtml('Compare &#8595;');
+		$Submit->addClass('compare');
+
+		$ButtonHead = new HtmlElement('div');
+		$ButtonHead->addChildNode($Submit);
+		$ButtonHead->addClass('buttonHead');
+		$Form->addChildNode($ButtonHead);
+
+		/** @var NliSystem $System */
 		foreach ($allSystems as $System) {
 
 			$Row = new HtmlElement('tr');
@@ -63,7 +78,7 @@ class ResultSet
 			}
 			$Table->addChildNode($Row);
 
-			$Img = new HtmlElement('img');
+			$Img = new HtmlElement('img', false);
 			$Img->addAttribute('src', 'page/img/gems/' . $System->getGemImage());
 
 			$Gem = new HtmlElement('td');
@@ -87,6 +102,17 @@ class ResultSet
 			$Desc->addChildText(implode(', ', $System->getContributors()));
 			$Row->addChildNode($Desc);
 
+			$Input = new HtmlElement('input', false);
+			$Input->addAttribute('type', 'checkbox');
+			$Input->addAttribute('name', 'system[]');
+			$Input->addAttribute('value', $System->getId());
+
+			$Check = new HtmlElement('td');
+			$Check->addClass('select');
+			$Check->addChildNode($Input);
+			$Row->addChildNode($Check);
+
+
 			$Row = new HtmlElement('tr');
 			$Row->addClass('empty');
 			$Table->addChildNode($Row);
@@ -98,6 +124,8 @@ class ResultSet
 			$Row->addChildNode($TD);
 		}
 
-		return (string)$Table;
+		$Form->addChildHtml($Table);
+
+		return (string)$Form;
 	}
 }
