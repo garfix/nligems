@@ -2,14 +2,14 @@
 
 namespace nligems\page;
 
+use nligems\api\component\Bullets;
+use nligems\api\component\CharacteristicsList;
 use nligems\api\component\DataFlow;
-use nligems\api\component\DefinitionList;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\ImageBar;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
-use nligems\api\NliSystemApi;
 use nligems\api\page\Page;
 use nligems\api\PageApi;
 
@@ -40,12 +40,11 @@ class SystemPage extends Page
         $this->addStyleSheet('common');
         $this->addStyleSheet('system');
         $this->addStyleSheet('dataflow');
+        $this->addStyleSheet('characteristics');
    	}
 
     protected function getBody()
     {
-        $NliSystemApi = new NliSystemApi();
-
         $System = $this->System;
 
         $Page = new HtmlElement('div');
@@ -106,24 +105,8 @@ class SystemPage extends Page
         $H2->addChildText('Characteristics');
         $Body->addChildNode($H2);
 
-        $fields = array(
-            NliSystem::PROGRAMMING_LANGUAGES,
-            NliSystem::GRAMMAR_TYPE,
-            NliSystem::INFLUENCED_BY,
-            NliSystem::NATURAL_LANGUAGES,
-            NliSystem::ARTICLES,
-        );
-
-        $DL = new DefinitionList();
-        foreach ($fields as $field) {
-            $name = $NliSystemApi->getFeatureName($field);
-            $value = $System->get($field);
-            if ($value) {
-                $serialized = is_array($value) ? implode("<br>", $value) : $value;
-                $DL->addItem($name, $serialized);
-            }
-        }
-        $Body->addChildHtml($DL);
+        $CharacteristicsList = new CharacteristicsList($System);
+        $Body->addChildHtml($CharacteristicsList);
 
         $H2 = new HtmlElement('h2');
         $H2->addChildText('Data flow');
@@ -133,6 +116,18 @@ class SystemPage extends Page
         $DataFlow->setShowHeaders(false);
         $DataFlow->addSystem($System);
         $Body->addChildHtml("<CENTER>" .  $DataFlow . "</CENTER>");
+
+        $H2 = new HtmlElement('h2');
+        $H2->addChildText('Books and Articles');
+        $Body->addChildNode($H2);
+
+        $Bullets = new Bullets();
+        $Bullets->addClass('articles');
+        foreach ($System->getArticles() as $article) {
+            $Bullets->addItem($article);
+        }
+
+        $Body->addChildHtml((string)$Bullets);
 
         return (string)$Page;
     }

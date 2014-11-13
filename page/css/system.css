@@ -47,3 +47,16 @@ div.imageBar div.imageDescription
 {
     font-size: 18px;
 }
+
+/* CHARACTERISTICS */
+
+dl.characteristics {
+    margin-right: 20px;
+}
+
+/* ARTICLES */
+ul.articles {
+    background-color: #FFF;
+    margin: 0 20px 0 0;
+    padding: 10px 10px 10px 30px;
+}

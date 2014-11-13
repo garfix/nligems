@@ -31,6 +31,10 @@ div.body {
 	overflow: auto;
 }
 
+h2 {
+    margin-bottom: 0;
+}
+
 /* DATAFLOW */
 
 table.dataflow thead th {
@@ -40,4 +44,12 @@ table.dataflow thead th {
 table.dataflow td {
     width: 300px;
     min-width: 300px;
+}
+
+/* CHARACTERISTICS */
+
+table.characteristics dl {
+    margin: 0;
+    width: 280px;
+    min-width: 280px;
 }

@@ -24,10 +24,10 @@ class NliSystemApi
 
 			NliSystem::FIRST_YEAR => 'First year',
 			NliSystem::LAST_YEAR => 'Last year',
-			NliSystem::CONTRIBUTORS => 'Contributors',
-			NliSystem::INSTITUTIONS => 'Institutions',
+			NliSystem::CONTRIBUTORS => 'Contributor(s)',
+			NliSystem::INSTITUTIONS => 'Institution',
 			NliSystem::INFLUENCED_BY => 'Influenced by',
-			NliSystem::NATURAL_LANGUAGES => 'Natural languages',
+			NliSystem::NATURAL_LANGUAGES => 'Natural language',
 			NliSystem::PROGRAMMING_LANGUAGES => 'Programming language',
 			NliSystem::KNOWLEDGE_BASE_TYPE => 'Knowledge base type',
 			NliSystem::KNOWLEDGE_BASE_DESCRIPTION => 'Knowledge base description',

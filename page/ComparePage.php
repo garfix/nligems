@@ -2,9 +2,11 @@
 
 namespace nligems\page;
 
+use nligems\api\component\CharacteristicsList;
 use nligems\api\component\DataFlow;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
+use nligems\api\component\Table;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 use nligems\api\page\Page;
@@ -57,6 +59,7 @@ class ComparePage extends Page
 		$this->addStyleSheet('common');
 		$this->addStyleSheet('compare');
 		$this->addStyleSheet('dataflow');
+        $this->addStyleSheet('characteristics');
 
         $this->addScript('systemnames');
 	}
@@ -83,8 +86,26 @@ class ComparePage extends Page
 
         $Body = new HtmlElement('div');
         $Body->addClass('body');
-        $Body->addChildHtml((string)$this->DataFlow);
         $Page->addChildNode($Body);
+
+        $H2 = new HtmlElement('h2');
+        $H2->addChildText('Characteristics');
+        $Body->addChildNode($H2);
+
+        $CharacteristicsTable = new Table(1, count($this->systems));
+        $CharacteristicsTable->setClass('characteristics');
+        $CharacteristicsTable->treatCellContentsAsHtml();
+        foreach ($this->systems as $i => $System) {
+            $CharacteristicsList = new CharacteristicsList($System);
+            $CharacteristicsTable->set(0, $i, $CharacteristicsList);
+        }
+        $Body->addChildHtml((string)$CharacteristicsTable);
+
+        $H2 = new HtmlElement('h2');
+        $H2->addChildText('Data flow');
+        $Body->addChildNode($H2);
+
+        $Body->addChildHtml((string)$this->DataFlow);
 
 		return (string)$Page;
 	}
