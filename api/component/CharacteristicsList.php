@@ -39,6 +39,8 @@ class CharacteristicsList
             }
         }
 
+        $DL->addItem('Language constructs', implode(', ', $this->System->getLanguageConstructs()));
+
         return (string)$DL;
     }
 }

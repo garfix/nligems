@@ -434,6 +434,41 @@ class NliSystem
 		return $processes;
 	}
 
+	public function getLanguageConstructs()
+	{
+		$NliSystemApi = new NliSystemApi();
+		$constructs = array();
+
+		$ids = array(
+			NliSystem::NP,
+			NliSystem::VP,
+			NliSystem::PP,
+			NliSystem::DP,
+			NliSystem::ADVP,
+			NliSystem::ADJP,
+			NliSystem::RC,
+			NliSystem::NEG,
+			NliSystem::CONJ,
+			NliSystem::ANAPHORA,
+			NliSystem::AUX,
+			NliSystem::MODALS,
+			NliSystem::COMPARATIVE_EXPRESSIONS,
+			NliSystem::PASSIVES,
+			NliSystem::CLEFTS,
+			NliSystem::THERE_BES,
+			NliSystem::ELLIPSIS,
+		);
+
+		foreach ($ids as $id) {
+			$value = $this->getValue($id);
+			if ($value == 'yes') {
+				$constructs[] = $NliSystemApi->getFeatureName($id);
+			}
+		}
+
+		return $constructs;
+	}
+
 	public function getValue($key)
 	{
 		return isset($this->values[$key]) ? $this->values[$key] : null;
