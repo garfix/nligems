@@ -57,6 +57,8 @@ class ComparePage extends Page
 		$this->addStyleSheet('common');
 		$this->addStyleSheet('compare');
 		$this->addStyleSheet('dataflow');
+
+        $this->addScript('systemnames');
 	}
 
 	protected function getBody()

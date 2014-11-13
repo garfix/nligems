@@ -41,6 +41,7 @@ class FilterPage extends Page
 
 		$this->addStyleSheet('common');
 		$this->addStyleSheet('filter');
+
 		$this->addScript('filter');
 	}
 

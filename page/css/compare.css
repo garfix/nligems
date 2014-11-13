@@ -1,18 +1,17 @@
 /* SYSTEM NAMES */
 
 div.systemNames {
-    position: absolute;
+    position: fixed;
     font-family: sans-serif;
    	top: 100px;
-   	height: 130px;
    	left: 0;
-    min-width: 3000px;
+    white-space: nowrap;
 	overflow: hidden;
     margin: 0 20px 0 20px;
 }
 
 div.systemNames div {
-    font-family: Oswald;
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     display: inline-block;
     width: 300px;
     min-width: 300px;
