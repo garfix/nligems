@@ -1,3 +1,12 @@
+/* HEAD */
+
+img.nameGem {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: 12px;
+}
+
 /* TEXT-PAGE */
 
 div.textPage {
@@ -19,7 +28,7 @@ div.imagePanel {
     margin: 20px;
     padding: 10px 0 0 10px;
     left: 840px;
-	width: 480px;
+	width: 500px;
 	top: 100px;
 	bottom: 0;
 	overflow: auto;

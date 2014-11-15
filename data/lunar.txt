@@ -6,17 +6,21 @@ INSTITUTIONS: Cambridge, MA
 INFLUENCED-BY:
 NAT-LANGS: English
 PROG-LANGS: Lisp
-WEBSITE:
+SOURCE-CODE:
 KB-TYPE: infererence engine
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
 ARTICLES: Semantics and quantification in natural language question answering
 GEM-IMAGE: pearl.png
 NAME-DESC:
-LONG-DESC:
+LONG-DESC: -
+A natural language interface to a database containing chemical analyses of moon rocks. One of the first NLI's that was actually used by a company.
+-
 
 ANALYSIS: parse and interpret
 DO-DIALOG: no
+NEW-WORDS:
+MULTI-DB: no
 
 NP: yes
 VP:
@@ -50,11 +54,15 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER:
 GRAMMAR-TYPE: Augmented Transition Network
 PARSER-TYPE:
+SEMANTIC-GRAMMAR: yes
 
 SYNTACTIC-FORM-TYPE:
 
 INTERPRET-HEADER:
 DO-SEMANTIC-ATTACH: yes
+DO-MODIFIER-ATTACH:
+DO-CONJUNCTION-DISJUNCTION:
+DO-NOMINAL-COMPOUNDS:
 DO-SEMANTIC-COMP:
 SEMANTIC-COMP-TYPE: production rules
 DO-SEMANTIC-CONFLICT:

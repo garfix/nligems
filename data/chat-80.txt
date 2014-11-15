@@ -6,7 +6,7 @@ INSTITUTIONS: SRI
 INFLUENCED-BY: Veronica Dahl
 NAT-LANGS: English
 PROG-LANGS: Prolog
-WEBSITE: https://web.archive.org/web/20131003031250/http://www.cis.upenn.edu/~pereira/oldies.html
+SOURCE-CODE: https://web.archive.org/web/20131003031250/http://www.cis.upenn.edu/~pereira/oldies.html
 KB-TYPE:
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
@@ -19,6 +19,8 @@ The code of Chat-80 was circulated widely, and formed the basis of several other
 
 ANALYSIS: parse and interpret
 DO-DIALOG: no
+NEW-WORDS:
+MULTI-DB: no
 
 NP: yes
 VP: yes
@@ -52,11 +54,15 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER:
 GRAMMAR-TYPE: Extraposition Grammars
 PARSER-TYPE: Top-down backtracking
+SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE: parse trees
 
 INTERPRET-HEADER:
 DO-SEMANTIC-ATTACH: yes
+DO-MODIFIER-ATTACH:
+DO-CONJUNCTION-DISJUNCTION:
+DO-NOMINAL-COMPOUNDS:
 DO-SEMANTIC-COMP: yes
 SEMANTIC-COMP-TYPE:
 DO-SEMANTIC-CONFLICT:

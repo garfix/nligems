@@ -6,7 +6,7 @@ INSTITUTIONS: Umeå University
 INFLUENCED-BY:
 NAT-LANGS: English
 PROG-LANGS: Lisp
-WEBSITE: https://code.google.com/p/c-phrase/
+SOURCE-CODE: https://code.google.com/p/c-phrase/
 KB-TYPE: relational
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
@@ -17,6 +17,8 @@ LONG-DESC:
 
 ANALYSIS: parse and interpret
 DO-DIALOG: yes
+NEW-WORDS:
+MULTI-DB: no
 
 NP: yes
 VP: yes
@@ -50,11 +52,15 @@ DO-QUOTED-STRINGS: yes
 PARSE-HEADER:
 GRAMMAR-TYPE: Synchronous context-free grammars
 PARSER-TYPE: A fuzzy chart parser
+SEMANTIC-GRAMMAR: yes
 
 SYNTACTIC-FORM-TYPE:
 
 INTERPRET-HEADER:
 DO-SEMANTIC-ATTACH: yes
+DO-MODIFIER-ATTACH:
+DO-CONJUNCTION-DISJUNCTION:
+DO-NOMINAL-COMPOUNDS:
 DO-SEMANTIC-COMP: yes
 SEMANTIC-COMP-TYPE: lambda calculus
 DO-SEMANTIC-CONFLICT:

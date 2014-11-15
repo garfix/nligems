@@ -8,6 +8,7 @@ use nligems\api\component\DataFlow;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\ImageBar;
+use nligems\api\component\Link;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
 use nligems\api\page\Page;
@@ -67,6 +68,11 @@ class SystemPage extends Page
         $Body->addClass('textPage');
         $Page->addChildNode($Body);
 
+        $Img = new HtmlElement('img', false);
+		$Img->addAttribute('src', 'page/img/gems/' . $System->getGemImage());
+        $Img->addClass('nameGem');
+        $Body->addChildNode($Img);
+
         $H2 = new HtmlElement('h2');
         $H2->addChildText($System->getName());
         $Body->addChildNode($H2);
@@ -78,6 +84,14 @@ class SystemPage extends Page
 
         if ($institutions = $System->getInstitutions()) {
             $Desc->addChildText(' ' . '(' . implode(', ', $institutions) . ')');
+        }
+
+        if ($sourceCodeUrl = $System->getSourceCodeUrl()) {
+            $Link = new HtmlElement('a');
+            $Link->addAttribute('href', $sourceCodeUrl);
+            $Link->addAttribute('target', '_blank');
+            $Link->addChildText('source code');
+            $Desc->addChildHtml(' ' . '[' . (string)$Link . ']');
         }
 
         $Body->addChildNode($Desc);

@@ -7,7 +7,7 @@
 	+ INFLUENCED-BY: influenced by these systems (see: name, comma separated)
 	+ NAT-LANGS: natural languages supported (Possible values: English, French, ...)
 	+ PROG-LANGS: programming language (possible values: Lisp, Prolog, Pascal)
-	+ WEBSITE: hyperlink for more information
+	+ SOURCE-CODE: uri for source code
 	+ KB-TYPE: knowledge base type (relational, inference engine, triple store, tree-based, semantic net)
 	+ KB-TYPE-DESC: knowledge base type description (free style: Relational)
 	+ SENTENCE-TYPES: sentence types supported: (question, declarative, imperative)
@@ -18,6 +18,8 @@
 * structure
 	+ DO-PARSE: creates a parse tree
 	+ DO-DIALOG: engages in clarification dialog with the user
+	+ NEW-WORDS: allows the user to create new words and concepts
+	+ MULTI-DB: combines multiple databases for single query
 
 * Z: syntax coverage
 	+ NP: noun phrases
@@ -57,11 +59,15 @@
 	- DO-PARSE: parsing
 	+ GRAMMAR-TYPE: type of grammar (possible values: Systemic Grammar, Generalized Phrase Structure Grammar, Case Grammar, Logical Description Grammar, ...)
 	+ PARSER-TYPE: parser type (possible values: Earley)
+	+ SEMANTIC-GRAMMAR: does the grammar contain domain-specific constructs?
 
 * D: syntactic form
 + SYNTACTIC-FORM-TYPE: syntactic form type (possible values: parse trees)
 
 	+ INTERPRET-HEADER: interpreter name
+	- DO-MODIFIER-ATTACH: modifier attachment
+	- DO-CONJUNCTION-DISJUNCTION: correct interpretation of 'and' and 'or'
+	- DO-NOMINAL-COMPOUNDS: nominal compunds
 	- DO-SEMANTIC-ATTACH: semantic attachment
 	- DO-SEMANTIC-COMP: semantic composition
 	+ SEMANTIC-COMP-TYPE: semantic composition type (possible values: lambda calculus, unification, custom)
@@ -116,7 +122,7 @@ DO-WORD-SEPA: yes
 
 and multi-line entries like this:
 
-WEBSITE: -
+LONG-DESC: -
 This system excels in the field of precision.
 However, it is very limited in scope.
 -

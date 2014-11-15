@@ -76,14 +76,16 @@ class FilterPage extends Page
 
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::PROGRAMMING_LANGUAGES);
 
-		$Filter->addSection($Section = new Section('Structure', Section::TYPE_GENERAL));
+		$Filter->addSection($Section = new Section('System structure', Section::TYPE_GENERAL));
 
 			$this->addCheckboxHeader($Section, 'Main features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
 
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::ANALYSIS);
 
-		$Filter->addSection($Section = new Section('Supported constructs', Section::TYPE_GENERAL));
+		$Filter->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
 
 			$this->addCheckboxHeader($Section, 'Phrase types');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NP);
@@ -127,6 +129,9 @@ class FilterPage extends Page
 
 			$this->addCheckboxHeader($Section, 'Interpretation features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_ATTACHMENT);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::MODIFIER_ATTACHMENT);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::CONJUNCTION_DISJUNCTION);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NOMINAL_COMPOUNDS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_COMPOSITION);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_CONFLICT_DETECTION);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::QUANTIFIER_SCOPING);

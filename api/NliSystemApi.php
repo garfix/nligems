@@ -34,13 +34,14 @@ class NliSystemApi
 			NliSystem::SENTENCE_TYPES => 'Sentence types',
 			NliSystem::ARTICLES => 'Articles',
 
-			NliSystem::DIALOG => 'Clarification dialog',
+			NliSystem::DIALOG => 'Clarification dialog to improve input sentence',
 			NliSystem::ANALYSIS => 'Type of analysis',
+			NliSystem::NEW_WORDS => 'Allows the user to introduce new words and concepts',
+			NliSystem::MULTI_DB => 'Queries multiple knowledge bases for single request',
 
 			NliSystem::DICTIONARY_LOOKUP => 'Dictionary lookup',
 			NliSystem::MORPHOLOGICAL_ANALYSIS => 'Morphological analysis',
 			NliSystem::WORD_SEPARATION => 'Word separation',
-
 			NliSystem::SPELLING_CORRECTION => 'Spelling correction',
 			NliSystem::OPEN_ENDED_TOKEN_RECOGNITION => 'Open-ended token recognition',
 			NliSystem::PROPER_NAMES_FROM_KB => 'Proper names lookup in knowledge base',
@@ -67,15 +68,19 @@ class NliSystemApi
 
 			NliSystem::GRAMMAR_TYPE => 'Grammar type',
 			NliSystem::PARSER_TYPE => 'Parser type',
+			NliSystem::SEMANTIC_GRAMMAR => 'Semantic grammar',
 
 			NliSystem::SEMANTIC_ATTACHMENT => 'Semantic attachment',
+			NliSystem::MODIFIER_ATTACHMENT => 'Modifier attachment',
+			NliSystem::CONJUNCTION_DISJUNCTION => 'Proper interpretation of conjunction and disjunction',
+			NliSystem::NOMINAL_COMPOUNDS => 'Nominal compounds',
 			NliSystem::SEMANTIC_COMPOSITION => 'Semantic composition',
 			NliSystem::SEMANTIC_COMPOSITION_TYPE => 'Semantic composition type',
 			NliSystem::SEMANTIC_CONFLICT_DETECTION => 'Semantic conflict detection',
 			NliSystem::QUANTIFIER_SCOPING => 'Quantifier scoping',
 			NliSystem::ANAPHORA_RESOLUTION => 'Anaphora resolution',
 			NliSystem::PLAUSIBILITY_RESOLUTION => 'Plausibility resolution',
-			NliSystem::UNIFORMIZATION_REWRITES => 'Uniformatization rewrites',
+			NliSystem::UNIFORMIZATION_REWRITES => 'Uniformization rewrites',
 
 			NliSystem::SEMANTIC_FORM_TYPE => 'Semantic form type',
 			NliSystem::EVENT_BASED => 'Event based',

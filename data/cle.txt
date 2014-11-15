@@ -6,7 +6,7 @@ INSTITUTIONS: SRI, CUCL
 INFLUENCED-BY:
 NAT-LANGS: English
 PROG-LANGS: Prolog
-WEBSITE:
+SOURCE-CODE:
 KB-TYPE: infererence engine
 KB-TYPE-DESC: Custom Prolog database
 SENTENCE-TYPES: question, declarative, imperative
@@ -20,6 +20,8 @@ CLE uses unification for semantic composition.
 
 ANALYSIS: parse and interpret
 DO-DIALOG: no
+NEW-WORDS:
+MULTI-DB: no
 
 NP: yes
 VP: yes
@@ -53,11 +55,15 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER:
 GRAMMAR-TYPE: Generalized Phrase Structure Grammar
 PARSER-TYPE: A "left corner" parser with top-down filtering
+SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE: parse trees
 
 INTERPRET-HEADER:
 DO-SEMANTIC-ATTACH: yes
+DO-MODIFIER-ATTACH:
+DO-CONJUNCTION-DISJUNCTION:
+DO-NOMINAL-COMPOUNDS:
 DO-SEMANTIC-COMP: yes
 SEMANTIC-COMP-TYPE: unification
 DO-SEMANTIC-CONFLICT: yes

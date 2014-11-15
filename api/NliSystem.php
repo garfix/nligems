@@ -7,6 +7,7 @@ namespace nligems\api;
  */
 class NliSystem
 {
+	const NAME = 'NAME';
 	const FIRST_YEAR = 'FIRST-YEAR';
 	const LAST_YEAR = 'LAST-YEAR';
 	const CONTRIBUTORS = 'CONTRIBUTORS';
@@ -19,9 +20,15 @@ class NliSystem
 	const SENTENCE_TYPES = 'SENTENCE-TYPES';
 	const ARTICLES = 'ARTICLES';
 	const GEM_IMAGE = 'GEM-IMAGE';
+	const NAME_DESCRIPTION = 'NAME-DESC';
+	const LONG_DESCRIPTION = 'LONG-DESC';
+	const SOURCE_CODE_URL = 'SOURCE-CODE';
 
 	const ANALYSIS = 'ANALYSIS';
 	const DIALOG = 'DO-DIALOG';
+	const NEW_WORDS = 'NEW-WORDS';
+	const MULTI_DB = 'MULTI-DB';
+
 	const MORPHOLOGICAL_ANALYSIS = 'DO-MORPH-ANA';
 	const DICTIONARY_LOOKUP = 'DO-DICT-LOOKUP';
 	const WORD_SEPARATION = 'DO-WORD-SEPA';
@@ -51,8 +58,12 @@ class NliSystem
 
 	const GRAMMAR_TYPE = 'GRAMMAR-TYPE';
 	const PARSER_TYPE = 'PARSER-TYPE';
+	const SEMANTIC_GRAMMAR = 'SEMANTIC-GRAMMAR';
 
 	const SEMANTIC_ATTACHMENT = 'DO-SEMANTIC-ATTACH';
+	const MODIFIER_ATTACHMENT = 'DO-MODIFIER-ATTACH';
+	const CONJUNCTION_DISJUNCTION = 'DO-CONJUNCTION-DISJUNCTION';
+	const NOMINAL_COMPOUNDS = 'DO-NOMINAL-COMPOUNDS';
 	const SEMANTIC_COMPOSITION = 'DO-SEMANTIC-COMP';
 	const SEMANTIC_COMPOSITION_TYPE = 'SEMANTIC-COMP-TYPE';
 	const SEMANTIC_CONFLICT_DETECTION = 'DO-SEMANTIC-CONFLICT';
@@ -117,7 +128,7 @@ class NliSystem
 	 */
 	public function getName()
 	{
-		return $this->getValue('NAME');
+		return $this->getValue(self::NAME);
 	}
 
 	/**
@@ -125,7 +136,7 @@ class NliSystem
 	 */
 	public function getNameDescription()
 	{
-		return $this->getValue('NAME-DESC');
+		return $this->getValue(self::NAME_DESCRIPTION);
 	}
 
 	/**
@@ -133,7 +144,7 @@ class NliSystem
 	 */
 	public function getLongDescription()
 	{
-		return $this->getValue('LONG-DESC');
+		return $this->getValue(self::LONG_DESCRIPTION);
 	}
 
 	/**
@@ -141,7 +152,7 @@ class NliSystem
 	 */
 	public function getFirstYear()
 	{
-		return $this->getValue('FIRST-YEAR');
+		return $this->getValue(self::FIRST_YEAR);
 	}
 
 	/**
@@ -149,7 +160,7 @@ class NliSystem
 	 */
 	public function getLastYear()
 	{
-		return $this->getValue('LAST-YEAR');
+		return $this->getValue(self::LAST_YEAR);
 	}
 
 	/**
@@ -165,7 +176,7 @@ class NliSystem
 	 */
 	public function getInfluences()
 	{
-		return $this->getValue('INFLUENCED-BY');
+		return $this->getValue(self::INFLUENCED_BY);
 	}
 
 	/**
@@ -173,7 +184,7 @@ class NliSystem
 	 */
 	public function getNaturalLanguages()
 	{
-		return $this->getValue('NAT-LANGS');
+		return $this->getValue(self::NATURAL_LANGUAGES);
 	}
 
 	/**
@@ -181,15 +192,15 @@ class NliSystem
 	 */
 	public function getProgrammingLanguages()
 	{
-		return $this->getValue('PROG-LANGS');
+		return $this->getValue(self::PROGRAMMING_LANGUAGES);
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getWebsite()
+	public function getSourceCodeUrl()
 	{
-		return $this->getValue('WEBSITE');
+		return $this->getValue(self::SOURCE_CODE_URL);
 	}
 
 	/**
@@ -197,7 +208,7 @@ class NliSystem
 	 */
 	public function getKnowledgeBaseType()
 	{
-		return $this->getValue('KB-TYPE');
+		return $this->getValue(self::KNOWLEDGE_BASE_TYPE);
 	}
 
 	/**
@@ -213,7 +224,7 @@ class NliSystem
 	 */
 	public function getSentenceTypes()
 	{
-		return $this->getValue('SENTENCE-TYPES');
+		return $this->getValue(self::SENTENCE_TYPES);
 	}
 
 	/**
@@ -221,7 +232,7 @@ class NliSystem
 	 */
 	public function getArticles()
 	{
-		return $this->getValue('ARTICLES');
+		return $this->getValue(self::ARTICLES);
 	}
 
 	public function getParserName()
@@ -246,37 +257,37 @@ class NliSystem
 
 	public function useConverter()
 	{
-		return $this->getValue('DO-SYNTACTIC-REWRITE') == 'yes';
+		return $this->getValue(self::SYNTACTIC_REWRITE) == 'yes';
 	}
 
 	public function useOntology()
 	{
-		return $this->getValue('ONTOLOGY-USED') == 'yes';
+		return $this->getValue(self::ONTOLOGY_USED) == 'yes';
 	}
 
 	public function getStandardOntology()
 	{
-		return $this->getValue('STD-ONTOLOGY');
+		return $this->getValue(self::STANDARD_ONTOLOGY);
 	}
 
 	public function getKnowledgeBaseLanguageName()
 	{
-		return $this->getValue('KB-LANGS');
+		return $this->getValue(self::KNOWLEDGE_BASE_LANGUAGES);
 	}
 
 	public function getGrammarType()
 	{
-		return $this->getValue('GRAMMAR-TYPE');
+		return $this->getValue(self::GRAMMAR_TYPE);
 	}
 
 	public function getParserType()
 	{
-		return $this->getValue('PARSER-TYPE');
+		return $this->getValue(self::PARSER_TYPE);
 	}
 
 	public function getSemanticAttachmentType()
 	{
-		return $this->getValue('SEMANTIC-COMP-TYPE');
+		return $this->getValue(self::SEMANTIC_COMPOSITION_TYPE);
 	}
 
 	public function getAnswererName()
@@ -296,7 +307,7 @@ class NliSystem
 
 	public function getContributors()
 	{
-		return $this->getValue('CONTRIBUTORS');
+		return $this->getValue(self::CONTRIBUTORS);
 	}
 
 	public function getGemImage()
@@ -309,20 +320,20 @@ class NliSystem
 		$processes = array();
 
 		$names = array(
-			'DO-DICT-LOOKUP' => 'Dictionary lookup',
-			'DO-MORPH-ANA' => 'Morphemic analysis',
-			'DO-WORD-SEPA' => 'Word separation',
-			'DO-SPELL-CORR' => 'Spelling correction',
-			'DO-OPEN-ENDED' => 'Recognition of open-ended tokens',
-			'DO-PROP-NAME-KB' => 'Proper names from knowledge base',
-			'DO-PROP-NAME-MAT' => 'Proper name recognition by matching',
-			'DO-QUOTED-STRINGS' => 'Treat quoted strings as single tokens',
+			self::DICTIONARY_LOOKUP => 'Dictionary lookup',
+			self::MORPHOLOGICAL_ANALYSIS => 'Morphemic analysis',
+			self::WORD_SEPARATION => 'Word separation',
+			self::SPELLING_CORRECTION => 'Spelling correction',
+			self::OPEN_ENDED_TOKEN_RECOGNITION => 'Recognition of open-ended tokens',
+			self::PROPER_NAMES_FROM_KB => 'Proper names from knowledge base',
+			self::PROPER_NAMES_BY_MATCHING => 'Proper name recognition by matching',
+			self::QUOTED_STRING_RECOGNITION => 'Treat quoted strings as single tokens',
 		);
 
-		foreach (array('DO-DICT-LOOKUP', 'DO-MORPH-ANA', 'DO-WORD-SEPA', 'DO-SPELL-CORR', 'DO-OPEN-ENDED', 'DO-PROP-NAME-KB', 'DO-PROP-NAME-MAT', 'DO-QUOTED-STRINGS') as $key) {
+		foreach ($names as $key => $desc) {
 			$value = $this->getValue($key);
 			if ($value) {
-				$processes[] = $names[$key];
+				$processes[] = $desc;
 			}
 		}
 
@@ -334,13 +345,15 @@ class NliSystem
 		$processes = array();
 
 		$names = array(
-			'DO-SEMANTIC-ATTACH' => 'Semantic attachment',
-			'DO-SEMANTIC-COMP' => 'Semantic composition',
-			'DO-SEMANTIC-CONFLICT' => 'Semantic conflict detection',
-			'DO-QUANTIFIER-SCOPE' => 'Quantification scoping',
-			'DO-ANAPHORA-RESOL' => 'Anaphora resolution',
-			'DO-PLAUSIB-JUDGE' => 'Plausibility judgement',
-			'DO-UNIFORM-REWRITES' => 'Uniformization rewrites',
+			self::SEMANTIC_ATTACHMENT => 'Semantic attachment',
+			self::SEMANTIC_COMPOSITION => 'Semantic composition',
+			self::MODIFIER_ATTACHMENT => 'Modifier attachment',
+			self::CONJUNCTION_DISJUNCTION => 'Conjunction and disjunction',
+			self::SEMANTIC_CONFLICT_DETECTION => 'Semantic conflict detection',
+			self::QUANTIFIER_SCOPING => 'Quantification scoping',
+			self::ANAPHORA_RESOLUTION => 'Anaphora resolution',
+			self::PLAUSIBILITY_RESOLUTION => 'Plausibility judgement',
+			self::UNIFORMIZATION_REWRITES => 'Uniformization rewrites',
 		);
 
 		foreach ($names as $key => $desc) {
@@ -365,7 +378,7 @@ class NliSystem
 		$processes = array();
 
 		$names = array(
-			'DO-LOGICAL-REASON' => 'Logical reasoning',
+			self::LOGICAL_REASONING => 'Logical reasoning',
 		);
 
 		foreach ($names as $key => $desc) {
@@ -383,8 +396,8 @@ class NliSystem
 		$processes = array();
 
 		$names = array(
-			'DO-INFORMATION-RESTRUCT' => 'Knowledge base-specific query refactoring',
-			'DO-OPTIMIZE-QUERY' => 'Optimize query for speed',
+			self::RESTRUCTURE_INFORMATION => 'Knowledge base-specific query refactoring',
+			self::OPTIMIZE_QUERY => 'Optimize query for speed',
 		);
 
 		foreach ($names as $key => $desc) {
@@ -402,8 +415,8 @@ class NliSystem
 		$processes = array();
 
 		$names = array(
-			'EVENT-BASED' => 'Event-based semantics',
-			'PROPER-NOUN-CNST' => 'Proper nouns represented by constants',
+			self::EVENT_BASED => 'Event-based semantics',
+			self::PROPER_NOUN_CONSTANTS => 'Proper nouns represented by constants',
 		);
 
 		foreach ($names as $key => $desc) {
@@ -421,7 +434,7 @@ class NliSystem
 		$processes = array();
 
 		$names = array(
-			'KB-AGGREGATIONS' => 'Supports aggregation (AVG, MIN, MAX, COUNT, SUM)',
+			self::KNOWLEDGE_BASE_AGGREGATION => 'Supports aggregation (AVG, MIN, MAX, COUNT, SUM)',
 		);
 
 		foreach ($names as $key => $desc) {
