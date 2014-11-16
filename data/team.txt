@@ -17,7 +17,8 @@ LONG-DESC: -
 Team was designed to be easily configurable by database administrators with no knowledge of NliDbs (Androutsopoulos etc., 1994)
 -
 
-ANALYSIS: parse and interpret
+ANALYSIS: Semantics-based
+SEMANTIC-GRAMMAR:
 DO-DIALOG: no
 NEW-WORDS:
 MULTI-DB: no
@@ -55,7 +56,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER: DIALOGIC
 GRAMMAR-TYPE: DIAGRAM: Augmented Phrase Structure Grammar
 PARSER-TYPE: DIAMOND
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE:
 

@@ -17,7 +17,8 @@ LONG-DESC: -
 A natural language interface to a database containing chemical analyses of moon rocks. One of the first NLI's that was actually used by a company.
 -
 
-ANALYSIS: parse and interpret
+ANALYSIS: Syntax-based
+SEMANTIC-GRAMMAR:
 DO-DIALOG: no
 NEW-WORDS:
 MULTI-DB: no
@@ -55,7 +56,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER:
 GRAMMAR-TYPE: Augmented Transition Network
 PARSER-TYPE:
-SEMANTIC-GRAMMAR: yes
 
 SYNTACTIC-FORM-TYPE:
 

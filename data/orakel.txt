@@ -15,7 +15,8 @@ GEM-IMAGE: diamond.png
 NAME-DESC:
 LONG-DESC:
 
-ANALYSIS: parse and interpret
+ANALYSIS: Semantics-based
+SEMANTIC-GRAMMAR:
 DO-DIALOG: no
 NEW-WORDS:
 MULTI-DB: no
@@ -53,7 +54,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER: Query Interpreter
 GRAMMAR-TYPE: Logical Description Grammar
 PARSER-TYPE: Earley
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE:
 

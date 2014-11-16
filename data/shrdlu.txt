@@ -18,7 +18,8 @@ This is one of the first NLI systems ever created, and at the same time one of t
 It's typical in that it is "procedural" in style. It is designed for a goal-based system called Planner that solves problems by performing procedures. This means that SHRDLU directly transforms each user sentence in a task to be performed by Planner, its knowledge store annex operator agent.
 -
 
-ANALYSIS: parse and interpret
+ANALYSIS: Syntax-based
+SEMANTIC-GRAMMAR:
 DO-DIALOG: yes
 NEW-WORDS: yes
 MULTI-DB: no
@@ -56,7 +57,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER: GRAMMAR
 GRAMMAR-TYPE: Programmar / Systemic Grammar
 PARSER-TYPE: A top-down left-to-right parser
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE: parse trees
 

@@ -25,6 +25,7 @@ class CharacteristicsList
         $fields = array(
             NliSystem::PROGRAMMING_LANGUAGES,
             NliSystem::NATURAL_LANGUAGES,
+            NliSystem::ANALYSIS,
             NliSystem::INFLUENCED_BY,
         );
 
@@ -35,6 +36,13 @@ class CharacteristicsList
             $value = $this->System->get($field);
             if ($value) {
                 $serialized = is_array($value) ? implode(", ", $value) : $value;
+
+                if ($field == NliSystem::ANALYSIS) {
+                    if ($this->System->get(NliSystem::SEMANTIC_GRAMMAR)) {
+                        $serialized .= ' (semantic grammar)';
+                    }
+                }
+
                 $DL->addItem($name, $serialized);
             }
         }

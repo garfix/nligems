@@ -15,7 +15,8 @@ GEM-IMAGE: hessonite.png
 NAME-DESC: End-User Friendly Interface to Data management
 LONG-DESC:
 
-ANALYSIS: parse and interpret
+ANALYSIS: Semantics-based
+SEMANTIC-GRAMMAR: yes
 DO-DIALOG: yes
 NEW-WORDS:
 MULTI-DB: no
@@ -53,7 +54,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER: The analyzer
 GRAMMAR-TYPE: Case Grammar
 PARSER-TYPE: A variant of Cocke-Kasami-Younger
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE: parse trees
 

@@ -78,13 +78,16 @@ class FilterPage extends Page
 
 		$Filter->addSection($Section = new Section('System structure', Section::TYPE_GENERAL));
 
-			$this->addCheckboxHeader($Section, 'Main features');
+			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::ANALYSIS);
+
+			$this->addCheckboxHeader($Section, 'Specification');
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_GRAMMAR);
+
+			$this->addCheckboxHeader($Section, 'Features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES);
-
-			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::ANALYSIS);
 
 		$Filter->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
 

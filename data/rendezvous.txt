@@ -21,7 +21,8 @@ In contrast to other systems, this system does not parse the user's sentence int
 In stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.
 -
 
-ANALYSIS: transformation
+ANALYSIS: Pattern-matching
+SEMANTIC-GRAMMAR:
 DO-DIALOG: yes
 NEW-WORDS:
 MULTI-DB: no
@@ -59,7 +60,6 @@ DO-QUOTED-STRINGS: no
 PARSE-HEADER:
 GRAMMAR-TYPE:
 PARSER-TYPE:
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE:
 

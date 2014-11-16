@@ -18,7 +18,8 @@ CLE distinguishes several distinct stages in the processing of the semantic repr
 CLE uses unification for semantic composition.
 -
 
-ANALYSIS: parse and interpret
+ANALYSIS: Semantics-based
+SEMANTIC-GRAMMAR:
 DO-DIALOG: no
 NEW-WORDS:
 MULTI-DB: no
@@ -56,7 +57,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER:
 GRAMMAR-TYPE: Generalized Phrase Structure Grammar
 PARSER-TYPE: A "left corner" parser with top-down filtering
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE: parse trees
 

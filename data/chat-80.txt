@@ -17,7 +17,8 @@ LONG-DESC: -
 The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)
 -
 
-ANALYSIS: parse and interpret
+ANALYSIS: Semantics-based
+SEMANTIC-GRAMMAR:
 DO-DIALOG: no
 NEW-WORDS:
 MULTI-DB: no
@@ -55,7 +56,6 @@ DO-QUOTED-STRINGS:
 PARSE-HEADER:
 GRAMMAR-TYPE: Extraposition Grammars
 PARSER-TYPE: Top-down backtracking
-SEMANTIC-GRAMMAR:
 
 SYNTACTIC-FORM-TYPE: parse trees
 
