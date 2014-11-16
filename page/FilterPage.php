@@ -82,6 +82,7 @@ class FilterPage extends Page
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES);
 
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::ANALYSIS);
 

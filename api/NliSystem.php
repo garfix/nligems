@@ -59,6 +59,7 @@ class NliSystem
 	const GRAMMAR_TYPE = 'GRAMMAR-TYPE';
 	const PARSER_TYPE = 'PARSER-TYPE';
 	const SEMANTIC_GRAMMAR = 'SEMANTIC-GRAMMAR';
+	const ACCEPT_UNGRAMMATICAL_SENTENCES = 'DO-UNGRAMMATICAL';
 
 	const SEMANTIC_ATTACHMENT = 'DO-SEMANTIC-ATTACH';
 	const MODIFIER_ATTACHMENT = 'DO-MODIFIER-ATTACH';
@@ -349,6 +350,7 @@ class NliSystem
 			self::SEMANTIC_COMPOSITION => 'Semantic composition',
 			self::MODIFIER_ATTACHMENT => 'Modifier attachment',
 			self::CONJUNCTION_DISJUNCTION => 'Conjunction and disjunction',
+			self::NOMINAL_COMPOUNDS => 'Nominal compounds',
 			self::SEMANTIC_CONFLICT_DETECTION => 'Semantic conflict detection',
 			self::QUANTIFIER_SCOPING => 'Quantification scoping',
 			self::ANAPHORA_RESOLUTION => 'Anaphora resolution',
@@ -362,7 +364,7 @@ class NliSystem
 
 				$description = $names[$key];
 
-				if ($key == 'DO-SEMANTIC-COMP' && ($type = $this->getSemanticAttachmentType())) {
+				if ($key == self::SEMANTIC_COMPOSITION && ($type = $this->getSemanticAttachmentType())) {
 					$description .= "\n(" . $type . ")";
 				}
 

@@ -25,6 +25,7 @@ ANALYSIS: transformation
 DO-DIALOG: yes
 NEW-WORDS:
 MULTI-DB: no
+DO-UNGRAMMATICAL: yes
 
 NP: yes
 VP: yes

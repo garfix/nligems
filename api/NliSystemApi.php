@@ -38,6 +38,7 @@ class NliSystemApi
 			NliSystem::ANALYSIS => 'Type of analysis',
 			NliSystem::NEW_WORDS => 'Allows the user to introduce new words and concepts',
 			NliSystem::MULTI_DB => 'Queries multiple knowledge bases for single request',
+			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => 'Accept ungrammatical sentences',
 
 			NliSystem::DICTIONARY_LOOKUP => 'Dictionary lookup',
 			NliSystem::MORPHOLOGICAL_ANALYSIS => 'Morphological analysis',

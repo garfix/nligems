@@ -20,6 +20,7 @@
 	+ DO-DIALOG: engages in clarification dialog with the user
 	+ NEW-WORDS: allows the user to create new words and concepts
 	+ MULTI-DB: combines multiple databases for single query
+	+ DO-UNGRAMMATICAL: accept ungrammatical sentences
 
 * Z: syntax coverage
 	+ NP: noun phrases

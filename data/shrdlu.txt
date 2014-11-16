@@ -22,6 +22,7 @@ ANALYSIS: parse and interpret
 DO-DIALOG: yes
 NEW-WORDS: yes
 MULTI-DB: no
+DO-UNGRAMMATICAL:
 
 NP: yes
 VP: yes
