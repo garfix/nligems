@@ -60,6 +60,8 @@ class NliSystem
 	const PARSER_TYPE = 'PARSER-TYPE';
 	const SEMANTIC_GRAMMAR = 'SEMANTIC-GRAMMAR';
 	const ACCEPT_UNGRAMMATICAL_SENTENCES = 'DO-UNGRAMMATICAL';
+	const META_SELF = 'META-SELF';
+	const META_KB = 'META-KB';
 
 	const SEMANTIC_ATTACHMENT = 'DO-SEMANTIC-ATTACH';
 	const MODIFIER_ATTACHMENT = 'DO-MODIFIER-ATTACH';
@@ -72,9 +74,11 @@ class NliSystem
 	const ANAPHORA_RESOLUTION = 'DO-ANAPHORA-RESOL';
 	const PLAUSIBILITY_RESOLUTION = 'DO-PLAUSIB-JUDGE';
 	const UNIFORMIZATION_REWRITES = 'DO-UNIFORM-REWRITES';
+	const COOPERATIVE_RESPONSES = 'COOPERATIVE-RESPONSES'; // Androutsopoulos, p. 24
 
 	const SEMANTIC_FORM_TYPE = 'SEMANTIC-FORM-TYPE';
 	const EVENT_BASED = 'EVENT-BASED';
+	const TEMPORAL = 'TEMPORAL';
 	const PROPER_NOUN_CONSTANTS = 'PROPER-NOUN-CNST';
 	const ONTOLOGY_USED = 'ONTOLOGY-USED';
 	const STANDARD_ONTOLOGY = 'STD-ONTOLOGY';
@@ -87,6 +91,8 @@ class NliSystem
 	const KNOWLEDGE_BASE_AGGREGATION = 'KB-AGGREGATIONS';
 
 	const LOGICAL_REASONING = 'DO-LOGICAL-REASON';
+
+	const PARAPHRASE_QUERY = 'PARAPHRASE-QUERY';
 
 
 	private $values = array();
@@ -316,145 +322,100 @@ class NliSystem
 		return $this->getValue(self::GEM_IMAGE);
 	}
 
-	public function getTokenizationProcesses()
+	private function buildFeatureDescriptionArray($features)
 	{
-		$processes = array();
+		$NliSystemApi = new NliSystemApi();
 
-		$names = array(
-			self::DICTIONARY_LOOKUP => 'Dictionary lookup',
-			self::MORPHOLOGICAL_ANALYSIS => 'Morphemic analysis',
-			self::WORD_SEPARATION => 'Word separation',
-			self::SPELLING_CORRECTION => 'Spelling correction',
-			self::OPEN_ENDED_TOKEN_RECOGNITION => 'Recognition of open-ended tokens',
-			self::PROPER_NAMES_FROM_KB => 'Proper names from knowledge base',
-			self::PROPER_NAMES_BY_MATCHING => 'Proper name recognition by matching',
-			self::QUOTED_STRING_RECOGNITION => 'Treat quoted strings as single tokens',
-		);
+		$descriptions = array();
 
-		foreach ($names as $key => $desc) {
-			$value = $this->getValue($key);
-			if ($value) {
-				$processes[] = $desc;
+		foreach ($features as $feature) {
+			if ($this->getValue($feature)) {
+				$descriptions[$feature] = $NliSystemApi->getFeatureName($feature);
 			}
 		}
 
-		return $processes;
+		return $descriptions;
+	}
+
+	public function getTokenizationProcesses()
+	{
+		return $this->buildFeatureDescriptionArray(array(
+			self::DICTIONARY_LOOKUP,
+			self::MORPHOLOGICAL_ANALYSIS,
+			self::WORD_SEPARATION,
+			self::SPELLING_CORRECTION,
+			self::OPEN_ENDED_TOKEN_RECOGNITION,
+			self::PROPER_NAMES_FROM_KB,
+			self::PROPER_NAMES_BY_MATCHING,
+			self::QUOTED_STRING_RECOGNITION,
+		));
 	}
 
 	public function getInterpretationProcesses()
 	{
-		$processes = array();
+		$descriptions = $this->buildFeatureDescriptionArray(array(
+			self::SEMANTIC_ATTACHMENT,
+			self::SEMANTIC_COMPOSITION,
+			self::MODIFIER_ATTACHMENT,
+			self::CONJUNCTION_DISJUNCTION,
+			self::NOMINAL_COMPOUNDS,
+			self::SEMANTIC_CONFLICT_DETECTION,
+			self::QUANTIFIER_SCOPING,
+			self::ANAPHORA_RESOLUTION,
+			self::PLAUSIBILITY_RESOLUTION,
+			self::UNIFORMIZATION_REWRITES,
+			self::COOPERATIVE_RESPONSES,
 
-		$names = array(
-			self::SEMANTIC_ATTACHMENT => 'Semantic attachment',
-			self::SEMANTIC_COMPOSITION => 'Semantic composition',
-			self::MODIFIER_ATTACHMENT => 'Modifier attachment',
-			self::CONJUNCTION_DISJUNCTION => 'Conjunction and disjunction',
-			self::NOMINAL_COMPOUNDS => 'Nominal compounds',
-			self::SEMANTIC_CONFLICT_DETECTION => 'Semantic conflict detection',
-			self::QUANTIFIER_SCOPING => 'Quantification scoping',
-			self::ANAPHORA_RESOLUTION => 'Anaphora resolution',
-			self::PLAUSIBILITY_RESOLUTION => 'Plausibility judgement',
-			self::UNIFORMIZATION_REWRITES => 'Uniformization rewrites',
-		);
+		));
 
-		foreach ($names as $key => $desc) {
-			$value = $this->getValue($key);
-			if ($value == 'yes') {
-
-				$description = $names[$key];
-
-				if ($key == self::SEMANTIC_COMPOSITION && ($type = $this->getSemanticAttachmentType())) {
-					$description .= "\n(" . $type . ")";
-				}
-
-				$processes[] = $description;
-			}
+		if (isset($descriptions[self::SEMANTIC_COMPOSITION]) && ($type = $this->getSemanticAttachmentType())) {
+			$descriptions[self::SEMANTIC_COMPOSITION] .= "\n(" . $type . ")";
 		}
 
-		return $processes;
+		return $descriptions;
 	}
 
 	public function getExecuterProcesses()
 	{
-		$processes = array();
-
-		$names = array(
-			self::LOGICAL_REASONING => 'Logical reasoning',
-		);
-
-		foreach ($names as $key => $desc) {
-			$value = $this->getValue($key);
-			if ($value == 'yes') {
-				$processes[] = $names[$key];
-			}
-		}
-
-		return $processes;
+		return $this->buildFeatureDescriptionArray(array(
+			self::LOGICAL_REASONING,
+		));
 	}
 
 	public function getConversionProcesses()
 	{
-		$processes = array();
-
-		$names = array(
-			self::RESTRUCTURE_INFORMATION => 'Knowledge base-specific query refactoring',
-			self::OPTIMIZE_QUERY => 'Optimize query for speed',
-		);
-
-		foreach ($names as $key => $desc) {
-			$value = $this->getValue($key);
-			if ($value == 'yes') {
-				$processes[] = $names[$key];
-			}
-		}
-
-		return $processes;
+		return $this->buildFeatureDescriptionArray(array(
+			self::RESTRUCTURE_INFORMATION,
+			self::OPTIMIZE_QUERY,
+		));
 	}
 
 	public function getSemanticOptions()
 	{
-		$processes = array();
-
-		$names = array(
-			self::EVENT_BASED => 'Event-based semantics',
-			self::PROPER_NOUN_CONSTANTS => 'Proper nouns represented by constants',
-		);
-
-		foreach ($names as $key => $desc) {
-			$value = $this->getValue($key);
-			if ($value == 'yes') {
-				$processes[] = $names[$key];
-			}
-		}
-
-		return $processes;
+		return $this->buildFeatureDescriptionArray(array(
+			self::EVENT_BASED,
+			self::TEMPORAL,
+			self::PROPER_NOUN_CONSTANTS,
+		));
 	}
 
 	public function getKnowledgeBaseOptions()
 	{
-		$processes = array();
+		return $this->buildFeatureDescriptionArray(array(
+			self::KNOWLEDGE_BASE_AGGREGATION
+		));
+	}
 
-		$names = array(
-			self::KNOWLEDGE_BASE_AGGREGATION => 'Supports aggregation (AVG, MIN, MAX, COUNT, SUM)',
-		);
-
-		foreach ($names as $key => $desc) {
-			$value = $this->getValue($key);
-			if ($value == 'yes') {
-				$processes[] = $names[$key];
-			}
-		}
-
-		return $processes;
+	public function getGenerationOptions()
+	{
+		return $this->buildFeatureDescriptionArray(array(
+			self::PARAPHRASE_QUERY
+		));
 	}
 
 	public function getLanguageConstructs()
 	{
-		$NliSystemApi = new NliSystemApi();
-		$constructs = array();
-
-		$ids = array(
+		return $this->buildFeatureDescriptionArray(array(
 			NliSystem::NP,
 			NliSystem::VP,
 			NliSystem::PP,
@@ -472,16 +433,7 @@ class NliSystem
 			NliSystem::CLEFTS,
 			NliSystem::THERE_BES,
 			NliSystem::ELLIPSIS,
-		);
-
-		foreach ($ids as $id) {
-			$value = $this->getValue($id);
-			if ($value == 'yes') {
-				$constructs[] = $NliSystemApi->getFeatureName($id);
-			}
-		}
-
-		return $constructs;
+		));
 	}
 
 	public function getValue($key)

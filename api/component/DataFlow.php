@@ -200,7 +200,14 @@ class DataFlow
         		$header .= "\n\"" . $name . "\"";
         	}
 
-        	$value = (string)$ComponentApi->createProcess()->setHeader($header)->setContent('');
+	        $Bullets = $ComponentApi->createBullets();
+	        foreach ($System->getGenerationOptions() as $process) {
+                $Bullets->addItem($process);
+            }
+
+	        $content = (string)$Bullets;
+
+        	$value = (string)$ComponentApi->createProcess()->setHeader($header)->setContent($content);
         	$Table->set(11, $col, $value);
 
         	$value = (string)$ComponentApi->createExternalEntity()->setContent("Natural Language output");

@@ -21,6 +21,8 @@
 	+ NEW-WORDS: allows the user to create new words and concepts
 	+ MULTI-DB: combines multiple databases for single query
 	+ DO-UNGRAMMATICAL: accept ungrammatical sentences
+	+ META-SELF: answer meta-knowledge questions about the system / agent itself
+	+ META-KB:answer meta-knowledge questions about the database
 
 * Z: syntax coverage
 	+ NP: noun phrases
@@ -77,11 +79,13 @@
 	- DO-ANAPHORA-RESOL: anaphora resolution
 	- DO-PLAUSIB-JUDGE: plausibility judgement
 	- DO-UNIFORM-REWRITES: uniformization rewrites
+	- COOPERATIVE-RESPONSES:
 
 * E: semantic form
 + SEMANTIC-FORM-TYPE: semantic form type (possible values: logical, relational, semantic net, procedural)
 + SEMANTIC-FORM-DESC: semantic form description (free style: FOPC with extensions, Tuple calculus, Planner)
 + EVENT-BASED: event-based semantics used (possible values: yes, no)
++ TEMPORAL: answers questions about past or future events
 + PROPER-NOUN-CNST: proper nouns represented as constants (possible values: yes, no)
 + ONTOLOGY-USED: ontology used (possible values: yes, no)
 + STD-ONTOLOGY: standard ontology used (names of standard ontologies, comma separated)
@@ -105,6 +109,7 @@
 
 	+ GENERATE-HEADER: generate natural language answers description
 	- DO-GENERATE: generate natural language answers
+	- PARAPHRASE-QUERY: able to paraphrase the knowledge base query
 
 * H: natural language answer form
 

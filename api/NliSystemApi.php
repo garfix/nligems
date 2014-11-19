@@ -39,6 +39,8 @@ class NliSystemApi
 			NliSystem::NEW_WORDS => 'Allows the user to introduce new words and concepts',
 			NliSystem::MULTI_DB => 'Queries multiple knowledge bases for single request',
 			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => 'Accept ungrammatical sentences',
+			NliSystem::META_SELF => 'Answers meta questions about its own processes',
+			NliSystem::META_KB => 'Answers meta questions the knowledge base',
 
 			NliSystem::DICTIONARY_LOOKUP => 'Dictionary lookup',
 			NliSystem::MORPHOLOGICAL_ANALYSIS => 'Morphological analysis',
@@ -82,9 +84,11 @@ class NliSystemApi
 			NliSystem::ANAPHORA_RESOLUTION => 'Anaphora resolution',
 			NliSystem::PLAUSIBILITY_RESOLUTION => 'Plausibility resolution',
 			NliSystem::UNIFORMIZATION_REWRITES => 'Uniformization rewrites',
+			NliSystem::COOPERATIVE_RESPONSES => 'Cooperative repsonses',
 
 			NliSystem::SEMANTIC_FORM_TYPE => 'Semantic form type',
 			NliSystem::EVENT_BASED => 'Event based',
+			NliSystem::TEMPORAL => 'Temporal',
 			NliSystem::PROPER_NOUN_CONSTANTS => 'Uses constants for proper nouns',
 			NliSystem::ONTOLOGY_USED => 'Uses an ontology',
 			NliSystem::STANDARD_ONTOLOGY => 'Standard ontology',
@@ -97,6 +101,8 @@ class NliSystemApi
 			NliSystem::KNOWLEDGE_BASE_AGGREGATION => 'Handle aggregations',
 
 			NliSystem::LOGICAL_REASONING => 'Logical reasoning',
+
+			NliSystem::PARAPHRASE_QUERY => 'Paraphrase knowledge base query',
 		);
 
 		return $names[$feature];

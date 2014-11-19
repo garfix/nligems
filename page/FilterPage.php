@@ -88,6 +88,8 @@ class FilterPage extends Page
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_SELF);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_KB);
 
 		$Filter->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
 
@@ -142,6 +144,7 @@ class FilterPage extends Page
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ANAPHORA_RESOLUTION);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::PLAUSIBILITY_RESOLUTION);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::UNIFORMIZATION_REWRITES);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::COOPERATIVE_RESPONSES);
 
 		$Filter->addSection($Section = new Section('Conversion to knowledge base form', Section::TYPE_PROCESS));
 
@@ -155,11 +158,17 @@ class FilterPage extends Page
 			$this->addCheckboxHeader($Section, 'Execution features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::LOGICAL_REASONING);
 
+		$Filter->addSection($Section = new Section('Answer generation', Section::TYPE_PROCESS));
+
+			$this->addCheckboxHeader($Section, 'Features');
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::PARAPHRASE_QUERY);
+
 		$Filter->addSection($Section = new Section('Semantic form', Section::TYPE_DATA));
 
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SEMANTIC_FORM_TYPE);
 			$this->addCheckboxHeader($Section, 'Semantic features');
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::EVENT_BASED);
+			$this->addCheckbox($NliSystemApi, $Section, NliSystem::TEMPORAL);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::PROPER_NOUN_CONSTANTS);
 			$this->addCheckbox($NliSystemApi, $Section, NliSystem::ONTOLOGY_USED);
 			$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::STANDARD_ONTOLOGY);
