@@ -9,13 +9,13 @@ use nligems\api\component\HtmlElement;
 use nligems\api\component\Table;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
-use nligems\api\page\Page;
+use nligems\api\page\FrontEndPage;
 use nligems\api\PageApi;
 
 /**
  * @author Patrick van Bergen
  */
-class ComparePage extends Page
+class ComparePage extends FrontEndPage
 {
     /** @var DataFlow  */
     private $DataFlow;

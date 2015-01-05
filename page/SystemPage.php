@@ -8,16 +8,15 @@ use nligems\api\component\DataFlow;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\ImageBar;
-use nligems\api\component\Link;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
-use nligems\api\page\Page;
+use nligems\api\page\FrontEndPage;
 use nligems\api\PageApi;
 
 /**
  * @author Patrick van Bergen
  */
-class SystemPage extends Page
+class SystemPage extends FrontEndPage
 {
     /** @var  NliSystem */
     private $System;
@@ -131,14 +130,28 @@ class SystemPage extends Page
         $DataFlow->addSystem($System);
         $Body->addChildHtml("<CENTER>" .  $DataFlow . "</CENTER>");
 
-        $H2 = new HtmlElement('h2');
-        $H2->addChildText('Books and Articles');
-        $Body->addChildNode($H2);
+        if ($System->getBooks()) {
+            $H2 = new HtmlElement('h2');
+            $H2->addChildText('Books');
+            $Body->addChildNode($H2);
 
-        $Bullets = new Bullets();
-        $Bullets->addClass('articles');
-        foreach ($System->getArticles() as $article) {
-            $Bullets->addItem($article);
+            $Bullets = new Bullets();
+            $Bullets->addClass('articles');
+            foreach ($System->getBooks() as $book) {
+                $Bullets->addItem($book);
+            }
+        }
+
+        if ($System->getArticles()) {
+            $H2 = new HtmlElement('h2');
+            $H2->addChildText('Articles');
+            $Body->addChildNode($H2);
+
+            $Bullets = new Bullets();
+            $Bullets->addClass('articles');
+            foreach ($System->getArticles() as $article) {
+                $Bullets->addItem($article);
+            }
         }
 
         $Body->addChildHtml((string)$Bullets);

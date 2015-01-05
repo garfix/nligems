@@ -3,16 +3,15 @@
 namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
-use nligems\api\component\Link;
 use nligems\api\component\TimeTable;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
-use nligems\api\page\Page;
+use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen
  */
-class TimeLinePage extends Page
+class TimeLinePage extends FrontEndPage
 {
     /** @var TimeTable  */
     private $TimeTable;

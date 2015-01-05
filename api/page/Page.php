@@ -13,7 +13,7 @@ abstract class Page
 	 protected $Header;
 
 	/** @var string  */
-	protected $template = 'nligems';
+	protected $template;
 
 	/** @var array[]  */
 	protected $styleSheets = ['style'];

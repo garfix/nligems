@@ -5,7 +5,7 @@ namespace nligems\api\component;
 /**
  * @author Patrick van Bergen
  */
-class Table
+class Table extends HtmlElement
 {
 	private $cellsAreHtml = false;
 	private $caption = '';

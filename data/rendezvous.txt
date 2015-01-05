@@ -11,6 +11,7 @@ KB-TYPE: relational
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
 ARTICLES: Seven Steps to Rendezvous with the Casual User, RENDEZVOUS Version 1: An Experimental English Language Query Formulation System for Casual Users of Relational Data Bases
+BOOKS:
 GEM-IMAGE: blue-sapphire.png
 NAME-DESC: To rendezvous (i.e. "meet") with the casual user
 LONG-DESC: -

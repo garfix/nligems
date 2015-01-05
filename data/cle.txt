@@ -11,6 +11,7 @@ KB-TYPE: infererence engine
 KB-TYPE-DESC: Custom Prolog database
 SENTENCE-TYPES: question, declarative, imperative
 ARTICLES: The Core Language Engine
+BOOKS:
 NAME-DESC: Core Language Engine
 GEM-IMAGE: coral.png
 LONG-DESC: -

@@ -3,8 +3,10 @@
 namespace nligems\api;
 
 use nligems\page\ComparePage;
+use nligems\page\EditSystemPage;
 use nligems\page\FilterPage;
 use nligems\page\IndexPage;
+use nligems\page\SystemOverviewPage;
 use nligems\page\SystemPage;
 use nligems\page\TimeLinePage;
 
@@ -45,6 +47,7 @@ class PageApi
 	{
 		return new TimeLinePage($NliSystemApi);
 	}
+
 	/**
 	 * @param NliSystem $NliSystem
 	 * @return SystemPage
@@ -61,6 +64,23 @@ class PageApi
 	public function getComparePage($systemIds)
 	{
 		return new ComparePage($systemIds);
+	}
+
+	/**
+	 * @return SystemOverviewPage
+	 */
+	public function getSystemOverviewPage()
+	{
+		return new SystemOverviewPage();
+	}
+
+	/**
+	 * @param NliSystem $NliSystem
+	 * @return EditSystemPage
+	 */
+	public function getEditSystemPage(NliSystem $NliSystem)
+	{
+		return new EditSystemPage($NliSystem);
 	}
 
 	public function setSecondaryPage($page)

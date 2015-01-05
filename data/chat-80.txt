@@ -11,6 +11,7 @@ KB-TYPE:
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
 ARTICLES: An efficient easily adaptable system for interpreting natural language queries
+BOOKS:
 GEM-IMAGE: cats-eye.png
 NAME-DESC:
 LONG-DESC: -

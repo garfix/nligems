@@ -11,6 +11,7 @@ KB-TYPE: infererence engine
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
 ARTICLES: Towards portable natural language interfaces to knowledge bases - The case of the ORAKEL system
+BOOKS:
 GEM-IMAGE: diamond.png
 NAME-DESC:
 LONG-DESC:

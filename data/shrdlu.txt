@@ -7,10 +7,11 @@ INFLUENCED-BY:
 NAT-LANGS: English
 PROG-LANGS: Lisp
 SOURCE-CODE: http://hci.stanford.edu/winograd/shrdlu/
-KB-TYPE: infererence engine
+KB-TYPE: inference engine
 KB-TYPE-DESC: Planner databases
 SENTENCE-TYPES: question, declarative, imperative
-ARTICLES: Understanding Natural Language
+ARTICLES:
+BOOKS: Winograd, T. Understanding Natural Language. Academic Press, 1972.
 GEM-IMAGE: emerald.png
 NAME-DESC: The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.
 LONG-DESC: -

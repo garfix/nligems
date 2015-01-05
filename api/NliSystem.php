@@ -19,6 +19,7 @@ class NliSystem
 	const KNOWLEDGE_BASE_DESCRIPTION = 'KB-TYPE-DESC';
 	const SENTENCE_TYPES = 'SENTENCE-TYPES';
 	const ARTICLES = 'ARTICLES';
+	const BOOKS = 'BOOKS';
 	const GEM_IMAGE = 'GEM-IMAGE';
 	const NAME_DESCRIPTION = 'NAME-DESC';
 	const LONG_DESCRIPTION = 'LONG-DESC';
@@ -242,6 +243,14 @@ class NliSystem
 		return $this->getValue(self::ARTICLES);
 	}
 
+	/**
+	 * @return string[]
+	 */
+	public function getBooks()
+	{
+		return $this->getValue(self::BOOKS);
+	}
+
 	public function getParserName()
 	{
 		return $this->getValue('PARSE-HEADER');
@@ -413,27 +422,11 @@ class NliSystem
 		));
 	}
 
-	public function getLanguageConstructs()
+	public function getLanguageConstructNames()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			NliSystem::NP,
-			NliSystem::VP,
-			NliSystem::PP,
-			NliSystem::DP,
-			NliSystem::ADVP,
-			NliSystem::ADJP,
-			NliSystem::RC,
-			NliSystem::NEG,
-			NliSystem::CONJ,
-			NliSystem::ANAPHORA,
-			NliSystem::AUX,
-			NliSystem::MODALS,
-			NliSystem::COMPARATIVE_EXPRESSIONS,
-			NliSystem::PASSIVES,
-			NliSystem::CLEFTS,
-			NliSystem::THERE_BES,
-			NliSystem::ELLIPSIS,
-		));
+		$Api = new NliSystemApi();
+
+		return $this->buildFeatureDescriptionArray($Api->getLanguageConstructs());
 	}
 
 	public function getValue($key)

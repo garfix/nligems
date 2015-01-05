@@ -11,6 +11,7 @@ KB-TYPE: infererence engine
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
 ARTICLES: Semantics and quantification in natural language question answering
+BOOKS:
 GEM-IMAGE: pearl.png
 NAME-DESC:
 LONG-DESC: -

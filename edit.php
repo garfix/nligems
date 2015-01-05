@@ -6,6 +6,6 @@ require __DIR__ . '/autoload.php';
 
 $PageApi = new PageApi();
 
-$Page = $PageApi->getIndexPage();
+$Page = $PageApi->getSystemOverviewPage();
 
 echo (string)$Page;

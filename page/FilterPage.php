@@ -12,12 +12,12 @@ use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
 use nligems\api\component\ResultSet;
-use nligems\api\page\Page;
+use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen
  */
-class FilterPage extends Page
+class FilterPage extends FrontEndPage
 {
 	/** @var  Filter */
 	private $Filter;

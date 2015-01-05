@@ -11,7 +11,8 @@
 	+ KB-TYPE: knowledge base type (relational, inference engine, triple store, tree-based, semantic net)
 	+ KB-TYPE-DESC: knowledge base type description (free style: Relational)
 	+ SENTENCE-TYPES: sentence types supported: (question, declarative, imperative)
-	+ ARTICLES: books, articles
+	+ ARTICLES: books
+	+ BOOKS: books
 	+ NAME-DESC: description of the name
 	+ LONG-DESC: distinguishing characteristics (free text)
 

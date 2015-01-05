@@ -39,6 +39,7 @@ class NliSystemReader
 			NliSystem::GRAMMAR_TYPE,
 			NliSystem::SEMANTIC_FORM_TYPE,
 			NliSystem::ARTICLES,
+			NliSystem::BOOKS,
 			NliSystem::ANALYSIS,
 		);
 	}

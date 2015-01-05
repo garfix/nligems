@@ -11,6 +11,7 @@ KB-TYPE: relational, tree-based
 KB-TYPE-DESC: Any RDBMS
 SENTENCE-TYPES: question
 ARTICLES: EUFID: A Friendly And Flexible Front-End For Data Management Systems, Problems in natural-language interface with examples from EUFID
+BOOKS:
 GEM-IMAGE: hessonite.png
 NAME-DESC: End-User Friendly Interface to Data management
 LONG-DESC:

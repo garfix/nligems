@@ -11,6 +11,7 @@ KB-TYPE: relational
 KB-TYPE-DESC:
 SENTENCE-TYPES: question
 ARTICLES: TEAM: An experiment in the design of transportable natural-language interaces
+BOOKS:
 GEM-IMAGE: yellow-sapphire.png
 NAME-DESC: Transportable English Database Access Medium
 LONG-DESC: -
