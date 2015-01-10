@@ -22,30 +22,10 @@ class NliSystemReader
 		return $systems;
 	}
 
-	private function getMultipleValueFieldKeys()
-	{
-		return array(
-			NliSystem::CONTRIBUTORS,
-			NliSystem::INSTITUTIONS,
-			NliSystem::KNOWLEDGE_BASE_TYPE,
-			NliSystem::INSTITUTIONS,
-			NliSystem::PARSER_TYPE,
-			NliSystem::INFLUENCED_BY,
-			NliSystem::NATURAL_LANGUAGES,
-			NliSystem::PROGRAMMING_LANGUAGES,
-			NliSystem::SENTENCE_TYPES,
-			NliSystem::KNOWLEDGE_BASE_LANGUAGES,
-			NliSystem::STANDARD_ONTOLOGY,
-			NliSystem::GRAMMAR_TYPE,
-			NliSystem::SEMANTIC_FORM_TYPE,
-			NliSystem::ARTICLES,
-			NliSystem::BOOKS,
-			NliSystem::ANALYSIS,
-		);
-	}
-
 	private function readSystem($id, $filename)
 	{
+		$SystemApi = new NliSystemApi();
+
 		$System = new NliSystem();
 
 		$System->set('id', $id);
@@ -66,7 +46,9 @@ class NliSystemReader
 				$key = trim($matches[1]);
 				$value = trim($matches[2]);
 
-				if (in_array($key, $this->getMultipleValueFieldKeys())) {
+				$featureType = $SystemApi->getFeatureType($key);
+
+				if ($featureType == NliSystemApi::FEATURETYPE_TEXT_MULTIPLE) {
 
 					$value = array_filter(array_map('trim', explode(',', $value)));
 

@@ -14,10 +14,17 @@ class NliSystemApi
 	/** @var NliSystem[] */
 	private $systems;
 
-	public function __construct()
+	/**
+	 * @return NliSystem[]
+	 */
+	public function getAllSystems()
 	{
-		$Reader = new NliSystemReader();
-		$this->systems = $Reader->readSystems(__DIR__ . '/../data');
+		if (!$this->systems) {
+			$Reader = new NliSystemReader();
+			$this->systems = $Reader->readSystems(__DIR__ . '/../data');
+		}
+
+		return $this->systems;
 	}
 
 	public function getFeatureName($feature)
@@ -80,10 +87,14 @@ class NliSystemApi
 			NliSystem::THERE_BES => 'There be',
 			NliSystem::ELLIPSIS => 'Ellipsis',
 
+			NliSystem::PARSE_HEADER => 'Parse header',
 			NliSystem::GRAMMAR_TYPE => 'Grammar type',
 			NliSystem::PARSER_TYPE => 'Parser type',
 			NliSystem::SEMANTIC_GRAMMAR => 'Semantic grammar',
 
+			NliSystem::SYNTACTIC_FORM_TYPE => 'Syntactic form type',
+
+			NliSystem::INTERPRET_HEADER => 'Interpreter header',
 			NliSystem::SEMANTIC_ATTACHMENT => 'Semantic attachment',
 			NliSystem::MODIFIER_ATTACHMENT => 'Modifier attachment',
 			NliSystem::CONJUNCTION_DISJUNCTION => 'Proper interpretation of conjunction and disjunction',
@@ -98,12 +109,15 @@ class NliSystemApi
 			NliSystem::COOPERATIVE_RESPONSES => 'Cooperative repopnses',
 
 			NliSystem::SEMANTIC_FORM_TYPE => 'Semantic form type',
+			NliSystem::SEMANTIC_FORM_DESC => 'Semantic form description',
 			NliSystem::EVENT_BASED => 'Event based',
 			NliSystem::TEMPORAL => 'Temporal',
 			NliSystem::PROPER_NOUN_CONSTANTS => 'Uses constants for proper nouns',
 			NliSystem::ONTOLOGY_USED => 'Uses an ontology',
 			NliSystem::STANDARD_ONTOLOGY => 'Standard ontology',
 
+			NliSystem::CONVERT_HEADER => 'Convert header',
+			NliSystem::CONVERT_TYPE => 'Convert type',
 			NliSystem::SYNTACTIC_REWRITE => 'Syntactic rewrites',
 			NliSystem::OPTIMIZE_QUERY =>  'Optimize query',
 			NliSystem::RESTRUCTURE_INFORMATION => 'Restructure information',
@@ -111,8 +125,10 @@ class NliSystemApi
 			NliSystem::KNOWLEDGE_BASE_LANGUAGES => 'Knowledge base languages',
 			NliSystem::KNOWLEDGE_BASE_AGGREGATION => 'Handle aggregations',
 
+			NliSystem::EXECUTE_HEADER => 'Execute header',
 			NliSystem::LOGICAL_REASONING => 'Logical reasoning',
 
+			NliSystem::GENERATE_HEADER => 'Generate header',
 			NliSystem::PARAPHRASE_QUERY => 'Paraphrase knowledge base query',
 		);
 
@@ -143,24 +159,6 @@ class NliSystemApi
 			NliSystem::ARTICLES => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::BOOKS => self::FEATURETYPE_TEXT_MULTIPLE,
 
-			NliSystem::DIALOG => self::FEATURETYPE_BOOL,
-			NliSystem::ANALYSIS => self::FEATURETYPE_TEXT_MULTIPLE,
-			NliSystem::SEMANTIC_GRAMMAR => self::FEATURETYPE_BOOL,
-			NliSystem::NEW_WORDS => self::FEATURETYPE_BOOL,
-			NliSystem::MULTI_DB => self::FEATURETYPE_BOOL,
-			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => self::FEATURETYPE_BOOL,
-			NliSystem::META_SELF => self::FEATURETYPE_BOOL,
-			NliSystem::META_KB => self::FEATURETYPE_BOOL,
-
-			NliSystem::DICTIONARY_LOOKUP => self::FEATURETYPE_BOOL,
-			NliSystem::MORPHOLOGICAL_ANALYSIS => self::FEATURETYPE_BOOL,
-			NliSystem::WORD_SEPARATION => self::FEATURETYPE_BOOL,
-			NliSystem::SPELLING_CORRECTION => self::FEATURETYPE_BOOL,
-			NliSystem::OPEN_ENDED_TOKEN_RECOGNITION => self::FEATURETYPE_BOOL,
-			NliSystem::PROPER_NAMES_FROM_KB => self::FEATURETYPE_BOOL,
-			NliSystem::PROPER_NAMES_BY_MATCHING => self::FEATURETYPE_BOOL,
-			NliSystem::QUOTED_STRING_RECOGNITION => self::FEATURETYPE_BOOL,
-
 			NliSystem::NP => self::FEATURETYPE_BOOL,
 			NliSystem::VP => self::FEATURETYPE_BOOL,
 			NliSystem::PP => self::FEATURETYPE_BOOL,
@@ -179,10 +177,32 @@ class NliSystemApi
 			NliSystem::THERE_BES => self::FEATURETYPE_BOOL,
 			NliSystem::ELLIPSIS => self::FEATURETYPE_BOOL,
 
+			NliSystem::DIALOG => self::FEATURETYPE_BOOL,
+			NliSystem::ANALYSIS => self::FEATURETYPE_TEXT_MULTIPLE,
+			NliSystem::SEMANTIC_GRAMMAR => self::FEATURETYPE_BOOL,
+			NliSystem::NEW_WORDS => self::FEATURETYPE_BOOL,
+			NliSystem::MULTI_DB => self::FEATURETYPE_BOOL,
+			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => self::FEATURETYPE_BOOL,
+			NliSystem::META_SELF => self::FEATURETYPE_BOOL,
+			NliSystem::META_KB => self::FEATURETYPE_BOOL,
+
+			NliSystem::DICTIONARY_LOOKUP => self::FEATURETYPE_BOOL,
+			NliSystem::MORPHOLOGICAL_ANALYSIS => self::FEATURETYPE_BOOL,
+			NliSystem::WORD_SEPARATION => self::FEATURETYPE_BOOL,
+			NliSystem::SPELLING_CORRECTION => self::FEATURETYPE_BOOL,
+			NliSystem::OPEN_ENDED_TOKEN_RECOGNITION => self::FEATURETYPE_BOOL,
+			NliSystem::PROPER_NAMES_FROM_KB => self::FEATURETYPE_BOOL,
+			NliSystem::PROPER_NAMES_BY_MATCHING => self::FEATURETYPE_BOOL,
+			NliSystem::QUOTED_STRING_RECOGNITION => self::FEATURETYPE_BOOL,
+
+			NliSystem::PARSE_HEADER => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystem::GRAMMAR_TYPE => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::PARSER_TYPE => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::SEMANTIC_GRAMMAR => self::FEATURETYPE_BOOL,
 
+			NliSystem::SYNTACTIC_FORM_TYPE => self::FEATURETYPE_TEXT_MULTIPLE,
+
+			NliSystem::INTERPRET_HEADER => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystem::SEMANTIC_ATTACHMENT => self::FEATURETYPE_BOOL,
 			NliSystem::MODIFIER_ATTACHMENT => self::FEATURETYPE_BOOL,
 			NliSystem::CONJUNCTION_DISJUNCTION => self::FEATURETYPE_BOOL,
@@ -197,12 +217,15 @@ class NliSystemApi
 			NliSystem::COOPERATIVE_RESPONSES => self::FEATURETYPE_BOOL,
 
 			NliSystem::SEMANTIC_FORM_TYPE => self::FEATURETYPE_TEXT_MULTIPLE,
+			NliSystem::SEMANTIC_FORM_DESC => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystem::EVENT_BASED => self::FEATURETYPE_BOOL,
 			NliSystem::TEMPORAL => self::FEATURETYPE_BOOL,
 			NliSystem::PROPER_NOUN_CONSTANTS => self::FEATURETYPE_BOOL,
 			NliSystem::ONTOLOGY_USED => self::FEATURETYPE_BOOL,
 			NliSystem::STANDARD_ONTOLOGY => self::FEATURETYPE_TEXT_MULTIPLE,
 
+			NliSystem::CONVERT_HEADER => self::FEATURETYPE_TEXT_SINGLE,
+			NliSystem::CONVERT_TYPE => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::SYNTACTIC_REWRITE => self::FEATURETYPE_BOOL,
 			NliSystem::OPTIMIZE_QUERY =>  self::FEATURETYPE_BOOL,
 			NliSystem::RESTRUCTURE_INFORMATION => self::FEATURETYPE_BOOL,
@@ -210,8 +233,10 @@ class NliSystemApi
 			NliSystem::KNOWLEDGE_BASE_LANGUAGES => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::KNOWLEDGE_BASE_AGGREGATION => self::FEATURETYPE_BOOL,
 
+			NliSystem::EXECUTE_HEADER => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystem::LOGICAL_REASONING => self::FEATURETYPE_BOOL,
 
+			NliSystem::GENERATE_HEADER => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystem::PARAPHRASE_QUERY => self::FEATURETYPE_BOOL,
 		);
 
@@ -241,17 +266,10 @@ class NliSystemApi
 		);
 	}
 
-	/**
-	 * @return NliSystem[]
-	 */
-	public function getAllSystems()
-	{
-		return $this->systems;
-	}
-
 	public function getSystem($systemId)
 	{
-		return isset($this->systems[$systemId]) ? $this->systems[$systemId] : null;
+		$systems = $this->getAllSystems();
+		return isset($systems[$systemId]) ? $systems[$systemId] : null;
 	}
 
 	/**
@@ -261,8 +279,9 @@ class NliSystemApi
 	public function getAllFeatureValues($feature)
 	{
 		$types = array();
+		$systems = $this->getAllSystems();
 
-		foreach ($this->systems as $System) {
+		foreach ($systems as $System) {
 			$value = $System->getAsArray($feature);
 			$types = array_merge($types, $value);
 		}

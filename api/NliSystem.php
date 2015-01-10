@@ -33,15 +33,6 @@ class NliSystem
 	const META_SELF = 'META-SELF';
 	const META_KB = 'META-KB';
 
-	const MORPHOLOGICAL_ANALYSIS = 'DO-MORPH-ANA';
-	const DICTIONARY_LOOKUP = 'DO-DICT-LOOKUP';
-	const WORD_SEPARATION = 'DO-WORD-SEPA';
-	const SPELLING_CORRECTION = 'DO-SPELL-CORR';
-	const OPEN_ENDED_TOKEN_RECOGNITION = 'DO-OPEN-ENDED';
-	const PROPER_NAMES_FROM_KB = 'DO-PROP-NAME-KB';
-	const PROPER_NAMES_BY_MATCHING = 'DO-PROP-NAME-MAT';
-	const QUOTED_STRING_RECOGNITION = 'DO-QUOTED-STRINGS';
-
 	const NP = 'NP';
 	const VP = 'VP';
 	const PP = 'PP';
@@ -60,10 +51,23 @@ class NliSystem
 	const THERE_BES = 'THERE';
 	const ELLIPSIS = 'ELLIPSIS';
 
+	const MORPHOLOGICAL_ANALYSIS = 'DO-MORPH-ANA';
+	const DICTIONARY_LOOKUP = 'DO-DICT-LOOKUP';
+	const WORD_SEPARATION = 'DO-WORD-SEPA';
+	const SPELLING_CORRECTION = 'DO-SPELL-CORR';
+	const OPEN_ENDED_TOKEN_RECOGNITION = 'DO-OPEN-ENDED';
+	const PROPER_NAMES_FROM_KB = 'DO-PROP-NAME-KB';
+	const PROPER_NAMES_BY_MATCHING = 'DO-PROP-NAME-MAT';
+	const QUOTED_STRING_RECOGNITION = 'DO-QUOTED-STRINGS';
+
+	const PARSE_HEADER = 'PARSE-HEADER';
 	const GRAMMAR_TYPE = 'GRAMMAR-TYPE';
 	const PARSER_TYPE = 'PARSER-TYPE';
 	const ACCEPT_UNGRAMMATICAL_SENTENCES = 'DO-UNGRAMMATICAL';
 
+	const SYNTACTIC_FORM_TYPE = 'SYNTACTIC-FORM-TYPE';
+
+	const INTERPRET_HEADER = 'INTERPRET-HEADER';
 	const SEMANTIC_ATTACHMENT = 'DO-SEMANTIC-ATTACH';
 	const MODIFIER_ATTACHMENT = 'DO-MODIFIER-ATTACH';
 	const CONJUNCTION_DISJUNCTION = 'DO-CONJUNCTION-DISJUNCTION';
@@ -78,12 +82,15 @@ class NliSystem
 	const COOPERATIVE_RESPONSES = 'COOPERATIVE-RESPONSES'; // Androutsopoulos, p. 24
 
 	const SEMANTIC_FORM_TYPE = 'SEMANTIC-FORM-TYPE';
+	const SEMANTIC_FORM_DESC = 'SEMANTIC-FORM-DESC';
 	const EVENT_BASED = 'EVENT-BASED';
 	const TEMPORAL = 'TEMPORAL';
 	const PROPER_NOUN_CONSTANTS = 'PROPER-NOUN-CNST';
 	const ONTOLOGY_USED = 'ONTOLOGY-USED';
 	const STANDARD_ONTOLOGY = 'STD-ONTOLOGY';
 
+	const CONVERT_HEADER = 'CONVERT-HEADER';
+	const CONVERT_TYPE = 'CONVERT-TYPE';
 	const SYNTACTIC_REWRITE = 'DO-SYNTACTIC-REWRITE';
 	const OPTIMIZE_QUERY = 'DO-OPTIMIZE-QUERY';
 	const RESTRUCTURE_INFORMATION = 'DO-INFORMATION-RESTRUCT';
@@ -91,8 +98,10 @@ class NliSystem
 	const KNOWLEDGE_BASE_LANGUAGES  = 'KB-LANGS';
 	const KNOWLEDGE_BASE_AGGREGATION = 'KB-AGGREGATIONS';
 
+	const EXECUTE_HEADER = 'EXECUTE-HEADER';
 	const LOGICAL_REASONING = 'DO-LOGICAL-REASON';
 
+	const GENERATE_HEADER = 'GENERATE-HEADER';
 	const PARAPHRASE_QUERY = 'PARAPHRASE-QUERY';
 
 
@@ -224,7 +233,7 @@ class NliSystem
 	 */
 	public function getKnowledgeBaseTypeDescription()
 	{
-		return $this->getValue('KB-TYPE-DESC');
+		return $this->getValue(self::KNOWLEDGE_BASE_DESCRIPTION);
 	}
 
 	/**
@@ -253,32 +262,32 @@ class NliSystem
 
 	public function getParserName()
 	{
-		return $this->getValue('PARSE-HEADER');
+		return $this->getValue(self::PARSE_HEADER);
 	}
 
 	public function getInterpreterName()
 	{
-		return $this->getValue('INTERPRET-HEADER');
+		return $this->getValue(self::INTERPRET_HEADER);
 	}
 
 	public function getSemanticFormName()
 	{
-		return $this->getValue('SEMANTIC-FORM-DESC');
+		return $this->getValue(self::SEMANTIC_FORM_DESC);
 	}
 
 	public function getConverterName()
 	{
-		return $this->getValue('CONVERT-HEADER');
+		return $this->getValue(self::CONVERT_HEADER);
 	}
 
 	public function useConverter()
 	{
-		return $this->getValue(self::SYNTACTIC_REWRITE) == 'yes';
+		return $this->getValue(self::SYNTACTIC_REWRITE);
 	}
 
 	public function useOntology()
 	{
-		return $this->getValue(self::ONTOLOGY_USED) == 'yes';
+		return $this->getValue(self::ONTOLOGY_USED);
 	}
 
 	public function getStandardOntology()
@@ -308,17 +317,12 @@ class NliSystem
 
 	public function getAnswererName()
 	{
-		return $this->getValue('GENERATE-HEADER');
-	}
-
-	public function getTokenizerName()
-	{
-		return $this->getValue('TOKENIZE-HEADER');
+		return $this->getValue(self::GENERATE_HEADER);
 	}
 
 	public function getExecuterName()
 	{
-		return $this->getValue('EXECUTE-HEADER');
+		return $this->getValue(self::EXECUTE_HEADER);
 	}
 
 	public function getContributors()

@@ -94,6 +94,7 @@ class EditSystemPage extends BackEndPage
             array(
                 'title' => 'Parsing',
                 'fields' => array(
+                    NliSystem::PARSE_HEADER,
                     NliSystem::GRAMMAR_TYPE,
                     NliSystem::PARSER_TYPE,
                 ),
@@ -101,6 +102,7 @@ class EditSystemPage extends BackEndPage
             array(
                 'title' => 'Interpretation',
                 'fields' => array(
+                    NliSystem::INTERPRET_HEADER,
                     NliSystem::SEMANTIC_ATTACHMENT,
                     NliSystem::MODIFIER_ATTACHMENT,
                     NliSystem::CONJUNCTION_DISJUNCTION,
@@ -118,6 +120,8 @@ class EditSystemPage extends BackEndPage
             array(
                 'title' => 'Conversion to knowledge base',
                 'fields' => array(
+                    NliSystem::CONVERT_HEADER,
+                    NliSystem::CONVERT_TYPE,
                     NliSystem::SYNTACTIC_REWRITE,
                     NliSystem::OPTIMIZE_QUERY,
                     NliSystem::RESTRUCTURE_INFORMATION,
@@ -126,19 +130,28 @@ class EditSystemPage extends BackEndPage
             array(
                 'title' => 'Knowledge base execution',
                 'fields' => array(
+                    NliSystem::EXECUTE_HEADER,
                     NliSystem::LOGICAL_REASONING,
                 ),
             ),
             array(
                 'title' => 'Answer generation',
                 'fields' => array(
+                    NliSystem::GENERATE_HEADER,
                     NliSystem::PARAPHRASE_QUERY,
+                ),
+            ),
+            array(
+                'title' => 'Syntactic form',
+                'fields' => array(
+                    NliSystem::SYNTACTIC_FORM_TYPE,
                 ),
             ),
             array(
                 'title' => 'Semantic form',
                 'fields' => array(
                     NliSystem::SEMANTIC_FORM_TYPE,
+                    NliSystem::SEMANTIC_FORM_DESC,
                     NliSystem::EVENT_BASED,
                     NliSystem::TEMPORAL,
                     NliSystem::PROPER_NOUN_CONSTANTS,

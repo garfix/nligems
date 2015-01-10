@@ -52,10 +52,6 @@ class DataFlow
 
         	$header = "Tokenize";
 
-        	if ($name = $System->getTokenizerName()) {
-        		$header .= "\n\"" . $name . "\"";
-        	}
-
         	$Bullets = $ComponentApi->createBullets();
         	foreach ($System->getTokenizationProcesses() as $process) {
         		$Bullets->addItem($process);

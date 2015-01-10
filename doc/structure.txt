@@ -46,8 +46,6 @@
 
 * B: natural language question form
 
-	+ TOKENIZE-HEADER: tokenizer name
-	- DO-TOKENIZE: tokenize
 	- DO-DICT-LOOKUP: dictionary lookup
 	- DO-MORPH-ANA: morphemic analysis
 	- DO-WORD-SEPA: semantic word separation, i.e. everybody => every body (free style)
@@ -95,7 +93,6 @@
 	- DO-SYNTACTIC-REWRITE: syntactic rewrite
 	- DO-OPTIMIZE-QUERY: optimize query for speed
 	+ CONVERT-TYPE: semantic to knowledge base transformation type (possible values: declarative, hard-coded)
-	+ KB-METADATA: data source metadata (free style)
 	- DO-INFORMATION-RESTRUCT: information restructuring
 
 * F: knowlegde base language form
@@ -103,13 +100,11 @@
 + KB-AGGREGATIONS: supports aggregations
 
 	+ EXECUTE-HEADER: executer name
-	- DO-EXECUTE: perform knowledge base action
 	- DO-LOGICAL-REASON: logical reasoning
 
 * G: knowledge base answers
 
 	+ GENERATE-HEADER: generate natural language answers description
-	- DO-GENERATE: generate natural language answers
 	- PARAPHRASE-QUERY: able to paraphrase the knowledge base query
 
 * H: natural language answer form
