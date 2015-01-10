@@ -42,11 +42,9 @@ class EditSystemPage extends BackEndPage
                     NliSystem::INSTITUTIONS,
                     NliSystem::INFLUENCED_BY,
                     NliSystem::NATURAL_LANGUAGES,
-                    NliSystem::PROGRAMMING_LANGUAGES,
                     NliSystem::SOURCE_CODE_URL,
                     NliSystem::KNOWLEDGE_BASE_TYPE,
                     NliSystem::KNOWLEDGE_BASE_DESCRIPTION,
-                    NliSystem::SENTENCE_TYPES,
                     NliSystem::ARTICLES,
                     NliSystem::BOOKS,
                     NliSystem::GEM_IMAGE,
@@ -55,17 +53,30 @@ class EditSystemPage extends BackEndPage
                 ),
             ),
             array(
+                'title' => 'Code',
+                'fields' => array(
+                    NliSystem::PROGRAMMING_LANGUAGES,
+                ),
+            ),
+            array(
                 'title' => 'System structure',
                 'fields' => array(
                     NliSystem::ANALYSIS,
+                    NliSystem::SEMANTIC_GRAMMAR,
                     NliSystem::DIALOG,
                     NliSystem::NEW_WORDS,
                     NliSystem::MULTI_DB,
+                    NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES,
+                    NliSystem::META_SELF,
+                    NliSystem::META_KB,
                 ),
             ),
             array(
                 'title' => 'Language constructs',
-                'fields' => $SystemsApi->getLanguageConstructs(),
+                'fields' => array_merge(
+                    $SystemsApi->getLanguageConstructs(),
+                    [NliSystem::SENTENCE_TYPES]
+                ),
             ),
             array(
                 'title' => 'Tokenization',
@@ -85,10 +96,6 @@ class EditSystemPage extends BackEndPage
                 'fields' => array(
                     NliSystem::GRAMMAR_TYPE,
                     NliSystem::PARSER_TYPE,
-                    NliSystem::SEMANTIC_GRAMMAR,
-                    NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES,
-                    NliSystem::META_SELF,
-                    NliSystem::META_KB,
                 ),
             ),
             array(

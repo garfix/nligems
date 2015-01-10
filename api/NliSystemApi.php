@@ -46,6 +46,7 @@ class NliSystemApi
 
 			NliSystem::DIALOG => 'Clarification dialog to improve input sentence',
 			NliSystem::ANALYSIS => 'Type of analysis',
+			NliSystem::SEMANTIC_GRAMMAR => 'Semantic grammar',
 			NliSystem::NEW_WORDS => 'Allows the user to introduce new words and concepts',
 			NliSystem::MULTI_DB => 'Queries multiple knowledge bases for single request',
 			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => 'Accept ungrammatical sentences',
@@ -94,7 +95,7 @@ class NliSystemApi
 			NliSystem::ANAPHORA_RESOLUTION => 'Anaphora resolution',
 			NliSystem::PLAUSIBILITY_RESOLUTION => 'Plausibility resolution',
 			NliSystem::UNIFORMIZATION_REWRITES => 'Uniformization rewrites',
-			NliSystem::COOPERATIVE_RESPONSES => 'Cooperative repsonses',
+			NliSystem::COOPERATIVE_RESPONSES => 'Cooperative repopnses',
 
 			NliSystem::SEMANTIC_FORM_TYPE => 'Semantic form type',
 			NliSystem::EVENT_BASED => 'Event based',
@@ -143,7 +144,8 @@ class NliSystemApi
 			NliSystem::BOOKS => self::FEATURETYPE_TEXT_MULTIPLE,
 
 			NliSystem::DIALOG => self::FEATURETYPE_BOOL,
-			NliSystem::ANALYSIS => self::FEATURETYPE_BOOL,
+			NliSystem::ANALYSIS => self::FEATURETYPE_TEXT_MULTIPLE,
+			NliSystem::SEMANTIC_GRAMMAR => self::FEATURETYPE_BOOL,
 			NliSystem::NEW_WORDS => self::FEATURETYPE_BOOL,
 			NliSystem::MULTI_DB => self::FEATURETYPE_BOOL,
 			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => self::FEATURETYPE_BOOL,
