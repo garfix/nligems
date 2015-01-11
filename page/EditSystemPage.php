@@ -169,6 +169,8 @@ class EditSystemPage extends BackEndPage
         );
 
         $Form = new Form();
+        $Form->addAttribute('action', $_SERVER['REQUEST_URI']);
+        $Form->addAttribute('method', 'POST');
 
         foreach ($fields as $group) {
 
@@ -219,6 +221,37 @@ class EditSystemPage extends BackEndPage
                 $Element = null;
         }
 
+        $Element->addAttribute('name', $field);
+
         return $Element;
+    }
+
+    public function processPost($postValues)
+    {
+        $SystemsApi = new NliSystemApi();
+
+        foreach ($postValues as $key => $value) {
+
+            $type = $SystemsApi->getFeatureType($key);
+
+             switch ($type) {
+                 case NliSystemApi::FEATURETYPE_BOOL:
+                     $inputValue = $value == 'on';
+                     break;
+                 case NliSystemApi::FEATURETYPE_TEXT_MULTIPLE:
+                     $inputValue = array_filter(explode("\r\n", $value));
+                     break;
+                 case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
+                     $inputValue = $value;
+                     break;
+                 default:
+                     trigger_error('Unknown type: ' . $type, E_USER_ERROR);
+                     $inputValue = null;
+            }
+
+            $this->System->set($key, $inputValue);
+        }
+
+        $SystemsApi->saveSystem($this->System);
     }
 }

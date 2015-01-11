@@ -1,0 +1,108 @@
+{
+    "NAME": "LUNAR",
+    "FIRST-YEAR": "1971",
+    "LAST-YEAR": "1971",
+    "CONTRIBUTORS": [
+        "William A. Woods"
+    ],
+    "INSTITUTIONS": [
+        "Cambridge",
+        "MA"
+    ],
+    "INFLUENCED-BY": [],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Lisp"
+    ],
+    "SOURCE-CODE": null,
+    "KB-TYPE": [
+        "infererence engine"
+    ],
+    "KB-TYPE-DESC": null,
+    "SENTENCE-TYPES": [
+        "question"
+    ],
+    "ARTICLES": [
+        "Semantics and quantification in natural language question answering"
+    ],
+    "BOOKS": [],
+    "GEM-IMAGE": "pearl.png",
+    "NAME-DESC": null,
+    "LONG-DESC": "A natural language interface to a database containing chemical analyses of moon rocks. One of the first NLI's that was actually used by a company.",
+    "ANALYSIS": [
+        "Syntax-based"
+    ],
+    "SEMANTIC-GRAMMAR": null,
+    "DO-DIALOG": false,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": null,
+    "PP": true,
+    "DP": null,
+    "ADVP": null,
+    "ADJP": true,
+    "RC": true,
+    "NEG": true,
+    "CONJ": null,
+    "ANAPHORA": null,
+    "AUX": null,
+    "MODALS": null,
+    "COMP-EXP": true,
+    "PASSIVES": null,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": null,
+    "DO-DICT-LOOKUP": null,
+    "DO-MORPH-ANA": true,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": null,
+    "DO-OPEN-ENDED": null,
+    "DO-PROP-NAME-KB": null,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": null,
+    "PARSE-HEADER": null,
+    "GRAMMAR-TYPE": [
+        "Augmented Transition Network"
+    ],
+    "PARSER-TYPE": [],
+    "SYNTACTIC-FORM-TYPE": [],
+    "INTERPRET-HEADER": null,
+    "DO-SEMANTIC-ATTACH": true,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": null,
+    "SEMANTIC-COMP-TYPE": "production rules",
+    "DO-SEMANTIC-CONFLICT": null,
+    "DO-QUANTIFIER-SCOPE": null,
+    "DO-ANAPHORA-RESOL": true,
+    "DO-PLAUSIB-JUDGE": null,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [],
+    "SEMANTIC-FORM-DESC": "Meaning Representation Language",
+    "EVENT-BASED": false,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": true,
+    "ONTOLOGY-USED": null,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": null,
+    "DO-SYNTACTIC-REWRITE": null,
+    "DO-OPTIMIZE-QUERY": true,
+    "CONVERT-TYPE": [],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [
+        "Lisp"
+    ],
+    "KB-AGGREGATIONS": true,
+    "EXECUTE-HEADER": "A Lisp inference engine",
+    "DO-LOGICAL-REASON": true,
+    "GENERATE-HEADER": null,
+    "PARAPHRASE-QUERY": null
+}

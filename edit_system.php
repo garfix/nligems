@@ -17,4 +17,8 @@ if (!$System) {
 
 $Page = $PageApi->getEditSystemPage($System);
 
+if (!empty($_POST)) {
+	$Page->processPost($_POST);
+}
+
 echo (string)$Page;

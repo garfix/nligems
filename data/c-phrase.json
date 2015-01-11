@@ -1,0 +1,111 @@
+{
+    "NAME": "C-PHRASE",
+    "FIRST-YEAR": "2008",
+    "LAST-YEAR": "2014",
+    "CONTRIBUTORS": [
+        "Michael Minock"
+    ],
+    "INSTITUTIONS": [
+        "Ume\u00e5 University"
+    ],
+    "INFLUENCED-BY": [],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Lisp"
+    ],
+    "SOURCE-CODE": "https:\/\/code.google.com\/p\/c-phrase\/",
+    "KB-TYPE": [
+        "relational"
+    ],
+    "KB-TYPE-DESC": null,
+    "SENTENCE-TYPES": [
+        "question"
+    ],
+    "ARTICLES": [
+        "C-Phrase: A system for building robust natural language interfaces to databases"
+    ],
+    "BOOKS": [],
+    "GEM-IMAGE": "blue-sapphire.png",
+    "NAME-DESC": "\"Thus analysis components must be robust, seeking out near misses when input is less than ideal and the system must be adaptable, making it easy for authors to patch running systems to catch unanticipated phrasings. The name C-Phrase is derived from \u2018catch phrase\u2019, which we interpret literally as \u2018catching phrases\u2019.\"",
+    "LONG-DESC": null,
+    "ANALYSIS": [
+        "Semantics-based"
+    ],
+    "SEMANTIC-GRAMMAR": true,
+    "DO-DIALOG": true,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": null,
+    "ADVP": null,
+    "ADJP": null,
+    "RC": null,
+    "NEG": null,
+    "CONJ": null,
+    "ANAPHORA": null,
+    "AUX": null,
+    "MODALS": null,
+    "COMP-EXP": null,
+    "PASSIVES": null,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": null,
+    "DO-DICT-LOOKUP": true,
+    "DO-MORPH-ANA": null,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": true,
+    "DO-OPEN-ENDED": true,
+    "DO-PROP-NAME-KB": true,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": true,
+    "PARSE-HEADER": null,
+    "GRAMMAR-TYPE": [
+        "Synchronous context-free grammars"
+    ],
+    "PARSER-TYPE": [
+        "A fuzzy chart parser"
+    ],
+    "SYNTACTIC-FORM-TYPE": [],
+    "INTERPRET-HEADER": null,
+    "DO-SEMANTIC-ATTACH": true,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": true,
+    "SEMANTIC-COMP-TYPE": "lambda calculus",
+    "DO-SEMANTIC-CONFLICT": null,
+    "DO-QUANTIFIER-SCOPE": null,
+    "DO-ANAPHORA-RESOL": null,
+    "DO-PLAUSIB-JUDGE": null,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "relational"
+    ],
+    "SEMANTIC-FORM-DESC": "Tuple calculus with extensions",
+    "EVENT-BASED": false,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": null,
+    "ONTOLOGY-USED": false,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": null,
+    "DO-SYNTACTIC-REWRITE": true,
+    "DO-OPTIMIZE-QUERY": null,
+    "CONVERT-TYPE": [],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [
+        "SQL"
+    ],
+    "KB-AGGREGATIONS": true,
+    "EXECUTE-HEADER": "An RDBMS (notably PostgreSQL)",
+    "DO-LOGICAL-REASON": null,
+    "GENERATE-HEADER": null,
+    "PARAPHRASE-QUERY": null
+}

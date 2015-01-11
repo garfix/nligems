@@ -1,0 +1,127 @@
+{
+    "NAME": "CLE",
+    "FIRST-YEAR": "1986",
+    "LAST-YEAR": "1989",
+    "CONTRIBUTORS": [
+        "Hiyan Alshawi",
+        "David Carter",
+        "Jan van Eijk",
+        "Bj\u00f6rn Gamb\u00e4ck",
+        "Robert C. Moore",
+        "Douglas B. Moran",
+        "Fernando C.N. Pereira",
+        "Stephen G. Pulman",
+        "Manny Rayner",
+        "Arnold G. Smith"
+    ],
+    "INSTITUTIONS": [
+        "SRI",
+        "CUCL"
+    ],
+    "INFLUENCED-BY": [],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Prolog"
+    ],
+    "SOURCE-CODE": null,
+    "KB-TYPE": [
+        "infererence engine"
+    ],
+    "KB-TYPE-DESC": "Custom Prolog database",
+    "SENTENCE-TYPES": [
+        "question",
+        "declarative",
+        "imperative"
+    ],
+    "ARTICLES": [
+        "The Core Language Engine"
+    ],
+    "BOOKS": [],
+    "NAME-DESC": "Core Language Engine",
+    "GEM-IMAGE": "coral.png",
+    "LONG-DESC": "CLE distinguishes several distinct stages in the processing of the semantic representation.\nCLE uses unification for semantic composition.",
+    "ANALYSIS": [
+        "Semantics-based"
+    ],
+    "SEMANTIC-GRAMMAR": null,
+    "DO-DIALOG": false,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": true,
+    "ADVP": true,
+    "ADJP": null,
+    "RC": true,
+    "NEG": null,
+    "CONJ": true,
+    "ANAPHORA": true,
+    "AUX": true,
+    "MODALS": null,
+    "COMP-EXP": true,
+    "PASSIVES": true,
+    "CLEFTS": true,
+    "THERE": true,
+    "ELLIPSIS": true,
+    "DO-DICT-LOOKUP": true,
+    "DO-MORPH-ANA": true,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": null,
+    "DO-OPEN-ENDED": null,
+    "DO-PROP-NAME-KB": null,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": null,
+    "PARSE-HEADER": null,
+    "GRAMMAR-TYPE": [
+        "Generalized Phrase Structure Grammar"
+    ],
+    "PARSER-TYPE": [
+        "A \"left corner\" parser with top-down filtering"
+    ],
+    "SYNTACTIC-FORM-TYPE": [
+        "parse trees"
+    ],
+    "INTERPRET-HEADER": null,
+    "DO-SEMANTIC-ATTACH": true,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": true,
+    "SEMANTIC-COMP-TYPE": "unification",
+    "DO-SEMANTIC-CONFLICT": true,
+    "DO-QUANTIFIER-SCOPE": true,
+    "DO-ANAPHORA-RESOL": true,
+    "DO-PLAUSIB-JUDGE": true,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "procedural"
+    ],
+    "SEMANTIC-FORM-DESC": "FOPC with extensions",
+    "EVENT-BASED": true,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": true,
+    "ONTOLOGY-USED": true,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": null,
+    "DO-SYNTACTIC-REWRITE": true,
+    "DO-OPTIMIZE-QUERY": null,
+    "CONVERT-TYPE": [
+        "hard-coded"
+    ],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [
+        "Logical Form"
+    ],
+    "KB-AGGREGATIONS": null,
+    "EXECUTE-HEADER": "A Prolog database",
+    "DO-LOGICAL-REASON": null,
+    "GENERATE-HEADER": null,
+    "PARAPHRASE-QUERY": null
+}

@@ -1,0 +1,112 @@
+{
+    "NAME": "Chat-80",
+    "FIRST-YEAR": "1981",
+    "LAST-YEAR": "1982",
+    "CONTRIBUTORS": [
+        "David H.D. Warren",
+        "Fernando C.N. Pereira"
+    ],
+    "INSTITUTIONS": [
+        "SRI"
+    ],
+    "INFLUENCED-BY": [
+        "Veronica Dahl"
+    ],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Prolog"
+    ],
+    "SOURCE-CODE": "https:\/\/web.archive.org\/web\/20131003031250\/http:\/\/www.cis.upenn.edu\/~pereira\/oldies.html",
+    "KB-TYPE": [],
+    "KB-TYPE-DESC": null,
+    "SENTENCE-TYPES": [
+        "question"
+    ],
+    "ARTICLES": [
+        "An efficient easily adaptable system for interpreting natural language queries"
+    ],
+    "BOOKS": [],
+    "GEM-IMAGE": "cats-eye.png",
+    "NAME-DESC": null,
+    "LONG-DESC": "The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
+    "ANALYSIS": [
+        "Semantics-based"
+    ],
+    "SEMANTIC-GRAMMAR": null,
+    "DO-DIALOG": false,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": true,
+    "ADVP": null,
+    "ADJP": null,
+    "RC": true,
+    "NEG": true,
+    "CONJ": null,
+    "ANAPHORA": null,
+    "AUX": null,
+    "MODALS": null,
+    "COMP-EXP": null,
+    "PASSIVES": null,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": null,
+    "DO-DICT-LOOKUP": null,
+    "DO-MORPH-ANA": null,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": null,
+    "DO-OPEN-ENDED": null,
+    "DO-PROP-NAME-KB": null,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": null,
+    "PARSE-HEADER": null,
+    "GRAMMAR-TYPE": [
+        "Extraposition Grammars"
+    ],
+    "PARSER-TYPE": [
+        "Top-down backtracking"
+    ],
+    "SYNTACTIC-FORM-TYPE": [
+        "parse trees"
+    ],
+    "INTERPRET-HEADER": null,
+    "DO-SEMANTIC-ATTACH": true,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": true,
+    "SEMANTIC-COMP-TYPE": null,
+    "DO-SEMANTIC-CONFLICT": null,
+    "DO-QUANTIFIER-SCOPE": true,
+    "DO-ANAPHORA-RESOL": null,
+    "DO-PLAUSIB-JUDGE": null,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "procedural"
+    ],
+    "SEMANTIC-FORM-DESC": "FOPC with extensions",
+    "EVENT-BASED": null,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": true,
+    "ONTOLOGY-USED": null,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": null,
+    "DO-SYNTACTIC-REWRITE": true,
+    "DO-OPTIMIZE-QUERY": true,
+    "CONVERT-TYPE": [],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [],
+    "KB-AGGREGATIONS": true,
+    "EXECUTE-HEADER": "A Prolog database",
+    "DO-LOGICAL-REASON": null,
+    "GENERATE-HEADER": null,
+    "PARAPHRASE-QUERY": null
+}

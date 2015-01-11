@@ -1,0 +1,122 @@
+{
+    "NAME": "ORAKEL",
+    "FIRST-YEAR": "2004",
+    "LAST-YEAR": "2007",
+    "CONTRIBUTORS": [
+        "Philipp Cimiano",
+        "Peter Haase",
+        "J\u00f6rg Heizmann",
+        "Matthias Mantel",
+        "Rudi Studer"
+    ],
+    "INSTITUTIONS": [
+        "Universit\u00e4t Karlsruhe"
+    ],
+    "INFLUENCED-BY": [
+        "TEAM"
+    ],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Prolog"
+    ],
+    "SOURCE-CODE": null,
+    "KB-TYPE": [
+        "infererence engine"
+    ],
+    "KB-TYPE-DESC": null,
+    "SENTENCE-TYPES": [
+        "question"
+    ],
+    "ARTICLES": [
+        "Towards portable natural language interfaces to knowledge bases - The case of the ORAKEL system"
+    ],
+    "BOOKS": [],
+    "GEM-IMAGE": "diamond.png",
+    "NAME-DESC": null,
+    "LONG-DESC": null,
+    "ANALYSIS": [
+        "Semantics-based"
+    ],
+    "SEMANTIC-GRAMMAR": null,
+    "DO-DIALOG": false,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": null,
+    "ADVP": null,
+    "ADJP": null,
+    "RC": true,
+    "NEG": true,
+    "CONJ": null,
+    "ANAPHORA": null,
+    "AUX": true,
+    "MODALS": null,
+    "COMP-EXP": null,
+    "PASSIVES": true,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": null,
+    "DO-DICT-LOOKUP": true,
+    "DO-MORPH-ANA": null,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": null,
+    "DO-OPEN-ENDED": null,
+    "DO-PROP-NAME-KB": null,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": null,
+    "PARSE-HEADER": "Query Interpreter",
+    "GRAMMAR-TYPE": [
+        "Logical Description Grammar"
+    ],
+    "PARSER-TYPE": [
+        "Earley"
+    ],
+    "SYNTACTIC-FORM-TYPE": [],
+    "INTERPRET-HEADER": null,
+    "DO-SEMANTIC-ATTACH": true,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": true,
+    "SEMANTIC-COMP-TYPE": "lambda calculus",
+    "DO-SEMANTIC-CONFLICT": null,
+    "DO-QUANTIFIER-SCOPE": null,
+    "DO-ANAPHORA-RESOL": null,
+    "DO-PLAUSIB-JUDGE": null,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "ontology"
+    ],
+    "SEMANTIC-FORM-DESC": "FOPC with extensions",
+    "EVENT-BASED": null,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": null,
+    "ONTOLOGY-USED": true,
+    "STD-ONTOLOGY": [
+        "DOLCE"
+    ],
+    "CONVERT-HEADER": "Query Converter",
+    "DO-SYNTACTIC-REWRITE": true,
+    "DO-OPTIMIZE-QUERY": null,
+    "CONVERT-TYPE": [
+        "hard-coded"
+    ],
+    "DO-INFORMATION-RESTRUCT": true,
+    "KB-LANGS": [
+        "F-Logic",
+        "SPARQL"
+    ],
+    "KB-AGGREGATIONS": true,
+    "EXECUTE-HEADER": "An F-Logic inference engine (notably KAON2)",
+    "DO-LOGICAL-REASON": null,
+    "GENERATE-HEADER": "The answer generation component",
+    "PARAPHRASE-QUERY": null
+}

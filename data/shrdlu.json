@@ -1,0 +1,115 @@
+{
+    "NAME": "SHRDLU",
+    "FIRST-YEAR": "1968",
+    "LAST-YEAR": "1970",
+    "CONTRIBUTORS": [
+        "Terry Winograd"
+    ],
+    "INSTITUTIONS": [
+        "MIT"
+    ],
+    "INFLUENCED-BY": [],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Lisp"
+    ],
+    "SOURCE-CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
+    "KB-TYPE": [
+        "inference engine"
+    ],
+    "KB-TYPE-DESC": "Planner databases",
+    "SENTENCE-TYPES": [
+        "question",
+        "declarative",
+        "imperative"
+    ],
+    "ARTICLES": [],
+    "BOOKS": [
+        "Winograd, T. Understanding Natural Language. Academic Press, 1972."
+    ],
+    "GEM-IMAGE": "emerald.png",
+    "NAME-DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
+    "LONG-DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.It",
+    "ANALYSIS": [
+        "Syntax-based"
+    ],
+    "SEMANTIC-GRAMMAR": null,
+    "DO-DIALOG": true,
+    "NEW-WORDS": true,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": true,
+    "META-KB": true,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": true,
+    "ADVP": null,
+    "ADJP": true,
+    "RC": true,
+    "NEG": null,
+    "CONJ": true,
+    "ANAPHORA": true,
+    "AUX": true,
+    "MODALS": null,
+    "COMP-EXP": true,
+    "PASSIVES": true,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": true,
+    "DO-DICT-LOOKUP": true,
+    "DO-MORPH-ANA": true,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": null,
+    "DO-OPEN-ENDED": true,
+    "DO-PROP-NAME-KB": null,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": null,
+    "PARSE-HEADER": "GRAMMAR",
+    "GRAMMAR-TYPE": [
+        "Programmar \/ Systemic Grammar"
+    ],
+    "PARSER-TYPE": [
+        "A top-down left-to-right parser"
+    ],
+    "SYNTACTIC-FORM-TYPE": [
+        "parse trees"
+    ],
+    "INTERPRET-HEADER": "SEMANTICS",
+    "DO-SEMANTIC-ATTACH": true,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": true,
+    "SEMANTIC-COMP-TYPE": "custom",
+    "DO-SEMANTIC-CONFLICT": true,
+    "DO-QUANTIFIER-SCOPE": true,
+    "DO-ANAPHORA-RESOL": true,
+    "DO-PLAUSIB-JUDGE": true,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "procedural"
+    ],
+    "SEMANTIC-FORM-DESC": "A Planner representation",
+    "EVENT-BASED": true,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": null,
+    "ONTOLOGY-USED": true,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": "",
+    "DO-SYNTACTIC-REWRITE": false,
+    "DO-OPTIMIZE-QUERY": null,
+    "CONVERT-TYPE": [],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [
+        "Planner representation"
+    ],
+    "KB-AGGREGATIONS": true,
+    "EXECUTE-HEADER": "Planner",
+    "DO-LOGICAL-REASON": true,
+    "GENERATE-HEADER": "ANSWER",
+    "PARAPHRASE-QUERY": null
+}

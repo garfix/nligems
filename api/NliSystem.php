@@ -119,6 +119,14 @@ class NliSystem
 		return $value;
 	}
 
+	/**
+	 * @return array
+	 */
+	public function getAllValues()
+	{
+		return $this->values;
+	}
+
 	public function getAsArray($key)
 	{
 		$value = $this->get($key);

@@ -12,7 +12,7 @@ class FormElementText extends HtmlElement
 
     public function __construct()
     {
-        parent::__construct('input');
+        parent::__construct('input', false);
 
         $this->addAttribute('type', 'text');
     }

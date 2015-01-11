@@ -1,0 +1,119 @@
+{
+    "NAME": "EUFID",
+    "FIRST-YEAR": "1976",
+    "LAST-YEAR": "1981",
+    "CONTRIBUTORS": [
+        "Marjorie Templeton"
+    ],
+    "INSTITUTIONS": [
+        "SDC"
+    ],
+    "INFLUENCED-BY": [],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "Fortran",
+        "C"
+    ],
+    "SOURCE-CODE": null,
+    "KB-TYPE": [
+        "relational",
+        "tree-based"
+    ],
+    "KB-TYPE-DESC": "Any RDBMS",
+    "SENTENCE-TYPES": [
+        "question"
+    ],
+    "ARTICLES": [
+        "EUFID: A Friendly And Flexible Front-End For Data Management Systems",
+        "Problems in natural-language interface with examples from EUFID"
+    ],
+    "BOOKS": [],
+    "GEM-IMAGE": "hessonite.png",
+    "NAME-DESC": "End-User Friendly Interface to Data management",
+    "LONG-DESC": null,
+    "ANALYSIS": [
+        "Semantics-based"
+    ],
+    "SEMANTIC-GRAMMAR": true,
+    "DO-DIALOG": true,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": null,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": null,
+    "ADVP": null,
+    "ADJP": null,
+    "RC": null,
+    "NEG": false,
+    "CONJ": true,
+    "ANAPHORA": true,
+    "AUX": null,
+    "MODALS": null,
+    "COMP-EXP": null,
+    "PASSIVES": null,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": null,
+    "DO-DICT-LOOKUP": true,
+    "DO-MORPH-ANA": null,
+    "DO-WORD-SEPA": null,
+    "DO-SPELL-CORR": true,
+    "DO-OPEN-ENDED": true,
+    "DO-PROP-NAME-KB": null,
+    "DO-PROP-NAME-MAT": null,
+    "DO-QUOTED-STRINGS": null,
+    "PARSE-HEADER": "The analyzer",
+    "GRAMMAR-TYPE": [
+        "Case Grammar"
+    ],
+    "PARSER-TYPE": [
+        "A variant of Cocke-Kasami-Younger"
+    ],
+    "SYNTACTIC-FORM-TYPE": [
+        "parse trees"
+    ],
+    "INTERPRET-HEADER": "The mapper",
+    "DO-SEMANTIC-ATTACH": null,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": null,
+    "DO-SEMANTIC-COMP": null,
+    "SEMANTIC-COMP-TYPE": null,
+    "DO-SEMANTIC-CONFLICT": null,
+    "DO-QUANTIFIER-SCOPE": null,
+    "DO-ANAPHORA-RESOL": true,
+    "DO-PLAUSIB-JUDGE": null,
+    "DO-UNIFORM-REWRITES": null,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "relational"
+    ],
+    "SEMANTIC-FORM-DESC": "Intermediate Language",
+    "EVENT-BASED": false,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": null,
+    "ONTOLOGY-USED": false,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": "A translator module",
+    "DO-SYNTACTIC-REWRITE": true,
+    "DO-OPTIMIZE-QUERY": null,
+    "CONVERT-TYPE": [
+        "hard-coded"
+    ],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [
+        "QUEL",
+        "WWDMS query language"
+    ],
+    "KB-AGGREGATIONS": true,
+    "EXECUTE-HEADER": "An RDBMS",
+    "DO-LOGICAL-REASON": null,
+    "GENERATE-HEADER": null,
+    "PARAPHRASE-QUERY": null
+}

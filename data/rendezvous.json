@@ -1,0 +1,112 @@
+{
+    "NAME": "RENDEZVOUS",
+    "FIRST-YEAR": "1974",
+    "LAST-YEAR": "1977",
+    "CONTRIBUTORS": [
+        "Edgar F. Codd",
+        "Robert S. Arnold",
+        "Jean-Marc Cadiou",
+        "Chin-Liang Chang",
+        "Nick Roussopoulos"
+    ],
+    "INSTITUTIONS": [
+        "IBM"
+    ],
+    "INFLUENCED-BY": [],
+    "NAT-LANGS": [
+        "English"
+    ],
+    "PROG-LANGS": [
+        "APL"
+    ],
+    "SOURCE-CODE": null,
+    "KB-TYPE": [
+        "relational"
+    ],
+    "KB-TYPE-DESC": null,
+    "SENTENCE-TYPES": [
+        "question"
+    ],
+    "ARTICLES": [
+        "Seven Steps to Rendezvous with the Casual User",
+        "RENDEZVOUS Version 1: An Experimental English Language Query Formulation System for Casual Users of Relational Data Bases"
+    ],
+    "BOOKS": [],
+    "GEM-IMAGE": "blue-sapphire.png",
+    "NAME-DESC": "To rendezvous (i.e. \"meet\") with the casual user",
+    "LONG-DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make changes to the query later.\n\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.",
+    "ANALYSIS": [
+        "Pattern-matching"
+    ],
+    "SEMANTIC-GRAMMAR": null,
+    "DO-DIALOG": true,
+    "NEW-WORDS": null,
+    "MULTI-DB": false,
+    "DO-UNGRAMMATICAL": true,
+    "META-SELF": null,
+    "META-KB": null,
+    "NP": true,
+    "VP": true,
+    "PP": true,
+    "DP": null,
+    "ADVP": null,
+    "ADJP": true,
+    "RC": null,
+    "NEG": true,
+    "CONJ": null,
+    "ANAPHORA": null,
+    "AUX": null,
+    "MODALS": null,
+    "COMP-EXP": null,
+    "PASSIVES": null,
+    "CLEFTS": null,
+    "THERE": null,
+    "ELLIPSIS": null,
+    "DO-DICT-LOOKUP": true,
+    "DO-MORPH-ANA": true,
+    "DO-WORD-SEPA": false,
+    "DO-SPELL-CORR": true,
+    "DO-OPEN-ENDED": true,
+    "DO-PROP-NAME-KB": true,
+    "DO-PROP-NAME-MAT": false,
+    "DO-QUOTED-STRINGS": false,
+    "PARSE-HEADER": null,
+    "GRAMMAR-TYPE": [],
+    "PARSER-TYPE": [],
+    "SYNTACTIC-FORM-TYPE": [],
+    "INTERPRET-HEADER": null,
+    "DO-MODIFIER-ATTACH": null,
+    "DO-CONJUNCTION-DISJUNCTION": null,
+    "DO-NOMINAL-COMPOUNDS": true,
+    "DO-SEMANTIC-ATTACH": null,
+    "DO-SEMANTIC-COMP": true,
+    "SEMANTIC-COMP-TYPE": "custom",
+    "DO-SEMANTIC-CONFLICT": true,
+    "DO-QUANTIFIER-SCOPE": null,
+    "DO-ANAPHORA-RESOL": false,
+    "DO-PLAUSIB-JUDGE": false,
+    "DO-UNIFORM-REWRITES": false,
+    "COOPERATIVE-RESPONSES": null,
+    "SEMANTIC-FORM-TYPE": [
+        "relational"
+    ],
+    "SEMANTIC-FORM-DESC": null,
+    "EVENT-BASED": false,
+    "TEMPORAL": null,
+    "PROPER-NOUN-CNST": false,
+    "ONTOLOGY-USED": false,
+    "STD-ONTOLOGY": [],
+    "CONVERT-HEADER": null,
+    "DO-SYNTACTIC-REWRITE": null,
+    "DO-OPTIMIZE-QUERY": null,
+    "CONVERT-TYPE": [],
+    "DO-INFORMATION-RESTRUCT": null,
+    "KB-LANGS": [
+        "DEDUCE"
+    ],
+    "KB-AGGREGATIONS": "EXIST, COUNT",
+    "EXECUTE-HEADER": null,
+    "DO-LOGICAL-REASON": false,
+    "GENERATE-HEADER": null,
+    "PARAPHRASE-QUERY": true
+}

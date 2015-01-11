@@ -27,11 +27,15 @@ class NliSystemApi
 		return $this->systems;
 	}
 
+	public function saveSystem(NliSystem $System)
+	{
+		$Reader = new NliSystemReader();
+		$Reader->writeSystem($System, __DIR__ . '/../data/' . $System->getId() . '.json');
+	}
+
 	public function getFeatureName($feature)
 	{
 		$names = array(
-
-			NliSystem::DICTIONARY_LOOKUP => 'Dictionary lookup',
 
 			NliSystem::NAME => 'Name',
 			NliSystem::FIRST_YEAR => 'First year',

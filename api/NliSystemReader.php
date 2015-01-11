@@ -11,9 +11,9 @@ class NliSystemReader
 	{
 		$systems = array();
 
-		foreach (glob($dir . '/*.txt') as $path) {
+		foreach (glob($dir . '/*.json') as $path) {
 
-			preg_match('#/([^/.]+)\.txt#', $path, $matches);
+			preg_match('#/([^/.]+)\.json#', $path, $matches);
 			$id = $matches[1];
 
 			$systems[$id] = $this->readSystem($id, $path);
@@ -24,61 +24,35 @@ class NliSystemReader
 
 	private function readSystem($id, $filename)
 	{
-		$SystemApi = new NliSystemApi();
-
 		$System = new NliSystem();
 
 		$System->set('id', $id);
 
-		$lines = file($filename);
+		$contents = file_get_contents($filename);
+		$structure = json_decode($contents);
 
-		for ($i = 0; $i < count($lines); $i++) {
-
-			$line = trim($lines[$i]);
-
-			if ($line != '') {
-
-				if (!preg_match('/([^:]+):(.*)/', $line, $matches)) {
-					trigger_error('Syntax error in ' . $filename . ' line ' . ($i + 1), E_USER_WARNING);
-					continue;
-				}
-
-				$key = trim($matches[1]);
-				$value = trim($matches[2]);
-
-				$featureType = $SystemApi->getFeatureType($key);
-
-				if ($featureType == NliSystemApi::FEATURETYPE_TEXT_MULTIPLE) {
-
-					$value = array_filter(array_map('trim', explode(',', $value)));
-
-				} elseif ($value == 'yes') {
-
-					$value = true;
-
-				} elseif ($value == 'no') {
-
-					$value = false;
-
-				} elseif ($value == '') {
-
-					$value = null;
-
-				} elseif ($value == '-') {
-
-					$value = '';
-					$i++;
-					while ($i < count($lines) && ($line = trim($lines[$i])) != '-') {
-						$value .= ($value ? "\n" : "") . $line;
-						$i++;
-					}
-				}
-
-				$System->set($key, $value);
-			}
-
+		foreach ($structure as $key => $value) {
+			$System->set($key, $value);
 		}
 
 		return $System;
+	}
+
+	public function writeSystem(NliSystem $System, $fileName)
+	{
+		$structure = [];
+
+		foreach ($System->getAllValues() as $key => $value) {
+
+			if ($key == 'id') {
+				continue;
+			}
+
+			$structure[$key] = $value;
+		}
+
+		$json = json_encode($structure, JSON_PRETTY_PRINT);
+
+		file_put_contents($fileName, $json);
 	}
 }
