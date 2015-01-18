@@ -32,10 +32,10 @@ class EditSystemPage extends BackEndPage
     {
         $SystemsApi = new NliSystemApi();
 
-        $fields = array(
+        $features = array(
             array(
                 'title' => 'General',
-                'fields' => array(
+                'features' => array(
                     NliSystem::NAME,
                     NliSystem::FIRST_YEAR,
                     NliSystem::LAST_YEAR,
@@ -55,13 +55,13 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Code',
-                'fields' => array(
+                'features' => array(
                     NliSystem::PROGRAMMING_LANGUAGES,
                 ),
             ),
             array(
                 'title' => 'System structure',
-                'fields' => array(
+                'features' => array(
                     NliSystem::ANALYSIS,
                     NliSystem::SEMANTIC_GRAMMAR,
                     NliSystem::DIALOG,
@@ -74,14 +74,14 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Language constructs',
-                'fields' => array_merge(
+                'features' => array_merge(
                     $SystemsApi->getLanguageConstructs(),
                     [NliSystem::SENTENCE_TYPES]
                 ),
             ),
             array(
                 'title' => 'Tokenization',
-                'fields' => array(
+                'features' => array(
                     NliSystem::MORPHOLOGICAL_ANALYSIS,
                     NliSystem::DICTIONARY_LOOKUP,
                     NliSystem::WORD_SEPARATION,
@@ -94,7 +94,7 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Parsing',
-                'fields' => array(
+                'features' => array(
                     NliSystem::PARSE_HEADER,
                     NliSystem::GRAMMAR_TYPE,
                     NliSystem::PARSER_TYPE,
@@ -102,7 +102,7 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Interpretation',
-                'fields' => array(
+                'features' => array(
                     NliSystem::INTERPRET_HEADER,
                     NliSystem::SEMANTIC_ATTACHMENT,
                     NliSystem::MODIFIER_ATTACHMENT,
@@ -120,7 +120,7 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Conversion to knowledge base',
-                'fields' => array(
+                'features' => array(
                     NliSystem::CONVERT_HEADER,
                     NliSystem::CONVERT_TYPE,
                     NliSystem::SYNTACTIC_REWRITE,
@@ -130,27 +130,27 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Knowledge base execution',
-                'fields' => array(
+                'features' => array(
                     NliSystem::EXECUTE_HEADER,
                     NliSystem::LOGICAL_REASONING,
                 ),
             ),
             array(
                 'title' => 'Answer generation',
-                'fields' => array(
+                'features' => array(
                     NliSystem::GENERATE_HEADER,
                     NliSystem::PARAPHRASE_QUERY,
                 ),
             ),
             array(
                 'title' => 'Syntactic form',
-                'fields' => array(
+                'features' => array(
                     NliSystem::SYNTACTIC_FORM_TYPE,
                 ),
             ),
             array(
                 'title' => 'Semantic form',
-                'fields' => array(
+                'features' => array(
                     NliSystem::SEMANTIC_FORM_TYPE,
                     NliSystem::SEMANTIC_FORM_DESC,
                     NliSystem::EVENT_BASED,
@@ -162,7 +162,7 @@ class EditSystemPage extends BackEndPage
             ),
             array(
                 'title' => 'Knowledge base form',
-                'fields' => array(
+                'features' => array(
                     NliSystem::KNOWLEDGE_BASE_LANGUAGES,
                     NliSystem::KNOWLEDGE_BASE_AGGREGATION,
                 ),
@@ -173,19 +173,19 @@ class EditSystemPage extends BackEndPage
         $Form->addAttribute('action', $_SERVER['REQUEST_URI']);
         $Form->addAttribute('method', 'POST');
 
-        foreach ($fields as $group) {
+        foreach ($features as $group) {
 
             $Form->addChildNode($FieldSet = new FieldSet());
             $FieldSet->addChildNode(new Legend($group['title']));
 
-            $FieldSet->addChildNode($Table = new Table(count($fields), 2));
+            $FieldSet->addChildNode($Table = new Table(count($features), 2));
             $Table->treatCellContentsAsHtml(true);
 
 
-            foreach ($group['fields'] as $i => $field) {
+            foreach ($group['features'] as $i => $feature) {
 
-                $Table->set($i, 0, $SystemsApi->getFeatureName($field));
-                $Table->set($i, 1, $this->getFormElement($SystemsApi, $field));
+                $Table->set($i, 0, $SystemsApi->getFeatureName($feature));
+                $Table->set($i, 1, $this->getFormElement($SystemsApi, $feature));
             }
         }
 
@@ -194,28 +194,28 @@ class EditSystemPage extends BackEndPage
         return (string)$Form;
     }
 
-    private function getFormElement(NliSystemApi $SystemsApi, $field)
+    private function getFormElement(NliSystemApi $SystemsApi, $feature)
     {
-        $type = $SystemsApi->getFeatureType($field);
+        $type = $SystemsApi->getFeatureType($feature);
 
-        $value = $this->System->get($field);
+        $value = $this->System->get($feature);
 
         switch ($type) {
             case NliSystemApi::FEATURETYPE_BOOL:
                 $Element = new FormElementCheckbox();
-                $Element->addAttribute('name', $field);
+                $Element->addAttribute('name', $feature);
                 if ($value) {
                     $Element->addAttribute('checked', true);
                 }
                 break;
             case NliSystemApi::FEATURETYPE_TEXT_MULTIPLE:
 
-                if ($possibleValues = $SystemsApi->getPossibleValues($field)) {
-                    $Element = new FormElementCheckboxGroup($field, $possibleValues);
+                if ($possibleValues = $SystemsApi->getPossibleValues($feature)) {
+                    $Element = new FormElementCheckboxGroup($feature, $possibleValues);
                     $Element->setValue($value);
                 } else {
                     $Element = new FormElementTextarea();
-                    $Element->addAttribute('name', $field);
+                    $Element->addAttribute('name', $feature);
                     $Element->addAttribute('cols', 100);
                     $value = implode("\n", $value);
                     $Element->addChildText($value);
@@ -223,7 +223,7 @@ class EditSystemPage extends BackEndPage
                 break;
             case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
                 $Element = new FormElementText();
-                $Element->addAttribute('name', $field);
+                $Element->addAttribute('name', $feature);
                 $Element->addAttribute('value', $value);
                 break;
             default:

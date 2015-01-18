@@ -22,7 +22,7 @@ class CharacteristicsList
     {
         $NliSystemApi = new NliSystemApi();
 
-        $fields = array(
+        $features = array(
             NliSystem::PROGRAMMING_LANGUAGES,
             NliSystem::NATURAL_LANGUAGES,
             NliSystem::ANALYSIS,
@@ -31,13 +31,13 @@ class CharacteristicsList
 
         $DL = new DefinitionList();
         $DL->addClass('characteristics');
-        foreach ($fields as $field) {
-            $name = $NliSystemApi->getFeatureName($field);
-            $value = $this->System->get($field);
+        foreach ($features as $feature) {
+            $name = $NliSystemApi->getFeatureName($feature);
+            $value = $this->System->get($feature);
             if ($value) {
                 $serialized = is_array($value) ? implode(", ", $value) : $value;
 
-                if ($field == NliSystem::ANALYSIS) {
+                if ($feature == NliSystem::ANALYSIS) {
                     if ($this->System->get(NliSystem::SEMANTIC_GRAMMAR)) {
                         $serialized .= ' (semantic grammar)';
                     }
