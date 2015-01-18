@@ -16,7 +16,7 @@
         "Fortran",
         "C"
     ],
-    "SOURCE-CODE": null,
+    "SOURCE-CODE": "",
     "KB-TYPE": [
         "relational",
         "tree-based"
@@ -32,7 +32,7 @@
     "BOOKS": [],
     "GEM-IMAGE": "hessonite.png",
     "NAME-DESC": "End-User Friendly Interface to Data management",
-    "LONG-DESC": null,
+    "LONG-DESC": "",
     "ANALYSIS": [
         "Semantics-based"
     ],
@@ -84,7 +84,7 @@
     "DO-CONJUNCTION-DISJUNCTION": null,
     "DO-NOMINAL-COMPOUNDS": null,
     "DO-SEMANTIC-COMP": null,
-    "SEMANTIC-COMP-TYPE": null,
+    "SEMANTIC-COMP-TYPE": [],
     "DO-SEMANTIC-CONFLICT": null,
     "DO-QUANTIFIER-SCOPE": null,
     "DO-ANAPHORA-RESOL": true,
@@ -114,6 +114,6 @@
     "KB-AGGREGATIONS": true,
     "EXECUTE-HEADER": "An RDBMS",
     "DO-LOGICAL-REASON": null,
-    "GENERATE-HEADER": null,
+    "GENERATE-HEADER": "",
     "PARAPHRASE-QUERY": null
 }

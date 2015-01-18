@@ -93,7 +93,9 @@
     "DO-CONJUNCTION-DISJUNCTION": null,
     "DO-NOMINAL-COMPOUNDS": null,
     "DO-SEMANTIC-COMP": true,
-    "SEMANTIC-COMP-TYPE": "unification",
+    "SEMANTIC-COMP-TYPE": [
+        "unification"
+    ],
     "DO-SEMANTIC-CONFLICT": true,
     "DO-QUANTIFIER-SCOPE": true,
     "DO-ANAPHORA-RESOL": true,

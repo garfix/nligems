@@ -33,6 +33,60 @@ class NliSystemApi
 		$Reader->writeSystem($System, __DIR__ . '/../data/' . $System->getId() . '.json');
 	}
 
+	/**
+	 * @param $feature
+	 * @return array|null
+	 */
+	public function getPossibleValues($feature)
+	{
+		$entries = array(
+			NliSystem::KNOWLEDGE_BASE_TYPE => array(
+				'relational' => 'Relational',
+				'tree-based' => 'Tree based',
+				'inference engine' => 'Inference engine',
+			),
+			NliSystem::NATURAL_LANGUAGES => array(
+				'English' => 'English',
+			),
+			NliSystem::PROGRAMMING_LANGUAGES => array(
+				'APL' => 'APL',
+				'C' => 'C',
+				'Fortran' => 'Fortran',
+				'Lisp' => 'Lisp',
+				'Prolog' => 'Prolog',
+			),
+			NliSystem::ANALYSIS => array(
+				'Semantics-based' => 'Semantics based',
+				'Syntax-based' => 'Syntax based',
+				'Pattern-matching' => 'Pattern matching',
+			),
+			NliSystem::SENTENCE_TYPES => array(
+				'question' => 'Question',
+			    'declarative' => 'Declarative',
+			    'imperative' => 'Imperative',
+			),
+			NliSystem::CONVERT_TYPE => array(
+				'hard-coded' => 'Hard coded',
+			),
+			NliSystem::SYNTACTIC_FORM_TYPE => array(
+				'parse trees' => 'Parse trees',
+			),
+			NliSystem::SEMANTIC_FORM_TYPE => array(
+				'relational' => 'Relational',
+				'procedural' => 'Procedural',
+				'ontology' => 'Ontology',
+			),
+			NliSystem::SEMANTIC_COMPOSITION_TYPE => array(
+				'unification' => 'Unification',
+				'production rules' => 'Production rules',
+				'lambda calculus' => 'Lambda calculus',
+				'custom' => 'Custom',
+			),
+		);
+
+		return isset($entries[$feature]) ? $entries[$feature] : null;
+	}
+
 	public function getFeatureName($feature)
 	{
 		$names = array(
@@ -110,7 +164,7 @@ class NliSystemApi
 			NliSystem::ANAPHORA_RESOLUTION => 'Anaphora resolution',
 			NliSystem::PLAUSIBILITY_RESOLUTION => 'Plausibility resolution',
 			NliSystem::UNIFORMIZATION_REWRITES => 'Uniformization rewrites',
-			NliSystem::COOPERATIVE_RESPONSES => 'Cooperative repopnses',
+			NliSystem::COOPERATIVE_RESPONSES => 'Cooperative responses',
 
 			NliSystem::SEMANTIC_FORM_TYPE => 'Semantic form type',
 			NliSystem::SEMANTIC_FORM_DESC => 'Semantic form description',
@@ -212,7 +266,7 @@ class NliSystemApi
 			NliSystem::CONJUNCTION_DISJUNCTION => self::FEATURETYPE_BOOL,
 			NliSystem::NOMINAL_COMPOUNDS => self::FEATURETYPE_BOOL,
 			NliSystem::SEMANTIC_COMPOSITION => self::FEATURETYPE_BOOL,
-			NliSystem::SEMANTIC_COMPOSITION_TYPE => self::FEATURETYPE_TEXT_SINGLE,
+			NliSystem::SEMANTIC_COMPOSITION_TYPE => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::SEMANTIC_CONFLICT_DETECTION => self::FEATURETYPE_BOOL,
 			NliSystem::QUANTIFIER_SCOPING => self::FEATURETYPE_BOOL,
 			NliSystem::ANAPHORA_RESOLUTION => self::FEATURETYPE_BOOL,

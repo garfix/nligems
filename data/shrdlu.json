@@ -83,7 +83,9 @@
     "DO-CONJUNCTION-DISJUNCTION": null,
     "DO-NOMINAL-COMPOUNDS": null,
     "DO-SEMANTIC-COMP": true,
-    "SEMANTIC-COMP-TYPE": "custom",
+    "SEMANTIC-COMP-TYPE": [
+        "custom"
+    ],
     "DO-SEMANTIC-CONFLICT": true,
     "DO-QUANTIFIER-SCOPE": true,
     "DO-ANAPHORA-RESOL": true,

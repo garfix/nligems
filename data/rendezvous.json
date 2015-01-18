@@ -80,7 +80,9 @@
     "DO-NOMINAL-COMPOUNDS": true,
     "DO-SEMANTIC-ATTACH": null,
     "DO-SEMANTIC-COMP": true,
-    "SEMANTIC-COMP-TYPE": "custom",
+    "SEMANTIC-COMP-TYPE": [
+        "custom"
+    ],
     "DO-SEMANTIC-CONFLICT": true,
     "DO-QUANTIFIER-SCOPE": null,
     "DO-ANAPHORA-RESOL": false,

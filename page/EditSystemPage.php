@@ -5,6 +5,7 @@ namespace nligems\page;
 use nligems\api\component\FieldSet;
 use nligems\api\component\Form;
 use nligems\api\component\FormElementCheckbox;
+use nligems\api\component\FormElementCheckboxGroup;
 use nligems\api\component\FormElementText;
 use nligems\api\component\FormElementTextarea;
 use nligems\api\component\Legend;
@@ -202,26 +203,33 @@ class EditSystemPage extends BackEndPage
         switch ($type) {
             case NliSystemApi::FEATURETYPE_BOOL:
                 $Element = new FormElementCheckbox();
+                $Element->addAttribute('name', $field);
                 if ($value) {
                     $Element->addAttribute('checked', true);
                 }
                 break;
             case NliSystemApi::FEATURETYPE_TEXT_MULTIPLE:
-                $Element = new FormElementTextarea();
-                $Element->addAttribute('cols', 100);
-                $value = implode("\n", $value);
-                $Element->addChildText($value);
+
+                if ($possibleValues = $SystemsApi->getPossibleValues($field)) {
+                    $Element = new FormElementCheckboxGroup($field, $possibleValues);
+                    $Element->setValue($value);
+                } else {
+                    $Element = new FormElementTextarea();
+                    $Element->addAttribute('name', $field);
+                    $Element->addAttribute('cols', 100);
+                    $value = implode("\n", $value);
+                    $Element->addChildText($value);
+                }
                 break;
             case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
                 $Element = new FormElementText();
+                $Element->addAttribute('name', $field);
                 $Element->addAttribute('value', $value);
                 break;
             default:
                 trigger_error('Unknown type: ' . $type, E_USER_ERROR);
                 $Element = null;
         }
-
-        $Element->addAttribute('name', $field);
 
         return $Element;
     }
@@ -239,7 +247,11 @@ class EditSystemPage extends BackEndPage
                      $inputValue = $value == 'on';
                      break;
                  case NliSystemApi::FEATURETYPE_TEXT_MULTIPLE:
-                     $inputValue = array_filter(explode("\r\n", $value));
+                     if (is_array($value)) {
+                         $inputValue = array_keys(array_filter($value, function($val){ return $val == 'on'; }));
+                     } else {
+                         $inputValue = array_filter(explode("\r\n", $value));
+                     }
                      break;
                  case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
                      $inputValue = $value;

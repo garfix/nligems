@@ -78,7 +78,9 @@
     "DO-CONJUNCTION-DISJUNCTION": null,
     "DO-NOMINAL-COMPOUNDS": null,
     "DO-SEMANTIC-COMP": null,
-    "SEMANTIC-COMP-TYPE": "production rules",
+    "SEMANTIC-COMP-TYPE": [
+        "production rules"
+    ],
     "DO-SEMANTIC-CONFLICT": null,
     "DO-QUANTIFIER-SCOPE": null,
     "DO-ANAPHORA-RESOL": true,
