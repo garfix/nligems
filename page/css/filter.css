@@ -14,29 +14,32 @@ h2.filter {
 	font-size: 16px;
 	cursor: pointer;
 	color: #343240;
+	background-color: #F39B7C;
 	padding: 5px 10px 0 10px;
 	border-bottom: 5px solid #343240;
 	margin: 0 10px 10px 0;
+}
+
+h3.filter {
+	font-size: 16px;
+	cursor: pointer;
+	color: #343240;
+	background-color: #F39B7C;
+	padding: 5px 10px 0 10px;
+	border-bottom: 5px solid #343240;
+	margin: 0 10px 10px 10px;
 }
 
 div.filter {
 	margin-bottom: 10px;
 }
 
-div.filter h3 {
-	margin: 5px 0 0 0;
+div.filter h4 {
+	margin: 5px 0 0 10px;
 }
 
-h2.general {
-	background-color: #F39B7C;
-}
-
-h2.process {
+h2.filter {
 	background-color: #F26057;
-}
-
-h2.data {
-	background-color: #BF5451;
 }
 
 .greyedOut {

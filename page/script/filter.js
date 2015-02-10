@@ -1,34 +1,35 @@
 var Filter = function() {
 
-	var h2Id = 0;
+	var idGen = 0;
+
+	var ids = {
+		'h2': 0,
+		'h3': 0
+	};
 
 	// initialize
-	addH2ClickHandlers();
+	addClickHandlers('h2');
+	addClickHandlers('h3');
 	addCheckboxClickHandlers();
 	processStoredSettings();
 	updateCheckboxCounts();
 
-	function addH2ClickHandlers()
+	function addClickHandlers(type)
 	{
-		var h2s = document.querySelectorAll('h2.filter');
+		var headers = document.querySelectorAll(type + '.filter');
 
-		for (var i = 0; i < h2s.length; i++) {
+		for (var i = 0; i < headers.length; i++) {
 
-			var element = h2s[i];
+			var element = headers[i];
 
-			element.onclick = h2ClickHandler;
+			element.onclick = getClickHandler(type);
 
 			// give the element an id
-			element.id = 'h2_' + ++h2Id;
+			element.id = type + '_' + ++idGen;
 
 			var body = nextElementSibling(element);
 			addClass(body, 'hidden');
 		}
-	}
-
-	function getFilterElements()
-	{
-
 	}
 
 	function addCheckboxClickHandlers()
@@ -42,64 +43,75 @@ var Filter = function() {
 		}
 	}
 
-	function h2ClickHandler(event)
+	function getClickHandler(type)
 	{
-		var body = nextElementSibling(this);
-		var lastH2 = getActiveH2();
+		function clickHandler(event)
+		{
+			var body = nextElementSibling(this);
+			var lastHeader = getActiveHeader(type);
 
-		if (lastH2 == null) {
+			if (lastHeader == null) {
 
-			// first click: show
-			removeClass(body, 'hidden');
-
-		} else if (lastH2 == this) {
-
-			// toggle h2 visibility
-			if (hasClass(body, 'hidden')) {
+				// first click: show
 				removeClass(body, 'hidden');
+
+			} else if (lastHeader == this) {
+
+				// toggle header visibility
+				if (hasClass(body, 'hidden')) {
+					removeClass(body, 'hidden');
+				} else {
+					addClass(body, 'hidden');
+				}
+
 			} else {
-				addClass(body, 'hidden');
+
+				var lastBody = nextElementSibling(lastHeader);
+
+				// hide previous header
+				if (!hasClass(lastBody, 'hidden')) {
+					addClass(lastBody, 'hidden');
+				}
+
+				// show this header
+				removeClass(body, 'hidden');
+
 			}
 
-		} else {
+			ids[type] = this.id;
 
-			var lastBody = nextElementSibling(lastH2);
-
-			// hide previous h2
-			if (!hasClass(lastBody, 'hidden')) {
-				addClass(lastBody, 'hidden');
+			if (!hasClass(lastHeader, 'hidden')) {
+				sessionStorage.setItem(type + 'Id', ids[type]);
 			}
-
-			// show this h2
-			removeClass(body, 'hidden');
-
 		}
 
-		h2Id = this.id;
-
-		if (!hasClass(lastH2, 'hidden')) {
-			sessionStorage.setItem('h2Id', h2Id);
-		}
+		return clickHandler;
 	}
 
 	function processStoredSettings()
 	{
-		var h2 = null;
+		processStoredSettingsByType('h2');
+		processStoredSettingsByType('h3');
+	}
 
-		h2Id = sessionStorage.getItem('h2Id');
+	function processStoredSettingsByType(type)
+	{
+		var header = null;
 
-		if (!h2Id) {
+		ids[type] = sessionStorage.getItem(type + 'Id');
 
-			h2 = document.querySelector('h2.filter');
-			h2Id = h2 ? h2.id : null;
+		if (!ids[type]) {
+
+			header = document.querySelector(type + '.filter');
+			ids[type] = header ? header.id : null;
 
 		} else {
 
-			h2 = getActiveH2();
+			header = getActiveHeader(type);
 		}
 
-		// show this h2
-		var body = nextElementSibling(h2);
+		// show this header
+		var body = nextElementSibling(header);
 
 		removeClass(body, 'hidden');
 	}
@@ -108,32 +120,39 @@ var Filter = function() {
 	{
 		var h2s = document.getElementsByTagName('h2');
 
-		for (var i = 0; i < h2s.length; i++) {
-			var element = h2s[i];
+		for (var k = 0; k < h2s.length; k++) {
 
-			if (hasClass(element, 'filter')) {
-				var inputs = nextElementSibling(element).getElementsByTagName('input');
-				var count = 0;
+			var h2 = h2s[k];
+			var h2Count = 0;
+			var h3s = nextElementSibling(h2).getElementsByTagName('h3');
 
-				for (var j = 0; j < inputs.length; j++) {
-					if (inputs[j].checked) {
-						count++;
+			for (var i = 0; i < h3s.length; i++) {
+
+				var h3 = h3s[i];
+
+				if (hasClass(h3, 'filter')) {
+
+					var inputs = nextElementSibling(h3).getElementsByTagName('input');
+					var h3Count = 0;
+
+					for (var j = 0; j < inputs.length; j++) {
+						if (inputs[j].checked) {
+							h3Count++;
+							h2Count++;
+						}
 					}
-				}
 
-				var text = '';
-				if (count > 0) {
-					text = ' (' + count + ')';
+					h3.getElementsByTagName('span')[0].innerHTML = (h3Count ? ' (' + h3Count + ')' : '');
 				}
-
-				element.getElementsByTagName('span')[0].innerHTML = text;
 			}
+
+			h2.getElementsByTagName('span')[0].innerHTML = (h2Count ? ' (' + h2Count + ')' : '');
 		}
 	}
 
-	function getActiveH2()
+	function getActiveHeader(type)
 	{
-		return h2Id ? document.getElementById(h2Id) : null;
+		return ids[type] ? document.getElementById(ids[type]) : null;
 	}
 
 	function checkboxClickHandler()

@@ -17,6 +17,6 @@ class CheckboxHeader extends Component
 
     public function __toString()
     {
-        return "<h3>" . htmlentities($this->header) . "</h3>";
+        return "<h4>" . htmlentities($this->header) . "</h4>";
     }
 }

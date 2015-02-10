@@ -10,16 +10,16 @@ use nligems\api\NliSystem;
  */
 class Filter
 {
-	/** @var  Section[] */
-	private $sections;
+	/** @var  SectionGroup[] */
+	private $sectionGroups;
 
 	/**
-	 * @param Section $Section
+	 * @param SectionGroup $SectionGroup
 	 * @return $this
 	 */
-	public function addSection(Section $Section)
+	public function addSectionGroup(SectionGroup $SectionGroup)
 	{
-		$this->sections[] = $Section;
+		$this->sectionGroups[] = $SectionGroup;
 		return $this;
 	}
 
@@ -30,8 +30,8 @@ class Filter
 	 */
 	public function setValues(array $values)
 	{
-		foreach ($this->sections as $Section) {
-			$Section->setValues($values);
+		foreach ($this->sectionGroups as $SectionGroup) {
+			$SectionGroup->setValues($values);
 		}
 	}
 
@@ -43,8 +43,8 @@ class Filter
 	{
 		$match = true;
 
-		foreach ($this->sections as $Section) {
-			$match = $match && $Section->matches($System);
+		foreach ($this->sectionGroups as $SectionGroup) {
+			$match = $match && $SectionGroup->matches($System);
 		}
 
 		return $match;
@@ -52,8 +52,8 @@ class Filter
 
 	public function storeMatches(NliSystem $System)
 	{
-		foreach ($this->sections as $Section) {
-			$Section->storeMatches($System);
+		foreach ($this->sectionGroups as $SectionGroup) {
+			$SectionGroup->storeMatches($System);
 		}
 	}
 
@@ -61,8 +61,8 @@ class Filter
 	{
 		$Form = new HtmlElement('form');
 
-		foreach ($this->sections as $Section) {
-			$Form->addChildHtml((string)$Section);
+		foreach ($this->sectionGroups as $SectionGroup) {
+			$Form->addChildHtml((string)$SectionGroup);
 		}
 
 		$Submit = new HtmlElement('input', false);

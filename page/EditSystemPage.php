@@ -226,6 +226,12 @@ class EditSystemPage extends BackEndPage
                 $Element->addAttribute('name', $feature);
                 $Element->addAttribute('value', $value);
                 break;
+            case NliSystemApi::FEATURETYPE_TEXT_SINGLE_LONG:
+                $Element = new FormElementTextarea();
+                $Element->addAttribute('name', $feature);
+                $Element->addAttribute('cols', 100);
+                $Element->addChildText($value);
+                break;
             default:
                 trigger_error('Unknown type: ' . $type, E_USER_ERROR);
                 $Element = null;
@@ -254,6 +260,7 @@ class EditSystemPage extends BackEndPage
                      }
                      break;
                  case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
+                 case NliSystemApi::FEATURETYPE_TEXT_SINGLE_LONG:
                      $inputValue = $value;
                      break;
                  default:

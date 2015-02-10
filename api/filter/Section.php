@@ -71,7 +71,6 @@ class Section
 		return $match;
 	}
 
-
 	public function storeMatches(NliSystem $System)
 	{
 		foreach ($this->components as $Component) {
@@ -81,14 +80,14 @@ class Section
 
 	public function __toString()
 	{
-		$H2 = new HtmlElement('H2');
-		$H2->addClass('filter');
-		$H2->addClass($this->type);
-		$H2->addChildText($this->name);
+		$H3 = new HtmlElement('H3');
+		$H3->addClass('filter');
+		$H3->addClass($this->type);
+		$H3->addChildText($this->name);
 
 		$Count = new HtmlElement('span');
 		$Count->addChildText('');
-		$H2->addChildNode($Count);
+		$H3->addChildNode($Count);
 
 		$Div = new HtmlElement('Div');
 		$Div->addClass('filter');
@@ -96,6 +95,6 @@ class Section
 			$Div->addChildHtml((string)$Component);
 		}
 
-		return (string)$H2 . (string)$Div;
+		return (string)$H3 . (string)$Div;
 	}
 }

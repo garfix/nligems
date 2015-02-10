@@ -32,10 +32,10 @@ class CheckboxGroup extends Component
 	{
 		$Container = new HtmlElement('div');
 
-		$H3 = new HtmlElement('H3');
-		$H3->addChildText($this->description);
+		$H4 = new HtmlElement('H4');
+		$H4->addChildText($this->description);
 
-		$Container->addChildNode($H3);
+		$Container->addChildNode($H4);
 
 		foreach ($this->options as $id => $description) {
 

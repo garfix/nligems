@@ -9,6 +9,7 @@ class NliSystemApi
 {
 	const FEATURETYPE_BOOL = 'boolean';
 	const FEATURETYPE_TEXT_SINGLE = 'text_single';
+	const FEATURETYPE_TEXT_SINGLE_LONG = 'text_single_long';
 	const FEATURETYPE_TEXT_MULTIPLE = 'text_multiple';
 
 	/** @var NliSystem[] */
@@ -212,8 +213,8 @@ class NliSystemApi
 			NliSystem::SENTENCE_TYPES => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::SOURCE_CODE_URL => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystem::GEM_IMAGE => self::FEATURETYPE_TEXT_SINGLE,
-			NliSystem::NAME_DESCRIPTION => self::FEATURETYPE_TEXT_SINGLE,
-			NliSystem::LONG_DESCRIPTION => self::FEATURETYPE_TEXT_SINGLE,
+			NliSystem::NAME_DESCRIPTION => self::FEATURETYPE_TEXT_SINGLE_LONG,
+			NliSystem::LONG_DESCRIPTION => self::FEATURETYPE_TEXT_SINGLE_LONG,
 			NliSystem::ARTICLES => self::FEATURETYPE_TEXT_MULTIPLE,
 			NliSystem::BOOKS => self::FEATURETYPE_TEXT_MULTIPLE,
 
