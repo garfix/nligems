@@ -57,9 +57,9 @@ class NliSystemApi
 				'Prolog' => 'Prolog',
 			),
 			NliSystem::ANALYSIS => array(
-				'Semantics-based' => 'Semantics based',
-				'Syntax-based' => 'Syntax based',
-				'Pattern-matching' => 'Pattern matching',
+				'Pattern-matching' => 'Pattern matching (no parsing)',
+				'Syntax-based' => 'Syntax based (parse tree maps to DB query)',
+				'Semantics-based' => 'Semantics based (via semantic intermediate)',
 			),
 			NliSystem::SENTENCE_TYPES => array(
 				'question' => 'Question',
@@ -117,7 +117,7 @@ class NliSystemApi
 			NliSystem::MULTI_DB => 'Queries multiple knowledge bases for single request',
 			NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES => 'Accept ungrammatical sentences',
 			NliSystem::META_SELF => 'Answers meta questions about its own processes',
-			NliSystem::META_KB => 'Answers meta questions the knowledge base',
+			NliSystem::META_KB => 'Answers meta questions about the knowledge base',
 
 			NliSystem::DICTIONARY_LOOKUP => 'Dictionary lookup',
 			NliSystem::MORPHOLOGICAL_ANALYSIS => 'Morphological analysis',
@@ -149,7 +149,7 @@ class NliSystemApi
 			NliSystem::PARSE_HEADER => 'Parse header',
 			NliSystem::GRAMMAR_TYPE => 'Grammar type',
 			NliSystem::PARSER_TYPE => 'Parser type',
-			NliSystem::SEMANTIC_GRAMMAR => 'Semantic grammar',
+			NliSystem::SEMANTIC_GRAMMAR => 'Semantic grammar (domain specific grammar)',
 
 			NliSystem::SYNTACTIC_FORM_TYPE => 'Syntactic form type',
 

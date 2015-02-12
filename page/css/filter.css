@@ -34,6 +34,10 @@ div.filter {
 	margin-bottom: 10px;
 }
 
+div.filter div.filter {
+	margin-left: 10px;
+}
+
 div.filter h4 {
 	margin: 5px 0 0 10px;
 }

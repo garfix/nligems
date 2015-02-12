@@ -86,37 +86,6 @@ class FilterPage extends FrontEndPage
 				$this->addCheckboxHeader($Section, 'Specification');
 				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_GRAMMAR);
 
-				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_SELF);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_KB);
-
-			$Group->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
-
-				$this->addCheckboxHeader($Section, 'Phrase types');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::VP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ADVP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ADJP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::RC);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEG);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CONJ);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ANAPHORA);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::AUX);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MODALS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::COMPARATIVE_EXPRESSIONS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PASSIVES);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CLEFTS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::THERE_BES);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ELLIPSIS);
-
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SENTENCE_TYPES);
-
 		$Filter->addSectionGroup($Group = new SectionGroup('Processes'));
 
 			$Group->addSection($Section = new Section('Tokenization', Section::TYPE_PROCESS));
@@ -133,12 +102,14 @@ class FilterPage extends FrontEndPage
 
 			$Group->addSection($Section = new Section('Parsing', Section::TYPE_PROCESS));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::GRAMMAR_TYPE);
 				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::PARSER_TYPE);
 
-			$Group->addSection($Section = new Section('Interpretation', Section::TYPE_PROCESS));
+				$this->addCheckboxHeader($Section, 'Features');
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES);
 
-				$this->addCheckboxHeader($Section, 'Interpretation features');
+			$Group->addSection($Section = new Section('Semantic Analysis', Section::TYPE_PROCESS));
+
+				$this->addCheckboxHeader($Section, 'Features');
 				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_ATTACHMENT);
 				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MODIFIER_ATTACHMENT);
 				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CONJUNCTION_DISJUNCTION);
@@ -162,13 +133,22 @@ class FilterPage extends FrontEndPage
 
 				$this->addCheckboxHeader($Section, 'Execution features');
 				$this->addCheckbox($NliSystemApi, $Section, NliSystem::LOGICAL_REASONING);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
 
 			$Group->addSection($Section = new Section('Answer generation', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Features');
 				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PARAPHRASE_QUERY);
 
-		$Filter->addSectionGroup($Group = new SectionGroup('Data Structures'));
+			$Group->addSection($Section = new Section('User Dialog', Section::TYPE_PROCESS));
+
+				$this->addCheckboxHeader($Section, 'Features');
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_SELF);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_KB);
+
+		$Filter->addSectionGroup($Group = new SectionGroup('Process Data Structures'));
 
 			$Group->addSection($Section = new Section('Semantic form', Section::TYPE_DATA));
 
@@ -189,6 +169,35 @@ class FilterPage extends FrontEndPage
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Models'));
 
+			$Group->addSection($Section = new Section('Lexicon', Section::TYPE_DATA));
+			$Group->addSection($Section = new Section('Grammar', Section::TYPE_DATA));
+
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::GRAMMAR_TYPE);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SENTENCE_TYPES);
+
+//		$Group->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
+
+				$this->addCheckboxHeader($Section, 'Phrase types');
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::VP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ADVP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ADJP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::RC);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEG);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CONJ);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ANAPHORA);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::AUX);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MODALS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::COMPARATIVE_EXPRESSIONS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PASSIVES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CLEFTS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::THERE_BES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ELLIPSIS);
+
+			$Group->addSection($Section = new Section('Dialog model', Section::TYPE_DATA));
+
 		return $Filter;
 	}
 
@@ -205,8 +214,19 @@ class FilterPage extends FrontEndPage
 	private function addCheckboxGroup(NliSystemApi $NliSystemApi, Section $Section, $feature)
 	{
 		$Section->addComponent($Component = new CheckboxGroup($feature, $NliSystemApi->getFeatureName($feature)));
-		foreach ($NliSystemApi->getAllFeatureValues($feature) as $value) {
-			$Component->addOption($value, $value);
+
+		if ($possibleValues = $NliSystemApi->getPossibleValues($feature)) {
+
+			foreach ($possibleValues as $key => $value) {
+				$Component->addOption($key, $value);
+			}
+
+		} else {
+			$possibleValues = $NliSystemApi->getAllFeatureValues($feature);
+
+			foreach ($possibleValues as $value) {
+				$Component->addOption($value, $value);
+			}
 		}
 	}
 
