@@ -77,124 +77,128 @@ class FilterPage extends FrontEndPage
 
 			$Group->addSection($Section = new Section('Code', Section::TYPE_GENERAL));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::PROGRAMMING_LANGUAGES);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::PROGRAMMING_LANGUAGES);
 
 			$Group->addSection($Section = new Section('System structure', Section::TYPE_GENERAL));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::ANALYSIS);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::ANALYSIS);
 
 				$this->addCheckboxHeader($Section, 'Specification');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_GRAMMAR);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::SEMANTIC_GRAMMAR);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Processes'));
 
 			$Group->addSection($Section = new Section('Tokenization', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Tokenization features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DICTIONARY_LOOKUP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MORPHOLOGICAL_ANALYSIS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::WORD_SEPARATION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SPELLING_CORRECTION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::OPEN_ENDED_TOKEN_RECOGNITION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PROPER_NAMES_FROM_KB);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PROPER_NAMES_BY_MATCHING);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::QUOTED_STRING_RECOGNITION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::DICTIONARY_LOOKUP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::MORPHOLOGICAL_ANALYSIS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::WORD_SEPARATION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::SPELLING_CORRECTION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::OPEN_ENDED_TOKEN_RECOGNITION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PROPER_NAMES_FROM_KB);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PROPER_NAMES_BY_MATCHING);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::QUOTED_STRING_RECOGNITION);
 
 			$Group->addSection($Section = new Section('Parsing', Section::TYPE_PROCESS));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::PARSER_TYPE);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::PARSER_TYPE);
 
 				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ACCEPT_UNGRAMMATICAL_SENTENCES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ACCEPT_UNGRAMMATICAL_SENTENCES);
 
 			$Group->addSection($Section = new Section('Semantic Analysis', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_ATTACHMENT);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MODIFIER_ATTACHMENT);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CONJUNCTION_DISJUNCTION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NOMINAL_COMPOUNDS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_COMPOSITION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SEMANTIC_CONFLICT_DETECTION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::QUANTIFIER_SCOPING);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ANAPHORA_RESOLUTION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PLAUSIBILITY_RESOLUTION);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::UNIFORMIZATION_REWRITES);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::COOPERATIVE_RESPONSES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::SEMANTIC_ATTACHMENT);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::MODIFIER_ATTACHMENT);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::CONJUNCTION_DISJUNCTION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::NOMINAL_COMPOUNDS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::SEMANTIC_COMPOSITION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::SEMANTIC_CONFLICT_DETECTION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::QUANTIFIER_SCOPING);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ANAPHORA_RESOLUTION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PLAUSIBILITY_RESOLUTION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::UNIFORMIZATION_REWRITES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::COOPERATIVE_RESPONSES);
 
 			$Group->addSection($Section = new Section('Conversion to knowledge base form', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Conversion features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::SYNTACTIC_REWRITE);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::OPTIMIZE_QUERY);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::RESTRUCTURE_INFORMATION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::SYNTACTIC_REWRITE);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::OPTIMIZE_QUERY);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::RESTRUCTURE_INFORMATION);
 
 			$Group->addSection($Section = new Section('Knowledge base execution', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Execution features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::LOGICAL_REASONING);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MULTI_DB);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::LOGICAL_REASONING);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::MULTI_DB);
 
 			$Group->addSection($Section = new Section('Answer generation', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PARAPHRASE_QUERY);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PARAPHRASE_QUERY);
 
 			$Group->addSection($Section = new Section('User Dialog', Section::TYPE_PROCESS));
 
 				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DIALOG);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEW_WORDS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_SELF);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::META_KB);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::DIALOG);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::NEW_WORDS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::META_SELF);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::META_KB);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Process Data Structures'));
 
 			$Group->addSection($Section = new Section('Semantic form', Section::TYPE_DATA));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SEMANTIC_FORM_TYPE);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::SEMANTIC_FORM_TYPE);
 				$this->addCheckboxHeader($Section, 'Semantic features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::EVENT_BASED);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::TEMPORAL);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PROPER_NOUN_CONSTANTS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ONTOLOGY_USED);
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::STANDARD_ONTOLOGY);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::EVENT_BASED);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::TEMPORAL);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PROPER_NOUN_CONSTANTS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ONTOLOGY_USED);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::STANDARD_ONTOLOGY);
 
 			$Group->addSection($Section = new Section('Knowledge base form', Section::TYPE_DATA));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_TYPE);
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_LANGUAGES);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_TYPE);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_LANGUAGES);
 				$this->addCheckboxHeader($Section, 'Knowledge base features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::KNOWLEDGE_BASE_AGGREGATION);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_AGGREGATION);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Models'));
 
 			$Group->addSection($Section = new Section('Lexicon', Section::TYPE_DATA));
+
+				$this->addCheckboxHeader($Section, 'Features');
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::LEXICON_DERIVE_WORDS);
+
 			$Group->addSection($Section = new Section('Grammar', Section::TYPE_DATA));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::GRAMMAR_TYPE);
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystem::SENTENCE_TYPES);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::GRAMMAR_TYPE);
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::SENTENCE_TYPES);
 
 //		$Group->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
 
 				$this->addCheckboxHeader($Section, 'Phrase types');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::VP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::DP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ADVP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ADJP);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::RC);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::NEG);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CONJ);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ANAPHORA);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::AUX);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::MODALS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::COMPARATIVE_EXPRESSIONS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::PASSIVES);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::CLEFTS);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::THERE_BES);
-				$this->addCheckbox($NliSystemApi, $Section, NliSystem::ELLIPSIS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::NP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::VP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::DP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ADVP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ADJP);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::RC);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::NEG);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::CONJ);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ANAPHORA);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::AUX);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::MODALS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::COMPARATIVE_EXPRESSIONS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::PASSIVES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::CLEFTS);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::THERE_BES);
+				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::ELLIPSIS);
 
 			$Group->addSection($Section = new Section('Dialog model', Section::TYPE_DATA));
 

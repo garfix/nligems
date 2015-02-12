@@ -57,7 +57,7 @@ var Filter = function() {
 
 			} else if (lastHeader == this) {
 
-				// toggle header visibility
+				// toggle body visibility
 				if (hasClass(body, 'hidden')) {
 					removeClass(body, 'hidden');
 				} else {
@@ -80,7 +80,9 @@ var Filter = function() {
 
 			ids[type] = this.id;
 
-			if (!hasClass(lastHeader, 'hidden')) {
+			if (hasClass(body, 'hidden')) {
+				sessionStorage.removeItem(type + 'Id');
+			} else {
 				sessionStorage.setItem(type + 'Id', ids[type]);
 			}
 		}

@@ -23,10 +23,10 @@ class CharacteristicsList
         $NliSystemApi = new NliSystemApi();
 
         $features = array(
-            NliSystem::PROGRAMMING_LANGUAGES,
-            NliSystem::NATURAL_LANGUAGES,
-            NliSystem::ANALYSIS,
-            NliSystem::INFLUENCED_BY,
+            NliSystemApi::PROGRAMMING_LANGUAGES,
+            NliSystemApi::NATURAL_LANGUAGES,
+            NliSystemApi::ANALYSIS,
+            NliSystemApi::INFLUENCED_BY,
         );
 
         $DL = new DefinitionList();
@@ -37,8 +37,8 @@ class CharacteristicsList
             if ($value) {
                 $serialized = is_array($value) ? implode(", ", $value) : $value;
 
-                if ($feature == NliSystem::ANALYSIS) {
-                    if ($this->System->get(NliSystem::SEMANTIC_GRAMMAR)) {
+                if ($feature == NliSystemApi::ANALYSIS) {
+                    if ($this->System->get(NliSystemApi::SEMANTIC_GRAMMAR)) {
                         $serialized .= ' (semantic grammar)';
                     }
                 }

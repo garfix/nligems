@@ -63,7 +63,7 @@ class DataFlow
         	$value = (string)$ComponentApi->createDataStore()->setContent("Tokens");
         	$Table->set(2, $col, $value);
 
-	        if (in_array('parse and interpret', $System->get(NliSystem::ANALYSIS))) {
+	        if (in_array('parse and interpret', $System->get(NliSystemApi::ANALYSIS))) {
 
 		        $header = "Parse";
 
@@ -84,7 +84,7 @@ class DataFlow
 		        $content = (string)$List;
 
 		        $Bullets = $ComponentApi->createBullets();
-	        	if ($System->get(NliSystem::SEMANTIC_GRAMMAR)) {
+	        	if ($System->get(NliSystemApi::SEMANTIC_GRAMMAR)) {
 	        		$Bullets->addItem('Semantic grammar (contains domain-specific information)');
 	        	}
 		        $content .= (string)$Bullets;
