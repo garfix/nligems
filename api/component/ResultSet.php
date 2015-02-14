@@ -15,6 +15,9 @@ class ResultSet
 	/** @var NliSystem[] */
 	private $filteredSystems = [];
 
+	/** @var  Filter */
+	private $Filter;
+
 	/**
 	 * @param NliSystemApi $NliSystemApi
 	 * @param Filter $Filter
@@ -22,6 +25,8 @@ class ResultSet
 	 */
 	public function filterResults(NliSystemApi $NliSystemApi, Filter $Filter)
 	{
+		$this->Filter = $Filter;
+
 		$systems = $NliSystemApi->getAllSystems();
 		$selectedSystems = [];
 
@@ -67,6 +72,9 @@ class ResultSet
 		$ButtonHead->addClass('buttonHead');
 		$Form->addChildNode($ButtonHead);
 
+		$filterFeatures = $this->Filter->getFeatures();
+//print_r($filterFeatures);exit;
+
 		/** @var NliSystem $System */
 		foreach ($allSystems as $System) {
 
@@ -101,6 +109,22 @@ class ResultSet
 			$Desc->addChildText(', ');
 			$Desc->addChildText(implode(', ', $System->getContributors()));
 			$Row->addChildNode($Desc);
+
+			$params = array_intersect_key($NliSystemApi->getFeaturesOfSystem($System), array_flip($filterFeatures));
+
+			$Link = new HtmlElement('a');
+			$Link->addAttribute('href', $LinkApi->getLink('filter', $params));
+			$Link->addChildText('Select all of its features');
+			$Desc->addChildHtml("<br>");
+			$Desc->addChildNode($Link);
+
+			$params = array_intersect_key($NliSystemApi->getUniqueFeaturesOfSystem($System), array_flip($filterFeatures));
+
+			$Link = new HtmlElement('a');
+			$Link->addAttribute('href', $LinkApi->getLink('filter', $params));
+			$Link->addChildText('Select its unique features');
+			$Desc->addChildHtml(" | ");
+			$Desc->addChildNode($Link);
 
 			$Input = new HtmlElement('input', false);
 			$Input->addAttribute('type', 'checkbox');

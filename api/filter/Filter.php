@@ -57,6 +57,20 @@ class Filter
 		}
 	}
 
+	/**
+	 * @return array
+	 */
+	public function getFeatures()
+	{
+		$features = array();
+
+		foreach ($this->sectionGroups as $SectionGroup) {
+			$features = array_merge($features, $SectionGroup->getFeatures());
+		}
+
+		return $features;
+	}
+
 	public function __toString()
 	{
 		$Form = new HtmlElement('form');

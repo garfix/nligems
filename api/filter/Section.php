@@ -78,6 +78,23 @@ class Section
 		}
 	}
 
+	/**
+	 * @return array
+	 */
+	public function getFeatures()
+	{
+		$features = array();
+
+		foreach ($this->components as $Component) {
+			$id = $Component->getId();
+			if ($id) {
+				$features[] = $id;
+			}
+		}
+
+		return $features;
+	}
+
 	public function __toString()
 	{
 		$H3 = new HtmlElement('H3');

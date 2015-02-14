@@ -58,6 +58,20 @@ class SectionGroup
 		}
 	}
 
+	/**
+	 * @return array
+	 */
+	public function getFeatures()
+	{
+		$features = array();
+
+		foreach ($this->sections as $Section) {
+			$features = array_merge($features, $Section->getFeatures());
+		}
+
+		return $features;
+	}
+
 	public function __toString()
 	{
 		$H2 = new HtmlElement('H2');

@@ -434,6 +434,61 @@ class NliSystemApi
 		return array_keys($names);
 	}
 
+	public function getFeaturesOfSystem(NliSystem $System)
+	{
+		$features = [];
+
+		foreach ($System->getAllValues() as $feature => $value) {
+			if (!empty($value)) {
+				$features[$feature] = $value;
+			}
+		}
+
+		return $features;
+	}
+
+	public function getUniqueFeaturesOfSystem(NliSystem $System)
+	{
+		$unique = array();
+
+		foreach ($System->getAllValues() as $feature => $value) {
+
+			if (is_array($value)) {
+
+				$uniqueElements = $value;
+
+				foreach ($this->systems as $SomeSystem) {
+					if ($SomeSystem->getId() != $System->getId()) {
+						$someSystemsValue = $SomeSystem->get($feature);
+						$uniqueElements = array_diff($uniqueElements, $someSystemsValue);
+					}
+				}
+
+				if (!empty($uniqueElements)) {
+					$unique[$feature] = $uniqueElements;
+				}
+
+			} else {
+				$found = false;
+				foreach ($this->systems as $SomeSystem) {
+					if ($SomeSystem->getId() != $System->getId()) {
+						$someSystemsValue = $SomeSystem->get($feature);
+						if ($someSystemsValue == $value) {
+							$found = true;
+							break;
+						}
+					}
+				}
+
+				if (!$found) {
+					$unique[$feature] = $value;
+				}
+			}
+		}
+
+		return $unique;
+	}
+
 	public function getLanguageConstructs()
 	{
 		return array(
