@@ -4,6 +4,7 @@ namespace nligems\api\component;
 
 use nligems\api\ComponentApi;
 use nligems\api\NliSystem;
+use nligems\api\NliSystemApi;
 
 /**
  * @author Patrick van Bergen
