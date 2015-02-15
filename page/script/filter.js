@@ -189,19 +189,26 @@ var Filter = function() {
 		for (var i = 0; i < helpButtons.length; i++) {
 			var helpButton = helpButtons[i];
 			helpButton.onclick = function(event){
+
 				var helpPopup = this.nextSibling;
+				var windowHeight = getWindowHeight();
+				var clickTop = event.clientY;
+				var popupHeight = helpPopup.offsetHeight;
+
+				// calculate top position of popup
+				// make sure it doesn't cross the lower window border
+				var popupTop = Math.min(
+					clickTop,
+					windowHeight - popupHeight - 5
+				);
 
 				// show dialog
-				helpPopup.style.display = 'block';
-				helpPopup.style.top = event.clientY + 'px';
-				helpPopup.style.left = event.clientX + 'px';
-
-				//helpPopup.style.top = (this.offsetTop + 10) + 'px';
-				//helpPopup.style.left = (this.offsetLeft + 10) + 'px';
+				helpPopup.style.top = popupTop + 'px';
+				helpPopup.style.visibility = 'visible';
 
 				function hideDialog()
 				{
-					helpPopup.style.display = 'none';
+					helpPopup.style.visibility = 'hidden';
 
 					document.removeEventListener('mousedown', hideDialog);
 				}
@@ -210,6 +217,17 @@ var Filter = function() {
 				document.addEventListener('mousedown', hideDialog);
 			}
 		}
+	}
+
+	/**
+	 * @see http://www.w3schools.com/js/js_window.asp
+	 * @returns {Number|number}
+	 */
+	function getWindowHeight()
+	{
+		return window.innerHeight
+		|| document.documentElement.clientHeight
+		|| document.body.clientHeight;
 	}
 
 }();
