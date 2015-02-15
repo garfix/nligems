@@ -115,6 +115,10 @@ table.system td.systemName {
 table.system td.systemDescription {
 }
 
+div.select {
+	font-size: 12px;
+}
+
 /* Select and compare */
 
 table.system td.select {
@@ -129,6 +133,17 @@ button.compare {
 	font-family: Oswald;
 	font-weight: bold;
 	background-color: #E6EDE4;
+	display: inline-block;
+	margin-bottom: 10px;
+	padding: 2px 10px 2px 10px;
+}
+
+/* Clear */
+
+button.clear {
+	font-family: Oswald;
+	font-weight: bold;
+	background-color: #F39B7C;
 	display: inline-block;
 	margin-bottom: 10px;
 	padding: 2px 10px 2px 10px;

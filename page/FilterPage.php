@@ -9,7 +9,7 @@ use nligems\api\filter\CheckboxHeader;
 use nligems\api\filter\Filter;
 use nligems\api\filter\Section;
 use nligems\api\filter\SectionGroup;
-use nligems\api\NliSystem;
+use nligems\api\LinkApi;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
 use nligems\api\component\ResultSet;
@@ -48,6 +48,8 @@ class FilterPage extends FrontEndPage
 
 	public function getBody()
 	{
+		$LinkApi = new LinkApi();
+
 		$Page = new HtmlElement('div');
 		$Page->addClass('page');
 
@@ -58,6 +60,19 @@ class FilterPage extends FrontEndPage
 
 		$FilterContainer = new HtmlElement('div');
 		$FilterContainer->addAttribute('class', 'filterbar');
+
+		$Form = new HtmlElement('form');
+		$Form->addAttribute('action', $LinkApi->getLink('filter'));
+		$Form->addAttribute('method', 'get');
+
+		$Submit = new HtmlElement('button');
+		$Submit->addAttribute('type', 'submit');
+		$Submit->addChildHtml('Clear');
+		$Submit->addClass('clear');
+		$Form->addChildNode($Submit);
+
+		$FilterContainer->addChildNode($Form);
+
 		$FilterContainer->addChildHtml((string)$this->Filter);
 		$Page->addChildNode($FilterContainer);
 
@@ -73,7 +88,7 @@ class FilterPage extends FrontEndPage
 	{
 		$Filter = new Filter();
 
-		$Filter->addSectionGroup($Group = new SectionGroup('Main'));
+		$Filter->addSectionGroup($Group = new SectionGroup('General'));
 
 			$Group->addSection($Section = new Section('Code', Section::TYPE_GENERAL));
 
@@ -162,12 +177,15 @@ class FilterPage extends FrontEndPage
 
 			$Group->addSection($Section = new Section('Knowledge base form', Section::TYPE_DATA));
 
-				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_TYPE);
 				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_LANGUAGES);
 				$this->addCheckboxHeader($Section, 'Knowledge base features');
 				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_AGGREGATION);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Models'));
+
+			$Group->addSection($Section = new Section('Domain model', Section::TYPE_DATA));
+
+				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::KNOWLEDGE_BASE_TYPE);
 
 			$Group->addSection($Section = new Section('Lexicon', Section::TYPE_DATA));
 
@@ -178,8 +196,6 @@ class FilterPage extends FrontEndPage
 
 				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::GRAMMAR_TYPE);
 				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::SENTENCE_TYPES);
-
-//		$Group->addSection($Section = new Section('Language constructs', Section::TYPE_GENERAL));
 
 				$this->addCheckboxHeader($Section, 'Phrase types');
 				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::NP);

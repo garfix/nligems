@@ -73,7 +73,6 @@ class ResultSet
 		$Form->addChildNode($ButtonHead);
 
 		$filterFeatures = $this->Filter->getFeatures();
-//print_r($filterFeatures);exit;
 
 		/** @var NliSystem $System */
 		foreach ($allSystems as $System) {
@@ -112,19 +111,24 @@ class ResultSet
 
 			$params = array_intersect_key($NliSystemApi->getFeaturesOfSystem($System), array_flip($filterFeatures));
 
+			$Links = new HtmlElement('div');
+			$Links->addClass('select');
+
 			$Link = new HtmlElement('a');
 			$Link->addAttribute('href', $LinkApi->getLink('filter', $params));
 			$Link->addChildText('Select all of its features');
-			$Desc->addChildHtml("<br>");
-			$Desc->addChildNode($Link);
+			$Links->addChildNode($Link);
+
+			$Links->addChildHtml(" | ");
 
 			$params = array_intersect_key($NliSystemApi->getUniqueFeaturesOfSystem($System), array_flip($filterFeatures));
 
 			$Link = new HtmlElement('a');
 			$Link->addAttribute('href', $LinkApi->getLink('filter', $params));
 			$Link->addChildText('Select its unique features');
-			$Desc->addChildHtml(" | ");
-			$Desc->addChildNode($Link);
+			$Links->addChildNode($Link);
+
+			$Desc->addChildNode($Links);
 
 			$Input = new HtmlElement('input', false);
 			$Input->addAttribute('type', 'checkbox');
