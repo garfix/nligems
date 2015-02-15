@@ -152,7 +152,7 @@ class NliSystemApi
 			NliSystemApi::INFLUENCED_BY => 'Influenced by',
 			NliSystemApi::NATURAL_LANGUAGES => 'Natural language',
 			NliSystemApi::PROGRAMMING_LANGUAGES => 'Programming language',
-			NliSystemApi::KNOWLEDGE_BASE_TYPE => 'Knowledge base type',
+			NliSystemApi::KNOWLEDGE_BASE_TYPE => 'Domain model type',
 			NliSystemApi::KNOWLEDGE_BASE_DESCRIPTION => 'Knowledge base description',
 			NliSystemApi::SENTENCE_TYPES => 'Sentence types',
 			NliSystemApi::SOURCE_CODE_URL => 'Source code url',
@@ -411,6 +411,22 @@ class NliSystemApi
 				'lambda calculus' => 'Lambda calculus',
 				'custom' => 'Custom',
 			),
+		);
+
+		return isset($entries[$feature]) ? $entries[$feature] : null;
+	}
+
+	public function getExplanationHtml($feature)
+	{
+		$entries = array(
+			NliSystemApi::KNOWLEDGE_BASE_TYPE =>
+				'The way data is stored in the domain model:
+					<dl>
+						<dt>Relational</dt><dd>A relational database</dd>
+						<dt>Tree based</dt><dd>A hierarchical database</dd>
+						<dt>Inference engine</dt><dd>A logical database, with inference rules</dd>
+					</dl>
+				'
 		);
 
 		return isset($entries[$feature]) ? $entries[$feature] : null;

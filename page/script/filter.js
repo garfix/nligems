@@ -13,6 +13,7 @@ var Filter = function() {
 	addCheckboxClickHandlers();
 	processStoredSettings();
 	updateCheckboxCounts();
+	setupHelpButtons();
 
 	function addClickHandlers(type)
 	{
@@ -179,6 +180,36 @@ var Filter = function() {
 	function addClass(element, className)
 	{
 		element.className = element.className + ' ' + className;
+	}
+
+	function setupHelpButtons()
+	{
+		var helpButtons = document.getElementsByClassName('help');
+
+		for (var i = 0; i < helpButtons.length; i++) {
+			var helpButton = helpButtons[i];
+			helpButton.onclick = function(event){
+				var helpPopup = this.nextSibling;
+
+				// show dialog
+				helpPopup.style.display = 'block';
+				helpPopup.style.top = event.clientY + 'px';
+				helpPopup.style.left = event.clientX + 'px';
+
+				//helpPopup.style.top = (this.offsetTop + 10) + 'px';
+				//helpPopup.style.left = (this.offsetLeft + 10) + 'px';
+
+				function hideDialog()
+				{
+					helpPopup.style.display = 'none';
+
+					document.removeEventListener('mousedown', hideDialog);
+				}
+
+				// make the popup go away on any mouse action
+				document.addEventListener('mousedown', hideDialog);
+			}
+		}
 	}
 
 }();

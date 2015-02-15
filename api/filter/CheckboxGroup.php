@@ -35,6 +35,10 @@ class CheckboxGroup extends Component
 		$H4 = new HtmlElement('H4');
 		$H4->addChildText($this->description);
 
+		if ($this->HelpButton) {
+			$H4->addChildHtml(' ' . $this->HelpButton);
+		}
+
 		$Container->addChildNode($H4);
 
 		foreach ($this->options as $id => $description) {

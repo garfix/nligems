@@ -18,6 +18,9 @@ class Component
 	/** @var  mixed */
 	protected $value = null;
 
+	/** @var HelpButton */
+	protected $HelpButton = null;
+
 	public function __construct($id, $description)
 	{
 		$this->id = $id;
@@ -38,6 +41,14 @@ class Component
 	public function getId()
 	{
 		return $this->id;
+	}
+
+	/**
+	 * @param HelpButton $HelpButton
+	 */
+	public function setHelpButton(HelpButton $HelpButton)
+	{
+		$this->HelpButton = $HelpButton;
 	}
 
 	/**

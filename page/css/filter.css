@@ -132,7 +132,7 @@ div.buttonHead {
 button.compare {
 	font-family: Oswald;
 	font-weight: bold;
-	background-color: #E6EDE4;
+	background-color: #FFFFFF;
 	display: inline-block;
 	margin-bottom: 10px;
 	padding: 2px 10px 2px 10px;
@@ -143,8 +143,37 @@ button.compare {
 button.clear {
 	font-family: Oswald;
 	font-weight: bold;
-	background-color: #F39B7C;
+	background-color: #FFFFFF;
 	display: inline-block;
 	margin-bottom: 10px;
 	padding: 2px 10px 2px 10px;
+}
+
+/* Help */
+
+div.help {
+	font-family: Oswald;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	display: inline-block;
+	padding: 0px 6px 0px 6px;
+	border:  2px outset #FFFFFF;
+	cursor: default;
+	border-radius: 50%;
+}
+
+div.help-text {
+	display: none;
+}
+
+div.help-popup {
+	font-family: sans-serif;
+	font-weight: normal;
+	z-index: 100;
+	position: fixed;
+	display: none;
+	width: 400px;
+	padding: 5px;
+	background-color: #FFFFFF;
+	border:  2px outset #FFFFFF;
 }

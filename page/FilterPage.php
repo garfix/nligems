@@ -7,6 +7,7 @@ use nligems\api\filter\Checkbox;
 use nligems\api\filter\CheckboxGroup;
 use nligems\api\filter\CheckboxHeader;
 use nligems\api\filter\Filter;
+use nligems\api\filter\HelpButton;
 use nligems\api\filter\Section;
 use nligems\api\filter\SectionGroup;
 use nligems\api\LinkApi;
@@ -234,6 +235,10 @@ class FilterPage extends FrontEndPage
 	private function addCheckboxGroup(NliSystemApi $NliSystemApi, Section $Section, $feature)
 	{
 		$Section->addComponent($Component = new CheckboxGroup($feature, $NliSystemApi->getFeatureName($feature)));
+
+		if ($explanationHtml = $NliSystemApi->getExplanationHtml($feature)) {
+			$Component->setHelpButton(new HelpButton($explanationHtml));
+		}
 
 		if ($possibleValues = $NliSystemApi->getPossibleValues($feature)) {
 
