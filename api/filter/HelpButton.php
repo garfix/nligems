@@ -11,13 +11,19 @@ class HelpButton extends HtmlElement
 {
 	private $explanationHtml;
 
-	public function __construct($explanationHtml)
+	public function __construct($featureName, $explanationHtml)
 	{
+		$this->featureName = $featureName;
 		$this->explanationHtml = $explanationHtml;
 	}
 
 	public function __toString()
 	{
-		return "<div class='help'>?</div><div class='help-popup'>" . $this->explanationHtml . '</div>';
+		return "
+			<input class='help' type='button' value='?' />
+			<div class='help-popup'>
+				<header>" . htmlspecialchars($this->featureName) . "</header>" .
+				$this->explanationHtml . '
+			</div>';
 	}
 }

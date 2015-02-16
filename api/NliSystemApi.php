@@ -385,7 +385,7 @@ class NliSystemApi
 				'Prolog' => 'Prolog',
 			),
 			NliSystemApi::ANALYSIS => array(
-				'Pattern-matching' => 'Pattern matching (no parsing)',
+				'Pattern-matching' => 'Pattern matching',
 				'Syntax-based' => 'Syntax based (maps parse tree to DB query)',
 				'Semantics-based' => 'Semantics based (via semantic intermediate)',
 			),
@@ -426,7 +426,15 @@ class NliSystemApi
 						<dt>Tree based</dt><dd>A hierarchical database</dd>
 						<dt>Inference engine</dt><dd>A logical database, with inference rules</dd>
 					</dl>
-				'
+				',
+			NliSystemApi::ANALYSIS =>
+				'The main categories of natural language interfaces<br>
+					<dl>
+						<dt>Pattern matching</dt><dd>Literal occurrences of a pattern in a sentence are converted directly to parts of a DB query</dd>
+						<dt>Syntax based</dt><dd>A sentence is parsed and the parse tree is mapped directly to a DB query</dd>
+						<dt>Semantics based</dt><dd>After a sentence is parsed, it is first converted into an intermediate semantic expression, which is in turn converted into a DB query</dd>
+					</dl>
+					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction'
 		);
 
 		return isset($entries[$feature]) ? $entries[$feature] : null;

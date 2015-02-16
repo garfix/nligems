@@ -7,6 +7,8 @@ var Filter = function() {
 		'h3': 0
 	};
 
+	var activePopup = null;
+
 	// initialize
 	addClickHandlers('h2');
 	addClickHandlers('h3');
@@ -190,33 +192,54 @@ var Filter = function() {
 			var helpButton = helpButtons[i];
 			helpButton.onclick = function(event){
 
-				var helpPopup = this.nextSibling;
-				var windowHeight = getWindowHeight();
-				var clickTop = event.clientY;
-				var popupHeight = helpPopup.offsetHeight;
+				var helpPopup = nextElementSibling(this);
 
-				// calculate top position of popup
-				// make sure it doesn't cross the lower window border
-				var popupTop = Math.min(
-					clickTop,
-					windowHeight - popupHeight - 5
-				);
-
-				// show dialog
-				helpPopup.style.top = popupTop + 'px';
-				helpPopup.style.visibility = 'visible';
-
-				function hideDialog()
-				{
-					helpPopup.style.visibility = 'hidden';
-
-					document.removeEventListener('mousedown', hideDialog);
+				if (activePopup) {
+					if (activePopup == helpPopup) {
+						hidePopup();
+					} else {
+						hidePopup();
+						showPopup(event, helpPopup);
+					}
+				} else {
+					showPopup(event, helpPopup);
 				}
 
-				// make the popup go away on any mouse action
-				document.addEventListener('mousedown', hideDialog);
+				// prevent the document-level handler
+				stopPropagation(event);
 			}
 		}
+
+		function showPopup(event, popup)
+		{
+			var windowHeight = getWindowHeight();
+			var clickTop = event.clientY;
+			var popupHeight = popup.offsetHeight;
+
+			// calculate top position of popup
+			// make sure it doesn't cross the lower window border
+			var popupTop = Math.min(
+				clickTop,
+				windowHeight - popupHeight - 5
+			);
+
+			// show dialog
+			popup.style.top = popupTop + 'px';
+			popup.style.left = (event.clientX + 15) + 'px';
+			popup.style.visibility = 'visible';
+
+			activePopup = popup;
+		}
+
+		function hidePopup() {
+
+			if (activePopup) {
+				activePopup.style.visibility = 'hidden';
+				activePopup = null;
+			}
+		}
+
+		document.addEventListener('click', hidePopup);
 	}
 
 	/**
@@ -228,6 +251,18 @@ var Filter = function() {
 		return window.innerHeight
 		|| document.documentElement.clientHeight
 		|| document.body.clientHeight;
+	}
+
+	/**
+	 * @see http://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault
+	 */
+	function stopPropagation(event)
+	{
+		if (event.stopPropagation) {
+			event.stopPropagation();
+		} else {
+			event.cancelBubble = true;
+		}
 	}
 
 }();

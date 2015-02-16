@@ -141,7 +141,7 @@ button.compare {
 /* Clear */
 
 button.clear {
-	font-family: Oswald, sans-serif;;
+	font-family: Oswald, sans-serif;
 	font-weight: bold;
 	background-color: #FFFFFF;
 	display: inline-block;
@@ -151,15 +151,9 @@ button.clear {
 
 /* Help */
 
-div.help {
-	font-family: Oswald, sans-serif;;
+input.help {
+	font-family: sans-serif;
 	font-weight: bold;
-	background-color: #FFFFFF;
-	display: inline-block;
-	padding: 0px 6px 0px 6px;
-	border:  2px outset #FFFFFF;
-	cursor: default;
-	border-radius: 50%;
 }
 
 div.help-text {
@@ -172,11 +166,21 @@ div.help-popup {
 	z-index: 100;
 	position: fixed;
 	visibility: hidden;
-	left: 210px;
-	width: 400px;
-	padding: 10px;
+	width: 500px;
+	padding: 15px;
 	background-color: #F1E7D9;
-	border:  2px outset #F1E7D9;
+	border:  2px outset #fff;
+	-webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+}
+
+div.help-popup header {
+	font-family: Oswald, sans-serif;
+	font-weight: bold;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #343240;
+	margin-bottom: 15px;
 }
 
 div.help-popup dt {
