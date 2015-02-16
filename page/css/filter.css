@@ -132,8 +132,6 @@ div.buttonHead {
 button.compare {
 	font-family: Oswald, sans-serif;
 	font-weight: bold;
-	background-color: #FFFFFF;
-	display: inline-block;
 	margin-bottom: 10px;
 	padding: 2px 10px 2px 10px;
 }
@@ -143,10 +141,7 @@ button.compare {
 button.clear {
 	font-family: Oswald, sans-serif;
 	font-weight: bold;
-	background-color: #FFFFFF;
-	display: inline-block;
 	margin-bottom: 10px;
-	padding: 2px 10px 2px 10px;
 }
 
 /* Help */
@@ -156,8 +151,10 @@ input.help {
 	font-weight: bold;
 }
 
-div.help-text {
-	display: none;
+input.help {
+	padding: 0 2px 0 2px;
+	position: relative;
+	top: -2px;
 }
 
 div.help-popup {
