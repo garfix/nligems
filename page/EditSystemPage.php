@@ -170,7 +170,6 @@ class EditSystemPage extends BackEndPage
             array(
                 'title' => 'Lexicon',
                 'features' => array(
-                    NliSystemApi::LEXICON_DERIVE_WORDS,
                 )
             )
         );

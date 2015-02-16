@@ -113,6 +113,5 @@
     "EXECUTE-HEADER": "Planner",
     "DO-LOGICAL-REASON": true,
     "GENERATE-HEADER": "ANSWER",
-    "PARAPHRASE-QUERY": null,
-    "LEXICON-DERIVE-WORDS": true
+    "PARAPHRASE-QUERY": null
 }

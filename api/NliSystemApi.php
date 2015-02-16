@@ -106,8 +106,6 @@ class NliSystemApi
 	const GENERATE_HEADER = 'GENERATE-HEADER';
 	const PARAPHRASE_QUERY = 'PARAPHRASE-QUERY';
 
-	const LEXICON_DERIVE_WORDS = 'LEXICON-DERIVE-WORDS';
-
 	// feature types
 
 	const FEATURETYPE_BOOL = 'boolean';
@@ -171,7 +169,7 @@ class NliSystemApi
 			NliSystemApi::META_SELF => 'Answers meta questions about its own processes',
 			NliSystemApi::META_KB => 'Answers meta questions about the knowledge base',
 
-			NliSystemApi::DICTIONARY_LOOKUP => 'Dictionary lookup',
+			NliSystemApi::DICTIONARY_LOOKUP => 'Lexicon lookup',
 			NliSystemApi::MORPHOLOGICAL_ANALYSIS => 'Morphological analysis',
 			NliSystemApi::WORD_SEPARATION => 'Word separation',
 			NliSystemApi::SPELLING_CORRECTION => 'Spelling correction',
@@ -201,7 +199,7 @@ class NliSystemApi
 			NliSystemApi::PARSE_HEADER => 'Parse header',
 			NliSystemApi::GRAMMAR_TYPE => 'Grammar type',
 			NliSystemApi::PARSER_TYPE => 'Parser type',
-			NliSystemApi::SEMANTIC_GRAMMAR => 'Semantic grammar (domain specific grammar)',
+			NliSystemApi::SEMANTIC_GRAMMAR => 'Semantic grammar',
 
 			NliSystemApi::SYNTACTIC_FORM_TYPE => 'Syntactic form type',
 
@@ -242,7 +240,6 @@ class NliSystemApi
 			NliSystemApi::GENERATE_HEADER => 'Generate header',
 			NliSystemApi::PARAPHRASE_QUERY => 'Paraphrase knowledge base query',
 
-			NliSystemApi::LEXICON_DERIVE_WORDS => 'Regular inflections (larger <- large) are derived at runtime',
 		);
 
 		return $names;
@@ -356,7 +353,6 @@ class NliSystemApi
 			NliSystemApi::GENERATE_HEADER => self::FEATURETYPE_TEXT_SINGLE,
 			NliSystemApi::PARAPHRASE_QUERY => self::FEATURETYPE_BOOL,
 
-			NliSystemApi::LEXICON_DERIVE_WORDS => self::FEATURETYPE_BOOL,
 		);
 
 		return $types[$feature];
@@ -434,7 +430,30 @@ class NliSystemApi
 						<dt>Syntax based</dt><dd>A sentence is parsed and the parse tree is mapped directly to a DB query</dd>
 						<dt>Semantics based</dt><dd>After a sentence is parsed, it is first converted into an intermediate semantic expression, which is in turn converted into a DB query</dd>
 					</dl>
-					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction'
+					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction',
+			NliSystemApi::SEMANTIC_GRAMMAR =>
+				'Domain specific grammar.<br><br>
+					The grammar used to parse the sentence contains non-leaf structures that are specially designed for some domain.<br><br>
+					Each new application requires a different grammar.<br><br>
+					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
+				',
+			NliSystemApi::DICTIONARY_LOOKUP =>
+				'Uses (among others) a lexicon to recognize tokens in a sentence.<br><br>
+				Especially useful for compound nouns, like \'distance learning\' that cannot be recognized by
+				using space as a delimiter alone.<br><br>
+				The lexicon may also provide the part-of-speech of the word, i.e. noun, verb, preposition, to be used in the parsing process.
+				',
+			NliSystemApi::MORPHOLOGICAL_ANALYSIS =>
+				'Removes the prefixes and suffixes of a word to find the root form (present in the lexicon)<br><br>
+				For example: larger => large; finding => find; unable => able',
+			NliSystemApi::OPEN_ENDED_TOKEN_RECOGNITION =>
+				'Recognizes words from an endless category that is not a good fit for a lexicon.<br><br>
+				Examples are ordinals: 42, forty-two, forty-second',
+			NliSystemApi::PROPER_NAMES_FROM_KB =>
+				'When a word is not present in the lexicon, the domain model is queried to find if the word is present as a proper name.',
+			NliSystemApi::QUOTED_STRING_RECOGNITION =>
+				'Recognizes quoted sentences as part of a sentence.<br><br>
+				For example: Who said "Gravitation is not responsible for people falling in love"?',
 		);
 
 		return isset($entries[$feature]) ? $entries[$feature] : null;

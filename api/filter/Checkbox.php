@@ -61,6 +61,11 @@ class Checkbox extends Component
 			}
 		}
 
+		if ($this->HelpButton) {
+			$Container->addChildHtml(' ' . $this->HelpButton);
+		}
+
+
 		return  (string)$Container;
 	}
 

@@ -190,9 +190,6 @@ class FilterPage extends FrontEndPage
 
 			$Group->addSection($Section = new Section('Lexicon', Section::TYPE_DATA));
 
-				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, NliSystemApi::LEXICON_DERIVE_WORDS);
-
 			$Group->addSection($Section = new Section('Grammar', Section::TYPE_DATA));
 
 				$this->addCheckboxGroup($NliSystemApi, $Section, NliSystemApi::GRAMMAR_TYPE);
@@ -229,7 +226,14 @@ class FilterPage extends FrontEndPage
 
 	private function addCheckbox(NliSystemApi $NliSystemApi, Section $Section, $feature)
 	{
-		$Section->addComponent(new Checkbox($feature, $NliSystemApi->getFeatureName($feature)));
+		$Component = new Checkbox($feature, $NliSystemApi->getFeatureName($feature));
+
+		if ($explanationHtml = $NliSystemApi->getExplanationHtml($feature)) {
+			$featureName = $NliSystemApi->getFeatureName($feature);
+			$Component->setHelpButton(new HelpButton($featureName, $explanationHtml));
+		}
+
+		$Section->addComponent($Component);
 	}
 
 	private function addCheckboxGroup(NliSystemApi $NliSystemApi, Section $Section, $feature)
