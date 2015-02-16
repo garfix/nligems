@@ -240,6 +240,13 @@ var Filter = function() {
 		}
 
 		document.addEventListener('click', hidePopup);
+
+		// hide popup on ESCAPE
+		document.addEventListener('keypress', function(event){
+			if (event.keyCode == 27) {
+				hidePopup();
+			}
+		});
 	}
 
 	/**
