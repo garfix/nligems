@@ -454,6 +454,72 @@ class NliSystemApi
 			NliSystemApi::QUOTED_STRING_RECOGNITION =>
 				'Recognizes quoted sentences as part of a sentence.<br><br>
 				For example: Who said "Gravitation is not responsible for people falling in love"?',
+			NliSystemApi::WORD_SEPARATION =>
+				'',
+			NliSystemApi::PROPER_NAMES_BY_MATCHING =>
+				'Proper names are recognized by fitting them into a pattern.<br><br>
+				For example: [A-Z][a-z]* van der [A-Z][a-z]*',
+			NliSystemApi::ACCEPT_UNGRAMMATICAL_SENTENCES =>
+				'Sentences that do not follow the system\'s grammar are not discarded off hand.
+				The system will make an effort to understand them and / or to make the user change them.',
+			NliSystemApi::SYNTACTIC_REWRITE =>
+				'',
+			NliSystemApi::SEMANTIC_ATTACHMENT =>
+				'Meaning structures are taken from the lexicon entries of the matched words and attached to them in the parse tree.',
+			NliSystemApi::MODIFIER_ATTACHMENT =>
+				'',
+			NliSystemApi::CONJUNCTION_DISJUNCTION =>
+				'',
+			NliSystemApi::NOMINAL_COMPOUNDS =>
+				'An attempt is made to derive the meaning of compounds that are not in de lexicon.',
+			NliSystemApi::SEMANTIC_COMPOSITION =>
+				'The meaning structure of a phrase, and the sentence as a whole is derived by composing the meaning of the words.',
+			NliSystemApi::SEMANTIC_CONFLICT_DETECTION =>
+				'The system detects conflicts in semantic structure information.<br><br>
+				For example: How many corners has a ball?',
+			NliSystemApi::QUANTIFIER_SCOPING =>
+				'',
+			NliSystemApi::ANAPHORA_RESOLUTION =>
+				'',
+			NliSystemApi::PLAUSIBILITY_RESOLUTION =>
+				'',
+			NliSystemApi::UNIFORMIZATION_REWRITES =>
+				'',
+			NliSystemApi::COOPERATIVE_RESPONSES =>
+				'',
+			NliSystemApi::OPTIMIZE_QUERY =>
+				'The raw knowledge base query is rewritten for reasons of processing speed.',
+			NliSystemApi::RESTRUCTURE_INFORMATION =>
+				'',
+			NliSystemApi::LOGICAL_REASONING =>
+				'',
+			NliSystemApi::MULTI_DB =>
+				'The system queries multiple knowledge bases for the same sentence, and integrates the results.',
+			NliSystemApi::PARAPHRASE_QUERY =>
+				'',
+			NliSystemApi::DIALOG =>
+				'',
+			NliSystemApi::NEW_WORDS =>
+				'The user may enter new words into the lexicon from within the dialog.<br><br>
+				An example user sentence: Call the biggest block "superblock" (SHRDLU)',
+			NliSystemApi::META_KB =>
+				'The user may ask the system about the structure of the knowledge base.',
+			NliSystemApi::META_SELF =>
+				'',
+			NliSystemApi::SENTENCE_TYPES =>
+				'',
+			NliSystemApi::SEMANTIC_FORM_TYPE =>
+				'',
+			NliSystemApi::EVENT_BASED =>
+				'',
+			NliSystemApi::TEMPORAL =>
+				'',
+			NliSystemApi::PROPER_NOUN_CONSTANTS =>
+				'',
+			NliSystemApi::ONTOLOGY_USED =>
+				'',
+			NliSystemApi::KNOWLEDGE_BASE_AGGREGATION =>
+				'',
 		);
 
 		return isset($entries[$feature]) ? $entries[$feature] : null;
