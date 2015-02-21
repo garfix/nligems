@@ -110,9 +110,11 @@ class Features
 	const FEATURETYPE_TEXT_SINGLE = 'text_single';
 	const FEATURETYPE_TEXT_SINGLE_LONG = 'text_single_long';
 	const FEATURETYPE_TEXT_MULTIPLE = 'text_multiple';
+	const FEATURETYPE_MULTIPLE_CHOICE = 'multiple_choice';
 
 	// tags
 
+	const TAG_GENERAL = 'general';
 	const TAG_CODE = 'code';
 	const TAG_STRUCTURE = 'structure';
 	const TAG_TOKENIZATION = 'tokenization';
@@ -128,7 +130,6 @@ class Features
 	const TAG_LEXICON = 'lexicon';
 	const TAG_GRAMMAR = 'grammar';
 	const TAG_DIALOG_MODEL = 'dialog model';
-	const TAG_PHRASE_TYPE = 'phrase type';
 
 	public static function getFeatures()
 	{
@@ -136,42 +137,49 @@ class Features
 			self::NAME => [
 				'name' => 'Name',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'desc' => '
+				'tags' => [self::TAG_GENERAL],
+				'desc' => ',
 				',
 			],
 			self::FIRST_YEAR => [
 				'name' => 'First year',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::LAST_YEAR => [
 				'name' => 'Last year',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::CONTRIBUTORS => [
 				'name' => 'Contributor(s)',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::INSTITUTIONS => [
 				'name' => 'Institution',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::INFLUENCED_BY => [
 				'name' => 'Influenced by',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::NATURAL_LANGUAGES => [
 				'name' => 'Natural language',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GENERAL],
 				'options' => array(
 					'English' => 'English',
 				),
@@ -182,6 +190,7 @@ class Features
 			self::PROGRAMMING_LANGUAGES => [
 				'name' => 'Programming language',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_CODE],
 				'options' => array(
 					'APL' => 'APL',
 					'C' => 'C',
@@ -197,6 +206,7 @@ class Features
 			self::KNOWLEDGE_BASE_TYPE => [
 				'name' => 'Domain model type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_DOMAIN_MODEL],
 				'options' => array(
 					'relational' => 'Relational',
 					'tree-based' => 'Tree based',
@@ -214,12 +224,14 @@ class Features
 			self::KNOWLEDGE_BASE_DESCRIPTION => [
 				'name' => 'Knowledge base description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_KB_FORM],
 				'desc' => '
 				',
 			],
 			self::SENTENCE_TYPES => [
 				'name' => 'Sentence types',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GRAMMAR],
 				'options' => array(
 					'question' => 'Question',
 				    'declarative' => 'Declarative',
@@ -231,36 +243,42 @@ class Features
 			self::SOURCE_CODE_URL => [
 				'name' => 'Source code url',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::GEM_IMAGE => [
 				'name' => 'Gem image',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::NAME_DESCRIPTION => [
 				'name' => 'Name description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE_LONG,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::LONG_DESCRIPTION => [
 				'name' => 'Long description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE_LONG,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::ARTICLES => [
 				'name' => 'Articles',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
 			self::BOOKS => [
 				'name' => 'Books',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 				',
 			],
@@ -274,6 +292,7 @@ class Features
 			self::ANALYSIS => [
 				'name' => 'Type of analysis',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_STRUCTURE],
 				'options' => array(
 					'Pattern-matching' => 'Pattern matching',
 					'Syntax-based' => 'Syntax based (maps parse tree to DB query)',
@@ -291,7 +310,7 @@ class Features
 			],
 			self::SEMANTIC_GRAMMAR => [
 				'name' => 'Semantic grammar',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_STRUCTURE],
 				'desc' => '
 					Domain specific grammar.<br><br>
@@ -413,141 +432,145 @@ class Features
 			self::NP => [
 				'name' => 'Noun Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::VP => [
 				'name' => 'Verb Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::PP => [
 				'name' => 'Preposition Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::DP => [
 				'name' => 'Determiner Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::ADVP => [
 				'name' => 'ADVerb Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::ADJP => [
 				'name' => 'ADJective Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::RC => [
 				'name' => 'Relative clauses',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::NEG => [
 				'name' => 'Negations',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::CONJ => [
 				'name' => 'Conjunctions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::ANAPHORA => [
 				'name' => 'Anaphora',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::AUX => [
 				'name' => 'Auxiliaries',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::MODALS => [
 				'name' => 'Modals',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::COMPARATIVE_EXPRESSIONS => [
 				'name' => 'Comparative expressions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::PASSIVES => [
 				'name' => 'Passives',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::CLEFTS => [
 				'name' => 'Clefts',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::THERE_BES => [
 				'name' => 'There be',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::ELLIPSIS => [
 				'name' => 'Ellipsis',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::PARSE_HEADER => [
 				'name' => 'Parse header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_PARSING],
 			],
 			self::GRAMMAR_TYPE => [
 				'name' => 'Grammar type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
 			self::PARSER_TYPE => [
 				'name' => 'Parser type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_PARSING],
 				'desc' => '
 				',
 			],
 			self::SYNTACTIC_FORM_TYPE => [
 				'name' => 'Syntactic form type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_PARSING],
 				'options' => array(
 					'parse trees' => 'Parse trees',
 				),
@@ -557,6 +580,7 @@ class Features
 			self::INTERPRET_HEADER => [
 				'name' => 'Interpreter header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 			],
 			self::SEMANTIC_ATTACHMENT => [
 				'name' => 'Semantic attachment',
@@ -599,6 +623,7 @@ class Features
 			self::SEMANTIC_COMPOSITION_TYPE => [
 				'name' => 'Semantic composition type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'options' => array(
 					'unification' => 'Unification',
 					'production rules' => 'Production rules',
@@ -638,21 +663,17 @@ class Features
 				'desc' => '
 				',
 			],
-			self::UNIFORMIZATION_REWRITES => [
-				'name' => 'Uniformization rewrites',
-				'type' => self::FEATURETYPE_BOOL,
-				'desc' => '
-				',
-			],
 			self::COOPERATIVE_RESPONSES => [
 				'name' => 'Cooperative responses',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_ANSWER],
 				'desc' => '
 				',
 			],
 			self::SEMANTIC_FORM_TYPE => [
 				'name' => 'Semantic form type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'options' => array(
 					'relational' => 'Relational',
 					'procedural' => 'Procedural',
@@ -664,6 +685,7 @@ class Features
 			self::SEMANTIC_FORM_DESC => [
 				'name' => 'Semantic form description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
@@ -698,16 +720,19 @@ class Features
 			self::STANDARD_ONTOLOGY => [
 				'name' => 'Standard ontology',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
 			self::CONVERT_HEADER => [
 				'name' => 'Convert header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_CONVERSION_TO_KB],
 			],
 			self::CONVERT_TYPE => [
 				'name' => 'Convert type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_CONVERSION_TO_KB],
 				'options' => array(
 					'hard-coded' => 'Hard coded',
 				),
@@ -739,6 +764,7 @@ class Features
 			self::KNOWLEDGE_BASE_LANGUAGES => [
 				'name' => 'Knowledge base languages',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_KB_FORM],
 				'desc' => '
 				',
 			],
@@ -752,6 +778,7 @@ class Features
 			self::EXECUTE_HEADER => [
 				'name' => 'Execute header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_EXECUTION],
 			],
 			self::LOGICAL_REASONING => [
 				'name' => 'Logical reasoning',
@@ -763,6 +790,7 @@ class Features
 			self::GENERATE_HEADER => [
 				'name' => 'Generate header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_ANSWER],
 			],
 			self::PARAPHRASE_QUERY => [
 				'name' => 'Paraphrase knowledge base query',
@@ -772,5 +800,47 @@ class Features
 				',
 			],
 		];
+	}
+
+	public static function getTagTree()
+	{
+		return array(
+			array(
+				'name' => 'General',
+				'sections' => array(
+					array('name' => 'General', 'tag' => Features::TAG_GENERAL),
+					array('name' => 'Code',	'tag' => Features::TAG_CODE),
+					array('name' => 'System structure', 'tag' => Features::TAG_STRUCTURE),
+				)
+			),
+			array(
+				'name' => 'Processes',
+				'sections' => array(
+					array('name' => 'Tokenization',	'tag' => Features::TAG_TOKENIZATION),
+					array('name' => 'Parsing', 'tag' => Features::TAG_PARSING),
+					array('name' => 'Semantic Analysis', 'tag' => Features::TAG_SEMANTIC_ANALYSIS),
+					array('name' => 'Conversion to knowledge base form', 'tag' => Features::TAG_CONVERSION_TO_KB),
+					array('name' => 'Knowledge base execution', 'tag' => Features::TAG_EXECUTION),
+					array('name' => 'Answer generation', 'tag' => Features::TAG_ANSWER),
+					array('name' => 'User Dialog', 'tag' => Features::TAG_DIALOG),
+				)
+			),
+			array(
+				'name' => 'Process Data Structures',
+				'sections' => array(
+					array('name' => 'Semantic form', 'tag' => Features::TAG_SEMANTIC_FORM),
+					array('name' => 'Knowledge base form', 'tag' => Features::TAG_KB_FORM),
+				)
+			),
+			array(
+				'name' => 'Models',
+				'sections' => array(
+					array('name' => 'Domain model',	'tag' => Features::TAG_DOMAIN_MODEL),
+					array('name' => 'Lexicon', 'tag' => Features::TAG_LEXICON),
+					array('name' => 'Grammar', 'tag' => Features::TAG_GRAMMAR),
+					array('name' => 'Dialog model', 'tag' => Features::TAG_DIALOG_MODEL),
+				)
+			),
+		);
 	}
 }

@@ -87,7 +87,6 @@
     "DO-QUANTIFIER-SCOPE": null,
     "DO-ANAPHORA-RESOL": false,
     "DO-PLAUSIB-JUDGE": false,
-    "DO-UNIFORM-REWRITES": false,
     "COOPERATIVE-RESPONSES": null,
     "SEMANTIC-FORM-TYPE": [
         "relational"

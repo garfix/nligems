@@ -99,7 +99,6 @@ class NliSystem
 			Features::QUANTIFIER_SCOPING,
 			Features::ANAPHORA_RESOLUTION,
 			Features::PLAUSIBILITY_RESOLUTION,
-			Features::UNIFORMIZATION_REWRITES,
 			Features::COOPERATIVE_RESPONSES,
 
 		));

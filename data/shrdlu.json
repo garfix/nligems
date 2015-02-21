@@ -90,7 +90,6 @@
     "DO-QUANTIFIER-SCOPE": true,
     "DO-ANAPHORA-RESOL": true,
     "DO-PLAUSIB-JUDGE": true,
-    "DO-UNIFORM-REWRITES": null,
     "COOPERATIVE-RESPONSES": null,
     "SEMANTIC-FORM-TYPE": [
         "procedural"
