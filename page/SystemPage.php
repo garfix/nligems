@@ -8,6 +8,7 @@ use nligems\api\component\DataFlow;
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\ImageBar;
+use nligems\api\Features;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
 use nligems\api\page\FrontEndPage;
@@ -33,7 +34,7 @@ class SystemPage extends FrontEndPage
         $this->Header = new Header($NliSystem->getName(), $this->getBackPage());
 
         $this->ImageBar = new ImageBar();
-        foreach ($NliSystem->getContributors() as $contributor) {
+        foreach ($NliSystem->get(Features::CONTRIBUTORS) as $contributor) {
             $this->ImageBar->addImage($contributor, $LinkApi->getLink('image', array('name' => $contributor)));
         }
 
@@ -57,7 +58,7 @@ class SystemPage extends FrontEndPage
 
         $ImageBar = new HtmlElement('div');
         $ImageBar->addClass('imagePanel');
-        if (count($System->getContributors()) == 1) {
+        if (count($System->get(Features::CONTRIBUTORS)) == 1) {
             $ImageBar->addClass('thin');
         }
         $ImageBar->addChildHtml((string)$this->ImageBar);
@@ -68,7 +69,7 @@ class SystemPage extends FrontEndPage
         $Page->addChildNode($Body);
 
         $Img = new HtmlElement('img', false);
-		$Img->addAttribute('src', 'page/img/gems/' . $System->getGemImage());
+		$Img->addAttribute('src', 'page/img/gems/' . $System->get(Features::GEM_IMAGE));
         $Img->addClass('nameGem');
         $Body->addChildNode($Img);
 
@@ -77,15 +78,15 @@ class SystemPage extends FrontEndPage
         $Body->addChildNode($H2);
 
         $Desc = new HtmlElement('p');
-        $Desc->addChildText($System->getFirstYear() . ' - ' . $System->getLastYear());
+        $Desc->addChildText($System->get(Features::FIRST_YEAR) . ' - ' . $System->get(Features::LAST_YEAR));
         $Desc->addChildText(', ');
-        $Desc->addChildText(implode(', ', $System->getContributors()));
+        $Desc->addChildText(implode(', ', $System->get(Features::CONTRIBUTORS)));
 
-        if ($institutions = $System->getInstitutions()) {
+        if ($institutions = $System->get(Features::INSTITUTIONS)) {
             $Desc->addChildText(' ' . '(' . implode(', ', $institutions) . ')');
         }
 
-        if ($sourceCodeUrl = $System->getSourceCodeUrl()) {
+        if ($sourceCodeUrl = $System->get(Features::SOURCE_CODE_URL)) {
             $Link = new HtmlElement('a');
             $Link->addAttribute('href', $sourceCodeUrl);
             $Link->addAttribute('target', '_blank');
@@ -95,7 +96,7 @@ class SystemPage extends FrontEndPage
 
         $Body->addChildNode($Desc);
 
-        if ($nameDescription = $System->getNameDescription()) {
+        if ($nameDescription = $System->get(Features::NAME_DESCRIPTION)) {
 
             $H2 = new HtmlElement('h2');
             $H2->addChildText('An explanation of the name');
@@ -111,7 +112,7 @@ class SystemPage extends FrontEndPage
         $Body->addChildNode($H2);
 
         $P = new HtmlElement('p');
-        $P->addChildHtml(str_replace("\n\n", '<br><br>', $System->getLongDescription()));
+        $P->addChildHtml(str_replace("\n\n", '<br><br>', $System->get(Features::LONG_DESCRIPTION)));
         $Body->addChildNode($P);
 
         $H2 = new HtmlElement('h2');
@@ -130,26 +131,26 @@ class SystemPage extends FrontEndPage
         $DataFlow->addSystem($System);
         $Body->addChildHtml("<CENTER>" .  $DataFlow . "</CENTER>");
 
-        if ($System->getBooks()) {
+        if ($System->get(Features::BOOKS)) {
             $H2 = new HtmlElement('h2');
             $H2->addChildText('Books');
             $Body->addChildNode($H2);
 
             $Bullets = new Bullets();
             $Bullets->addClass('articles');
-            foreach ($System->getBooks() as $book) {
+            foreach ($System->get(Features::BOOKS) as $book) {
                 $Bullets->addItem($book);
             }
         }
 
-        if ($System->getArticles()) {
+        if ($System->get(Features::ARTICLES)) {
             $H2 = new HtmlElement('h2');
             $H2->addChildText('Articles');
             $Body->addChildNode($H2);
 
             $Bullets = new Bullets();
             $Bullets->addClass('articles');
-            foreach ($System->getArticles() as $article) {
+            foreach ($System->get(Features::ARTICLES) as $article) {
                 $Bullets->addItem($article);
             }
         }

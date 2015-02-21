@@ -68,17 +68,17 @@ class DataFlow
 
 		        $header = "Parse";
 
-		        if ($name = $System->getParserName()) {
+		        if ($name = $System->get(Features::PARSE_HEADER)) {
 			        $header .= "\n\"" . $name . "\"";
 		        }
 
 		        $List = $ComponentApi->createDefinitionList();
 
-		        if ($type = implode(',', $System->getParserType())) {
+		        if ($type = implode(',', $System->get(Features::PARSER_TYPE))) {
 			        $List->addItem('Parser type', $type);
 		        }
 
-		        if ($type = implode(',', $System->getGrammarType())) {
+		        if ($type = implode(',', $System->get(Features::GRAMMAR_TYPE))) {
 			        $List->addItem('Grammar type', $type);
 		        }
 
@@ -99,7 +99,7 @@ class DataFlow
 
         	$header = "Interpret";
 
-        	if ($name = $System->getInterpreterName()) {
+        	if ($name = $System->get(Features::INTERPRET_HEADER)) {
         		$header .= "\n\"" . $name . "\"";
         	}
 
@@ -112,11 +112,11 @@ class DataFlow
         	$value = (string)$ComponentApi->createProcess()->setHeader($header)->setContent($content);
         	$Table->set(5, $col, $value);
 
-        	if ($System->useConverter()) {
+        	if ($System->get(Features::SYNTACTIC_REWRITE)) {
 
         		$content = "Semantic form";
 
-        		if ($name = $System->getSemanticFormName()) {
+        		if ($name = $System->get(Features::SEMANTIC_FORM_DESC)) {
         			$content .= "\n(" . $name . ")";
         		}
 
@@ -125,8 +125,8 @@ class DataFlow
         			$Bullets->addItem($process);
         		}
 
-        		if ($ontology = $System->useOntology()) {
-        			if ($ontology = implode(',', $System->getStandardOntology())) {
+        		if ($ontology = $System->get(Features::ONTOLOGY_USED)) {
+        			if ($ontology = implode(',', $System->get(Features::STANDARD_ONTOLOGY))) {
         				$Bullets->addItem("Ontology: " . $ontology);
         			} else {
         				$Bullets->addItem("Custom ontology");
@@ -140,7 +140,7 @@ class DataFlow
 
         		$header = "Convert";
 
-        		if ($name = $System->getConverterName()) {
+        		if ($name = $System->get(Features::CONVERT_HEADE)) {
         			$header .= "\n\"" . $name . "\"";
         		}
 
@@ -155,7 +155,7 @@ class DataFlow
 
         	}
 
-        	$name = implode(',', $System->getKnowledgeBaseLanguageName());
+        	$name = implode(',', $System->get(Features::KNOWLEDGE_BASE_LANGUAGES));
 
         	$content = "Knowledge source form" . ($name ? "\n(" . $name . ")" : "");
 
@@ -173,7 +173,7 @@ class DataFlow
         	$content = '';
         	$List = $ComponentApi->createDefinitionList();
 
-        	if ($name = $System->getExecuterName()) {
+        	if ($name = $System->get(Features::EXECUTE_HEADER)) {
         		$List->addItem('Knowledge Base', $name);
         		$content = (string)$List;
         	}
@@ -193,7 +193,7 @@ class DataFlow
 
         	$header = "Answer";
 
-        	if ($name = $System->getAnswererName()) {
+        	if ($name = $System->get(Features::GENERATE_HEADER)) {
         		$header .= "\n\"" . $name . "\"";
         	}
 

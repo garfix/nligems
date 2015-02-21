@@ -157,6 +157,7 @@ class Features
 					'English' => 'English',
 				),
 				'desc' => '
+					Which natural languages are supported by this system? The majority of systems just supports English.
 				',
 			],
 			self::PROGRAMMING_LANGUAGES => [
@@ -170,6 +171,8 @@ class Features
 					'Prolog' => 'Prolog',
 				),
 				'desc' => '
+					Which programming language is used to implement the natural language processing core components of the system?
+					This excludes the languages that are only used to interact with the system.
 				',
 			],
 			self::KNOWLEDGE_BASE_TYPE => [

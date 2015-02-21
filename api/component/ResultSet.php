@@ -2,6 +2,7 @@
 
 namespace nligems\api\component;
 
+use nligems\api\Features;
 use nligems\api\filter\Filter;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
@@ -50,7 +51,7 @@ class ResultSet
 		// sort all systems
 		$allSystems = array();
 		foreach ($NliSystemApi->getAllSystems() as $System) {
-			$sortKey = $System->getFirstYear() . $System->getName();
+			$sortKey = $System->get(Features::FIRST_YEAR) . $System->getName();
 			$allSystems[$sortKey] = $System;
 		}
 		ksort($allSystems);
@@ -86,7 +87,7 @@ class ResultSet
 			$Table->addChildNode($Row);
 
 			$Img = new HtmlElement('img', false);
-			$Img->addAttribute('src', 'page/img/gems/' . $System->getGemImage());
+			$Img->addAttribute('src', 'page/img/gems/' . $System->get(Features::GEM_IMAGE));
 
 			$Gem = new HtmlElement('td');
 			$Gem->addClass('gem');
@@ -104,9 +105,9 @@ class ResultSet
 
 			$Desc = new HtmlElement('td');
 			$Desc->addClass('systemDescription');
-			$Desc->addChildText($System->getFirstYear());
+			$Desc->addChildText($System->get(Features::FIRST_YEAR));
 			$Desc->addChildText(', ');
-			$Desc->addChildText(implode(', ', $System->getContributors()));
+			$Desc->addChildText(implode(', ', $System->get(Features::CONTRIBUTORS)));
 			$Row->addChildNode($Desc);
 
 			$params = array_intersect_key($NliSystemApi->getFeaturesOfSystem($System), array_flip($filterFeatures));

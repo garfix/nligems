@@ -4,6 +4,7 @@ namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
 use nligems\api\component\TimeTable;
+use nligems\api\Features;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
 use nligems\api\page\FrontEndPage;
@@ -34,7 +35,7 @@ class TimeLinePage extends FrontEndPage
         $NliSystemApi = new NliSystemApi();
 
         foreach ($NliSystemApi->getAllSystems() as $System) {
-            $TimeTable->addEntry($System->getFirstYear(), 'Start of ' . $System->getName());
+            $TimeTable->addEntry($System->get(Features::FIRST_YEAR), 'Start of ' . $System->getName());
         }
     }
 
