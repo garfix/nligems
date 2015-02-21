@@ -2,6 +2,7 @@
 
 namespace nligems\api\component;
 
+use nligems\api\Features;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 
@@ -23,10 +24,10 @@ class CharacteristicsList
         $NliSystemApi = new NliSystemApi();
 
         $features = array(
-            NliSystemApi::PROGRAMMING_LANGUAGES,
-            NliSystemApi::NATURAL_LANGUAGES,
-            NliSystemApi::ANALYSIS,
-            NliSystemApi::INFLUENCED_BY,
+            Features::PROGRAMMING_LANGUAGES,
+            Features::NATURAL_LANGUAGES,
+            Features::ANALYSIS,
+            Features::INFLUENCED_BY,
         );
 
         $DL = new DefinitionList();
@@ -37,8 +38,8 @@ class CharacteristicsList
             if ($value) {
                 $serialized = is_array($value) ? implode(", ", $value) : $value;
 
-                if ($feature == NliSystemApi::ANALYSIS) {
-                    if ($this->System->get(NliSystemApi::SEMANTIC_GRAMMAR)) {
+                if ($feature == Features::ANALYSIS) {
+                    if ($this->System->get(Features::SEMANTIC_GRAMMAR)) {
                         $serialized .= ' (semantic grammar)';
                     }
                 }

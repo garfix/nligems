@@ -55,7 +55,7 @@ class NliSystem
 	 */
 	public function getName()
 	{
-		return $this->getValue(NliSystemApi::NAME);
+		return $this->getValue(Features::NAME);
 	}
 
 	/**
@@ -63,7 +63,7 @@ class NliSystem
 	 */
 	public function getNameDescription()
 	{
-		return $this->getValue(NliSystemApi::NAME_DESCRIPTION);
+		return $this->getValue(Features::NAME_DESCRIPTION);
 	}
 
 	/**
@@ -71,7 +71,7 @@ class NliSystem
 	 */
 	public function getLongDescription()
 	{
-		return $this->getValue(NliSystemApi::LONG_DESCRIPTION);
+		return $this->getValue(Features::LONG_DESCRIPTION);
 	}
 
 	/**
@@ -79,7 +79,7 @@ class NliSystem
 	 */
 	public function getFirstYear()
 	{
-		return $this->getValue(NliSystemApi::FIRST_YEAR);
+		return $this->getValue(Features::FIRST_YEAR);
 	}
 
 	/**
@@ -87,7 +87,7 @@ class NliSystem
 	 */
 	public function getLastYear()
 	{
-		return $this->getValue(NliSystemApi::LAST_YEAR);
+		return $this->getValue(Features::LAST_YEAR);
 	}
 
 	/**
@@ -95,7 +95,7 @@ class NliSystem
 	 */
 	public function getInstitutions()
 	{
-		return $this->getValue(NliSystemApi::INSTITUTIONS);
+		return $this->getValue(Features::INSTITUTIONS);
 	}
 
 	/**
@@ -103,7 +103,7 @@ class NliSystem
 	 */
 	public function getInfluences()
 	{
-		return $this->getValue(NliSystemApi::INFLUENCED_BY);
+		return $this->getValue(Features::INFLUENCED_BY);
 	}
 
 	/**
@@ -111,7 +111,7 @@ class NliSystem
 	 */
 	public function getNaturalLanguages()
 	{
-		return $this->getValue(NliSystemApi::NATURAL_LANGUAGES);
+		return $this->getValue(Features::NATURAL_LANGUAGES);
 	}
 
 	/**
@@ -119,7 +119,7 @@ class NliSystem
 	 */
 	public function getProgrammingLanguages()
 	{
-		return $this->getValue(NliSystemApi::PROGRAMMING_LANGUAGES);
+		return $this->getValue(Features::PROGRAMMING_LANGUAGES);
 	}
 
 	/**
@@ -127,7 +127,7 @@ class NliSystem
 	 */
 	public function getSourceCodeUrl()
 	{
-		return $this->getValue(NliSystemApi::SOURCE_CODE_URL);
+		return $this->getValue(Features::SOURCE_CODE_URL);
 	}
 
 	/**
@@ -135,7 +135,7 @@ class NliSystem
 	 */
 	public function getKnowledgeBaseType()
 	{
-		return $this->getValue(NliSystemApi::KNOWLEDGE_BASE_TYPE);
+		return $this->getValue(Features::KNOWLEDGE_BASE_TYPE);
 	}
 
 	/**
@@ -143,7 +143,7 @@ class NliSystem
 	 */
 	public function getKnowledgeBaseTypeDescription()
 	{
-		return $this->getValue(NliSystemApi::KNOWLEDGE_BASE_DESCRIPTION);
+		return $this->getValue(Features::KNOWLEDGE_BASE_DESCRIPTION);
 	}
 
 	/**
@@ -151,7 +151,7 @@ class NliSystem
 	 */
 	public function getSentenceTypes()
 	{
-		return $this->getValue(NliSystemApi::SENTENCE_TYPES);
+		return $this->getValue(Features::SENTENCE_TYPES);
 	}
 
 	/**
@@ -159,7 +159,7 @@ class NliSystem
 	 */
 	public function getArticles()
 	{
-		return $this->getValue(NliSystemApi::ARTICLES);
+		return $this->getValue(Features::ARTICLES);
 	}
 
 	/**
@@ -167,82 +167,82 @@ class NliSystem
 	 */
 	public function getBooks()
 	{
-		return $this->getValue(NliSystemApi::BOOKS);
+		return $this->getValue(Features::BOOKS);
 	}
 
 	public function getParserName()
 	{
-		return $this->getValue(NliSystemApi::PARSE_HEADER);
+		return $this->getValue(Features::PARSE_HEADER);
 	}
 
 	public function getInterpreterName()
 	{
-		return $this->getValue(NliSystemApi::INTERPRET_HEADER);
+		return $this->getValue(Features::INTERPRET_HEADER);
 	}
 
 	public function getSemanticFormName()
 	{
-		return $this->getValue(NliSystemApi::SEMANTIC_FORM_DESC);
+		return $this->getValue(Features::SEMANTIC_FORM_DESC);
 	}
 
 	public function getConverterName()
 	{
-		return $this->getValue(NliSystemApi::CONVERT_HEADER);
+		return $this->getValue(Features::CONVERT_HEADER);
 	}
 
 	public function useConverter()
 	{
-		return $this->getValue(NliSystemApi::SYNTACTIC_REWRITE);
+		return $this->getValue(Features::SYNTACTIC_REWRITE);
 	}
 
 	public function useOntology()
 	{
-		return $this->getValue(NliSystemApi::ONTOLOGY_USED);
+		return $this->getValue(Features::ONTOLOGY_USED);
 	}
 
 	public function getStandardOntology()
 	{
-		return $this->getValue(NliSystemApi::STANDARD_ONTOLOGY);
+		return $this->getValue(Features::STANDARD_ONTOLOGY);
 	}
 
 	public function getKnowledgeBaseLanguageName()
 	{
-		return $this->getValue(NliSystemApi::KNOWLEDGE_BASE_LANGUAGES);
+		return $this->getValue(Features::KNOWLEDGE_BASE_LANGUAGES);
 	}
 
 	public function getGrammarType()
 	{
-		return $this->getValue(NliSystemApi::GRAMMAR_TYPE);
+		return $this->getValue(Features::GRAMMAR_TYPE);
 	}
 
 	public function getParserType()
 	{
-		return $this->getValue(NliSystemApi::PARSER_TYPE);
+		return $this->getValue(Features::PARSER_TYPE);
 	}
 
 	public function getSemanticAttachmentType()
 	{
-		return $this->getValue(NliSystemApi::SEMANTIC_COMPOSITION_TYPE);
+		return $this->getValue(Features::SEMANTIC_COMPOSITION_TYPE);
 	}
 
 	public function getAnswererName()
 	{
-		return $this->getValue(NliSystemApi::GENERATE_HEADER);
+		return $this->getValue(Features::GENERATE_HEADER);
 	}
 
 	public function getExecuterName()
 	{
-		return $this->getValue(NliSystemApi::EXECUTE_HEADER);
+		return $this->getValue(Features::EXECUTE_HEADER);
 	}
 
 	public function getContributors()
 	{
-		return $this->getValue(NliSystemApi::CONTRIBUTORS);
+		return $this->getValue(Features::CONTRIBUTORS);
 	}
 
 	public function getGemImage()
 	{
-		return $this->getValue(NliSystemApi::GEM_IMAGE);
+		return $this->getValue(Features::GEM_IMAGE);
 	}
 
 	private function buildFeatureDescriptionArray($features)
@@ -263,36 +263,36 @@ class NliSystem
 	public function getTokenizationProcesses()
 	{
 		return $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::DICTIONARY_LOOKUP,
-			NliSystemApi::MORPHOLOGICAL_ANALYSIS,
-			NliSystemApi::WORD_SEPARATION,
-			NliSystemApi::SPELLING_CORRECTION,
-			NliSystemApi::OPEN_ENDED_TOKEN_RECOGNITION,
-			NliSystemApi::PROPER_NAMES_FROM_KB,
-			NliSystemApi::PROPER_NAMES_BY_MATCHING,
-			NliSystemApi::QUOTED_STRING_RECOGNITION,
+			Features::DICTIONARY_LOOKUP,
+			Features::MORPHOLOGICAL_ANALYSIS,
+			Features::WORD_SEPARATION,
+			Features::SPELLING_CORRECTION,
+			Features::OPEN_ENDED_TOKEN_RECOGNITION,
+			Features::PROPER_NAMES_FROM_KB,
+			Features::PROPER_NAMES_BY_MATCHING,
+			Features::QUOTED_STRING_RECOGNITION,
 		));
 	}
 
 	public function getInterpretationProcesses()
 	{
 		$descriptions = $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::SEMANTIC_ATTACHMENT,
-			NliSystemApi::SEMANTIC_COMPOSITION,
-			NliSystemApi::MODIFIER_ATTACHMENT,
-			NliSystemApi::CONJUNCTION_DISJUNCTION,
-			NliSystemApi::NOMINAL_COMPOUNDS,
-			NliSystemApi::SEMANTIC_CONFLICT_DETECTION,
-			NliSystemApi::QUANTIFIER_SCOPING,
-			NliSystemApi::ANAPHORA_RESOLUTION,
-			NliSystemApi::PLAUSIBILITY_RESOLUTION,
-			NliSystemApi::UNIFORMIZATION_REWRITES,
-			NliSystemApi::COOPERATIVE_RESPONSES,
+			Features::SEMANTIC_ATTACHMENT,
+			Features::SEMANTIC_COMPOSITION,
+			Features::MODIFIER_ATTACHMENT,
+			Features::CONJUNCTION_DISJUNCTION,
+			Features::NOMINAL_COMPOUNDS,
+			Features::SEMANTIC_CONFLICT_DETECTION,
+			Features::QUANTIFIER_SCOPING,
+			Features::ANAPHORA_RESOLUTION,
+			Features::PLAUSIBILITY_RESOLUTION,
+			Features::UNIFORMIZATION_REWRITES,
+			Features::COOPERATIVE_RESPONSES,
 
 		));
 
-		if (isset($descriptions[NliSystemApi::SEMANTIC_COMPOSITION]) && ($type = $this->getSemanticAttachmentType())) {
-			$descriptions[NliSystemApi::SEMANTIC_COMPOSITION] .= "\n(" . $type . ")";
+		if (isset($descriptions[Features::SEMANTIC_COMPOSITION]) && ($type = $this->getSemanticAttachmentType())) {
+			$descriptions[Features::SEMANTIC_COMPOSITION] .= "\n(" . $type . ")";
 		}
 
 		return $descriptions;
@@ -301,38 +301,38 @@ class NliSystem
 	public function getExecuterProcesses()
 	{
 		return $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::LOGICAL_REASONING,
+			Features::LOGICAL_REASONING,
 		));
 	}
 
 	public function getConversionProcesses()
 	{
 		return $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::RESTRUCTURE_INFORMATION,
-			NliSystemApi::OPTIMIZE_QUERY,
+			Features::RESTRUCTURE_INFORMATION,
+			Features::OPTIMIZE_QUERY,
 		));
 	}
 
 	public function getSemanticOptions()
 	{
 		return $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::EVENT_BASED,
-			NliSystemApi::TEMPORAL,
-			NliSystemApi::PROPER_NOUN_CONSTANTS,
+			Features::EVENT_BASED,
+			Features::TEMPORAL,
+			Features::PROPER_NOUN_CONSTANTS,
 		));
 	}
 
 	public function getKnowledgeBaseOptions()
 	{
 		return $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::KNOWLEDGE_BASE_AGGREGATION
+			Features::KNOWLEDGE_BASE_AGGREGATION
 		));
 	}
 
 	public function getGenerationOptions()
 	{
 		return $this->buildFeatureDescriptionArray(array(
-			NliSystemApi::PARAPHRASE_QUERY
+			Features::PARAPHRASE_QUERY
 		));
 	}
 

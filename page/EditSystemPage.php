@@ -11,6 +11,7 @@ use nligems\api\component\FormElementTextarea;
 use nligems\api\component\Legend;
 use nligems\api\component\SubmitButton;
 use nligems\api\component\Table;
+use nligems\api\Features;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 use nligems\api\page\BackEndPage;
@@ -36,135 +37,135 @@ class EditSystemPage extends BackEndPage
             array(
                 'title' => 'General',
                 'features' => array(
-                    NliSystemApi::NAME,
-                    NliSystemApi::FIRST_YEAR,
-                    NliSystemApi::LAST_YEAR,
-                    NliSystemApi::CONTRIBUTORS,
-                    NliSystemApi::INSTITUTIONS,
-                    NliSystemApi::INFLUENCED_BY,
-                    NliSystemApi::NATURAL_LANGUAGES,
-                    NliSystemApi::SOURCE_CODE_URL,
-                    NliSystemApi::KNOWLEDGE_BASE_TYPE,
-                    NliSystemApi::KNOWLEDGE_BASE_DESCRIPTION,
-                    NliSystemApi::ARTICLES,
-                    NliSystemApi::BOOKS,
-                    NliSystemApi::GEM_IMAGE,
-                    NliSystemApi::NAME_DESCRIPTION,
-                    NliSystemApi::LONG_DESCRIPTION,
+                    Features::NAME,
+                    Features::FIRST_YEAR,
+                    Features::LAST_YEAR,
+                    Features::CONTRIBUTORS,
+                    Features::INSTITUTIONS,
+                    Features::INFLUENCED_BY,
+                    Features::NATURAL_LANGUAGES,
+                    Features::SOURCE_CODE_URL,
+                    Features::KNOWLEDGE_BASE_TYPE,
+                    Features::KNOWLEDGE_BASE_DESCRIPTION,
+                    Features::ARTICLES,
+                    Features::BOOKS,
+                    Features::GEM_IMAGE,
+                    Features::NAME_DESCRIPTION,
+                    Features::LONG_DESCRIPTION,
                 ),
             ),
             array(
                 'title' => 'Code',
                 'features' => array(
-                    NliSystemApi::PROGRAMMING_LANGUAGES,
+                    Features::PROGRAMMING_LANGUAGES,
                 ),
             ),
             array(
                 'title' => 'System structure',
                 'features' => array(
-                    NliSystemApi::ANALYSIS,
-                    NliSystemApi::SEMANTIC_GRAMMAR,
-                    NliSystemApi::DIALOG,
-                    NliSystemApi::NEW_WORDS,
-                    NliSystemApi::MULTI_DB,
-                    NliSystemApi::ACCEPT_UNGRAMMATICAL_SENTENCES,
-                    NliSystemApi::META_SELF,
-                    NliSystemApi::META_KB,
+                    Features::ANALYSIS,
+                    Features::SEMANTIC_GRAMMAR,
+                    Features::DIALOG,
+                    Features::NEW_WORDS,
+                    Features::MULTI_DB,
+                    Features::ACCEPT_UNGRAMMATICAL_SENTENCES,
+                    Features::META_SELF,
+                    Features::META_KB,
                 ),
             ),
             array(
                 'title' => 'Language constructs',
                 'features' => array_merge(
                     $SystemsApi->getLanguageConstructs(),
-                    [NliSystemApi::SENTENCE_TYPES]
+                    [Features::SENTENCE_TYPES]
                 ),
             ),
             array(
                 'title' => 'Tokenization',
                 'features' => array(
-                    NliSystemApi::MORPHOLOGICAL_ANALYSIS,
-                    NliSystemApi::DICTIONARY_LOOKUP,
-                    NliSystemApi::WORD_SEPARATION,
-                    NliSystemApi::SPELLING_CORRECTION,
-                    NliSystemApi::OPEN_ENDED_TOKEN_RECOGNITION,
-                    NliSystemApi::PROPER_NAMES_FROM_KB,
-                    NliSystemApi::PROPER_NAMES_BY_MATCHING,
-                    NliSystemApi::QUOTED_STRING_RECOGNITION,
+                    Features::MORPHOLOGICAL_ANALYSIS,
+                    Features::DICTIONARY_LOOKUP,
+                    Features::WORD_SEPARATION,
+                    Features::SPELLING_CORRECTION,
+                    Features::OPEN_ENDED_TOKEN_RECOGNITION,
+                    Features::PROPER_NAMES_FROM_KB,
+                    Features::PROPER_NAMES_BY_MATCHING,
+                    Features::QUOTED_STRING_RECOGNITION,
                 ),
             ),
             array(
                 'title' => 'Parsing',
                 'features' => array(
-                    NliSystemApi::PARSE_HEADER,
-                    NliSystemApi::GRAMMAR_TYPE,
-                    NliSystemApi::PARSER_TYPE,
+                    Features::PARSE_HEADER,
+                    Features::GRAMMAR_TYPE,
+                    Features::PARSER_TYPE,
                 ),
             ),
             array(
                 'title' => 'Interpretation',
                 'features' => array(
-                    NliSystemApi::INTERPRET_HEADER,
-                    NliSystemApi::SEMANTIC_ATTACHMENT,
-                    NliSystemApi::MODIFIER_ATTACHMENT,
-                    NliSystemApi::CONJUNCTION_DISJUNCTION,
-                    NliSystemApi::NOMINAL_COMPOUNDS,
-                    NliSystemApi::SEMANTIC_COMPOSITION,
-                    NliSystemApi::SEMANTIC_COMPOSITION_TYPE,
-                    NliSystemApi::SEMANTIC_CONFLICT_DETECTION,
-                    NliSystemApi::QUANTIFIER_SCOPING,
-                    NliSystemApi::ANAPHORA_RESOLUTION,
-                    NliSystemApi::PLAUSIBILITY_RESOLUTION,
-                    NliSystemApi::UNIFORMIZATION_REWRITES,
-                    NliSystemApi::COOPERATIVE_RESPONSES,
+                    Features::INTERPRET_HEADER,
+                    Features::SEMANTIC_ATTACHMENT,
+                    Features::MODIFIER_ATTACHMENT,
+                    Features::CONJUNCTION_DISJUNCTION,
+                    Features::NOMINAL_COMPOUNDS,
+                    Features::SEMANTIC_COMPOSITION,
+                    Features::SEMANTIC_COMPOSITION_TYPE,
+                    Features::SEMANTIC_CONFLICT_DETECTION,
+                    Features::QUANTIFIER_SCOPING,
+                    Features::ANAPHORA_RESOLUTION,
+                    Features::PLAUSIBILITY_RESOLUTION,
+                    Features::UNIFORMIZATION_REWRITES,
+                    Features::COOPERATIVE_RESPONSES,
                 ),
             ),
             array(
                 'title' => 'Conversion to knowledge base',
                 'features' => array(
-                    NliSystemApi::CONVERT_HEADER,
-                    NliSystemApi::CONVERT_TYPE,
-                    NliSystemApi::SYNTACTIC_REWRITE,
-                    NliSystemApi::OPTIMIZE_QUERY,
-                    NliSystemApi::RESTRUCTURE_INFORMATION,
+                    Features::CONVERT_HEADER,
+                    Features::CONVERT_TYPE,
+                    Features::SYNTACTIC_REWRITE,
+                    Features::OPTIMIZE_QUERY,
+                    Features::RESTRUCTURE_INFORMATION,
                 ),
             ),
             array(
                 'title' => 'Knowledge base execution',
                 'features' => array(
-                    NliSystemApi::EXECUTE_HEADER,
-                    NliSystemApi::LOGICAL_REASONING,
+                    Features::EXECUTE_HEADER,
+                    Features::LOGICAL_REASONING,
                 ),
             ),
             array(
                 'title' => 'Answer generation',
                 'features' => array(
-                    NliSystemApi::GENERATE_HEADER,
-                    NliSystemApi::PARAPHRASE_QUERY,
+                    Features::GENERATE_HEADER,
+                    Features::PARAPHRASE_QUERY,
                 ),
             ),
             array(
                 'title' => 'Syntactic form',
                 'features' => array(
-                    NliSystemApi::SYNTACTIC_FORM_TYPE,
+                    Features::SYNTACTIC_FORM_TYPE,
                 ),
             ),
             array(
                 'title' => 'Semantic form',
                 'features' => array(
-                    NliSystemApi::SEMANTIC_FORM_TYPE,
-                    NliSystemApi::SEMANTIC_FORM_DESC,
-                    NliSystemApi::EVENT_BASED,
-                    NliSystemApi::TEMPORAL,
-                    NliSystemApi::PROPER_NOUN_CONSTANTS,
-                    NliSystemApi::ONTOLOGY_USED,
-                    NliSystemApi::STANDARD_ONTOLOGY,
+                    Features::SEMANTIC_FORM_TYPE,
+                    Features::SEMANTIC_FORM_DESC,
+                    Features::EVENT_BASED,
+                    Features::TEMPORAL,
+                    Features::PROPER_NOUN_CONSTANTS,
+                    Features::ONTOLOGY_USED,
+                    Features::STANDARD_ONTOLOGY,
                 ),
             ),
             array(
                 'title' => 'Knowledge base form',
                 'features' => array(
-                    NliSystemApi::KNOWLEDGE_BASE_LANGUAGES,
-                    NliSystemApi::KNOWLEDGE_BASE_AGGREGATION,
+                    Features::KNOWLEDGE_BASE_LANGUAGES,
+                    Features::KNOWLEDGE_BASE_AGGREGATION,
                 ),
             ),
             array(
@@ -216,15 +217,14 @@ class EditSystemPage extends BackEndPage
         $value = $this->System->get($feature);
 
         switch ($type) {
-            case NliSystemApi::FEATURETYPE_BOOL:
+            case Features::FEATURETYPE_BOOL:
                 $Element = new FormElementCheckbox();
                 $Element->addAttribute('name', $feature);
                 if ($value) {
                     $Element->addAttribute('checked', true);
                 }
                 break;
-            case NliSystemApi::FEATURETYPE_TEXT_MULTIPLE:
-
+            case Features::FEATURETYPE_TEXT_MULTIPLE:
                 if ($possibleValues = $SystemsApi->getPossibleValues($feature)) {
                     $Element = new FormElementCheckboxGroup($feature, $possibleValues);
                     $Element->setValue($value);
@@ -236,12 +236,12 @@ class EditSystemPage extends BackEndPage
                     $Element->addChildText($value);
                 }
                 break;
-            case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
+            case Features::FEATURETYPE_TEXT_SINGLE:
                 $Element = new FormElementText();
                 $Element->addAttribute('name', $feature);
                 $Element->addAttribute('value', $value);
                 break;
-            case NliSystemApi::FEATURETYPE_TEXT_SINGLE_LONG:
+            case Features::FEATURETYPE_TEXT_SINGLE_LONG:
                 $Element = new FormElementTextarea();
                 $Element->addAttribute('name', $feature);
                 $Element->addAttribute('cols', 100);
@@ -264,18 +264,18 @@ class EditSystemPage extends BackEndPage
             $type = $SystemsApi->getFeatureType($key);
 
              switch ($type) {
-                 case NliSystemApi::FEATURETYPE_BOOL:
+                 case Features::FEATURETYPE_BOOL:
                      $inputValue = $value == 'on';
                      break;
-                 case NliSystemApi::FEATURETYPE_TEXT_MULTIPLE:
+                 case Features::FEATURETYPE_TEXT_MULTIPLE:
                      if (is_array($value)) {
                          $inputValue = array_keys(array_filter($value, function($val){ return $val == 'on'; }));
                      } else {
                          $inputValue = array_filter(explode("\r\n", $value));
                      }
                      break;
-                 case NliSystemApi::FEATURETYPE_TEXT_SINGLE:
-                 case NliSystemApi::FEATURETYPE_TEXT_SINGLE_LONG:
+                 case Features::FEATURETYPE_TEXT_SINGLE:
+                 case Features::FEATURETYPE_TEXT_SINGLE_LONG:
                      $inputValue = $value;
                      break;
                  default:

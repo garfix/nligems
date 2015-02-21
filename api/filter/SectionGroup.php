@@ -1,6 +1,7 @@
 <?php
 
 namespace nligems\api\filter;
+
 use nligems\api\component\HtmlElement;
 use nligems\api\NliSystem;
 

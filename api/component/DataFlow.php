@@ -3,8 +3,8 @@
 namespace nligems\api\component;
 
 use nligems\api\ComponentApi;
+use nligems\api\Features;
 use nligems\api\NliSystem;
-use nligems\api\NliSystemApi;
 
 /**
  * @author Patrick van Bergen
@@ -64,7 +64,7 @@ class DataFlow
         	$value = (string)$ComponentApi->createDataStore()->setContent("Tokens");
         	$Table->set(2, $col, $value);
 
-	        if (in_array('parse and interpret', $System->get(NliSystemApi::ANALYSIS))) {
+	        if (in_array('parse and interpret', $System->get(Features::ANALYSIS))) {
 
 		        $header = "Parse";
 
@@ -85,7 +85,7 @@ class DataFlow
 		        $content = (string)$List;
 
 		        $Bullets = $ComponentApi->createBullets();
-	        	if ($System->get(NliSystemApi::SEMANTIC_GRAMMAR)) {
+	        	if ($System->get(Features::SEMANTIC_GRAMMAR)) {
 	        		$Bullets->addItem('Semantic grammar (contains domain-specific information)');
 	        	}
 		        $content .= (string)$Bullets;
