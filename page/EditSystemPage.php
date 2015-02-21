@@ -86,17 +86,16 @@ class EditSystemPage extends BackEndPage
                 }
                 break;
             case Features::FEATURETYPE_TEXT_MULTIPLE:
+                $Element = new FormElementTextarea();
+                $Element->addAttribute('name', $feature);
+                $Element->addAttribute('cols', 100);
+                $value = implode("\n", $value);
+                $Element->addChildText($value);
+                break;
             case Features::FEATURETYPE_MULTIPLE_CHOICE:
-                if ($possibleValues = $SystemsApi->getPossibleValues($feature)) {
-                    $Element = new FormElementCheckboxGroup($feature, $possibleValues);
-                    $Element->setValue($value);
-                } else {
-                    $Element = new FormElementTextarea();
-                    $Element->addAttribute('name', $feature);
-                    $Element->addAttribute('cols', 100);
-                    $value = implode("\n", $value);
-                    $Element->addChildText($value);
-                }
+                $possibleValues = $SystemsApi->getPossibleValues($feature);
+                $Element = new FormElementCheckboxGroup($feature, $possibleValues);
+                $Element->setValue($value);
                 break;
             case Features::FEATURETYPE_TEXT_SINGLE:
                 $Element = new FormElementText();
@@ -130,12 +129,10 @@ class EditSystemPage extends BackEndPage
                      $inputValue = $value == 'on';
                      break;
                  case Features::FEATURETYPE_TEXT_MULTIPLE:
+                     $inputValue = array_filter(explode("\r\n", $value));
+                     break;
                  case Features::FEATURETYPE_MULTIPLE_CHOICE:
-                     if (is_array($value)) {
-                         $inputValue = array_keys(array_filter($value, function($val){ return $val == 'on'; }));
-                     } else {
-                         $inputValue = array_filter(explode("\r\n", $value));
-                     }
+                     $inputValue = array_keys(array_filter($value, function($val){ return $val == 'on'; }));
                      break;
                  case Features::FEATURETYPE_TEXT_SINGLE:
                  case Features::FEATURETYPE_TEXT_SINGLE_LONG:
