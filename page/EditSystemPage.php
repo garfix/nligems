@@ -86,6 +86,7 @@ class EditSystemPage extends BackEndPage
                 }
                 break;
             case Features::FEATURETYPE_TEXT_MULTIPLE:
+            case Features::FEATURETYPE_MULTIPLE_CHOICE:
                 if ($possibleValues = $SystemsApi->getPossibleValues($feature)) {
                     $Element = new FormElementCheckboxGroup($feature, $possibleValues);
                     $Element->setValue($value);
@@ -129,6 +130,7 @@ class EditSystemPage extends BackEndPage
                      $inputValue = $value == 'on';
                      break;
                  case Features::FEATURETYPE_TEXT_MULTIPLE:
+                 case Features::FEATURETYPE_MULTIPLE_CHOICE:
                      if (is_array($value)) {
                          $inputValue = array_keys(array_filter($value, function($val){ return $val == 'on'; }));
                      } else {

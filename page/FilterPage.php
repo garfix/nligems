@@ -103,7 +103,7 @@ class FilterPage extends FrontEndPage
 					$type = $NliSystemApi->getFeatureType($feature);
 					if ($type == Features::FEATURETYPE_BOOL) {
 						$simpleFeatures[] = $feature;
-					} elseif ($type == Features::FEATURETYPE_TEXT_MULTIPLE) {
+					} elseif ($type == Features::FEATURETYPE_MULTIPLE_CHOICE) {
 						$complexFeatures[] = $feature;
 					}
 				}

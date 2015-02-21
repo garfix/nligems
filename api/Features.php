@@ -178,19 +178,18 @@ class Features
 			],
 			self::NATURAL_LANGUAGES => [
 				'name' => 'Natural language',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GENERAL],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'English' => 'English',
 				),
+				'tags' => [self::TAG_GENERAL],
 				'desc' => '
 					Which natural languages are supported by this system? The majority of systems just supports English.
 				',
 			],
 			self::PROGRAMMING_LANGUAGES => [
 				'name' => 'Programming language',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_CODE],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'APL' => 'APL',
 					'C' => 'C',
@@ -198,6 +197,7 @@ class Features
 					'Lisp' => 'Lisp',
 					'Prolog' => 'Prolog',
 				),
+				'tags' => [self::TAG_CODE],
 				'desc' => '
 					Which programming language is used to implement the natural language processing core components of the system?
 					This excludes the languages that are only used to interact with the system.
@@ -205,13 +205,13 @@ class Features
 			],
 			self::KNOWLEDGE_BASE_TYPE => [
 				'name' => 'Domain model type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_DOMAIN_MODEL],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'relational' => 'Relational',
 					'tree-based' => 'Tree based',
 					'inference engine' => 'Inference engine',
 				),
+				'tags' => [self::TAG_DOMAIN_MODEL],
 				'desc' => '
 					The way data is stored in the domain model:
 					<dl>
@@ -230,13 +230,13 @@ class Features
 			],
 			self::SENTENCE_TYPES => [
 				'name' => 'Sentence types',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GRAMMAR],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'question' => 'Question',
 				    'declarative' => 'Declarative',
 				    'imperative' => 'Imperative',
 				),
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
@@ -291,13 +291,13 @@ class Features
 			],
 			self::ANALYSIS => [
 				'name' => 'Type of analysis',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_STRUCTURE],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'Pattern-matching' => 'Pattern matching',
 					'Syntax-based' => 'Syntax based (maps parse tree to DB query)',
 					'Semantics-based' => 'Semantics based (via semantic intermediate)',
 				),
+				'tags' => [self::TAG_STRUCTURE],
 				'desc' => '
 					The main categories of natural language interfaces<br>
 					<dl>
@@ -569,11 +569,11 @@ class Features
 			],
 			self::SYNTACTIC_FORM_TYPE => [
 				'name' => 'Syntactic form type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_PARSING],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'parse trees' => 'Parse trees',
 				),
+				'tags' => [self::TAG_PARSING],
 				'desc' => '
 				',
 			],
@@ -622,14 +622,14 @@ class Features
 			],
 			self::SEMANTIC_COMPOSITION_TYPE => [
 				'name' => 'Semantic composition type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'unification' => 'Unification',
 					'production rules' => 'Production rules',
 					'lambda calculus' => 'Lambda calculus',
 					'custom' => 'Custom',
 				),
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 				',
 			],
@@ -672,13 +672,13 @@ class Features
 			],
 			self::SEMANTIC_FORM_TYPE => [
 				'name' => 'Semantic form type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_SEMANTIC_FORM],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'relational' => 'Relational',
 					'procedural' => 'Procedural',
 					'ontology' => 'Ontology',
 				),
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
@@ -731,11 +731,11 @@ class Features
 			],
 			self::CONVERT_TYPE => [
 				'name' => 'Convert type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_CONVERSION_TO_KB],
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'hard-coded' => 'Hard coded',
 				),
+				'tags' => [self::TAG_CONVERSION_TO_KB],
 				'desc' => '
 				',
 			],
