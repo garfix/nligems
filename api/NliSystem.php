@@ -58,15 +58,19 @@ class NliSystem
 		return $this->getValue(Features::NAME);
 	}
 
-	private function buildFeatureDescriptionArray($features)
+	private function buildFeatureDescriptionArray($tag)
 	{
 		$NliSystemApi = new NliSystemApi();
+
+		$features = $NliSystemApi->getFeaturesByTag($tag);
 
 		$descriptions = array();
 
 		foreach ($features as $feature) {
-			if ($this->getValue($feature)) {
-				$descriptions[$feature] = $NliSystemApi->getFeatureName($feature);
+			if ($NliSystemApi->getFeatureType($feature) == Features::FEATURETYPE_BOOL) {
+				if ($this->getValue($feature)) {
+					$descriptions[$feature] = $NliSystemApi->getFeatureName($feature);
+				}
 			}
 		}
 
@@ -75,33 +79,12 @@ class NliSystem
 
 	public function getTokenizationProcesses()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			Features::DICTIONARY_LOOKUP,
-			Features::MORPHOLOGICAL_ANALYSIS,
-			Features::WORD_SEPARATION,
-			Features::SPELLING_CORRECTION,
-			Features::OPEN_ENDED_TOKEN_RECOGNITION,
-			Features::PROPER_NAMES_FROM_KB,
-			Features::PROPER_NAMES_BY_MATCHING,
-			Features::QUOTED_STRING_RECOGNITION,
-		));
+		return $this->buildFeatureDescriptionArray(Features::TAG_TOKENIZATION);
 	}
 
 	public function getInterpretationProcesses()
 	{
-		$descriptions = $this->buildFeatureDescriptionArray(array(
-			Features::SEMANTIC_ATTACHMENT,
-			Features::SEMANTIC_COMPOSITION,
-			Features::MODIFIER_ATTACHMENT,
-			Features::CONJUNCTION_DISJUNCTION,
-			Features::NOMINAL_COMPOUNDS,
-			Features::SEMANTIC_CONFLICT_DETECTION,
-			Features::QUANTIFIER_SCOPING,
-			Features::ANAPHORA_RESOLUTION,
-			Features::PLAUSIBILITY_RESOLUTION,
-			Features::COOPERATIVE_RESPONSES,
-
-		));
+		$descriptions = $this->buildFeatureDescriptionArray(Features::TAG_SEMANTIC_ANALYSIS);
 
 		if (isset($descriptions[Features::SEMANTIC_COMPOSITION]) && ($type = $this->get(Features::SEMANTIC_COMPOSITION_TYPE))) {
 			$descriptions[Features::SEMANTIC_COMPOSITION] .= "\n(" . $type . ")";
@@ -112,47 +95,32 @@ class NliSystem
 
 	public function getExecuterProcesses()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			Features::LOGICAL_REASONING,
-		));
+		return $this->buildFeatureDescriptionArray(Features::TAG_EXECUTION);
 	}
 
 	public function getConversionProcesses()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			Features::RESTRUCTURE_INFORMATION,
-			Features::OPTIMIZE_QUERY,
-		));
+		return $this->buildFeatureDescriptionArray(Features::TAG_CONVERSION_TO_KB);
 	}
 
 	public function getSemanticOptions()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			Features::EVENT_BASED,
-			Features::TEMPORAL,
-			Features::PROPER_NOUN_CONSTANTS,
-		));
+		return $this->buildFeatureDescriptionArray(Features::TAG_SEMANTIC_FORM);
 	}
 
 	public function getKnowledgeBaseOptions()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			Features::KNOWLEDGE_BASE_AGGREGATION
-		));
+		return $this->buildFeatureDescriptionArray(Features::TAG_KB_FORM);
 	}
 
 	public function getGenerationOptions()
 	{
-		return $this->buildFeatureDescriptionArray(array(
-			Features::PARAPHRASE_QUERY
-		));
+		return $this->buildFeatureDescriptionArray(Features::TAG_ANSWER);
 	}
 
 	public function getLanguageConstructNames()
 	{
-		$Api = new NliSystemApi();
-
-		return $this->buildFeatureDescriptionArray($Api->getLanguageConstructs());
+		return $this->buildFeatureDescriptionArray(Features::TAG_PHRASE_TYPE);
 	}
 
 	public function getValue($key)

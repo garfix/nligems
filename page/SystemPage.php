@@ -141,6 +141,7 @@ class SystemPage extends FrontEndPage
             foreach ($System->get(Features::BOOKS) as $book) {
                 $Bullets->addItem($book);
             }
+            $Body->addChildHtml((string)$Bullets);
         }
 
         if ($System->get(Features::ARTICLES)) {
@@ -153,9 +154,8 @@ class SystemPage extends FrontEndPage
             foreach ($System->get(Features::ARTICLES) as $article) {
                 $Bullets->addItem($article);
             }
+            $Body->addChildHtml((string)$Bullets);
         }
-
-        $Body->addChildHtml((string)$Bullets);
 
         return (string)$Page;
     }

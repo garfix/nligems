@@ -130,6 +130,7 @@ class Features
 	const TAG_LEXICON = 'lexicon';
 	const TAG_GRAMMAR = 'grammar';
 	const TAG_DIALOG_MODEL = 'dialog model';
+	const TAG_PHRASE_TYPE = 'phrase type';
 
 	public static function getFeatures()
 	{
@@ -432,119 +433,119 @@ class Features
 			self::NP => [
 				'name' => 'Noun Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::VP => [
 				'name' => 'Verb Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::PP => [
 				'name' => 'Preposition Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::DP => [
 				'name' => 'Determiner Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ADVP => [
 				'name' => 'ADVerb Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ADJP => [
 				'name' => 'ADJective Phrases',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::RC => [
 				'name' => 'Relative clauses',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::NEG => [
 				'name' => 'Negations',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::CONJ => [
 				'name' => 'Conjunctions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ANAPHORA => [
 				'name' => 'Anaphora',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::AUX => [
 				'name' => 'Auxiliaries',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::MODALS => [
 				'name' => 'Modals',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::COMPARATIVE_EXPRESSIONS => [
 				'name' => 'Comparative expressions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::PASSIVES => [
 				'name' => 'Passives',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::CLEFTS => [
 				'name' => 'Clefts',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::THERE_BES => [
 				'name' => 'There be',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ELLIPSIS => [
 				'name' => 'Ellipsis',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
