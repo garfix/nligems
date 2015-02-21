@@ -100,88 +100,58 @@ class FilterPage extends FrontEndPage
 
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::ANALYSIS);
 
-				$this->addCheckboxHeader($Section, 'Specification');
-				$this->addCheckbox($NliSystemApi, $Section, Features::SEMANTIC_GRAMMAR);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Specification', Features::TAG_STRUCTURE);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Processes'));
 
 			$Group->addSection($Section = new Section('Tokenization', Section::TYPE_PROCESS));
 
-				$this->addCheckboxHeader($Section, 'Tokenization features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::DICTIONARY_LOOKUP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::MORPHOLOGICAL_ANALYSIS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::WORD_SEPARATION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::SPELLING_CORRECTION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::OPEN_ENDED_TOKEN_RECOGNITION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::PROPER_NAMES_FROM_KB);
-				$this->addCheckbox($NliSystemApi, $Section, Features::PROPER_NAMES_BY_MATCHING);
-				$this->addCheckbox($NliSystemApi, $Section, Features::QUOTED_STRING_RECOGNITION);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_TOKENIZATION);
 
 			$Group->addSection($Section = new Section('Parsing', Section::TYPE_PROCESS));
 
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::PARSER_TYPE);
 
-				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::ACCEPT_UNGRAMMATICAL_SENTENCES);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_PARSING);
 
 			$Group->addSection($Section = new Section('Semantic Analysis', Section::TYPE_PROCESS));
 
-				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::SEMANTIC_ATTACHMENT);
-				$this->addCheckbox($NliSystemApi, $Section, Features::MODIFIER_ATTACHMENT);
-				$this->addCheckbox($NliSystemApi, $Section, Features::CONJUNCTION_DISJUNCTION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::NOMINAL_COMPOUNDS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::SEMANTIC_COMPOSITION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::SEMANTIC_CONFLICT_DETECTION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::QUANTIFIER_SCOPING);
-				$this->addCheckbox($NliSystemApi, $Section, Features::ANAPHORA_RESOLUTION);
-				$this->addCheckbox($NliSystemApi, $Section, Features::PLAUSIBILITY_RESOLUTION);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_SEMANTIC_ANALYSIS);
+
 				$this->addCheckbox($NliSystemApi, $Section, Features::UNIFORMIZATION_REWRITES);
 				$this->addCheckbox($NliSystemApi, $Section, Features::COOPERATIVE_RESPONSES);
 
 			$Group->addSection($Section = new Section('Conversion to knowledge base form', Section::TYPE_PROCESS));
 
-				$this->addCheckboxHeader($Section, 'Conversion features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::SYNTACTIC_REWRITE);
-				$this->addCheckbox($NliSystemApi, $Section, Features::OPTIMIZE_QUERY);
-				$this->addCheckbox($NliSystemApi, $Section, Features::RESTRUCTURE_INFORMATION);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_CONVERSION_TO_KB);
 
 			$Group->addSection($Section = new Section('Knowledge base execution', Section::TYPE_PROCESS));
 
-				$this->addCheckboxHeader($Section, 'Execution features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::LOGICAL_REASONING);
-				$this->addCheckbox($NliSystemApi, $Section, Features::MULTI_DB);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_EXECUTION);
 
 			$Group->addSection($Section = new Section('Answer generation', Section::TYPE_PROCESS));
 
-				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::PARAPHRASE_QUERY);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_ANSWER);
 
 			$Group->addSection($Section = new Section('User Dialog', Section::TYPE_PROCESS));
 
-				$this->addCheckboxHeader($Section, 'Features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::DIALOG);
-				$this->addCheckbox($NliSystemApi, $Section, Features::NEW_WORDS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::META_SELF);
-				$this->addCheckbox($NliSystemApi, $Section, Features::META_KB);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Features', Features::TAG_DIALOG);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Process Data Structures'));
 
 			$Group->addSection($Section = new Section('Semantic form', Section::TYPE_DATA));
 
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::SEMANTIC_FORM_TYPE);
-				$this->addCheckboxHeader($Section, 'Semantic features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::EVENT_BASED);
-				$this->addCheckbox($NliSystemApi, $Section, Features::TEMPORAL);
-				$this->addCheckbox($NliSystemApi, $Section, Features::PROPER_NOUN_CONSTANTS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::ONTOLOGY_USED);
+
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Semantic features', Features::TAG_SEMANTIC_FORM);
+
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::STANDARD_ONTOLOGY);
 
 			$Group->addSection($Section = new Section('Knowledge base form', Section::TYPE_DATA));
 
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::KNOWLEDGE_BASE_LANGUAGES);
-				$this->addCheckboxHeader($Section, 'Knowledge base features');
-				$this->addCheckbox($NliSystemApi, $Section, Features::KNOWLEDGE_BASE_AGGREGATION);
+
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Knowledge base features', Features::TAG_KB_FORM);
 
 		$Filter->addSectionGroup($Group = new SectionGroup('Models'));
 
@@ -196,33 +166,20 @@ class FilterPage extends FrontEndPage
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::GRAMMAR_TYPE);
 				$this->addCheckboxGroup($NliSystemApi, $Section, Features::SENTENCE_TYPES);
 
-				$this->addCheckboxHeader($Section, 'Phrase types');
-				$this->addCheckbox($NliSystemApi, $Section, Features::NP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::VP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::PP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::DP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::ADVP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::ADJP);
-				$this->addCheckbox($NliSystemApi, $Section, Features::RC);
-				$this->addCheckbox($NliSystemApi, $Section, Features::NEG);
-				$this->addCheckbox($NliSystemApi, $Section, Features::CONJ);
-				$this->addCheckbox($NliSystemApi, $Section, Features::ANAPHORA);
-				$this->addCheckbox($NliSystemApi, $Section, Features::AUX);
-				$this->addCheckbox($NliSystemApi, $Section, Features::MODALS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::COMPARATIVE_EXPRESSIONS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::PASSIVES);
-				$this->addCheckbox($NliSystemApi, $Section, Features::CLEFTS);
-				$this->addCheckbox($NliSystemApi, $Section, Features::THERE_BES);
-				$this->addCheckbox($NliSystemApi, $Section, Features::ELLIPSIS);
+				$this->addCheckboxGroupForTag($NliSystemApi, $Section, 'Phrase types', Features::TAG_PHRASE_TYPE);
 
 			$Group->addSection($Section = new Section('Dialog model', Section::TYPE_DATA));
 
 		return $Filter;
 	}
 
-	private function addCheckboxHeader(Section $Section, $header)
+	private function addCheckboxGroupForTag(NliSystemApi $NliSystemApi, Section $Section, $header, $tag)
 	{
 		$Section->addComponent(new CheckboxHeader($header));
+
+		foreach ($NliSystemApi->getFeaturesByTag($tag) as $feature) {
+			$this->addCheckbox($NliSystemApi, $Section, $feature);
+		}
 	}
 
 	private function addCheckbox(NliSystemApi $NliSystemApi, Section $Section, $feature)

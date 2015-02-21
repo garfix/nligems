@@ -140,7 +140,7 @@ class DataFlow
 
         		$header = "Convert";
 
-        		if ($name = $System->get(Features::CONVERT_HEADE)) {
+        		if ($name = $System->get(Features::CONVERT_HEADER)) {
         			$header .= "\n\"" . $name . "\"";
         		}
 

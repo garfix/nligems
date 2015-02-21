@@ -10,6 +10,9 @@ class NliSystemApi
 	/** @var NliSystem[] */
 	private $systems;
 
+	/** @var  array */
+	private $featuresByTag;
+
 	/**
 	 * @return NliSystem[]
 	 */
@@ -73,6 +76,24 @@ class NliSystemApi
 	{
 		$features = Features::getFeatures();
 		return isset($features[$feature]['name']) ? $features[$feature]['name'] : null;
+	}
+
+	public function getFeaturesByTag($tag)
+	{
+		if (!$this->featuresByTag) {
+
+			$this->featuresByTag = [];
+
+			foreach (Features::getFeatures() as $feature => $info) {
+				if (isset($info['tags'])) {
+					foreach ($info['tags'] as $featureTag) {
+						$this->featuresByTag[$featureTag][] = $feature;
+					}
+				}
+			}
+		}
+
+		return isset($this->featuresByTag[$tag]) ? $this->featuresByTag[$tag] : array();
 	}
 
 	public function getFeatureCount()

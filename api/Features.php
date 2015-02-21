@@ -111,6 +111,25 @@ class Features
 	const FEATURETYPE_TEXT_SINGLE_LONG = 'text_single_long';
 	const FEATURETYPE_TEXT_MULTIPLE = 'text_multiple';
 
+	// tags
+
+	const TAG_CODE = 'code';
+	const TAG_STRUCTURE = 'structure';
+	const TAG_TOKENIZATION = 'tokenization';
+	const TAG_PARSING = 'parsing';
+	const TAG_SEMANTIC_ANALYSIS = 'semantic analysis';
+	const TAG_CONVERSION_TO_KB = 'conversion to kb';
+	const TAG_EXECUTION = 'execution';
+	const TAG_ANSWER = 'answer';
+	const TAG_DIALOG = 'dialog';
+	const TAG_SEMANTIC_FORM = 'semantic form';
+	const TAG_KB_FORM = 'kb form';
+	const TAG_DOMAIN_MODEL = 'domain model';
+	const TAG_LEXICON = 'lexicon';
+	const TAG_GRAMMAR = 'grammar';
+	const TAG_DIALOG_MODEL = 'dialog model';
+	const TAG_PHRASE_TYPE = 'phrase type';
+
 	public static function getFeatures()
 	{
 		return [
@@ -248,6 +267,7 @@ class Features
 			self::DIALOG => [
 				'name' => 'Clarification dialog to improve input sentence',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_DIALOG],
 				'desc' => '
 				',
 			],
@@ -272,6 +292,7 @@ class Features
 			self::SEMANTIC_GRAMMAR => [
 				'name' => 'Semantic grammar',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'tags' => [self::TAG_STRUCTURE],
 				'desc' => '
 					Domain specific grammar.<br><br>
 					The grammar used to parse the sentence contains non-leaf structures that are specially designed for some domain.<br><br>
@@ -282,6 +303,7 @@ class Features
 			self::NEW_WORDS => [
 				'name' => 'Allows the user to introduce new words and concepts',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_DIALOG],
 				'desc' => '
 					The user may enter new words into the lexicon from within the dialog.<br><br>
 					An example user sentence: Call the biggest block "superblock" (SHRDLU)
@@ -290,6 +312,7 @@ class Features
 			self::MULTI_DB => [
 				'name' => 'Queries multiple knowledge bases for single request',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_EXECUTION],
 				'desc' => '
 					The system queries multiple knowledge bases for the same sentence, and integrates the results.
 				',
@@ -297,6 +320,7 @@ class Features
 			self::ACCEPT_UNGRAMMATICAL_SENTENCES => [
 				'name' => 'Accept ungrammatical sentences',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PARSING],
 				'desc' => '
 					Sentences that do not follow the system\'s grammar are not discarded off hand.
 					The system will make an effort to understand them and / or to make the user change them.
@@ -305,12 +329,14 @@ class Features
 			self::META_SELF => [
 				'name' => 'Answers meta questions about its own processes',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_DIALOG],
 				'desc' => '
 				',
 			],
 			self::META_KB => [
 				'name' => 'Answers meta questions about the knowledge base',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_DIALOG],
 				'desc' => '
 					The user may ask the system about the structure of the knowledge base.
 				',
@@ -318,6 +344,7 @@ class Features
 			self::DICTIONARY_LOOKUP => [
 				'name' => 'Lexicon lookup',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 					Uses (among others) a lexicon to recognize tokens in a sentence.<br><br>
 					Especially useful for compound nouns, like \'distance learning\' that cannot be recognized by
@@ -328,6 +355,7 @@ class Features
 			self::MORPHOLOGICAL_ANALYSIS => [
 				'name' => 'Morphological analysis',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 					Removes the prefixes and suffixes of a word to find the root form (present in the lexicon)<br><br>
 					For example: larger => large; finding => find; unable => able
@@ -336,18 +364,21 @@ class Features
 			self::WORD_SEPARATION => [
 				'name' => 'Word separation',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 				',
 			],
 			self::SPELLING_CORRECTION => [
 				'name' => 'Spelling correction',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 				',
 			],
 			self::OPEN_ENDED_TOKEN_RECOGNITION => [
 				'name' => 'Open-ended token recognition',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 					Recognizes words from an endless category that is not a good fit for a lexicon.<br><br>
 					Examples are ordinals: 42, forty-two, forty-second
@@ -356,6 +387,7 @@ class Features
 			self::PROPER_NAMES_FROM_KB => [
 				'name' => 'Proper names lookup in knowledge base',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 					When a word is not present in the lexicon, the domain model is queried to find if the word is present as a proper name.
 				',
@@ -363,6 +395,7 @@ class Features
 			self::PROPER_NAMES_BY_MATCHING => [
 				'name' => 'Proper names by matching',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 					Proper names are recognized by fitting them into a pattern.<br><br>
 					For example: [A-Z][a-z]* van der [A-Z][a-z]*
@@ -371,6 +404,7 @@ class Features
 			self::QUOTED_STRING_RECOGNITION => [
 				'name' => 'Quoted string recognition',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
 					Recognizes quoted sentences as part of a sentence.<br><br>
 					For example: Who said "Gravitation is not responsible for people falling in love"?
@@ -379,102 +413,119 @@ class Features
 			self::NP => [
 				'name' => 'Noun Phrases',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::VP => [
 				'name' => 'Verb Phrases',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::PP => [
 				'name' => 'Preposition Phrases',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::DP => [
 				'name' => 'Determiner Phrases',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ADVP => [
 				'name' => 'ADVerb Phrases',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ADJP => [
 				'name' => 'ADJective Phrases',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::RC => [
 				'name' => 'Relative clauses',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::NEG => [
 				'name' => 'Negations',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::CONJ => [
 				'name' => 'Conjunctions',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ANAPHORA => [
 				'name' => 'Anaphora',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::AUX => [
 				'name' => 'Auxiliaries',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::MODALS => [
 				'name' => 'Modals',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::COMPARATIVE_EXPRESSIONS => [
 				'name' => 'Comparative expressions',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::PASSIVES => [
 				'name' => 'Passives',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::CLEFTS => [
 				'name' => 'Clefts',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::THERE_BES => [
 				'name' => 'There be',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
 			self::ELLIPSIS => [
 				'name' => 'Ellipsis',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PHRASE_TYPE],
 				'desc' => '
 				',
 			],
@@ -494,12 +545,6 @@ class Features
 				'desc' => '
 				',
 			],
-			self::SEMANTIC_GRAMMAR => [
-				'name' => 'Semantic grammar',
-				'type' => self::FEATURETYPE_BOOL,
-				'desc' => '
-				',
-			],
 			self::SYNTACTIC_FORM_TYPE => [
 				'name' => 'Syntactic form type',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
@@ -516,6 +561,7 @@ class Features
 			self::SEMANTIC_ATTACHMENT => [
 				'name' => 'Semantic attachment',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 					Meaning structures are taken from the lexicon entries of the matched words and attached to them in the parse tree.
 				',
@@ -523,18 +569,21 @@ class Features
 			self::MODIFIER_ATTACHMENT => [
 				'name' => 'Modifier attachment',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 				',
 			],
 			self::CONJUNCTION_DISJUNCTION => [
 				'name' => 'Proper interpretation of conjunction and disjunction',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 				',
 			],
 			self::NOMINAL_COMPOUNDS => [
 				'name' => 'Nominal compounds',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 					An attempt is made to derive the meaning of compounds that are not in de lexicon.
 				',
@@ -542,6 +591,7 @@ class Features
 			self::SEMANTIC_COMPOSITION => [
 				'name' => 'Semantic composition',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 					The meaning structure of a phrase, and the sentence as a whole is derived by composing the meaning of the words.
 				',
@@ -561,6 +611,7 @@ class Features
 			self::SEMANTIC_CONFLICT_DETECTION => [
 				'name' => 'Semantic conflict detection',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 					The system detects conflicts in semantic structure information.<br><br>
 					For example: How many corners has a ball?
@@ -569,18 +620,21 @@ class Features
 			self::QUANTIFIER_SCOPING => [
 				'name' => 'Quantifier scoping',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 				',
 			],
 			self::ANAPHORA_RESOLUTION => [
 				'name' => 'Anaphora resolution',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 				',
 			],
 			self::PLAUSIBILITY_RESOLUTION => [
 				'name' => 'Plausibility resolution',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
 				',
 			],
@@ -616,24 +670,28 @@ class Features
 			self::EVENT_BASED => [
 				'name' => 'Event based',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
 			self::TEMPORAL => [
 				'name' => 'Temporal',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
 			self::PROPER_NOUN_CONSTANTS => [
 				'name' => 'Uses constants for proper nouns',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
 			self::ONTOLOGY_USED => [
 				'name' => 'Uses an ontology',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 				',
 			],
@@ -659,12 +717,14 @@ class Features
 			self::SYNTACTIC_REWRITE => [
 				'name' => 'Syntactic rewrites',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_CONVERSION_TO_KB],
 				'desc' => '
 				',
 			],
 			self::OPTIMIZE_QUERY => [
 				'name' => 'Optimize query',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_CONVERSION_TO_KB],
 				'desc' => '
 					The raw knowledge base query is rewritten for reasons of processing speed.
 				',
@@ -672,6 +732,7 @@ class Features
 			self::RESTRUCTURE_INFORMATION => [
 				'name' => 'Restructure information',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_CONVERSION_TO_KB],
 				'desc' => '
 				',
 			],
@@ -684,6 +745,7 @@ class Features
 			self::KNOWLEDGE_BASE_AGGREGATION => [
 				'name' => 'Handle aggregations',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_KB_FORM],
 				'desc' => '
 				',
 			],
@@ -694,6 +756,7 @@ class Features
 			self::LOGICAL_REASONING => [
 				'name' => 'Logical reasoning',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_EXECUTION],
 				'desc' => '
 				',
 			],
@@ -704,6 +767,7 @@ class Features
 			self::PARAPHRASE_QUERY => [
 				'name' => 'Paraphrase knowledge base query',
 				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_ANSWER],
 				'desc' => '
 				',
 			],
