@@ -131,6 +131,12 @@ class Features
 	const TAG_DIALOG_MODEL = 'dialog model';
 	const TAG_PHRASE_TYPE = 'phrase type';
 
+	// options
+
+	const OPTION_PATTERN_MATCHING = 'Pattern-matching';
+	const OPTION_SYNTAX_BASED = 'Syntax-based';
+	const OPTION_SEMANTICS_BASED = 'Semantics-based';
+
 	public static function getFeatures()
 	{
 		return [
@@ -263,9 +269,9 @@ class Features
 				'name' => 'Type of analysis',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
-					'Pattern-matching' => 'Pattern matching',
-					'Syntax-based' => 'Syntax based (maps parse tree to DB query)',
-					'Semantics-based' => 'Semantics based (via semantic intermediate)',
+					self::OPTION_PATTERN_MATCHING => 'Pattern matching',
+					self::OPTION_SYNTAX_BASED => 'Syntax based (maps parse tree to DB query)',
+					self::OPTION_SEMANTICS_BASED => 'Semantics based (via semantic intermediate)',
 				),
 				'tags' => [self::TAG_STRUCTURE],
 				'desc' => '
