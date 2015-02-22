@@ -11,6 +11,7 @@ use nligems\api\component\ImageBar;
 use nligems\api\Features;
 use nligems\api\LinkApi;
 use nligems\api\NliSystem;
+use nligems\api\NliSystemApi;
 use nligems\api\page\FrontEndPage;
 use nligems\api\PageApi;
 
@@ -46,6 +47,7 @@ class SystemPage extends FrontEndPage
 
     protected function getBody()
     {
+        $NliSystemApi = new NliSystemApi();
         $System = $this->System;
 
         $Page = new HtmlElement('div');
@@ -69,7 +71,7 @@ class SystemPage extends FrontEndPage
         $Page->addChildNode($Body);
 
         $Img = new HtmlElement('img', false);
-		$Img->addAttribute('src', 'page/img/gems/' . $System->get(Features::GEM_IMAGE));
+		$Img->addAttribute('src', 'page/img/gems/' . $NliSystemApi->getGemImageForSystem($System->getId()));
         $Img->addClass('nameGem');
         $Body->addChildNode($Img);
 

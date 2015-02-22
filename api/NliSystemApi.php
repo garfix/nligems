@@ -10,6 +10,9 @@ class NliSystemApi
 	/** @var NliSystem[] */
 	private $systems;
 
+	/** @var NliSystem[] */
+	private $systemsSortedByYear;
+
 	/** @var  array */
 	private $featuresByTag;
 
@@ -26,10 +29,71 @@ class NliSystemApi
 		return $this->systems;
 	}
 
+	/**
+	 * Returns an [id => System] array of all systems, sorted by start year
+	 *
+	 * @return array
+	 */
+	public function getAllSystemsSortedByYear()
+	{
+		if (!$this->systemsSortedByYear) {
+
+			$sortedSystems = array();
+
+			// create a year => system map
+			foreach ($this->getAllSystems() as $System) {
+				$sortKey = $System->get(Features::FIRST_YEAR) . $System->getName();
+				$sortedSystems[$sortKey] = $System;
+			}
+			// sort this map by year
+			ksort($sortedSystems);
+
+			$allSystems = array();
+			/** @var NliSystem $System */
+			foreach ($sortedSystems as $System) {
+				$allSystems[$System->getId()] = $System;
+			}
+
+			$this->systemsSortedByYear = $allSystems;
+		}
+
+		return $this->systemsSortedByYear;
+	}
+
 	public function saveSystem(NliSystem $System)
 	{
 		$Reader = new NliSystemReader();
 		$Reader->writeSystem($System, __DIR__ . '/../data/' . $System->getId() . '.json');
+	}
+
+	/**
+	 * Returns the basename of the image of system $id
+	 *
+	 * @param string $id
+	 * @return string
+	 */
+	public function getGemImageForSystem($id)
+	{
+		static $images;
+
+		// load the images
+		if (!$images) {
+
+			$images = array();
+
+			foreach (glob(__DIR__ . '/../page/img/gems/*.png') as $path) {
+				$images[] = basename($path);
+			}
+		}
+
+		// find the index of system $id
+		$index = array_search($id, array_keys($this->getAllSystemsSortedByYear()));
+
+		// grab the corresponding image
+		// cycle through the images if there are not enough of them
+		$image = $images[$index % count($images)];
+
+		return $image;
 	}
 
 	/**

@@ -27,7 +27,6 @@
         "C-Phrase: A system for building robust natural language interfaces to databases"
     ],
     "BOOKS": [],
-    "GEM-IMAGE": "blue-sapphire.png",
     "NAME-DESC": "\"Thus analysis components must be robust, seeking out near misses when input is less than ideal and the system must be adaptable, making it easy for authors to patch running systems to catch unanticipated phrasings. The name C-Phrase is derived from \u2018catch phrase\u2019, which we interpret literally as \u2018catching phrases\u2019.\"",
     "LONG-DESC": null,
     "ANALYSIS": [

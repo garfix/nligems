@@ -48,13 +48,8 @@ class ResultSet
 		$LinkApi = new LinkApi();
 		$NliSystemApi = new NliSystemApi();
 
-		// sort all systems
-		$allSystems = array();
-		foreach ($NliSystemApi->getAllSystems() as $System) {
-			$sortKey = $System->get(Features::FIRST_YEAR) . $System->getName();
-			$allSystems[$sortKey] = $System;
-		}
-		ksort($allSystems);
+		// get all sorted systems
+		$allSystems = $NliSystemApi->getAllSystemsSortedByYear();
 
 		$Form = new HtmlElement('form');
 		$Form->addAttribute('action', $LinkApi->getLink('compare'));
@@ -87,7 +82,7 @@ class ResultSet
 			$Table->addChildNode($Row);
 
 			$Img = new HtmlElement('img', false);
-			$Img->addAttribute('src', 'page/img/gems/' . $System->get(Features::GEM_IMAGE));
+			$Img->addAttribute('src', 'page/img/gems/' . $NliSystemApi->getGemImageForSystem($System->getId()));
 
 			$Gem = new HtmlElement('td');
 			$Gem->addClass('gem');

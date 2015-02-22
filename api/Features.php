@@ -21,7 +21,6 @@ class Features
 	const SENTENCE_TYPES = 'SENTENCE-TYPES';
 	const ARTICLES = 'ARTICLES';
 	const BOOKS = 'BOOKS';
-	const GEM_IMAGE = 'GEM-IMAGE';
 	const NAME_DESCRIPTION = 'NAME-DESC';
 	const LONG_DESCRIPTION = 'LONG-DESC';
 
@@ -220,13 +219,6 @@ class Features
 			],
 			self::SOURCE_CODE_URL => [
 				'name' => 'Source code url',
-				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_GENERAL],
-				'desc' => '
-				',
-			],
-			self::GEM_IMAGE => [
-				'name' => 'Gem image',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
 				'tags' => [self::TAG_GENERAL],
 				'desc' => '

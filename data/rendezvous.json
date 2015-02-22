@@ -32,7 +32,6 @@
         "RENDEZVOUS Version 1: An Experimental English Language Query Formulation System for Casual Users of Relational Data Bases"
     ],
     "BOOKS": [],
-    "GEM-IMAGE": "blue-sapphire.png",
     "NAME-DESC": "To rendezvous (i.e. \"meet\") with the casual user",
     "LONG-DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make changes to the query later.\n\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.",
     "ANALYSIS": [

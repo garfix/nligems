@@ -28,7 +28,6 @@
         "Semantics and quantification in natural language question answering"
     ],
     "BOOKS": [],
-    "GEM-IMAGE": "pearl.png",
     "NAME-DESC": null,
     "LONG-DESC": "A natural language interface to a database containing chemical analyses of moon rocks. One of the first NLI's that was actually used by a company.",
     "ANALYSIS": [

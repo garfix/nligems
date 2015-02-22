@@ -40,7 +40,6 @@
     ],
     "BOOKS": [],
     "NAME-DESC": "Core Language Engine",
-    "GEM-IMAGE": "coral.png",
     "LONG-DESC": "CLE distinguishes several distinct stages in the processing of the semantic representation.\nCLE uses unification for semantic composition.",
     "ANALYSIS": [
         "Semantics-based"

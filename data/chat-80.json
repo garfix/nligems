@@ -28,7 +28,6 @@
         "An efficient easily adaptable system for interpreting natural language queries"
     ],
     "BOOKS": [],
-    "GEM-IMAGE": "cats-eye.png",
     "NAME-DESC": null,
     "LONG-DESC": "The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
     "ANALYSIS": [

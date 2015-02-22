@@ -29,7 +29,6 @@
     "BOOKS": [
         "Winograd, T. Understanding Natural Language. Academic Press, 1972."
     ],
-    "GEM-IMAGE": "emerald.png",
     "NAME-DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
     "LONG-DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
     "ANALYSIS": [
