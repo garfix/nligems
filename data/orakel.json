@@ -72,12 +72,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": "Query Interpreter",
-    "GRAMMAR-TYPE": [
-        "Logical Description Grammar"
-    ],
-    "PARSER-TYPE": [
-        "Earley"
-    ],
+    "GRAMMAR-TYPE": "Logical Description Grammar",
+    "PARSER-TYPE": "Earley",
     "SYNTACTIC-FORM-TYPE": [],
     "INTERPRET-HEADER": null,
     "DO-SEMANTIC-ATTACH": true,

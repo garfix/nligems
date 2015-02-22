@@ -27,6 +27,8 @@ class EditSystemPage extends BackEndPage
     public function __construct(NliSystem $NliSystem)
    	{
         $this->System = $NliSystem;
+
+        $this->addStyleSheet('backend');
    	}
 
     protected function getBody()

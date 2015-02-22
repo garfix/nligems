@@ -66,12 +66,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": true,
     "PARSE-HEADER": null,
-    "GRAMMAR-TYPE": [
-        "Synchronous context-free grammars"
-    ],
-    "PARSER-TYPE": [
-        "A fuzzy chart parser"
-    ],
+    "GRAMMAR-TYPE": "Synchronous context-free grammars",
+    "PARSER-TYPE": "A fuzzy chart parser",
     "SYNTACTIC-FORM-TYPE": [],
     "INTERPRET-HEADER": null,
     "DO-SEMANTIC-ATTACH": true,

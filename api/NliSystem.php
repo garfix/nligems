@@ -87,13 +87,13 @@ class NliSystem
 		$descriptions = $this->buildFeatureDescriptionArray(Features::TAG_SEMANTIC_ANALYSIS);
 
 		if (isset($descriptions[Features::SEMANTIC_COMPOSITION]) && ($type = $this->get(Features::SEMANTIC_COMPOSITION_TYPE))) {
-			$descriptions[Features::SEMANTIC_COMPOSITION] .= "\n(" . $type . ")";
+			$descriptions[Features::SEMANTIC_COMPOSITION] .= "\n(" . implode(', ', $type) . ")";
 		}
 
 		return $descriptions;
 	}
 
-	public function getExecuterProcesses()
+	public function getExecutorProcesses()
 	{
 		return $this->buildFeatureDescriptionArray(Features::TAG_EXECUTION);
 	}

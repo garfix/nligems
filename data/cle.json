@@ -78,12 +78,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": null,
-    "GRAMMAR-TYPE": [
-        "Generalized Phrase Structure Grammar"
-    ],
-    "PARSER-TYPE": [
-        "A \"left corner\" parser with top-down filtering"
-    ],
+    "GRAMMAR-TYPE": "Generalized Phrase Structure Grammar",
+    "PARSER-TYPE": "A \"left corner\" parser with top-down filtering",
     "SYNTACTIC-FORM-TYPE": [
         "parse trees"
     ],

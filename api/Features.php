@@ -177,17 +177,6 @@ class Features
 				'desc' => '
 				',
 			],
-			self::NATURAL_LANGUAGES => [
-				'name' => 'Natural language',
-				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
-				'options' => array(
-					'English' => 'English',
-				),
-				'tags' => [self::TAG_GENERAL],
-				'desc' => '
-					Which natural languages are supported by this system? The majority of systems just supports English.
-				',
-			],
 			self::PROGRAMMING_LANGUAGES => [
 				'name' => 'Programming language',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
@@ -226,18 +215,6 @@ class Features
 				'name' => 'Knowledge base description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
 				'tags' => [self::TAG_KB_FORM],
-				'desc' => '
-				',
-			],
-			self::SENTENCE_TYPES => [
-				'name' => 'Sentence types',
-				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
-				'options' => array(
-					'question' => 'Question',
-				    'declarative' => 'Declarative',
-				    'imperative' => 'Imperative',
-				),
-				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
 				',
 			],
@@ -329,23 +306,6 @@ class Features
 					An example user sentence: Call the biggest block "superblock" (SHRDLU)
 				',
 			],
-			self::MULTI_DB => [
-				'name' => 'Queries multiple knowledge bases for single request',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_EXECUTION],
-				'desc' => '
-					The system queries multiple knowledge bases for the same sentence, and integrates the results.
-				',
-			],
-			self::ACCEPT_UNGRAMMATICAL_SENTENCES => [
-				'name' => 'Accept ungrammatical sentences',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PARSING],
-				'desc' => '
-					Sentences that do not follow the system\'s grammar are not discarded off hand.
-					The system will make an effort to understand them and / or to make the user change them.
-				',
-			],
 			self::META_SELF => [
 				'name' => 'Answers meta questions about its own processes',
 				'type' => self::FEATURETYPE_BOOL,
@@ -428,6 +388,36 @@ class Features
 				'desc' => '
 					Recognizes quoted sentences as part of a sentence.<br><br>
 					For example: Who said "Gravitation is not responsible for people falling in love"?
+				',
+			],
+			self::GRAMMAR_TYPE => [
+				'name' => 'Grammar type',
+				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => [self::TAG_GRAMMAR],
+				'desc' => '
+				',
+			],
+			self::NATURAL_LANGUAGES => [
+				'name' => 'Natural language',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					'English' => 'English',
+				),
+				'tags' => [self::TAG_GRAMMAR],
+				'desc' => '
+					Which natural languages are supported by this system? The majority of systems just supports English.
+				',
+			],
+			self::SENTENCE_TYPES => [
+				'name' => 'Sentence types',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					'question' => 'Question',
+				    'declarative' => 'Declarative',
+				    'imperative' => 'Imperative',
+				),
+				'tags' => [self::TAG_GRAMMAR],
+				'desc' => '
 				',
 			],
 			self::NP => [
@@ -554,16 +544,18 @@ class Features
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
 				'tags' => [self::TAG_PARSING],
 			],
-			self::GRAMMAR_TYPE => [
-				'name' => 'Grammar type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GRAMMAR],
+			self::ACCEPT_UNGRAMMATICAL_SENTENCES => [
+				'name' => 'Accept ungrammatical sentences',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PARSING],
 				'desc' => '
+					Sentences that do not follow the system\'s grammar are not discarded off hand.
+					The system will make an effort to understand them and / or to make the user change them.
 				',
 			],
 			self::PARSER_TYPE => [
 				'name' => 'Parser type',
-				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
+				'type' => self::FEATURETYPE_TEXT_SINGLE,
 				'tags' => [self::TAG_PARSING],
 				'desc' => '
 				',
@@ -661,13 +653,6 @@ class Features
 				'name' => 'Plausibility resolution',
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
-				'desc' => '
-				',
-			],
-			self::COOPERATIVE_RESPONSES => [
-				'name' => 'Cooperative responses',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
 				'desc' => '
 				',
 			],
@@ -781,6 +766,14 @@ class Features
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
 				'tags' => [self::TAG_EXECUTION],
 			],
+			self::MULTI_DB => [
+				'name' => 'Queries multiple knowledge bases for single request',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_EXECUTION],
+				'desc' => '
+					The system queries multiple knowledge bases for the same sentence, and integrates the results.
+				',
+			],
 			self::LOGICAL_REASONING => [
 				'name' => 'Logical reasoning',
 				'type' => self::FEATURETYPE_BOOL,
@@ -792,6 +785,13 @@ class Features
 				'name' => 'Generate header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
 				'tags' => [self::TAG_ANSWER],
+			],
+			self::COOPERATIVE_RESPONSES => [
+				'name' => 'Cooperative responses',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_ANSWER],
+				'desc' => '
+				',
 			],
 			self::PARAPHRASE_QUERY => [
 				'name' => 'Paraphrase knowledge base query',

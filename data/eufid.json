@@ -69,12 +69,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": "The analyzer",
-    "GRAMMAR-TYPE": [
-        "Case Grammar"
-    ],
-    "PARSER-TYPE": [
-        "A variant of Cocke-Kasami-Younger"
-    ],
+    "GRAMMAR-TYPE": "Case Grammar",
+    "PARSER-TYPE": "A variant of Cocke-Kasami-Younger",
     "SYNTACTIC-FORM-TYPE": [
         "parse trees"
     ],

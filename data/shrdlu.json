@@ -68,12 +68,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": "GRAMMAR",
-    "GRAMMAR-TYPE": [
-        "Programmar \/ Systemic Grammar"
-    ],
-    "PARSER-TYPE": [
-        "A top-down left-to-right parser"
-    ],
+    "GRAMMAR-TYPE": "Programmar \/ Systemic Grammar",
+    "PARSER-TYPE": "A top-down left-to-right parser",
     "SYNTACTIC-FORM-TYPE": [
         "parse trees"
     ],

@@ -74,11 +74,11 @@ class DataFlow
 
 		        $List = $ComponentApi->createDefinitionList();
 
-		        if ($type = implode(',', $System->get(Features::PARSER_TYPE))) {
+		        if ($type = $System->get(Features::PARSER_TYPE)) {
 			        $List->addItem('Parser type', $type);
 		        }
 
-		        if ($type = implode(',', $System->get(Features::GRAMMAR_TYPE))) {
+		        if ($type = $System->get(Features::GRAMMAR_TYPE)) {
 			        $List->addItem('Grammar type', $type);
 		        }
 
@@ -179,7 +179,7 @@ class DataFlow
         	}
 
         	$Bullets = $ComponentApi->createBullets();
-        	foreach ($System->getExecuterProcesses() as $process) {
+        	foreach ($System->getExecutorProcesses() as $process) {
         		$Bullets->addItem($process);
         	}
         	$content .= (string)$Bullets;

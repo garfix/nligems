@@ -69,12 +69,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": "DIALOGIC",
-    "GRAMMAR-TYPE": [
-        "DIAGRAM: Augmented Phrase Structure Grammar"
-    ],
-    "PARSER-TYPE": [
-        "DIAMOND"
-    ],
+    "GRAMMAR-TYPE": "DIAGRAM: Augmented Phrase Structure Grammar",
+    "PARSER-TYPE": "DIAMOND",
     "SYNTACTIC-FORM-TYPE": [],
     "INTERPRET-HEADER": "DIALOGIC",
     "DO-SEMANTIC-ATTACH": true,

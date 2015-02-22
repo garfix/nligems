@@ -67,12 +67,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": null,
-    "GRAMMAR-TYPE": [
-        "Extraposition Grammars"
-    ],
-    "PARSER-TYPE": [
-        "Top-down backtracking"
-    ],
+    "GRAMMAR-TYPE": "Extraposition Grammars",
+    "PARSER-TYPE": "Top-down backtracking",
     "SYNTACTIC-FORM-TYPE": [
         "parse trees"
     ],

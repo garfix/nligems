@@ -67,10 +67,8 @@
     "DO-PROP-NAME-MAT": null,
     "DO-QUOTED-STRINGS": null,
     "PARSE-HEADER": null,
-    "GRAMMAR-TYPE": [
-        "Augmented Transition Network"
-    ],
-    "PARSER-TYPE": [],
+    "GRAMMAR-TYPE": "Augmented Transition Network",
+    "PARSER-TYPE": null,
     "SYNTACTIC-FORM-TYPE": [],
     "INTERPRET-HEADER": null,
     "DO-SEMANTIC-ATTACH": true,
