@@ -61,7 +61,6 @@
     "ELLIPSIS": null,
     "DO-DICT-LOOKUP": null,
     "DO-MORPH-ANA": null,
-    "DO-WORD-SEPA": null,
     "DO-SPELL-CORR": null,
     "DO-OPEN-ENDED": null,
     "DO-PROP-NAME-KB": null,
@@ -95,7 +94,6 @@
     "CONVERT-HEADER": "Schema translator",
     "DO-SYNTACTIC-REWRITE": true,
     "DO-OPTIMIZE-QUERY": null,
-    "CONVERT-TYPE": [],
     "DO-INFORMATION-RESTRUCT": true,
     "KB-LANGS": [
         "SODA"

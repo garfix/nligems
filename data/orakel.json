@@ -64,7 +64,6 @@
     "ELLIPSIS": null,
     "DO-DICT-LOOKUP": true,
     "DO-MORPH-ANA": null,
-    "DO-WORD-SEPA": null,
     "DO-SPELL-CORR": null,
     "DO-OPEN-ENDED": null,
     "DO-PROP-NAME-KB": null,
@@ -102,9 +101,6 @@
     "CONVERT-HEADER": "Query Converter",
     "DO-SYNTACTIC-REWRITE": true,
     "DO-OPTIMIZE-QUERY": null,
-    "CONVERT-TYPE": [
-        "hard-coded"
-    ],
     "DO-INFORMATION-RESTRUCT": true,
     "KB-LANGS": [
         "F-Logic",

@@ -63,7 +63,6 @@
     "ELLIPSIS": null,
     "DO-DICT-LOOKUP": true,
     "DO-MORPH-ANA": true,
-    "DO-WORD-SEPA": false,
     "DO-SPELL-CORR": true,
     "DO-OPEN-ENDED": true,
     "DO-PROP-NAME-KB": true,
@@ -99,7 +98,6 @@
     "CONVERT-HEADER": null,
     "DO-SYNTACTIC-REWRITE": null,
     "DO-OPTIMIZE-QUERY": null,
-    "CONVERT-TYPE": [],
     "DO-INFORMATION-RESTRUCT": null,
     "KB-LANGS": [
         "DEDUCE"

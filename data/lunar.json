@@ -59,7 +59,6 @@
     "ELLIPSIS": null,
     "DO-DICT-LOOKUP": null,
     "DO-MORPH-ANA": true,
-    "DO-WORD-SEPA": null,
     "DO-SPELL-CORR": null,
     "DO-OPEN-ENDED": null,
     "DO-PROP-NAME-KB": null,
@@ -93,7 +92,6 @@
     "CONVERT-HEADER": null,
     "DO-SYNTACTIC-REWRITE": null,
     "DO-OPTIMIZE-QUERY": true,
-    "CONVERT-TYPE": [],
     "DO-INFORMATION-RESTRUCT": null,
     "KB-LANGS": [
         "Lisp"

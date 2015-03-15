@@ -58,7 +58,6 @@
     "ELLIPSIS": null,
     "DO-DICT-LOOKUP": true,
     "DO-MORPH-ANA": null,
-    "DO-WORD-SEPA": null,
     "DO-SPELL-CORR": true,
     "DO-OPEN-ENDED": true,
     "DO-PROP-NAME-KB": true,
@@ -94,7 +93,6 @@
     "CONVERT-HEADER": null,
     "DO-SYNTACTIC-REWRITE": true,
     "DO-OPTIMIZE-QUERY": null,
-    "CONVERT-TYPE": [],
     "DO-INFORMATION-RESTRUCT": null,
     "KB-LANGS": [
         "SQL"

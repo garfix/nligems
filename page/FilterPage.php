@@ -94,7 +94,8 @@ class FilterPage extends FrontEndPage
 			$Filter->addSectionGroup($Group = new SectionGroup($sectionGroupData['name']));
 
 			foreach ($sectionGroupData['sections'] as $sectionData) {
-				$Group->addSection($Section = new Section($name = $sectionData['name'], Section::TYPE_GENERAL));
+
+				$Section = new Section($name = $sectionData['name'], Section::TYPE_GENERAL);
 
 				$complexFeatures = [];
 				$simpleFeatures = [];
@@ -118,6 +119,10 @@ class FilterPage extends FrontEndPage
 					foreach ($simpleFeatures as $feature) {
 						$this->addCheckbox($NliSystemApi, $Section, $feature);
 					}
+				}
+
+				if ($Section->hasComponents()) {
+					$Group->addSection($Section);
 				}
 			}
 		}

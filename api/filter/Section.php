@@ -42,6 +42,14 @@ class Section
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function hasComponents()
+	{
+		return (bool)count($this->components);
+	}
+
+	/**
 	 * Sets the values of all input elements.
 	 *
 	 * @param array $values
