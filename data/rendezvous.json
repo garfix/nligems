@@ -1,7 +1,7 @@
 {
     "NAME": "RENDEZVOUS",
-    "FIRST-YEAR": "1974",
-    "LAST-YEAR": "1977",
+    "FIRST_YEAR": "1974",
+    "LAST_YEAR": "1977",
     "CONTRIBUTORS": [
         "Edgar F. Codd",
         "Robert S. Arnold",
@@ -12,19 +12,19 @@
     "INSTITUTIONS": [
         "IBM"
     ],
-    "INFLUENCED-BY": [],
-    "NAT-LANGS": [
+    "INFLUENCED_BY": [],
+    "NAT_LANGS": [
         "English"
     ],
-    "PROG-LANGS": [
+    "PROG_LANGS": [
         "APL"
     ],
-    "SOURCE-CODE": null,
-    "KB-TYPE": [
+    "SOURCE_CODE": null,
+    "KB_TYPE": [
         "relational"
     ],
-    "KB-TYPE-DESC": null,
-    "SENTENCE-TYPES": [
+    "KB_TYPE_DESC": null,
+    "SENTENCE_TYPES": [
         "question"
     ],
     "ARTICLES": [
@@ -32,18 +32,18 @@
         "RENDEZVOUS Version 1: An Experimental English Language Query Formulation System for Casual Users of Relational Data Bases"
     ],
     "BOOKS": [],
-    "NAME-DESC": "To rendezvous (i.e. \"meet\") with the casual user",
-    "LONG-DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make changes to the query later.\n\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.",
+    "NAME_DESC": "To rendezvous (i.e. \"meet\") with the casual user",
+    "LONG_DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make changes to the query later.\n\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.",
     "ANALYSIS": [
         "Pattern-matching"
     ],
-    "SEMANTIC-GRAMMAR": null,
-    "DO-DIALOG": true,
-    "NEW-WORDS": null,
-    "MULTI-DB": false,
-    "DO-UNGRAMMATICAL": true,
-    "META-SELF": null,
-    "META-KB": null,
+    "SEMANTIC_GRAMMAR": null,
+    "DO_DIALOG": true,
+    "NEW_WORDS": null,
+    "MULTI_DB": false,
+    "DO_UNGRAMMATICAL": true,
+    "META_SELF": null,
+    "META_KB": null,
     "NP": true,
     "VP": true,
     "PP": true,
@@ -56,55 +56,55 @@
     "ANAPHORA": null,
     "AUX": null,
     "MODALS": null,
-    "COMP-EXP": null,
+    "COMP_EXP": null,
     "PASSIVES": null,
     "CLEFTS": null,
     "THERE": null,
     "ELLIPSIS": null,
-    "DO-DICT-LOOKUP": true,
-    "DO-MORPH-ANA": true,
-    "DO-SPELL-CORR": true,
-    "DO-OPEN-ENDED": true,
-    "DO-PROP-NAME-KB": true,
-    "DO-PROP-NAME-MAT": false,
-    "DO-QUOTED-STRINGS": false,
-    "PARSE-HEADER": null,
-    "GRAMMAR-TYPE": null,
-    "PARSER-TYPE": null,
-    "SYNTACTIC-FORM-TYPE": [],
-    "INTERPRET-HEADER": null,
-    "DO-MODIFIER-ATTACH": null,
-    "DO-CONJUNCTION-DISJUNCTION": null,
-    "DO-NOMINAL-COMPOUNDS": true,
-    "DO-SEMANTIC-ATTACH": null,
-    "DO-SEMANTIC-COMP": true,
-    "SEMANTIC-COMP-TYPE": [
+    "DO_DICT_LOOKUP": true,
+    "DO_MORPH_ANA": true,
+    "DO_SPELL_CORR": true,
+    "DO_OPEN_ENDED": true,
+    "DO_PROP_NAME_KB": true,
+    "DO_PROP_NAME_MAT": false,
+    "DO_QUOTED_STRINGS": false,
+    "PARSE_HEADER": null,
+    "GRAMMAR_TYPE": null,
+    "PARSER_TYPE": null,
+    "SYNTACTIC_FORM_TYPE": [],
+    "INTERPRET_HEADER": null,
+    "DO_MODIFIER_ATTACH": null,
+    "DO_CONJUNCTION_DISJUNCTION": null,
+    "DO_NOMINAL_COMPOUNDS": true,
+    "DO_SEMANTIC_ATTACH": null,
+    "DO_SEMANTIC_COMP": true,
+    "SEMANTIC_COMP_TYPE": [
         "custom"
     ],
-    "DO-SEMANTIC-CONFLICT": true,
-    "DO-QUANTIFIER-SCOPE": null,
-    "DO-ANAPHORA-RESOL": false,
-    "DO-PLAUSIB-JUDGE": false,
-    "COOPERATIVE-RESPONSES": null,
-    "SEMANTIC-FORM-TYPE": [
+    "DO_SEMANTIC_CONFLICT": true,
+    "DO_QUANTIFIER_SCOPE": null,
+    "DO_ANAPHORA_RESOL": false,
+    "DO_PLAUSIB_JUDGE": false,
+    "COOPERATIVE_RESPONSES": null,
+    "SEMANTIC_FORM_TYPE": [
         "relational"
     ],
-    "SEMANTIC-FORM-DESC": null,
-    "EVENT-BASED": false,
+    "SEMANTIC_FORM_DESC": null,
+    "EVENT_BASED": false,
     "TEMPORAL": null,
-    "PROPER-NOUN-CNST": false,
-    "ONTOLOGY-USED": false,
-    "STD-ONTOLOGY": [],
-    "CONVERT-HEADER": null,
-    "DO-SYNTACTIC-REWRITE": null,
-    "DO-OPTIMIZE-QUERY": null,
-    "DO-INFORMATION-RESTRUCT": null,
-    "KB-LANGS": [
+    "PROPER_NOUN_CNST": false,
+    "ONTOLOGY_USED": false,
+    "STD_ONTOLOGY": [],
+    "CONVERT_HEADER": null,
+    "DO_SYNTACTIC_REWRITE": null,
+    "DO_OPTIMIZE_QUERY": null,
+    "DO_INFORMATION_RESTRUCT": null,
+    "KB_LANGS": [
         "DEDUCE"
     ],
-    "KB-AGGREGATIONS": "EXIST, COUNT",
-    "EXECUTE-HEADER": null,
-    "DO-LOGICAL-REASON": false,
-    "GENERATE-HEADER": null,
-    "PARAPHRASE-QUERY": true
+    "KB_AGGREGATIONS": "EXIST, COUNT",
+    "EXECUTE_HEADER": null,
+    "DO_LOGICAL_REASON": false,
+    "GENERATE_HEADER": null,
+    "PARAPHRASE_QUERY": true
 }

@@ -1,7 +1,7 @@
 {
     "NAME": "TEAM",
-    "FIRST-YEAR": "1980",
-    "LAST-YEAR": "1984",
+    "FIRST_YEAR": "1980",
+    "LAST_YEAR": "1984",
     "CONTRIBUTORS": [
         "Barbara J. Grosz",
         "Douglas E. Appelt",
@@ -11,37 +11,37 @@
     "INSTITUTIONS": [
         "SRI"
     ],
-    "INFLUENCED-BY": [
+    "INFLUENCED_BY": [
         "LADDER"
     ],
-    "NAT-LANGS": [
+    "NAT_LANGS": [
         "English"
     ],
-    "PROG-LANGS": [],
-    "SOURCE-CODE": null,
-    "KB-TYPE": [
+    "PROG_LANGS": [],
+    "SOURCE_CODE": null,
+    "KB_TYPE": [
         "relational"
     ],
-    "KB-TYPE-DESC": null,
-    "SENTENCE-TYPES": [
+    "KB_TYPE_DESC": null,
+    "SENTENCE_TYPES": [
         "question"
     ],
     "ARTICLES": [
         "TEAM: An experiment in the design of transportable natural-language interaces"
     ],
     "BOOKS": [],
-    "NAME-DESC": "Transportable English Database Access Medium",
-    "LONG-DESC": "Team was designed to be easily configurable by database administrators with no knowledge of NliDbs (Androutsopoulos etc., 1994)",
+    "NAME_DESC": "Transportable English Database Access Medium",
+    "LONG_DESC": "Team was designed to be easily configurable by database administrators with no knowledge of NliDbs (Androutsopoulos etc., 1994)",
     "ANALYSIS": [
         "Semantics-based"
     ],
-    "SEMANTIC-GRAMMAR": null,
-    "DO-DIALOG": false,
-    "NEW-WORDS": null,
-    "MULTI-DB": false,
-    "DO-UNGRAMMATICAL": null,
-    "META-SELF": null,
-    "META-KB": null,
+    "SEMANTIC_GRAMMAR": null,
+    "DO_DIALOG": false,
+    "NEW_WORDS": null,
+    "MULTI_DB": false,
+    "DO_UNGRAMMATICAL": null,
+    "META_SELF": null,
+    "META_KB": null,
     "NP": true,
     "VP": true,
     "PP": true,
@@ -54,53 +54,53 @@
     "ANAPHORA": null,
     "AUX": true,
     "MODALS": true,
-    "COMP-EXP": true,
+    "COMP_EXP": true,
     "PASSIVES": null,
     "CLEFTS": null,
     "THERE": null,
     "ELLIPSIS": null,
-    "DO-DICT-LOOKUP": null,
-    "DO-MORPH-ANA": null,
-    "DO-SPELL-CORR": null,
-    "DO-OPEN-ENDED": null,
-    "DO-PROP-NAME-KB": null,
-    "DO-PROP-NAME-MAT": null,
-    "DO-QUOTED-STRINGS": null,
-    "PARSE-HEADER": "DIALOGIC",
-    "GRAMMAR-TYPE": "DIAGRAM: Augmented Phrase Structure Grammar",
-    "PARSER-TYPE": "DIAMOND",
-    "SYNTACTIC-FORM-TYPE": [],
-    "INTERPRET-HEADER": "DIALOGIC",
-    "DO-SEMANTIC-ATTACH": true,
-    "DO-MODIFIER-ATTACH": null,
-    "DO-CONJUNCTION-DISJUNCTION": null,
-    "DO-NOMINAL-COMPOUNDS": null,
-    "DO-SEMANTIC-COMP": null,
-    "SEMANTIC-COMP-TYPE": [],
-    "DO-SEMANTIC-CONFLICT": null,
-    "DO-QUANTIFIER-SCOPE": true,
-    "DO-ANAPHORA-RESOL": null,
-    "DO-PLAUSIB-JUDGE": null,
-    "COOPERATIVE-RESPONSES": null,
-    "SEMANTIC-FORM-TYPE": [
+    "DO_DICT_LOOKUP": null,
+    "DO_MORPH_ANA": null,
+    "DO_SPELL_CORR": null,
+    "DO_OPEN_ENDED": null,
+    "DO_PROP_NAME_KB": null,
+    "DO_PROP_NAME_MAT": null,
+    "DO_QUOTED_STRINGS": null,
+    "PARSE_HEADER": "DIALOGIC",
+    "GRAMMAR_TYPE": "DIAGRAM: Augmented Phrase Structure Grammar",
+    "PARSER_TYPE": "DIAMOND",
+    "SYNTACTIC_FORM_TYPE": [],
+    "INTERPRET_HEADER": "DIALOGIC",
+    "DO_SEMANTIC_ATTACH": true,
+    "DO_MODIFIER_ATTACH": null,
+    "DO_CONJUNCTION_DISJUNCTION": null,
+    "DO_NOMINAL_COMPOUNDS": null,
+    "DO_SEMANTIC_COMP": null,
+    "SEMANTIC_COMP_TYPE": [],
+    "DO_SEMANTIC_CONFLICT": null,
+    "DO_QUANTIFIER_SCOPE": true,
+    "DO_ANAPHORA_RESOL": null,
+    "DO_PLAUSIB_JUDGE": null,
+    "COOPERATIVE_RESPONSES": null,
+    "SEMANTIC_FORM_TYPE": [
         "relational"
     ],
-    "SEMANTIC-FORM-DESC": "First-order logic with extensions",
-    "EVENT-BASED": false,
+    "SEMANTIC_FORM_DESC": "First-order logic with extensions",
+    "EVENT_BASED": false,
     "TEMPORAL": null,
-    "PROPER-NOUN-CNST": null,
-    "ONTOLOGY-USED": true,
-    "STD-ONTOLOGY": [],
-    "CONVERT-HEADER": "Schema translator",
-    "DO-SYNTACTIC-REWRITE": true,
-    "DO-OPTIMIZE-QUERY": null,
-    "DO-INFORMATION-RESTRUCT": true,
-    "KB-LANGS": [
+    "PROPER_NOUN_CNST": null,
+    "ONTOLOGY_USED": true,
+    "STD_ONTOLOGY": [],
+    "CONVERT_HEADER": "Schema translator",
+    "DO_SYNTACTIC_REWRITE": true,
+    "DO_OPTIMIZE_QUERY": null,
+    "DO_INFORMATION_RESTRUCT": true,
+    "KB_LANGS": [
         "SODA"
     ],
-    "KB-AGGREGATIONS": true,
-    "EXECUTE-HEADER": "The SODA interpreter",
-    "DO-LOGICAL-REASON": null,
-    "GENERATE-HEADER": null,
-    "PARAPHRASE-QUERY": null
+    "KB_AGGREGATIONS": true,
+    "EXECUTE_HEADER": "The SODA interpreter",
+    "DO_LOGICAL_REASON": null,
+    "GENERATE_HEADER": null,
+    "PARAPHRASE_QUERY": null
 }

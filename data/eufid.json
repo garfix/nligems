@@ -1,28 +1,28 @@
 {
     "NAME": "EUFID",
-    "FIRST-YEAR": "1976",
-    "LAST-YEAR": "1981",
+    "FIRST_YEAR": "1976",
+    "LAST_YEAR": "1981",
     "CONTRIBUTORS": [
         "Marjorie Templeton"
     ],
     "INSTITUTIONS": [
         "SDC"
     ],
-    "INFLUENCED-BY": [],
-    "NAT-LANGS": [
+    "INFLUENCED_BY": [],
+    "NAT_LANGS": [
         "English"
     ],
-    "PROG-LANGS": [
+    "PROG_LANGS": [
         "Fortran",
         "C"
     ],
-    "SOURCE-CODE": "",
-    "KB-TYPE": [
+    "SOURCE_CODE": "",
+    "KB_TYPE": [
         "relational",
         "tree-based"
     ],
-    "KB-TYPE-DESC": "Any RDBMS",
-    "SENTENCE-TYPES": [
+    "KB_TYPE_DESC": "Any RDBMS",
+    "SENTENCE_TYPES": [
         "question"
     ],
     "ARTICLES": [
@@ -30,18 +30,18 @@
         "Problems in natural-language interface with examples from EUFID"
     ],
     "BOOKS": [],
-    "NAME-DESC": "End-User Friendly Interface to Data management",
-    "LONG-DESC": "",
+    "NAME_DESC": "End-User Friendly Interface to Data management",
+    "LONG_DESC": "",
     "ANALYSIS": [
         "Semantics-based"
     ],
-    "SEMANTIC-GRAMMAR": true,
-    "DO-DIALOG": true,
-    "NEW-WORDS": null,
-    "MULTI-DB": false,
-    "DO-UNGRAMMATICAL": null,
-    "META-SELF": null,
-    "META-KB": null,
+    "SEMANTIC_GRAMMAR": true,
+    "DO_DIALOG": true,
+    "NEW_WORDS": null,
+    "MULTI_DB": false,
+    "DO_UNGRAMMATICAL": null,
+    "META_SELF": null,
+    "META_KB": null,
     "NP": true,
     "VP": true,
     "PP": true,
@@ -54,56 +54,56 @@
     "ANAPHORA": true,
     "AUX": null,
     "MODALS": null,
-    "COMP-EXP": null,
+    "COMP_EXP": null,
     "PASSIVES": null,
     "CLEFTS": null,
     "THERE": null,
     "ELLIPSIS": null,
-    "DO-DICT-LOOKUP": true,
-    "DO-MORPH-ANA": null,
-    "DO-SPELL-CORR": true,
-    "DO-OPEN-ENDED": true,
-    "DO-PROP-NAME-KB": null,
-    "DO-PROP-NAME-MAT": null,
-    "DO-QUOTED-STRINGS": null,
-    "PARSE-HEADER": "The analyzer",
-    "GRAMMAR-TYPE": "Case Grammar",
-    "PARSER-TYPE": "A variant of Cocke-Kasami-Younger",
-    "SYNTACTIC-FORM-TYPE": [
+    "DO_DICT_LOOKUP": true,
+    "DO_MORPH_ANA": null,
+    "DO_SPELL_CORR": true,
+    "DO_OPEN_ENDED": true,
+    "DO_PROP_NAME_KB": null,
+    "DO_PROP_NAME_MAT": null,
+    "DO_QUOTED_STRINGS": null,
+    "PARSE_HEADER": "The analyzer",
+    "GRAMMAR_TYPE": "Case Grammar",
+    "PARSER_TYPE": "A variant of Cocke-Kasami-Younger",
+    "SYNTACTIC_FORM_TYPE": [
         "parse trees"
     ],
-    "INTERPRET-HEADER": "The mapper",
-    "DO-SEMANTIC-ATTACH": null,
-    "DO-MODIFIER-ATTACH": null,
-    "DO-CONJUNCTION-DISJUNCTION": null,
-    "DO-NOMINAL-COMPOUNDS": null,
-    "DO-SEMANTIC-COMP": null,
-    "SEMANTIC-COMP-TYPE": [],
-    "DO-SEMANTIC-CONFLICT": null,
-    "DO-QUANTIFIER-SCOPE": null,
-    "DO-ANAPHORA-RESOL": true,
-    "DO-PLAUSIB-JUDGE": null,
-    "COOPERATIVE-RESPONSES": null,
-    "SEMANTIC-FORM-TYPE": [
+    "INTERPRET_HEADER": "The mapper",
+    "DO_SEMANTIC_ATTACH": null,
+    "DO_MODIFIER_ATTACH": null,
+    "DO_CONJUNCTION_DISJUNCTION": null,
+    "DO_NOMINAL_COMPOUNDS": null,
+    "DO_SEMANTIC_COMP": null,
+    "SEMANTIC_COMP_TYPE": [],
+    "DO_SEMANTIC_CONFLICT": null,
+    "DO_QUANTIFIER_SCOPE": null,
+    "DO_ANAPHORA_RESOL": true,
+    "DO_PLAUSIB_JUDGE": null,
+    "COOPERATIVE_RESPONSES": null,
+    "SEMANTIC_FORM_TYPE": [
         "relational"
     ],
-    "SEMANTIC-FORM-DESC": "Intermediate Language",
-    "EVENT-BASED": false,
+    "SEMANTIC_FORM_DESC": "Intermediate Language",
+    "EVENT_BASED": false,
     "TEMPORAL": null,
-    "PROPER-NOUN-CNST": null,
-    "ONTOLOGY-USED": false,
-    "STD-ONTOLOGY": [],
-    "CONVERT-HEADER": "A translator module",
-    "DO-SYNTACTIC-REWRITE": true,
-    "DO-OPTIMIZE-QUERY": null,
-    "DO-INFORMATION-RESTRUCT": null,
-    "KB-LANGS": [
+    "PROPER_NOUN_CNST": null,
+    "ONTOLOGY_USED": false,
+    "STD_ONTOLOGY": [],
+    "CONVERT_HEADER": "A translator module",
+    "DO_SYNTACTIC_REWRITE": true,
+    "DO_OPTIMIZE_QUERY": null,
+    "DO_INFORMATION_RESTRUCT": null,
+    "KB_LANGS": [
         "QUEL",
         "WWDMS query language"
     ],
-    "KB-AGGREGATIONS": true,
-    "EXECUTE-HEADER": "An RDBMS",
-    "DO-LOGICAL-REASON": null,
-    "GENERATE-HEADER": "",
-    "PARAPHRASE-QUERY": null
+    "KB_AGGREGATIONS": true,
+    "EXECUTE_HEADER": "An RDBMS",
+    "DO_LOGICAL_REASON": null,
+    "GENERATE_HEADER": "",
+    "PARAPHRASE_QUERY": null
 }

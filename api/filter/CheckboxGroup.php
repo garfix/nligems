@@ -107,6 +107,10 @@ class CheckboxGroup extends Component
 		// find the values that are not in use yet
 		$diff = array_diff(array_keys($this->options), $this->value);
 
+if (!is_array($System->get($this->id))) {
+	echo $this->id;exit;
+}
+
 		// and are available in the system
 		$intersection = array_intersect($System->get($this->id), $diff);
 

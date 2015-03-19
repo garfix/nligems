@@ -1,26 +1,26 @@
 {
     "NAME": "SHRDLU",
-    "FIRST-YEAR": "1968",
-    "LAST-YEAR": "1970",
+    "FIRST_YEAR": "1968",
+    "LAST_YEAR": "1970",
     "CONTRIBUTORS": [
         "Terry Winograd"
     ],
     "INSTITUTIONS": [
         "MIT"
     ],
-    "INFLUENCED-BY": [],
-    "NAT-LANGS": [
+    "INFLUENCED_BY": [],
+    "NAT_LANGS": [
         "English"
     ],
-    "PROG-LANGS": [
+    "PROG_LANGS": [
         "Lisp"
     ],
-    "SOURCE-CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
-    "KB-TYPE": [
+    "SOURCE_CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
+    "KB_TYPE": [
         "inference engine"
     ],
-    "KB-TYPE-DESC": "Planner databases",
-    "SENTENCE-TYPES": [
+    "KB_TYPE_DESC": "Planner databases",
+    "SENTENCE_TYPES": [
         "question",
         "declarative",
         "imperative"
@@ -29,18 +29,18 @@
     "BOOKS": [
         "Winograd, T. Understanding Natural Language. Academic Press, 1972."
     ],
-    "NAME-DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
-    "LONG-DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
+    "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
+    "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
     "ANALYSIS": [
         "Syntax-based"
     ],
-    "SEMANTIC-GRAMMAR": null,
-    "DO-DIALOG": true,
-    "NEW-WORDS": true,
-    "MULTI-DB": false,
-    "DO-UNGRAMMATICAL": null,
-    "META-SELF": true,
-    "META-KB": true,
+    "SEMANTIC_GRAMMAR": null,
+    "DO_DIALOG": true,
+    "NEW_WORDS": true,
+    "MULTI_DB": false,
+    "DO_UNGRAMMATICAL": null,
+    "META_SELF": true,
+    "META_KB": true,
     "NP": true,
     "VP": true,
     "PP": true,
@@ -53,71 +53,71 @@
     "ANAPHORA": true,
     "AUX": true,
     "MODALS": null,
-    "COMP-EXP": true,
+    "COMP_EXP": true,
     "PASSIVES": true,
     "CLEFTS": null,
     "THERE": null,
     "ELLIPSIS": true,
-    "DO-DICT-LOOKUP": true,
-    "DO-MORPH-ANA": true,
-    "DO-SPELL-CORR": null,
-    "DO-OPEN-ENDED": true,
-    "DO-PROP-NAME-KB": null,
-    "DO-PROP-NAME-MAT": null,
-    "DO-QUOTED-STRINGS": null,
-    "PARSE-HEADER": "GRAMMAR",
-    "GRAMMAR-TYPE": "Programmar \/ Systemic Grammar",
-    "PARSER-TYPE": "A top-down left-to-right parser",
-    "SYNTACTIC-FORM-TYPE": [
+    "DO_DICT_LOOKUP": true,
+    "DO_MORPH_ANA": true,
+    "DO_SPELL_CORR": null,
+    "DO_OPEN_ENDED": true,
+    "DO_PROP_NAME_KB": null,
+    "DO_PROP_NAME_MAT": null,
+    "DO_QUOTED_STRINGS": null,
+    "PARSE_HEADER": "GRAMMAR",
+    "GRAMMAR_TYPE": "Programmar \/ Systemic Grammar",
+    "PARSER_TYPE": "A top-down left-to-right parser",
+    "SYNTACTIC_FORM_TYPE": [
         "parse trees"
     ],
-    "INTERPRET-HEADER": "SEMANTICS",
-    "DO-SEMANTIC-ATTACH": true,
-    "DO-MODIFIER-ATTACH": true,
-    "DO-CONJUNCTION-DISJUNCTION": null,
-    "DO-NOMINAL-COMPOUNDS": null,
-    "DO-SEMANTIC-COMP": true,
-    "SEMANTIC-COMP-TYPE": [
+    "INTERPRET_HEADER": "SEMANTICS",
+    "DO_SEMANTIC_ATTACH": true,
+    "DO_MODIFIER_ATTACH": true,
+    "DO_CONJUNCTION_DISJUNCTION": null,
+    "DO_NOMINAL_COMPOUNDS": null,
+    "DO_SEMANTIC_COMP": true,
+    "SEMANTIC_COMP_TYPE": [
         "custom"
     ],
-    "DO-SEMANTIC-CONFLICT": true,
-    "DO-QUANTIFIER-SCOPE": true,
-    "DO-ANAPHORA-RESOL": true,
-    "DO-PLAUSIB-JUDGE": true,
-    "COOPERATIVE-RESPONSES": true,
-    "SEMANTIC-FORM-TYPE": [
+    "DO_SEMANTIC_CONFLICT": true,
+    "DO_QUANTIFIER_SCOPE": true,
+    "DO_ANAPHORA_RESOL": true,
+    "DO_PLAUSIB_JUDGE": true,
+    "COOPERATIVE_RESPONSES": true,
+    "SEMANTIC_FORM_TYPE": [
         "procedural"
     ],
-    "SEMANTIC-FORM-DESC": "A Planner representation",
-    "EVENT-BASED": true,
+    "SEMANTIC_FORM_DESC": "A Planner representation",
+    "EVENT_BASED": true,
     "TEMPORAL": true,
-    "PROPER-NOUN-CNST": null,
-    "ONTOLOGY-USED": true,
-    "STD-ONTOLOGY": [],
-    "CONVERT-HEADER": "",
-    "DO-SYNTACTIC-REWRITE": false,
-    "DO-OPTIMIZE-QUERY": null,
-    "DO-INFORMATION-RESTRUCT": null,
-    "KB-LANGS": [
+    "PROPER_NOUN_CNST": null,
+    "ONTOLOGY_USED": true,
+    "STD_ONTOLOGY": [],
+    "CONVERT_HEADER": "",
+    "DO_SYNTACTIC_REWRITE": false,
+    "DO_OPTIMIZE_QUERY": null,
+    "DO_INFORMATION_RESTRUCT": null,
+    "KB_LANGS": [
         "Planner representation"
     ],
-    "KB-AGGREGATIONS": true,
-    "EXECUTE-HEADER": "Planner",
-    "DO-LOGICAL-REASON": true,
-    "GENERATE-HEADER": "ANSWER",
-    "PARAPHRASE-QUERY": null,
-    "DO-MORPHOLOGICAL-SEMANTIC-COMPOSITION": true,
-    "SYNTACTIC-FEATURES": true,
-    "SEMANTIC-DEFINITION": true,
-    "ONLY-IRREGULAR-FORMS": true,
-    "GOALS-PLANS-ACTIONS": true,
-    "TRACK-SUBJECT": true,
-    "TRACK-TIME": true,
-    "LEARN-NAMES": true,
-    "LEARN-WORDS": true,
-    "LEARN-FACTS": true,
-    "LEARN-THEOREMS": true,
+    "KB_AGGREGATIONS": true,
+    "EXECUTE_HEADER": "Planner",
+    "DO_LOGICAL_REASON": true,
+    "GENERATE_HEADER": "ANSWER",
+    "PARAPHRASE_QUERY": null,
+    "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": true,
+    "SYNTACTIC_FEATURES": true,
+    "SEMANTIC_DEFINITION": true,
+    "ONLY_IRREGULAR_FORMS": true,
+    "GOALS_PLANS_ACTIONS": true,
+    "TRACK_SUBJECT": true,
+    "TRACK_TIME": true,
+    "LEARN_NAMES": true,
+    "LEARN_WORDS": true,
+    "LEARN_FACTS": true,
+    "LEARN_THEOREMS": true,
     "IMPERATIVE": true,
     "IDIONS": true,
-    "PROOF-BY-EXAMPLE": true
+    "PROOF_BY_EXAMPLE": true
 }
