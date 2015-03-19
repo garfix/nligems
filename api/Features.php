@@ -104,6 +104,8 @@ class Features
 
 	const GENERATE_HEADER = 'GENERATE-HEADER';
 	const PARAPHRASE_QUERY = 'PARAPHRASE-QUERY';
+	const CANNED_RESPONSES = 'CANNED-RESPONSES';
+	const PATTERNED_RESPONSES = 'PATTERNED_RESPONSES';
 
 	const SYNTACTIC_FEATURES = 'SYNTACTIC-FEATURES';
 	const SEMANTIC_DEFINITION = 'SEMANTIC-DEFINITION';
@@ -117,7 +119,8 @@ class Features
 	const LEARN_NAMES = 'LEARN-NAMES';
 	const LEARN_WORDS = 'LEARN-WORDS';
 	const LEARN_FACTS = 'LEARN-FACTS';
-	const LEARN_THEOREMS = 'LEARN-THEOREMS';
+	const LEARN_RULES = 'LEARN-THEOREMS';
+	const REFUSE_TO_ACCEPT = 'REFUSE-TO-ACCEPT';
 
 	const PROOF_BY_EXAMPLE = 'PROOF-BY-EXAMPLE';
 
@@ -882,6 +885,31 @@ class Features
 				'desc' => '
 				',
 			],
+			self::CANNED_RESPONSES => [
+				'name' => 'Canned responses',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_ANSWER],
+				'desc' => '
+					The system shows fixed pieces of text as a response.<br><br>
+
+					Example from SHRDLU:<br>
+					 User: Stack up two pyramids<br>
+					 SHRDLU: I can\t.
+				',
+			],
+			self::PATTERNED_RESPONSES => [
+				'name' => 'Simple responses with variables',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_ANSWER],
+				'desc' => '
+					The system shows simple pieces of text, with some variables, as a response.<br><br>
+
+					Example from SHRDLU:<br>
+					 User: How many blocks are not in the box?<br>
+					 SHRDLU: Four of them<br>
+					 (the pattern: %n of them)
+				',
+			],
 			self::SYNTACTIC_FEATURES => [
 				'name' => 'Syntactic features',
 				'type' => self::FEATURETYPE_BOOL,
@@ -971,8 +999,8 @@ class Features
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
 				',
 			],
-			self::LEARN_THEOREMS => [
-				'name' => 'Learn new theorems',
+			self::LEARN_RULES => [
+				'name' => 'Learn new rules',
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEARNING],
 				'desc' => '
@@ -982,6 +1010,18 @@ class Features
 					User: I own blocks which are not red, but I don\'t own anything which supports a pyramid.<br>
 					User: Do I own anything in the box?<br>
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
+				',
+			],
+			self::REFUSE_TO_ACCEPT => [
+				'name' => 'Refuse to accept',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_LEARNING],
+				'desc' => '
+					Based on a contradiction with a known fact, the system refuses to accept what the user tells him.<br><br>
+
+					Example from SHRDLU:<br>
+					User: There were five blocks to the left of the box then.<br>
+					SHRDLU: No, only four of them: the red cube, two large green cubes and a large red block
 				',
 			],
 			self::PROOF_BY_EXAMPLE => [
