@@ -16,6 +16,7 @@ use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
 use nligems\api\component\ResultSet;
 use nligems\api\page\FrontEndPage;
+use nligems\api\TagTree;
 
 /**
  * @author Patrick van Bergen
@@ -90,7 +91,7 @@ class FilterPage extends FrontEndPage
 	{
 		$Filter = new Filter();
 
-		foreach (Features::getTagTree() as $sectionGroupData) {
+		foreach (TagTree::getTagTree() as $sectionGroupData) {
 			$Filter->addSectionGroup($Group = new SectionGroup($sectionGroupData['name']));
 
 			foreach ($sectionGroupData['sections'] as $sectionData) {

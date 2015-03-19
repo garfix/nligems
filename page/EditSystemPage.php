@@ -15,6 +15,7 @@ use nligems\api\Features;
 use nligems\api\NliSystem;
 use nligems\api\NliSystemApi;
 use nligems\api\page\BackEndPage;
+use nligems\api\TagTree;
 
 /**
  * @author Patrick van Bergen
@@ -41,7 +42,7 @@ class EditSystemPage extends BackEndPage
 
         $featuresUsed = array();
 
-        foreach (Features::getTagTree() as $sectionGroupData) {
+        foreach (TagTree::getTagTree() as $sectionGroupData) {
             foreach ($sectionGroupData['sections'] as $sectionData) {
 
                 $Form->addChildNode($FieldSet = new FieldSet());
