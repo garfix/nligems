@@ -14,9 +14,14 @@ class NliSystem
 		$this->values[$key] = $value;
 	}
 
-	public function get($key)
+	public function get($feature)
 	{
-		$value = isset($this->values[$key]) ? $this->values[$key] : null;
+		if (isset($this->values[$feature])) {
+			$value = $this->values[$feature];
+		} else {
+			$Api = new NliSystemApi();
+			$value = $Api->getEmptyValue($feature);
+		}
 
 		return $value;
 	}

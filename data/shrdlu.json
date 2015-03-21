@@ -32,7 +32,7 @@
     "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
     "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
     "ANALYSIS": [
-        "Syntax-based"
+        "Semantics-based"
     ],
     "SEMANTIC_GRAMMAR": null,
     "DO_DIALOG": true,
@@ -60,11 +60,11 @@
     "ELLIPSIS": true,
     "DO_DICT_LOOKUP": true,
     "DO_MORPH_ANA": true,
-    "DO_SPELL_CORR": null,
+    "DO_SPELL_CORR": true,
     "DO_OPEN_ENDED": true,
-    "DO_PROP_NAME_KB": null,
+    "DO_PROP_NAME_KB": true,
     "DO_PROP_NAME_MAT": null,
-    "DO_QUOTED_STRINGS": null,
+    "DO_QUOTED_STRINGS": true,
     "PARSE_HEADER": "GRAMMAR",
     "GRAMMAR_TYPE": "Programmar \/ Systemic Grammar",
     "PARSER_TYPE": "A top-down left-to-right parser",
@@ -110,7 +110,6 @@
     "SYNTACTIC_FEATURES": true,
     "SEMANTIC_DEFINITION": true,
     "ONLY_IRREGULAR_FORMS": true,
-    "GOALS_PLANS_ACTIONS": true,
     "TRACK_SUBJECT": true,
     "TRACK_TIME": true,
     "LEARN_NAMES": true,
@@ -119,5 +118,27 @@
     "LEARN_THEOREMS": true,
     "IMPERATIVE": true,
     "IDIONS": true,
-    "PROOF_BY_EXAMPLE": true
+    "PROOF_BY_EXAMPLE": true,
+    "TOKENIZATION_HEADER": "INPUT",
+    "INTERPRET_SPEECH_ACT": true,
+    "REFUSE_TO_ACCEPT": true,
+    "CANNED_RESPONSES": true,
+    "PATTERNED_RESPONSES": true,
+    "GOAL_HISTORY": true,
+    "STATE_HISTORY": true,
+    "DEDUCTION_RULES": true,
+    "PLANS": true,
+    "INSTANTIATED_GOALS": true,
+    "TRACK_PLANS": true,
+    "CLAUSES_AS_OBJECTS": true,
+    "SEMANTIC_ANALYSIS_PARSING": true,
+    "META_GOAL_MODEL": true,
+    "QUESTION_TYPES": [
+        "wh",
+        "yes\/no",
+        "how many",
+        "when",
+        "how",
+        "why"
+    ]
 }

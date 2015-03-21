@@ -121,6 +121,23 @@ class NliSystemApi
 	}
 
 	/**
+	 * Returns the default value (empty) for an attribute.
+	 *
+	 * @param $feature
+	 * @return array|null
+	 */
+	public function getEmptyValue($feature)
+	{
+		$featureType = $this->getFeatureType($feature);
+
+		if (in_array($featureType, array(Features::FEATURETYPE_MULTIPLE_CHOICE, Features::FEATURETYPE_TEXT_MULTIPLE))) {
+			return array();
+		} else {
+			return null;
+		}
+	}
+
+	/**
 	 * @param $feature
 	 * @return array|null
 	 */
