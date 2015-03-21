@@ -256,11 +256,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_KNOWLEDGE_BASE],
 				'desc' => '
-					<p>In order to answer questions about previous states, the system needs to keep track of its states and events,
-					and how they were connected.</p>
+					In order to answer questions about previous states, the system needs to keep track of its states and events,
+					and how they were connected.
 
-					Example from SHRDLU:<br>
-					User: What did the red cube support before you started to clean it off?<br>
+					## Example from SHRDLU
+					User: What did the red cube support before you started to clear it off?
 					SHRDLU: The green pyramid
 				',
 			],
@@ -349,12 +349,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DIALOG],
 				'desc' => '
-					<p>The user may ask the system about the means and motives of the system (how and why).</p>
+					The user may ask the system about the means and motives of the system (how and why).
 
-					Example from SHRDLU:<br>
-					User: When did you pick it up?<br>
-					SHRDLU: While I was stacking up the red cube, a large red block and a large green cube.<br>
-					User: Why?<br>
+					## Example from SHRDLU:
+					User: When did you pick it up?
+					SHRDLU: While I was stacking up the red cube, a large red block and a large green cube.
+					User: Why?
 					SHRDLU: To get rid of it.
 				',
 			],
@@ -371,7 +371,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DIALOG],
 				'desc' => '
-					<p>The user may teach the system about new words or concepts from within the dialog.</p>
+					The user may teach the system about new words or concepts from within the dialog.
 
 					An example user sentence: Call the biggest block "superblock" (SHRDLU)
 				',
@@ -381,9 +381,9 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DIALOG],
 				'desc' => '
-					<p>The user may tell the system to actually do things, other than answer questions.</p>
+					The user may tell the system to actually do things, other than answer questions.
 
-					Example from SHRDLU:<br>
+					## Example from SHRDLU:
 					User: Pick up a big red block.
 				',
 			],
@@ -392,10 +392,10 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DIALOG],
 				'desc' => '
-					<p>The user may use expressions whose meaning cannot be analyzed, and need to be taken as-is.</p>
+					The user may use expressions whose meaning cannot be analyzed, and need to be taken as-is.
 
-					Example from SHRDLU:<br>
-					User: Thank you.<br>
+					## Example from SHRDLU:
+					User: Thank you.
 					SHRDLU: You\'re welcome
 				',
 			],
@@ -424,11 +424,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
-					<p>Uses (among others) a lexicon to recognize tokens in a sentence.</p>
+					Uses (among others) a lexicon to recognize tokens in a sentence.
 
-					<p>Especially useful for compound nouns, like \'distance learning\' that cannot be recognized by
-					using space as a delimiter alone.</p>
-					<p>The lexicon may also provide the part-of-speech of the word, i.e. noun, verb, preposition, to be used in the parsing process.</p>
+					Especially useful for compound nouns, like \'distance learning\' that cannot be recognized by
+					using space as a delimiter alone.
+
+					The lexicon may also provide the part-of-speech of the word, i.e. noun, verb, preposition, to be used in the parsing process.
 				',
 			],
 			self::MORPHOLOGICAL_ANALYSIS => [
@@ -436,7 +437,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
-					<p>Removes the prefixes and suffixes of a word to find the root form (present in the lexicon)</p>
+					Removes the prefixes and suffixes of a word to find the root form (present in the lexicon)
 
 					For example: larger => large; finding => find; unable => able
 				',
@@ -444,11 +445,11 @@ class Features
 			self::SPELLING_CORRECTION => [
 				'name' => 'Spelling correction',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => [self::TAG_ANSWER],
 				'desc' => '
-					Example from RENDEZVOUS:<br>
-					User: Give me their locatio also<br>
-					RENDEZVOUS: Is the word \'locatio\' intended to be: location? (yes or no)<br>
+					## Example from RENDEZVOUS:
+					User: Give me their locatio also
+					RENDEZVOUS: Is the word \'locatio\' intended to be: location? (yes or no)
 					User: yes
 				',
 			],
@@ -457,7 +458,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
-					<p>Recognizes words from an endless category that is not a good fit for a lexicon.</p>
+					Recognizes words from an endless category that is not a good fit for a lexicon.
 
 					Examples are ordinals: 42, forty-two, forty-second
 				',
@@ -467,7 +468,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
-					<p>When a word is not present in the lexicon, the Knowlege Base is queried to find if the word is present as a proper name.</p>
+					When a word is not present in the lexicon, the Knowlege Base is queried to find if the word is present as a proper name.
 				',
 			],
 			self::PROPER_NAMES_BY_MATCHING => [
@@ -475,7 +476,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
-					<p>Proper names are recognized by fitting them into a pattern.</p>
+					Proper names are recognized by fitting them into a pattern.
 
 					For example: [A-Z][a-z]* van der [A-Z][a-z]*
 				',
@@ -485,7 +486,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_TOKENIZATION],
 				'desc' => '
-					<p>Recognizes quoted sentences as part of a sentence.</p>
+					Recognizes quoted sentences as part of a sentence.
 
 					For example: Who said "Gravitation is not responsible for people falling in love"?
 				',
@@ -505,7 +506,7 @@ class Features
 				),
 				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
-					<p>Which natural languages are supported by this system? The majority of systems just supports English.</p>
+					Which natural languages are supported by this system? The majority of systems just supports English.
 				',
 			],
 			self::SENTENCE_TYPES => [
@@ -645,7 +646,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
 				'desc' => '
-					Example from SHRDLU:<br>
+					## Example from SHRDLU:
 					User: Find a block which is taller than the one I told you to pick up.<br>
 					"you to pick up" is a clause that is treated as an object (Winograd)
 				',
@@ -660,8 +661,8 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_PARSING],
 				'desc' => '
-					<p>Sentences that do not follow the system\'s grammar are not discarded off hand.
-					The system will make an effort to understand them and / or to make the user change them.</p>
+					Sentences that do not follow the system\'s grammar are not discarded off hand.
+					The system will make an effort to understand them and / or to make the user change them.
 				',
 			],
 			self::PARSER_TYPE => [
@@ -691,10 +692,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>Semantic analysis takes place as part of the parsing process.</p>
-					<p>The alternative would be that semantic analysis only takes places after parsing is complete.</p>
-					<p>The semantic structures created for different parts of the parse tree may conflict, and when they do,
-						this path is abandoned. This helps to cut down the number of possible parse trees.</p>
+					Semantic analysis takes place as part of the parsing process.
+
+					The alternative would be that semantic analysis only takes places after parsing is complete.
+
+					The semantic structures created for different parts of the parse tree may conflict, and when they do,
+						this path is abandoned. This helps to cut down the number of possible parse trees.
 				',
 			],
 			self::SEMANTIC_ATTACHMENT => [
@@ -702,7 +705,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>Meaning structures are taken from the lexicon entries of the matched words and attached to them in the parse tree.</p>
+					Meaning structures are taken from the lexicon entries of the matched words and attached to them in the parse tree.
 				',
 			],
 			self::SEMANTIC_COMPOSITION => [
@@ -710,7 +713,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>The meaning structure of a phrase, and the sentence as a whole is derived by composing the meaning of the words.</p>
+					The meaning structure of a phrase, and the sentence as a whole is derived by composing the meaning of the words.
 				',
 			],
 			self::MORPHOLOGICAL_SEMANTIC_COMPOSITION => [
@@ -718,9 +721,10 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>Compose the meaning of morphologically compound words by combining the meaning of the morphemes.</p>
+					Compose the meaning of morphologically compound words by combining the meaning of the morphemes.
 
-					Example from SHRDLU: Words like \'littlest\' are not in the dictionary but are interpreted from the root forms
+					Example from SHRDLU:<br>
+					Words like \'littlest\' are not in the dictionary but are interpreted from the root forms
 					like \'little\'. (Winograd)
 				',
 			],
@@ -729,11 +733,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>The problem is to identify the constituent to which each modifier has to be attached.</p>
+					The problem is to identify the constituent to which each modifier has to be attached.
 
-					<p>From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction</p>
+					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
 
-					An example from SHRDLU: Put the blue pyramid on the block in the box.
+					An example from SHRDLU:<br>
+					Put the blue pyramid on the block in the box.
 				',
 			],
 			self::CONJUNCTION_DISJUNCTION => [
@@ -748,7 +753,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>An attempt is made to derive the meaning of compounds that are not in de lexicon.</p>
+					An attempt is made to derive the meaning of compounds that are not in de lexicon.
 				',
 			],
 			self::SEMANTIC_COMPOSITION_TYPE => [
@@ -769,7 +774,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>The system detects conflicts in semantic structure information.</p>
+					The system detects conflicts in semantic structure information.
 					For example: How many corners has a ball?
 				',
 			],
@@ -799,12 +804,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
-					<p>In general:<br>
-					A sentence that starts with a question word is a question.<br>
-					A sentence without a subject is an imperative.</p>
+					In general:<br>
+					A sentence that starts with a question word is a question.
+					A sentence without a subject is an imperative.
 
-					<p>But this system is also capable of correctly interpreting some of the sentences like this:<br>
-					Can you tell me where I can find Chinese food? (not a yes/no question)</p>
+					But this system is also capable of correctly interpreting some of the sentences like this:
+					Can you tell me where I can find Chinese food? (not a yes/no question)
 				',
 			],
 			self::SEMANTIC_FORM_TYPE => [
@@ -866,7 +871,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DOMAIN_MODEL],
 				'desc' => '
-					<p>IF/THEN inference rules to deduce facts from other facts.</p>
+					IF/THEN inference rules to deduce facts from other facts.
 				',
 			],
 			self::PLANS => [
@@ -874,7 +879,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DOMAIN_MODEL],
 				'desc' => '
-					<p>A set of plans needed to reach certain goals.</p>
+					A set of plans needed to reach certain goals.
 					A plan consists of a goal and a set of actions, or lower level plans.
 				',
 			],
@@ -895,7 +900,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_CONVERSION_TO_KB],
 				'desc' => '
-					<p>The raw knowledge base query is rewritten for reasons of processing speed.</p>
+					The raw knowledge base query is rewritten for reasons of processing speed.
 				',
 			],
 			self::RESTRUCTURE_INFORMATION => [
@@ -929,7 +934,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_EXECUTION],
 				'desc' => '
-					<p>The system queries multiple knowledge bases for the same sentence, and integrates the results.</p>
+					The system queries multiple knowledge bases for the same sentence, and integrates the results.
 				',
 			],
 			self::LOGICAL_REASONING => [
@@ -937,7 +942,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_EXECUTION],
 				'desc' => '
-					<p>The knowledge base itself contains inference rules that allow facts to be deduced from other facts.</p>
+					The knowledge base itself contains inference rules that allow facts to be deduced from other facts.
 				',
 			],
 			self::GENERATE_HEADER => [
@@ -950,13 +955,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_ANSWER],
 				'desc' => '
-					<p>The system goes beyond literally answering the question,
-					it answers in a way that actually helps the user.</p>
+					The system goes beyond literally answering the question,
+					it answers in a way that actually helps the user.
 
-					Example from SHRDLU:<br>
-					 User: \'Is it supported?\'<br>
-					 SHRDLU: \'Yes, by the table\'
-
+					## Example from SHRDLU:
+					 User: Is it supported?
+					 SHRDLU: Yes, by the table
 				',
 			],
 			self::PARAPHRASE_QUERY => [
@@ -971,11 +975,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_ANSWER],
 				'desc' => '
-					<p>The system shows fixed pieces of text as a response.</p>
+					The system shows fixed pieces of text as a response.
 
-					Example from SHRDLU:<br>
-					 User: Stack up two pyramids<br>
-					 SHRDLU: I can\t.
+					## Example from SHRDLU:
+					 User: Stack up two pyramids
+					 SHRDLU: I can\'t.
 				',
 			],
 			self::PATTERNED_RESPONSES => [
@@ -983,12 +987,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_ANSWER],
 				'desc' => '
-					<p>The system shows simple pieces of text, with some variables, as a response.</p>
+					The system shows simple pieces of text, with some variables, as a response.
 
-					Example from SHRDLU:<br>
-					 User: How many blocks are not in the box?<br>
-					 SHRDLU: Four of them<br>
-					 (the pattern: %n of them)
+					## Example from SHRDLU:
+					 User: How many blocks are not in the box?
+					 SHRDLU: Four of them
 				',
 			],
 			self::DIALOG => [
@@ -996,15 +999,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_ANSWER],
 				'desc' => '
-					<p>The systems replies with a question in order to establish what the user means, exactly.</p>
+					The systems replies with a question in order to establish what the user means, exactly.
 
-					Example from SHRDLU:<br>
-					User: How many things are on top of green cubes?<br>
-					SHRDLU: I\'m not sure what you mean by "on top of" in the phrase "on top of green cubes".
-					Do you mean:<br>
-					1 - directly on the surface<br>
-					2 - anywhere on top of?<br>
-					User: 2<br>
+					## Example from SHRDLU:
+					User: How many things are on top of green cubes?
+					SHRDLU: I\'m not sure what you mean by "on top of" in the phrase "on top of green cubes".<br>Do you mean:<br>1 - directly on the surface<br>2 - anywhere on top of?
+					User: 2
 					SHRDLU: Three of them
 				',
 			],
@@ -1013,7 +1013,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEXICON],
 				'desc' => '
-					<p>A lexical entry has information syntactic features.</p>
+					A lexical entry has information syntactic features.
 
 					For example: work (part-of-speech = verb), birds (part-of-speech = noun, number = plural)
 				',
@@ -1023,7 +1023,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEXICON],
 				'desc' => '
-					<p>A lexical entry has a definition of the meaning of the word.</p>
+					A lexical entry has a definition of the meaning of the word.
 				',
 			],
 			self::ONLY_IRREGULAR_FORMS => [
@@ -1031,8 +1031,8 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEXICON],
 				'desc' => '
-					<p>The lexicon stores only irregular forms of verbs, like \'geese\' and \'slept\'.
-					The regular morphological compound forms are derived by applying rules.</p>
+					The lexicon stores only irregular forms of verbs, like \'geese\' and \'slept\'.
+					The regular morphological compound forms are derived by applying rules.
 				',
 			],
 			self::TRACK_SUBJECT => [
@@ -1040,7 +1040,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DISCOURSE_MODEL],
 				'desc' => '
-					<p>The system remembers the active subject, in order to resolve references like \'it\'.</p>
+					The system remembers the active subject, in order to resolve references like \'it\'.
 				',
 			],
 			self::TRACK_TIME => [
@@ -1048,7 +1048,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DISCOURSE_MODEL],
 				'desc' => '
-					<p>The system remembers the current time of discourse, in order to resolve references like \'then\'.</p>
+					The system remembers the current time of discourse, in order to resolve references like \'then\'.
 				',
 			],
 			self::TRACK_PLANS => [
@@ -1056,7 +1056,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DISCOURSE_MODEL],
 				'desc' => '
-					<p>The system needs to remember what plans it is currently working on.</p>
+					The system needs to remember what plans it is currently working on.
 				',
 			],
 			self::LEARN_NAMES => [
@@ -1066,9 +1066,9 @@ class Features
 				'desc' => '
 					<p>The user may teach the system new names for things.</p>
 
-					Example from SHRDLU:<br>
-					User: Call the biggest block "superblock"<br>
-					User: Have you picked up superblock since we began?<br>
+					## Example from SHRDLU:
+					User: Call the biggest block "superblock"
+					User: Have you picked up superblock since we began?
 					SHRDLU: YES.
 				',
 			],
@@ -1077,11 +1077,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEARNING],
 				'desc' => '
-					<p>The user may explain to the system what a words means.</p>
+					The user may explain to the system what a words means.
 
-					Example from SHRDLU:<br>
-					User: A "steeple" is a stack which contains two green cubes and a pyramid<br>
-					User: Are there any steeples now?<br>
+					## Example from SHRDLU:
+					User: A "steeple" is a stack which contains two green cubes and a pyramid
+					User: Are there any steeples now?
 					SHRDLU: NO.
 				',
 			],
@@ -1090,11 +1090,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEARNING],
 				'desc' => '
-					<p>The user may tell the system about a new fact for the knowledge base.</p>
+					The user may tell the system about a new fact for the knowledge base.
 
-					Example from SHRDLU:<br>
-					User: The blue block is mine.<br>
-					User: Do I own anything in the box?<br>
+					## Example from SHRDLU:
+					User: The blue block is mine.
+					User: Do I own anything in the box?
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
 				',
 			],
@@ -1103,11 +1103,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEARNING],
 				'desc' => '
-					<p>The user may tell the system about rules that apply to the knowledge base.</p>
+					The user may tell the system about rules that apply to the knowledge base.
 
-					Example from SHRDLU:<br>
-					User: I own blocks which are not red, but I don\'t own anything which supports a pyramid.<br>
-					User: Do I own anything in the box?<br>
+					## Example from SHRDLU:
+					User: I own blocks which are not red, but I don\'t own anything which supports a pyramid.
+					User: Do I own anything in the box?
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
 				',
 			],
@@ -1116,10 +1116,10 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEARNING],
 				'desc' => '
-					<p>Based on a contradiction with a known fact, the system refuses to accept what the user tells him.</p>
+					Based on a contradiction with a known fact, the system refuses to accept what the user tells him.
 
-					Example from SHRDLU:<br>
-					User: There were five blocks to the left of the box then.<br>
+					## Example from SHRDLU:
+					User: There were five blocks to the left of the box then.
 					SHRDLU: No, only four of them: the red cube, two large green cubes and a large red block
 				',
 			],
@@ -1128,11 +1128,11 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_INFERENCE],
 				'desc' => '
-					<p>Conclude that something is possible from the existence of at least a single instance.</p>
+					Conclude that something is possible from the existence of at least a single instance.
 
-					Example from SHRDLU:<br>
-					User: can a pyramid be supported by a block?<br>
-					SHRDLU: YES.<br><br>
+					## Example from SHRDLU:
+					User: can a pyramid be supported by a block?
+					SHRDLU: YES.<br>
 					The deductive system finds an actual example, so it knows this is possible. (Winograd)
 				',
 			],
@@ -1141,11 +1141,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_GOAL_MODEL],
 				'desc' => '
-					<p>Goals, plans and actions. Goals are taken from the Domain Model and instantiated with data from the user query.<br>
-					The plans are also taken from the Domain Model, and bound to variables from the goal.</p>
+					Goals, plans and actions. Goals are taken from the Domain Model and instantiated with data from the user query.
 
-					From SHRDLU:<br>
-					User: Pick up a big red block.<br>
+					The plans are also taken from the Domain Model, and bound to variables from the goal.
+
+					## From SHRDLU:
+					User: Pick up a big red block.
 					SHRDLU: OK<br>
 					The system answers "OK" when it carries out a command. In order to pick up the red block,
 					it had to clear it off by finding a space for the green one and moving the green one away. (Winograd)
@@ -1156,12 +1157,12 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_GOAL_MODEL],
 				'desc' => '
-					<p>In order to answer questions about its motives, the system needs to keep track of its goals and plans,
-					and how they were connected.</p>
+					In order to answer questions about its motives, the system needs to keep track of its goals and plans,
+					and how they were connected.
 
-					Example from SHRDLU:<br>
-					User: Why did you do that?<br>
-					SHRDLU: To clean off the red cube
+					## Example from SHRDLU:
+					User: Why did you do that?
+					SHRDLU: To clear off the red cube
 				',
 			],
 		];

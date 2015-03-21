@@ -23,7 +23,67 @@ class HelpButton extends HtmlElement
 			<input class='help' type='button' value='?' />
 			<div class='help-popup'>
 				<header>" . htmlspecialchars($this->featureName) . "</header>" .
-				$this->explanationHtml . '
+				$this->microformatToHtml($this->explanationHtml) . '
 			</div>';
+	}
+
+	/**
+	 * Turns my custom microformat into html.
+	 *
+	 * - replace all newlines by <p> elements
+	 * - formats
+	 *
+	 *      ## header
+	 *      a: x
+	 *      b: y
+	 *
+	 *  as
+	 *
+	 *      <table class='example'>
+	 *          <caption> header </caption>
+	 *          <tr><td class='name'> a </td><td> x </td></tr>
+	 *          <tr><td class='name'> b </td><td> y </td></tr>
+	 *      </table>
+	 *
+	 * @param string $microformat
+	 * @return string HTML
+	 */
+	private function microformatToHtml($microformat)
+	{
+		$quote = function($matches)
+		{
+			$header = $matches['header'];
+			$quoteLines = array_filter(explode("\n", $matches['quotes']));
+
+			$rows = '';
+
+			foreach ($quoteLines as $quoteLine) {
+
+				preg_match('/([^:]+):(.*)/', $quoteLine, $matches);
+				$name = $matches[1];
+				$quote = $matches[2];
+
+				$rows .= "<tr><td class='name'>" . trim($name) . "</td><td>" . trim($quote) . "</td></tr>";
+			}
+
+			$string =  "<table class='example'>" .
+				"<caption>" . trim($header) . "</caption>" .
+				$rows .
+				"</table>";
+
+			return $string;
+		};
+
+		$paragraphs = function($matches)
+		{
+			$body = $matches[1];
+			return "<p>" . $body . "</p>";
+		};
+
+		$html = $microformat;
+		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)+)/', $quote, $html);
+		$html = preg_replace_callback('/(.*)\n\n/s', $paragraphs, $html);
+
+		return $html;
 	}
 }

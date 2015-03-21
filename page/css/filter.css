@@ -183,3 +183,17 @@ div.help-popup header {
 div.help-popup dt {
 	font-weight: bold;
 }
+
+table.example caption {
+	text-align: left;
+	font-weight: bold;
+}
+
+table.example td {
+	vertical-align: top;
+}
+table.example td.name {
+	color: #808080;
+	padding-right: 5px;
+	font-style: italic;
+}
