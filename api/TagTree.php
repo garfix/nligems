@@ -7,6 +7,12 @@ namespace nligems\api;
  */
 class TagTree
 {
+	/**
+	 * This structure is there to make any sense of all the features.
+	 * It is used for both the front-end and the backend to group features.
+	 *
+	 * @return array
+	 */
 	public static function getTagTree()
 	{
 		return array(

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Show significant events in the history of nli's.
+ */
 
 use nligems\api\NliSystemApi;
 use nligems\api\PageApi;

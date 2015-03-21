@@ -1,4 +1,7 @@
 <?php
+/**
+ * This page allows you to filter systems based on their features.
+ */
 
 use nligems\api\NliSystemApi;
 use nligems\api\PageApi;

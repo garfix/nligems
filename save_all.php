@@ -1,4 +1,7 @@
 <?php
+/**
+ * Helper page that allows you to give all systems default values for newly defined features.
+ */
 
 use nligems\api\NliSystemApi;
 

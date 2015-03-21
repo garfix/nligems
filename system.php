@@ -1,4 +1,7 @@
 <?php
+/**
+ * Shows a full description of a single system.
+ */
 
 use nligems\api\NliSystemApi;
 use nligems\api\PageApi;

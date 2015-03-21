@@ -1,4 +1,7 @@
 <?php
+/**
+ * This backend page allows you to edit the features of a system.
+ */
 
 use nligems\api\NliSystemApi;
 use nligems\api\PageApi;

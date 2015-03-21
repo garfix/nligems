@@ -1,4 +1,7 @@
 <?php
+/**
+ * On this page 2 or more systems are compared.
+ */
 
 use nligems\api\NliSystemApi;
 use nligems\api\PageApi;
