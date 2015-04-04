@@ -89,4 +89,9 @@ class Checkbox extends Component
 			$this->runningSystems[] = $System;
 		}
 	}
+
+	public function hasMatches()
+	{
+		return !empty($this->runningSystems);
+	}
 }

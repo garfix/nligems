@@ -114,4 +114,9 @@ class CheckboxGroup extends Component
 			$this->runningSystemsPerOption[$option][] = $System;
 		}
 	}
+
+	public function hasMatches()
+	{
+		return !empty($this->runningSystemsPerOption);
+	}
 }

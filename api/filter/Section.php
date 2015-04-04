@@ -23,6 +23,9 @@ class Section
 	/** @var  Component[] $components */
 	private $components = [];
 
+	/** @var bool  */
+	private $match = false;
+
 	/**
 	 * @param string $name
 	 * @param string $type
@@ -86,6 +89,17 @@ class Section
 		}
 	}
 
+	private function hasMatches()
+	{
+		foreach ($this->components as $Component) {
+			if ($Component->hasMatches()) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	/**
 	 * @return array
 	 */
@@ -109,6 +123,10 @@ class Section
 		$H3->addClass('filter');
 		$H3->addClass($this->type);
 		$H3->addChildText($this->name);
+
+		if (!$this->hasMatches()) {
+			$H3->addClass('greyedOut');
+		}
 
 		$Count = new HtmlElement('span');
 		$Count->addChildText('');

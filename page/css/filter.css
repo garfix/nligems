@@ -50,6 +50,10 @@ h2.filter {
 	color: #bbb;
 }
 
+h3.greyedOut {
+	color: #888888;
+}
+
 /* RESULTSET */
 
 div.resultset {

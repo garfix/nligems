@@ -60,8 +60,15 @@ class Component
 		return true;
 	}
 
+	/**
+	 * @param NliSystem $System
+	 */
 	public function storeMatches(NliSystem $System)
 	{
+	}
 
+	public function hasMatches()
+	{
+		return false;
 	}
 }
