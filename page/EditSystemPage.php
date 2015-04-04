@@ -150,5 +150,7 @@ class EditSystemPage extends BackEndPage
         }
 
         $SystemsApi->saveSystem($this->System);
+
+        header('Location:' . $_SERVER['REQUEST_URI']);
     }
 }
