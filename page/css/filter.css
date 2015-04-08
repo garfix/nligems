@@ -184,6 +184,14 @@ div.help-popup header {
 	margin-bottom: 15px;
 }
 
+div.help-popup dl {
+	margin: 0;
+}
+
+div.help-popup ul {
+	margin: 0;
+}
+
 div.help-popup dt {
 	font-weight: bold;
 }

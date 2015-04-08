@@ -74,15 +74,35 @@ class HelpButton extends HtmlElement
 			return $string;
 		};
 
+		$definitions = function($matches)
+		{
+			$definitionLines = array_filter(explode("\n", $matches['defs']));
+
+			$body = '';
+
+			foreach ($definitionLines as $definitionLine) {
+
+				preg_match('/([^:]+):=(.*)/', $definitionLine, $matches);
+				$name = $matches[1];
+				$value = $matches[2];
+
+				$body .= "<dt>" . trim($name) . "</dt><dd>" . trim($value) . "</dd>";
+			}
+
+			$string =  "<dl>" . $body . "</dl>";
+
+			return $string;
+		};
+
 		$paragraphs = function($matches)
 		{
-			$body = $matches[1];
-			return "<p>" . $body . "</p>";
+			return "<br><br>";
 		};
 
 		$html = $microformat;
-		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)+)/', $quote, $html);
-		$html = preg_replace_callback('/(.*)\n\n/s', $paragraphs, $html);
+		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)*)/', $quote, $html);
+		$html = preg_replace_callback('/(\n|^)(?<defs>([^\n:]+:=[^\n]+\n)+)/', $definitions, $html);
+		$html = preg_replace_callback('/(\n\n)/', $paragraphs, $html);
 
 		return $html;
 	}
