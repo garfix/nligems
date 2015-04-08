@@ -110,8 +110,6 @@
     "SYNTACTIC_FEATURES": true,
     "SEMANTIC_DEFINITION": true,
     "ONLY_IRREGULAR_FORMS": true,
-    "TRACK_SUBJECT": true,
-    "TRACK_TIME": true,
     "LEARN_NAMES": true,
     "LEARN_WORDS": true,
     "LEARN_FACTS": true,
@@ -134,11 +132,21 @@
     "SEMANTIC_ANALYSIS_PARSING": true,
     "META_GOAL_MODEL": true,
     "QUESTION_TYPES": [
-        "wh",
         "yes\/no",
+        "wh",
         "how many",
         "when",
         "how",
         "why"
+    ],
+    "DEDUCTION": true,
+    "AMBIGUITY": [
+        "Early-convergence"
+    ],
+    "INTEGRATED_KNOWLEDGE_BASE": true,
+    "DEICTIC_CENTER": [
+        "person",
+        "time",
+        "space"
     ]
 }

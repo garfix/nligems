@@ -28,6 +28,8 @@ class Features
 
 	const ANALYSIS = 'ANALYSIS';
 	const SEMANTIC_GRAMMAR = 'SEMANTIC_GRAMMAR';
+	const AMBIGUITY = 'AMBIGUITY';
+	const INTEGRATED_KNOWLEDGE_BASE = 'INTEGRATED_KNOWLEDGE_BASE';
 	const DIALOG = 'DO_DIALOG';
 	const NEW_WORDS = 'NEW_WORDS';
 	const MULTI_DB = 'MULTI_DB';
@@ -65,6 +67,7 @@ class Features
 	const PROPER_NAMES_FROM_KB = 'DO_PROP_NAME_KB';
 	const PROPER_NAMES_BY_MATCHING = 'DO_PROP_NAME_MAT';
 	const QUOTED_STRING_RECOGNITION = 'DO_QUOTED_STRINGS';
+	const POS_TAGGER = 'POS_TAGGER';
 
 	const PARSE_HEADER = 'PARSE_HEADER';
 	const GRAMMAR_TYPE = 'GRAMMAR_TYPE';
@@ -113,6 +116,7 @@ class Features
 
 	const GENERATE_HEADER = 'GENERATE_HEADER';
 	const PARAPHRASE_QUERY = 'PARAPHRASE_QUERY';
+	const GENERATE_FULL_RESPONSE = 'GENERATE_FULL_RESPONSE';
 	const CANNED_RESPONSES = 'CANNED_RESPONSES';
 	const PATTERNED_RESPONSES = 'PATTERNED_RESPONSES';
 
@@ -120,6 +124,7 @@ class Features
 	const SEMANTIC_DEFINITION = 'SEMANTIC_DEFINITION';
 	const ONLY_IRREGULAR_FORMS = 'ONLY_IRREGULAR_FORMS';
 
+	const DEICTIC_CENTER = 'DEICTIC_CENTER';
 	const TRACK_SUBJECT = 'TRACK_SUBJECT';
 	const TRACK_TIME = 'TRACK_TIME';
 	const TRACK_PLANS = 'TRACK_PLANS';
@@ -130,6 +135,7 @@ class Features
 	const LEARN_RULES = 'LEARN_THEOREMS';
 	const REFUSE_TO_ACCEPT = 'REFUSE_TO_ACCEPT';
 
+	const DEDUCTION = 'DEDUCTION';
 	const PROOF_BY_EXAMPLE = 'PROOF_BY_EXAMPLE';
 
 	const INSTANTIATED_GOALS = 'INSTANTIATED_GOALS';
@@ -229,8 +235,8 @@ class Features
 				),
 				'tags' => [self::TAG_CODE],
 				'desc' => '
-					<p>Which programming language is used to implement the natural language processing core components of the system?
-					This excludes the languages that are only used to interact with the system.</p>
+					Which programming language is used to implement the natural language processing core components of the system?
+					This excludes the languages that are only used to interact with the system.
 				',
 			],
 			self::KNOWLEDGE_BASE_TYPE => [
@@ -244,11 +250,10 @@ class Features
 				'tags' => [self::TAG_KNOWLEDGE_BASE],
 				'desc' => '
 					The way data is stored in the knowledge base:
-					<dl>
-						<dt>Relational</dt><dd>A relational database</dd>
-						<dt>Tree based</dt><dd>A hierarchical database</dd>
-						<dt>Inference engine</dt><dd>A logical database, with inference rules</dd>
-					</dl>
+
+					Relational := A relational database
+					Tree based := A hierarchical database
+					Inference engine := A logical database, with inference rules
 				',
 			],
 			self::STATE_HISTORY => [
@@ -316,12 +321,12 @@ class Features
 				),
 				'tags' => [self::TAG_STRUCTURE],
 				'desc' => '
-					The main categories of natural language interfaces<br>
-					<dl>
-						<dt>Pattern matching</dt><dd>Literal occurrences of a pattern in a sentence are converted directly to parts of a DB query</dd>
-						<dt>Syntax based</dt><dd>A sentence is parsed and the parse tree is mapped directly to a DB query</dd>
-						<dt>Semantics based</dt><dd>After a sentence is parsed, it is first converted into an intermediate semantic expression, which is in turn converted into a DB query</dd>
-					</dl>
+					The main categories of natural language interfaces
+
+						Pattern matching := Literal occurrences of a pattern in a sentence are converted directly to parts of a DB query
+						Syntax based := A sentence is parsed and the parse tree is mapped directly to a DB query
+						Semantics based := After a sentence is parsed, it is first converted into an intermediate semantic expression, which is in turn converted into a DB query
+
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
 				',
 			],
@@ -330,10 +335,49 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_STRUCTURE],
 				'desc' => '
-					<p>Domain specific grammar.</p>
-					<p>The grammar used to parse the sentence contains non-leaf structures that are specially designed for some domain.</p>
-					<p>Each new application requires a different grammar.</p>
+					Domain specific grammar.
+
+					The grammar used to parse the sentence contains non-leaf structures that are specially designed for some domain.
+					Each new application requires a different grammar.
+
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
+				',
+			],
+			self::AMBIGUITY => [
+				'name' => 'Ambiguity',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					'Early-convergence' => 'Early convergence',
+					'Late-convergence' => 'Late convergence',
+				),
+				'tags' => [self::TAG_STRUCTURE],
+				'desc' => '
+					How does the system deal with the ambiguity in the input sentence?
+
+					Ambiguity occurs at the tokenization phase (the word \'de\' may be part of a last name, or it may be an article),
+					at the parsing phase (causing multiple parse trees), and at the semantic analysis phase (quantifier scoping problems, for example).
+
+					Early convergence := Apply as much restrictions as available, early in the process. At all stages, pick only a single interpretation.
+					Late convergence := Keep all interpretations open. Pick the interpretation that gives the \'best\' result in the end. Score results.
+
+				',
+			],
+			self::INTEGRATED_KNOWLEDGE_BASE => [
+				'name' => 'Integrated knowledge base',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_STRUCTURE],
+				'desc' => '
+					The knowledge base is part of the system.
+
+					 Advantages:
+					 <ul>
+					    <li>No need to convert a semantic structure to a knowledge base structure.</li>
+					 </ul>
+
+					 Disadvantages:
+					 <ul>
+					    <li>The system is not extendable at this point. It has no ready-made facilities to link to external knowledge bases.</li>
+					 </ul>
 				',
 			],
 			self::META_SELF => [
@@ -341,7 +385,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_DIALOG],
 				'desc' => '
-					<p>This is the basic function of a Natural Language Interface: to answer questions about a knowledge base.</p>
+					This is the basic function of a Natural Language Interface: to answer questions about a knowledge base.
 				',
 			],
 			self::META_GOAL_MODEL => [
@@ -397,6 +441,10 @@ class Features
 					## Example from SHRDLU:
 					User: Thank you.
 					SHRDLU: You\'re welcome
+
+					## Classic idiom example from ThoughtTreasure:
+					User: Peter kicked the bucket.
+					ThoughtTreasure structure: [died Peter]
 				',
 			],
 			self::QUESTION_TYPES => [
@@ -426,8 +474,7 @@ class Features
 				'desc' => '
 					Uses (among others) a lexicon to recognize tokens in a sentence.
 
-					Especially useful for compound nouns, like \'distance learning\' that cannot be recognized by
-					using space as a delimiter alone.
+					Especially useful for compound nouns, like \'distance learning\' that cannot be recognized by using space as a delimiter alone.
 
 					The lexicon may also provide the part-of-speech of the word, i.e. noun, verb, preposition, to be used in the parsing process.
 				',
@@ -461,6 +508,15 @@ class Features
 					Recognizes words from an endless category that is not a good fit for a lexicon.
 
 					Examples are ordinals: 42, forty-two, forty-second
+
+					ThoughtTreasure: Date expressions such as the following are recognized (Mueller):
+
+					Monday March 11, 1996<br>
+					March 11, 1996<br>
+					March 1996<br>
+					March \'96<br>
+					lundi le 11 mars 1996<br>
+					..
 				',
 			],
 			self::PROPER_NAMES_FROM_KB => [
@@ -489,6 +545,14 @@ class Features
 					Recognizes quoted sentences as part of a sentence.
 
 					For example: Who said "Gravitation is not responsible for people falling in love"?
+				',
+			],
+			self::POS_TAGGER => [
+				'name' => 'Uses a part-of-speech tagger',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_TOKENIZATION],
+				'desc' => '
+					An off-the-shelf part-of-speech tagger is used to determine the parts-of-speech of the words in a sentence.
 				',
 			],
 			self::GRAMMAR_TYPE => [
@@ -767,6 +831,15 @@ class Features
 				),
 				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
 				'desc' => '
+					Semantic composition is the process of building the meaning of a sentence from the meanings of
+					the phrases and eventually, the words.
+
+					Unification := .
+					Production rules := .
+					Lambda calculus := /.
+					Custom procedures := Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them.
+							Very flexible but in general not very extendible
+
 				',
 			],
 			self::SEMANTIC_CONFLICT_DETECTION => [
@@ -959,8 +1032,8 @@ class Features
 					it answers in a way that actually helps the user.
 
 					## Example from SHRDLU:
-					 User: Is it supported?
-					 SHRDLU: Yes, by the table
+					User: Is it supported?
+					SHRDLU: Yes, by the table
 				',
 			],
 			self::PARAPHRASE_QUERY => [
@@ -975,11 +1048,15 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_ANSWER],
 				'desc' => '
-					The system shows fixed pieces of text as a response.
+					The system shows a fixed piece of text as a response to a question.
 
 					## Example from SHRDLU:
-					 User: Stack up two pyramids
-					 SHRDLU: I can\'t.
+					User: Stack up two pyramids
+					SHRDLU: I can\'t.
+
+					## Example from ThoughtTreasure:
+					User: How are you?
+					ThoughtTreasure: Very well, thank you.
 				',
 			],
 			self::PATTERNED_RESPONSES => [
@@ -990,8 +1067,18 @@ class Features
 					The system shows simple pieces of text, with some variables, as a response.
 
 					## Example from SHRDLU:
-					 User: How many blocks are not in the box?
-					 SHRDLU: Four of them
+					User: How many blocks are not in the box?
+					SHRDLU: Four of them
+				',
+			],
+			self::GENERATE_FULL_RESPONSE => [
+				'name' => 'Generate full response',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_ANSWER],
+				'desc' => '
+					## Example from ThoughtTreasure:
+					User: List my appointments.
+					ThoughtTreasure: You have an appointment with Ruth Northville at the Four Seasons in one hour. You have an appointment with Amy Newton on Thursday March 21, 1996 at eight pm.
 				',
 			],
 			self::DIALOG => [
@@ -1006,6 +1093,12 @@ class Features
 					SHRDLU: I\'m not sure what you mean by "on top of" in the phrase "on top of green cubes".<br>Do you mean:<br>1 - directly on the surface<br>2 - anywhere on top of?
 					User: 2
 					SHRDLU: Three of them
+
+					## Example from ThoughtTreasure:
+					User: I want to buy a Fiat Spider.
+					ThoughtTreasure: A 124, a 2000, or a 1800?
+					User: A 124.
+					ThoughtTreasure: A 1978 Fiat 124 was for sale for 3000 dollars by Todd Spire at "toddspi@quapaw.astate.edu".
 				',
 			],
 			self::SYNTACTIC_FEATURES => [
@@ -1035,20 +1128,23 @@ class Features
 					The regular morphological compound forms are derived by applying rules.
 				',
 			],
-			self::TRACK_SUBJECT => [
-				'name' => 'Keep track of subject',
-				'type' => self::FEATURETYPE_BOOL,
+			self::DEICTIC_CENTER => [
+				'name' => 'Deictic center',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					'person' => 'Person',
+					'time' => 'Time',
+					'space' => 'Space',
+				),
 				'tags' => [self::TAG_DISCOURSE_MODEL],
 				'desc' => '
-					The system remembers the active subject, in order to resolve references like \'it\'.
-				',
-			],
-			self::TRACK_TIME => [
-				'name' => 'Keep track of time',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DISCOURSE_MODEL],
-				'desc' => '
-					The system remembers the current time of discourse, in order to resolve references like \'then\'.
+					Some words can only be understood in reference to an origin. This origin is called the deictic center.
+
+					Person := Words like like \'he\', \'their\'
+					Time := Words like \'yesterday\'
+					Space := Words like \'there\', \'this\'
+
+					Hence the system needs to update the origin with each new sentence.
 				',
 			],
 			self::TRACK_PLANS => [
@@ -1064,12 +1160,16 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEARNING],
 				'desc' => '
-					<p>The user may teach the system new names for things.</p>
+					The user may teach the system new names for things.
 
 					## Example from SHRDLU:
 					User: Call the biggest block "superblock"
 					User: Have you picked up superblock since we began?
 					SHRDLU: YES.
+
+					## ThoughtTreasure
+					If the name text agent encounters an unknown word in a context where it is likely to be a name,
+					such as after a first name, if it has a prefix or suffix  commonly used in names, it learns the new name.
 				',
 			],
 			self::LEARN_WORDS => [
@@ -1121,6 +1221,16 @@ class Features
 					## Example from SHRDLU:
 					User: There were five blocks to the left of the box then.
 					SHRDLU: No, only four of them: the red cube, two large green cubes and a large red block
+				',
+			],
+			self::DEDUCTION => [
+				'name' => 'Deduction',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_INFERENCE],
+				'desc' => '
+					Deductive reasoning: reason from premises to conclusions.
+
+					Apply the deduction rules from the Domain Model to reach factual statements that are not stored literally in the Knowledge Base.
 				',
 			],
 			self::PROOF_BY_EXAMPLE => [

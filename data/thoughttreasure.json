@@ -1,0 +1,65 @@
+{
+    "NAME": "ThoughtTreasure",
+    "FIRST_YEAR": "1994",
+    "LAST_YEAR": "1996",
+    "CONTRIBUTORS": [
+        "Erik T. Mueller"
+    ],
+    "INSTITUTIONS": [],
+    "INFLUENCED_BY": [],
+    "SOURCE_CODE": "",
+    "NAME_DESC": "",
+    "LONG_DESC": "",
+    "ARTICLES": [],
+    "BOOKS": [
+        "Natural Language Processing with ThoughtTreasure"
+    ],
+    "GENERATE_HEADER": "",
+    "TOKENIZATION_HEADER": "The text agency",
+    "PARSE_HEADER": "",
+    "PARSER_TYPE": "",
+    "INTERPRET_HEADER": "",
+    "CONVERT_HEADER": "",
+    "EXECUTE_HEADER": "",
+    "SEMANTIC_FORM_DESC": "",
+    "KB_TYPE_DESC": "",
+    "KB_LANGS": [],
+    "STD_ONTOLOGY": [],
+    "GRAMMAR_TYPE": "",
+    "PROG_LANGS": [
+        "C"
+    ],
+    "ANALYSIS": [
+        "Semantics-based"
+    ],
+    "META_SELF": true,
+    "NEW_WORDS": true,
+    "IMPERATIVE": true,
+    "IDIONS": true,
+    "QUESTION_TYPES": [
+        "yes\/no",
+        "wh",
+        "when",
+        "why"
+    ],
+    "AMBIGUITY": [
+        "Late-convergence"
+    ],
+    "INTEGRATED_KNOWLEDGE_BASE": true,
+    "DEICTIC_CENTER": [
+        "person",
+        "time",
+        "space"
+    ],
+    "COOPERATIVE_RESPONSES": true,
+    "GENERATE_FULL_RESPONSE": true,
+    "CANNED_RESPONSES": true,
+    "PATTERNED_RESPONSES": true,
+    "DO_DIALOG": true,
+    "DO_MORPH_ANA": true,
+    "DO_OPEN_ENDED": true,
+    "DO_PROP_NAME_KB": true,
+    "DO_PROP_NAME_MAT": true,
+    "POS_TAGGER": true,
+    "LEARN_NAMES": true
+}
