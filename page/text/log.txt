@@ -1,0 +1,31 @@
+July 2014
+
+During the holidays with my family in England I started reading several articles available of systems on natural language interaction.
+I wanted to find out the complete problem domain in order to create a generic architecture for a modular, extendable NLI system.
+
+October 2014
+
+After finding out that the number of features available in NLI systems, and that there was some overlap, but also great differences between these systems,
+I decided to create a web application to be able to visualize these similarities and differences.
+
+March 2015
+
+After going through several systems in a somewhat superficial manner, I started do deal with them more thoroughly. I started with SHRDLU, because it is the first system I consider,
+and at the same time it has profound coverage of the problem domain.
+
+SHRLU answers questions about it's own internal processes. This is quite remarkable. I would like to show that this is awesome, but at the same time, how it can be done, and that,
+with the proper data structures, it does not need to be rocket science to pull it off.
+
+I think it is inevitable that my interpretation of the problem domain, the features I discern, and the way the features are grouped by me, is coloured by
+what I think is important, and by my lack of understanding of the complete field. I hope to reduce my personal influences and I will strive for an objective representation.
+
+April 2015
+
+Working on ThoughtTreasure. After SHRDLU I thought I had a strong basis with many features and that the other systems would be mainly just a matter of ticking the checkboxes.
+I was wrong. In fact, I found it very frustrating to see that ThoughtTreasure has all kinds of features that were not available in SHRDLU.
+Again, I had to think of new concepts, and change existing divisions of the domain space. But when I just started entering the data in the computer I found it to be fun again.
+It is amazing how these systems differ. And it is intriguing to chart this domain.
+
+ThoughtTreasure has explicit higher order cognitive functions (named agents), like emotions and goal recognition. It handles the answering of questions in a more explicit way.
+I like this idea very much. Mueller groups quite different functions under the term 'agents' so we can't say that all agents are higher order functions. The grouping of
+functionality itself is interesting.
