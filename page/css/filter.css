@@ -185,7 +185,7 @@ div.help-popup header {
 }
 
 div.help-popup dl {
-	margin: 0;
+	margin: 0 0 10px 0;
 }
 
 div.help-popup ul {
@@ -194,6 +194,13 @@ div.help-popup ul {
 
 div.help-popup dt {
 	font-weight: bold;
+}
+
+div.help-popup pre {
+	color: #606060;
+	font-weight: bold;
+	background-color: #fcf2e4;
+	padding: 5px;
 }
 
 table.example caption {

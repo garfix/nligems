@@ -86,7 +86,7 @@
     "DO_PLAUSIB_JUDGE": true,
     "COOPERATIVE_RESPONSES": true,
     "SEMANTIC_FORM_TYPE": [
-        "procedural"
+        "goal-based"
     ],
     "SEMANTIC_FORM_DESC": "A Planner representation",
     "EVENT_BASED": true,

@@ -28,22 +28,40 @@ class HelpButton extends HtmlElement
 	}
 
 	/**
-	 * Turns my custom microformat into html.
+	 * Turns my custom microformat into html. Uses some Markdown syntax.
 	 *
 	 * - replace all newlines by <p> elements
-	 * - formats
+	 * - table
 	 *
 	 *      ## header
 	 *      a: x
 	 *      b: y
-	 *
-	 *  as
 	 *
 	 *      <table class='example'>
 	 *          <caption> header </caption>
 	 *          <tr><td class='name'> a </td><td> x </td></tr>
 	 *          <tr><td class='name'> b </td><td> y </td></tr>
 	 *      </table>
+	 *
+	 * - pre-formatted code
+	 *
+	 *      ~~~
+	 *      code
+	 *      ~~~
+	 *
+	 *      <pre>code</pre>
+	 *
+	 * - definition lists
+	 *
+	 *      term
+	 *      : description
+	 *      term
+	 *      : description
+	 *
+	 *      <dl>
+	 *          <dt>term</dt><dd>description</dd>
+	 *          <dt>term</dt><dd>description</dd>
+	 *      </dl>
 	 *
 	 * @param string $microformat
 	 * @return string HTML
@@ -76,22 +94,17 @@ class HelpButton extends HtmlElement
 
 		$definitions = function($matches)
 		{
-			$definitionLines = array_filter(explode("\n", $matches['defs']));
-
-			$body = '';
-
-			foreach ($definitionLines as $definitionLine) {
-
-				preg_match('/([^:]+):=(.*)/', $definitionLine, $matches);
-				$name = $matches[1];
-				$value = $matches[2];
-
-				$body .= "<dt>" . trim($name) . "</dt><dd>" . trim($value) . "</dd>";
-			}
-
+			$defs = $matches['defs'];
+			$body = preg_replace('/([^:]+)\n\s*:([^\n]+)/', '<dt>\1</dt><dd>\2</dd>', $defs);
 			$string =  "<dl>" . $body . "</dl>";
 
 			return $string;
+		};
+
+		$preformatted = function($matches)
+		{
+			$precedingSpace = $matches[1];
+			return $precedingSpace . '<pre>' . str_replace($precedingSpace, '', $matches[2]) . '</pre>';
 		};
 
 		$paragraphs = function($matches)
@@ -101,7 +114,8 @@ class HelpButton extends HtmlElement
 
 		$html = $microformat;
 		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)*)/', $quote, $html);
-		$html = preg_replace_callback('/(\n|^)(?<defs>([^\n:]+:=[^\n]+\n)+)/', $definitions, $html);
+		$html = preg_replace_callback('/(\n|^)(?<defs>([^\n:]+\n\s*:[^\n]+\n)+)/', $definitions, $html);
+		$html = preg_replace_callback('/(\t*)~~~(.*?)~~~/s', $preformatted, $html);
 		$html = preg_replace_callback('/(\n\n)/', $paragraphs, $html);
 
 		return $html;

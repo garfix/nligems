@@ -82,9 +82,7 @@
     "DO_ANAPHORA_RESOL": null,
     "DO_PLAUSIB_JUDGE": null,
     "COOPERATIVE_RESPONSES": null,
-    "SEMANTIC_FORM_TYPE": [
-        "procedural"
-    ],
+    "SEMANTIC_FORM_TYPE": [],
     "SEMANTIC_FORM_DESC": "FOPC with extensions",
     "EVENT_BASED": null,
     "TEMPORAL": null,

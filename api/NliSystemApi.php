@@ -150,7 +150,7 @@ class NliSystemApi
 	public function getExplanationHtml($feature)
 	{
 		$features = Features::getFeatures();
-		return isset($features[$feature]['desc']) ? trim($features[$feature]['desc']) : null;
+		return isset($features[$feature]['desc']) ? $features[$feature]['desc'] : null;
 	}
 
 	public function getFeatureName($feature)

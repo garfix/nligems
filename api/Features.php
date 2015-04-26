@@ -251,9 +251,12 @@ class Features
 				'desc' => '
 					The way data is stored in the knowledge base:
 
-					Relational := A relational database
-					Tree based := A hierarchical database
-					Inference engine := A logical database, with inference rules
+					Relational
+					: A relational database
+					Tree based
+					: A hierarchical database
+					Inference engine
+					: A logical database, with inference rules
 				',
 			],
 			self::STATE_HISTORY => [
@@ -323,9 +326,12 @@ class Features
 				'desc' => '
 					The main categories of natural language interfaces
 
-						Pattern matching := Literal occurrences of a pattern in a sentence are converted directly to parts of a DB query
-						Syntax based := A sentence is parsed and the parse tree is mapped directly to a DB query
-						Semantics based := After a sentence is parsed, it is first converted into an intermediate semantic expression, which is in turn converted into a DB query
+						Pattern matching
+						: Literal occurrences of a pattern in a sentence are converted directly to parts of a DB query
+						Syntax based
+						: A sentence is parsed and the parse tree is mapped directly to a DB query
+						Semantics based
+						: After a sentence is parsed, it is first converted into an intermediate semantic expression, which is in turn converted into a DB query
 
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
 				',
@@ -357,8 +363,10 @@ class Features
 					Ambiguity occurs at the tokenization phase (the word \'de\' may be part of a last name, or it may be an article),
 					at the parsing phase (causing multiple parse trees), and at the semantic analysis phase (quantifier scoping problems, for example).
 
-					Early convergence := Apply as much restrictions as available, early in the process. At all stages, pick only a single interpretation.
-					Late convergence := Keep all interpretations open. Pick the interpretation that gives the \'best\' result in the end. Score results.
+					Early convergence
+					: Apply as much restrictions as available, early in the process. At all stages, pick only a single interpretation.
+					Late convergence
+					: Keep all interpretations open. Pick the interpretation that gives the \'best\' result in the end. Score results.
 
 				',
 			],
@@ -834,11 +842,14 @@ class Features
 					Semantic composition is the process of building the meaning of a sentence from the meanings of
 					the phrases and eventually, the words.
 
-					Unification := .
-					Production rules := .
-					Lambda calculus := /.
-					Custom procedures := Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them.
-							Very flexible but in general not very extendible
+					Unification
+					: .
+					Production rules
+					: .
+					Lambda calculus
+					: /.
+					Custom procedures
+					: Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them. Very flexible but in general not very extendible
 
 				',
 			],
@@ -890,11 +901,36 @@ class Features
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'relational' => 'Relational',
-					'procedural' => 'Procedural',
 					'ontology' => 'Ontology',
+					'list-based' => 'List based',
+					'goal-based' => 'Goal based',
 				),
 				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
+					Relational
+					: ?
+					Ontology
+					: ?
+					List-based
+					: A list of [predicate argument, argument, ...] where each argument can be another list.
+					Goal-based
+					: A tree of [goal means means, ...] where each means can be another tree
+
+					An example from ThoughtTreasure (list-based):<br>
+					"Who directed Rendezvous in Paris?"<br>is represented as
+					~~~
+					[preterit-indicative
+						[director-of *RDP *human-interrogative-pronoun]]
+					~~~
+					An example from SHRDLU (goal-based):<br>
+					"Is any block  supported by three pyramids?"<br>is represented as the Planner construct
+					~~~
+					(THFIND ALL $?X1 (X1)
+						(THGOAL (#IS $?X1 #BLOCK))
+						(THFIND 3 $?X2 (X2)
+							(THGOAL (#IS $?X2 #PYRAMID))
+							(THGOAL (#SUPPORT $?X2 $?X1))))
+					~~~
 				',
 			],
 			self::SEMANTIC_FORM_DESC => [
@@ -1140,9 +1176,12 @@ class Features
 				'desc' => '
 					Some words can only be understood in reference to an origin. This origin is called the deictic center.
 
-					Person := Words like like \'he\', \'their\'
-					Time := Words like \'yesterday\'
-					Space := Words like \'there\', \'this\'
+					Person
+					: Words like like \'he\', \'their\'
+					Time
+					: Words like \'yesterday\'
+					Space
+					: Words like \'there\', \'this\'
 
 					Hence the system needs to update the origin with each new sentence.
 				',

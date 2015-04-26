@@ -61,5 +61,8 @@
     "DO_PROP_NAME_KB": true,
     "DO_PROP_NAME_MAT": true,
     "POS_TAGGER": true,
-    "LEARN_NAMES": true
+    "LEARN_NAMES": true,
+    "SEMANTIC_FORM_TYPE": [
+        "list-based"
+    ]
 }

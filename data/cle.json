@@ -95,9 +95,7 @@
     "DO_ANAPHORA_RESOL": true,
     "DO_PLAUSIB_JUDGE": true,
     "COOPERATIVE_RESPONSES": null,
-    "SEMANTIC_FORM_TYPE": [
-        "procedural"
-    ],
+    "SEMANTIC_FORM_TYPE": [],
     "SEMANTIC_FORM_DESC": "FOPC with extensions",
     "EVENT_BASED": true,
     "TEMPORAL": null,
