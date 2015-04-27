@@ -16,9 +16,9 @@
     ],
     "GENERATE_HEADER": "",
     "TOKENIZATION_HEADER": "The text agency",
-    "PARSE_HEADER": "",
-    "PARSER_TYPE": "",
-    "INTERPRET_HEADER": "",
+    "PARSE_HEADER": "The syntactic component",
+    "PARSER_TYPE": "A simple bottom-up parser",
+    "INTERPRET_HEADER": "The semantic component",
     "CONVERT_HEADER": "",
     "EXECUTE_HEADER": "",
     "SEMANTIC_FORM_DESC": "",
@@ -64,5 +64,12 @@
     "LEARN_NAMES": true,
     "SEMANTIC_FORM_TYPE": [
         "list-based"
-    ]
+    ],
+    "SYNTACTIC_FORM_TYPE": [
+        "parse trees"
+    ],
+    "APPLY_SELECTIONAL_RESTRICTIONS": true,
+    "SELECTIONAL_RESTRICTIONS": true,
+    "DO_SEMANTIC_COMP": true,
+    "DO_ANAPHORA_RESOL": true
 }

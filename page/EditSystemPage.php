@@ -139,7 +139,7 @@ class EditSystemPage extends BackEndPage
                      break;
                  case Features::FEATURETYPE_TEXT_SINGLE:
                  case Features::FEATURETYPE_TEXT_SINGLE_LONG:
-                     $inputValue = $value;
+                     $inputValue = $value ? $value : null;
                      break;
                  default:
                      trigger_error('Unknown type: ' . $type, E_USER_ERROR);

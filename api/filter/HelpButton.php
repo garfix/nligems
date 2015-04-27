@@ -30,6 +30,8 @@ class HelpButton extends HtmlElement
 	/**
 	 * Turns my custom microformat into html. Uses some Markdown syntax.
 	 *
+	 * Markdown cheat-sheet http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html
+	 *
 	 * - replace all newlines by <p> elements
 	 * - table
 	 *
@@ -63,6 +65,16 @@ class HelpButton extends HtmlElement
 	 *          <dt>term</dt><dd>description</dd>
 	 *      </dl>
 	 *
+	 * - simple lists
+	 *
+	 *      * one
+	 *      * two
+	 *
+	 *      <ul>
+	 *          <li>one</li>
+	 *          <li>two</li>
+	 *      </ul>
+	 *
 	 * @param string $microformat
 	 * @return string HTML
 	 */
@@ -92,11 +104,20 @@ class HelpButton extends HtmlElement
 			return $string;
 		};
 
+		$items = function($matches)
+		{
+			$items = $matches['items'];
+			$body = preg_replace('/\* ([^\n]+)\n/', '<li>\1</li>', $items);
+			$string =  "\n<ul>" . $body . "</ul>";
+
+			return $string;
+		};
+
 		$definitions = function($matches)
 		{
 			$defs = $matches['defs'];
 			$body = preg_replace('/([^:]+)\n\s*:([^\n]+)/', '<dt>\1</dt><dd>\2</dd>', $defs);
-			$string =  "<dl>" . $body . "</dl>";
+			$string =  "\n<dl>" . $body . "</dl>";
 
 			return $string;
 		};
@@ -114,7 +135,8 @@ class HelpButton extends HtmlElement
 
 		$html = $microformat;
 		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)*)/', $quote, $html);
-		$html = preg_replace_callback('/(\n|^)(?<defs>([^\n:]+\n\s*:[^\n]+\n)+)/', $definitions, $html);
+		$html = preg_replace_callback('/\n\s*(?<defs>([^\n:]+\n\s*:[^\n]+\n\s*)+)/', $definitions, $html);
+		$html = preg_replace_callback('/\n\s*(?<items>(\* [^\n]+\n\s*)+)/', $items, $html);
 		$html = preg_replace_callback('/(\t*)~~~(.*?)~~~/s', $preformatted, $html);
 		$html = preg_replace_callback('/(\n\n)/', $paragraphs, $html);
 

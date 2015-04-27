@@ -75,6 +75,7 @@ class Features
 	const ACCEPT_UNGRAMMATICAL_SENTENCES = 'DO_UNGRAMMATICAL';
 
 	const SYNTACTIC_FORM_TYPE = 'SYNTACTIC_FORM_TYPE';
+	const APPLY_SELECTIONAL_RESTRICTIONS = 'APPLY_SELECTIONAL_RESTRICTIONS';
 
 	const INTERPRET_HEADER = 'INTERPRET_HEADER';
 	const SEMANTIC_ANALYSIS_PARSING = 'SEMANTIC_ANALYSIS_PARSING';
@@ -123,6 +124,7 @@ class Features
 	const SYNTACTIC_FEATURES = 'SYNTACTIC_FEATURES';
 	const SEMANTIC_DEFINITION = 'SEMANTIC_DEFINITION';
 	const ONLY_IRREGULAR_FORMS = 'ONLY_IRREGULAR_FORMS';
+	const SELECTIONAL_RESTRICTIONS = 'SELECTIONAL_RESTRICTIONS';
 
 	const DEICTIC_CENTER = 'DEICTIC_CENTER';
 	const TRACK_SUBJECT = 'TRACK_SUBJECT';
@@ -754,6 +756,18 @@ class Features
 				'desc' => '
 				',
 			],
+			self::APPLY_SELECTIONAL_RESTRICTIONS => [
+				'name' => 'Apply selectional restrictions',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_PARSING],
+				'desc' => '
+					The parser excludes sentences that violate (semantic) selectional restrictions that the verb (predicate)
+					imposes on its arguments.
+
+					For example, this the sentence "Sam drank a car" will not parse if the verb "drink" imposes the class "liquid"
+					on its object.
+				',
+			],
 			self::INTERPRET_HEADER => [
 				'name' => 'Interpreter header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
@@ -901,20 +915,20 @@ class Features
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'relational' => 'Relational',
-					'ontology' => 'Ontology',
 					'list-based' => 'List based',
 					'goal-based' => 'Goal based',
+					'fopl-based' => 'First order Predicate Logic',
 				),
 				'tags' => [self::TAG_SEMANTIC_FORM],
 				'desc' => '
 					Relational
 					: ?
-					Ontology
-					: ?
 					List-based
-					: A list of [predicate argument, argument, ...] where each argument can be another list.
+					: A nested list of [predicate argument, argument, ...] where each argument can be another list.
 					Goal-based
-					: A tree of [goal means means, ...] where each means can be another tree
+					: A nested structure of [goal means means, ...] where each means can be another tree
+					First Order Predicate Logic
+					: A nested logical structure of functions and operators
 
 					An example from ThoughtTreasure (list-based):<br>
 					"Who directed Rendezvous in Paris?"<br>is represented as
@@ -930,6 +944,11 @@ class Features
 						(THFIND 3 $?X2 (X2)
 							(THGOAL (#IS $?X2 #PYRAMID))
 							(THGOAL (#SUPPORT $?X2 $?X1))))
+					~~~
+					An example from Orakel (FOPL)
+					"Which river passes through Berlin?"
+					~~~
+					?x (river(x) &and; flow_through(x, Berlin))
 					~~~
 				',
 			],
@@ -1162,6 +1181,18 @@ class Features
 				'desc' => '
 					The lexicon stores only irregular forms of verbs, like \'geese\' and \'slept\'.
 					The regular morphological compound forms are derived by applying rules.
+				',
+			],
+			self::SELECTIONAL_RESTRICTIONS => [
+				'name' => 'Selectional restrictions',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_LEXICON],
+				'desc' => '
+					The lexicon stores constraints (semantic) selectional constraints for each verb.
+
+					For example, the verb may contain the restrictions:
+					* subject: instance of living organism
+					* object: instance of a liquid
 				',
 			],
 			self::DEICTIC_CENTER => [

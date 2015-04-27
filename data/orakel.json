@@ -88,7 +88,7 @@
     "DO_PLAUSIB_JUDGE": null,
     "COOPERATIVE_RESPONSES": null,
     "SEMANTIC_FORM_TYPE": [
-        "ontology"
+        "fopl-based"
     ],
     "SEMANTIC_FORM_DESC": "FOPC with extensions",
     "EVENT_BASED": null,
@@ -110,5 +110,6 @@
     "EXECUTE_HEADER": "An F-Logic inference engine (notably KAON2)",
     "DO_LOGICAL_REASON": null,
     "GENERATE_HEADER": "The answer generation component",
-    "PARAPHRASE_QUERY": null
+    "PARAPHRASE_QUERY": null,
+    "TOKENIZATION_HEADER": null
 }

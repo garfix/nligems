@@ -135,7 +135,8 @@ class FilterPage extends FrontEndPage
 	{
 		$Component = new Checkbox($feature, $NliSystemApi->getFeatureName($feature));
 
-		if ($explanationHtml = $NliSystemApi->getExplanationHtml($feature)) {
+		$explanationHtml = $NliSystemApi->getExplanationHtml($feature);
+		if (trim($explanationHtml)) {
 			$featureName = $NliSystemApi->getFeatureName($feature);
 			$Component->setHelpButton(new HelpButton($featureName, $explanationHtml));
 		}
@@ -147,7 +148,8 @@ class FilterPage extends FrontEndPage
 	{
 		$Section->addComponent($Component = new CheckboxGroup($feature, $NliSystemApi->getFeatureName($feature)));
 
-		if ($explanationHtml = $NliSystemApi->getExplanationHtml($feature)) {
+		$explanationHtml = $NliSystemApi->getExplanationHtml($feature);
+		if (trim($explanationHtml)) {
 			$featureName = $NliSystemApi->getFeatureName($feature);
 			$Component->setHelpButton(new HelpButton($featureName, $explanationHtml));
 		}
