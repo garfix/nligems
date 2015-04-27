@@ -21,6 +21,7 @@ class Features
 	const STATE_HISTORY = 'STATE_HISTORY';
 	const KNOWLEDGE_BASE_DESCRIPTION = 'KB_TYPE_DESC';
 	const SENTENCE_TYPES = 'SENTENCE_TYPES';
+	const PHRASE_TYPES = 'PHRASE_TYPES';
 	const ARTICLES = 'ARTICLES';
 	const BOOKS = 'BOOKS';
 	const NAME_DESCRIPTION = 'NAME_DESC';
@@ -172,7 +173,6 @@ class Features
 	const TAG_LEXICON = 'lexicon';
 	const TAG_GRAMMAR = 'grammar';
 	const TAG_DISCOURSE_MODEL = 'dialog model';
-	const TAG_PHRASE_TYPE = 'phrase type';
 
 	// options
 
@@ -595,134 +595,40 @@ class Features
 				'desc' => '
 				',
 			],
-			self::NP => [
-				'name' => 'Noun Phrases',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
+			self::PHRASE_TYPES => [
+				'name' => 'Phrase types',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					self::NP => 'Noun Phrases',
+					self::VP => 'Verb Phrases',
+					self::PP => 'Preposition Phrases',
+					self::DP => 'Determiner Phrases',
+					self::ADVP => 'ADVerb Phrases',
+					self::ADJP => 'ADJective Phrases',
+					self::RC => 'Relative Clauses',
+					self::NEG => 'Negations',
+					self::CONJ => 'Conjunctions',
+					self::ANAPHORA => 'Anaphora',
+					self::AUX => 'Auxiliaries',
+					self::MODALS => 'Modals',
+					self::COMPARATIVE_EXPRESSIONS => 'Comparative expressions',
+					self::PASSIVES => 'Passives',
+					self::CLEFTS => 'Clefts',
+					self::THERE_BES => 'There be',
+					self::CLAUSES_AS_OBJECTS => 'Clauses as objects',
+				),
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
-					Examples: block, red dress. pronouns: I, you
-				',
-			],
-			self::VP => [
-				'name' => 'Verb Phrases',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::PP => [
-				'name' => 'Preposition Phrases',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::DP => [
-				'name' => 'Determiner Phrases',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::ADVP => [
-				'name' => 'ADVerb Phrases',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::ADJP => [
-				'name' => 'ADJective Phrases',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::RC => [
-				'name' => 'Relative clauses',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::NEG => [
-				'name' => 'Negations',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::CONJ => [
-				'name' => 'Conjunctions',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::ANAPHORA => [
-				'name' => 'Anaphora',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::AUX => [
-				'name' => 'Auxiliaries',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::MODALS => [
-				'name' => 'Modals',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::COMPARATIVE_EXPRESSIONS => [
-				'name' => 'Comparative expressions',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::PASSIVES => [
-				'name' => 'Passives',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::CLEFTS => [
-				'name' => 'Clefts',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-				',
-			],
-			self::THERE_BES => [
-				'name' => 'There be',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
+					## Clauses as objects; example from SHRDLU:
+					User: Find a block which is taller than the one I told you to pick up.<br>
+					"you to pick up" is a clause that is treated as an object (Winograd)
 				',
 			],
 			self::ELLIPSIS => [
 				'name' => 'Ellipsis',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
+				'tags' => [self::TAG_GRAMMAR],
 				'desc' => '
-				',
-			],
-			self::CLAUSES_AS_OBJECTS => [
-				'name' => 'Clauses as objects',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR, self::TAG_PHRASE_TYPE],
-				'desc' => '
-					## Example from SHRDLU:
-					User: Find a block which is taller than the one I told you to pick up.<br>
-					"you to pick up" is a clause that is treated as an object (Winograd)
 				',
 			],
 			self::PARSE_HEADER => [

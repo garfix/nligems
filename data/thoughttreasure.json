@@ -33,6 +33,8 @@
         "Semantics-based"
     ],
     "META_SELF": true,
+    "PHRASE_TYPES": [
+    ],
     "NEW_WORDS": true,
     "IMPERATIVE": true,
     "IDIONS": true,

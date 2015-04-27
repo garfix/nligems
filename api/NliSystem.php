@@ -125,7 +125,14 @@ class NliSystem
 
 	public function getLanguageConstructNames()
 	{
-		return $this->buildFeatureDescriptionArray(Features::TAG_PHRASE_TYPE);
+		$SystemApi = new NliSystemApi();
+		$possibleValues = $SystemApi->getPossibleValues(Features::PHRASE_TYPES);
+		$names = [];
+		foreach ($this->get(Features::PHRASE_TYPES) as $val) {
+			$names[] = 	$possibleValues[$val];
+		}
+
+		return $names;
 	}
 
 	public function getValue($key)
