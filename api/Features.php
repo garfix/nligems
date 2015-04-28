@@ -58,6 +58,7 @@ class Features
 	const CLEFTS = 'CLEFTS';
 	const THERE_BES = 'THERE';
 	const ELLIPSIS = 'ELLIPSIS';
+	const GRAMMATICAL_RELATIONS = 'GRAMMATICAL_RELATIONS';
 	const CLAUSES_AS_OBJECTS = 'CLAUSES_AS_OBJECTS';
 
 	const TOKENIZATION_HEADER = 'TOKENIZATION_HEADER';
@@ -1087,6 +1088,25 @@ class Features
 				'desc' => '
 					The lexicon stores only irregular forms of verbs, like \'geese\' and \'slept\'.
 					The regular morphological compound forms are derived by applying rules.
+				',
+			],
+			self::GRAMMATICAL_RELATIONS => [
+				'name' => 'Grammatical relations',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_LEXICON],
+				'desc' => '
+					The lexicon codes which grammatical relations (like subject, object, and indirect object) a verb has.
+
+					intransitive
+					: A verb with only a subject
+					mono-transitive
+					: A verb with a subject and an object
+					ditransitive
+					: A verb with a subject, an object and an indirect object
+
+					Coded grammatical relations help restrict the parsing process.
+
+					Note that verbs may have multiple "frames". For example: "That man eats" (intransitive) and "He eats apples" (mono-transitive).
 				',
 			],
 			self::SELECTIONAL_RESTRICTIONS => [

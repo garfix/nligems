@@ -7,25 +7,25 @@
     ],
     "INSTITUTIONS": [],
     "INFLUENCED_BY": [],
-    "SOURCE_CODE": "",
-    "NAME_DESC": "",
-    "LONG_DESC": "",
+    "SOURCE_CODE": null,
+    "NAME_DESC": null,
+    "LONG_DESC": null,
     "ARTICLES": [],
     "BOOKS": [
         "Natural Language Processing with ThoughtTreasure"
     ],
-    "GENERATE_HEADER": "",
+    "GENERATE_HEADER": null,
     "TOKENIZATION_HEADER": "The text agency",
     "PARSE_HEADER": "The syntactic component",
     "PARSER_TYPE": "A simple bottom-up parser",
     "INTERPRET_HEADER": "The semantic component",
-    "CONVERT_HEADER": "",
-    "EXECUTE_HEADER": "",
-    "SEMANTIC_FORM_DESC": "",
-    "KB_TYPE_DESC": "",
+    "CONVERT_HEADER": null,
+    "EXECUTE_HEADER": null,
+    "SEMANTIC_FORM_DESC": null,
+    "KB_TYPE_DESC": null,
     "KB_LANGS": [],
     "STD_ONTOLOGY": [],
-    "GRAMMAR_TYPE": "",
+    "GRAMMAR_TYPE": null,
     "PROG_LANGS": [
         "C"
     ],
@@ -33,8 +33,7 @@
         "Semantics-based"
     ],
     "META_SELF": true,
-    "PHRASE_TYPES": [
-    ],
+    "PHRASE_TYPES": [],
     "NEW_WORDS": true,
     "IMPERATIVE": true,
     "IDIONS": true,
@@ -73,5 +72,6 @@
     "APPLY_SELECTIONAL_RESTRICTIONS": true,
     "SELECTIONAL_RESTRICTIONS": true,
     "DO_SEMANTIC_COMP": true,
-    "DO_ANAPHORA_RESOL": true
+    "DO_ANAPHORA_RESOL": true,
+    "GRAMMATICAL_RELATIONS": true
 }
