@@ -127,6 +127,7 @@ class Features
 	const SEMANTIC_DEFINITION = 'SEMANTIC_DEFINITION';
 	const ONLY_IRREGULAR_FORMS = 'ONLY_IRREGULAR_FORMS';
 	const SELECTIONAL_RESTRICTIONS = 'SELECTIONAL_RESTRICTIONS';
+	const PHRASAL_VERBS = 'PHRASAL_VERBS';
 
 	const DEICTIC_CENTER = 'DEICTIC_CENTER';
 	const TRACK_SUBJECT = 'TRACK_SUBJECT';
@@ -1119,6 +1120,24 @@ class Features
 					For example, the verb may contain the restrictions:
 					* subject: instance of living organism
 					* object: instance of a liquid
+				',
+			],
+			self::PHRASAL_VERBS => [
+				'name' => 'Phrasal verbs',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_LEXICON],
+				'desc' => '
+					The lexicon stores the structure of phrasal verbs.
+
+					There are three types of phrasal verbs:
+					prepositional phrasal verbs
+					: verb + preposition. Ex: "Who is looking after the kids?"
+					particle phrasal verbs
+					: verb + particle. Ex: "They brought that up twice."
+					particle-prepositional phrasal verbs
+					: Verb + particle + preposition. Ex: "Who can put up with that?"
+
+					[Phrasal verb - Wikipedia](http://en.wikipedia.org/wiki/Phrasal_verb)
 				',
 			],
 			self::DEICTIC_CENTER => [

@@ -75,6 +75,12 @@ class HelpButton extends HtmlElement
 	 *          <li>two</li>
 	 *      </ul>
 	 *
+	 * - links
+	 *
+	 *      [Wikipedia](http://en.wikipedia.org/wiki/Phrasal_verb)
+	 *
+	 *      <a href='http://en.wikipedia.org/wiki/Phrasal_verb' target='_blank'>Wikipedia</a>
+	 *
 	 * @param string $microformat
 	 * @return string HTML
 	 */
@@ -113,6 +119,15 @@ class HelpButton extends HtmlElement
 			return $string;
 		};
 
+
+		$links = function($matches)
+		{
+			$text = htmlspecialchars($matches['text']);
+			$link = htmlspecialchars($matches['link']);
+
+			return "<a href='{$link}' target='_blank'>{$text}</a>";
+		};
+
 		$definitions = function($matches)
 		{
 			$defs = $matches['defs'];
@@ -137,6 +152,7 @@ class HelpButton extends HtmlElement
 		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)*)/', $quote, $html);
 		$html = preg_replace_callback('/\n\s*(?<defs>([^\n:]+\n\s*:[^\n]+\n\s*)+)/', $definitions, $html);
 		$html = preg_replace_callback('/\n\s*(?<items>(\* [^\n]+\n\s*)+)/', $items, $html);
+		$html = preg_replace_callback('/\[(?<text>[^\]]+)\]\((?<link>[^\)]+)\)/', $links, $html);
 		$html = preg_replace_callback('/(\t*)~~~(.*?)~~~/s', $preformatted, $html);
 		$html = preg_replace_callback('/(\n\n)/', $paragraphs, $html);
 
