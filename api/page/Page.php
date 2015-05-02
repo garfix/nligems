@@ -16,7 +16,7 @@ abstract class Page
 	protected $template;
 
 	/** @var array[]  */
-	protected $styleSheets = ['style'];
+	protected $styleSheets = array('style');
 
 	/** @var array[]  */
 	protected $scripts = [];

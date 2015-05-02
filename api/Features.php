@@ -186,50 +186,50 @@ class Features
 
 	public static function getFeatures()
 	{
-		return [
-			self::NAME => [
+		return array(
+			self::NAME => array(
 				'name' => 'Name',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => ',
 				',
-			],
-			self::FIRST_YEAR => [
+			),
+			self::FIRST_YEAR => array(
 				'name' => 'First year',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::LAST_YEAR => [
+			),
+			self::LAST_YEAR => array(
 				'name' => 'Last year',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::CONTRIBUTORS => [
+			),
+			self::CONTRIBUTORS => array(
 				'name' => 'Contributor(s)',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::INSTITUTIONS => [
+			),
+			self::INSTITUTIONS => array(
 				'name' => 'Institution',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::INFLUENCED_BY => [
+			),
+			self::INFLUENCED_BY => array(
 				'name' => 'Influenced by',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::PROGRAMMING_LANGUAGES => [
+			),
+			self::PROGRAMMING_LANGUAGES => array(
 				'name' => 'Programming language',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -239,13 +239,13 @@ class Features
 					'Lisp' => 'Lisp',
 					'Prolog' => 'Prolog',
 				),
-				'tags' => [self::TAG_CODE],
+				'tags' => array(self::TAG_CODE),
 				'desc' => '
 					Which programming language is used to implement the natural language processing core components of the system?
 					This excludes the languages that are only used to interact with the system.
 				',
-			],
-			self::KNOWLEDGE_BASE_TYPE => [
+			),
+			self::KNOWLEDGE_BASE_TYPE => array(
 				'name' => 'Knowledge base type',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -253,7 +253,7 @@ class Features
 					'tree-based' => 'Tree based',
 					'inference engine' => 'Inference engine',
 				),
-				'tags' => [self::TAG_KNOWLEDGE_BASE],
+				'tags' => array(self::TAG_KNOWLEDGE_BASE),
 				'desc' => '
 					The way data is stored in the knowledge base:
 
@@ -264,11 +264,11 @@ class Features
 					Inference engine
 					: A logical database, with inference rules
 				',
-			],
-			self::STATE_HISTORY => [
+			),
+			self::STATE_HISTORY => array(
 				'name' => 'History of states and events',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_KNOWLEDGE_BASE],
+				'tags' => array(self::TAG_KNOWLEDGE_BASE),
 				'desc' => '
 					In order to answer questions about previous states, the system needs to keep track of its states and events,
 					and how they were connected.
@@ -277,50 +277,50 @@ class Features
 					User: What did the red cube support before you started to clear it off?
 					SHRDLU: The green pyramid
 				',
-			],
-			self::KNOWLEDGE_BASE_DESCRIPTION => [
+			),
+			self::KNOWLEDGE_BASE_DESCRIPTION => array(
 				'name' => 'Knowledge base description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_KB_FORM],
+				'tags' => array(self::TAG_KB_FORM),
 				'desc' => '
 				',
-			],
-			self::SOURCE_CODE_URL => [
+			),
+			self::SOURCE_CODE_URL => array(
 				'name' => 'Source code url',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::NAME_DESCRIPTION => [
+			),
+			self::NAME_DESCRIPTION => array(
 				'name' => 'Name description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE_LONG,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::LONG_DESCRIPTION => [
+			),
+			self::LONG_DESCRIPTION => array(
 				'name' => 'Long description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE_LONG,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::ARTICLES => [
+			),
+			self::ARTICLES => array(
 				'name' => 'Articles',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::BOOKS => [
+			),
+			self::BOOKS => array(
 				'name' => 'Books',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_GENERAL],
+				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
 				',
-			],
-			self::ANALYSIS => [
+			),
+			self::ANALYSIS => array(
 				'name' => 'Type of analysis',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -328,7 +328,7 @@ class Features
 					self::OPTION_SYNTAX_BASED => 'Syntax based (maps parse tree to DB query)',
 					self::OPTION_SEMANTICS_BASED => 'Semantics based (via semantic intermediate)',
 				),
-				'tags' => [self::TAG_STRUCTURE],
+				'tags' => array(self::TAG_STRUCTURE),
 				'desc' => '
 					The main categories of natural language interfaces
 
@@ -341,11 +341,11 @@ class Features
 
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
 				',
-			],
-			self::SEMANTIC_GRAMMAR => [
+			),
+			self::SEMANTIC_GRAMMAR => array(
 				'name' => 'Semantic grammar',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_STRUCTURE],
+				'tags' => array(self::TAG_STRUCTURE),
 				'desc' => '
 					Domain specific grammar.
 
@@ -354,15 +354,15 @@ class Features
 
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
 				',
-			],
-			self::AMBIGUITY => [
+			),
+			self::AMBIGUITY => array(
 				'name' => 'Ambiguity',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'Early-convergence' => 'Early convergence',
 					'Late-convergence' => 'Late convergence',
 				),
-				'tags' => [self::TAG_STRUCTURE],
+				'tags' => array(self::TAG_STRUCTURE),
 				'desc' => '
 					How does the system deal with the ambiguity in the input sentence?
 
@@ -375,11 +375,11 @@ class Features
 					: Keep all interpretations open. Pick the interpretation that gives the \'best\' result in the end. Score results.
 
 				',
-			],
-			self::INTEGRATED_KNOWLEDGE_BASE => [
+			),
+			self::INTEGRATED_KNOWLEDGE_BASE => array(
 				'name' => 'Integrated knowledge base',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_STRUCTURE],
+				'tags' => array(self::TAG_STRUCTURE),
 				'desc' => '
 					The knowledge base is part of the system.
 
@@ -393,19 +393,19 @@ class Features
 					    <li>The system is not extendable at this point. It has no ready-made facilities to link to external knowledge bases.</li>
 					 </ul>
 				',
-			],
-			self::META_SELF => [
+			),
+			self::META_SELF => array(
 				'name' => 'Answers questions about the Knowledge Base',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '
 					This is the basic function of a Natural Language Interface: to answer questions about a knowledge base.
 				',
-			],
-			self::META_GOAL_MODEL => [
+			),
+			self::META_GOAL_MODEL => array(
 				'name' => 'Answers questions about the Goal Model',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '
 					The user may ask the system about the means and motives of the system (how and why).
 
@@ -415,40 +415,40 @@ class Features
 					User: Why?
 					SHRDLU: To get rid of it.
 				',
-			],
-			self::META_KB => [
+			),
+			self::META_KB => array(
 				'name' => 'Answers questions about the Domain Model',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '
 					The user may ask the system about the structure of the knowledge base, which is stored in the Domain Model.
 				',
-			],
-			self::NEW_WORDS => [
+			),
+			self::NEW_WORDS => array(
 				'name' => 'The user may teach the system',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '
 					The user may teach the system about new words or concepts from within the dialog.
 
 					An example user sentence: Call the biggest block "superblock" (SHRDLU)
 				',
-			],
-			self::IMPERATIVE => [
+			),
+			self::IMPERATIVE => array(
 				'name' => 'Act on user input',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '
 					The user may tell the system to actually do things, other than answer questions.
 
 					## Example from SHRDLU:
 					User: Pick up a big red block.
 				',
-			],
-			self::IDIOMS => [
+			),
+			self::IDIOMS => array(
 				'name' => 'Handle idioms',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '
 					The user may use expressions whose meaning cannot be analyzed, and need to be taken as-is.
 
@@ -460,8 +460,8 @@ class Features
 					User: Peter kicked the bucket.
 					ThoughtTreasure structure: [died Peter]
 				',
-			],
-			self::QUESTION_TYPES => [
+			),
+			self::QUESTION_TYPES => array(
 				'name' => 'Types of questions',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -472,19 +472,19 @@ class Features
 					'how' => 'How',
 					'why' => 'Why',
 				),
-				'tags' => [self::TAG_DIALOG],
+				'tags' => array(self::TAG_DIALOG),
 				'desc' => '',
-			],
-			self::TOKENIZATION_HEADER => [
+			),
+			self::TOKENIZATION_HEADER => array(
 				'name' => 'Tokenization header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '',
-			],
-			self::DICTIONARY_LOOKUP => [
+			),
+			self::DICTIONARY_LOOKUP => array(
 				'name' => 'Lexicon lookup',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					Uses (among others) a lexicon to recognize tokens in a sentence.
 
@@ -492,32 +492,32 @@ class Features
 
 					The lexicon may also provide the part-of-speech of the word, i.e. noun, verb, preposition, to be used in the parsing process.
 				',
-			],
-			self::MORPHOLOGICAL_ANALYSIS => [
+			),
+			self::MORPHOLOGICAL_ANALYSIS => array(
 				'name' => 'Morphological analysis',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					Removes the prefixes and suffixes of a word to find the root form (present in the lexicon)
 
 					For example: larger => large; finding => find; unable => able
 				',
-			],
-			self::SPELLING_CORRECTION => [
+			),
+			self::SPELLING_CORRECTION => array(
 				'name' => 'Spelling correction',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 					## Example from RENDEZVOUS:
 					User: Give me their locatio also
 					RENDEZVOUS: Is the word \'locatio\' intended to be: location? (yes or no)
 					User: yes
 				',
-			],
-			self::OPEN_ENDED_TOKEN_RECOGNITION => [
+			),
+			self::OPEN_ENDED_TOKEN_RECOGNITION => array(
 				'name' => 'Open-ended token recognition',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					Recognizes words from an endless category that is not a good fit for a lexicon.
 
@@ -532,62 +532,62 @@ class Features
 					lundi le 11 mars 1996<br>
 					..
 				',
-			],
-			self::PROPER_NAMES_FROM_KB => [
+			),
+			self::PROPER_NAMES_FROM_KB => array(
 				'name' => 'Proper names lookup in knowledge base',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					When a word is not present in the lexicon, the Knowlege Base is queried to find if the word is present as a proper name.
 				',
-			],
-			self::PROPER_NAMES_BY_MATCHING => [
+			),
+			self::PROPER_NAMES_BY_MATCHING => array(
 				'name' => 'Proper names by matching',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					Proper names are recognized by fitting them into a pattern.
 
 					For example: [A-Z][a-z]* van der [A-Z][a-z]*
 				',
-			],
-			self::QUOTED_STRING_RECOGNITION => [
+			),
+			self::QUOTED_STRING_RECOGNITION => array(
 				'name' => 'Quoted string recognition',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					Recognizes quoted sentences as part of a sentence.
 
 					For example: Who said "Gravitation is not responsible for people falling in love"?
 				',
-			],
-			self::POS_TAGGER => [
+			),
+			self::POS_TAGGER => array(
 				'name' => 'Uses a part-of-speech tagger',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_TOKENIZATION],
+				'tags' => array(self::TAG_TOKENIZATION),
 				'desc' => '
 					An off-the-shelf part-of-speech tagger is used to determine the parts-of-speech of the words in a sentence.
 				',
-			],
-			self::GRAMMAR_TYPE => [
+			),
+			self::GRAMMAR_TYPE => array(
 				'name' => 'Grammar type',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '
 				',
-			],
-			self::NATURAL_LANGUAGES => [
+			),
+			self::NATURAL_LANGUAGES => array(
 				'name' => 'Natural language',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'English' => 'English',
 				),
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '
 					Which natural languages are supported by this system? The majority of systems just supports English.
 				',
-			],
-			self::SENTENCE_TYPES => [
+			),
+			self::SENTENCE_TYPES => array(
 				'name' => 'Sentence types',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -595,11 +595,11 @@ class Features
 				    'declarative' => 'Declarative',
 				    'imperative' => 'Imperative',
 				),
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '
 				',
-			],
-			self::PHRASE_TYPES => [
+			),
+			self::PHRASE_TYPES => array(
 				'name' => 'Phrase types',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -621,55 +621,55 @@ class Features
 					self::THERE_BES => 'There be',
 					self::CLAUSES_AS_OBJECTS => 'Clauses as objects',
 				),
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '
 					## Clauses as objects; example from SHRDLU:
 					User: Find a block which is taller than the one I told you to pick up.<br>
 					"you to pick up" is a clause that is treated as an object (Winograd)
 				',
-			],
-			self::ELLIPSIS => [
+			),
+			self::ELLIPSIS => array(
 				'name' => 'Ellipsis',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GRAMMAR],
+				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '
 				',
-			],
-			self::PARSE_HEADER => [
+			),
+			self::PARSE_HEADER => array(
 				'name' => 'Parse header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_PARSING],
-			],
-			self::ACCEPT_UNGRAMMATICAL_SENTENCES => [
+				'tags' => array(self::TAG_PARSING),
+			),
+			self::ACCEPT_UNGRAMMATICAL_SENTENCES => array(
 				'name' => 'Accept ungrammatical sentences',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PARSING],
+				'tags' => array(self::TAG_PARSING),
 				'desc' => '
 					Sentences that do not follow the system\'s grammar are not discarded off hand.
 					The system will make an effort to understand them and / or to make the user change them.
 				',
-			],
-			self::PARSER_TYPE => [
+			),
+			self::PARSER_TYPE => array(
 				'name' => 'Parser type',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_PARSING],
+				'tags' => array(self::TAG_PARSING),
 				'desc' => '
 				',
-			],
-			self::SYNTACTIC_FORM_TYPE => [
+			),
+			self::SYNTACTIC_FORM_TYPE => array(
 				'name' => 'Syntactic form type',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'parse trees' => 'Parse trees',
 				),
-				'tags' => [self::TAG_PARSING],
+				'tags' => array(self::TAG_PARSING),
 				'desc' => '
 				',
-			],
-			self::APPLY_SELECTIONAL_RESTRICTIONS => [
+			),
+			self::APPLY_SELECTIONAL_RESTRICTIONS => array(
 				'name' => 'Apply selectional restrictions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_PARSING],
+				'tags' => array(self::TAG_PARSING),
 				'desc' => '
 					The parser excludes sentences that violate (semantic) selectional restrictions that the verb (predicate)
 					imposes on its arguments.
@@ -677,16 +677,16 @@ class Features
 					For example, this the sentence "Sam drank a car" will not parse if the verb "drink" imposes the class "liquid"
 					on its object.
 				',
-			],
-			self::INTERPRET_HEADER => [
+			),
+			self::INTERPRET_HEADER => array(
 				'name' => 'Interpreter header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
-			],
-			self::SEMANTIC_ANALYSIS_PARSING => [
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
+			),
+			self::SEMANTIC_ANALYSIS_PARSING => array(
 				'name' => 'Analyse while parsing',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					Semantic analysis takes place as part of the parsing process.
 
@@ -695,27 +695,27 @@ class Features
 					The semantic structures created for different parts of the parse tree may conflict, and when they do,
 						this path is abandoned. This helps to cut down the number of possible parse trees.
 				',
-			],
-			self::SEMANTIC_ATTACHMENT => [
+			),
+			self::SEMANTIC_ATTACHMENT => array(
 				'name' => 'Semantic attachment',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					Meaning structures are taken from the lexicon entries of the matched words and attached to them in the parse tree.
 				',
-			],
-			self::SEMANTIC_COMPOSITION => [
+			),
+			self::SEMANTIC_COMPOSITION => array(
 				'name' => 'Semantic composition',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					The meaning structure of a phrase, and the sentence as a whole is derived by composing the meaning of the words.
 				',
-			],
-			self::MORPHOLOGICAL_SEMANTIC_COMPOSITION => [
+			),
+			self::MORPHOLOGICAL_SEMANTIC_COMPOSITION => array(
 				'name' => 'Morphological semantic composition',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					Compose the meaning of morphologically compound words by combining the meaning of the morphemes.
 
@@ -723,11 +723,11 @@ class Features
 					Words like \'littlest\' are not in the dictionary but are interpreted from the root forms
 					like \'little\'. (Winograd)
 				',
-			],
-			self::MODIFIER_ATTACHMENT => [
+			),
+			self::MODIFIER_ATTACHMENT => array(
 				'name' => 'Modifier attachment',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					The problem is to identify the constituent to which each modifier has to be attached.
 
@@ -736,23 +736,23 @@ class Features
 					An example from SHRDLU:<br>
 					Put the blue pyramid on the block in the box.
 				',
-			],
-			self::CONJUNCTION_DISJUNCTION => [
+			),
+			self::CONJUNCTION_DISJUNCTION => array(
 				'name' => 'Proper interpretation of conjunction and disjunction',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 				',
-			],
-			self::NOMINAL_COMPOUNDS => [
+			),
+			self::NOMINAL_COMPOUNDS => array(
 				'name' => 'Nominal compounds',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					An attempt is made to derive the meaning of compounds that are not in de lexicon.
 				',
-			],
-			self::SEMANTIC_COMPOSITION_TYPE => [
+			),
+			self::SEMANTIC_COMPOSITION_TYPE => array(
 				'name' => 'Semantic composition type',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -761,7 +761,7 @@ class Features
 					'lambda calculus' => 'Lambda calculus',
 					'custom' => 'Custom procedures',
 				),
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					Semantic composition is the process of building the meaning of a sentence from the meanings of
 					the phrases and eventually, the words.
@@ -776,41 +776,41 @@ class Features
 					: Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them. Very flexible but in general not very extendible
 
 				',
-			],
-			self::SEMANTIC_CONFLICT_DETECTION => [
+			),
+			self::SEMANTIC_CONFLICT_DETECTION => array(
 				'name' => 'Semantic conflict detection',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					The system detects conflicts in semantic structure information.
 					For example: How many corners has a ball?
 				',
-			],
-			self::QUANTIFIER_SCOPING => [
+			),
+			self::QUANTIFIER_SCOPING => array(
 				'name' => 'Quantifier scoping',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 				',
-			],
-			self::ANAPHORA_RESOLUTION => [
+			),
+			self::ANAPHORA_RESOLUTION => array(
 				'name' => 'Anaphora resolution',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 				',
-			],
-			self::PLAUSIBILITY_RESOLUTION => [
+			),
+			self::PLAUSIBILITY_RESOLUTION => array(
 				'name' => 'Plausibility resolution',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 				',
-			],
-			self::INTERPRET_SPEECH_ACT => [
+			),
+			self::INTERPRET_SPEECH_ACT => array(
 				'name' => 'Interpret speech act',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_ANALYSIS],
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					In general:<br>
 					A sentence that starts with a question word is a question.
@@ -819,8 +819,8 @@ class Features
 					But this system is also capable of correctly interpreting some of the sentences like this:
 					Can you tell me where I can find Chinese food? (not a yes/no question)
 				',
-			],
-			self::SEMANTIC_FORM_TYPE => [
+			),
+			self::SEMANTIC_FORM_TYPE => array(
 				'name' => 'Semantic form type',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -829,7 +829,7 @@ class Features
 					'goal-based' => 'Goal based',
 					'fopl-based' => 'First order Predicate Logic',
 				),
-				'tags' => [self::TAG_SEMANTIC_FORM],
+				'tags' => array(self::TAG_SEMANTIC_FORM),
 				'desc' => '
 					Relational
 					: ?
@@ -861,137 +861,137 @@ class Features
 					?x (river(x) &and; flow_through(x, Berlin))
 					~~~
 				',
-			],
-			self::SEMANTIC_FORM_DESC => [
+			),
+			self::SEMANTIC_FORM_DESC => array(
 				'name' => 'Semantic form description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_SEMANTIC_FORM],
+				'tags' => array(self::TAG_SEMANTIC_FORM),
 				'desc' => '
 				',
-			],
-			self::EVENT_BASED => [
+			),
+			self::EVENT_BASED => array(
 				'name' => 'Event based',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_FORM],
+				'tags' => array(self::TAG_SEMANTIC_FORM),
 				'desc' => '
 				',
-			],
-			self::TEMPORAL => [
+			),
+			self::TEMPORAL => array(
 				'name' => 'Temporal',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_FORM],
+				'tags' => array(self::TAG_SEMANTIC_FORM),
 				'desc' => '
 				',
-			],
-			self::PROPER_NOUN_CONSTANTS => [
+			),
+			self::PROPER_NOUN_CONSTANTS => array(
 				'name' => 'Uses constants for proper nouns',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_SEMANTIC_FORM],
+				'tags' => array(self::TAG_SEMANTIC_FORM),
 				'desc' => '
 				',
-			],
-			self::ONTOLOGY_USED => [
+			),
+			self::ONTOLOGY_USED => array(
 				'name' => 'Uses an ontology',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DOMAIN_MODEL],
+				'tags' => array(self::TAG_DOMAIN_MODEL),
 				'desc' => '
 				',
-			],
-			self::STANDARD_ONTOLOGY => [
+			),
+			self::STANDARD_ONTOLOGY => array(
 				'name' => 'Standard ontology',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_DOMAIN_MODEL],
+				'tags' => array(self::TAG_DOMAIN_MODEL),
 				'desc' => '
 				',
-			],
-			self::DEDUCTION_RULES => [
+			),
+			self::DEDUCTION_RULES => array(
 				'name' => 'Deduction rules',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DOMAIN_MODEL],
+				'tags' => array(self::TAG_DOMAIN_MODEL),
 				'desc' => '
 					IF/THEN inference rules to deduce facts from other facts.
 				',
-			],
-			self::PLANS => [
+			),
+			self::PLANS => array(
 				'name' => 'A plan library',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DOMAIN_MODEL],
+				'tags' => array(self::TAG_DOMAIN_MODEL),
 				'desc' => '
 					A set of plans needed to reach certain goals.
 					A plan consists of a goal and a set of actions, or lower level plans.
 				',
-			],
-			self::CONVERT_HEADER => [
+			),
+			self::CONVERT_HEADER => array(
 				'name' => 'Convert header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_CONVERSION_TO_KB],
-			],
-			self::SYNTACTIC_REWRITE => [
+				'tags' => array(self::TAG_CONVERSION_TO_KB),
+			),
+			self::SYNTACTIC_REWRITE => array(
 				'name' => 'Syntactic rewrites',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_CONVERSION_TO_KB],
+				'tags' => array(self::TAG_CONVERSION_TO_KB),
 				'desc' => '
 				',
-			],
-			self::OPTIMIZE_QUERY => [
+			),
+			self::OPTIMIZE_QUERY => array(
 				'name' => 'Optimize query',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_CONVERSION_TO_KB],
+				'tags' => array(self::TAG_CONVERSION_TO_KB),
 				'desc' => '
 					The raw knowledge base query is rewritten for reasons of processing speed.
 				',
-			],
-			self::RESTRUCTURE_INFORMATION => [
+			),
+			self::RESTRUCTURE_INFORMATION => array(
 				'name' => 'Restructure information',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_CONVERSION_TO_KB],
+				'tags' => array(self::TAG_CONVERSION_TO_KB),
 				'desc' => '
 				',
-			],
-			self::KNOWLEDGE_BASE_LANGUAGES => [
+			),
+			self::KNOWLEDGE_BASE_LANGUAGES => array(
 				'name' => 'Knowledge base languages',
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
-				'tags' => [self::TAG_KB_FORM],
+				'tags' => array(self::TAG_KB_FORM),
 				'desc' => '
 				',
-			],
-			self::KNOWLEDGE_BASE_AGGREGATION => [
+			),
+			self::KNOWLEDGE_BASE_AGGREGATION => array(
 				'name' => 'Handle aggregations',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_KB_FORM],
+				'tags' => array(self::TAG_KB_FORM),
 				'desc' => '
 				',
-			],
-			self::EXECUTE_HEADER => [
+			),
+			self::EXECUTE_HEADER => array(
 				'name' => 'Execute header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_EXECUTION],
-			],
-			self::MULTI_DB => [
+				'tags' => array(self::TAG_EXECUTION),
+			),
+			self::MULTI_DB => array(
 				'name' => 'Queries multiple knowledge bases for single request',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_EXECUTION],
+				'tags' => array(self::TAG_EXECUTION),
 				'desc' => '
 					The system queries multiple knowledge bases for the same sentence, and integrates the results.
 				',
-			],
-			self::LOGICAL_REASONING => [
+			),
+			self::LOGICAL_REASONING => array(
 				'name' => 'Logical reasoning',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_EXECUTION],
+				'tags' => array(self::TAG_EXECUTION),
 				'desc' => '
 					The knowledge base itself contains inference rules that allow facts to be deduced from other facts.
 				',
-			],
-			self::GENERATE_HEADER => [
+			),
+			self::GENERATE_HEADER => array(
 				'name' => 'Generate header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
-				'tags' => [self::TAG_ANSWER],
-			],
-			self::COOPERATIVE_RESPONSES => [
+				'tags' => array(self::TAG_ANSWER),
+			),
+			self::COOPERATIVE_RESPONSES => array(
 				'name' => 'Cooperative responses',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 					The system goes beyond literally answering the question,
 					it answers in a way that actually helps the user.
@@ -1000,18 +1000,18 @@ class Features
 					User: Is it supported?
 					SHRDLU: Yes, by the table
 				',
-			],
-			self::PARAPHRASE_QUERY => [
+			),
+			self::PARAPHRASE_QUERY => array(
 				'name' => 'Paraphrase knowledge base query',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 				',
-			],
-			self::CANNED_RESPONSES => [
+			),
+			self::CANNED_RESPONSES => array(
 				'name' => 'Canned responses',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 					The system shows a fixed piece of text as a response to a question.
 
@@ -1023,11 +1023,11 @@ class Features
 					User: How are you?
 					ThoughtTreasure: Very well, thank you.
 				',
-			],
-			self::PATTERNED_RESPONSES => [
+			),
+			self::PATTERNED_RESPONSES => array(
 				'name' => 'Simple responses with variables',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 					The system shows simple pieces of text, with some variables, as a response.
 
@@ -1035,21 +1035,21 @@ class Features
 					User: How many blocks are not in the box?
 					SHRDLU: Four of them
 				',
-			],
-			self::GENERATE_FULL_RESPONSE => [
+			),
+			self::GENERATE_FULL_RESPONSE => array(
 				'name' => 'Generate full response',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 					## Example from ThoughtTreasure:
 					User: List my appointments.
 					ThoughtTreasure: You have an appointment with Ruth Northville at the Four Seasons in one hour. You have an appointment with Amy Newton on Thursday March 21, 1996 at eight pm.
 				',
-			],
-			self::DIALOG => [
+			),
+			self::DIALOG => array(
 				'name' => 'Clarification dialog to improve input sentence',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_ANSWER],
+				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
 					The systems replies with a question in order to establish what the user means, exactly.
 
@@ -1065,11 +1065,11 @@ class Features
 					User: A 124.
 					ThoughtTreasure: A 1978 Fiat 124 was for sale for 3000 dollars by Todd Spire at "toddspi@quapaw.astate.edu".
 				',
-			],
-			self::SYNTACTIC_FEATURES => [
+			),
+			self::SYNTACTIC_FEATURES => array(
 				'name' => 'Syntactic features',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					A lexical entry has information syntactic features.
 
@@ -1078,30 +1078,30 @@ class Features
 					number
 					: singular or plural (e.g. birds: number = plural)
 				',
-			],
-			self::SEMANTIC_DEFINITION => [
+			),
+			self::SEMANTIC_DEFINITION => array(
 				'name' => 'Semantic definition',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					A lexical entry has a definition of the meaning of the word.
 
 					This usually includes a predicate.
 				',
-			],
-			self::ONLY_IRREGULAR_FORMS => [
+			),
+			self::ONLY_IRREGULAR_FORMS => array(
 				'name' => 'Only irregular forms',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					The lexicon stores only irregular forms of verbs, like \'geese\' and \'slept\'.
 					The regular morphological compound forms are derived by applying rules.
 				',
-			],
-			self::GRAMMATICAL_RELATIONS => [
+			),
+			self::GRAMMATICAL_RELATIONS => array(
 				'name' => 'Grammatical relations',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					The lexicon codes which grammatical relations (like subject, object, and indirect object) a verb has.
 
@@ -1118,11 +1118,11 @@ class Features
 
 					[Grammatical relation - Wikipedia](https://en.wikipedia.org/wiki/Grammatical_relation)
 				',
-			],
-			self::SEMANTIC_SELECTIONAL_RESTRICTIONS => [
+			),
+			self::SEMANTIC_SELECTIONAL_RESTRICTIONS => array(
 				'name' => 'Semantic selectional restrictions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					Also called "S-selection". The lexicon stores semantic constraints for each argument of a verb.
 
@@ -1132,11 +1132,11 @@ class Features
 
 					[Selection (linguistics) - Wikipedia](https://en.wikipedia.org/wiki/Selection_%28linguistics%29)
 				',
-			],
-			self::CATEGORY_SELECTIONAL_RESTRICTIONS => [
+			),
+			self::CATEGORY_SELECTIONAL_RESTRICTIONS => array(
 				'name' => 'Category selectional restrictions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					Also called "C-selection". The lexicon stores syntactical constraints for each argument of a verb.
 
@@ -1145,11 +1145,11 @@ class Features
 
 					[Selection (linguistics) - Wikipedia](https://en.wikipedia.org/wiki/Selection_%28linguistics%29)
 				',
-			],
-			self::LEXICON_IDIOMS => [
+			),
+			self::LEXICON_IDIOMS => array(
 				'name' => 'Idioms',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					The prototypical example of an idiom is "kick the bucket". It means: to die.
 
@@ -1158,11 +1158,11 @@ class Features
 
 					[Idiom - Wikipedia](http://en.wikipedia.org/wiki/Idiom)
 				',
-			],
-			self::PHRASAL_VERBS => [
+			),
+			self::PHRASAL_VERBS => array(
 				'name' => 'Phrasal verbs',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEXICON],
+				'tags' => array(self::TAG_LEXICON),
 				'desc' => '
 					The lexicon stores the structure of phrasal verbs.
 
@@ -1180,8 +1180,8 @@ class Features
 
 					[Phrasal verb - Wikipedia](http://en.wikipedia.org/wiki/Phrasal_verb)
 				',
-			],
-			self::DEICTIC_CENTER => [
+			),
+			self::DEICTIC_CENTER => array(
 				'name' => 'Deictic center',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
@@ -1189,7 +1189,7 @@ class Features
 					'time' => 'Time',
 					'space' => 'Space',
 				),
-				'tags' => [self::TAG_DISCOURSE_MODEL],
+				'tags' => array(self::TAG_DISCOURSE_MODEL),
 				'desc' => '
 					Some words can only be understood in reference to an origin. This origin is called the deictic center.
 
@@ -1202,19 +1202,19 @@ class Features
 
 					Hence the system needs to update the origin with each new sentence.
 				',
-			],
-			self::TRACK_PLANS => [
+			),
+			self::TRACK_PLANS => array(
 				'name' => 'Keep track of active plans',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_DISCOURSE_MODEL],
+				'tags' => array(self::TAG_DISCOURSE_MODEL),
 				'desc' => '
 					The system needs to remember what plans it is currently working on.
 				',
-			],
-			self::LEARN_NAMES => [
+			),
+			self::LEARN_NAMES => array(
 				'name' => 'Learn new names',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEARNING],
+				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
 					The user may teach the system new names for things.
 
@@ -1227,11 +1227,11 @@ class Features
 					If the name text agent encounters an unknown word in a context where it is likely to be a name,
 					such as after a first name, if it has a prefix or suffix  commonly used in names, it learns the new name.
 				',
-			],
-			self::LEARN_WORDS => [
+			),
+			self::LEARN_WORDS => array(
 				'name' => 'Learn new words',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEARNING],
+				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
 					The user may explain to the system what a words means.
 
@@ -1240,11 +1240,11 @@ class Features
 					User: Are there any steeples now?
 					SHRDLU: NO.
 				',
-			],
-			self::LEARN_FACTS => [
+			),
+			self::LEARN_FACTS => array(
 				'name' => 'Learn new facts',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEARNING],
+				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
 					The user may tell the system about a new fact for the knowledge base.
 
@@ -1253,11 +1253,11 @@ class Features
 					User: Do I own anything in the box?
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
 				',
-			],
-			self::LEARN_RULES => [
+			),
+			self::LEARN_RULES => array(
 				'name' => 'Learn new rules',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEARNING],
+				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
 					The user may tell the system about rules that apply to the knowledge base.
 
@@ -1266,11 +1266,11 @@ class Features
 					User: Do I own anything in the box?
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
 				',
-			],
-			self::REFUSE_TO_ACCEPT => [
+			),
+			self::REFUSE_TO_ACCEPT => array(
 				'name' => 'Refuse to accept',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_LEARNING],
+				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
 					Based on a contradiction with a known fact, the system refuses to accept what the user tells him.
 
@@ -1278,21 +1278,21 @@ class Features
 					User: There were five blocks to the left of the box then.
 					SHRDLU: No, only four of them: the red cube, two large green cubes and a large red block
 				',
-			],
-			self::DEDUCTION => [
+			),
+			self::DEDUCTION => array(
 				'name' => 'Deduction',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_INFERENCE],
+				'tags' => array(self::TAG_INFERENCE),
 				'desc' => '
 					Deductive reasoning: reason from premises to conclusions.
 
 					Apply the deduction rules from the Domain Model to reach factual statements that are not stored literally in the Knowledge Base.
 				',
-			],
-			self::PROOF_BY_EXAMPLE => [
+			),
+			self::PROOF_BY_EXAMPLE => array(
 				'name' => 'Proof by example',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_INFERENCE],
+				'tags' => array(self::TAG_INFERENCE),
 				'desc' => '
 					Conclude that something is possible from the existence of at least a single instance.
 
@@ -1301,11 +1301,11 @@ class Features
 					SHRDLU: YES.<br>
 					The deductive system finds an actual example, so it knows this is possible. (Winograd)
 				',
-			],
-			self::INSTANTIATED_GOALS => [
+			),
+			self::INSTANTIATED_GOALS => array(
 				'name' => 'Instantiated goals',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GOAL_MODEL],
+				'tags' => array(self::TAG_GOAL_MODEL),
 				'desc' => '
 					Goals, plans and actions. Goals are taken from the Domain Model and instantiated with data from the user query.
 
@@ -1317,11 +1317,11 @@ class Features
 					The system answers "OK" when it carries out a command. In order to pick up the red block,
 					it had to clear it off by finding a space for the green one and moving the green one away. (Winograd)
 				',
-			],
-			self::GOAL_HISTORY => [
+			),
+			self::GOAL_HISTORY => array(
 				'name' => 'History of goals, plans and actions',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => [self::TAG_GOAL_MODEL],
+				'tags' => array(self::TAG_GOAL_MODEL),
 				'desc' => '
 					In order to answer questions about its motives, the system needs to keep track of its goals and plans,
 					and how they were connected.
@@ -1330,7 +1330,7 @@ class Features
 					User: Why did you do that?
 					SHRDLU: To clear off the red cube
 				',
-			],
-		];
+			),
+		);
 	}
 }
