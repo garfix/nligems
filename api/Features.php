@@ -126,7 +126,8 @@ class Features
 	const SYNTACTIC_FEATURES = 'SYNTACTIC_FEATURES';
 	const SEMANTIC_DEFINITION = 'SEMANTIC_DEFINITION';
 	const ONLY_IRREGULAR_FORMS = 'ONLY_IRREGULAR_FORMS';
-	const SELECTIONAL_RESTRICTIONS = 'SELECTIONAL_RESTRICTIONS';
+	const SEMANTIC_SELECTIONAL_RESTRICTIONS = 'SEMANTIC_SELECTIONAL_RESTRICTIONS';
+	const CATEGORY_SELECTIONAL_RESTRICTIONS = 'CATEGORY_SELECTIONAL_RESTRICTIONS';
 	const PHRASAL_VERBS = 'PHRASAL_VERBS';
 
 	const DEICTIC_CENTER = 'DEICTIC_CENTER';
@@ -1071,7 +1072,10 @@ class Features
 				'desc' => '
 					A lexical entry has information syntactic features.
 
-					For example: work (part-of-speech = verb), birds (part-of-speech = noun, number = plural)
+					part-of-speech
+					: the syntactic category (e.g. work: part-of-speech = verb)
+					number
+					: singular or plural (e.g. birds: number = plural)
 				',
 			],
 			self::SEMANTIC_DEFINITION => [
@@ -1080,6 +1084,8 @@ class Features
 				'tags' => [self::TAG_LEXICON],
 				'desc' => '
 					A lexical entry has a definition of the meaning of the word.
+
+					This usually includes a predicate.
 				',
 			],
 			self::ONLY_IRREGULAR_FORMS => [
@@ -1105,21 +1111,38 @@ class Features
 					ditransitive
 					: A verb with a subject, an object and an indirect object
 
-					Coded grammatical relations help restrict the parsing process.
+					Coded grammatical relations help restrict the number of possible parse trees.
 
 					Note that verbs may have multiple "frames". For example: "That man eats" (intransitive) and "He eats apples" (mono-transitive).
+
+					[Grammatical relation - Wikipedia](https://en.wikipedia.org/wiki/Grammatical_relation)
 				',
 			],
-			self::SELECTIONAL_RESTRICTIONS => [
-				'name' => 'Selectional restrictions',
+			self::SEMANTIC_SELECTIONAL_RESTRICTIONS => [
+				'name' => 'Semantic selectional restrictions',
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => [self::TAG_LEXICON],
 				'desc' => '
-					The lexicon stores constraints (semantic) selectional constraints for each verb.
+					Also called "S-selection". The lexicon stores semantic constraints for each argument of a verb.
 
-					For example, the verb may contain the restrictions:
+					For example, the verb may contain these restrictions:
 					* subject: instance of living organism
 					* object: instance of a liquid
+
+					[Selection (linguistics) - Wikipedia](https://en.wikipedia.org/wiki/Selection_%28linguistics%29)
+				',
+			],
+			self::CATEGORY_SELECTIONAL_RESTRICTIONS => [
+				'name' => 'Category selectional restrictions',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_LEXICON],
+				'desc' => '
+					Also called "C-selection". The lexicon stores syntactical constraints for each argument of a verb.
+
+					For instance the lexicon may specify that an argument may not be just a noun phrase ("John talks to Peter"),
+					but also a subordinate clause ("John tells Peter to go").
+
+					[Selection (linguistics) - Wikipedia](https://en.wikipedia.org/wiki/Selection_%28linguistics%29)
 				',
 			],
 			self::PHRASAL_VERBS => [
@@ -1136,6 +1159,10 @@ class Features
 					: verb + particle. Ex: "They brought that up twice."
 					particle-prepositional phrasal verbs
 					: Verb + particle + preposition. Ex: "Who can put up with that?"
+
+					Explicit use of phrasal verbs helps restrict the number of possible parse trees.
+					Also, it distinguishes between syntactically similar but semantically different verbs like "look" and "look after",
+					and produces different semantic concepts ("look", "look-after").
 
 					[Phrasal verb - Wikipedia](http://en.wikipedia.org/wiki/Phrasal_verb)
 				',
