@@ -128,6 +128,7 @@ class Features
 	const ONLY_IRREGULAR_FORMS = 'ONLY_IRREGULAR_FORMS';
 	const SEMANTIC_SELECTIONAL_RESTRICTIONS = 'SEMANTIC_SELECTIONAL_RESTRICTIONS';
 	const CATEGORY_SELECTIONAL_RESTRICTIONS = 'CATEGORY_SELECTIONAL_RESTRICTIONS';
+	const LEXICON_IDIOMS = 'LEXICON_IDIOMS';
 	const PHRASAL_VERBS = 'PHRASAL_VERBS';
 
 	const DEICTIC_CENTER = 'DEICTIC_CENTER';
@@ -1143,6 +1144,19 @@ class Features
 					but also a subordinate clause ("John tells Peter to go").
 
 					[Selection (linguistics) - Wikipedia](https://en.wikipedia.org/wiki/Selection_%28linguistics%29)
+				',
+			],
+			self::LEXICON_IDIOMS => [
+				'name' => 'Idioms',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => [self::TAG_LEXICON],
+				'desc' => '
+					The prototypical example of an idiom is "kick the bucket". It means: to die.
+
+					Such an idiom may be stored in the lexicon. Note that its structure must be stored, not just the surface form,
+					since variants are also possible. E.g. "Our dog kicked the bucket."
+
+					[Idiom - Wikipedia](http://en.wikipedia.org/wiki/Idiom)
 				',
 			],
 			self::PHRASAL_VERBS => [

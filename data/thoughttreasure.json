@@ -75,5 +75,6 @@
     "DO_SEMANTIC_COMP": true,
     "DO_ANAPHORA_RESOL": true,
     "GRAMMATICAL_RELATIONS": true,
-    "PHRASAL_VERBS": true
+    "PHRASAL_VERBS": true,
+    "LEXICON_IDIOMS": true
 }
