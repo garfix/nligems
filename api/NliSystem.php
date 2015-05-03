@@ -127,7 +127,7 @@ class NliSystem
 	{
 		$SystemApi = new NliSystemApi();
 		$possibleValues = $SystemApi->getPossibleValues(Features::PHRASE_TYPES);
-		$names = [];
+		$names = array();
 		foreach ($this->get(Features::PHRASE_TYPES) as $val) {
 			$names[] = 	$possibleValues[$val];
 		}

@@ -8,7 +8,7 @@ namespace nligems\api\component;
 class ImageBar
 {
     /** @var Image[] */
-    private $images = [];
+    private $images = array();
 
     public function addImage($text, $image)
     {

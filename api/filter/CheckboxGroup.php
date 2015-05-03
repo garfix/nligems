@@ -11,13 +11,13 @@ use nligems\api\NliSystem;
 class CheckboxGroup extends Component
 {
 	/** @var array  */
-	private $options = [];
+	private $options = array();
 
 	/** @var array  */
-	protected $value = [];
+	protected $value = array();
 
 	/** @var NliSystem[][] */
-	private $runningSystemsPerOption = [];
+	private $runningSystemsPerOption = array();
 
 	/**
 	 * @param $id

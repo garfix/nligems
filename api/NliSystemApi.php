@@ -163,7 +163,7 @@ class NliSystemApi
 	{
 		if (!$this->featuresByTag) {
 
-			$this->featuresByTag = [];
+			$this->featuresByTag = array();
 
 			foreach (Features::getFeatures() as $feature => $info) {
 				if (isset($info['tags'])) {
@@ -191,7 +191,7 @@ class NliSystemApi
 
 	public function getFeaturesOfSystem(NliSystem $System)
 	{
-		$features = [];
+		$features = array();
 
 		foreach ($System->getAllValues() as $feature => $value) {
 			if (!empty($value)) {

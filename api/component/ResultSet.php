@@ -14,7 +14,7 @@ use nligems\api\NliSystemApi;
 class ResultSet
 {
 	/** @var NliSystem[] */
-	private $filteredSystems = [];
+	private $filteredSystems = array();
 
 	/** @var  Filter */
 	private $Filter;
@@ -29,7 +29,7 @@ class ResultSet
 		$this->Filter = $Filter;
 
 		$systems = $NliSystemApi->getAllSystems();
-		$selectedSystems = [];
+		$selectedSystems = array();
 
 		foreach ($systems as $System) {
 

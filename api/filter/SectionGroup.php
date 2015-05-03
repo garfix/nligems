@@ -13,7 +13,7 @@ class SectionGroup
 	private $name;
 
 	/** @var Section[] */
-	private $sections = [];
+	private $sections = array();
 
 	public function __construct($name)
 	{

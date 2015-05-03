@@ -21,7 +21,7 @@ class Section
 	private $type;
 
 	/** @var  Component[] $components */
-	private $components = [];
+	private $components = array();
 
 	/** @var bool  */
 	private $match = false;

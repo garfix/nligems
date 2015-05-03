@@ -14,9 +14,9 @@ class HtmlElement
 	private $requiresClosingTag;
 
 	/** @var array  */
-	private $attributes = [];
+	private $attributes = array();
 
-	private $children = [];
+	private $children = array();
 
 	public function __construct($tagName, $requiresClosingTag = true)
 	{

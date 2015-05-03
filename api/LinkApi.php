@@ -7,7 +7,7 @@ namespace nligems\api;
  */
 class LinkApi
 {
-	public function getLink($page, $params = [])
+	public function getLink($page, $params = array())
 	{
 		if ($page == 'image') {
 			$rel = 'page/img/people/' . $params['name'] . '.jpg';

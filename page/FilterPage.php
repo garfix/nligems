@@ -98,8 +98,8 @@ class FilterPage extends FrontEndPage
 
 				$Section = new Section($name = $sectionData['name'], Section::TYPE_GENERAL);
 
-				$complexFeatures = [];
-				$simpleFeatures = [];
+				$complexFeatures = array();
+				$simpleFeatures = array();
 
 				foreach ($NliSystemApi->getFeaturesByTag($sectionData['tag']) as $feature) {
 					$type = $NliSystemApi->getFeatureType($feature);

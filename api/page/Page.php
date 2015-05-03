@@ -19,7 +19,7 @@ abstract class Page
 	protected $styleSheets = array('style');
 
 	/** @var array[]  */
-	protected $scripts = [];
+	protected $scripts = array();
 
 	public function __toString()
 	{

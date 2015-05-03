@@ -8,7 +8,7 @@ namespace nligems\api\component;
 class LinkBar
 {
     /** @var Link[] */
-    private $links = [];
+    private $links = array();
 
     public function addLink($text, $link)
     {

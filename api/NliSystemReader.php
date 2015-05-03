@@ -40,7 +40,7 @@ class NliSystemReader
 
 	public function writeSystem(NliSystem $System, $fileName)
 	{
-		$structure = [];
+		$structure = array();
 
 		foreach ($System->getAllValues() as $key => $value) {
 
