@@ -29,10 +29,21 @@ class NliSystemReader
 		$System->set('id', $id);
 
 		$contents = file_get_contents($filename);
-		$structure = json_decode($contents);
+		$structure = json_decode($contents, true);
 
-		foreach ($structure as $key => $value) {
-			$System->set($key, $value);
+		foreach (Features::getFeatures() as $feature => $info) {
+
+			if (isset($structure[$feature])) {
+				$value = $structure[$feature];
+			} else {
+				if (in_array($info['type'], array(Features::FEATURETYPE_MULTIPLE_CHOICE, Features::FEATURETYPE_TEXT_MULTIPLE))) {
+					$value = array();
+				} else {
+					$value = null;
+				}
+			}
+
+			$System->set($feature, $value);
 		}
 
 		return $System;

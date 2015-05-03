@@ -16,11 +16,10 @@ class NliSystem
 
 	public function get($feature)
 	{
-		if (isset($this->values[$feature])) {
+		if (array_key_exists($feature, $this->values)) {
 			$value = $this->values[$feature];
 		} else {
-			$Api = new NliSystemApi();
-			$value = $Api->getEmptyValue($feature);
+			trigger_error('Feature does not exist: ' . $feature, E_USER_ERROR);
 		}
 
 		return $value;
