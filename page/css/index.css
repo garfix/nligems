@@ -30,6 +30,11 @@ img.me {
     margin: 0 10px 20px 20px;
 }
 
+span.highlight {
+    font-weight: bold;
+    color: #a36c7a;
+}
+
 /* LINK BAR */
 
 div.linkPanel {
