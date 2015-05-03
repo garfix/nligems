@@ -6,6 +6,7 @@ use nligems\page\ComparePage;
 use nligems\page\EditSystemPage;
 use nligems\page\FilterPage;
 use nligems\page\IndexPage;
+use nligems\page\NewsPage;
 use nligems\page\SystemOverviewPage;
 use nligems\page\SystemPage;
 use nligems\page\TimeLinePage;
@@ -26,6 +27,14 @@ class PageApi
 	public function getIndexPage()
 	{
 		return new IndexPage();
+	}
+
+	/**
+	 * @return IndexPage
+	 */
+	public function getNewsPage()
+	{
+		return new NewsPage();
 	}
 
 	/**

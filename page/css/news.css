@@ -1,0 +1,18 @@
+/* TEXT-PAGE */
+
+div.textPage {
+    position: absolute;
+    font-family: sans-serif;
+    margin: 20px;
+   	top: 100px;
+   	bottom: 0;
+   	width: 800px;
+   	left: 0;
+	overflow: auto;
+}
+
+p.story {
+	background-color: #fcf2e4;
+	padding: 20px 10px 20px 10px;
+	margin-right: 20px;
+}

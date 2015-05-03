@@ -5,27 +5,34 @@ namespace nligems\page;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\LinkBar;
 use nligems\api\component\Header;
+use nligems\api\component\News;
 use nligems\api\LinkApi;
 use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen
  */
-class IndexPage extends FrontEndPage
+class NewsPage extends FrontEndPage
 {
+    /** @var News  */
+    private $News;
+
     public function __construct()
    	{
         $LinkApi = new LinkApi();
 
-        $this->Header = new Header('Home', null);
+        $this->Header = new Header('Website news', 'index');
+
+        $news = json_decode(file_get_contents(__DIR__ . '/text/news.json'), true);
+        $this->News = new News($news);
 
         $this->LinkBar = new LinkBar();
-        $this->LinkBar->addLink('Systems', $LinkApi->getLink('filter'));
-        $this->LinkBar->addLink('Website news', $LinkApi->getLink('news'));
-        $this->LinkBar->addLink('NLI Timeline', $LinkApi->getLink('timeline'));
+        $this->LinkBar->addLink('Filter', $LinkApi->getLink('filter'));
+        $this->LinkBar->addLink('News', $LinkApi->getLink('news'));
+        $this->LinkBar->addLink('Timeline', $LinkApi->getLink('timeline'));
 
         $this->addStyleSheet('common');
-        $this->addStyleSheet('index');
+        $this->addStyleSheet('news');
    	}
 
     protected function getBody()
@@ -38,8 +45,6 @@ class IndexPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $html = file_get_contents(__DIR__ . '/text/intro.html');
-
         $LinkBar = new HtmlElement('div');
         $LinkBar->addClass('linkPanel');
         $LinkBar->addChildHtml((string)$this->LinkBar);
@@ -47,7 +52,7 @@ class IndexPage extends FrontEndPage
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
-        $Body->addChildHtml($html);
+        $Body->addChildNode($this->News);
         $Page->addChildNode($Body);
 
         return (string)$Page;
