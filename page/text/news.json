@@ -1,5 +1,9 @@
 [
   {
+    "date": "2015-05-09",
+    "story": "One thing I learned from ThoughtTreasure is the importance of 'phrase verbs'. The verb 'receive' means something completely different than 'receive from'. Compare: 'The minister received the ambassador.' with 'The minister received a compliment from his secretary.' The first verb means something like 'to meet', the second something like 'to get'. The participles and the prepositions (here: 'from') are part of the verb, and determine its meaning. It is a good idea to store these as separate verbs in the lexicon."
+  },
+  {
     "date": "2015-04-01",
     "story": "Working on ThoughtTreasure.\n\nAfter SHRDLU I thought I had a strong basis with many features and that the other systems would be mainly just a matter of ticking the checkboxes. \n\nI was wrong. In fact, I found it very frustrating to see that ThoughtTreasure has all kinds of features that were not available in SHRDLU. Again, I had to think of new concepts, and change existing divisions of the domain space.\n\nBut when I just started entering the data in the computer I found it to be fun again. It is amazing how these systems differ. And it is intriguing to chart this domain. ThoughtTreasure has explicit higher order cognitive functions (named agents), like emotions and goal recognition. It handles the answering of questions in a more explicit way. I like this idea very much. Mueller groups quite different functions under the term 'agents' so we can't say that all agents are higher order functions. The grouping of functionality itself is interesting."
   },
