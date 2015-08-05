@@ -184,6 +184,13 @@ div.help-popup header {
 	margin-bottom: 15px;
 }
 
+div.help-popup h3 {
+	font-family: Oswald, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0;
+}
+
 div.help-popup dl {
 	margin: 0;
 }

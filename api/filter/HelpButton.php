@@ -33,6 +33,12 @@ class HelpButton extends HtmlElement
 	 * Markdown cheat-sheet http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html
 	 *
 	 * - replace all newlines by <p> elements
+	 * - header
+	 *
+	 *      # header
+	 *
+	 *      <h3>header</h3>
+	 *
 	 * - table
 	 *
 	 *      ## header
@@ -110,6 +116,13 @@ class HelpButton extends HtmlElement
 			return $string;
 		};
 
+		$header = function($matches)
+		{
+			$string = "<h3>" . $matches['header'] . "</h3>";
+
+			return $string;
+		};
+
 		$items = function($matches)
 		{
 			$items = $matches['items'];
@@ -150,6 +163,7 @@ class HelpButton extends HtmlElement
 
 		$html = $microformat;
 		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)*)/', $quote, $html);
+		$html = preg_replace_callback('/#[\s]*(?<header>[^\n]+)/', $header, $html);
 		$html = preg_replace_callback('/\n\s*(?<defs>([^\n:]+\n\s*:[^\n]+\n\s*)+)/', $definitions, $html);
 		$html = preg_replace_callback('/\n\s*(?<items>(\* [^\n]+\n\s*)+)/', $items, $html);
 		$html = preg_replace_callback('/\[(?<text>[^\]]+)\]\((?<link>[^\)]+)\)/', $links, $html);

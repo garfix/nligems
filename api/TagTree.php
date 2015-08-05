@@ -40,6 +40,8 @@ class TagTree
 					array('name' => 'Inference', 'tag' => Features::TAG_INFERENCE),
 					array('name' => 'Conversion to knowledge base form', 'tag' => Features::TAG_CONVERSION_TO_KB),
 					array('name' => 'Knowledge base execution', 'tag' => Features::TAG_EXECUTION),
+					array('name' => 'Planning', 'tag' => Features::TAG_PLANNING),
+					array('name' => 'Generation', 'tag' => Features::TAG_GENERATION),
 					array('name' => 'Learning', 'tag' => Features::TAG_LEARNING),
 				)
 			),

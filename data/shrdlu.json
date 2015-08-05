@@ -9,42 +9,44 @@
         "MIT"
     ],
     "INFLUENCED_BY": [],
-    "NAT_LANGS": [
-        "English"
-    ],
     "PROG_LANGS": [
         "Lisp"
     ],
-    "SOURCE_CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
     "KB_TYPE": [
         "inference engine"
     ],
+    "STATE_HISTORY": true,
     "KB_TYPE_DESC": "Planner databases",
-    "SENTENCE_TYPES": [
-        "question",
-        "declarative",
-        "imperative"
-    ],
+    "SOURCE_CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
+    "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
+    "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
     "ARTICLES": [],
     "BOOKS": [
         "Winograd, T. Understanding Natural Language. Academic Press, 1972."
     ],
-    "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
-    "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
     "ANALYSIS": [
         "Semantics-based"
     ],
     "SEMANTIC_GRAMMAR": null,
-    "DO_DIALOG": true,
-    "NEW_WORDS": true,
-    "MULTI_DB": false,
-    "DO_UNGRAMMATICAL": null,
-    "META_SELF": true,
-    "META_KB": true,
-    "PHRASE_TYPES": [
-        "NP", "VP", "PP", "DP", "ADJP", "RC", "NEG", "CONJ", "ANAPHORA", "AUX", "COMP_EXP", "PASSIVES", "CLAUSES_AS_OBJECTS"
+    "AMBIGUITY": [
+        "Early-convergence"
     ],
-    "ELLIPSIS": true,
+    "INTEGRATED_KNOWLEDGE_BASE": true,
+    "META_SELF": true,
+    "META_GOAL_MODEL": true,
+    "META_KB": true,
+    "NEW_WORDS": true,
+    "IMPERATIVE": true,
+    "IDIONS": true,
+    "QUESTION_TYPES": [
+        "yes\/no",
+        "wh",
+        "how many",
+        "when",
+        "how",
+        "why"
+    ],
+    "TOKENIZATION_HEADER": "INPUT",
     "DO_DICT_LOOKUP": true,
     "DO_MORPH_ANA": true,
     "DO_SPELL_CORR": true,
@@ -52,18 +54,48 @@
     "DO_PROP_NAME_KB": true,
     "DO_PROP_NAME_MAT": null,
     "DO_QUOTED_STRINGS": true,
-    "PARSE_HEADER": "GRAMMAR",
+    "POS_TAGGER": null,
     "GRAMMAR_TYPE": "Programmar \/ Systemic Grammar",
+    "NAT_LANGS": [
+        "English"
+    ],
+    "SENTENCE_TYPES": [
+        "question",
+        "declarative",
+        "imperative"
+    ],
+    "PHRASE_TYPES": [
+        "NP",
+        "VP",
+        "PP",
+        "DP",
+        "ADJP",
+        "RC",
+        "NEG",
+        "CONJ",
+        "ANAPHORA",
+        "AUX",
+        "COMP_EXP",
+        "PASSIVES",
+        "CLAUSES_AS_OBJECTS"
+    ],
+    "ELLIPSIS": true,
+    "PARSE_HEADER": "GRAMMAR",
+    "DO_UNGRAMMATICAL": null,
     "PARSER_TYPE": "A top-down left-to-right parser",
     "SYNTACTIC_FORM_TYPE": [
         "parse trees"
     ],
+    "APPLY_SELECTIONAL_RESTRICTIONS": null,
     "INTERPRET_HEADER": "SEMANTICS",
+    "SEMANTIC_ANALYSIS_PARSING": true,
     "DO_SEMANTIC_ATTACH": true,
+    "DO_SEMANTIC_COMP": true,
+    "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": true,
+    "USE_LEXICON": null,
     "DO_MODIFIER_ATTACH": true,
     "DO_CONJUNCTION_DISJUNCTION": null,
     "DO_NOMINAL_COMPOUNDS": null,
-    "DO_SEMANTIC_COMP": true,
     "SEMANTIC_COMP_TYPE": [
         "custom"
     ],
@@ -71,7 +103,7 @@
     "DO_QUANTIFIER_SCOPE": true,
     "DO_ANAPHORA_RESOL": true,
     "DO_PLAUSIB_JUDGE": true,
-    "COOPERATIVE_RESPONSES": true,
+    "INTERPRET_SPEECH_ACT": true,
     "SEMANTIC_FORM_TYPE": [
         "goal-based"
     ],
@@ -81,7 +113,10 @@
     "PROPER_NOUN_CNST": null,
     "ONTOLOGY_USED": true,
     "STD_ONTOLOGY": [],
-    "CONVERT_HEADER": "",
+    "DEDUCTION_RULES": true,
+    "PLANS": true,
+    "GOAL_CREATION_RULES": true,
+    "CONVERT_HEADER": null,
     "DO_SYNTACTIC_REWRITE": false,
     "DO_OPTIMIZE_QUERY": null,
     "DO_INFORMATION_RESTRUCT": null,
@@ -90,49 +125,47 @@
     ],
     "KB_AGGREGATIONS": true,
     "EXECUTE_HEADER": "Planner",
+    "MULTI_DB": false,
     "DO_LOGICAL_REASON": true,
+    "GOAL_CREATION": true,
+    "PLAN_EXECUTION": true,
+    "PROCESS_FEEDBACK": true,
     "GENERATE_HEADER": "ANSWER",
+    "COOPERATIVE_RESPONSES": true,
     "PARAPHRASE_QUERY": null,
-    "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": true,
-    "SYNTACTIC_FEATURES": true,
-    "SEMANTIC_DEFINITION": true,
-    "ONLY_IRREGULAR_FORMS": true,
-    "LEARN_NAMES": true,
-    "LEARN_WORDS": true,
-    "LEARN_FACTS": true,
-    "LEARN_THEOREMS": true,
-    "IMPERATIVE": true,
-    "IDIONS": true,
-    "PROOF_BY_EXAMPLE": true,
-    "TOKENIZATION_HEADER": "INPUT",
-    "INTERPRET_SPEECH_ACT": true,
-    "REFUSE_TO_ACCEPT": true,
     "CANNED_RESPONSES": true,
     "PATTERNED_RESPONSES": true,
-    "GOAL_HISTORY": true,
-    "STATE_HISTORY": true,
-    "DEDUCTION_RULES": true,
-    "PLANS": true,
-    "INSTANTIATED_GOALS": true,
-    "TRACK_PLANS": true,
-    "SEMANTIC_ANALYSIS_PARSING": true,
-    "META_GOAL_MODEL": true,
-    "QUESTION_TYPES": [
-        "yes\/no",
-        "wh",
-        "how many",
-        "when",
-        "how",
-        "why"
-    ],
-    "DEDUCTION": true,
-    "AMBIGUITY": [
-        "Early-convergence"
-    ],
-    "INTEGRATED_KNOWLEDGE_BASE": true,
+    "GENERATE_FULL_RESPONSE": null,
+    "DO_DIALOG": true,
+    "SYNTACTIC_FEATURES": true,
+    "SEMANTIC_DEFINITION": true,
+    "SEMANTIC_FORM_PROPERTIES": null,
+    "ONLY_IRREGULAR_FORMS": true,
+    "GRAMMATICAL_RELATIONS": null,
+    "SEMANTIC_SELECTIONAL_RESTRICTIONS": null,
+    "CATEGORY_SELECTIONAL_RESTRICTIONS": null,
+    "LEXICON_IDIOMS": null,
+    "PHRASAL_VERBS": null,
+    "LEXICON_ROLES": null,
     "DEICTIC_CENTER": [
         "person",
         "time",
         "space"
-    ]
+    ],
+    "TRACK_PLANS": true,
+    "LEARN_NAMES": true,
+    "LEARN_WORDS": true,
+    "LEARN_WORDS_BY_DEDUCTION": true,
+    "LEARN_FACTS": true,
+    "LEARN_THEOREMS": true,
+    "REFUSE_TO_ACCEPT": true,
+    "USE_TRANSFORMATION_RULES": null,
+    "GENERATE_PRONOUNS": null,
+    "GENERATE_ARTICLES": null,
+    "GENERATE_ASPECT": null,
+    "DEDUCTION": true,
+    "PROOF_BY_EXAMPLE": true,
+    "PROOF_BY_CUSTOM_PROCEDURE": null,
+    "INSTANTIATED_GOALS": true,
+    "GOAL_HISTORY": true
 }

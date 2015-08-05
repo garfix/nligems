@@ -86,6 +86,7 @@ class Features
 	const CONJUNCTION_DISJUNCTION = 'DO_CONJUNCTION_DISJUNCTION';
 	const NOMINAL_COMPOUNDS = 'DO_NOMINAL_COMPOUNDS';
 	const MORPHOLOGICAL_SEMANTIC_COMPOSITION = 'DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION';
+	const SEMANTIC_USE_LEXICON = 'USE_LEXICON';
 	const SEMANTIC_COMPOSITION = 'DO_SEMANTIC_COMP';
 	const SEMANTIC_COMPOSITION_TYPE = 'SEMANTIC_COMP_TYPE';
 	const SEMANTIC_CONFLICT_DETECTION = 'DO_SEMANTIC_CONFLICT';
@@ -105,6 +106,7 @@ class Features
 	const STANDARD_ONTOLOGY = 'STD_ONTOLOGY';
 	const DEDUCTION_RULES = 'DEDUCTION_RULES';
 	const PLANS = 'PLANS';
+	const GOAL_CREATION_RULES = 'GOAL_CREATION_RULES';
 
 	const CONVERT_HEADER = 'CONVERT_HEADER';
 	const SYNTACTIC_REWRITE = 'DO_SYNTACTIC_REWRITE';
@@ -116,6 +118,10 @@ class Features
 
 	const EXECUTE_HEADER = 'EXECUTE_HEADER';
 	const LOGICAL_REASONING = 'DO_LOGICAL_REASON';
+
+	const GOAL_CREATION = 'GOAL_CREATION';
+	const PLAN_EXECUTION = 'PLAN_EXECUTION';
+	const PROCESS_FEEDBACK = 'PROCESS_FEEDBACK';
 
 	const GENERATE_HEADER = 'GENERATE_HEADER';
 	const PARAPHRASE_QUERY = 'PARAPHRASE_QUERY';
@@ -130,6 +136,8 @@ class Features
 	const CATEGORY_SELECTIONAL_RESTRICTIONS = 'CATEGORY_SELECTIONAL_RESTRICTIONS';
 	const LEXICON_IDIOMS = 'LEXICON_IDIOMS';
 	const PHRASAL_VERBS = 'PHRASAL_VERBS';
+	const LEXICON_ROLES = 'LEXICON_ROLES';
+	const SEMANTIC_FORM_PROPERTIES = 'SEMANTIC_FORM_PROPERTIES';
 
 	const DEICTIC_CENTER = 'DEICTIC_CENTER';
 	const TRACK_SUBJECT = 'TRACK_SUBJECT';
@@ -138,12 +146,19 @@ class Features
 
 	const LEARN_NAMES = 'LEARN_NAMES';
 	const LEARN_WORDS = 'LEARN_WORDS';
+	const LEARN_WORDS_BY_DEDUCTION = 'LEARN_WORDS_BY_DEDUCTION';
 	const LEARN_FACTS = 'LEARN_FACTS';
 	const LEARN_RULES = 'LEARN_THEOREMS';
 	const REFUSE_TO_ACCEPT = 'REFUSE_TO_ACCEPT';
 
+	const USE_TRANSFORMATION_RULES = 'USE_TRANSFORMATION_RULES';
+	const GENERATE_PRONOUNS = 'GENERATE_PRONOUNS';
+	const GENERATE_ARTICLES = 'GENERATE_ARTICLES';
+	const GENERATE_ASPECT = 'GENERATE_ASPECT';
+
 	const DEDUCTION = 'DEDUCTION';
 	const PROOF_BY_EXAMPLE = 'PROOF_BY_EXAMPLE';
+	const PROOF_BY_CUSTOM_PROCEDURE = 'PROOF_BY_CUSTOM_PROCEDURE';
 
 	const INSTANTIATED_GOALS = 'INSTANTIATED_GOALS';
 
@@ -167,6 +182,7 @@ class Features
 	const TAG_EXECUTION = 'execution';
 	const TAG_ANSWER = 'answer';
 	const TAG_DIALOG = 'dialog';
+	const TAG_GENERATION = 'generation';
 	const TAG_LEARNING = 'learning';
 	const TAG_INFERENCE = 'inference';
 	const TAG_SEMANTIC_FORM = 'semantic form';
@@ -177,6 +193,7 @@ class Features
 	const TAG_LEXICON = 'lexicon';
 	const TAG_GRAMMAR = 'grammar';
 	const TAG_DISCOURSE_MODEL = 'dialog model';
+	const TAG_PLANNING = 'planning';
 
 	// options
 
@@ -724,6 +741,20 @@ class Features
 					like \'little\'. (Winograd)
 				',
 			),
+			self::SEMANTIC_USE_LEXICON => array(
+				'name' => 'Use lexicon',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
+				'desc' => '
+					The system may use these attributes from a word in the lexicon for semantic analysis:
+
+					* Semantic definition: a semantic form representation of the meaning of a word.
+					* Grammatical relations: for verbs, the presence and position of the object and indirect object in the semantic form.
+					* Semantic selectional restrictions: interpretations may be discarded if these restrictions don\'t match.
+					* Phrasal verbs: in a word group like "Abe looks after Bob" "looks after" is turned into a single predicate with Bob as the object
+					* Idioms: "X kicks the bucket" may be interpreted as "die(X)" in this phase
+				',
+			),
 			self::MODIFIER_ATTACHMENT => array(
 				'name' => 'Modifier attachment',
 				'type' => self::FEATURETYPE_BOOL,
@@ -921,6 +952,14 @@ class Features
 					A plan consists of a goal and a set of actions, or lower level plans.
 				',
 			),
+			self::GOAL_CREATION_RULES => array(
+				'name' => 'Goal creation rules',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_DOMAIN_MODEL),
+				'desc' => '
+					A set of IF/THEN rules that specify under which Knowledge Base conditions a goal is created and added to the Goal Model.
+				',
+			),
 			self::CONVERT_HEADER => array(
 				'name' => 'Convert header',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
@@ -931,6 +970,7 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => array(self::TAG_CONVERSION_TO_KB),
 				'desc' => '
+					Rewrite the generic semantic form to a domain specific semantic form used in a specific domain.
 				',
 			),
 			self::OPTIMIZE_QUERY => array(
@@ -981,6 +1021,35 @@ class Features
 				'tags' => array(self::TAG_EXECUTION),
 				'desc' => '
 					The knowledge base itself contains inference rules that allow facts to be deduced from other facts.
+				',
+			),
+			self::GOAL_CREATION => array(
+				'name' => 'Goal creation',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_PLANNING),
+				'desc' => '
+					When a certain state in the Knowledge Base triggers a goal creation rule from the domain model,
+					a goal is created and placed in the Goal Model.
+				',
+			),
+			self::PLAN_EXECUTION => array(
+				'name' => 'Plan execution',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_PLANNING),
+				'desc' => '
+					When a goal is active in the Goal Model, the system will find plans and actions that are geared towards fulfillment of the goal.
+
+					An action may be implemented by a custom procedure, or it may be a question asking the user for more information.
+				',
+			),
+			self::PROCESS_FEEDBACK => array(
+				'name' => 'Process feedback',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_PLANNING),
+				'desc' => '
+					Interpret the response of the user in the context of an active plan.
+
+					For instance, when the user says "Yes" this may answer an active question by the system.
 				',
 			),
 			self::GENERATE_HEADER => array(
@@ -1089,6 +1158,22 @@ class Features
 					This usually includes a predicate.
 				',
 			),
+			self::SEMANTIC_FORM_PROPERTIES => array(
+				'name' => 'Semantic form properties',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_LEXICON),
+				'desc' => '
+					The semantic form of a lexical entry has specific properties, other than just a predicate.
+
+					Examples from ThoughtTreasure:
+
+					Type of relation
+					: Is the relation one-to-one, one-to-many, or many-to-many? This property is used in generation to determine if an expression is "the president of the US" or "a president of the US".
+					Fuzzy value
+					: For the predicate "like-human", the word "like" has a fuzzy value in the range of 0.5 - 0.8, while "love" has a value of 0.8 to infinite.
+
+				',
+			),
 			self::ONLY_IRREGULAR_FORMS => array(
 				'name' => 'Only irregular forms',
 				'type' => self::FEATURETYPE_BOOL,
@@ -1181,6 +1266,16 @@ class Features
 					[Phrasal verb - Wikipedia](http://en.wikipedia.org/wiki/Phrasal_verb)
 				',
 			),
+			self::LEXICON_ROLES => array(
+				'name' => 'Roles',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_LEXICON),
+				'desc' => '
+					Examples of roles are "president-of", "mother-of", "nationality-of", "friend-of".
+
+					ThoughtTreasure stores these relations in the lexicon as surface form / semantic form.
+				',
+			),
 			self::DEICTIC_CENTER => array(
 				'name' => 'Deictic center',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
@@ -1229,7 +1324,7 @@ class Features
 				',
 			),
 			self::LEARN_WORDS => array(
-				'name' => 'Learn new words',
+				'name' => 'Learn new words by telling',
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
@@ -1239,6 +1334,18 @@ class Features
 					User: A "steeple" is a stack which contains two green cubes and a pyramid
 					User: Are there any steeples now?
 					SHRDLU: NO.
+				',
+			),
+			self::LEARN_WORDS_BY_DEDUCTION => array(
+				'name' => 'Learn new names by deduction',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_LEARNING),
+				'desc' => '
+					The system may deduce the meaning of new words using derivation rules.
+
+					## Example from ThoughtTreasure:
+					User: What is a xylophonephile?
+					ThoughtTreasure: A xylophonephile is a type of human. Xylophonephiles like xylophones.
 				',
 			),
 			self::LEARN_FACTS => array(
@@ -1279,6 +1386,50 @@ class Features
 					SHRDLU: No, only four of them: the red cube, two large green cubes and a large red block
 				',
 			),
+			self::USE_TRANSFORMATION_RULES => array(
+				'name' => 'Using transformation rules',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_GENERATION),
+				'desc' => '
+					When generating a linguistic response (a sentence) based on a found answer (a semantic representation), transformation rules are used to create responses that do not sound rigid.
+
+					# Examples from ThoughtTreasure
+					* a friend of you => your friend
+					* is not => isn\'t
+					* le arbre => l\'arbre
+				',
+			),
+			self::GENERATE_PRONOUNS => array(
+				'name' => 'Generate pronouns',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_GENERATION),
+				'desc' => '
+					In the linguistic response, nouns that are part of the active context are replaced by pronouns (I, he, it).
+				',
+			),
+			self::GENERATE_ARTICLES => array(
+				'name' => 'Generate articles',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_GENERATION),
+				'desc' => '
+					In the linguistic response, nouns will need a proper article.
+
+					# Examples from ThoughtTreasure
+					* Elephants are smart (empty article)
+					* An elephant is a mammal (indefinite article)
+					* The elephant (definite article)
+				',
+			),
+			self::GENERATE_ASPECT => array(
+				'name' => 'Generate aspects',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_GENERATION),
+				'desc' => '
+					In the linguistic response, verbs will need to be expressed according to the correct aspect.
+
+					[Aspect - Wikipedia](https://en.wikipedia.org/wiki/Grammatical_aspect)
+				',
+			),
 			self::DEDUCTION => array(
 				'name' => 'Deduction',
 				'type' => self::FEATURETYPE_BOOL,
@@ -1300,6 +1451,17 @@ class Features
 					User: can a pyramid be supported by a block?
 					SHRDLU: YES.<br>
 					The deductive system finds an actual example, so it knows this is possible. (Winograd)
+				',
+			),
+			self::PROOF_BY_CUSTOM_PROCEDURE => array(
+				'name' => 'Proof by custom procedure',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_INFERENCE),
+				'desc' => '
+					A custom procedure implemented in code decides whether a statement is true or false.
+
+					## Example from ThoughtTreasure
+					near(X, Y) is determined by invoking a space routine.
 				',
 			),
 			self::INSTANTIATED_GOALS => array(
