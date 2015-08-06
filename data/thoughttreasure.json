@@ -10,12 +10,14 @@
     "PROG_LANGS": [
         "C"
     ],
-    "KB_TYPE": [],
+    "KB_TYPE": [
+        "list-based"
+    ],
     "STATE_HISTORY": null,
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": "https:\/\/github.com\/eriktmueller\/thoughttreasure",
     "NAME_DESC": null,
-    "LONG_DESC": null,
+    "LONG_DESC": "This system integrates a natural language component in a full-blown AI architecture that includes scripts, spatial orientation, planning, understanding, and even emotions. It also has a wide support for various natural language constructs.",
     "ARTICLES": [],
     "BOOKS": [
         "Natural Language Processing with ThoughtTreasure"
@@ -49,10 +51,28 @@
     "DO_PROP_NAME_MAT": true,
     "DO_QUOTED_STRINGS": null,
     "POS_TAGGER": true,
-    "GRAMMAR_TYPE": null,
-    "NAT_LANGS": [],
-    "SENTENCE_TYPES": [],
-    "PHRASE_TYPES": [],
+    "GRAMMAR_TYPE": "Phrase Structure",
+    "NAT_LANGS": [
+        "English",
+        "French"
+    ],
+    "SENTENCE_TYPES": [
+        "question",
+        "declarative"
+    ],
+    "PHRASE_TYPES": [
+        "NP",
+        "VP",
+        "PP",
+        "DP",
+        "ADVP",
+        "ADJP",
+        "RC",
+        "NEG",
+        "CONJ",
+        "ANAPHORA",
+        "AUX"
+    ],
     "ELLIPSIS": null,
     "PARSE_HEADER": "The syntactic component",
     "DO_UNGRAMMATICAL": null,
@@ -85,10 +105,13 @@
     "EVENT_BASED": null,
     "TEMPORAL": null,
     "PROPER_NOUN_CNST": null,
-    "ONTOLOGY_USED": null,
+    "ONTOLOGY_USED": true,
     "STD_ONTOLOGY": [],
-    "DEDUCTION_RULES": null,
-    "PLANS": null,
+    "GRADABLE_ADJECTIVES": true,
+    "DEDUCTION_RULES": true,
+    "PLANS": true,
+    "PROCEDURES_FOR_SHOW_MANIPULATE": true,
+    "GOAL_CREATION_RULES": null,
     "CONVERT_HEADER": null,
     "DO_SYNTACTIC_REWRITE": true,
     "DO_OPTIMIZE_QUERY": null,
@@ -108,7 +131,7 @@
     "PATTERNED_RESPONSES": true,
     "GENERATE_FULL_RESPONSE": true,
     "DO_DIALOG": true,
-    "SYNTACTIC_FEATURES": null,
+    "SYNTACTIC_FEATURES": true,
     "SEMANTIC_DEFINITION": null,
     "SEMANTIC_FORM_PROPERTIES": true,
     "ONLY_IRREGULAR_FORMS": null,
@@ -126,6 +149,7 @@
     "TRACK_PLANS": null,
     "LEARN_NAMES": true,
     "LEARN_WORDS": null,
+    "LEARN_WORDS_BY_DEDUCTION": null,
     "LEARN_FACTS": null,
     "LEARN_THEOREMS": null,
     "REFUSE_TO_ACCEPT": null,

@@ -104,8 +104,10 @@ class Features
 	const PROPER_NOUN_CONSTANTS = 'PROPER_NOUN_CNST';
 	const ONTOLOGY_USED = 'ONTOLOGY_USED';
 	const STANDARD_ONTOLOGY = 'STD_ONTOLOGY';
+	const GRADABLE_ADJECTIVES = 'GRADABLE_ADJECTIVES';
 	const DEDUCTION_RULES = 'DEDUCTION_RULES';
 	const PLANS = 'PLANS';
+	const PROCEDURES_FOR_SHOW_MANIPULATE = 'PROCEDURES_FOR_SHOW_MANIPULATE';
 	const GOAL_CREATION_RULES = 'GOAL_CREATION_RULES';
 
 	const CONVERT_HEADER = 'CONVERT_HEADER';
@@ -268,18 +270,18 @@ class Features
 				'options' => array(
 					'relational' => 'Relational',
 					'tree-based' => 'Tree based',
-					'inference engine' => 'Inference engine',
+					'list-based' => 'List based',
 				),
 				'tags' => array(self::TAG_KNOWLEDGE_BASE),
 				'desc' => '
 					The way data is stored in the knowledge base:
 
 					Relational
-					: A relational database
+					: A relational database with tables
 					Tree based
-					: A hierarchical database
-					Inference engine
-					: A logical database, with inference rules
+					: A hierarchical database with trees
+					List based
+					: Data is stored as a set of (nested) lists. The outermost list contains a predicate.
 				',
 			),
 			self::STATE_HISTORY => array(
@@ -317,7 +319,7 @@ class Features
 				',
 			),
 			self::LONG_DESCRIPTION => array(
-				'name' => 'Long description',
+				'name' => 'This is a gem because',
 				'type' => self::FEATURETYPE_TEXT_SINGLE_LONG,
 				'tags' => array(self::TAG_GENERAL),
 				'desc' => '
@@ -598,6 +600,7 @@ class Features
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'English' => 'English',
+					'French' => 'French',
 				),
 				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '
@@ -926,6 +929,9 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => array(self::TAG_DOMAIN_MODEL),
 				'desc' => '
+					An ontology is an explicit description of the types, attributes, and relations of a domain.
+
+					See [Wikipedia](https://en.wikipedia.org/wiki/Ontology_%28information_science%29)
 				',
 			),
 			self::STANDARD_ONTOLOGY => array(
@@ -933,6 +939,24 @@ class Features
 				'type' => self::FEATURETYPE_TEXT_MULTIPLE,
 				'tags' => array(self::TAG_DOMAIN_MODEL),
 				'desc' => '
+				',
+			),
+			self::GRADABLE_ADJECTIVES => array(
+				'name' => 'Gradable adjectives',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_DOMAIN_MODEL),
+				'desc' => '
+					The ontology uses weights to express the measure of adjectives.
+
+					# From ThoughtTreasure
+					A weight is a value from -1.0 to +1.0. If a weight is not provided, it is assumed to be 0.55.
+
+					## Examples
+					[hot A]: A is hot
+					[hot A 1.0]: A is extremely hot
+					[hot A 0.2]: A is slightly hot
+					[hot A -0.55]: A is cold
+					[hot A -0.7]: A is very cold
 				',
 			),
 			self::DEDUCTION_RULES => array(
@@ -950,6 +974,18 @@ class Features
 				'desc' => '
 					A set of plans needed to reach certain goals.
 					A plan consists of a goal and a set of actions, or lower level plans.
+				',
+			),
+			self::PROCEDURES_FOR_SHOW_MANIPULATE => array(
+				'name' => 'Procedures for representing and manipulation',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_DOMAIN_MODEL),
+				'desc' => '
+					A set of custom procedures to represent the state of the knowledge base other than through language.
+
+					Also, a set of procedures to manipulate data or physical objects.
+
+					These procedures are accessible through natural language interaction.
 				',
 			),
 			self::GOAL_CREATION_RULES => array(
@@ -1318,7 +1354,7 @@ class Features
 					User: Have you picked up superblock since we began?
 					SHRDLU: YES.
 
-					## ThoughtTreasure
+					# ThoughtTreasure
 					If the name text agent encounters an unknown word in a context where it is likely to be a name,
 					such as after a first name, if it has a prefix or suffix  commonly used in names, it learns the new name.
 				',
@@ -1460,7 +1496,7 @@ class Features
 				'desc' => '
 					A custom procedure implemented in code decides whether a statement is true or false.
 
-					## Example from ThoughtTreasure
+					# Example from ThoughtTreasure
 					near(X, Y) is determined by invoking a space routine.
 				',
 			),

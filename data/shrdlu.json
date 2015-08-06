@@ -13,13 +13,13 @@
         "Lisp"
     ],
     "KB_TYPE": [
-        "inference engine"
+        "list-based"
     ],
     "STATE_HISTORY": true,
     "KB_TYPE_DESC": "Planner databases",
     "SOURCE_CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
     "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
-    "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete.",
+    "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete. In fact, it has long served as the major showcase for natural language processing.",
     "ARTICLES": [],
     "BOOKS": [
         "Winograd, T. Understanding Natural Language. Academic Press, 1972."

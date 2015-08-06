@@ -5,8 +5,10 @@ div.filterbar {
 	top: 100px;
 	bottom: 0;
 	left: 0;
-	width: 420px;
-	margin: 20px;
+	width: 430px;
+	margin-top: 5px;
+	padding: 10px;
+	background-color: #ffe4bc;
 	overflow: auto;
 }
 
@@ -63,7 +65,7 @@ div.resultset {
 	right: 0;
 	top: 100px;
 	bottom: 0;
-	margin: 20px 20px 20px 0;
+	margin-top: 5px;
 	overflow: auto;
 	padding: 10px;
 }
@@ -185,10 +187,9 @@ div.help-popup header {
 }
 
 div.help-popup h3 {
-	font-family: Oswald, sans-serif;
 	font-weight: bold;
 	font-size: 14px;
-	margin: 0;
+	margin: 10px 0 0 0;
 }
 
 div.help-popup dl {

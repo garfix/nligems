@@ -163,7 +163,7 @@ class HelpButton extends HtmlElement
 
 		$html = $microformat;
 		$html = preg_replace_callback('/##[\s]*(?<header>[^\n]+)\n(?<quotes>([^:]+:[^\n$]+)*)/', $quote, $html);
-		$html = preg_replace_callback('/#[\s]*(?<header>[^\n]+)/', $header, $html);
+		$html = preg_replace_callback('/^[\s]*#[\s]*(?<header>[^\n]+)/m', $header, $html);
 		$html = preg_replace_callback('/\n\s*(?<defs>([^\n:]+\n\s*:[^\n]+\n\s*)+)/', $definitions, $html);
 		$html = preg_replace_callback('/\n\s*(?<items>(\* [^\n]+\n\s*)+)/', $items, $html);
 		$html = preg_replace_callback('/\[(?<text>[^\]]+)\]\((?<link>[^\)]+)\)/', $links, $html);
