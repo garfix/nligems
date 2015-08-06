@@ -94,6 +94,7 @@ class Features
 	const ANAPHORA_RESOLUTION = 'DO_ANAPHORA_RESOL';
 	const PLAUSIBILITY_RESOLUTION = 'DO_PLAUSIB_JUDGE';
 	const INTERPRET_SPEECH_ACT = 'INTERPRET_SPEECH_ACT';
+	const COMMON_SENSE_TYPES = 'COMMON_SENSE_TYPES';
 	const UNIFORMIZATION_REWRITES = 'DO_UNIFORM_REWRITES';
 	const COOPERATIVE_RESPONSES = 'COOPERATIVE_RESPONSES'; // Androutsopoulos, p. 24
 
@@ -180,6 +181,7 @@ class Features
 	const TAG_TOKENIZATION = 'tokenization';
 	const TAG_PARSING = 'parsing';
 	const TAG_SEMANTIC_ANALYSIS = 'semantic analysis';
+	const TAG_COMMON_SENSE = 'common sense';
 	const TAG_CONVERSION_TO_KB = 'conversion to kb';
 	const TAG_EXECUTION = 'execution';
 	const TAG_ANSWER = 'answer';
@@ -837,14 +839,15 @@ class Features
 			self::PLAUSIBILITY_RESOLUTION => array(
 				'name' => 'Plausibility resolution',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
+				'tags' => array(self::TAG_COMMON_SENSE),
 				'desc' => '
+					Determine if the semantic interpretation thus far is plausible with respect to the context.
 				',
 			),
 			self::INTERPRET_SPEECH_ACT => array(
 				'name' => 'Interpret speech act',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
+				'tags' => array(self::TAG_COMMON_SENSE),
 				'desc' => '
 					In general:<br>
 					A sentence that starts with a question word is a question.
@@ -852,6 +855,32 @@ class Features
 
 					But this system is also capable of correctly interpreting some of the sentences like this:
 					Can you tell me where I can find Chinese food? (not a yes/no question)
+				',
+			),
+			self::COMMON_SENSE_TYPES => array(
+				'name' => 'Common sense types',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					'q&a' => 'Question answering',
+					'emotions' => 'Emotions',
+					'personal relations' => 'Personal relations',
+					'space' => 'Space',
+					'time' => 'Time',
+				),
+				'tags' => array(self::TAG_COMMON_SENSE),
+				'desc' => '
+					This system uses knowledge that people find "common sense".
+
+					Question Answering
+					: Rules and procedures designed to answer different types of questions in a cooperative manner.
+					Emotions
+					: "A set of emotions is maintained for each actor in the context, and the weights of those emotions are decayed over time." (ThoughtTreasure)
+					Personal relations
+					: Inference rules that update the attitudes between two persons (friendship, animosity)
+					Space, Time
+					: Update the deictic center of the discourse model
+
+					ThoughtTreasure has many more of these common sense collections, aptly called "understanding agents": for sleep, weather, showering, appointments, trade, occupation, analogy.
 				',
 			),
 			self::SEMANTIC_FORM_TYPE => array(

@@ -37,6 +37,7 @@ class TagTree
 					array('name' => 'Tokenization',	'tag' => Features::TAG_TOKENIZATION),
 					array('name' => 'Parsing', 'tag' => Features::TAG_PARSING),
 					array('name' => 'Semantic Analysis', 'tag' => Features::TAG_SEMANTIC_ANALYSIS),
+					array('name' => 'Common sense reasoning', 'tag' => Features::TAG_COMMON_SENSE),
 					array('name' => 'Inference', 'tag' => Features::TAG_INFERENCE),
 					array('name' => 'Conversion to knowledge base form', 'tag' => Features::TAG_CONVERSION_TO_KB),
 					array('name' => 'Knowledge base execution', 'tag' => Features::TAG_EXECUTION),

@@ -98,6 +98,13 @@
     "DO_ANAPHORA_RESOL": true,
     "DO_PLAUSIB_JUDGE": null,
     "INTERPRET_SPEECH_ACT": null,
+    "COMMON_SENSE_TYPES": [
+        "q&a",
+        "emotions",
+        "personal relations",
+        "space",
+        "time"
+    ],
     "SEMANTIC_FORM_TYPE": [
         "list-based"
     ],
