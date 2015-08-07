@@ -94,7 +94,7 @@ class Features
 	const ANAPHORA_RESOLUTION = 'DO_ANAPHORA_RESOL';
 	const PLAUSIBILITY_RESOLUTION = 'DO_PLAUSIB_JUDGE';
 	const INTERPRET_SPEECH_ACT = 'INTERPRET_SPEECH_ACT';
-	const COMMON_SENSE_TYPES = 'COMMON_SENSE_TYPES';
+	const COMMONSENSE_TYPES = 'COMMON_SENSE_TYPES';
 	const UNIFORMIZATION_REWRITES = 'DO_UNIFORM_REWRITES';
 	const COOPERATIVE_RESPONSES = 'COOPERATIVE_RESPONSES'; // Androutsopoulos, p. 24
 
@@ -181,7 +181,7 @@ class Features
 	const TAG_TOKENIZATION = 'tokenization';
 	const TAG_PARSING = 'parsing';
 	const TAG_SEMANTIC_ANALYSIS = 'semantic analysis';
-	const TAG_COMMON_SENSE = 'common sense';
+	const TAG_COMMONSENSE = 'commonsense';
 	const TAG_CONVERSION_TO_KB = 'conversion to kb';
 	const TAG_EXECUTION = 'execution';
 	const TAG_ANSWER = 'answer';
@@ -805,12 +805,22 @@ class Features
 					Unification
 					: .
 					Production rules
-					: .
+					: A pattern -> action rule that maps a syntax tree sub-structure to its semantic form.
 					Lambda calculus
 					: /.
 					Custom procedures
-					: Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them. Very flexible but in general not very extendible
+					: Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them. Very flexible but can only be extended by a programmer with detailed knowledge of the system.
 
+					# An example production rule from LUNAR:
+					~~~
+					[ S:CONTAIN
+						(S.NP (MEM I SAMPLE))
+						(S.V (OR (EQU 1 HAVE)
+							     (EQU 1 CONTAIN))
+							 (S.OBJ (MEM 1 (ELEMENT OXIDE ISOTOPE)))
+						->(QUOTE (CONTAIN (# 1 1) ( # 3 1))) ]
+					~~~
+					S:CONTAIN is the name of the rule. The action follows the -> mark.
 				',
 			),
 			self::SEMANTIC_CONFLICT_DETECTION => array(
@@ -839,7 +849,7 @@ class Features
 			self::PLAUSIBILITY_RESOLUTION => array(
 				'name' => 'Plausibility resolution',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => array(self::TAG_COMMON_SENSE),
+				'tags' => array(self::TAG_COMMONSENSE),
 				'desc' => '
 					Determine if the semantic interpretation thus far is plausible with respect to the context.
 				',
@@ -847,7 +857,7 @@ class Features
 			self::INTERPRET_SPEECH_ACT => array(
 				'name' => 'Interpret speech act',
 				'type' => self::FEATURETYPE_BOOL,
-				'tags' => array(self::TAG_COMMON_SENSE),
+				'tags' => array(self::TAG_COMMONSENSE),
 				'desc' => '
 					In general:<br>
 					A sentence that starts with a question word is a question.
@@ -857,8 +867,8 @@ class Features
 					Can you tell me where I can find Chinese food? (not a yes/no question)
 				',
 			),
-			self::COMMON_SENSE_TYPES => array(
-				'name' => 'Common sense types',
+			self::COMMONSENSE_TYPES => array(
+				'name' => 'Commonsense types',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
 				'options' => array(
 					'q&a' => 'Question answering',
@@ -867,9 +877,9 @@ class Features
 					'space' => 'Space',
 					'time' => 'Time',
 				),
-				'tags' => array(self::TAG_COMMON_SENSE),
+				'tags' => array(self::TAG_COMMONSENSE),
 				'desc' => '
-					This system uses knowledge that people find "common sense".
+					This system uses knowledge that people find "commonsense".
 
 					Question Answering
 					: Rules and procedures designed to answer different types of questions in a cooperative manner.
@@ -880,7 +890,7 @@ class Features
 					Space, Time
 					: Update the deictic center of the discourse model
 
-					ThoughtTreasure has many more of these common sense collections, aptly called "understanding agents": for sleep, weather, showering, appointments, trade, occupation, analogy.
+					ThoughtTreasure has many more of these commonsense collections, aptly called "understanding agents": for sleep, weather, showering, appointments, trade, occupation, analogy.
 				',
 			),
 			self::SEMANTIC_FORM_TYPE => array(

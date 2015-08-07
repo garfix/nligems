@@ -17,7 +17,7 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": "https:\/\/github.com\/eriktmueller\/thoughttreasure",
     "NAME_DESC": null,
-    "LONG_DESC": "This system integrates a natural language component in a full-blown AI architecture that includes scripts, spatial orientation, planning, understanding, and even emotions. It also has a wide support for various natural language constructs.",
+    "LONG_DESC": "This system integrates a natural language component in a full-blown AI architecture that includes scripts, spatial orientation, planning, understanding, and even emotions. It also has a wide support for various natural language constructs. It makes commonsense reasoning explicit in the form of understanding agents.",
     "ARTICLES": [],
     "BOOKS": [
         "Natural Language Processing with ThoughtTreasure"
@@ -118,7 +118,7 @@
     "DEDUCTION_RULES": true,
     "PLANS": true,
     "PROCEDURES_FOR_SHOW_MANIPULATE": true,
-    "GOAL_CREATION_RULES": null,
+    "GOAL_CREATION_RULES": true,
     "CONVERT_HEADER": null,
     "DO_SYNTACTIC_REWRITE": true,
     "DO_OPTIMIZE_QUERY": null,

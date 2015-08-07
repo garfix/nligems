@@ -104,6 +104,10 @@
     "DO_ANAPHORA_RESOL": true,
     "DO_PLAUSIB_JUDGE": true,
     "INTERPRET_SPEECH_ACT": true,
+    "COMMON_SENSE_TYPES": [
+        "q&a",
+        "space"
+    ],
     "SEMANTIC_FORM_TYPE": [
         "goal-based"
     ],
@@ -113,8 +117,10 @@
     "PROPER_NOUN_CNST": null,
     "ONTOLOGY_USED": true,
     "STD_ONTOLOGY": [],
+    "GRADABLE_ADJECTIVES": null,
     "DEDUCTION_RULES": true,
     "PLANS": true,
+    "PROCEDURES_FOR_SHOW_MANIPULATE": null,
     "GOAL_CREATION_RULES": true,
     "CONVERT_HEADER": null,
     "DO_SYNTACTIC_REWRITE": false,
