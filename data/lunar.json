@@ -45,7 +45,7 @@
         "how many"
     ],
     "TOKENIZATION_HEADER": null,
-    "DO_DICT_LOOKUP": null,
+    "DO_DICT_LOOKUP": true,
     "DO_MORPH_ANA": true,
     "DO_SPELL_CORR": null,
     "DO_OPEN_ENDED": null,

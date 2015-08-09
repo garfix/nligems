@@ -580,6 +580,12 @@ class Features
 					Recognizes quoted sentences as part of a sentence.
 
 					For example: Who said "Gravitation is not responsible for people falling in love"?
+
+					# Examples from ThoughtTreasure
+					* le film "Horizons lointains"
+					* une chanson, "I will always love you"
+					* the "Dangerous" album
+					* What does (the word) "stupid" mean?
 				',
 			),
 			self::POS_TAGGER => array(
@@ -741,7 +747,7 @@ class Features
 				'desc' => '
 					Compose the meaning of morphologically compound words by combining the meaning of the morphemes.
 
-					Example from SHRDLU:<br>
+					# Example from SHRDLU:
 					Words like \'littlest\' are not in the dictionary but are interpreted from the root forms
 					like \'little\'. (Winograd)
 				',
@@ -769,7 +775,7 @@ class Features
 
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
 
-					An example from SHRDLU:<br>
+					# An example from SHRDLU:
 					Put the blue pyramid on the block in the box.
 				',
 			),
@@ -891,6 +897,13 @@ class Features
 					: Update the deictic center of the discourse model
 
 					ThoughtTreasure has many more of these commonsense collections, aptly called "understanding agents": for sleep, weather, showering, appointments, trade, occupation, analogy.
+					The user can provide an ASCII representation (called a grid) of the contents of a space (i.e. a room) to inform the system of the location of things.
+
+					## Example of space based commonsense from ThoughtTreasure:
+					User: Jeanne Püchle was where?
+					ThoughtTreasure: She was in the corner grocery.
+					User: She was near what electronic devices?
+					ThoughtTreasure: She was near the cash register.
 				',
 			),
 			self::SEMANTIC_FORM_TYPE => array(
@@ -1412,7 +1425,7 @@ class Features
 				',
 			),
 			self::LEARN_WORDS_BY_DEDUCTION => array(
-				'name' => 'Learn new names by deduction',
+				'name' => 'Learn new words by deduction',
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => array(self::TAG_LEARNING),
 				'desc' => '
@@ -1434,6 +1447,10 @@ class Features
 					User: The blue block is mine.
 					User: Do I own anything in the box?
 					SHRDLU: YES. TWO THINGS: THE BLUE BLOCK AND THE BLUE PYRAMID.
+
+					## Example from ThoughtTreasure:
+					User: In 1994, Kimba became chair of Sony.
+					ThoughtTreasure: (learns @1994:na|[chair-of Sony Kimba])
 				',
 			),
 			self::LEARN_RULES => array(
