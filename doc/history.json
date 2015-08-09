@@ -1,6 +1,6 @@
 [
     {
-        "id": "synstruct",
+        "id": "syntacticStructures",
         "year": "1957",
         "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he describes Phrase Structure Grammars and introduces Transformational Grammar. This is the start of modern linguistics.",
         "links": {
@@ -8,7 +8,7 @@
         }
     },
     {
-        "id": "casegrammar",
+        "id": "caseGrammar",
         "year": "1968",
         "desc": "Case Grammar was developed by Charles J. Fillmore. It emphasises semantic roles of a sentence, Agent, Object, Benefactor, Location or Instrument.",
         "links": {
@@ -34,8 +34,18 @@
         "desc": "Prolog was created around by Alain Colmerauer and Philippe Roussel."
     },
     {
-        "id": "mont1",
+        "id": "montagueGrammar",
         "year": "1974",
         "desc": "Montague publishes ..."
+    },
+    {
+        "id": "cyc",
+        "year": "1984",
+        "desc": "Cyc commonsense knowledge base started by Douglas Lenat"
+    },
+    {
+        "id": "societyOfMind",
+        "year": "1986",
+        "desc": "The book \"The Society of Mind\", written by Marvin Minsky, was published."
     }
 ]

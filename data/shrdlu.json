@@ -37,7 +37,7 @@
     "META_KB": true,
     "NEW_WORDS": true,
     "IMPERATIVE": true,
-    "IDIONS": true,
+    "IDIOMS": true,
     "QUESTION_TYPES": [
         "yes\/no",
         "wh",

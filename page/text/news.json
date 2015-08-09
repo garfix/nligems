@@ -1,5 +1,9 @@
 [
   {
+    "date": "2015-08-08",
+    "story": "I contacted Erik T. Mueller and asked him about the meaning and the origin of the name 'ThoughtTreasure'. It was quite a story and I have placed it on the ThoughtTreasure page.\n\nI also asked him about the main influences of the system. He said they were: 1957 Syntactic Structures by Chomsky; 1984 Cyc commonsense knowledge base started by Douglas Lenat; 1986 The Society of Mind by Marvin Minsky. It is quite interesting because it emphasises that ThoughtTreasure aimed to be a general purpose AI system rather than just a NLI system.\n\nMr. Mueller also gave me some feedback on the ThoughtTreasure features I listed."
+  },
+  {
     "date": "2015-05-09",
     "story": "One thing I learned from ThoughtTreasure is the importance of 'phrase verbs'. The verb 'receive' means something completely different than 'receive from'. Compare: 'The minister received the ambassador.' with 'The minister received a compliment from his secretary.' The first verb means something like 'to meet', the second something like 'to get'. The participles and the prepositions (here: 'from') are part of the verb, and determine its meaning. It is a good idea to store these as separate verbs in the lexicon."
   },

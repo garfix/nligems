@@ -38,7 +38,7 @@ class Features
 	const META_GOAL_MODEL = 'META_GOAL_MODEL';
 	const META_KB = 'META_KB';
 	const IMPERATIVE = 'IMPERATIVE';
-	const IDIOMS = 'IDIONS';
+	const IDIOMS = 'IDIOMS';
 	const QUESTION_TYPES = 'QUESTION_TYPES';
 
 	const NP = 'NP';
