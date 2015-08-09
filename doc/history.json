@@ -1,14 +1,15 @@
 [
     {
-        "id": "syntacticStructures",
+        "id": "Syntactic Structures",
         "year": "1957",
         "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he describes Phrase Structure Grammars and introduces Transformational Grammar. This is the start of modern linguistics.",
         "links": {
             "Wikipedia": "http://en.wikipedia.org/wiki/Syntactic_Structures"
-        }
+        },
+        "dependencyOf": ["thoughttreasure"]
     },
     {
-        "id": "caseGrammar",
+        "id": "Case Grammar",
         "year": "1968",
         "desc": "Case Grammar was developed by Charles J. Fillmore. It emphasises semantic roles of a sentence, Agent, Object, Benefactor, Location or Instrument.",
         "links": {
@@ -16,36 +17,46 @@
         }
     },
     {
-        "id": "relational",
+        "id": "Relational Databases",
         "year": "1970",
         "desc": "E.F. Codd (IBM) publishes \"A Relational Model of Data for Large Shared Data Banks\". The basis of modern relational databases."
     },
     {
-        "id": "planner",
+        "id": "Planner",
         "year": "1969",
         "desc": "Planner was created by Carl Hewitt (MIT), a theorem proving, procedural, programming language. It was used by SHRDLU.",
         "links": {
             "Wikipedia": "http://en.wikipedia.org/wiki/Planner_programming_language"
-        }
+        },
+        "dependencyOf": ["shrdlu"]
     },
     {
-        "id": "prolog",
+        "id": "Prolog",
         "year": "1972",
         "desc": "Prolog was created around by Alain Colmerauer and Philippe Roussel."
     },
     {
-        "id": "montagueGrammar",
+        "id": "Montague Grammar",
         "year": "1974",
         "desc": "Montague publishes ..."
     },
     {
-        "id": "cyc",
+        "id": "CYC",
         "year": "1984",
-        "desc": "Cyc commonsense knowledge base started by Douglas Lenat"
+        "desc": "Cyc commonsense knowledge base started by Douglas Lenat",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Cyc",
+            "Cyc home": "http://www.cyc.com/"
+        },
+        "dependencyOf": ["thoughttreasure"]
     },
     {
-        "id": "societyOfMind",
+        "id": "Society Of Mind",
         "year": "1986",
-        "desc": "The book \"The Society of Mind\", written by Marvin Minsky, was published."
+        "desc": "The book \"The Society of Mind\", written by Marvin Minsky, was published.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Society_of_Mind"
+        },
+        "dependencyOf": ["thoughttreasure"]
     }
 ]

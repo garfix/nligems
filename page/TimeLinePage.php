@@ -34,8 +34,25 @@ class TimeLinePage extends FrontEndPage
     {
         $NliSystemApi = new NliSystemApi();
 
+        $events = json_decode(file_get_contents(__DIR__ . '/../doc/history.json'), true);
+
         foreach ($NliSystemApi->getAllSystems() as $System) {
-            $TimeTable->addEntry($System->get(Features::FIRST_YEAR), 'Start of ' . $System->getName());
+
+            $content = 'Start of ' . $System->getName() . '.';
+
+            $dependencies = array();
+            foreach ($events as $dependencyEvent) {
+                if (isset($dependencyEvent['dependencyOf']) && in_array($System->getId(), $dependencyEvent['dependencyOf'])) {
+                    $dependencies []= "<i>" . $dependencyEvent['id'] . "</i> (" . $dependencyEvent['year'] . ')';
+                }
+            }
+
+            if ($dependencies) {
+                $content .= " Influenced by " . implode(', ', $dependencies);
+            }
+
+            $TimeTable->addEntry($System->get(Features::FIRST_YEAR), $content);
+
         }
     }
 
