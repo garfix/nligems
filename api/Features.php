@@ -38,6 +38,7 @@ class Features
 	const META_GOAL_MODEL = 'META_GOAL_MODEL';
 	const META_KB = 'META_KB';
 	const IMPERATIVE = 'IMPERATIVE';
+	const MULTIPLE_SENTENCES = 'MULTIPLE_SENTENCES';
 	const IDIOMS = 'IDIOMS';
 	const QUESTION_TYPES = 'QUESTION_TYPES';
 
@@ -466,6 +467,18 @@ class Features
 					User: Pick up a big red block.
 				',
 			),
+			self::MULTIPLE_SENTENCES => array(
+				'name' => 'Multiple sentences',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_DIALOG),
+				'desc' => '
+					The user input may consist of several sentences.
+
+					## Example from RENDEZVOUS:
+					User: I want to find certain projects. Pipes were sent to them in feb. 1975.
+					RENDEZVOUS: This is what the system understands your query to be: print the name of every project to which a shipment of a part named pipe was sent during february 1975.
+				',
+			),
 			self::IDIOMS => array(
 				'name' => 'Handle idioms',
 				'type' => self::FEATURETYPE_BOOL,
@@ -860,19 +873,6 @@ class Features
 					Determine if the semantic interpretation thus far is plausible with respect to the context.
 				',
 			),
-			self::INTERPRET_SPEECH_ACT => array(
-				'name' => 'Interpret speech act',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => array(self::TAG_COMMONSENSE),
-				'desc' => '
-					In general:<br>
-					A sentence that starts with a question word is a question.
-					A sentence without a subject is an imperative.
-
-					But this system is also capable of correctly interpreting some of the sentences like this:
-					Can you tell me where I can find Chinese food? (not a yes/no question)
-				',
-			),
 			self::COMMONSENSE_TYPES => array(
 				'name' => 'Commonsense types',
 				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
@@ -904,6 +904,43 @@ class Features
 					ThoughtTreasure: She was in the corner grocery.
 					User: She was near what electronic devices?
 					ThoughtTreasure: She was near the cash register.
+				',
+			),
+			self::DIALOG => array(
+				'name' => 'Clarification dialog to improve input sentence',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_COMMONSENSE),
+				'desc' => '
+					The systems replies with a question in order to establish what the user means, exactly.
+
+					## Example from SHRDLU:
+					User: How many things are on top of green cubes?
+					SHRDLU: I\'m not sure what you mean by "on top of" in the phrase "on top of green cubes".<br>Do you mean:<br>1 - directly on the surface<br>2 - anywhere on top of?
+					User: 2
+					SHRDLU: Three of them
+
+					## Example from ThoughtTreasure:
+					User: I want to buy a Fiat Spider.
+					ThoughtTreasure: A 124, a 2000, or a 1800?
+					User: A 124.
+					ThoughtTreasure: A 1978 Fiat 124 was for sale for 3000 dollars by Todd Spire at "toddspi@quapaw.astate.edu".
+				',
+			),
+			self::INTERPRET_SPEECH_ACT => array(
+				'name' => 'Interpret speech act',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_COMMONSENSE),
+				'desc' => '
+					In general:<br>
+					A sentence that starts with a question word is a question.
+					A sentence without a subject is an imperative.
+
+					But this system is also capable of correctly interpreting some of the sentences like this:
+					Can you tell me where I can find Chinese food? (not a yes/no question)
+
+					## Example from RENDEZVOUS:
+					User: I want to find certain projects. Pipes were sent to them in feb. 1975.
+					RENDEZVOUS: This is what the system understands your query to be: print the name of every project to which a shipment of a part named pipe was sent during february 1975.
 				',
 			),
 			self::SEMANTIC_FORM_TYPE => array(
@@ -1163,6 +1200,13 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => array(self::TAG_ANSWER),
 				'desc' => '
+					The system is able to turn the query as it will be sent to the knowledge base in a human readable form.
+
+					It is used to check if the understanding of the system matches the intent of the user.
+
+					## Example from RENDEZVOUS:
+					User: I want to find certain projects. Pipes were sent to them in feb. 1975.
+					RENDEZVOUS: This is what the system understands your query to be: print the name of every project to which a shipment of a part named pipe was sent during february 1975.
 				',
 			),
 			self::CANNED_RESPONSES => array(
@@ -1201,26 +1245,6 @@ class Features
 					## Example from ThoughtTreasure:
 					User: List my appointments.
 					ThoughtTreasure: You have an appointment with Ruth Northville at the Four Seasons in one hour. You have an appointment with Amy Newton on Thursday March 21, 1996 at eight pm.
-				',
-			),
-			self::DIALOG => array(
-				'name' => 'Clarification dialog to improve input sentence',
-				'type' => self::FEATURETYPE_BOOL,
-				'tags' => array(self::TAG_ANSWER),
-				'desc' => '
-					The systems replies with a question in order to establish what the user means, exactly.
-
-					## Example from SHRDLU:
-					User: How many things are on top of green cubes?
-					SHRDLU: I\'m not sure what you mean by "on top of" in the phrase "on top of green cubes".<br>Do you mean:<br>1 - directly on the surface<br>2 - anywhere on top of?
-					User: 2
-					SHRDLU: Three of them
-
-					## Example from ThoughtTreasure:
-					User: I want to buy a Fiat Spider.
-					ThoughtTreasure: A 124, a 2000, or a 1800?
-					User: A 124.
-					ThoughtTreasure: A 1978 Fiat 124 was for sale for 3000 dollars by Todd Spire at "toddspi@quapaw.astate.edu".
 				',
 			),
 			self::SYNTACTIC_FEATURES => array(

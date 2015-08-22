@@ -48,7 +48,7 @@ class TimeLinePage extends FrontEndPage
             }
 
             if ($dependencies) {
-                $content .= " Influenced by " . implode(', ', $dependencies);
+                $content .= " Main influences: " . implode(', ', $dependencies);
             }
 
             $TimeTable->addEntry($System->get(Features::FIRST_YEAR), $content);

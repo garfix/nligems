@@ -13,40 +13,37 @@
         "IBM"
     ],
     "INFLUENCED_BY": [],
-    "NAT_LANGS": [
-        "English"
-    ],
     "PROG_LANGS": [
         "APL"
     ],
-    "SOURCE_CODE": null,
     "KB_TYPE": [
         "relational"
     ],
+    "STATE_HISTORY": null,
     "KB_TYPE_DESC": null,
-    "SENTENCE_TYPES": [
-        "question"
-    ],
+    "SOURCE_CODE": null,
+    "NAME_DESC": "To rendezvous (i.e. \"meet\") with the casual user",
+    "LONG_DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\r\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to add and change the restrictions of the question later. The system had a very extended clarification dialog aimed to make sure that the system understood exactly what the user meant.\r\n\r\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\r\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.\r\n",
     "ARTICLES": [
         "Seven Steps to Rendezvous with the Casual User",
         "RENDEZVOUS Version 1: An Experimental English Language Query Formulation System for Casual Users of Relational Data Bases"
     ],
     "BOOKS": [],
-    "NAME_DESC": "To rendezvous (i.e. \"meet\") with the casual user",
-    "LONG_DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make changes to the query later.\n\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.",
     "ANALYSIS": [
         "Pattern-matching"
     ],
     "SEMANTIC_GRAMMAR": null,
-    "DO_DIALOG": true,
-    "NEW_WORDS": null,
-    "MULTI_DB": false,
-    "DO_UNGRAMMATICAL": true,
+    "AMBIGUITY": [],
+    "INTEGRATED_KNOWLEDGE_BASE": null,
     "META_SELF": null,
+    "META_GOAL_MODEL": null,
     "META_KB": null,
-    "PHRASE_TYPES": [
-        "NP", "VP", "PP", "ADJP", "NEG"
-    ],
+    "NEW_WORDS": null,
+    "IMPERATIVE": null,
+    "MULTIPLE_SENTENCES": true,
+    "IDIOMS": null,
+    "QUESTION_TYPES": [],
+    "TOKENIZATION_HEADER": null,
     "DO_DICT_LOOKUP": true,
     "DO_MORPH_ANA": true,
     "DO_SPELL_CORR": true,
@@ -54,24 +51,47 @@
     "DO_PROP_NAME_KB": true,
     "DO_PROP_NAME_MAT": false,
     "DO_QUOTED_STRINGS": false,
-    "PARSE_HEADER": null,
+    "POS_TAGGER": null,
     "GRAMMAR_TYPE": null,
+    "NAT_LANGS": [
+        "English"
+    ],
+    "SENTENCE_TYPES": [
+        "question"
+    ],
+    "PHRASE_TYPES": [
+        "NP",
+        "VP",
+        "PP",
+        "ADJP",
+        "NEG"
+    ],
+    "ELLIPSIS": null,
+    "PARSE_HEADER": null,
+    "DO_UNGRAMMATICAL": true,
     "PARSER_TYPE": null,
     "SYNTACTIC_FORM_TYPE": [],
+    "APPLY_SELECTIONAL_RESTRICTIONS": null,
     "INTERPRET_HEADER": null,
+    "SEMANTIC_ANALYSIS_PARSING": null,
+    "DO_SEMANTIC_ATTACH": null,
+    "DO_SEMANTIC_COMP": true,
+    "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": null,
+    "USE_LEXICON": null,
     "DO_MODIFIER_ATTACH": null,
     "DO_CONJUNCTION_DISJUNCTION": null,
     "DO_NOMINAL_COMPOUNDS": true,
-    "DO_SEMANTIC_ATTACH": null,
-    "DO_SEMANTIC_COMP": true,
     "SEMANTIC_COMP_TYPE": [
         "custom"
     ],
     "DO_SEMANTIC_CONFLICT": true,
     "DO_QUANTIFIER_SCOPE": null,
-    "DO_ANAPHORA_RESOL": false,
+    "DO_ANAPHORA_RESOL": true,
     "DO_PLAUSIB_JUDGE": false,
-    "COOPERATIVE_RESPONSES": null,
+    "INTERPRET_SPEECH_ACT": true,
+    "COMMON_SENSE_TYPES": [
+        "q&a"
+    ],
     "SEMANTIC_FORM_TYPE": [
         "relational"
     ],
@@ -81,6 +101,11 @@
     "PROPER_NOUN_CNST": false,
     "ONTOLOGY_USED": false,
     "STD_ONTOLOGY": [],
+    "GRADABLE_ADJECTIVES": null,
+    "DEDUCTION_RULES": null,
+    "PLANS": null,
+    "PROCEDURES_FOR_SHOW_MANIPULATE": null,
+    "GOAL_CREATION_RULES": null,
     "CONVERT_HEADER": null,
     "DO_SYNTACTIC_REWRITE": null,
     "DO_OPTIMIZE_QUERY": null,
@@ -88,9 +113,45 @@
     "KB_LANGS": [
         "DEDUCE"
     ],
-    "KB_AGGREGATIONS": "EXIST, COUNT",
+    "KB_AGGREGATIONS": true,
     "EXECUTE_HEADER": null,
+    "MULTI_DB": false,
     "DO_LOGICAL_REASON": false,
+    "GOAL_CREATION": null,
+    "PLAN_EXECUTION": null,
+    "PROCESS_FEEDBACK": null,
     "GENERATE_HEADER": null,
-    "PARAPHRASE_QUERY": true
+    "COOPERATIVE_RESPONSES": true,
+    "PARAPHRASE_QUERY": true,
+    "CANNED_RESPONSES": null,
+    "PATTERNED_RESPONSES": null,
+    "GENERATE_FULL_RESPONSE": null,
+    "DO_DIALOG": true,
+    "SYNTACTIC_FEATURES": null,
+    "SEMANTIC_DEFINITION": null,
+    "SEMANTIC_FORM_PROPERTIES": null,
+    "ONLY_IRREGULAR_FORMS": null,
+    "GRAMMATICAL_RELATIONS": null,
+    "SEMANTIC_SELECTIONAL_RESTRICTIONS": null,
+    "CATEGORY_SELECTIONAL_RESTRICTIONS": null,
+    "LEXICON_IDIOMS": null,
+    "PHRASAL_VERBS": null,
+    "LEXICON_ROLES": null,
+    "DEICTIC_CENTER": [],
+    "TRACK_PLANS": null,
+    "LEARN_NAMES": null,
+    "LEARN_WORDS": null,
+    "LEARN_WORDS_BY_DEDUCTION": null,
+    "LEARN_FACTS": null,
+    "LEARN_THEOREMS": null,
+    "REFUSE_TO_ACCEPT": null,
+    "USE_TRANSFORMATION_RULES": null,
+    "GENERATE_PRONOUNS": null,
+    "GENERATE_ARTICLES": null,
+    "GENERATE_ASPECT": null,
+    "DEDUCTION": null,
+    "PROOF_BY_EXAMPLE": null,
+    "PROOF_BY_CUSTOM_PROCEDURE": null,
+    "INSTANTIATED_GOALS": null,
+    "GOAL_HISTORY": null
 }
