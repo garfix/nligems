@@ -76,6 +76,7 @@ class Features
 	const GRAMMAR_TYPE = 'GRAMMAR_TYPE';
 	const PARSER_TYPE = 'PARSER_TYPE';
 	const ACCEPT_UNGRAMMATICAL_SENTENCES = 'DO_UNGRAMMATICAL';
+	const DROP_NON_ESSENTIAL_WORDS = 'DROP_NON_ESSENTIAL_WORDS';
 
 	const SYNTACTIC_FORM_TYPE = 'SYNTACTIC_FORM_TYPE';
 	const APPLY_SELECTIONAL_RESTRICTIONS = 'APPLY_SELECTIONAL_RESTRICTIONS';
@@ -690,6 +691,23 @@ class Features
 					The system will make an effort to understand them and / or to make the user change them.
 				',
 			),
+			self::DROP_NON_ESSENTIAL_WORDS => array(
+				'name' => 'Drop non-essential words',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_PARSING),
+				'desc' => '
+					Words and phrases that are not important for the result of the query are ignored.
+
+					This may be part of tokenization, parsing, or semantic analysis.
+
+					Words that are not in the lexicon may not just simply be dropped. Words may be dropped only
+					if the user agrees or if they are part of a set of known superfluous words.
+
+					## Example from RENDEZVOUS
+					User: What the hell does Jones supply?
+					RENDEZVOUS: drops \'hell\' after checking with the user; the sentence \'What the does Jones supply?\' is processed further.
+				',
+			),
 			self::PARSER_TYPE => array(
 				'name' => 'Parser type',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
@@ -805,6 +823,11 @@ class Features
 				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
 				'desc' => '
 					An attempt is made to derive the meaning of compounds that are not in de lexicon.
+
+					## Example from RENDEZVOUS
+					User: How many Whitney shipments have a shipdate 6/10/1975
+					RENDEZVOUS: The word \'Whitney\' is unfamiliar. Is it one of the following? 1. supplier name 2. supplier location 3. supplier rating ...
+					User: 1
 				',
 			),
 			self::SEMANTIC_COMPOSITION_TYPE => array(
@@ -885,7 +908,7 @@ class Features
 				),
 				'tags' => array(self::TAG_COMMONSENSE),
 				'desc' => '
-					This system uses knowledge that people find "commonsense".
+					This system uses knowledge that people find "commonsense", to answer questions.
 
 					Question Answering
 					: Rules and procedures designed to answer different types of questions in a cooperative manner.
@@ -911,7 +934,9 @@ class Features
 				'type' => self::FEATURETYPE_BOOL,
 				'tags' => array(self::TAG_COMMONSENSE),
 				'desc' => '
-					The systems replies with a question in order to establish what the user means, exactly.
+					The systems interacts with the user (by asking extra questions) in order to establish what the user means, exactly.
+
+					This subsystem makes use of domain knowledge.
 
 					## Example from SHRDLU:
 					User: How many things are on top of green cubes?
