@@ -23,7 +23,7 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": null,
     "NAME_DESC": "To rendezvous (i.e. \"meet\") with the casual user",
-    "LONG_DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\r\n\r\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make mistakes and add and change the restrictions of the question later. The system had a very extended clarification dialog aimed to make sure that the system understood exactly what the user meant.\r\n\r\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\r\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.\r\n",
+    "LONG_DESC": "Created by the inventor of the relational database, E.F. Codd, this system was designed to meet the quirks of the casual user as much as possible.\r\n\r\nThe user was allowed to enter one or more sentences, or sentence-parts. He or she was allowed to make mistakes and add and change the restrictions of the question later. The system had a very extended clarification dialog aimed to make sure that the system understood exactly what the user meant. For the same reason, it had extensive support for paraphrasing the generated knowledge base query so as to be comprehensible to the user.\r\n\r\nIn contrast to other systems, this system does not parse the user's sentence into a parse tree.\r\nIn stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.\r\n",
     "ARTICLES": [
         "Seven Steps to Rendezvous with the Casual User",
         "RENDEZVOUS Version 1: An Experimental English Language Query Formulation System for Casual Users of Relational Data Bases"
@@ -89,7 +89,7 @@
     "DO_CONJUNCTION_DISJUNCTION": null,
     "DO_NOMINAL_COMPOUNDS": true,
     "SEMANTIC_COMP_TYPE": [
-        "custom"
+        "production rules"
     ],
     "DO_SEMANTIC_CONFLICT": true,
     "DO_QUANTIFIER_SCOPE": null,

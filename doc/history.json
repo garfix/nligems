@@ -17,6 +17,15 @@
         }
     },
     {
+        "id": "Augmented Transition Network",
+        "year": "1970",
+        "desc": "W.A. Woods invents the Augmented Transition Network (ATM), a finite state machine extension to parse natural language sentences.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Augmented_transition_network"
+        },
+        "dependencyOf": ["lunar"]
+    },
+    {
         "id": "Relational Databases",
         "year": "1970",
         "desc": "E.F. Codd (IBM) publishes \"A Relational Model of Data for Large Shared Data Banks\". The basis of modern relational databases."
