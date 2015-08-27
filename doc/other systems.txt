@@ -1,0 +1,122 @@
+https://en.wikipedia.org/wiki/Natural_language_user_interface
+
+REL
+
+* REL: A Rapidly Extensible Language System (1969)
+* The REL System Prototype (1975)
+
+CONVERSE
+
+* The CONVERSE Natural Language Data management System: Current Status and Plans (1971)
+
+TORUS
+
+* TORUS: A Step Towards Bridging the Gap between Data Bases and the Casual User (1976)
+
+LADDER
+
+* Developing a Natural Language Interface to Complex Data (1977)
+
+ROBOT
+
+* User-oriented Data Base Query with the ROBOT Natural Language Query System (1977)
+* The ROBOT System: Natural Language Processing Applied to Data Base Query (1978)
+* Experience with ROBOT in 12 Commercial Natural Language Data Base Query Applications
+
+PHLIQA1
+
+* An Outline of the Question Answering System PHLIQA1 (Google -)
+* The Question-Answering System PHLIQA1 (ResearchGate +)
+* PHLIQA1, a Question-Answering System for Data-Base Consultation in Natural English (Google -)
+* Philips Question-Answering System PHLIQA1 (1978) (ACM +, ResearchGate +)
+
+RUS
+
+* The RUS System. (1978)
+
+PLANES
+
+* An English language Question Answering System for a Large Relational Database (1978)
+
+TQA
+
+* Operating statistics for the transformational question answering system. (1981)
+* Problems and Some Solutions in Customization of Natural Language Front Ends (1985)
+
+ASK
+
+* Introducing ASK, A Simple Knowledgeable System (1983)
+* ASK is Transportable in Half a Dozen Ways (1985)
+
+IR-NLI
+
+* IR-NLI: An expert Natural Language Interface to Online Data Bases (1983)
+
+Ginsparg
+
+* A Robust Portable Natural Language Database Interface (1983)
+
+INTELLECT
+(with experience from ROBOT)
+
+* Experience with INTELLECT: Artificial Intelligence Technology Transfer. (1984)
+
+LDC-1
+
+* The Syntax and Semantics of User-Defined Modifiers in a Transportable Natural Lnaguage Processor (1984)
+* LDC-1: A Transportable, Knowledgebased Natural Language Processor for Office Environments (1984)
+
+DATALOG
+
+* Interaction of Knowledge Sources in a Portable Natural Language Interface (1984)
+* Portability of Syntax and Semantics in Datalog (1985)
+
+PRE
+
+* Transportable Natural Language Processing Through Simplicity - the PRE System (1985)
+
+TELI
+
+* Semantic Acquisition in TELI (1986)
+
+MASQUE
+
+* MASQUE Modular Answering System for Queries in English - Programmer's Manual (1986)
+* MASQUE Modular Answering System for Queries in English - User's Manual (1986)
+* An Efficient and Portable Natural Language Query Interface for Relational Databases. (1993)
+
+IRUS
+
+* The IRUS transportable natural language database interface (1986)
+
+BBN’s Parlance
+(voortbouwend op RUS en IRUS)
+
+* BBN Parlance Interface Software - System Overview (1989)
+
+JANUS
+
+* Tense, Quantifiers, and Contexts (1988)
+* Access to Multiple Underlying Systems in JANUS (1989)
+* A Hybrid Approach to Representation in the JANU Natural Language Processor (1989)
+* Multiple Underlying Systems: Translating User Requests into Programs to Produce Answers (1990)
+
+Loqui
+(waarschijnlijk geen artikelen over verschenen)
+(commercieel, van BIM)
+
+* Loqui: An Open Natural Query System - General Description (1991)
+
+
+Q&A
+(commercieel, Symantec; geen documentatie)
+
+Natural Language
+DataTalker (a.k.a.)
+(commercieel, geen documentatie)
+
+LIFER
+
+Wolfram Alpha
+
+Siri
