@@ -9,6 +9,10 @@ CONVERSE
 
 * The CONVERSE Natural Language Data management System: Current Status and Plans (1971)
 
+DILOS
+
+* DILOS -- Dialog System for Information Retrieval, Computation, and Logical Inference (1977)
+
 TORUS
 
 * TORUS: A Step Towards Bridging the Gap between Data Bases and the Casual User (1976)

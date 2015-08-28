@@ -57,11 +57,12 @@ class TagTree
 				'name' => 'Models',
 				'sections' => array(
 					array('name' => 'Database / Knowledge Base', 'tag' => Features::TAG_KNOWLEDGE_BASE),
-					array('name' => 'Goal model',	'tag' => Features::TAG_GOAL_MODEL),
-					array('name' => 'Domain model',	'tag' => Features::TAG_DOMAIN_MODEL),
-					array('name' => 'Discourse model', 'tag' => Features::TAG_DISCOURSE_MODEL),
-					array('name' => 'Lexicon', 'tag' => Features::TAG_LEXICON),
+					array('name' => 'Syntax to semantics mappings', 'tag' => Features::TAG_SYNTAX_SEMANTICS_MAPPING),
 					array('name' => 'Grammar', 'tag' => Features::TAG_GRAMMAR),
+					array('name' => 'Lexicon', 'tag' => Features::TAG_LEXICON),
+					array('name' => 'Domain model',	'tag' => Features::TAG_DOMAIN_MODEL),
+					array('name' => 'Goal model',	'tag' => Features::TAG_GOAL_MODEL),
+					array('name' => 'Discourse model', 'tag' => Features::TAG_DISCOURSE_MODEL),
 				)
 			),
 		);

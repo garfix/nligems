@@ -1,6 +1,14 @@
 [
   {
     "date": "2015-08-28",
+    "story": "'Syntactic Structures' by Chomsky, although historically significant, is in actual practise not very useful. In fact, it has hold back progress for a while by insisting that Phrase Structure grammar alone would not be sufficient to deal with natural language. The solution to him, transformational grammar, has proved impossible to use for efficient parsing and Phrase Structure grammar is still very much alive today."
+  },
+  {
+    "date": "2015-08-28",
+    "story": "Studying EUFID, it dawned on me that there should be a separate model for syntax-to-semantics mapping rules. These are always present, except when a system uses custom procedures. Since we are talking about models, to me a model is a datastructure, or a set of identical datastructures if you will. A model is never just a set of coded functions in the programming language of the system. But I can see that Lisp and Prolog applications have chosen this language exactly because it is easy to create such mapping functions. I would make an exception for such systems if they have developed a formalism that poses a distinct set of restrictions to these functions. So, a LISP function that converts a piece of syntax into a piece of semantics is only a model if its form is highly restricted and its possibilities limited."
+  },
+  {
+    "date": "2015-08-28",
     "story": "One might think that it should be possible to create an abstract architecture for NLI that allows independent teams to work on a single module. I am talking about standardization of the interfaces between the modules. I don't think it is possible to do such a thing. There is just not enough overlap between the different systems. For one thing, I don't think that science has settled on the right formalism for the task. While science progresses no team will like to be fixed on any given formalism. Different techniques are suitable for different domains."
   },
   {

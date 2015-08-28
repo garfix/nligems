@@ -194,6 +194,7 @@ class Features
 	const TAG_SEMANTIC_FORM = 'semantic form';
 	const TAG_KB_FORM = 'kb form';
 	const TAG_KNOWLEDGE_BASE = 'knowledge base';
+	const TAG_SYNTAX_SEMANTICS_MAPPING = 'syntax semantics mapping';
 	const TAG_DOMAIN_MODEL = 'domain model';
 	const TAG_GOAL_MODEL = 'goal model';
 	const TAG_LEXICON = 'lexicon';
@@ -301,6 +302,48 @@ class Features
 					SHRDLU: The green pyramid
 				',
 			),
+			self::SEMANTIC_COMPOSITION_TYPE => array(
+				'name' => 'Semantic composition type',
+				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
+				'options' => array(
+					'unification' => 'Unification',
+					'production rules' => 'Production rules',
+					'lambda calculus' => 'Lambda calculus',
+					'custom' => 'Custom procedures',
+				),
+				'tags' => array(self::TAG_SYNTAX_SEMANTICS_MAPPING),
+				'desc' => '
+					Semantic composition is the process of building the meaning of a sentence from the meanings of
+					the phrases and eventually, the words.
+
+					Unification
+					: .
+					Production rules
+					: A pattern -> action rule that maps a syntax tree sub-structure to its semantic form.
+					Lambda calculus
+					: /.
+					Custom procedures
+					: Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them. Very flexible but can only be extended by a programmer with detailed knowledge of the system.
+
+					# An example production rule from LUNAR:
+					~~~
+					[ S:CONTAIN
+						(S.NP (MEM I SAMPLE))
+						(S.V (OR (EQU 1 HAVE)
+							     (EQU 1 CONTAIN))
+							 (S.OBJ (MEM 1 (ELEMENT OXIDE ISOTOPE)))
+						->(QUOTE (CONTAIN (# 1 1) ( # 3 1))) ]
+					~~~
+					S:CONTAIN is the name of the rule. The action follows the -> mark.
+				',
+			),
+//			self:: => array(
+//				'name' => '',
+//				'type' => self::FEATURETYPE_BOOL,
+//				'tags' => array(self::TAG_SYNTAX_SEMANTICS_MAPPING),
+//				'desc' => '
+//				',
+//			),
 			self::KNOWLEDGE_BASE_DESCRIPTION => array(
 				'name' => 'Knowledge base description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
@@ -828,41 +871,6 @@ class Features
 					User: How many Whitney shipments have a shipdate 6/10/1975
 					RENDEZVOUS: The word \'Whitney\' is unfamiliar. Is it one of the following? 1. supplier name 2. supplier location 3. supplier rating ...
 					User: 1
-				',
-			),
-			self::SEMANTIC_COMPOSITION_TYPE => array(
-				'name' => 'Semantic composition type',
-				'type' => self::FEATURETYPE_MULTIPLE_CHOICE,
-				'options' => array(
-					'unification' => 'Unification',
-					'production rules' => 'Production rules',
-					'lambda calculus' => 'Lambda calculus',
-					'custom' => 'Custom procedures',
-				),
-				'tags' => array(self::TAG_SEMANTIC_ANALYSIS),
-				'desc' => '
-					Semantic composition is the process of building the meaning of a sentence from the meanings of
-					the phrases and eventually, the words.
-
-					Unification
-					: .
-					Production rules
-					: A pattern -> action rule that maps a syntax tree sub-structure to its semantic form.
-					Lambda calculus
-					: /.
-					Custom procedures
-					: Custom pieces of code act on the contents of parse tree nodes and attach semantic structures to them. Very flexible but can only be extended by a programmer with detailed knowledge of the system.
-
-					# An example production rule from LUNAR:
-					~~~
-					[ S:CONTAIN
-						(S.NP (MEM I SAMPLE))
-						(S.V (OR (EQU 1 HAVE)
-							     (EQU 1 CONTAIN))
-							 (S.OBJ (MEM 1 (ELEMENT OXIDE ISOTOPE)))
-						->(QUOTE (CONTAIN (# 1 1) ( # 3 1))) ]
-					~~~
-					S:CONTAIN is the name of the rule. The action follows the -> mark.
 				',
 			),
 			self::SEMANTIC_CONFLICT_DETECTION => array(
