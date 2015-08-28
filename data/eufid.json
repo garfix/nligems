@@ -9,67 +9,91 @@
         "SDC"
     ],
     "INFLUENCED_BY": [],
-    "NAT_LANGS": [
-        "English"
-    ],
     "PROG_LANGS": [
-        "Fortran",
-        "C"
+        "C",
+        "Fortran"
     ],
-    "SOURCE_CODE": "",
     "KB_TYPE": [
         "relational",
         "tree-based"
     ],
+    "STATE_HISTORY": null,
     "KB_TYPE_DESC": "Any RDBMS",
-    "SENTENCE_TYPES": [
-        "question"
-    ],
+    "SOURCE_CODE": null,
+    "NAME_DESC": "End-User Friendly Interface to Data management",
+    "LONG_DESC": null,
     "ARTICLES": [
         "EUFID: A Friendly And Flexible Front-End For Data Management Systems",
-        "Problems in natural-language interface with examples from EUFID"
+        "Problems in natural-language interface with examples from EUFID",
+        "Semantic database mapping in EUFID"
     ],
     "BOOKS": [],
-    "NAME_DESC": "End-User Friendly Interface to Data management",
-    "LONG_DESC": "",
     "ANALYSIS": [
         "Semantics-based"
     ],
     "SEMANTIC_GRAMMAR": true,
-    "DO_DIALOG": true,
-    "NEW_WORDS": null,
-    "MULTI_DB": false,
-    "DO_UNGRAMMATICAL": null,
-    "META_SELF": null,
+    "AMBIGUITY": [],
+    "INTEGRATED_KNOWLEDGE_BASE": null,
+    "META_SELF": true,
+    "META_GOAL_MODEL": null,
     "META_KB": null,
-    "PHRASE_TYPES": [
-        "NP", "VP", "PP", "CONJ", "ANAPHORA"
+    "NEW_WORDS": null,
+    "IMPERATIVE": null,
+    "MULTIPLE_SENTENCES": null,
+    "IDIOMS": null,
+    "QUESTION_TYPES": [
+        "yes\/no",
+        "wh"
     ],
+    "TOKENIZATION_HEADER": null,
     "DO_DICT_LOOKUP": true,
     "DO_MORPH_ANA": null,
     "DO_SPELL_CORR": true,
     "DO_OPEN_ENDED": true,
-    "DO_PROP_NAME_KB": null,
+    "DO_PROP_NAME_KB": true,
     "DO_PROP_NAME_MAT": null,
     "DO_QUOTED_STRINGS": null,
-    "PARSE_HEADER": "The analyzer",
+    "POS_TAGGER": null,
     "GRAMMAR_TYPE": "Case Grammar",
+    "NAT_LANGS": [
+        "English"
+    ],
+    "SENTENCE_TYPES": [
+        "question"
+    ],
+    "PHRASE_TYPES": [
+        "NP",
+        "VP",
+        "PP",
+        "CONJ",
+        "ANAPHORA"
+    ],
+    "ELLIPSIS": null,
+    "PARSE_HEADER": "The analyzer",
+    "DO_UNGRAMMATICAL": null,
+    "DROP_NON_ESSENTIAL_WORDS": null,
     "PARSER_TYPE": "A variant of Cocke-Kasami-Younger",
     "SYNTACTIC_FORM_TYPE": [
         "parse trees"
     ],
+    "APPLY_SELECTIONAL_RESTRICTIONS": null,
     "INTERPRET_HEADER": "The mapper",
+    "SEMANTIC_ANALYSIS_PARSING": null,
     "DO_SEMANTIC_ATTACH": null,
-    "DO_MODIFIER_ATTACH": null,
-    "DO_CONJUNCTION_DISJUNCTION": null,
-    "DO_NOMINAL_COMPOUNDS": null,
     "DO_SEMANTIC_COMP": null,
+    "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": null,
+    "USE_LEXICON": null,
+    "DO_MODIFIER_ATTACH": null,
+    "DO_CONJUNCTION_DISJUNCTION": true,
+    "DO_NOMINAL_COMPOUNDS": null,
     "SEMANTIC_COMP_TYPE": [],
     "DO_SEMANTIC_CONFLICT": null,
     "DO_QUANTIFIER_SCOPE": null,
     "DO_ANAPHORA_RESOL": true,
     "DO_PLAUSIB_JUDGE": null,
-    "COOPERATIVE_RESPONSES": null,
+    "COMMON_SENSE_TYPES": [],
+    "DO_DIALOG": true,
+    "INTERPRET_SPEECH_ACT": null,
     "SEMANTIC_FORM_TYPE": [
         "relational"
     ],
@@ -79,6 +103,11 @@
     "PROPER_NOUN_CNST": null,
     "ONTOLOGY_USED": false,
     "STD_ONTOLOGY": [],
+    "GRADABLE_ADJECTIVES": null,
+    "DEDUCTION_RULES": null,
+    "PLANS": null,
+    "PROCEDURES_FOR_SHOW_MANIPULATE": null,
+    "GOAL_CREATION_RULES": null,
     "CONVERT_HEADER": "A translator module",
     "DO_SYNTACTIC_REWRITE": true,
     "DO_OPTIMIZE_QUERY": null,
@@ -89,7 +118,42 @@
     ],
     "KB_AGGREGATIONS": true,
     "EXECUTE_HEADER": "An RDBMS",
+    "MULTI_DB": false,
     "DO_LOGICAL_REASON": null,
-    "GENERATE_HEADER": "",
-    "PARAPHRASE_QUERY": null
+    "GOAL_CREATION": null,
+    "PLAN_EXECUTION": null,
+    "PROCESS_FEEDBACK": null,
+    "GENERATE_HEADER": null,
+    "COOPERATIVE_RESPONSES": null,
+    "PARAPHRASE_QUERY": null,
+    "CANNED_RESPONSES": null,
+    "PATTERNED_RESPONSES": null,
+    "GENERATE_FULL_RESPONSE": null,
+    "SYNTACTIC_FEATURES": null,
+    "SEMANTIC_DEFINITION": null,
+    "SEMANTIC_FORM_PROPERTIES": null,
+    "ONLY_IRREGULAR_FORMS": null,
+    "GRAMMATICAL_RELATIONS": null,
+    "SEMANTIC_SELECTIONAL_RESTRICTIONS": null,
+    "CATEGORY_SELECTIONAL_RESTRICTIONS": null,
+    "LEXICON_IDIOMS": null,
+    "PHRASAL_VERBS": null,
+    "LEXICON_ROLES": null,
+    "DEICTIC_CENTER": [],
+    "TRACK_PLANS": null,
+    "LEARN_NAMES": null,
+    "LEARN_WORDS": null,
+    "LEARN_WORDS_BY_DEDUCTION": null,
+    "LEARN_FACTS": null,
+    "LEARN_THEOREMS": null,
+    "REFUSE_TO_ACCEPT": null,
+    "USE_TRANSFORMATION_RULES": null,
+    "GENERATE_PRONOUNS": null,
+    "GENERATE_ARTICLES": null,
+    "GENERATE_ASPECT": null,
+    "DEDUCTION": null,
+    "PROOF_BY_EXAMPLE": null,
+    "PROOF_BY_CUSTOM_PROCEDURE": null,
+    "INSTANTIATED_GOALS": null,
+    "GOAL_HISTORY": null
 }

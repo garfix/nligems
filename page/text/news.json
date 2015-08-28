@@ -1,5 +1,17 @@
 [
   {
+    "date": "2015-08-28",
+    "story": "One might think that it should be possible to create an abstract architecture for NLI that allows independent teams to work on a single module. I am talking about standardization of the interfaces between the modules. I don't think it is possible to do such a thing. There is just not enough overlap between the different systems. For one thing, I don't think that science has settled on the right formalism for the task. While science progresses no team will like to be fixed on any given formalism. Different techniques are suitable for different domains."
+  },
+  {
+    "date": "2015-08-27",
+    "story": "I still have my doubts about the specialness of EUFID. But the more I read about it, especially the paper \"Semantic database mapping\" by John F. Burger, the more I get impressed. I don't know if EUFID is the first to stress the mapping of the user's view of a domain to the knowledge base representation, but the makers have done a good job at it."
+  },
+  {
+    "date": "2015-08-20",
+    "story": "I noticed that William A. Woods, the creator of Lunar, was also the inventor of the Augmented Transition Network. In Lunar he used this formalism. I read his article and the graphs are very nice. However, the implementation quickly gets quite yieldly and tough to master, I think."
+  },
+  {
     "date": "2015-08-08",
     "story": "I contacted Erik T. Mueller and asked him about the meaning and the origin of the name 'ThoughtTreasure'. It was quite a story and I have placed it on the ThoughtTreasure page.\n\nI also asked him about the main influences of the system. He said they were: 1957 Syntactic Structures by Chomsky; 1984 Cyc commonsense knowledge base started by Douglas Lenat; 1986 The Society of Mind by Marvin Minsky. It is quite interesting because it emphasises that ThoughtTreasure aimed to be a general purpose AI system rather than just a NLI system.\n\nMr. Mueller also gave me some feedback on the ThoughtTreasure features I listed."
   },
@@ -13,7 +25,7 @@
   },
   {
     "date": "2015-03-01",
-    "story": "After going through several systems in a somewhat superficial manner, I started do deal with them more thoroughly.\n\nI started with SHRDLU, because it is the first system I consider, and at the same time it has profound coverage of the problem domain. SHRLU answers questions about it's own internal processes. This is quite remarkable. I would like to show that this is awesome, but at the same time, how it can be done, and that, with the proper data structures, it does not need to be rocket science to pull it off.\n\nI think it is inevitable that my interpretation of the problem domain, the features I discern, and the way the features are grouped by me, is coloured by what I think is important, and by my lack of understanding of the complete field. I hope to reduce my personal influences and I will strive for an objective representation."
+    "story": "After going through several systems in a somewhat superficial manner, I started do deal with them more thoroughly.\n\nI started with SHRDLU, because it is the first system I consider, and at the same time it has profound coverage of the problem domain. SHRDLU answers questions about it's own internal processes. This is quite remarkable. I would like to show that this is awesome, but at the same time, how it can be done, and that, with the proper data structures, it does not need to be rocket science to pull it off.\n\nI think it is inevitable that my interpretation of the problem domain, the features I discern, and the way the features are grouped by me, is coloured by what I think is important, and by my lack of understanding of the complete field. I hope to reduce my personal influences and I will strive for an objective representation."
   },
   {
     "date": "2014-10-01",

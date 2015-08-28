@@ -54,7 +54,7 @@
     "DO_PROP_NAME_MAT": null,
     "DO_QUOTED_STRINGS": null,
     "POS_TAGGER": null,
-    "GRAMMAR_TYPE": "Augmented Transition Network",
+    "GRAMMAR_TYPE": null,
     "NAT_LANGS": [
         "English"
     ],
@@ -73,7 +73,7 @@
     "ELLIPSIS": null,
     "PARSE_HEADER": null,
     "DO_UNGRAMMATICAL": null,
-    "PARSER_TYPE": null,
+    "PARSER_TYPE": "Augmented Transition Network",
     "SYNTACTIC_FORM_TYPE": [],
     "APPLY_SELECTIONAL_RESTRICTIONS": null,
     "INTERPRET_HEADER": null,

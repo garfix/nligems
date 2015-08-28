@@ -14,7 +14,8 @@
         "desc": "Case Grammar was developed by Charles J. Fillmore. It emphasises semantic roles of a sentence, Agent, Object, Benefactor, Location or Instrument.",
         "links": {
             "Wikipedia": "http://en.wikipedia.org/wiki/Case_grammar"
-        }
+        },
+        "dependencyOf": ["eufid"]
     },
     {
         "id": "Augmented Transition Network",
@@ -28,7 +29,8 @@
     {
         "id": "Relational Databases",
         "year": "1970",
-        "desc": "E.F. Codd (IBM) publishes \"A Relational Model of Data for Large Shared Data Banks\". The basis of modern relational databases."
+        "desc": "E.F. Codd (IBM) publishes \"A Relational Model of Data for Large Shared Data Banks\". The basis of modern relational databases.",
+        "dependencyOf": ["rendezvous"]
     },
     {
         "id": "Planner",
