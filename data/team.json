@@ -23,7 +23,7 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": null,
     "NAME_DESC": "Transportable English Database Access Medium",
-    "LONG_DESC": "TEAM is the first system that emphasises the user view and the database view of the domain knowledge and it provides an elaborate user interface so that the users that fill the rules of the system need to have no prior knowledge of the working of the system nor to have any linguistic knowledge.",
+    "LONG_DESC": "TEAM is the first system that could be used in a new domain by users that had no technical knowledge of the system. Users did not need to have any linguistic knowledge. A database expert with knowledge of the database was all that was needed to transport the system to a new domain.",
     "ARTICLES": [
         "TEAM: An experiment in the design of transportable natural-language interfaces",
         "DIALOGIC: a core natural-language processing system"
@@ -44,9 +44,11 @@
     "IMPERATIVE": null,
     "MULTIPLE_SENTENCES": null,
     "IDIOMS": null,
-    "QUESTION_TYPES": [],
+    "QUESTION_TYPES": [
+        "wh"
+    ],
     "TOKENIZATION_HEADER": null,
-    "DO_DICT_LOOKUP": null,
+    "DO_DICT_LOOKUP": true,
     "DO_MORPH_ANA": null,
     "DO_SPELL_CORR": null,
     "DO_OPEN_ENDED": null,
@@ -70,7 +72,8 @@
         "RC",
         "AUX",
         "MODALS",
-        "COMP_EXP"
+        "COMP_EXP",
+        "CLAUSES_AS_OBJECTS"
     ],
     "ELLIPSIS": null,
     "PARSE_HEADER": "DIALOGIC",
@@ -80,7 +83,7 @@
     "SYNTACTIC_FORM_TYPE": [],
     "APPLY_SELECTIONAL_RESTRICTIONS": null,
     "INTERPRET_HEADER": "DIALOGIC",
-    "SEMANTIC_ANALYSIS_PARSING": null,
+    "SEMANTIC_ANALYSIS_PARSING": true,
     "DO_SEMANTIC_ATTACH": true,
     "DO_SEMANTIC_COMP": null,
     "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": null,

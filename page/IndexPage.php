@@ -21,8 +21,8 @@ class IndexPage extends FrontEndPage
 
         $this->LinkBar = new LinkBar();
         $this->LinkBar->addLink('Systems', $LinkApi->getLink('filter'));
-        $this->LinkBar->addLink('Website news', $LinkApi->getLink('news'));
         $this->LinkBar->addLink('NLI Timeline', $LinkApi->getLink('timeline'));
+        $this->LinkBar->addLink('Some remarks', $LinkApi->getLink('news'));
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('index');
