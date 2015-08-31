@@ -1,0 +1,151 @@
+{
+    "NAME": "C-PHRASE",
+    "FIRST_YEAR": "2008",
+    "LAST_YEAR": "2014",
+    "CONTRIBUTORS": [
+        "Michael Minock"
+    ],
+    "INSTITUTIONS": [
+        "Ume\u00e5 University"
+    ],
+    "INFLUENCED_BY": [],
+    "PROG_LANGS": [
+        "Lisp"
+    ],
+    "KB_TYPE": [
+        "relational"
+    ],
+    "STATE_HISTORY": null,
+    "SEMANTIC_COMP_TYPE": [
+        "lambda calculus"
+    ],
+    "KB_TYPE_DESC": null,
+    "SOURCE_CODE": "http:\/\/minock.github.io\/c-phrase\/",
+    "NAME_DESC": "\"Thus analysis components must be robust, seeking out near misses when input is less than ideal and the system must be adaptable, making it easy for authors to patch running systems to catch unanticipated phrasings. The name C-Phrase is derived from \u2018catch phrase\u2019, which we interpret literally as \u2018catching phrases\u2019.\"",
+    "LONG_DESC": "I mention this system because it is actively maintained and it uses a special type of semantic grammar: it maps from the parse tree directly to an abstract knowledge base representation. The fact that this representation is based on tuple calculus is also mentionable.",
+    "ARTICLES": [
+        "C-Phrase: A system for building robust natural language interfaces to databases"
+    ],
+    "BOOKS": [],
+    "ANALYSIS": [
+        "Semantics_based"
+    ],
+    "SEMANTIC_GRAMMAR": true,
+    "AMBIGUITY": [],
+    "INTEGRATED_KNOWLEDGE_BASE": null,
+    "META_SELF": true,
+    "META_GOAL_MODEL": null,
+    "META_KB": null,
+    "NEW_WORDS": null,
+    "IMPERATIVE": null,
+    "MULTIPLE_SENTENCES": null,
+    "IDIOMS": null,
+    "QUESTION_TYPES": [],
+    "TOKENIZATION_HEADER": null,
+    "DO_DICT_LOOKUP": true,
+    "DO_MORPH_ANA": null,
+    "DO_SPELL_CORR": true,
+    "DO_OPEN_ENDED": true,
+    "DO_PROP_NAME_KB": true,
+    "DO_PROP_NAME_MAT": null,
+    "DO_QUOTED_STRINGS": true,
+    "POS_TAGGER": null,
+    "GRAMMAR_TYPE": "Synchronous context-free grammars",
+    "NAT_LANGS": [
+        "English"
+    ],
+    "SENTENCE_TYPES": [
+        "question"
+    ],
+    "PHRASE_TYPES": [
+        "NP",
+        "VP",
+        "PP"
+    ],
+    "ELLIPSIS": null,
+    "PARSE_HEADER": null,
+    "DO_UNGRAMMATICAL": null,
+    "DROP_NON_ESSENTIAL_WORDS": null,
+    "PARSER_TYPE": "A fuzzy chart parser",
+    "SYNTACTIC_FORM_TYPE": [
+        "parse trees"
+    ],
+    "APPLY_SELECTIONAL_RESTRICTIONS": null,
+    "INTERPRET_HEADER": null,
+    "SEMANTIC_ANALYSIS_PARSING": null,
+    "DO_SEMANTIC_ATTACH": true,
+    "DO_SEMANTIC_COMP": true,
+    "DO_MORPHOLOGICAL_SEMANTIC_COMPOSITION": null,
+    "USE_LEXICON": null,
+    "DO_MODIFIER_ATTACH": null,
+    "DO_CONJUNCTION_DISJUNCTION": null,
+    "DO_NOMINAL_COMPOUNDS": null,
+    "DO_SEMANTIC_CONFLICT": null,
+    "DO_QUANTIFIER_SCOPE": null,
+    "DO_ANAPHORA_RESOL": null,
+    "DO_PLAUSIB_JUDGE": null,
+    "COMMON_SENSE_TYPES": [],
+    "DO_DIALOG": true,
+    "INTERPRET_SPEECH_ACT": null,
+    "SEMANTIC_FORM_TYPE": [
+        "relational"
+    ],
+    "SEMANTIC_FORM_DESC": "Tuple calculus with extensions",
+    "EVENT_BASED": false,
+    "TEMPORAL": null,
+    "PROPER_NOUN_CNST": null,
+    "ONTOLOGY_USED": false,
+    "STD_ONTOLOGY": [],
+    "GRADABLE_ADJECTIVES": null,
+    "DEDUCTION_RULES": null,
+    "PLANS": null,
+    "PROCEDURES_FOR_SHOW_MANIPULATE": null,
+    "GOAL_CREATION_RULES": null,
+    "CONVERT_HEADER": null,
+    "DO_SYNTACTIC_REWRITE": true,
+    "DO_OPTIMIZE_QUERY": null,
+    "DO_INFORMATION_RESTRUCT": null,
+    "KB_LANGS": [
+        "SQL"
+    ],
+    "KB_AGGREGATIONS": true,
+    "EXECUTE_HEADER": "An RDBMS (notably PostgreSQL)",
+    "MULTI_DB": false,
+    "DO_LOGICAL_REASON": null,
+    "GOAL_CREATION": null,
+    "PLAN_EXECUTION": null,
+    "PROCESS_FEEDBACK": null,
+    "GENERATE_HEADER": null,
+    "COOPERATIVE_RESPONSES": null,
+    "PARAPHRASE_QUERY": true,
+    "CANNED_RESPONSES": null,
+    "PATTERNED_RESPONSES": null,
+    "GENERATE_FULL_RESPONSE": null,
+    "SYNTACTIC_FEATURES": null,
+    "SEMANTIC_DEFINITION": null,
+    "SEMANTIC_FORM_PROPERTIES": null,
+    "ONLY_IRREGULAR_FORMS": null,
+    "GRAMMATICAL_RELATIONS": null,
+    "SEMANTIC_SELECTIONAL_RESTRICTIONS": null,
+    "CATEGORY_SELECTIONAL_RESTRICTIONS": null,
+    "LEXICON_IDIOMS": null,
+    "PHRASAL_VERBS": null,
+    "LEXICON_ROLES": null,
+    "DEICTIC_CENTER": [],
+    "TRACK_PLANS": null,
+    "LEARN_NAMES": null,
+    "LEARN_WORDS": null,
+    "LEARN_WORDS_BY_DEDUCTION": null,
+    "LEARN_FACTS": null,
+    "LEARN_THEOREMS": null,
+    "REFUSE_TO_ACCEPT": null,
+    "USE_TRANSFORMATION_RULES": null,
+    "GENERATE_PRONOUNS": null,
+    "GENERATE_ARTICLES": null,
+    "GENERATE_ASPECT": null,
+    "DEDUCTION": null,
+    "PROOF_BY_EXAMPLE": null,
+    "PROOF_BY_CUSTOM_PROCEDURE": null,
+    "INSTANTIATED_GOALS": null,
+    "GOAL_HISTORY": null
+}
