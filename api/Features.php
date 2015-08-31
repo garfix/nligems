@@ -39,6 +39,7 @@ class Features
 	const META_KB = 'META_KB';
 	const IMPERATIVE = 'IMPERATIVE';
 	const MULTIPLE_SENTENCES = 'MULTIPLE_SENTENCES';
+	const PARTIAL_SENTENCES = 'PARTIAL_SENTENCES';
 	const IDIOMS = 'IDIOMS';
 	const QUESTION_TYPES = 'QUESTION_TYPES';
 
@@ -337,13 +338,6 @@ class Features
 					S:CONTAIN is the name of the rule. The action follows the -> mark.
 				',
 			),
-//			self:: => array(
-//				'name' => '',
-//				'type' => self::FEATURETYPE_BOOL,
-//				'tags' => array(self::TAG_SYNTAX_SEMANTICS_MAPPING),
-//				'desc' => '
-//				',
-//			),
 			self::KNOWLEDGE_BASE_DESCRIPTION => array(
 				'name' => 'Knowledge base description',
 				'type' => self::FEATURETYPE_TEXT_SINGLE,
@@ -419,6 +413,9 @@ class Features
 					Each new application requires a different grammar.
 
 					From: Androutsopoulos, et al., Natural Language Interfaces to Databases - An Introduction
+
+					# An example grammar rule from C-PHRASE
+					POST → ⟨"in the" · NP,  λf. λx.f(x) ∧ x.City(x) ∧ (∃y)(State(y) ∧ x.state = y.name ∧ NP(y)⟩
 				',
 			),
 			self::AMBIGUITY => array(
@@ -521,6 +518,17 @@ class Features
 					## Example from RENDEZVOUS:
 					User: I want to find certain projects. Pipes were sent to them in feb. 1975.
 					RENDEZVOUS: This is what the system understands your query to be: print the name of every project to which a shipment of a part named pipe was sent during february 1975.
+				',
+			),
+			self::PARTIAL_SENTENCES => array(
+				'name' => 'Partial sentences',
+				'type' => self::FEATURETYPE_BOOL,
+				'tags' => array(self::TAG_DIALOG),
+				'desc' => '
+					The user input may consist of part of a sentence (usually a noun phrase).
+
+					## Example from C-PHRASE:
+					User: cities of over 100,000 people in the largest area mid-western state
 				',
 			),
 			self::IDIOMS => array(

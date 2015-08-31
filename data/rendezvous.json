@@ -20,6 +20,9 @@
         "relational"
     ],
     "STATE_HISTORY": null,
+    "SEMANTIC_COMP_TYPE": [
+        "production rules"
+    ],
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": null,
     "NAME_DESC": "To rendezvous (i.e. \"meet\") with the casual user",
@@ -43,6 +46,7 @@
     "NEW_WORDS": null,
     "IMPERATIVE": null,
     "MULTIPLE_SENTENCES": true,
+    "PARTIAL_SENTENCES": true,
     "IDIOMS": null,
     "QUESTION_TYPES": [
         "yes\/no",
@@ -88,9 +92,6 @@
     "DO_MODIFIER_ATTACH": null,
     "DO_CONJUNCTION_DISJUNCTION": null,
     "DO_NOMINAL_COMPOUNDS": true,
-    "SEMANTIC_COMP_TYPE": [
-        "production rules"
-    ],
     "DO_SEMANTIC_CONFLICT": true,
     "DO_QUANTIFIER_SCOPE": null,
     "DO_ANAPHORA_RESOL": true,

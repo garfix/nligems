@@ -39,6 +39,7 @@
     "NEW_WORDS": null,
     "IMPERATIVE": null,
     "MULTIPLE_SENTENCES": null,
+    "PARTIAL_SENTENCES": true,
     "IDIOMS": null,
     "QUESTION_TYPES": [],
     "TOKENIZATION_HEADER": null,
