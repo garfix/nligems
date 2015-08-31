@@ -9,13 +9,18 @@ CONVERSE
 
 * The CONVERSE Natural Language Data management System: Current Status and Plans (1971)
 
-DILOS
-
-* DILOS -- Dialog System for Information Retrieval, Computation, and Logical Inference (1977)
-
 TORUS
 
 * TORUS: A Step Towards Bridging the Gap between Data Bases and the Casual User (1976)
+
+EUFID (nog te lezen)
+
+* Database semantics in the EUFID system (1977)
+* Deriving Database Specifications from User Queries (1977)
+
+DILOS
+
+* DILOS -- Dialog System for Information Retrieval, Computation, and Logical Inference (1977)
 
 LADDER
 
