@@ -69,7 +69,9 @@ class EditSystemPage extends BackEndPage
             die('These features are not used: '. implode(', ', $unusedFeatures));
         }
 
-        $Form->addChildNode(new SubmitButton('Update'));
+        $Button = new SubmitButton('Update');
+        $Button->addAttribute('name', 'go');
+        $Form->addChildNode($Button);
 
         return (string)$Form;
     }

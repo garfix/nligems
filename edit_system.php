@@ -21,7 +21,9 @@ if (!$System) {
 $Page = $PageApi->getEditSystemPage($System);
 
 if (!empty($_POST)) {
-	$Page->processPost($_POST);
+	$params = $_POST;
+	unset($params['go']);
+	$Page->processPost($params);
 }
 
 echo (string)$Page;
