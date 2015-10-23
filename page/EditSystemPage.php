@@ -64,7 +64,7 @@ class EditSystemPage extends BackEndPage
         }
 
         // quick check if all features have been used
-        $unusedFeatures = array_diff($SystemsApi->getFeatures(), $featuresUsed);
+        $unusedFeatures = array_diff($SystemsApi->getFeatures(), array_keys(Features::getExamples()), $featuresUsed);
         if (!empty($unusedFeatures)) {
             die('These features are not used: '. implode(', ', $unusedFeatures));
         }

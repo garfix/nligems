@@ -5,8 +5,14 @@
     "CONTRIBUTORS": [
         "Barbara J. Grosz",
         "Douglas E. Appelt",
+        "Fernando C.N. Pereira",
+        "David H.D. Warren",
         "Paul Martin",
-        "Fernando C.N. Pereira"
+        "Armar Archbold",
+        "Robert C. Moore",
+        "Jerry Hobbs",
+        "Jane J. Robinson",
+        "Daniel Sagalowicz"
     ],
     "INSTITUTIONS": [
         "SRI"
@@ -14,7 +20,9 @@
     "INFLUENCED_BY": [
         "LADDER"
     ],
-    "PROG_LANGS": [],
+    "PROG_LANGS": [
+        "Lisp"
+    ],
     "KB_TYPE": [
         "relational"
     ],
@@ -26,7 +34,8 @@
     "LONG_DESC": "TEAM is the first system that could be used in a new domain by users that had no technical knowledge of the system. Users did not need to have any linguistic knowledge. A database expert with knowledge of the database was all that was needed to transport the system to a new domain.",
     "ARTICLES": [
         "TEAM: An experiment in the design of transportable natural-language interfaces",
-        "DIALOGIC: a core natural-language processing system"
+        "DIALOGIC: a core natural-language processing system",
+        "TEAM: A transportable natural-language interface system"
     ],
     "BOOKS": [],
     "ANALYSIS": [
@@ -43,6 +52,7 @@
     "NEW_WORDS": null,
     "IMPERATIVE": null,
     "MULTIPLE_SENTENCES": null,
+    "PARTIAL_SENTENCES": null,
     "IDIOMS": null,
     "QUESTION_TYPES": [
         "wh"
@@ -158,5 +168,21 @@
     "PROOF_BY_EXAMPLE": null,
     "PROOF_BY_CUSTOM_PROCEDURE": null,
     "INSTANTIATED_GOALS": null,
-    "GOAL_HISTORY": null
+    "GOAL_HISTORY": null,
+    "EXAMPLE TOKENS": "what northern countries contain peaks higher than Fuji ?",
+    "EXAMPLE SYNTACTIC": "(S (SWHQ (WHNP (WHDET what) (NOMHD (PRENOMP (ADJP (ADJ northern))) (NOUN (LITERAL-S -s) (N country)))) (PREDICATE (VP (VPT (V contain)) (NP (NOMHD (NOUN (LITERAL-S -s) (N peak))) (NCOMPS (NCOMP (PREDADJ (ADJP (ER er) (ADJ high)) (THANCOMP (THAN than) (NP (NOMHD (NOUN (N Fuji)))))))))))) (ENDPUNCT (LITERAL? ?)))",
+    "EXAMPLE SEMANTIC": "*",
+    "EXAMPLE PRAGMATIC": "[QUERY (WH *COUNTRY*1 (AND (*COUNTRY* *COUNTRY*1) (*NORTHERN *COUNTRY*1)) (THE *FUJI-4 (AND (*PEAK* *FUJI-4) (*PEAK-NAME-OF *FUJI-4 *FUJI*)) (SOME THING3 (*PEAK-HEIGHT* THING3) (SOME *PEAK*2 (*PEAK *PEAK*2) (AND (*PEAK-HEIGHT-OF *FUJI-4 THING3) ((*MORE12 *HIGH) *PEAK*2 THING3) (*CONTAIN *COUNTRY*1 *PEAK*2)))))))]",
+    "EXAMPLE ABSTRACT KB": "((IN $:$1 CONT) (($:$1 CONT-HEMI) EQ N) (IN $:$2 WORLDC) (($:$2 WORLDC-CONTINENT) EQ ($:$1 CONT-NAME)) (IN $:$3 PEAK) (($:$3 PEAK-NAME) EQ FUJI) ((IN $:$4 PEAK) ($:$4 PEAK-HEIGHT) GT ($:$3 PEAK-HEIGHT)) ($:$4 PEAK-COUNTRY) EQ ($:$2 WORLDC-NAME)) (? ($:$3 PEAK-HEIGHT)) (? ($:$4 PEAK_NAME)) (? ($:$4 PEAK-HEIGHT)) (? ($:$2 WORLDC-NAME)))",
+    "EXAMPLE KB": "(ANSWER FUJI s p h c) <- (COUNTY c) \u2227 (CONT n ? N ?) \u2227 (WORLDC c ? ? ? n) \u2227 (PEAK FUJI) \u2227 (PEAK FUJI ? ? ?) \u2227 (PEAK-HEIGHT s) \u2227 (PEAK p) \u2227 (PEAK FUJI s ? ?) \u2227 (PEAK p h ? ?) \u2227 (> h s) \u2227 (PEAK p ? c ?)",
+    "EXAMPLE TOKENS TO SYNTACTIC": "*",
+    "EXAMPLE TOKENS TO KB": null,
+    "EXAMPLE SYNTACTIC TO SEMANTIC": "NOUN -> NHD(n1) NOUN(n2): (*NN* n1 n2)",
+    "EXAMPLE SYNTACTIC TO PRAGMATIC": null,
+    "EXAMPLE SYNTACTIC TO ABSTRACT KB": null,
+    "EXAMPLE SYNTACTIC TO KB": null,
+    "EXAMPLE SEMANTIC TO PRAGMATIC": "(*HAVE employee1 child2): (CHILD-OF employee1 child2)",
+    "EXAMPLE PRAGMATIC TO ABSTRACT KB": "*",
+    "EXAMPLE PRAGMATIC TO KB": null,
+    "EXAMPLE ABSTRACT KB TO KB": "*"
 }

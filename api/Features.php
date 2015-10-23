@@ -209,6 +209,61 @@ class Features
 	const OPTION_SYNTAX_BASED = 'Syntax-based';
 	const OPTION_SEMANTICS_BASED = 'Semantics-based';
 
+	// examples
+
+	CONST EX_TOKENS = 'EXAMPLE TOKENS';
+	CONST EX_SYNTACTIC = 'EXAMPLE SYNTACTIC';
+	CONST EX_SEMANTIC = 'EXAMPLE SEMANTIC';
+	CONST EX_PRAGMATIC = 'EXAMPLE PRAGMATIC';
+	CONST EX_ABSTRACT_KB = 'EXAMPLE ABSTRACT KB';
+	CONST EX_KB = 'EXAMPLE KB';
+
+	CONST EX_TOKENS_2_SYNTACTIC = 'EXAMPLE TOKENS TO SYNTACTIC';
+	CONST EX_TOKENS_2_KB = 'EXAMPLE TOKENS TO KB';
+	CONST EX_SYNTACTIC_2_SEMANTIC = 'EXAMPLE SYNTACTIC TO SEMANTIC';
+	CONST EX_SYNTACTIC_2_PRAGMATIC = 'EXAMPLE SYNTACTIC TO PRAGMATIC';
+	CONST EX_SYNTACTIC_2_ABSTRACT_KB = 'EXAMPLE SYNTACTIC TO ABSTRACT KB';
+	CONST EX_SYNTACTIC_2_KB = 'EXAMPLE SYNTACTIC TO KB';
+	CONST EX_SEMANTIC_2_PRAGMATIC = 'EXAMPLE SEMANTIC TO PRAGMATIC';
+	CONST EX_PRAGMATIC_2_ABSTRACT_KB = 'EXAMPLE PRAGMATIC TO ABSTRACT KB';
+	CONST EX_PRAGMATIC_2_KB = 'EXAMPLE PRAGMATIC TO KB';
+	CONST EX_ABSTRACT_KB_2_KB = 'EXAMPLE ABSTRACT KB TO KB';
+
+	public static function getExamples()
+	{
+		$examples = array();
+
+		foreach (array(
+					 self::EX_TOKENS,
+					 self::EX_SYNTACTIC,
+					 self::EX_SEMANTIC,
+					 self::EX_PRAGMATIC,
+					 self::EX_ABSTRACT_KB,
+					 self::EX_KB,
+					 self::EX_TOKENS_2_SYNTACTIC,
+					 self::EX_TOKENS_2_KB,
+					 self::EX_SYNTACTIC_2_SEMANTIC,
+					 self::EX_SYNTACTIC_2_PRAGMATIC,
+					 self::EX_SYNTACTIC_2_ABSTRACT_KB,
+					 self::EX_SYNTACTIC_2_KB,
+					 self::EX_SEMANTIC_2_PRAGMATIC,
+					 self::EX_PRAGMATIC_2_ABSTRACT_KB,
+					 self::EX_PRAGMATIC_2_KB,
+					 self::EX_ABSTRACT_KB_2_KB
+				 ) as $field) {
+
+			$examples[$field] = array(
+				'name' => $field,
+				'type' => self::FEATURETYPE_TEXT_SINGLE,
+				'tags' => array(),
+				'desc' => '',
+			);
+
+		}
+
+		return $examples;
+	}
+
 	public static function getFeatures()
 	{
 		return array(
@@ -1650,6 +1705,6 @@ class Features
 					SHRDLU: To clear off the red cube
 				',
 			),
-		);
+		) + self::getExamples();
 	}
 }
