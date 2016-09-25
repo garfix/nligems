@@ -9,6 +9,15 @@
         "dependencyOf": ["thoughttreasure"]
     },
     {
+      "id": "Lisp",
+      "year": "1958",
+      "desc": "Lisp was invented by John McCarthy. The favored programming language for AI research.",
+      "links": {
+        "Wikipedia": "https://en.wikipedia.org/wiki/Lisp_(programming_language)"
+      },
+      "dependencyOf": ["shrdlu", "lunar", "team", "c-phrase"]
+    },
+    {
         "id": "Case Grammar",
         "year": "1968",
         "desc": "Case Grammar was developed by Charles J. Fillmore. It emphasises semantic roles of a sentence, Agent, Object, Benefactor, Location or Instrument.",
@@ -44,12 +53,41 @@
     {
         "id": "Prolog",
         "year": "1972",
-        "desc": "Prolog was created around by Alain Colmerauer and Philippe Roussel."
+        "desc": "Prolog was created by Alain Colmerauer and Philippe Roussel, based on Robert Kowalski's procedural interpretation of Horn clauses."
     },
     {
         "id": "Montague Grammar",
         "year": "1973",
         "desc": "Montague publishes \"The Proper Treatment of Quantification in Ordinary English\" (also known as PTQ), the first formal treatment of the semantics of natural languages. Since this article requires a good deal of prior knowledge of logic, you may wish to approach this article through Dowty et al's \"Introduction to Montague Semantics\"."
+    },
+    {
+      "id": "DEC-10 Prolog",
+      "year": "1977",
+      "desc": "David H. D. Warren and Fernando Pereira created the first Prolog compiler, for DEC-10.",
+      "dependencyOf": ["chat-80"]
+    },
+    {
+      "id": "Veronica Dahl's systems",
+      "year": "1977",
+      "desc": "Veronica Dahl's question-answering systems for French and Spanish, written in Prolog using MG (metamorphosis grammar).",
+      "dependencyOf": ["chat-80"]
+    },
+    {
+      "id": "Definite Clause Grammars",
+      "year": "1980",
+      "desc": "Definite Clause Grammars: David H. D. Warren and Fernando Pereira created DCG, a grammar specially suited for Prolog, a specialisation of Colmeraur's metamorphosis grammar (MG)",
+      "links": {
+        "Wikipedia": "https://en.wikipedia.org/wiki/Definite_clause_grammar"
+      },
+      "dependencyOf": ["chat-80"]
+    },
+    {
+      "id": "WAM",
+      "year": "1983",
+      "desc": "David H. D. Warren designed an abstract machine for the execution of Prolog consisting of a memory architecture and an instruction set. This design became known as the Warren Abstract Machine (WAM) and has become the de facto standard target for Prolog compilers.",
+      "links": {
+        "Wikipedia": "https://en.wikipedia.org/wiki/Prolog"
+      }
     },
     {
         "id": "CYC",
