@@ -26,7 +26,10 @@
     "NAME_DESC": null,
     "LONG_DESC": "The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
     "ARTICLES": [
-        "An efficient easily adaptable system for interpreting natural language queries"
+        "An efficient easily adaptable system for interpreting natural language queries",
+        "Efficient Processing of Interactive Relational Database Queries Expressed in Logic",
+        "Extraposition Grammars",
+        "Logic for natural language analysis"
     ],
     "BOOKS": [],
     "ANALYSIS": [
