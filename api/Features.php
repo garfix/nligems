@@ -62,6 +62,7 @@ class Features
 	const ELLIPSIS = 'ELLIPSIS';
 	const GRAMMATICAL_RELATIONS = 'GRAMMATICAL_RELATIONS';
 	const CLAUSES_AS_OBJECTS = 'CLAUSES_AS_OBJECTS';
+    const EXTRAPOSITION = 'EXTRAPOSITION';
 
 	const TOKENIZATION_HEADER = 'TOKENIZATION_HEADER';
 	const MORPHOLOGICAL_ANALYSIS = 'DO_MORPH_ANA';
@@ -768,6 +769,7 @@ class Features
 					self::CLEFTS => 'Clefts',
 					self::THERE_BES => 'There be',
 					self::CLAUSES_AS_OBJECTS => 'Clauses as objects',
+                    self::EXTRAPOSITION => 'Extraposition',
 				),
 				'tags' => array(self::TAG_GRAMMAR),
 				'desc' => '

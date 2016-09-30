@@ -24,12 +24,12 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": "system-sources\/chat-80.zip",
     "NAME_DESC": null,
-    "LONG_DESC": "The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
+    "LONG_DESC": "Together with the system of Veronica Dahl, on which it is based, this is first NLI systems built entirely in Prolog. The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
     "ARTICLES": [
-        "An efficient easily adaptable system for interpreting natural language queries",
-        "Efficient Processing of Interactive Relational Database Queries Expressed in Logic",
-        "Extraposition Grammars",
-        "Logic for natural language analysis"
+        "An efficient easily adaptable system for interpreting natural language queries - Pereira, Warren",
+        "Efficient Processing of Interactive Relational Database Queries Expressed in Logic - Warren",
+        "Extraposition Grammars - Pereira",
+        "Logic for natural language analysis - Pereira"
     ],
     "BOOKS": [],
     "ANALYSIS": [
@@ -70,7 +70,8 @@
         "PP",
         "DP",
         "RC",
-        "NEG"
+        "NEG",
+        "EXTRAPOSITION"
     ],
     "ELLIPSIS": null,
     "PARSE_HEADER": null,
