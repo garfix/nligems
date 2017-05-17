@@ -1,8 +1,19 @@
-Maak hier een pagina van
+## Aspects
 
-Main aspects (facets) of natural language interaction systems.
+An aspect is a characteristic that may occur in several parts of the system.
 
-## Learning
+### Synchronicity
+
+Parts of a system may respond to a request immediately, or require input from a third party that take some time.
+
+So we distinguish
+
+* synchronous: a response is given immediately
+* asynchronous: a response is forwarded to a third party (possibly the user)
+
+Asynchronous events may be embedded in the dialog with the user. Such as a request for information, or a remark that the answer will take some time to prepare.
+
+### Learning
 
 Learning may take place in several components of the system. Learning is the production and storage of new facts. Such a fact is stored with the other facts and will be used in a similar way from then on.
 
@@ -18,7 +29,9 @@ Learning can occur in several ways.
 * the user may tell it to the system
 * the system may deduce it
 
-## Inference
+## Modules
+
+### Inference
 
 Inference is the production of temporary information in order to solve a problem.
 
@@ -28,14 +41,9 @@ A system may infer information by:
 * proof by example: IF red(a) THEN EXISTS red(X)
 * proof by custom procedure: near(X, Y) is calculated by a distance formula
 
-This inference may occur:
+This inference may occur both synchronously and asynchronously: in the latter case the inference requires the input from a resource that takes time to respond (for example: user input)
 
-* synchronously: the inference is available right away
-* asynchronously: the inference requires the input from a resource that takes time to respond (for example: user input)
-
-in the latter case, the inference step may become a goal in itself and become thus be part of the dialog.
-
-## Contexts
+### Contexts
 
 A sentence is not an island. In order to understand more types of sentences, a system may keep track of the following contexts:
 
@@ -44,7 +52,7 @@ A sentence is not an island. In order to understand more types of sentences, a s
 * location (where is "here"?)
 * person (who is "me", who is "he"?) (= anaphora)
 
-## Quantifier Scoping
+### Quantifier Scoping
 
 In a sentence, a noun phase (NP) is about things. It may contain a determiner phrase (DP). This DP specifies the things. A quantifier phrase (QP) is a special form of DP. It determines the quantity of the NP; the number of things. The NP many be "many", "few", "3", "more than 3", "all", "some" or "none".
 
@@ -79,8 +87,22 @@ You will notice the inner and outer scopes, as well as the aggregation variables
 
 Open problem: scopes are ambiguous. In the example above "children" outscopes "friends". Whether one QP outscopes the other depends on a set of heuristics. For this reason it is hard to do scoping at parse time. It is best postponed until parsing is done. The heuristics are quite complex and they are not water tight. A simpler or complete theory of quantifier scope resolution has still to be found.
 
-## Heterogeneous Knowledge Sources
+### Interaction with Heterogeneous Knowledge Sources
 
-A complex system interacts with multiple databases (or, more general: knowledge sources) in order to process a single sentence.
+A complex NLI system interacts with multiple databases (or, more general: knowledge sources) in order to process a single sentence.
 
-Open problem: 
+Different knowledge sources usually have different ontologies (ways of describing the world). Therefore, the ontology of the system needs to be mapped onto that of each of the knowledge sources.
+
+When presenting a goal to a knowledge source for answering, this goal may exist of:
+
+* a single predicate
+* a sentence (multiple predicates)
+
+Also the knowledge source may produce:
+
+* zero or more facts that satisfy the goal predicate
+* new goals, to be answered by the system, in order to fulfill the goal that the system posed to the knowledge source
+
+Like inference, the knowledge source may be synchronous or asynchronous
+
+Open problem: if multiple knowledge sources contain information about the same entities (things), a shared identity must be found to link the information. For dates in time, this is simple. For persons, however, the name of the person may be insufficient to identify him or her in both sources. How to identify all types of entities in multiple heterogeneous knowledge sources is still an open problem.
