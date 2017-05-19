@@ -8,13 +8,35 @@ Of course an NLI system needs to analyse the user's intent. It is done by
 * parsing: analysis of the syntactic structure of the sentence
 * semantic analysis: mapping syntax to semantics (meaning representation)
 
+Data sources:
+
+* a lexicon
+* a grammar
+* a syntax to semantics mapping
+
 ## Dialog
 
-A simple system just gives an answer to a question. A dialog based system may be able to:
+A dialog based system has a dialog manager at its center. This manager handles all incoming messages and delegates its actions to other parts of the system.
 
-* keep track of goals (originating from the user, or the system itself)
+It may be able to:
+
+* keep track of discourse goals (originating from the user, or the system itself)
 * clarify the question or the request of the user
 * initiate the conversation based on system-goals
+
+Data sources:
+
+* a goal model, that models the goals the system wants to achieve
+* a discourse model that holds active goals and means
+* contexts: date and time of conversation, person roles (me, you: anaphora)
+
+## Planner
+
+A planner takes a goal and produces a set of means needed to accomplish it.
+
+Data sources:
+
+* sets of plans (goal and means)
 
 ## Inference
 
@@ -28,14 +50,13 @@ A system may infer information by:
 
 This inference may occur both synchronously and asynchronously: in the latter case the inference requires the input from a resource that takes time to respond (for example: user input)
 
-## Contexts
+Data sources:
 
-A sentence is not an island. In order to understand more types of sentences, a system may keep track of the following contexts:
+* a domain model: information about the domain that is implicit in the knowledge sources and that is nevertheless necessary to retrieve that information
 
-* dialog (current goals, active questions)
-* time (which time is "now")
-* location (where is "here"?)
-* person (who is "me", who is "he"?) (= anaphora)
+## Explanation
+
+A system that has an explicit representation of its goals and means, and that keeps a historic record, can be asked _why_ it performed a specific action.
 
 ## Quantifier Scoping
 
@@ -95,3 +116,5 @@ The knowledge source may produce:
 Like inference, the knowledge source may be synchronous or asynchronous
 
 Open problem: if multiple knowledge sources contain information about the same entities (things), a shared identity must be found to link the information. For dates in time, this is simple. For persons, however, the name of the person may be insufficient to identify him or her in both sources. How to identify all types of entities in multiple heterogeneous knowledge sources is still an open problem.
+
+Data sources: knowledge sources
