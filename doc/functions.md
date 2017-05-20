@@ -54,10 +54,6 @@ Data sources:
 
 * a domain model: information about the domain that is implicit in the knowledge sources and that is nevertheless necessary to retrieve that information
 
-## Explanation
-
-A system that has an explicit representation of its goals and means, and that keeps a historic record, can be asked _why_ it performed a specific action.
-
 ## Quantifier Scoping
 
 In a sentence, a noun phase (NP) is about things. It may contain a determiner phrase (DP). This DP specifies the things. A quantifier phrase (QP) is a special form of DP. It determines the quantity of the NP; the number of things. The NP many be "many", "few", "3", "more than 3", "all", "some" or "none".
