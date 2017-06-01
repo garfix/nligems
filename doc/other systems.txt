@@ -128,4 +128,8 @@ LIFER
 
 Wolfram Alpha
 
-Siri
+Apple Siri
+Amazon Alexa
+Microsoft
+Cortana
+Google Assistant

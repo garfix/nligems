@@ -52,7 +52,9 @@ The information of the module may be fixed in:
 * code: in which case a programmer is needed to port the module to another field
 * data: in which case a user with limited knowledge of the system may port it to another field
 
-## Explanation
+## Transparency
+
+Transparency is about being able to inspect the internal processes of the system, to understand how and why it has chosen its actions.
 
 A user may sometimes want to know _how_ or _why_ the system performed a certain action, or asked a certain question. There are several types of explanation:
 

@@ -1,5 +1,7 @@
 # Functions
 
+!!! HET GAAT HIER OM HET FUNCTIONEEL ONTWERP, DE FUNCTIONALITEIT, NIET DE IMPLEMENTATIE
+
 ## Analysis
 
 Of course an NLI system needs to analyse the user's intent. It is done by

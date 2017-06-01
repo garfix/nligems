@@ -107,5 +107,15 @@
             "Wikipedia": "https://en.wikipedia.org/wiki/Society_of_Mind"
         },
         "dependencyOf": ["thoughttreasure"]
+    },
+    {
+      "id": "BDI",
+      "year": "1987",
+      "desc": "The book \"Intention, Plans, and Practical Reason\", written by Michael Bratman, was published. It describes the BDI model (Belief-Desire-Intention) of action selection.",
+      "links": {
+        "Wikipedia": "https://en.wikipedia.org/wiki/Belief-desire-intention_software_model"
+      },
+      "dependencyOf": ["calo"]
     }
+
 ]
