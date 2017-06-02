@@ -1,4 +1,4 @@
-# Natural Language Coverage
+# Syntactic Functions
 
 !!! HET GAAT HIER OM HET FUNCTIONEEL ONTWERP, DE FUNCTIONALITEIT, NIET DE IMPLEMENTATIE
 
@@ -51,6 +51,10 @@ Can the system deal with single sentences only, or can it handle inputs consisti
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
 
 https://en.wikipedia.org/wiki/Ellipsis_(linguistics)
+
+## Context-dependent answers
+
+Questions and answers may depend on the context in which they were given.
 
 ### Idioms
 

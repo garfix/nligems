@@ -1,6 +1,6 @@
 # Aspects
 
-An aspect is a characteristic that may occur in several parts of the system.
+An aspect is a characteristic that may occur in every part of the system.
 
 ## Modelling
 
