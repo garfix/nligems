@@ -1,14 +1,26 @@
 # Functions
 
-!!! HET GAAT HIER OM HET FUNCTIONEEL ONTWERP, DE FUNCTIONALITEIT, NIET DE IMPLEMENTATIE
-
 ## Analysis
 
-Of course an NLI system needs to analyse the user's intent. It is done by
+Of course an NLI system needs to analyse the user's intent. It is done by a combination of some of these techniques:
 
 * tokenization: splitting a sentence into words, and possible words into morphemes
+* morphological analysis
 * parsing: analysis of the syntactic structure of the sentence
+* template matching: a line of input is matched to a set of templates (one-on-one or best-fit)
 * semantic analysis: mapping syntax to semantics (meaning representation)
+* reference / anaphora resolution
+* quantifier scoping
+
+These analytical processes are usually done sequentially, and lead to several intermediate (quasi) semantic representations. Many variations have been tried.
+
+User input is transformed into one or more internal representations. These are only the most important forms:
+
+* parse tree (from recursive rewrite rules)
+* generic logical (a relational form that can be used as a basis for all domain specific forms)
+* domain specific logical (all concepts are domain specific)
+* generic database form (i.e. for all document databases)
+* specific database form (i.e. for a specific relational database: MySql)
 
 Data sources:
 
@@ -17,12 +29,18 @@ Data sources:
 * a set of input-matching templates
 * a syntax to semantics mapping
 
-## Anaphora
+### Anaphora
 
 Pronouns (he, she, it, that) are the variables of natural language. They refer to ever changing things. The system needs to keep track of recent subjects in the discourse,
 and link the pronoun to the subject.
 
-## Quantifier Scoping
+A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
+
+Data sources:
+
+* a discourse model
+
+### Quantifier Scoping
 
 In a sentence, a noun phase (NP) is about things. It may contain a determiner phrase (DP). This DP specifies the things. A quantifier phrase (QP) is a special form of DP. It determines the quantity of the NP; the number of things. The NP many be "many", "few", "3", "more than 3", "all", "some" or "none".
 
@@ -102,6 +120,11 @@ This inference may occur both synchronously and asynchronously: in the latter ca
 Data sources:
 
 * a domain model: information about the domain that is implicit in the knowledge sources and that is nevertheless necessary to retrieve that information
+
+## Task Manager
+
+An asynchronous system, or agent, that has multiple goals can still only do one thing at a time. Which one? That's the job of the task manager. Based on what's most important in any
+situation, it selects the most suitable action.
 
 ## Interaction with Heterogeneous Knowledge Sources
 

@@ -1,7 +1,5 @@
 # Syntactic Functions
 
-!!! HET GAAT HIER OM HET FUNCTIONEEL ONTWERP, DE FUNCTIONALITEIT, NIET DE IMPLEMENTATIE
-
 Which features of natural language are covered by the system?
 
 ## Languages
