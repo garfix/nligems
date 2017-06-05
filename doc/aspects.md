@@ -16,6 +16,12 @@ For each ontology holds that it can be
 
 Generic representations have the advantage of reuse: the same ontology may be used in other fields. Domain specific ontologies have the advantage that they restrict ambiguity. A word in a domain most often means just a single thing. A domain specific model is simpler to create, because the question of how generic each item is does not play a part.
 
+## Completeness
+
+In every part of the system, one can ask if it is "complete". Are all words in the lexicon? Are all necessary rules in the grammar? Are all database mappings present?
+
+As long as a part is incomplete, how is this communicated to the user?
+
 ## Synchronicity
 
 Parts of a system may respond to a request immediately, or require input from a third party that take some time.

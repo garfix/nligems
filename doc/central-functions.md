@@ -22,12 +22,25 @@ User input is transformed into one or more internal representations. These are o
 * generic database form (i.e. for all document databases)
 * specific database form (i.e. for a specific relational database: MySql)
 
+The database forms are only part of the analysis process in a QA system, where each question automatically leads to a database query.
+
 Data sources:
 
 * a lexicon
 * a grammar
 * a set of input-matching templates
 * a syntax to semantics mapping
+
+### Compound Noun Analysis
+
+Users may introduce compounds that are not in the lexicon. These come in two shapes:
+
+* noun-noun compounds ("city department")
+* adjective-noun compounds ("large company")
+
+The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
+
+(example from Androutsopoulos)
 
 ### Anaphora
 
