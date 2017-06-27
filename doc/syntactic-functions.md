@@ -6,7 +6,7 @@ Which features of natural language are covered by the system?
 
 Which natural languages are supported?
 
-## Grammatical structures
+## Phrase structures
 
 Types of phrases the system may be able to handle:
 
@@ -19,19 +19,26 @@ Types of phrases the system may be able to handle:
 * Relative Clauses, Comparative expressions
 * Conjunctions
 
-Sentence types
+## Sentence types
 
-* Questions
+* Questions (Wh-questions, Yes/No-questions, How/Why questions)
 * Declarations
 * Imperatives
 * Passives
 * Clefts
 * There be's
 
-Syntactic techniques
+## Syntactic techniques
 
 * Clauses as objects
 * Extraposition
+
+## Grammatical categories
+
+* Mood: declarative, interrogative, imperative
+* Voice: active, passive
+* Tense: simple, progressive, perfect, habitual, prospective
+* Modality: can, must, may
 
 ## Corrupt Sentences
 
@@ -54,7 +61,7 @@ https://en.wikipedia.org/wiki/Ellipsis_(linguistics)
 
 Questions and answers may depend on the context in which they were given.
 
-### Idioms
+## Idioms
 
 Can the system handle expressions whose meaning should not be taken literally?
 
