@@ -1,4 +1,4 @@
-# Syntactic Functions
+# Syntax
 
 Which features of natural language are covered by the system?
 
@@ -64,12 +64,4 @@ Questions and answers may depend on the context in which they were given.
 ## Idioms
 
 Can the system handle expressions whose meaning should not be taken literally?
-
-## Types of Responses
-
-What types of responses does the system give?
-
-* Canned responses ("I can't", "Yes", "I don't know", "The weather is fine")
-* Fixed responses with variables ("You have %s messages")
-* Generated responses
 

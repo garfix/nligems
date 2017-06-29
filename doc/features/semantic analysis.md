@@ -1,6 +1,8 @@
-# Grammatical Functions
+# Semantic and Pragmatic Analysis
 
+Semantic Analysis maps words to semantic elements. These elements are integrated into a semantic structure by a process of composition. Semantic structures differ from syntactic structures in that they are language independent.
 
+Different types of phrases need to be handled differently in the analysis and composition process.
 
 ## Nouns and Adjectives: Compound Noun Analysis
 
