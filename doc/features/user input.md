@@ -1,10 +1,10 @@
-# Syntax
+# User Input
 
 Which features of natural language are covered by the system?
 
 ## Languages
 
-Which natural languages are supported?
+Which natural languages are supported? Most historical systems just cover English.
 
 ## Phrase structures
 
@@ -14,31 +14,30 @@ Types of phrases the system may be able to handle:
 * Verb Phrases, Auxiliaries, Modals
 * Preposition Phrases
 * Determiner Phrases, Negations
-* ADVerb Phrases
-* ADJective Phrases
+* Adverb Phrases
+* Adjective Phrases
 * Relative Clauses, Comparative expressions
 * Conjunctions
-
-## Sentence types
-
-* Questions (Wh-questions, Yes/No-questions, How/Why questions)
-* Declarations
-* Imperatives
-* Passives
-* Clefts
-* There be's
-
-## Syntactic techniques
-
-* Clauses as objects
-* Extraposition
 
 ## Grammatical categories
 
 * Mood: declarative, interrogative, imperative
-* Voice: active, passive
+* Voice: active, passive (The yellow cube was taken by me.)
 * Tense: simple, progressive, perfect, habitual, prospective
 * Modality: can, must, may
+
+Mood
+
+* Questions (Wh-questions, Yes/No-questions, How/Why questions)
+* Declarations (My name is Peter.)
+* Imperatives (Take up the red block.)
+
+## Special syntactic constructs
+
+* Clauses as objects (Find a block which is taller than _the one I told you to pick up_.)
+* Clefts (It's the blue ball that I took.)
+* There be's (There is a green pyramid on the yellow cube.)
+* Extraposition
 
 ## Corrupt Sentences
 

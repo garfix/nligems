@@ -72,3 +72,10 @@ The word "and" is often used to denote disjunction rather than conjunction. (And
 ## Preposition Phrases: Modifier Attachment
 
 To which constituent must the modifier (PP) be attached? (Androutsopoulos)
+
+## Action detection
+
+The input sentence must be converted into one of the systems' actions: ASK (query the database), TELL (update the database), DO (perform a task)
+
+Superficially these actions correspond with the mood of the sentence, but not always ("Can you put the red block on the table?" is a DO action)
+
