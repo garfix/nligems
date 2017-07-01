@@ -15,21 +15,6 @@ The meaning of these compounds is not purely analytical. A "city department" cou
 
 (example from Androutsopoulos)
 
-## Proper Nouns: Named Entity Recognition (NER)
-
-How to tell proper nouns (names) apart? Which words form a name? Which words go together to form a name. Names are not in the lexicon.
-
-## Pronouns: Anaphora
-
-Pronouns (he, she, it, that) are the variables of natural language. They refer to ever changing things. The system needs to keep track of recent subjects in the discourse,
-and link the pronoun to the subject.
-
-A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
-
-Data sources:
-
-* a discourse model
-
 ## Determiners: Quantifier Scoping
 
 In a sentence, a noun phase (NP) is about things. It may contain a determiner phrase (DP). This DP specifies the things. A quantifier phrase (QP) is a special form of DP. It determines the quantity of the NP; the number of things. The NP many be "many", "few", "3", "more than 3", "all", "some" or "none".
@@ -72,10 +57,3 @@ The word "and" is often used to denote disjunction rather than conjunction. (And
 ## Preposition Phrases: Modifier Attachment
 
 To which constituent must the modifier (PP) be attached? (Androutsopoulos)
-
-## Action detection
-
-The input sentence must be converted into one of the systems' actions: ASK (query the database), TELL (update the database), DO (perform a task)
-
-Superficially these actions correspond with the mood of the sentence, but not always ("Can you put the red block on the table?" is a DO action)
-

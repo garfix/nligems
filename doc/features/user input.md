@@ -21,16 +21,10 @@ Types of phrases the system may be able to handle:
 
 ## Grammatical categories
 
-* Mood: declarative, interrogative, imperative
+* Mood: declarative, interrogative ((Wh-questions, Yes/No-questions, How/Why questions)), imperative
 * Voice: active, passive (The yellow cube was taken by me.)
 * Tense: simple, progressive, perfect, habitual, prospective
 * Modality: can, must, may
-
-Mood
-
-* Questions (Wh-questions, Yes/No-questions, How/Why questions)
-* Declarations (My name is Peter.)
-* Imperatives (Take up the red block.)
 
 ## Special syntactic constructs
 
@@ -48,19 +42,5 @@ Can the system handle sentences that are ungrammatical or have spelling errors?
 
 ## Single Sentence / Texts
 
-Can the system deal with single sentences only, or can it handle inputs consisting for multiple sentences at once?
-
-## Ellipsis
-
-Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
-
-https://en.wikipedia.org/wiki/Ellipsis_(linguistics)
-
-## Context-dependent answers
-
-Questions and answers may depend on the context in which they were given.
-
-## Idioms
-
-Can the system handle expressions whose meaning should not be taken literally?
+Can the system deal with one single sentence at a time, or can it handle text consisting of multiple sentences at once?
 

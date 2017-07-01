@@ -23,3 +23,13 @@ Data sources:
 * a lexicon
 * a grammar
 * a set of input-matching templates
+
+## Proper Nouns: Named Entity Recognition (NER)
+
+How to tell proper nouns (names) apart? Which words form a name? Which words go together to form a name. Names are not in the lexicon.
+
+NER may also include recognition of identifiers like times, dates, e-mail addresses, etc.
+
+This type of NER uses syntactic methods to detect names.
+
+See also https://en.wikipedia.org/wiki/Named-entity_recognition
