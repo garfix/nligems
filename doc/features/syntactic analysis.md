@@ -1,6 +1,6 @@
 # Syntactic Analysis
 
-Syntactic Analysis is the process of turning a string of raw text into a syntactic structure.
+Syntactic Analysis is the process of turning a string of raw text into a structured representation. This structure contains no other information than can be derived from the raw text alone.
 
 ## Tokenization
 

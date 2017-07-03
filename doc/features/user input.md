@@ -24,7 +24,7 @@ Types of phrases the system may be able to handle:
 * Mood: declarative, interrogative ((Wh-questions, Yes/No-questions, How/Why questions)), imperative
 * Voice: active, passive (The yellow cube was taken by me.)
 * Tense: simple, progressive, perfect, habitual, prospective
-* Modality: can, must, may
+* Modality: can, must, may, should (not used)
 
 ## Special syntactic constructs
 

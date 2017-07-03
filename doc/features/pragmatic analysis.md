@@ -7,6 +7,7 @@ Pragmatic analysis covers all aspects of interpretation that require the context
 The context consists of these aspects:
 
 * Domain (A world of blocks, world geography, human relationships, moon rocks)
+* Dialog (Expected responses)
 * Deictic center (When a sentence mentions "I", "Here", "Now")
 
 There are three types of deictic center:
@@ -16,12 +17,6 @@ There are three types of deictic center:
 * Space (where is Here?)
 
 Each domain has its own meanings for words and expressions, so you can only know the meaning of a sentence if you know the domain.
-
-## Proper Nouns: Named Entity Recognition (NER)
-
-How to tell proper nouns (names) apart?
-
-A name is only meaningful if it is present, or introduced into, the present domain. This type of NER looks up names.
 
 ## Pronouns: Anaphora
 
@@ -34,6 +29,10 @@ Data sources:
 
 * a discourse model
 
+## Verbs: Tense
+
+If a system can handle time, it must interpret tensed sentences with respect to the deictic center of time.
+
 ## Action detection
 
 The input sentence must be converted into one of the systems' actions: ASK (query the database), TELL (update the database), DO (perform a task)
@@ -45,10 +44,6 @@ Superficially these actions correspond with the mood of the sentence, but not al
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
 
 https://en.wikipedia.org/wiki/Ellipsis_(linguistics)
-
-## Context-dependent answers
-
-Questions and answers may depend on the context in which they were given. An input of "yes" is only meaningful of a pending question.
 
 ## Idioms
 

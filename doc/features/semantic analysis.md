@@ -1,19 +1,8 @@
-# Semantic and Pragmatic Analysis
+# Semantic Analysis
 
 Semantic Analysis maps words to semantic elements. These elements are integrated into a semantic structure by a process of composition. Semantic structures differ from syntactic structures in that they are language independent.
 
 Different types of phrases need to be handled differently in the analysis and composition process.
-
-## Nouns and Adjectives: Compound Noun Analysis
-
-Users may introduce compounds that are not in the lexicon. These come in two shapes:
-
-* noun-noun compounds ("city department")
-* adjective-noun compounds ("large company")
-
-The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
-
-(example from Androutsopoulos)
 
 ## Determiners: Quantifier Scoping
 
