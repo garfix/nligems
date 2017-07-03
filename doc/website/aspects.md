@@ -16,9 +16,23 @@ For each ontology holds that it can be
 
 Generic representations have the advantage of reuse: the same ontology may be used in other fields. Domain specific ontologies have the advantage that they restrict ambiguity. A word in a domain most often means just a single thing. A domain specific model is simpler to create, because the question of how generic each item is does not play a part.
 
+## Ambiguity
+
+An analysis may well lead to multiple interpretations. Parse trees, for example. Possible strategies to deal with them:
+
+* Use the first. Ignore all but the first interpretation. This is based on the idea that, through proper modelling, the first result is the best.
+* Depth first. For each of the parse trees, push it further down the pipeline until it fails. Only then, try the second tree.
+* Breadth first. Collect all parse trees. Use all of them in the next phase of interpretation. Keep all possibilities around as long as they haven't failed.
+
+Use the first only works for simple domains with many constraints.
+The breadth first approach may have considerable computational and memory costs.
+The depth first approach has the problem that all "pipeline" phases are active at the same time. All components need to keep state while other components are active.
+
 ## Completeness
 
 In every part of the system, one can ask if it is "complete". Are all words in the lexicon? Are all necessary rules in the grammar? Are all database mappings present?
+
+Can all data from the previous phrase be converted to the next phase in a way that is eventually useful to the user?
 
 As long as a part is incomplete, how is this communicated to the user?
 

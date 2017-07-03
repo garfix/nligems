@@ -6,6 +6,8 @@ Once the semantic representation is available, it can be used by central process
 
 A dialog based system has a dialog manager at its center. This manager handles all incoming messages and delegates its actions to other parts of the system.
 
+A dialog typically has a tree structure.
+
 The type of dialog implements the purpose of the NLI system. This may be
 
 * to help the user find information in the database and update it

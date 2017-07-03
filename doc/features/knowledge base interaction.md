@@ -44,7 +44,7 @@ If there are multiple knowledge sources, are the:
 
 Is there an in-between representation that is shared by all databases of the same type (i.e. relational, document based)?
 
-## Domain language conversion
+## Output: conversion to domain specific language
 
 Are database results converted to domain level constructs?
 

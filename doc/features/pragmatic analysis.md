@@ -45,7 +45,3 @@ Can the system handle sentences where one or more words or phrases have been lef
 
 https://en.wikipedia.org/wiki/Ellipsis_(linguistics)
 
-## Idioms
-
-Can the system handle expressions whose meaning should not be taken literally?
-

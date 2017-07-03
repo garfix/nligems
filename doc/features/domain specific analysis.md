@@ -18,3 +18,7 @@ Users may introduce compounds that are not in the lexicon. These come in two sha
 The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
 
 (example from Androutsopoulos)
+
+## Idioms
+
+Each domain has its own expressions, that are meaningless outside it.
