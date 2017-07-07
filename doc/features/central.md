@@ -34,7 +34,8 @@ A planner takes a goal, creates a plan (recursively) and executes a set of tasks
 
 Data sources:
 
-* set of plans (templates)
+* set of plan templates
+* set of plans
 
 ## Inference
 
@@ -54,5 +55,4 @@ Data sources:
 
 ## Task Manager
 
-An asynchronous system, or agent, that has multiple goals can still only do one thing at a time. Which one? That's the job of the task manager. Based on what's most important in any
-situation, it selects the most suitable action.
+An asynchronous system, or agent, that has multiple goals can still only do one thing at a time. Which one? That's the job of the task manager. Based on what's most important in any situation, it selects the most suitable action.

@@ -1,8 +1,12 @@
 # Semantic Analysis
 
-Semantic Analysis maps words to semantic elements. These elements are integrated into a semantic structure by a process of composition. Semantic structures differ from syntactic structures in that they are language independent.
+Semantic Analysis maps words and word structures to semantic structures through a process of semantic composition. Semantic structures differ from syntactic structures in that they are language independent.
+
+In forming a semantic structure (logical form), a system may first create some intermediate representations (called quasi logical forms).
 
 Different types of phrases need to be handled differently in the analysis and composition process.
+
+This process uses language dependent composition rules.
 
 ## Determiners: Quantifier Scoping
 
@@ -46,3 +50,10 @@ The word "and" is often used to denote disjunction rather than conjunction. (And
 ## Preposition Phrases: Modifier Attachment
 
 To which constituent must the modifier (PP) be attached? (Androutsopoulos)
+
+## Idioms
+
+Each language has its own expressions, that are meaningless outside it.
+
+Can you tell me what time it is? => REQUEST: Are you able to tell the current time to me?
+                                    REQUEST: What is the current time?

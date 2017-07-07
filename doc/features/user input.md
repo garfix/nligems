@@ -24,7 +24,6 @@ Types of phrases the system may be able to handle:
 * Mood: declarative, interrogative ((Wh-questions, Yes/No-questions, How/Why questions)), imperative
 * Voice: active, passive (The yellow cube was taken by me.)
 * Tense: simple, progressive, perfect, habitual, prospective
-* Modality: can, must, may, should (not used)
 
 ## Special syntactic constructs
 
@@ -44,3 +43,6 @@ Can the system handle sentences that are ungrammatical or have spelling errors?
 
 Can the system deal with one single sentence at a time, or can it handle text consisting of multiple sentences at once?
 
+## Idioms
+
+Many expressions in natural are not to be taken literally.
