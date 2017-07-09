@@ -19,11 +19,28 @@ Types of phrases the system may be able to handle:
 * Relative Clauses, Comparative expressions
 * Conjunctions
 
+## Dialog sentence types
+
+Primarily the user makes requests to the system. The system may reply with a question to the user (for clarification). In that case the user will make a response. The response is usually short (yes/no, the white one)
+
+* Request
+* Response
+
 ## Grammatical categories
 
-* Mood: declarative, interrogative ((Wh-questions, Yes/No-questions, How/Why questions)), imperative
+* Mood: declarative, interrogative, imperative
 * Voice: active, passive (The yellow cube was taken by me.)
 * Tense: simple, progressive, perfect, habitual, prospective
+
+Interrogative questions:
+
+* Wh-questions (which, what, who; name an individual)
+* Yes/No-questions (boolean)
+* How many (requires aggregation, counting)
+
+Introspective Interrogative questions:
+
+* How/Why/When questions (access to internal plans)
 
 ## Special syntactic constructs
 
