@@ -63,6 +63,10 @@ Learning can occur in several ways.
 * the user may tell it to the system
 * the system may deduce it
 
+## Ease of Configuration
+
+How hard is it for a user to setup and maintain this module?
+
 ## Portability
 
 How easy is it to use this part of the system in another domain, another language, another database?

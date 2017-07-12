@@ -58,16 +58,19 @@ Data sources:
 * active plans (a list of hierarchical goal structures)
 * context information: date and time of conversation, person roles (me, you: anaphora)
 
-## Planner
+## Task Manager
 
-When the user gives a command, this may mean that a goal needs to be executed. Executing a goal may require a plan (a series of tasks).
+Some systems use planning as a means to fulfil the request of the user. When the user gives a command, this may mean that a goal needs to be executed. Executing a goal may require a plan (a series of tasks). Prolog based systems excel in this approach.
 
-A planner takes a goal, creates a plan (recursively) and executes a set of tasks needed to accomplish it.
+If a system has a task manager, this task manager may replace the dialog manager, since the dialog with the user is only a part of the actions that a system performs. If a system needs to perform asynchronous functions, it is better to make the task manager the main sub-system.
+
+Responding to user requests is then only one of the things a task manager does. Other things are: making requests to other systems, sending e-mails and processing the responses. An NLI with a task manager is an agent. It handles on its own account.
 
 Data sources:
 
 * set of plan templates
 * set of plans
+* context information
 
 ## Inference
 
