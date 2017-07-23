@@ -319,6 +319,7 @@ class Features
 					'Fortran' => 'Fortran',
 					'Lisp' => 'Lisp',
 					'Prolog' => 'Prolog',
+                    'Java' => 'Java',
 				),
 				'tags' => array(self::TAG_CODE),
 				'desc' => '

@@ -10,6 +10,7 @@ use nligems\page\NewsPage;
 use nligems\page\SystemOverviewPage;
 use nligems\page\SystemPage;
 use nligems\page\TimeLinePage;
+use nligems\page\ElementsPage;
 
 /**
  * @author Patrick van Bergen
@@ -32,12 +33,20 @@ class PageApi
 	}
 
 	/**
-	 * @return IndexPage
+	 * @return NewsPage
 	 */
 	public function getNewsPage()
 	{
 		return new NewsPage();
 	}
+
+    /**
+     * @return ElementsPage
+     */
+    public function getElementsPage()
+    {
+        return new ElementsPage();
+    }
 
 	/**
 	 * @param NliSystemApi $NliSystemApi

@@ -1,5 +1,13 @@
 [
   {
+    "date": "2017-07-15",
+    "story": "I have found out that the intelligence of an NLI system is not something that emerges. Every bit of it needs to be hard-coded. The complexity is formed by to ability to recombine these hard-coded pieces at will."
+  },
+  {
+    "date": "2017-07-08",
+    "story": "Last year I was working on an NLI implementation in GO (nli-go, on Github). This year I read about CALO, a very complex system with manu NLI aspects. At the moment I am reworking all features I have gathered all the time."
+  },
+  {
     "date": "2015-10-04",
     "story": "I get it! It is different. I took a better look at TEAM and now I understand. TEAM makes the distinction between semantic analysis and pragmatic analysis. Semantic analysis is generic. Pragmatic analysis is domain specific. In the semantic analysis phase the syntax tree is converted into a 'semantic' representation. This representation contains absolutely no knowledge of the domain (or context) at hand. It is just a simple representation, close to its syntactic counterpart, but without the overhead of all the phrase constructs, and with the additional information that is implicit in the syntax (e.g. plurality). In the pragmatic analysis phase the semantic representation is converted into a pragmatic representation, or domain specific form. Abstract concepts like 'have' and 'be' are converted into structures that are part of the domain (have-child, color-of). What does this mean for ambiguous words? A bank is either an institution or a river-side. In the semantic representation, this just becomes 'bank', so no attempt is made to turn this in either a bank-institution or bank-river. Only in the pragmatic phase an interpretation is chosen. At this point of analysis, context is part of the input. When interpreting, the interpretation rules of the active context are selected. When the context is banking, 'bank' may be converted into 'has-bank'. About the event based form: only in the pragmatic phase an event based form or a timeless form is chosen. In one context events may be relevant, in another context it may not matter at all."
   },
