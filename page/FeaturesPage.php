@@ -14,23 +14,20 @@ require_once __DIR__ . '/../api/component/ParseDown.php';
 /**
  * @author Patrick van Bergen
  */
-class ElementsPage extends FrontEndPage
+class FeaturesPage extends FrontEndPage
 {
 
     public function __construct()
     {
-        $this->Header = new Header('Elements of NLI', 'index');
+        $this->Header = new Header('NLI Features', 'index');
 
         $LinkApi = new LinkApi();
 
         $this->LinkBar = new LinkBar();
 
-        foreach (glob(__DIR__ . '/../doc/features/*') as $filename) {
-            if (preg_match('/([0-9]+ ([a-zA-Z ]*)).md$/', $filename, $matches)) {
-                $id = $matches[1];
-                $name = $matches[2];
-                $this->LinkBar->addLink(ucfirst($name), $LinkApi->getLink('elements', ['id' => $id]));
-            }
+        foreach (file(__DIR__ . '/../doc/features/order.txt') as $filename) {
+            $id = trim($filename);
+            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('features', ['id' => $id]));
         }
 
         $this->addStyleSheet('common');
@@ -47,7 +44,7 @@ class ElementsPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '01 elements';
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 'introduction';
         $markdown = file_get_contents(__DIR__ . '/../doc/features/' . $id . '.md');
 
         $pd = new Parsedown();

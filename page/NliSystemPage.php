@@ -2,33 +2,37 @@
 
 namespace nligems\page;
 
+use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\LinkBar;
-use nligems\api\component\Header;
 use nligems\api\LinkApi;
 use nligems\api\page\FrontEndPage;
+use Parsedown;
+
+require_once __DIR__ . '/../api/component/ParseDown.php';
 
 /**
  * @author Patrick van Bergen
  */
-class IndexPage extends FrontEndPage
+class NliSystemPage extends FrontEndPage
 {
+
     public function __construct()
-   	{
+    {
+        $this->Header = new Header('The NLI System', 'index');
+
         $LinkApi = new LinkApi();
 
-        $this->Header = new Header('Home', null);
-
         $this->LinkBar = new LinkBar();
-        $this->LinkBar->addLink('The NLI system', $LinkApi->getLink('nli-system', ['id' => 'introduction']));
-        $this->LinkBar->addLink('NLI Features', $LinkApi->getLink('features', ['id' => 'introduction']));
-        $this->LinkBar->addLink('Systems Chart', $LinkApi->getLink('filter'));
-        $this->LinkBar->addLink('NLI History', $LinkApi->getLink('timeline'));
-        $this->LinkBar->addLink('Some remarks', $LinkApi->getLink('news'));
+
+        foreach (file(__DIR__ . '/../doc/nli-system/order.txt') as $filename) {
+            $id = trim($filename);
+            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('nli-system', ['id' => $id]));
+        }
 
         $this->addStyleSheet('common');
-        $this->addStyleSheet('index');
-   	}
+        $this->addStyleSheet('elements');
+    }
 
     protected function getBody()
     {
@@ -40,7 +44,11 @@ class IndexPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $html = file_get_contents(__DIR__ . '/text/intro.html');
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 'introduction';
+        $markdown = file_get_contents(__DIR__ . '/../doc/nli-system/' . $id . '.md');
+
+        $pd = new Parsedown();
+        $html = $pd->text($markdown);
 
         $LinkBar = new HtmlElement('div');
         $LinkBar->addClass('linkPanel');

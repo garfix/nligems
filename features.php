@@ -11,7 +11,7 @@ require __DIR__ . '/autoload.php';
 $NliSystemApi = new NliSystemApi();
 $PageApi = new PageApi();
 
-$Page = $PageApi->getElementsPage();
+$Page = $PageApi->getFeaturesPage();
 
 echo (string)$Page;
 

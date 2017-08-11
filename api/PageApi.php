@@ -4,13 +4,14 @@ namespace nligems\api;
 
 use nligems\page\ComparePage;
 use nligems\page\EditSystemPage;
+use nligems\page\FeaturesPage;
 use nligems\page\FilterPage;
 use nligems\page\IndexPage;
 use nligems\page\NewsPage;
 use nligems\page\SystemOverviewPage;
 use nligems\page\SystemPage;
 use nligems\page\TimeLinePage;
-use nligems\page\ElementsPage;
+use nligems\page\NliSystemPage;
 
 /**
  * @author Patrick van Bergen
@@ -41,11 +42,19 @@ class PageApi
 	}
 
     /**
-     * @return ElementsPage
+     * @return NliSystemPage
      */
-    public function getElementsPage()
+    public function getNliSystemPage()
     {
-        return new ElementsPage();
+        return new NliSystemPage();
+    }
+
+    /**
+     * @return FeaturesPage
+     */
+    public function getFeaturesPage()
+    {
+        return new FeaturesPage();
     }
 
 	/**

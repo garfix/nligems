@@ -1,0 +1,7 @@
+introduction
+syntactic analysis
+semantic analysis
+pragmatic analysis
+domain specific analysis
+central
+knowledge source interaction

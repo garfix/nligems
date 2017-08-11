@@ -1,0 +1,7 @@
+introduction
+purpose
+reasons
+user input
+user output
+aspects
+design
