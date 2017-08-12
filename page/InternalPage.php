@@ -14,20 +14,20 @@ require_once __DIR__ . '/../api/component/ParseDown.php';
 /**
  * @author Patrick van Bergen
  */
-class FeaturesPage extends FrontEndPage
+class InternalPage extends FrontEndPage
 {
 
     public function __construct()
     {
-        $this->Header = new Header('NLI Features', 'index');
+        $this->Header = new Header('NLI Modules', 'index');
 
         $LinkApi = new LinkApi();
 
         $this->LinkBar = new LinkBar();
 
-        foreach (file(__DIR__ . '/../doc/features/order.txt') as $filename) {
+        foreach (file(__DIR__ . '/../doc/internal/order.txt') as $filename) {
             $id = trim($filename);
-            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('features', ['id' => $id]));
+            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('internal', ['id' => $id]));
         }
 
         $this->addStyleSheet('common');
@@ -45,7 +45,7 @@ class FeaturesPage extends FrontEndPage
         $Page->addChildNode($Header);
 
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 'introduction';
-        $markdown = file_get_contents(__DIR__ . '/../doc/features/' . $id . '.md');
+        $markdown = file_get_contents(__DIR__ . '/../doc/internal/' . $id . '.md');
 
         $pd = new Parsedown();
         $html = $pd->text($markdown);

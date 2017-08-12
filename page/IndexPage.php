@@ -20,8 +20,8 @@ class IndexPage extends FrontEndPage
         $this->Header = new Header('Home', null);
 
         $this->LinkBar = new LinkBar();
-        $this->LinkBar->addLink('The NLI system', $LinkApi->getLink('nli-system', ['id' => 'introduction']));
-        $this->LinkBar->addLink('NLI Features', $LinkApi->getLink('features', ['id' => 'introduction']));
+        $this->LinkBar->addLink('The NLI system', $LinkApi->getLink('external', ['id' => 'introduction']));
+        $this->LinkBar->addLink('NLI modules', $LinkApi->getLink('internal', ['id' => 'introduction']));
         $this->LinkBar->addLink('Systems Chart', $LinkApi->getLink('filter'));
         $this->LinkBar->addLink('NLI History', $LinkApi->getLink('timeline'));
         $this->LinkBar->addLink('Some remarks', $LinkApi->getLink('news'));

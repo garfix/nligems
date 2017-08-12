@@ -14,7 +14,7 @@ require_once __DIR__ . '/../api/component/ParseDown.php';
 /**
  * @author Patrick van Bergen
  */
-class NliSystemPage extends FrontEndPage
+class ExternalPage extends FrontEndPage
 {
 
     public function __construct()
@@ -25,9 +25,9 @@ class NliSystemPage extends FrontEndPage
 
         $this->LinkBar = new LinkBar();
 
-        foreach (file(__DIR__ . '/../doc/nli-system/order.txt') as $filename) {
+        foreach (file(__DIR__ . '/../doc/external/order.txt') as $filename) {
             $id = trim($filename);
-            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('nli-system', ['id' => $id]));
+            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('external', ['id' => $id]));
         }
 
         $this->addStyleSheet('common');
@@ -45,7 +45,7 @@ class NliSystemPage extends FrontEndPage
         $Page->addChildNode($Header);
 
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 'introduction';
-        $markdown = file_get_contents(__DIR__ . '/../doc/nli-system/' . $id . '.md');
+        $markdown = file_get_contents(__DIR__ . '/../doc/external/' . $id . '.md');
 
         $pd = new Parsedown();
         $html = $pd->text($markdown);
