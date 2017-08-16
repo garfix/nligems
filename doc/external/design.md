@@ -10,9 +10,23 @@ These are the basic parts of the system for the designer:
 2. intents
 3. knowledge source interaction
 
+## Intents
+
 Design starts with step 2. The designer talks to the users of the system and finds out what they want from the system. This results in a number of "intents".
 
-The intents serve as a shield against the user to protect the interaction with the knowledge source.
+The number of intents is limited.
 
-There are three types of actions: TELL, ASK?, and DO!
+There are three types of intents: TELL, ASK?, and DO intents.
+
+An ASK intent requests the system to retrieve information from the database. This is the most common type of intent. An example:
+
+DATE_OF_BIRTH?(Person)
+
+A TELL intent requests the system to add information to the database. For example:
+
+DATE_OF_BIRTH(Person, Date)
+
+A DO intent requests the system to perform an action.
+
+SEND_EMAIL!(Person, Subject, Content)
 
