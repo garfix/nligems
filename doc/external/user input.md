@@ -34,9 +34,69 @@ Primarily the user makes requests to the system. The system may reply with a que
 
 Interrogative questions:
 
-* Wh-questions (which, what, who; name an individual)
-* Yes/No-questions (boolean)
-* How many (requires aggregation, counting)
+EQ = identity (is, was, are, were)
+BE = auxiliary (is, was, are, were)
+DO = auxiliary (do, does, did)
+HAVE = auxiliary (has, have)
+
+## Factual yes/no-questions or choice questions (boolean / a selected object)
+
+* DO NP VP (did Lord Byron marry Queen Elisabeth)
+* DO NP VP (did Lord Byron marry Queen Elisabeth or Anne Isabella Milbanke)
+
+* EQ NP NP (was Lord Byron king of England)
+* EQ NP NP (was Lord Byron a king or a lord)
+
+* BE NP ADJ (is the block red)
+* BE NP ADJ (is the block red or blue)
+
+* HAVE NP VP (has Napolean invaded Germany)
+* HAVE NP VP (has Napolean invaded Germany or The Netherlands)
+
+* WOULD YOU VP (would you like a cup of coffee)
+* WOULD YOU VP (would you like coffee or tea)
+
+## Wh-questions (which, what, who; name one or more individuals)
+
+* WHO verb NP (who married Lord Byron)
+* WHO EQ NP (who was Lord Byron's wife)
+
+* WHICH NP VP (which countries border the mediterranean)
+* WHICH DO NP VP (which do you do more often)
+
+* WHAT NP VP (what rock sample contains most iron)
+* WHAT EQ NP (what is the biggest block, what is your name)
+* WHAT DO NP VP (what do laptops cost)
+
+* WHOSE NP EQ NP (whose book is that)
+
+##  How many (a number, requires aggregation)
+
+* HOW MANY NP VP (how many children had Lord Byron)
+* HOW MANY NP DO NP VP (how many children did Lord Byron have)
+
+## Capability (boolean)
+
+* CAN NP VP (can dogs fly, can i ask you a question, can you stack a cube on a piramid)
+
+## Degree (a number, the unit result depends on subject)
+
+* HOW ADJ BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
+* HOW ADV DO NP VP (how often do you go to the movies)
+* HOW BE NP (how are you)
+
+## Reason (a cause)
+
+* WHY DO NP VP (why did Napolean invade Germany)
+* WHY BE NP VP (why was Napolean crowned king)
+
+## Time (a time)
+
+* WHEN BE NP VP (when was Napolean crowned king)
+
+## Manner (an event)
+
+* HOW BE NP VP (how was Napolean crowned king)
 
 Introspective Interrogative questions:
 
