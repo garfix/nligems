@@ -24,6 +24,10 @@ Open problem: if multiple knowledge sources contain information about the same e
 
 Data sources: knowledge sources
 
+## Assumptions
+
+* Closed world hypothesis: the database knows everything there is to know that's relevant to the domain. From the fact that no children are found for person X, may be concluded that he had no children.
+
 ## Domain specific to DB language conversion
 
 Is there a conversion from domain language to db language?
