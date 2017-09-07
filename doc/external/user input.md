@@ -32,14 +32,15 @@ Primarily the user makes requests to the system. The system may reply with a que
 * Voice: active, passive (The yellow cube was taken by me.)
 * Tense: simple, progressive, perfect, habitual, prospective
 
-Interrogative questions:
+## Question sentence syntax
 
 EQ = identity (is, was, are, were)
 BE = auxiliary (is, was, are, were)
 DO = auxiliary (do, does, did)
 HAVE = auxiliary (has, have)
+MOD = modality (can, could, will, would, shall, should)
 
-## Factual yes/no-questions or choice questions (boolean / a selected object)
+### Factual yes/no-questions or choice questions (boolean / a selected object)
 
 * DO NP VP (did Lord Byron marry Queen Elisabeth)
 * DO NP VP (did Lord Byron marry Queen Elisabeth or Anne Isabella Milbanke)
@@ -50,57 +51,57 @@ HAVE = auxiliary (has, have)
 * BE NP ADJ (is the block red)
 * BE NP ADJ (is the block red or blue)
 
+* BE NP VP (was Lord Byron born in London)
+* BE NP VP (was Lord Byron born in London or Cambridge)
+
 * HAVE NP VP (has Napolean invaded Germany)
 * HAVE NP VP (has Napolean invaded Germany or The Netherlands)
 
-* WOULD YOU VP (would you like a cup of coffee)
-* WOULD YOU VP (would you like coffee or tea)
+* MOD NP VP (would you like a cup of coffee, should I leave my things here, can dogs fly, can i ask you a question, can you stack a cube on a piramid)
+* MOD NP VP (would you like coffee or tea)
 
-## Wh-questions (which, what, who; name one or more individuals)
+### Wh-questions (which, what, who; name one or more individuals)
 
-* WHO verb NP (who married Lord Byron)
+* WHO VP NP (who married Lord Byron)
 * WHO EQ NP (who was Lord Byron's wife)
 
 * WHICH NP VP (which countries border the mediterranean)
 * WHICH DO NP VP (which do you do more often)
 
-* WHAT NP VP (what rock sample contains most iron)
+* WHAT NP VP (what rock sample contains most iron, what food items did you eat)
 * WHAT EQ NP (what is the biggest block, what is your name)
 * WHAT DO NP VP (what do laptops cost)
 
 * WHOSE NP EQ NP (whose book is that)
+* WHOSE NP VP (whose autographs have you collected)
 
-##  How many (a number, requires aggregation)
+###  How many (a number, requires aggregation)
 
-* HOW MANY NP VP (how many children had Lord Byron)
-* HOW MANY NP DO NP VP (how many children did Lord Byron have)
+* HOW MANY NP VP (how many children had Lord Byron, how many children did Lord Byron have)
 
-## Capability (boolean)
-
-* CAN NP VP (can dogs fly, can i ask you a question, can you stack a cube on a piramid)
-
-## Degree (a number, the unit result depends on subject)
+### Degree (a number, the unit result depends on subject)
 
 * HOW ADJ BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
 * HOW ADV DO NP VP (how often do you go to the movies)
+
+### Manner (an means)
+
+* HOW BE NP VP (how was Napolean crowned king)
+
+* HOW DO NP VP (how do you go to work)
+
+### State
+
 * HOW BE NP (how are you)
 
-## Reason (a cause)
+### Reason (a cause)
 
 * WHY DO NP VP (why did Napolean invade Germany)
 * WHY BE NP VP (why was Napolean crowned king)
 
-## Time (a time)
+### Time (a time)
 
 * WHEN BE NP VP (when was Napolean crowned king)
-
-## Manner (an event)
-
-* HOW BE NP VP (how was Napolean crowned king)
-
-Introspective Interrogative questions:
-
-* How/Why/When questions (access to internal plans)
 
 ## Special syntactic constructs
 
