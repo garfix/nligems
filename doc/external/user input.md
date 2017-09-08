@@ -57,11 +57,11 @@ MOD = modality (can, could, will, would, shall, should)
 * BE NP VP (was Lord Byron born in London or Cambridge)
 * BE NP NOT VP (was Lord Byron not born in London)
 
-* HAVE NP VP (has Napolean invaded Germany)
-* HAVE NP NOT VP (has Napolean not invaded Germany)
-* HAVE NP VP (has Napolean invaded Germany or The Netherlands)
+* HAVE NP VP (has Napoleon invaded Germany)
+* HAVE NP NOT VP (has Napoleon not invaded Germany)
+* HAVE NP VP (has Napoleon invaded Germany or The Netherlands)
 
-* MOD NP VP (would you like a cup of coffee, should I leave my things here, can dogs fly, can i ask you a question, can you stack a cube on a piramid)
+* MOD NP VP (would you like a cup of coffee, should I leave my things here, can dogs fly, can i ask you a question, can you stack a cube on a pyramid)
 * MOD NP VP (would you like coffee or tea)
 
 ### Uninverted yes/no questions
@@ -73,14 +73,22 @@ MOD = modality (can, could, will, would, shall, should)
 
 * WHO VP NP (who married Lord Byron)
 * WHO EQ NP (who was Lord Byron's wife)
+* WHO DO NP VP (who does Pierre want to win)
+
+* WHOM DO NP VP (whom do you believe)
+* WHOM MOD NP VP (whom should I talk to)
+* WITH/TO WHOM BE NP VP (with whom is Peter speaking)
 
 * WHICH NP VP (which countries border the mediterranean)
 * WHICH NP DO NOT VP (which countries do not border the mediterranean)
 * WHICH DO NP VP (which do you do more often)
+* WHICH EQ VP (which is the best option)
+* WHICH NP MOD NP VP (which way should I go)
 
 * WHAT NP VP (what rock sample contains most iron, what food items did you eat)
 * WHAT EQ NP (what is the biggest block, what is your name)
 * WHAT DO NP VP (what do laptops cost)
+* WHAT EQ VP (what is the largest planet)
 
 * WHOSE NP EQ NP (whose book is that)
 * WHOSE NP VP (whose autographs have you collected)
@@ -92,16 +100,14 @@ MOD = modality (can, could, will, would, shall, should)
 ### Degree (a number, the unit result depends on subject)
 
 * HOW ADJ BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
-
-* HOW ADV DO NP VP (how often do you go to the movies)
-
-* HOW MUCH NP VP (how much suger goes in a single drink)
+* HOW ADV DO NP VP (how often do you go to the movies, how nicely do I need to dress tonight)
+* HOW MUCH NP VP (how much sugar goes in a single drink)
 
 ### Manner (an means)
 
-* HOW BE NP VP (how was Napolean crowned king)
-
+* HOW BE NP VP (how was Napoleon crowned king)
 * HOW DO NP VP (how do you go to work)
+* HOW MOD NP VP (how can I become more productive)
 
 ### State
 
@@ -112,10 +118,17 @@ MOD = modality (can, could, will, would, shall, should)
 * WHY DO NP VP (why did Napolean invade Germany)
 * WHY DO NP NOT VP (why did Napolean not invade Germany)
 * WHY BE NP VP (why was Napolean crowned king)
+* WHY MOD NP VP (why should I go)
 
 ### Time (a time)
 
 * WHEN BE NP VP (when was Napolean crowned king)
+* WHEN DO NP VP (when did you start wearing make up)
+
+### Place (a place)
+
+* WHERE DO NP VP (where did you go)
+* WHERE PP DO NP VP (where on the map does this train go)
 
 Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
 
