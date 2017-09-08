@@ -44,21 +44,30 @@ MOD = modality (can, could, will, would, shall, should)
 
 * DO NP VP (did Lord Byron marry Queen Elisabeth)
 * DO NP VP (did Lord Byron marry Queen Elisabeth or Anne Isabella Milbanke)
+* DO NP NOT VP (did Lord Byron not marry Queen Elisabeth)
 
 * EQ NP NP (was Lord Byron king of England)
 * EQ NP NP (was Lord Byron a king or a lord)
+* EQ NP NOT NP (was Lord Byron not king of England)
 
 * BE NP ADJ (is the block red)
 * BE NP ADJ (is the block red or blue)
 
 * BE NP VP (was Lord Byron born in London)
 * BE NP VP (was Lord Byron born in London or Cambridge)
+* BE NP NOT VP (was Lord Byron not born in London)
 
 * HAVE NP VP (has Napolean invaded Germany)
+* HAVE NP NOT VP (has Napolean not invaded Germany)
 * HAVE NP VP (has Napolean invaded Germany or The Netherlands)
 
 * MOD NP VP (would you like a cup of coffee, should I leave my things here, can dogs fly, can i ask you a question, can you stack a cube on a piramid)
 * MOD NP VP (would you like coffee or tea)
+
+### Uninverted yes/no questions
+
+* NP VP (Lord Byron married Queen Elisabeth?) (question mark is required)
+* NP DO NOT VP (Lord Byron did not marry Queen Elisabeth?) (question mark is required)
 
 ### Wh-questions (which, what, who; name one or more individuals)
 
@@ -66,6 +75,7 @@ MOD = modality (can, could, will, would, shall, should)
 * WHO EQ NP (who was Lord Byron's wife)
 
 * WHICH NP VP (which countries border the mediterranean)
+* WHICH NP DO NOT VP (which countries do not border the mediterranean)
 * WHICH DO NP VP (which do you do more often)
 
 * WHAT NP VP (what rock sample contains most iron, what food items did you eat)
@@ -75,14 +85,17 @@ MOD = modality (can, could, will, would, shall, should)
 * WHOSE NP EQ NP (whose book is that)
 * WHOSE NP VP (whose autographs have you collected)
 
-###  How many (a number, requires aggregation)
+###  Amount (a number, requires aggregation)
 
 * HOW MANY NP VP (how many children had Lord Byron, how many children did Lord Byron have)
 
 ### Degree (a number, the unit result depends on subject)
 
 * HOW ADJ BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
+
 * HOW ADV DO NP VP (how often do you go to the movies)
+
+* HOW MUCH NP VP (how much suger goes in a single drink)
 
 ### Manner (an means)
 
@@ -97,11 +110,14 @@ MOD = modality (can, could, will, would, shall, should)
 ### Reason (a cause)
 
 * WHY DO NP VP (why did Napolean invade Germany)
+* WHY DO NP NOT VP (why did Napolean not invade Germany)
 * WHY BE NP VP (why was Napolean crowned king)
 
 ### Time (a time)
 
 * WHEN BE NP VP (when was Napolean crowned king)
+
+Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
 
 ## Special syntactic constructs
 
