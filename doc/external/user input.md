@@ -42,56 +42,48 @@ MOD = modality (can, could, will, would, shall, should)
 
 ### Factual yes/no-questions or choice questions (boolean / a selected object)
 
-* DO NP VP (did Lord Byron marry Queen Elisabeth)
+* DO NP VP (did Lord Byron marry Queen Elisabeth, did Lord Byron not marry Queen Elisabeth)
 * DO NP VP (did Lord Byron marry Queen Elisabeth or Anne Isabella Milbanke)
-* DO NP NOT VP (did Lord Byron not marry Queen Elisabeth)
 
-* EQ NP NP (was Lord Byron king of England)
+* EQ NP NP (was Lord Byron king of England, was Lord Byron not king of England)
 * EQ NP NP (was Lord Byron a king or a lord)
-* EQ NP NOT NP (was Lord Byron not king of England)
 
-* BE NP ADJ (is the block red)
-* BE NP ADJ (is the block red or blue)
+* BE NP ADJP (is the block red)
+* BE NP ADJP (is the block red or blue)
 
-* BE NP VP (was Lord Byron born in London)
+* BE NP VP (was Lord Byron born in London, was Lord Byron not born in London)
 * BE NP VP (was Lord Byron born in London or Cambridge)
-* BE NP NOT VP (was Lord Byron not born in London)
 
-* HAVE NP VP (has Napoleon invaded Germany)
-* HAVE NP NOT VP (has Napoleon not invaded Germany)
+* HAVE NP VP (has Napoleon invaded Germany, has Napoleon not invaded Germany)
 * HAVE NP VP (has Napoleon invaded Germany or The Netherlands)
 
 * MOD NP VP (would you like a cup of coffee, should I leave my things here, can dogs fly, can i ask you a question, can you stack a cube on a pyramid)
 * MOD NP VP (would you like coffee or tea)
 
-### Uninverted yes/no questions
+### Uninverted yes/no questions (boolean)
 
 * NP VP (Lord Byron married Queen Elisabeth?) (question mark is required)
-* NP DO NOT VP (Lord Byron did not marry Queen Elisabeth?) (question mark is required)
 
 ### Wh-questions (which, what, who; name one or more individuals)
 
-* WHO VP NP (who married Lord Byron)
-* WHO EQ NP (who was Lord Byron's wife)
-* WHO DO NP VP (who does Pierre want to win)
+* WHO VP (who married Lord Byron, who was Lord Byron's wife)
+* WHO DO NP VP (who does Pierre want to beat)
 
-* WHOM DO NP VP (whom do you believe)
+* WHOM VP (whom do you believe)
 * WHOM MOD NP VP (whom should I talk to)
 * WITH/TO WHOM BE NP VP (with whom is Peter speaking)
 
-* WHICH NP VP (which countries border the mediterranean)
-* WHICH NP DO NOT VP (which countries do not border the mediterranean)
+* WHICH NP VP (which countries border the mediterranean, which countries do not border the mediterranean)
 * WHICH DO NP VP (which do you do more often)
-* WHICH EQ VP (which is the best option)
+* WHICH EQ NP (which is the best option)
 * WHICH NP MOD NP VP (which way should I go)
 
 * WHAT NP VP (what rock sample contains most iron, what food items did you eat)
-* WHAT EQ NP (what is the biggest block, what is your name)
 * WHAT DO NP VP (what do laptops cost)
-* WHAT EQ VP (what is the largest planet)
+* WHAT EQ NP (what is the biggest block, what is your name)
 
-* WHOSE NP EQ NP (whose book is that)
-* WHOSE NP VP (whose autographs have you collected)
+* WHOSE NP VP (whose autographs have you collected, whose parents will drive)
+* WHOSE NP BE NP (whose book is that)
 
 ###  Amount (a number, requires aggregation)
 
@@ -99,9 +91,9 @@ MOD = modality (can, could, will, would, shall, should)
 
 ### Degree (a number, the unit result depends on subject)
 
-* HOW ADJ BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
-* HOW ADV DO NP VP (how often do you go to the movies, how nicely do I need to dress tonight)
 * HOW MUCH NP VP (how much sugar goes in a single drink)
+* HOW ADJP BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
+* HOW ADVP DO NP VP (how often do you go to the movies, how nicely do I need to dress tonight)
 
 ### Manner (an means)
 
@@ -109,28 +101,36 @@ MOD = modality (can, could, will, would, shall, should)
 * HOW DO NP VP (how do you go to work)
 * HOW MOD NP VP (how can I become more productive)
 
-### State
+### State (a state)
 
 * HOW BE NP (how are you)
 
 ### Reason (a cause)
 
-* WHY DO NP VP (why did Napolean invade Germany)
-* WHY DO NP NOT VP (why did Napolean not invade Germany)
-* WHY BE NP VP (why was Napolean crowned king)
+* WHY BE NP VP (why was Napoleon crowned king)
+* WHY DO NP VP (why did Napoleon invade Germany)
 * WHY MOD NP VP (why should I go)
 
 ### Time (a time)
 
-* WHEN BE NP VP (when was Napolean crowned king)
+* WHEN BE NP (when was the marriage)
+* WHEN BE NP VP (when was Napoleon crowned king)
 * WHEN DO NP VP (when did you start wearing make up)
+* WHEN MOD NP VP (when can I go home)
+
+* WHEN -> WHEN PP (when in the next hour do you want to go)
 
 ### Place (a place)
 
+* WHERE BE NP (where is it?)
+* WHERE BE NP VP (where is the concert taking place)
 * WHERE DO NP VP (where did you go)
-* WHERE PP DO NP VP (where on the map does this train go)
+* WHERE MOD NP VP (where can I find a pub)
+
+* WHERE -> WHERE PP (where on the map is it)
 
 Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
+And of course http://nlp.stanford.edu:8080/parser/index.jsp
 
 ## Special syntactic constructs
 
