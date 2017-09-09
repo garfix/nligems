@@ -67,20 +67,27 @@ MOD = modality (can, could, will, would, shall, should)
 ### Wh-questions (which, what, who; name one or more individuals)
 
 * WHO VP (who married Lord Byron, who was Lord Byron's wife)
+* WHO BE NP VP (who are you seeing)
 * WHO DO NP VP (who does Pierre want to beat)
+* WHO HAVE NP VP (who have you been seeing)
+* WHO MOD VP (who can drive me home)
 
-* WHOM VP (whom do you believe)
+* WHOM DO NP VP (whom do you believe)
+* WHOM HAVE NP VP (whom have you believed)
 * WHOM MOD NP VP (whom should I talk to)
-* WITH/TO WHOM BE NP VP (with whom is Peter speaking)
+
+* WHOM -> WITH/TO WHOM (with whom is Peter speaking)
 
 * WHICH NP VP (which countries border the mediterranean, which countries do not border the mediterranean)
+* WHICH BE NP (which is the best option)
 * WHICH DO NP VP (which do you do more often)
-* WHICH EQ NP (which is the best option)
 * WHICH NP MOD NP VP (which way should I go)
 
 * WHAT NP VP (what rock sample contains most iron, what food items did you eat)
+* WHAT BE NP (what is the biggest block, what is your name)
 * WHAT DO NP VP (what do laptops cost)
-* WHAT EQ NP (what is the biggest block, what is your name)
+* WHAT HAVE NP VP (what has Churchill done to stop the war)
+* WHAT MOD NP VP (what should I do)
 
 * WHOSE NP VP (whose autographs have you collected, whose parents will drive)
 * WHOSE NP BE NP (whose book is that)
@@ -95,10 +102,11 @@ MOD = modality (can, could, will, would, shall, should)
 * HOW ADJP BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
 * HOW ADVP DO NP VP (how often do you go to the movies, how nicely do I need to dress tonight)
 
-### Manner (an means)
+### Manner (a means)
 
 * HOW BE NP VP (how was Napoleon crowned king)
 * HOW DO NP VP (how do you go to work)
+* HOW HAVE NP VP (how has Napoleon invaded Britain)
 * HOW MOD NP VP (how can I become more productive)
 
 ### State (a state)
@@ -109,6 +117,7 @@ MOD = modality (can, could, will, would, shall, should)
 
 * WHY BE NP VP (why was Napoleon crowned king)
 * WHY DO NP VP (why did Napoleon invade Germany)
+* WHY HAVE NP VP (why has John hit Jake)
 * WHY MOD NP VP (why should I go)
 
 ### Time (a time)
@@ -116,6 +125,7 @@ MOD = modality (can, could, will, would, shall, should)
 * WHEN BE NP (when was the marriage)
 * WHEN BE NP VP (when was Napoleon crowned king)
 * WHEN DO NP VP (when did you start wearing make up)
+* WHEN HAVE NP VP (when have you bought the tv)
 * WHEN MOD NP VP (when can I go home)
 
 * WHEN -> WHEN PP (when in the next hour do you want to go)
@@ -125,6 +135,7 @@ MOD = modality (can, could, will, would, shall, should)
 * WHERE BE NP (where is it?)
 * WHERE BE NP VP (where is the concert taking place)
 * WHERE DO NP VP (where did you go)
+* WHERE HAVE NP VP (where has Sally gone)
 * WHERE MOD NP VP (where can I find a pub)
 
 * WHERE -> WHERE PP (where on the map is it)
