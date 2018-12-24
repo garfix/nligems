@@ -11,7 +11,7 @@ body {
 
 div.filterbar {
 	position: absolute;
-	top: 106px;
+	top: 120px;
 	bottom: 0;
 	left: 0;
     width: calc(30% - 20px);
@@ -72,7 +72,7 @@ div.resultset {
 	background-color: #8BCCC1;
 	left: 30%;
 	right: 0;
-	top: 106px;
+	top: 120px;
 	bottom: 0;
 	margin-top: 5px;
 	overflow: auto;
