@@ -4,8 +4,6 @@ namespace nligems\page;
 
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
-use nligems\api\component\LinkBar;
-use nligems\api\LinkApi;
 use nligems\api\page\FrontEndPage;
 use Parsedown;
 
@@ -14,24 +12,15 @@ require_once __DIR__ . '/../api/component/ParseDown.php';
 /**
  * @author Patrick van Bergen
  */
-class InternalPage extends FrontEndPage
+class InternalsPage extends FrontEndPage
 {
 
     public function __construct()
     {
-        $this->Header = new Header('NLI Modules', 'index');
-
-        $LinkApi = new LinkApi();
-
-        $this->LinkBar = new LinkBar();
-
-        foreach (file(__DIR__ . '/../doc/internal/order.txt') as $filename) {
-            $id = trim($filename);
-            $this->LinkBar->addLink(ucfirst($id), $LinkApi->getLink('internal', ['id' => $id]));
-        }
+        $this->Header = new Header('NLI internals', 'index');
 
         $this->addStyleSheet('common');
-        $this->addStyleSheet('elements');
+        $this->addStyleSheet('internals');
     }
 
     protected function getBody()
@@ -40,7 +29,6 @@ class InternalPage extends FrontEndPage
         $Page->addClass('page');
 
         $Header = new HtmlElement('div');
-        $Header->addClass('header');
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
@@ -49,11 +37,6 @@ class InternalPage extends FrontEndPage
 
         $pd = new Parsedown();
         $html = $pd->text($markdown);
-
-        $LinkBar = new HtmlElement('div');
-        $LinkBar->addClass('linkPanel');
-        $LinkBar->addChildHtml((string)$this->LinkBar);
-        $Page->addChildNode($LinkBar);
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');

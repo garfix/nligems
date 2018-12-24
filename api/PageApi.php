@@ -4,7 +4,7 @@ namespace nligems\api;
 
 use nligems\page\ComparePage;
 use nligems\page\EditSystemPage;
-use nligems\page\InternalPage;
+use nligems\page\InternalsPage;
 use nligems\page\FilterPage;
 use nligems\page\IndexPage;
 use nligems\page\NewsPage;
@@ -42,19 +42,11 @@ class PageApi
 	}
 
     /**
-     * @return ExternalPage
+     * @return InternalsPage
      */
-    public function getExternalPage()
+    public function getInternalsPage()
     {
-        return new ExternalPage();
-    }
-
-    /**
-     * @return InternalPage
-     */
-    public function getInternalPage()
-    {
-        return new InternalPage();
+        return new InternalsPage();
     }
 
 	/**

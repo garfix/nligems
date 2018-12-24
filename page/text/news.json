@@ -1,5 +1,9 @@
 [
   {
+    "date": "2018-12-24",
+    "story": "A revision of the website. It is somewhat responsive now. Also the background information on NLI systems has been extended a lot, and I placed it on a single page."
+  },
+  {
     "date": "2017-07-15",
     "story": "I have found out that the intelligence of an NLI system is not something that emerges. Every bit of it needs to be hard-coded. The complexity is formed by to ability to recombine these hard-coded pieces at will."
   },

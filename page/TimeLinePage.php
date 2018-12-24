@@ -86,7 +86,6 @@ class TimeLinePage extends FrontEndPage
         $Page->addClass('page');
 
         $Header = new HtmlElement('div');
-        $Header->addClass('header');
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 

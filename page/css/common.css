@@ -2,18 +2,54 @@
 
 /* BODY */
 
+html {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
 body {
-	background-color: #F1E7D9;
-	font-family: Oswald, sans-serif;
 	color: #343240;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Oswald, Helvetica, Arial, sans-serif;
 }
 
 a {
 	color: #5F445F;
 }
 
+p, li {
+    font-family: Lusitana, serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p {
+    line-height: 30px;
+}
+
+li {
+    line-height: 30px;
+}
+
 a:visited {
 	color: #8B668B;
+}
+
+/* TEXT-PAGE */
+
+div.textPage {
+    margin: 20px;
+    bottom: 0;
+    max-width: 700px;
+    overflow: visible;
+}
+
+p.story {
+    padding: 20px 10px 20px 10px;
 }
 
 /* HEADER */
@@ -24,35 +60,25 @@ a.backButton {
 	float: left;
 }
 
+img.homeImage {
+    display: block;
+    margin: 5px 10px 30px 10px;
+    float: left;
+}
+
 /* PAGE */
 
-div.page {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
 div.header {
-	position: absolute;
-	background-color: #D3BECF;
-	top: 0;
-	height: 100px;
-	left: 0;
-	right: 0;
+	background-color: #ffdbfd;
 	border-bottom: 5px solid #343240;
-}
-
-div.header img {
-	float: right;
 }
 
 div.header h1 {
 	font-family: 'Domine', serif;
 	font-size: 40px;
 	color: #343240;
-	margin: 10px 0 5px 10px;
+	margin: 0;
+    padding-top: 5px;
 }
 
 div.header h3 {
@@ -60,6 +86,26 @@ div.header h3 {
 	font-size: 18px;
 	color: #8B668B;
 	margin: 0 0 5px 10px;
+}
+
+/* LINK BAR */
+
+div.linkBar {
+    font-family: Oswald, sans-serif;
+    display: block;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+div.linkBar div {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+div.linkBar div a {
+    font-size: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 /* MISC */

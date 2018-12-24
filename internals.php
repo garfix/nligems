@@ -11,8 +11,8 @@ require __DIR__ . '/autoload.php';
 $NliSystemApi = new NliSystemApi();
 $PageApi = new PageApi();
 
-$Page = $PageApi->getInternalPage();
+$Page = $PageApi->getInternalsPage();
 
 echo (string)$Page;
 
-$PageApi->setSecondaryPage('element');
+$PageApi->setSecondaryPage('nli-system');

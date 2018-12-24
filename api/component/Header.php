@@ -28,9 +28,6 @@ class Header
         $H1 = new HtmlElement('h1');
         $H1->addChildText('Natural Language Interface Gems');
 
-        $SubTitle = new HtmlElement('h3');
-        $SubTitle->addChildText($this->pageTitle);
-
         $Header = new HtmlElement('div');
         $Header->addAttribute('class', 'header');
 
@@ -44,10 +41,36 @@ class Header
             $BackImage = new HtmlElement('img', false);
             $BackImage->addAttribute('src', 'page/img/back.png');
             $Link->addChildNode($BackImage);
+
+        } else {
+
+            $HomeImage = new HtmlElement('img', false);
+            $HomeImage->addAttribute('src', 'page/img/home.png');
+            $HomeImage->addAttribute('width', '90');
+            $HomeImage->addAttribute('height', '90');
+            $HomeImage->addClass('homeImage');
+            $Header->addChildNode($HomeImage);
+
         }
 
         $Header->addChildNode($H1);
-        $Header->addChildNode($SubTitle);
+
+        $menu = [
+            'internals.php' => "The NLI system",
+            'filter.php' => "Systems chart",
+            'timeline.php' => "Timeline",
+            'news.php' => "News"
+        ];
+
+        $Bar = new HtmlElement('div');
+        $Bar->addClass('linkBar');
+
+        foreach ($menu as $link => $text) {
+            $link = new Link($text, $link);
+            $Bar->addChildHtml((string)$link);
+        }
+
+        $Header->addChildNode($Bar);
 
         return (string)$Header;
     }
