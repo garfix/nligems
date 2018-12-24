@@ -1,6 +1,0 @@
-introduction
-purpose
-reasons
-user input
-user output
-design

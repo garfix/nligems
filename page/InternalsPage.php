@@ -32,8 +32,7 @@ class InternalsPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 'introduction';
-        $markdown = file_get_contents(__DIR__ . '/../doc/internal/' . $id . '.md');
+        $markdown = file_get_contents(__DIR__ . '/../doc/internal/introduction.md');
 
         $pd = new Parsedown();
         $html = $pd->text($markdown);

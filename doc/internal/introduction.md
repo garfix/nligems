@@ -372,13 +372,6 @@ The word "and" is often used to denote disjunction rather than conjunction. (And
 
 To which constituent must the modifier (PP) be attached? (Androutsopoulos)
 
-##### Idioms
-
-Each language has its own expressions, that are meaningless outside it.
-
-Can you tell me what time it is? => REQUEST: Are you able to tell the current time to me?
-                                    REQUEST: What is the current time?
-
 #### Understand the User: Pragmatic analysis
 
 ##### Context
@@ -421,6 +414,31 @@ Superficially these actions correspond with the mood of the sentence, but not al
 ##### Ellipsis
 
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
+
+#### Understand the User: Domain Specific Analysis
+
+This part of pragmatic analysis uses knowledge from the current "domain". It may use domain specific knowledge bases to help it.
+
+##### Proper Nouns: Named Entity Recognition (NER)
+
+How to tell proper nouns (names) apart?
+
+A name is only meaningful if it is present, or introduced into, the present domain. This type of NER looks up names in a database.
+
+##### Nouns and Adjectives: Compound Noun Analysis
+
+Users may introduce compounds that are not in the lexicon. These come in two shapes:
+
+* noun-noun compounds ("city department")
+* adjective-noun compounds ("large company")
+
+The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
+
+(example from Androutsopoulos)
+
+##### Idioms
+
+Each domain has its own expressions, that are meaningless outside it.
 
 ### Goal: Process the Intent
 
@@ -472,6 +490,10 @@ Knowledge may take the form of:
 - facts (relations)
 - rules
 - definitions
+
+Different knowledge sources usually have different ontologies (ways of describing the world). Therefore, the ontology of the system needs to be mapped onto that of each of the knowledge sources.
+
+Open problem: if multiple knowledge sources contain information about the same entities (things), a shared identity must be found to link the information. For dates in time, this is simple. For persons, however, the name of the person may be insufficient to identify him or her in both sources. How to identify all types of entities in multiple heterogeneous knowledge sources is still an open problem.
 
 #### Process the Intent: Interaction with databases
 
