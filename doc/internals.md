@@ -16,11 +16,11 @@ Text search is also free-form and has proven to be quite powerful and successful
 
 NLI aims to combine the strictness of SQL with the ease of use of text search.
 
-This text shows you some of the ideas and techniques used in this field, and highlights its problems.
+This text shows you some of the ideas and techniques used in this field, and highlights its problems. It is certainly not necessary to use all of this information to create a useful NLI. Just pick the stuff you need.
 
 ## Goals
 
-The goals of NLI (or: the system) follow from this (my) definition:
+The goals of NLI follow from this definition:
 
 > An NLI allows a user to interact with a knowledge source through natural language. The system must understand the intent of the user's input, process it and respond in a helpful manner.
 
@@ -291,7 +291,7 @@ Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
 
 ### Goal: Understand the User
 
-To understand a user, the system needs to extract the "intent" of the user's sentence.
+To understand a user, the system needs to extract the ___intent___ of the user's sentence.
 
 Examples of the intent:
 
@@ -299,48 +299,35 @@ Examples of the intent:
 - DATE_OF_BIRTH?(Person) "When was A born?"
 - SEND_EMAIL!(Person, Subject, Content) "Send an email to A. Subject B. Content C."
 
-The intent can be expressed by a single relation, with variables. The variables can be arbitrarily complex structures. "Person" can be filled in with "Lord Byron", "the butcher's wife", or even "he who shall not be named".
+The intent can be expressed by a single relation using variables. The variables can be filled in by arbitrarily complex structures. "Person" can be filled in with "Lord Byron", "the butcher's wife", or even "he who shall not be named", for example.
 
 The reason to separate the intent from the full meaning is that the way the sentence is processed depends solely on the intent. The modifiers are processed the same in any sentence. The intent makes each sentence different.
 
-In order to understand the intent of the user, the system can
+In order to understand the intent of the user, and fill in the modifiers, the system can
 
 - tokenize the sentence (split the sentence into words and punctuation marks)
 - parse the sentence (using a lexicon and a grammar)
-- turn the syntactic structure into pieces of semantic information (semantic attachment)
-- compose these pieces into a semantic structure
+- turn the syntactic structure into pieces of semantic information (___semantic attachment___)
+- compose these pieces into a semantic structure (___semantic composition___)
 
 The semantic structure may take the form of
 
 - a set of nested goals
 - a scoped predicate logic formula
 
-The first already tells the NLI how to reach the answer. The second one merely specifies the constraints of the answer.
+The first already tells the NLI what steps to take to reach the answer. The second one merely specifies the constraints of the answer.
 
 Once the raw semantic structure is built, it needs to be modified into the final semantic structure.
 
 - handle ambiguities (multiple interpretations of the same input)
-- determine the right constituent of each attachment (Modifier attachment)
+- determine the right constituent of each attachment (___modifier attachment___)
 - determine the correct nesting of AND and OR clauses
-- scope the semantic structure to handle determiners
+- scope the semantic structure to handle determiners (___syntactic scoping___)
 - replace pronouns by entity references ("she -> Lady Lovelace") (Anaphora resolution)
 
 All of these are just means to an end, and these steps may be combined or even skipped by an NLI.
 
 The goal of this is to create an Intent, a semantic representation of the meaning of the sentence as it was intended by the user. This representation often takes the form of a variant of First Order Predicate Logic.
-
-A special part of understanding the user is to recognize proper names in the sentence. Proper names are not part of the lexicon, and must be recognized somehow, and not be discarded as non-words. This can be done in several ways:
-
-- by looking up the unknown words in the database as identifiers
-- by matching their form (they might start with capitals)
-- by using Named Entity Recognition
-
-Some tokens can only be recognized using pattern recognition:
-
-- dates
-- numbers
-- prices
-- quoted strings
 
 #### Understand the User: Syntactic analysis
 
@@ -352,21 +339,52 @@ In all systems, raw text is split into tokens. This means that words, numbers an
 
 In some systems the morphemes of words are distinguished. This helps keep the dictionary small, since inflections of words need not be stored.
 
-##### Sentence structure recognition
+##### Unlexical Word Forms
 
-Recognizing word combinations is done in two ways:
+Some parts-of-speech cannot be listed completely in the lexicon. A special case is formed by proper nouns (names of persons and things). Proper names are not part of the lexicon, and must be recognized somehow, and not be discarded as non-words. This can be done in several ways:
 
-By parsing a tree structure of the sentence is created.
+- by looking up the unknown words in the database
+- by matching their form (assuming they start with capitals)
+- by using Named Entity Recognition
 
-By template matching a line of input is matched to a template.
+If proper nouns are looked up in the database, one needs to specify which table/column stores these names.
 
-Data sources:
+The place of proper noun lookup in the understanding process may vary depending on your design.
 
-* a lexicon
-* a grammar
-* a set of input-matching templates
+Some tokens can only be recognized using pattern recognition:
 
-And of course http://nlp.stanford.edu:8080/parser/index.jsp
+- dates
+- numbers
+- prices
+- quoted strings
+
+##### Sentence Structure Recognition
+
+From the individual words the structure of the sentence must be recognized.
+
+When the system needs to deal with complex sentences, the sentence is ___parsed___, whcih means that its phrase constituents are recognized and placed in a ___parse tree___.
+
+The parsing process uses a ___parser___, an algorithm that uses rewrite rules to transform a sentence into a parse tree. These rewrite rules form a ___grammar___.
+
+Examples of rewrite rules are
+
+S -> NP VP
+VP -> vbar pp
+NP -> proper_noun
+
+One has to build one's own grammar. The grammar describes only a subset of the natural language. Each natural language requires its own grammar, although languages in the same language family have many rules in common.
+
+The reason that one has to write his own grammar, is that the number of rules has to be kept to a minimum. The fact that more rules means slower parsing is not so important. More rules, however, cause unnecessary ambiguity, and that is something to avoid.
+
+There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  http://nlp.stanford.edu:8080/parser/index.jsp
+
+However, there's also an easier way, that may be used in simpler systems.
+
+when the system only needs to deal with simple sentences, parsing is overkill and a sentence may be recognized by ___template matching___. The template is a fixed form like this:
+
+    WHAT IS THE MASS OF ?x
+
+Here all words must match literally to the template, with the exception of ?x, which matches a variable text.
 
 #### Understand the User: Semantic Analysis
 
