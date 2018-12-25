@@ -1,21 +1,34 @@
-## Why would you use an NLI?
+## Reasons for NLI
 
-What human concerns does an NLI serve? Why is an NLI better than SQL, predefined result sets, and text search?
+Ever since there are computers, people have wanted to interact with them using their natural language (like English or French).
 
-- Free form queries (text search has that too!)
-- Get exact and specific answers (SQL has that too!)
-- No knowledge of datastructure (text search has that too!)
+The goal of NLI (Natural Language Interface) is to allow you to interact with a database, or more general, any source of information and any online service, in natural language.
+
+This is an old field of study, and yet these interfaces are still challenging to make, and quite rare in use.
+
+Why would you want to use a Natural Language Interface? Are the existing means to access data not sufficient?
+
+NLI allows you to place free-form queries, and as such it may be compared to free-form SQL, and text search.
+
+SQL was designed to be an easy-to-learn human readable database query language. Still, only software developers use it today. It does not only require one to learn SQL, but to have detailed understanding of the database structure as well.
+
+Text search is also free-form and has proven to be quite powerful and successful. Yet it can never give precise results, nor does it allow you to access structured data.
+
+NLI aims to combine the strictness of SQL with the ease of use of text search.
+
+This text shows you some of the ideas and techniques used in this field, and highlights its problems.
 
 ## Goals
 
-What goals are to be met in order to have an NLI?
+The goals of NLI (or: the system) follow from this (my) definition:
 
-- Allow a user to interact with a knowledge source through natural language
-- The system must understand the user, process the intent of the sentence and respond in a helpful manner
+> An NLI allows a user to interact with a knowledge source through natural language. The system must understand the intent of the user's input, process it and respond in a helpful manner.
 
-I will now explore these goals as a set of subgoals.
+I will now explore these goals.
 
-### Goal: Interact
+### Goal: Interact with a Knowledge Source
+
+A Knowledge Source can be a database, any other form of stored structured data (as opposed to unstructured text), and online services that provide an API.
 
 This interaction consists of
 
@@ -26,15 +39,15 @@ Most historical systems are based on the latter.
 
 The type of interaction can be:
 
-- question / answer (user asks, system answers; but the system may also ask the user in order to clarify something)
+- question / answer (user asks, system answers)
 - tell (user tells system what to do)
-- inform (user feeds information to the system)
+- inform (user feeds information into the system)
 
 The system may answer with one of these sentences
 
 - a request clarification ("Do you mean [a] or [b]?")
 - a factual response ("yes", "Ada Lovelace")
-- a paraphase of the question (to verify that it was understood correctly)
+- a paraphrase of the question (to verify that it was understood correctly)
 - a canned response ("Thank you", "I don't know")
 - a generated sentence ("She was married to Lord Byron on March 2, 1844")
 
@@ -42,25 +55,27 @@ Interaction with an NLI is not limited to a simple Question/Answer. Since langua
 
 ### Goal: Knowledge Source
 
-Anthing that contains information may be the source of the information that a user may want to query. That's why we talk about knowledge source rather than just database.
+Anything that contains information may be the source of the information that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
 The technology of these sources may be
 
 - a relational database (approachable through SQL)
 - a triple store (approachable through SPARQL)
 - an in-memory fact base (defined and approachable through code in some programming language)
+- an online service with a public API
 
 The information itself may consist of
 
-- relations (person, sample)
-- inference rules (if a then b)
+- relations (persons, soil samples, countries, ...)
+- inference rules (if A then B)
 - time based information (at time T is was the case that C)
+- position based information (at position P it is the case that C)
 
-The source may be internal or external to the NLI system. A database is always external to the system. Many older systems made use of some internal data structure that contained all its knowledge.
+The source may be ___internal___ or ___external___ to the NLI system. A database is always external to the system. Many older systems made use of some internal data structure that contained all its knowledge.
 
-For a simple NLI the domain of the knowledge source is 'objective', it contains soil sample data, geographical data or factual wordly information.
+For a simple NLI the domain of the knowledge source is ___objective___, it contains soil sample data, geographical data or other factual worldly information.
 
-More complex NLI systems even contain information about their inner processes, and this information can even be queried by the user (i.e. "Why did you pick up the red cube?"). Let's call these knowledge sources 'subjective'.
+More complex NLI systems even contain information about their own inner processes, and this information can even be queried by the user (i.e. "Why did you pick up the red cube?"). Let's call these knowledge sources ___subjective___.
 
 Subjective knowledge sources are:
 
