@@ -55,7 +55,7 @@ Interaction with an NLI is not limited to a simple Question/Answer. Since langua
 
 ### Goal: Knowledge Source
 
-Anything that contains information may be the source of the information that a user may want to query. That's why we talk about a knowledge source rather than just a database.
+Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source of the information that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
 The technology of these sources may be
 
@@ -70,10 +70,13 @@ The information itself may consist of
 - inference rules (if A then B)
 - time based information (at time T is was the case that C)
 - position based information (at position P it is the case that C)
+- cause/effect based information (event A was because of event B)
 
-The source may be ___internal___ or ___external___ to the NLI system. A database is always external to the system. Many older systems made use of some internal data structure that contained all its knowledge.
+The source may be persistent or volatile. A ___volatile___ source is destroyed when the interaction with the user ends. A ___persistent___ source does not depend on the user session.
 
-For a simple NLI the domain of the knowledge source is ___objective___, it contains soil sample data, geographical data or other factual worldly information.
+The source may be internal or external to the NLI system. An ___external___ database is located outside of the NLI and has its own query language. An ___internal___ source is part of the NLI. Many older systems had all their knowledge sources stored internally.
+
+For a simple NLI the domain of the knowledge source is ___objective___, it contains soil sample data, geographical data or other factual worldly information. Objective sources contain information that is shared with others.
 
 More complex NLI systems even contain information about their own inner processes, and this information can even be queried by the user (i.e. "Why did you pick up the red cube?"). Let's call these knowledge sources ___subjective___.
 
@@ -82,10 +85,12 @@ Subjective knowledge sources are:
 - the dialog context (contains information about recently mentioned entities, and the place of self in time and space: deictic center)
 - declarative memory (keeps track of the information the user feeds it)
 - spatial memory (which object is located where)
-- time based memory (what happend to whom at what time)
+- time based memory (what happened to whom at what time)
 - the goals of the nli (goals added by the user, or built-in goals)
 - emotional state
 - a model of the beliefs, desires and intentions of itself and of the user
+
+All types of combinations of these dimensions occur. Typical modern databases are persistent, external and objective. Emotional information is mostly volatile, internal and subjective.
 
 As you can see, a sufficiently complex NLI is a proper intelligent agent.
 
@@ -97,14 +102,15 @@ Natural language means one of these:
 
 - English
 - French
+- Chinese
 - etc
 
-Most research was done only with English, some other languages were used as well.
+Most research was done only with English, but some other languages were used as well.
 
 Natural language sentences can be
 
-- questions
-- declarations
+- interrogatives / questions
+- declaratives
 - imperatives
 
 Questions can be
@@ -118,7 +124,7 @@ Questions can be
 
 The type of sentence often corresponds with the act that the user wishes to perform. Often, but not always. "Do you know what time it is?" means "Tell me the time! (please)"
 
-To be intelligible a sentence must be complete and syntactically and sematically correct. In practice a system may have to deal with
+To be intelligible a sentence must be complete and syntactically and semantically correct. In practice a system may have to deal with
 
 - partial sentences ("and the country?")
 - spelling mistakes ("How manny")
@@ -145,7 +151,35 @@ Common syntactic structures that may need to be recognized are:
 - Clauses as objects
 - Extraposition
 
+#### Imperative sentence syntax
+
+An imperative sentence commands the system to do something:
+
+- Show me the five oldest presidents.
+- Send a mail to my brother John about the holidays.
+
+The syntactic structure of these sentences is always a single verb phrase
+
+* VP
+
+It may be followed by an exclamation mark.
+
+#### Declarative sentence syntax
+
+A declarative sentence gives information to the system:
+
+- Spain borders France on the south.
+- A cube has 6 sides.
+
+It has the structure
+
+* NP VP
+
 #### Question sentence syntax
+
+There are so many syntactic structures for questions. You might not need all of them, but it is always good to know there's not just two or three of them.
+
+In this overview I use some new abbreviations:
 
 EQ = identity (is, was, are, were)
 BE = auxiliary (is, was, are, were)
@@ -254,7 +288,6 @@ MOD = modality (can, could, will, would, shall, should)
 * WHERE -> WHERE PP (where on the map is it)
 
 Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
-And of course http://nlp.stanford.edu:8080/parser/index.jsp
 
 ### Goal: Understand the User
 
@@ -332,6 +365,8 @@ Data sources:
 * a lexicon
 * a grammar
 * a set of input-matching templates
+
+And of course http://nlp.stanford.edu:8080/parser/index.jsp
 
 #### Understand the User: Semantic Analysis
 
@@ -481,30 +516,6 @@ The NLI may have a set of built-in goals, or the system may respond to a user re
 A goal is reached by executing plans that are linked to it. The plans are usually built-in.
 
 #### Process the Intent: Interaction with knowledge sources
-
-Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages.
-
-These knowledge sources can be:
-
-- persistent or volatile. A volatile source is destroyed when the interaction with the user ends.
-- internal or external. An internal source is part of the NLI. An external database is located outside of the NLI and has its own query language.
-- subjective or objective. A subjective source contains information about the relations the NLI has as a subject towards other entities. Objective sources contain information that is shared with others.
-
-All types of combinations of these dimensions occur. Typical modern databases are persistent, external and objective. Emotional information is mostly volatile, internal and subjective.
-
-Updating these sources can be regarded as a form of learning on the part of the NLI.
-
-Knowledge sources may have:
-
-- time based information
-- location based information
-- reason based information
-
-Knowledge may take the form of:
-
-- facts (relations)
-- rules
-- definitions
 
 Different knowledge sources usually have different ontologies (ways of describing the world). Therefore, the ontology of the system needs to be mapped onto that of each of the knowledge sources.
 
