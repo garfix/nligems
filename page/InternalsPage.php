@@ -17,7 +17,7 @@ class InternalsPage extends FrontEndPage
 
     public function __construct()
     {
-        $this->Header = new Header('NLI internals', 'index');
+        $this->Header = new Header('NLI internals');
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('internals');
@@ -32,7 +32,7 @@ class InternalsPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $markdown = file_get_contents(__DIR__ . '/../doc/internal/introduction.md');
+        $markdown = file_get_contents(__DIR__ . '/../doc/internals.md');
 
         $pd = new Parsedown();
         $html = $pd->text($markdown);

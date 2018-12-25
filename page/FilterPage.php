@@ -31,7 +31,7 @@ class FilterPage extends FrontEndPage
 
 	public function __construct(NliSystemApi $NliSystemApi)
 	{
-		$this->Header = new Header('Systems properties', 'index');
+		$this->Header = new Header('Systems properties');
 
 		$this->Filter = $this->getFilter($NliSystemApi);
 		$this->Filter->setValues($_REQUEST);

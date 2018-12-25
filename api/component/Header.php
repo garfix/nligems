@@ -15,7 +15,7 @@ class Header
     /** @var  string */
     private $backPage;
 
-    public function __construct($pageTitle, $backPage)
+    public function __construct($pageTitle, $backPage = null)
     {
         $this->pageTitle = $pageTitle;
         $this->backPage = $backPage;
@@ -44,13 +44,14 @@ class Header
 
         } else {
 
+            $Link = new HtmlElement('a');
+            $Link->addAttribute('href', $LinkApi->getLink("index"));
+            $Link->addClass('backButton');
+            $Header->addChildNode($Link);
+
             $HomeImage = new HtmlElement('img', false);
             $HomeImage->addAttribute('src', 'page/img/home.png');
-            $HomeImage->addAttribute('width', '90');
-            $HomeImage->addAttribute('height', '90');
-            $HomeImage->addClass('homeImage');
-            $Header->addChildNode($HomeImage);
-
+            $Link->addChildNode($HomeImage);
         }
 
         $Header->addChildNode($H1);

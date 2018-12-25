@@ -19,7 +19,7 @@ class TimeLinePage extends FrontEndPage
 
     public function __construct(NliSystemApi $NliSystemApi)
     {
-        $this->Header = new Header('Timeline', 'index');
+        $this->Header = new Header('Timeline');
 
         $this->TimeTable = new TimeTable();
 

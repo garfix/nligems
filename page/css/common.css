@@ -13,28 +13,25 @@ body {
     padding: 0;
 }
 
+
 h2, h3, h4, h5 {
     font-family: Oswald, Helvetica, Arial, sans-serif;
 }
 
 h2 {
     color: #5f445f;
-    font-size: 30px;
 }
 
 h3 {
     color: #9c231f;
-    font-size: 24px;
 }
 
 h4 {
     color: #68978c;
-    font-size: 20px;
 }
 
 h5 {
     color: #72aa9f;
-    font-size: 18px;
 }
 
 a {
@@ -43,6 +40,42 @@ a {
 
 a:visited {
     color: #8B668B;
+}
+
+@media screen {
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+}
+
+@media print {
+    h2 {
+        font-size: 18pt;
+    }
+
+    h3 {
+        font-size: 16pt;
+    }
+
+    h4 {
+        font-size: 14pt;
+    }
+
+    h5 {
+        font-size: 10pt;
+    }
 }
 
 /* HEADER */
@@ -72,8 +105,6 @@ img.homeImage {
     float: left;
 }
 
-/* LINK BAR */
-
 div.linkBar {
     font-family: Oswald, sans-serif;
     font-size: 40px;
@@ -92,12 +123,14 @@ div.linkBar div a {
     padding: 5px;
 }
 
+@media print {
+    div.header {
+        display: none;
+    }
+}
+
 /* TEXT-PAGE */
 
-div.textPage {
-    margin: 20px;
-    font-size: 20px;
-}
 
 code {
     display: block;
@@ -116,10 +149,28 @@ p.story {
     padding: 10px 10px 10px 10px;
 }
 
-p, li, code {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 30px;
+@media screen {
+    div.textPage {
+        margin: 20px;
+    }
+
+    p, li, code {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+}
+
+@media print {
+    div.textPage {
+        margin: 0;
+    }
+
+    p, li, code {
+        font-size: 10pt;
+        font-weight: 500;
+        line-height: 14pt;
+    }
 }
 
 /* MISC */
