@@ -26,7 +26,7 @@ The goals of NLI follow from this definition:
 
 I will now explore these goals.
 
-### Goal: Interact with a Knowledge Source
+### Goal: Interact
 
 A Knowledge Source can be a database, any other form of stored structured data (as opposed to unstructured text), and online services that provide an API.
 
@@ -341,7 +341,9 @@ In some systems the morphemes of words are distinguished. This helps keep the di
 
 ##### Unlexical Word Forms
 
-Some parts-of-speech cannot be listed completely in the lexicon. A special case is formed by proper nouns (names of persons and things). Proper names are not part of the lexicon, and must be recognized somehow, and not be discarded as non-words. This can be done in several ways:
+Verbs, nouns, determiners, adverbs, etc. are called parts-of-speech.
+
+Some parts-of-speech cannot be listed completely in the lexicon. A special case is formed by proper nouns (names of persons and things). Proper nouns are not part of the lexicon, and must be recognized somehow, and not be discarded as non-words. This can be done in several ways:
 
 - by looking up the unknown words in the database
 - by matching their form (assuming they start with capitals)
@@ -349,7 +351,7 @@ Some parts-of-speech cannot be listed completely in the lexicon. A special case 
 
 If proper nouns are looked up in the database, one needs to specify which table/column stores these names.
 
-The place of proper noun lookup in the understanding process may vary depending on your design.
+Proper noun lookup can be located in different places in the the understanding process.
 
 Some tokens can only be recognized using pattern recognition:
 
@@ -360,7 +362,7 @@ Some tokens can only be recognized using pattern recognition:
 
 ##### Sentence Structure Recognition
 
-From the individual words the structure of the sentence must be recognized.
+From the individual words the structure of the sentence must be recognized. This structure consists of phrases like NP (noun phrase) VP (verb phrase) DP (determiner phrase) etc.
 
 When the system needs to deal with complex sentences, the sentence is ___parsed___, whcih means that its phrase constituents are recognized and placed in a ___parse tree___.
 
@@ -388,15 +390,33 @@ Here all words must match literally to the template, with the exception of ?x, w
 
 #### Understand the User: Semantic Analysis
 
-Semantic Analysis maps words and word structures to semantic structures through a process of semantic composition. Semantic structures differ from syntactic structures in that they are language independent.
+Semantic Analysis maps words and word structures to semantic structures through a process of semantic composition. Semantic structures differ from syntactic structures in that they do not depend on the surface form of the sentence.
 
-In forming a semantic structure (logical form), a system may first create some intermediate representations (called quasi logical forms).
+Both words and phrases may have pieces of semantics attached. For example:
+
+    Lexicon
+        book:
+            - semantics: isa(E, book) number(E, singular)
+
+        married:
+            - semantics: isa(E, marry) tense(E, past)
+
+    Grammar
+        s(S1) -> np(E1) vp(S1)
+            - semantics: subject(S1, E1)
+
+        vp(V1) -> vbar(V1) np(E1)
+            - semantics: object(V1, E1)
+
+Verbs represent actions and states. They may be represented as predicates (as in marry(E, F)) but also as objects (as in isa(E, marry)). The former is more intuitive, but the latter is more expressive.
+
+In forming a semantic structure (logical form), a system may first create some intermediate representations (sometimes called quasi logical forms).
 
 Different types of phrases need to be handled differently in the analysis and composition process.
 
 This process uses language dependent composition rules.
 
-##### Determiners: Quantifier Scoping
+##### Quantifier Scoping
 
 In a sentence, a noun phase (NP) is about things. It may contain a determiner phrase (DP). This DP specifies the things. A quantifier phrase (QP) is a special form of DP. It determines the quantity of the NP; the number of things. The NP many be "many", "few", "3", "more than 3", "all", "some" or "none".
 
@@ -432,14 +452,6 @@ You will notice the inner and outer scopes, as well as the aggregation variables
 
 Open problem: scopes are ambiguous. In the example above "children" outscopes "friends". Whether one QP outscopes the other depends on a set of heuristics. For this reason it is hard to do scoping at parse time. It is best postponed until parsing is done. The heuristics are quite complex and they are not water tight. A simpler or complete theory of quantifier scope resolution has still to be found.
 
-##### Conjunction and Disjunction
-
-The word "and" is often used to denote disjunction rather than conjunction. (Androutsopoulos)
-
-##### Preposition Phrases: Modifier Attachment
-
-To which constituent must the modifier (PP) be attached? (Androutsopoulos)
-
 #### Understand the User: Pragmatic analysis
 
 ##### Context
@@ -457,6 +469,14 @@ There are three types of deictic center:
 * Space (where is Here?)
 
 Each domain has its own meanings for words and expressions, so you can only know the meaning of a sentence if you know the domain.
+
+##### Conjunction and Disjunction
+
+The word "and" is often used to denote disjunction rather than conjunction.
+
+##### Modifier Attachment
+
+To which constituent must the modifier (PP) be attached?
 
 ##### Pronouns / Anaphora
 
@@ -583,7 +603,7 @@ Emotional state describes the relation of the NLI as a subject towards other ent
 
 ##### Beliefs, Desires, Intentions
 
-
+An NLI may be modelled as a goal driven system beliefs (current representation of the world), desires (goals) and intentions (intended plans and actions).
 
 ### Goal: Respond in a Helpful Manner
 
@@ -695,3 +715,9 @@ A user may sometimes want to know _how_ or _why_ the system performed a certain 
 
 Logging can be used at all levels but is only suited for the developer, not the end user.
 Introspection can only be used for some functions like inference and planning. But it allows end users to ask the system in natural language.
+
+## References
+
+Some of the information in this text had its origin in:
+
+- Natural Language Interfaces to Databases – An Introduction (1995), I. Androutsopoulos, G.D. Ritchie, P. Thanisch
