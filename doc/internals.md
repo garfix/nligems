@@ -360,18 +360,66 @@ Some tokens can only be recognized using pattern recognition:
 - prices
 - quoted strings
 
-##### Sentence Structure Recognition
+##### Sentence Structure Analysis
 
-From the individual words the structure of the sentence must be recognized. This structure consists of phrases like NP (noun phrase) VP (verb phrase) DP (determiner phrase) etc.
+From the individual words the structure of the sentence must be analysed. There are two ways in which this can be done:
 
-When the system needs to deal with complex sentences, the sentence is ___parsed___, whcih means that its phrase constituents are recognized and placed in a ___parse tree___.
+- template matching
+- parsing
 
-The parsing process uses a ___parser___, an algorithm that uses rewrite rules to transform a sentence into a parse tree. These rewrite rules form a ___grammar___.
+For simple sentence structures it is possible to use ___template matching___. The template is a fixed form like this:
+
+    WHAT IS THE MASS OF ?x
+
+When the sentence is analysed it is simply compared to the template. All words must match literally to the template, with the exception of ?x, which matches a variable text.
+
+For more complex sentences ___parsing___ is required. The parsing process uses a ___parser___, an algorithm that uses rewrite rules to transform a sentence into a ___parse tree___. These rewrite rules form a ___grammar___.
+
+There are two main types of grammar used to parse a sentence:
+
+- semantic grammars
+- phrase structure grammars
+
+___semantic grammars___ form a parse tree of semantic nodes. An example parse tree is:
+
+    - S
+        - Specimen_question
+            - Specimen_spec
+                - "which rock"
+            - Contains_info
+                - "contains"
+                - Substance
+                    - "magnesium"
+
+The advantage is that semantic, domain specific information is present right from the parse tree. The disadvantage is that the grammar must be completely rewritten for each new domain.
+
+__phrase structure grammars___ form a parse tree of phrase nodes. An example parse tree is:
+
+    - S
+        - WH_NP
+            - WH_WORD
+                - "which"
+            - NP
+                - DP
+                - NBar
+                    - Noun
+                        - "rock"
+
+        - VP
+            - VBar
+                - Verb
+                    - "contains"
+            - NP
+                - NBar
+                    - Noun
+                        - "magnesium"
+
+The advantage is that rewrite rules may be reused in other domains.
 
 Examples of rewrite rules are
 
 S -> NP VP
-VP -> vbar pp
+VP -> VBar PP
 NP -> proper_noun
 
 One has to build one's own grammar. The grammar describes only a subset of the natural language. Each natural language requires its own grammar, although languages in the same language family have many rules in common.
@@ -379,14 +427,6 @@ One has to build one's own grammar. The grammar describes only a subset of the n
 The reason that one has to write his own grammar, is that the number of rules has to be kept to a minimum. The fact that more rules means slower parsing is not so important. More rules, however, cause unnecessary ambiguity, and that is something to avoid.
 
 There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  http://nlp.stanford.edu:8080/parser/index.jsp
-
-However, there's also an easier way, that may be used in simpler systems.
-
-when the system only needs to deal with simple sentences, parsing is overkill and a sentence may be recognized by ___template matching___. The template is a fixed form like this:
-
-    WHAT IS THE MASS OF ?x
-
-Here all words must match literally to the template, with the exception of ?x, which matches a variable text.
 
 #### Understand the User: Semantic Analysis
 
