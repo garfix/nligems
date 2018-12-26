@@ -16,7 +16,7 @@ Text search is also free-form and has proven to be quite powerful and successful
 
 NLI aims to combine the strictness of SQL with the ease of use of text search.
 
-This text shows you some of the ideas and techniques used in this field, and highlights its problems. It is certainly not necessary to use all of this information to create a useful NLI. Just pick the stuff you need.
+This text shows you some of the ideas and techniques used in this field, and highlights its choice points. It is certainly not necessary to use all of this information to create a useful NLI. Just pick the stuff you need.
 
 ## Goals
 
@@ -55,7 +55,7 @@ Interaction with an NLI is not limited to a simple Question/Answer. Since langua
 
 ### Goal: Knowledge Source
 
-Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source of the information that a user may want to query. That's why we talk about a knowledge source rather than just a database.
+Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
 The technology of these sources may be
 
@@ -66,11 +66,12 @@ The technology of these sources may be
 
 The information itself may consist of
 
-- relations (persons, soil samples, countries, ...)
+- factual information (persons, soil samples, countries, ...)
+- meta information (information about a class of objects)
 - inference rules (if A then B)
 - time based information (at time T is was the case that C)
 - position based information (at position P it is the case that C)
-- cause/effect based information (event A was because of event B)
+- goal based information (event A was because of event B)
 
 The source may be persistent or volatile. A ___volatile___ source is destroyed when the interaction with the user ends. A ___persistent___ source does not depend on the user session.
 
@@ -118,9 +119,9 @@ Questions can be
 - Yes/no questions
 - Which / what / who questions
 - How many questions
-- When questions
-- How questions
-- Why questions
+- When / where questions
+- Meta questions (Can chairs ..., Do chairs ...)
+- Why / How questions
 
 The type of sentence often corresponds with the act that the user wishes to perform. Often, but not always. "Do you know what time it is?" means "Tell me the time! (please)"
 
@@ -418,9 +419,9 @@ The advantage is that rewrite rules may be reused in other domains.
 
 Examples of rewrite rules are
 
-S -> NP VP
-VP -> VBar PP
-NP -> proper_noun
+    S -> NP VP
+    VP -> VBar PP
+    NP -> proper_noun
 
 One has to build one's own grammar. The grammar describes only a subset of the natural language. Each natural language requires its own grammar, although languages in the same language family have many rules in common.
 
@@ -572,10 +573,25 @@ Each domain has its own expressions, that are meaningless outside it.
 
 To process the Intent of the sentence, it must be processed. This entails
 
+- determine feasibility
 - performing inferences
 - setting goals and executing plans
 - interaction with databases
 - updating internal state
+
+#### Process the Intent: Determine feasibility
+
+Even if an intent is understood, it is another question whether it is possible to fulfill this intent. The NLI must check if it is able to process the question given its capabilities.
+
+One thing that needs to be checked which of the knowledge bases under control has the information the user requested. For factual information this means selecting the knowledge base or bases that contain information of this type. There's no use querying the others.
+
+Then there are some questions that only may be answered by very specific types of knowledge bases.
+
+A "when" or "where" question can be answered by any knowledge base that contains time and space information.
+
+A "why" or "how" question can only be answered with information from a goal based knowledge base.
+
+A question about meta information "Can a pyramid be supported by a block?" can only be answered with information from a knowledge base with meta information.
 
 #### Process the Intent: Inference
 
