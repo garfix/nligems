@@ -431,7 +431,15 @@ There's an online parser that may help you to find rewrite rules for a sentence.
 
 #### Understand the User: Semantic Analysis
 
+Once the tree structure of the sentence is known, the syntactic information needs to be transformed and enriched into semantic information.
+
 Semantic Analysis maps words and word structures to semantic structures through a process of semantic composition. Semantic structures differ from syntactic structures in that they do not depend on the surface form of the sentence.
+
+Semantic analysis is necessary only when the sentence is parsed using a phrase structure grammar.
+
+Semantic analysis consists of two parts: semantic attachment and semantic composition.
+
+___Semantic attachment___ links partial semantic structures to words and syntactic structures. The attachments are stored in the lexicon with the word forms, and in the grammar, with the rewrite rules. Semantic attachment can take place during the parsing process, or as a separate step.
 
 Both words and phrases may have pieces of semantics attached. For example:
 
@@ -451,13 +459,23 @@ Both words and phrases may have pieces of semantics attached. For example:
 
 Verbs represent actions and states. They may be represented as predicates (as in marry(E, F)) but also as objects (as in isa(E, marry)). The former is more intuitive, but the latter is more expressive.
 
-In forming a semantic structure (logical form), a system may first create some intermediate representations (sometimes called quasi logical forms).
+___Semantic composition___ is the technique of combining pieces of semantics into a complete semantic form. This is the basic semantic form, that may need to be modified later.
 
-Different types of phrases need to be handled differently in the analysis and composition process.
+There are several techniques with which to compose semantics:
 
-This process uses language dependent composition rules.
+- semantic specialists
+- Montague grammar
+- feature unification
+
+___semantic specialists___ are hard-coded functions that transform parts of a syntactic structure into a semantic structure. They are used heavily by Winograd's SHRDLU. The technique is not portable to other domains and requires expert information about a system's inner workings.
+
+___Montague grammar___ is Montague's attempt to express natural language in Predicate Logic. The composition techniques are ___lambda abstraction___ and ___lambda reduction___. The resulting semantic expression is in classic Predicate Logic and includes many quantifiers (∀ and ∃), and logical operators (→, =). Apparently it is hard to extend to anything other than simple sentences.
+
+___Feature unification___ is based on the idea that each semantic constituent has some features (like "number", "passive", "agr"). When the constituents are connected, the features must match and their values are inherited up the tree. This is the approach CLE has taken, and they were able to address many grammatical phenomena with it.
 
 ##### Quantifier Scoping
+
+In forming a semantic structure (logical form), a system may first create some intermediate representations (sometimes called quasi logical forms). Quantifier scoping is one of these.
 
 In a sentence, a noun phase (NP) is about things. It may contain a determiner phrase (DP). This DP specifies the things. A quantifier phrase (QP) is a special form of DP. It determines the quantity of the NP; the number of things. The NP many be "many", "few", "3", "more than 3", "all", "some" or "none".
 
@@ -495,6 +513,8 @@ Open problem: scopes are ambiguous. In the example above "children" outscopes "f
 
 #### Understand the User: Pragmatic analysis
 
+The difference between semantic and pragmatic analysis is that pragmatic analysis requires contextual information.
+
 ##### Context
 
 The context consists of these aspects:
@@ -526,10 +546,6 @@ and link the pronoun to the subject.
 
 A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
 
-Data sources:
-
-* a discourse model
-
 ##### Verbs: Tense
 
 If a system can handle time, it must interpret tensed sentences with respect to the deictic center of time.
@@ -543,10 +559,6 @@ Superficially these actions correspond with the mood of the sentence, but not al
 ##### Ellipsis
 
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
-
-#### Understand the User: Domain Specific Analysis
-
-This part of pragmatic analysis uses knowledge from the current "domain". It may use domain specific knowledge bases to help it.
 
 ##### Proper Nouns: Named Entity Recognition (NER)
 
@@ -562,8 +574,6 @@ Users may introduce compounds that are not in the lexicon. These come in two sha
 * adjective-noun compounds ("large company")
 
 The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
-
-(example from Androutsopoulos)
 
 ##### Idioms
 
