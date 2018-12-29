@@ -13,6 +13,9 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-family: 'Domine', serif;
+}
 
 h2, h3, h4, h5 {
     font-family: Oswald, Helvetica, Arial, sans-serif;
@@ -43,6 +46,9 @@ a:visited {
 }
 
 @media screen {
+    h1 {
+        font-size: 32px;
+    }
     h2 {
         font-size: 30px;
     }
@@ -61,6 +67,9 @@ a:visited {
 }
 
 @media print {
+    h1 {
+        font-size: 20pt;
+    }
     h2 {
         font-size: 18pt;
     }

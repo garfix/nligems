@@ -1,3 +1,5 @@
+# The NLI System
+
 ## Reasons for NLI
 
 Ever since there are computers, people have wanted to interact with them using their natural language (like English or French).
@@ -45,13 +47,27 @@ The type of interaction can be:
 
 The system may answer with one of these sentences
 
-- a request clarification ("Do you mean [a] or [b]?")
-- a factual response ("yes", "Ada Lovelace")
-- a paraphrase of the question (to verify that it was understood correctly)
-- a canned response ("Thank you", "I don't know")
+- a database result ("Yes", "Ada Lovelace")
 - a generated sentence ("She was married to Lord Byron on March 2, 1844")
+- a paraphrase of the question (to verify that it was understood correctly)
+- a request for clarification ("Do you mean [a] or [b]?")
+- an admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
 
 Interaction with an NLI is not limited to a simple Question/Answer. Since language is ambiguous on all levels, it is often necessary for the system to ask the user to clarify his/her intent. So the interaction is always a dialog.
+
+#### User Expectations
+
+The NLI has a massive affordance problem. The affordance of a system shows a user how to use it. NLI has none of that by itself. So when you tell a user he or she can talk to the system in plain English, his or her expectations will be too high and will quickly be disappointed.
+
+For the foreseeable future it is best to assume that the user will not be able to use natural language in an unrestricted way.
+
+In stead, the user should be taught to be able to use a well defined subset of his language. Learning by example is one way this can be done.
+
+The knowledge engineer may elicit the expressions a user would normally use in a certain domain. It is these expressions that should be modelled in the system.
+
+When a question cannot be answered it is up to the system to provide precise feedback of what it is that it cannot do. "I don't understand" is too vague. "I do not know the word 'salesperson'" is better. The user may try to reword the sentence.
+
+When the user has reasoning capabilities, the user may also jump to the conclusion that the system is intelligent. The user will also need to be instructed about the possible reasoning capabilities of the system.
 
 ### Goal: Knowledge Source
 
