@@ -20,7 +20,9 @@
     "SOURCE_CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
     "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
     "LONG_DESC": "This is one of the first NLI systems ever created, and at the same time one of the most complete. In fact, it has long served as the major showcase for natural language processing.",
-    "ARTICLES": [],
+    "ARTICLES": [
+      "Procedures a representation for data in a computer program for understanding  natural language - Winograd (1971)"
+    ],
     "BOOKS": [
         "Winograd, T. Understanding Natural Language. Academic Press, 1972."
     ],

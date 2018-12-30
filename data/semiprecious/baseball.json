@@ -1,0 +1,17 @@
+{
+  "NAME": "Baseball",
+  "FIRST_YEAR": "1960?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Bert F. Green, Jr.",
+    "Alice K. Wolf",
+    "Carol Chomsky",
+    "Kenneth Laughery"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Baseball: an automatic question-answerer"
+  ],
+  "BOOKS": []
+}

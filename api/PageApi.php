@@ -2,6 +2,7 @@
 
 namespace nligems\api;
 
+use nligems\page\AllSystemsPage;
 use nligems\page\ComparePage;
 use nligems\page\EditSystemPage;
 use nligems\page\InternalsPage;
@@ -11,7 +12,6 @@ use nligems\page\NewsPage;
 use nligems\page\SystemOverviewPage;
 use nligems\page\SystemPage;
 use nligems\page\TimeLinePage;
-use nligems\page\ExternalPage;
 
 /**
  * @author Patrick van Bergen
@@ -40,6 +40,11 @@ class PageApi
 	{
 		return new NewsPage();
 	}
+
+	public function getAllSystemsPage()
+    {
+        return new AllSystemsPage();
+    }
 
     /**
      * @return InternalsPage

@@ -1,0 +1,16 @@
+{
+  "NAME": "NaLIX",
+  "FIRST_YEAR": "2005?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Yunyao Li",
+    "Huahai Yang",
+    "H. V. Jagadish"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "NaLIX: an Interactive Natural Language Interface for Querying XML - Yunyao, Huahai, Jagadish (2005)"
+  ],
+  "BOOKS": []
+}

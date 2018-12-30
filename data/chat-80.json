@@ -26,10 +26,12 @@
     "NAME_DESC": null,
     "LONG_DESC": "Together with the system of Veronica Dahl, on which it is based, these are the first NLI systems built in Prolog. The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
     "ARTICLES": [
-        "An efficient easily adaptable system for interpreting natural language queries - Pereira, Warren",
-        "Efficient Processing of Interactive Relational Database Queries Expressed in Logic - Warren",
-        "Extraposition Grammars - Pereira",
-        "Logic for natural language analysis - Pereira"
+        "An efficient easily adaptable system for interpreting natural language queries - Pereira, Warren (1982)",
+        "Efficient Processing of Interactive Relational Database Queries Expressed in Logic - Warren (1981)",
+        "Extraposition Grammars - Pereira (1981)",
+        "Logic for natural language analysis - Pereira (1983)",
+        "Applied logic - its use and implementation as a programming tool - Warren (1983)",
+      "Issues in natural language access to databases from a logic programming perspective - Warren (1982?)"
     ],
     "BOOKS": [],
     "ANALYSIS": [

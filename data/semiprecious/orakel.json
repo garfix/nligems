@@ -28,9 +28,11 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": null,
     "NAME_DESC": null,
-    "LONG_DESC": "ORAKEL is a modern variant of TEAM.\r\n",
+    "LONG_DESC": "ORAKEL is a modern variant of TEAM.",
     "ARTICLES": [
-        "Towards portable natural language interfaces to knowledge bases - The case of the ORAKEL system"
+        "Towards portable natural language interfaces to knowledge bases - The case of the ORAKEL system - Cimiano, Haase, Heizmann, Mantel, Studer (2007)",
+      "Porting Natural Language Interfaces between Domains - An Experimental User Study with the ORAKEL System - Cimiano, Haase, Heizmann",
+      "ORAKEL: A Natural Language Interface to an F-Logic Knowledge Base - Cimiano"
     ],
     "BOOKS": [],
     "ANALYSIS": [

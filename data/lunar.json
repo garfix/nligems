@@ -1,12 +1,12 @@
 {
     "NAME": "LUNAR",
     "FIRST_YEAR": "1971",
-    "LAST_YEAR": "1971",
+    "LAST_YEAR": "",
     "CONTRIBUTORS": [
         "William A. Woods"
     ],
     "INSTITUTIONS": [
-        "Cambridge (MA)"
+        "BBN"
     ],
     "INFLUENCED_BY": [],
     "PROG_LANGS": [
@@ -22,7 +22,8 @@
     "LONG_DESC": "It was created in the wake of the Apollo 11 space mission that brought the first men to the moon. The soil samples that came back were catalogued in a database and LUNAR allowed this database to be queried with plain English sentences.",
     "ARTICLES": [
         "Progress in natural language understanding - An application to lunar geology",
-        "Semantics and quantification in natural language question answering"
+        "Semantics and quantification in natural language question answering",
+      "What's in a link: Foundations for Semantic Networks - Woods (1975)"
     ],
     "BOOKS": [
         "The Lunar Sciences Natural Language Information System: Final Report"

@@ -1,0 +1,29 @@
+{
+  "NAME": "JANUS",
+  "FIRST_YEAR": "1989?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Philip Resnik",
+    "Erhard W. Hinrichs",
+    "Ralph M. Weischedel",
+    "Marie Meteer",
+    "Lance Ramshaw",
+    "Jeff Palmucci",
+    "Damaris M. Ayuso",
+    "Robert J. Bobrow"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Access to multiple underlying systems in Janus - Resnik (1989)",
+    "A compositional semantics of temporal expressions in English - Hinrichs",
+    "A hybrid approach to representation in the JANUS natural language processor - Weischedel",
+    "Coping with Ambiguity and Unknown Words through Probabilistic Models - Weischedel, Schwartz, Palmucci, Meteer, Ramshawi",
+    "Discourse entities in JANUS - Ayuso",
+    "Multiple Underlying Systems: Translating User Requests into Programs to Produce Answers - Bobrow, Resnik, Weischedel ",
+    "Portability in the Janus Natural Language Interface Weischedel, Bobrow, Ayuso, Ramshaw (1989)",
+    "Research and Development in Natural Language Understanding as Part of thr Strategic Computing Program. Volume 1: Overview of Technical Results (1986)",
+    "Tense, Quantifiers, and Contexts - Hinrichs"
+  ],
+  "BOOKS": []
+}

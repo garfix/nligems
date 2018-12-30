@@ -1,0 +1,17 @@
+{
+  "NAME": "Ladder",
+  "FIRST_YEAR": "",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Gary G. Hendrix",
+    "Earl D. Sacerdoti",
+    "Doniel Sagalowicz",
+    "Jonathan Slocum"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Developing a Natural Language Interface to Complex Data - Hendrix, Sacerdoti, Sagalowicz, Slocum"
+  ],
+  "BOOKS": []
+}

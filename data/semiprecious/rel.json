@@ -1,0 +1,16 @@
+{
+  "NAME": "REL",
+  "FIRST_YEAR": "1969?",
+  "LAST_YEAR": "1969?",
+  "CONTRIBUTORS": [
+    "Bozena H. Dostert",
+    "Frederick B. Thomson"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "REL: A Rapidly Extensible Language System (1969)",
+    "A project report on REL (1971)"
+  ],
+  "BOOKS": []
+}

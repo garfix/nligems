@@ -1,0 +1,27 @@
+{
+  "NAME": "START",
+  "FIRST_YEAR": "2002?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Boris Katz",
+    "Gary Borchardt",
+    "Sue Felshin",
+    "Deniz Yuret",
+    "Ali Ibrahim",
+    "Jimmy Lin",
+    "Gregory Marton",
+    "Alton Jerome McFarland",
+    "Baris Temelkuran",
+    "Yuan Shen",
+    "Gabriel Zaccak"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Syntactic and Semantic Decomposition Strategies for Question Answering from Multiple Resources - Katx, Borchardt, Felshin",
+    "Omnibase: Uniform Access to\nHeterogeneous Data for Question Answering - Felshin, Yuret, Ibrahim, Lin, Marton, McFarland, Temelkuran (2002)",
+    "Answering English Questions using Foreign-Language Semi-Structured Sources - Katz, Felshin, When, Zaccak",
+    "External Knowledge Sources for Question Answering - Katz et al"
+  ],
+  "BOOKS": []
+}
