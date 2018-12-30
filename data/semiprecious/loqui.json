@@ -1,12 +1,15 @@
 {
   "NAME": "Loqui",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1991?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "Loqui: An Open Natural Language Query System - General Description (1991)",
+    "Natural Language Interfaces: A New Philosophy (1991)"
+  ],
   "BOOKS": []
 }

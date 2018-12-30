@@ -1,0 +1,19 @@
+{
+  "NAME": "SNAP",
+  "FIRST_YEAR": "1991?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    ""
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "The SNAP System: A Natural Language Front End to Text and Data Bases (1996)",
+    "A Natural Language System Based on Formal Semantics (1991?)",
+    "A Formal Approach to Translating English into SQL in Aspects of Databases (1991)",
+    "Modal Reasoning in Relational Systems (1991)",
+    "An Approach to Paraphrasing Logical Query Languages in English (1991)"
+  ],
+  "BOOKS": [],
+  "SOURCE_CODE": "https://cswww.essex.ac.uk/SNAP/Welcome.html"
+}

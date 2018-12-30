@@ -36,21 +36,23 @@ class Systems extends HtmlElement
 
             $html .= "<div class='contributors'>" . implode(", ", $systemInfo['CONTRIBUTORS']) . "</div>";
 
-            $html .= "<p class='story'>" . nl2br(htmlspecialchars($systemInfo['LONG_DESC'])) . "</p>";
-
-            if (!empty($systemInfo['ARTICLES'])) {
-                $html .= "<h4>Articles</h4>";
-                $html .= "<ul class='articles'>";
-                foreach ($systemInfo['ARTICLES'] as $article) {
-                    $html .= "<li>" . htmlspecialchars($article) . "</li>";
-                }
-                $html .= "</ul>";
+            if (!empty($systemInfo['LONG_DESC'])) {
+                $html .= "<p class='story'>" . nl2br(htmlspecialchars($systemInfo['LONG_DESC'])) . "</p>";
             }
+
             if (!empty($systemInfo['BOOKS'])) {
                 $html .= "<h4>Books</h4>";
                 $html .= "<ul class='articles'>";
                 foreach ($systemInfo['BOOKS'] as $book) {
                     $html .= "<li>" . htmlspecialchars($book) . "</li>";
+                }
+                $html .= "</ul>";
+            }
+            if (!empty($systemInfo['ARTICLES'])) {
+                $html .= "<h4>Articles</h4>";
+                $html .= "<ul class='articles'>";
+                foreach ($systemInfo['ARTICLES'] as $article) {
+                    $html .= "<li>" . htmlspecialchars($article) . "</li>";
                 }
                 $html .= "</ul>";
             }

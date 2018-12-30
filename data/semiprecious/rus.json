@@ -1,12 +1,14 @@
 {
   "NAME": "Rus",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1978?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "The RUS System (1978)"
+  ],
   "BOOKS": []
 }

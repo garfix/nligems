@@ -1,12 +1,15 @@
 {
   "NAME": "LDC-1",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1984?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "The Syntax and Semantics of User-Defined Modifiers in a Transportable Natural Language Processor (1984)",
+    "LDC-1: A Transportable, Knowledge-based Natural Language Processor for Office Environments (1984)"
+  ],
   "BOOKS": []
 }

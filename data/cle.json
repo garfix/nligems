@@ -34,9 +34,11 @@
     "NAME_DESC": "Core Language Engine",
     "LONG_DESC": "CLE distinguishes several distinct stages in the processing of the semantic representation.\r\nCLE uses unification for semantic composition.",
     "ARTICLES": [
-        "The Core Language Engine"
+        "CLARE - A Contextual Reasoning and Cooperative Response Framework for the Core Language Engine (1992)"
     ],
-    "BOOKS": [],
+    "BOOKS": [
+      "The Core Language Engine"
+    ],
     "ANALYSIS": [
         "Semantics-based"
     ],

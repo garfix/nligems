@@ -1,12 +1,14 @@
 {
   "NAME": "Intellect",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1984?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "Experience with INTELLECT (1984)"
+  ],
   "BOOKS": []
 }

@@ -1,6 +1,6 @@
 {
-  "NAME": "Teli",
-  "FIRST_YEAR": "1986?",
+  "NAME": "Pique",
+  "FIRST_YEAR": "1983?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
@@ -8,7 +8,7 @@
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Semantic Acquisition in TELI (1986)"
+    "Natural Language Access to Data Bases: Interpreting Update Requests (1983)"
   ],
   "BOOKS": []
 }

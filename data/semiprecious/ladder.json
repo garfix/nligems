@@ -1,6 +1,6 @@
 {
   "NAME": "Ladder",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1978?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "Gary G. Hendrix",
@@ -11,7 +11,7 @@
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Developing a Natural Language Interface to Complex Data - Hendrix, Sacerdoti, Sagalowicz, Slocum"
+    "Developing a Natural Language Interface to Complex Data - Hendrix, Sacerdoti, Sagalowicz, Slocum (1978)"
   ],
   "BOOKS": []
 }

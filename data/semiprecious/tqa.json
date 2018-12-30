@@ -1,12 +1,15 @@
 {
   "NAME": "TQA",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1981?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "Operating statistics for the transformational question answering system (1981)",
+    "Problems and Some Solutions in Customization of Natural Language Front Ends (1985)"
+  ],
   "BOOKS": []
 }

@@ -1,12 +1,14 @@
 {
   "NAME": "Ginsparg",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1983?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "A Robust Portable Natural Language Database Interface (1983)"
+  ],
   "BOOKS": []
 }

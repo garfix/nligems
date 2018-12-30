@@ -24,7 +24,7 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": "system-sources\/chat-80.zip",
     "NAME_DESC": null,
-    "LONG_DESC": "Together with the system of Veronica Dahl, on which it is based, these are the first NLI systems built in Prolog. The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Maque) (Androutsopoulos etc., 1994)",
+    "LONG_DESC": "Together with the system of Veronica Dahl, on which it is based, these are the first NLI systems built in Prolog. The code of Chat-80 was circulated widely, and formed the basis of several other experimental NliDbs (e.g. Masque) (Androutsopoulos etc., 1994)",
     "ARTICLES": [
         "An efficient easily adaptable system for interpreting natural language queries - Pereira, Warren (1982)",
         "Efficient Processing of Interactive Relational Database Queries Expressed in Logic - Warren (1981)",

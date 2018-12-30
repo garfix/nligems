@@ -1,12 +1,14 @@
 {
   "NAME": "Pre",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1985?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "Transportable Natural Language Processing Through Simplicity - the PRE System (1985)"
+  ],
   "BOOKS": []
 }

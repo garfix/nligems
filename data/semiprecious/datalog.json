@@ -1,12 +1,15 @@
 {
   "NAME": "Datalog",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1984?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "Interaction of Knowledge Sources in a Portable Natural Language Interface (1984)",
+    "Portability of Syntax and Semantics in Datalog (1985)"
+  ],
   "BOOKS": []
 }

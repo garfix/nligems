@@ -1,12 +1,14 @@
 {
   "NAME": "Masque",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1986?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "MASQUE Modular Answering System for Queries in English - Programmers's Manual (1986)"
+  ],
   "BOOKS": []
 }

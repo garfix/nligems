@@ -1,12 +1,14 @@
 {
   "NAME": "IRUS",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1986?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     ""
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+    "The IRUS transportable natural language database interface (1986)"
+  ],
   "BOOKS": []
 }
