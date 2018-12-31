@@ -4,7 +4,7 @@ namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
 use nligems\api\component\Header;
-use nligems\api\component\Systems;
+use nligems\api\component\AllSystems;
 use nligems\api\page\FrontEndPage;
 
 /**
@@ -42,7 +42,7 @@ class AllSystemsPage extends FrontEndPage
                 continue;
             }
 
-            $sortedSystems[$system['FIRST_YEAR']] = $system;
+            $sortedSystems[$system['FIRST_YEAR'] . '-' . $system['NAME']] = $system;
         }
 
         ksort($sortedSystems);
@@ -63,7 +63,7 @@ class AllSystemsPage extends FrontEndPage
         $LinkBar->addClass('linkPanel');
         $Page->addChildNode($LinkBar);
 
-        $AllSystems = new Systems($this->allSystems);
+        $AllSystems = new AllSystems($this->allSystems);
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');

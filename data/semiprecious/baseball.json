@@ -1,6 +1,6 @@
 {
   "NAME": "Baseball",
-  "FIRST_YEAR": "1960?",
+  "FIRST_YEAR": "1963?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "Bert F. Green, Jr.",
@@ -11,7 +11,7 @@
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Baseball: an automatic question-answerer"
+    "Baseball: an automatic question-answerer - Green, Wolf, Chomsky, Laughery (1963)"
   ],
   "BOOKS": []
 }

@@ -3,8 +3,10 @@ h3 span {
     font-size: 18px;
 }
 
-ul.articles li {
+ul li {
     font-size: 16px;
+    font-family: sans-serif;
+    list-style: square;
 }
 
 .contributors {
@@ -22,4 +24,10 @@ ul.articles li {
     ul.articles li {
         font-size: 8pt;
     }
+}
+
+.ruler {
+    border: solid #be2622;
+    border-width: 1px 0 0 0;
+    max-width: 40em;
 }

@@ -5,7 +5,7 @@ namespace nligems\api\component;
 /**
  * @author Patrick van Bergen
  */
-class Systems extends HtmlElement
+class AllSystems extends HtmlElement
 {
 	/** @var  array */
 	private $allSystemInfo;
@@ -34,7 +34,10 @@ class Systems extends HtmlElement
 
 			$html .= "<h3>" . htmlspecialchars($systemInfo['NAME']) . $period . "</h3>";
 
-            $html .= "<div class='contributors'>" . implode(", ", $systemInfo['CONTRIBUTORS']) . "</div>";
+            $html .= "<div class='contributors'>" .
+                implode(", ", $systemInfo['CONTRIBUTORS']) .
+                (!empty($systemInfo['INSTITUTIONS']) ? " / " . implode(", ", $systemInfo['INSTITUTIONS']): "") .
+                "</div>";
 
             if (!empty($systemInfo['LONG_DESC'])) {
                 $html .= "<p class='story'>" . nl2br(htmlspecialchars($systemInfo['LONG_DESC'])) . "</p>";
@@ -56,7 +59,17 @@ class Systems extends HtmlElement
                 }
                 $html .= "</ul>";
             }
+
+            $html .= "<div class='ruler'>&nbsp;</div>";
 		}
+
+        $html .= "<h3>References</h3>";
+		$html .= "<p>Much of the information in this text was drawn from:</p>";
+		$html .= "<ul>
+		    <li>Answering English Questions by Computer: A Survey - R.F. Simmons (1965)</li>
+		    <li>Natural Language Question-Answering Systems: 1969 - R.F. Simmons (1970)</li>
+		    <li>Natural Language Interfaces to Databases – An Introduction - I. Androutsopoulos, G.D. Ritchie, P. Thanisch (1995)</li>
+		</ul>";
 
 		return $html;
 	}
