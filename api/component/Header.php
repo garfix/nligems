@@ -15,8 +15,12 @@ class Header
     /** @var  string */
     private $backPage;
 
-    public function __construct($pageTitle, $backPage = null)
+    /** @var  */
+    private $activePage;
+
+    public function __construct($activePage, $pageTitle, $backPage = null)
     {
+        $this->activePage = $activePage;
         $this->pageTitle = $pageTitle;
         $this->backPage = $backPage;
     }
@@ -68,7 +72,7 @@ class Header
         $Bar->addClass('linkBar');
 
         foreach ($menu as $link => $text) {
-            $link = new Link($text, $link);
+            $link = new Link($text, $link, $link == $this->activePage);
             $Bar->addChildHtml((string)$link);
         }
 

@@ -16,7 +16,7 @@ class AllSystemsPage extends FrontEndPage
 
     public function __construct()
    	{
-        $this->Header = new Header('Systems');
+        $this->Header = new Header('all-systems.php', 'Systems');
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('all-systems');

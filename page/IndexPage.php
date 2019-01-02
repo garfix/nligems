@@ -13,7 +13,7 @@ class IndexPage extends FrontEndPage
 {
     public function __construct()
    	{
-        $this->Header = new Header('Home', null);
+        $this->Header = new Header('index.php', 'Home', null);
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('index');

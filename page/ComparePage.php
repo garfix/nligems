@@ -48,7 +48,7 @@ class ComparePage extends FrontEndPage
         } elseif (count($systemIds) > 1) {
             $header .= ' ' . $systems[0]->getName() . ' to ' . $systems[1]->getName();
         }
-		$this->Header = new Header($header, $this->getBackPage());
+		$this->Header = new Header("filter.php", $header, $this->getBackPage());
 
         // create the dataflow
         $this->DataFlow = new DataFlow();

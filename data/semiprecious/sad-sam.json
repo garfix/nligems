@@ -1,12 +1,17 @@
 {
   "NAME": "SAD SAM",
+  "NAME_DESC": "Sentence Appraiser and Diagrammer and Semantic Analyzing Machine",
   "FIRST_YEAR": "1963?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "R. Lindsay"
   ],
+  "INSTITUTIONS": [
+    "Carnegie Institute of Technology"
+  ],
   "INFLUENCED_BY": [],
-  "LONG_DESC": "",
+  "LONG_DESC": "SAD SAM answers questions about human relationships. Lindsay's primary interest was in machine comprehension of English. SAD SAM reads Basic English sentences about family relationships and extracts from them data for the database. The database is in the form of a family tree represented in the program by a hierarchical set of lists.\nThe system has a parser and a semantic analyzer. The parser handles simple sentences, relative clauses and some appositional strings and forms a (phrase structure) parse tree.\nThe semantic analyzer searches for subject-complement combinations (i.e. Bill is Mary's father) and forms triplets (i.e. Bill (father) Mary)",
+
   "ARTICLES": [
     "Inferential memory as the basis of machines which understand natural language - Lindsay (1963)"
   ],

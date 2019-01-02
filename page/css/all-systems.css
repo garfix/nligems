@@ -1,6 +1,11 @@
-h3 span {
+h3 span.year {
     color: black;
     font-size: 18px;
+}
+
+h3 span.desc {
+    color: grey;
+    font-size: 16px;
 }
 
 ul li {
@@ -27,7 +32,8 @@ ul li {
 }
 
 .ruler {
+    font-family: Lusitana, serif;
+    max-width: 40em;
     border: solid #be2622;
     border-width: 1px 0 0 0;
-    max-width: 40em;
 }

@@ -132,6 +132,10 @@ div.linkBar div a {
     padding: 5px;
 }
 
+div.linkBar div a.active {
+    color: #362536;
+}
+
 @media print {
     div.header {
         display: none;
@@ -141,6 +145,10 @@ div.linkBar div a {
 /* TEXT-PAGE */
 
 
+p, li, blockquote {
+    font-family: Lusitana, serif;
+}
+
 code {
     display: block;
     font-family: monospace;
@@ -149,8 +157,7 @@ code {
     background-color: #fdefff
 }
 
-p, li, blockquote {
-    font-family: Lusitana, serif;
+p, li, blockquote, code {
     max-width: 40em;
 }
 

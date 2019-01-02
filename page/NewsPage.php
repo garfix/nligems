@@ -17,7 +17,7 @@ class NewsPage extends FrontEndPage
 
     public function __construct()
    	{
-        $this->Header = new Header('Website news');
+        $this->Header = new Header('news.php', 'Website news');
 
         $news = json_decode(file_get_contents(__DIR__ . '/text/news.json'), true);
         $this->News = new News($news);

@@ -27,12 +27,18 @@ class AllSystems extends HtmlElement
             $lastYear = $systemInfo['LAST_YEAR'];
 
             if ($lastYear == $firstYear || empty($lastYear)) {
-                $period = " <span>({$firstYear})";
+                $period = " <span class='year'>({$firstYear})";
             } else {
-                $period = " <span>({$firstYear} - {$lastYear})";
+                $period = " <span class='year'>({$firstYear} - {$lastYear})";
             }
 
-			$html .= "<h3>" . htmlspecialchars($systemInfo['NAME']) . $period . "</h3>";
+            if (!empty($systemInfo['NAME_DESC'])) {
+                $description = " <br><span class='desc'>" . $systemInfo['NAME_DESC'] . "</span>";
+            } else {
+                $description = "";
+            }
+
+			$html .= "<h3>" . htmlspecialchars($systemInfo['NAME']) . $period . $description . "</h3>";
 
             $html .= "<div class='contributors'>" .
                 implode(", ", $systemInfo['CONTRIBUTORS']) .

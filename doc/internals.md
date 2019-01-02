@@ -36,6 +36,7 @@ This interaction consists of
 
 - spoken input and audible output
 - keyboard based input and text based output
+- gui based sentence generation (NLMenu)
 
 Most historical systems are based on the latter.
 
@@ -135,7 +136,7 @@ Questions can be
 - Yes/no questions
 - Which / what / who questions
 - How many questions
-- When / where questions
+- Temporal, spatial questions (when / where, but also: 'before', 'on top of')
 - Meta questions (Can chairs ..., Do chairs ...)
 - Why / How questions
 
@@ -392,10 +393,11 @@ When the sentence is analysed it is simply compared to the template. All words m
 
 For more complex sentences ___parsing___ is required. The parsing process uses a ___parser___, an algorithm that uses rewrite rules to transform a sentence into a ___parse tree___. These rewrite rules form a ___grammar___.
 
-There are two main types of grammar used to parse a sentence:
+There are three main types of grammar used to parse a sentence:
 
-- semantic grammars
 - phrase structure grammars
+- dependency grammars
+- semantic grammars
 
 ___semantic grammars___ form a parse tree of semantic nodes. An example parse tree is:
 
@@ -409,6 +411,15 @@ ___semantic grammars___ form a parse tree of semantic nodes. An example parse tr
                     - "magnesium"
 
 The advantage is that semantic, domain specific information is present right from the parse tree. The disadvantage is that the grammar must be completely rewritten for each new domain.
+
+__dependency grammars___ form a parse tree of dependency relations. An example parse tree:
+
+    - "contains"
+        - subject: "rock"
+            - det?: "which"
+        - object: "magnesium"
+
+The advantage is that the syntactic functions that form the dependency relations (i.e. subject, object, etc) are closely associated with semantic relations.
 
 __phrase structure grammars___ form a parse tree of phrase nodes. An example parse tree is:
 
@@ -605,6 +616,8 @@ To process the Intent of the sentence, it must be processed. This entails
 - interaction with databases
 - updating internal state
 
+It must be noted that although "Understand the User" and "Process the Intent" are separated in this text, they are not always separate phrases in a system. Some older systems executed the user's intent __while__ analyzing the sentence. (DEACON)
+
 #### Process the Intent: Determine feasibility
 
 Even if an intent is understood, it is another question whether it is possible to fulfill this intent. The NLI must check if it is able to process the question given its capabilities.
@@ -655,7 +668,7 @@ And for user queries that require access to multiple knowledge sources in a sing
 
 For larger databases it is necessary to optimize the queries for speed.
 
-It is necessary to use aggregates (notably COUNT, MAX, MIN) for certain questions.
+It is necessary to use aggregates (notably COUNT, MAX, MIN) for certain questions. This can be integrated in the query that is sent to the database, but it is also possible that the systems perform the aggregations on the results when they come back from the database.
 
 In some NLI's the semantic structure that represents the intent of the user coincides with the database query.
 
@@ -691,9 +704,10 @@ An NLI may be modelled as a goal driven system beliefs (current representation o
 
 An NLI responds to the user by
 
-- giving a canned response ("I don't know")
+- giving a canned response ("I don't know", "Thank you")
 - generating a custom response ("She married to Lord Byron")
 - asking for clarification ("Do you mean [a] ... [b] ...")
+- admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
 
 A cooperative response would always give some extra information that may be helpful but not explicitly asked.
 

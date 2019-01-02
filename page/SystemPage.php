@@ -32,7 +32,7 @@ class SystemPage extends FrontEndPage
 
         $this->System = $NliSystem;
 
-        $this->Header = new Header($NliSystem->getName(), $this->getBackPage());
+        $this->Header = new Header('', $NliSystem->getName(), $this->getBackPage());
 
         $this->ImageBar = new ImageBar();
         foreach ($NliSystem->get(Features::CONTRIBUTORS) as $contributor) {
