@@ -7,7 +7,6 @@
     ""
   ],
   "INSTITUTIONS": [
-    "Carnegie Institute of Technology"
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
