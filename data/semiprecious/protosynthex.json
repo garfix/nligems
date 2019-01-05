@@ -1,0 +1,20 @@
+{
+  "NAME": "Protosynthex",
+  "NAME_DESC": "",
+  "FIRST_YEAR": "1963?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Simmons",
+    "McConlogue",
+    "Klein"
+  ],
+  "INSTITUTIONS": [
+    "SDC"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Indexing and dependency logic for answering English questions - Simmons, Klein, McConlogue (1964)"
+  ],
+  "BOOKS": []
+}

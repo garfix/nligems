@@ -1,0 +1,18 @@
+{
+  "NAME": "The General Inquirer",
+  "NAME_DESC": "",
+  "FIRST_YEAR": "1962?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "P. Stone"
+  ],
+  "INSTITUTIONS": [
+    "Harvard University"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "The general inquirer: a computational system for content analysis and retrieval based on the sentence as a unit of information - Stone, Bayles, Namerwirth, Ogilvie (1962)"
+  ],
+  "BOOKS": []
+}

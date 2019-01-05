@@ -1,0 +1,18 @@
+{
+  "NAME": "The Oracle",
+  "NAME_DESC": "",
+  "FIRST_YEAR": "1960?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "A.V. Philips"
+  ],
+  "INSTITUTIONS": [
+    "MIT"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "A question-answering routine - Philips (1960)"
+  ],
+  "BOOKS": []
+}

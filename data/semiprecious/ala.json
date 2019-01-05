@@ -1,0 +1,21 @@
+{
+  "NAME": "ALA",
+  "NAME_DESC": "The Automatic Language Analyzer",
+  "FIRST_YEAR": "1962?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "Householder",
+    "Lyons",
+    "Thorne"
+  ],
+  "INSTITUTIONS": [
+    "Indiana University"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Quart. rep. on automatic language analysis - Householder, Lyons, Thorne (1960 - 1962)",
+    "Automatic language analysis - Thorne (1962)"
+  ],
+  "BOOKS": []
+}

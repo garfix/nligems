@@ -1,0 +1,18 @@
+{
+  "NAME": "STUDENT",
+  "NAME_DESC": "1964?",
+  "FIRST_YEAR": "",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "D. Bobrow"
+  ],
+  "INSTITUTIONS": [
+    "MIT"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Natural language input for a computer problem-solving system - Bobrow (1964)"
+  ],
+  "BOOKS": []
+}

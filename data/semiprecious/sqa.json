@@ -1,0 +1,18 @@
+{
+  "NAME": "SQA",
+  "NAME_DESC": "The Specific Question Answerer",
+  "FIRST_YEAR": "1964?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "F. Black"
+  ],
+  "INSTITUTIONS": [
+    "BBN"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "A deductive question-answering system - Black (1964)"
+  ],
+  "BOOKS": []
+}
