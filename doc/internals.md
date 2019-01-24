@@ -317,7 +317,7 @@ Examples of the intent:
 - DATE_OF_BIRTH?(Person) "When was A born?"
 - SEND_EMAIL!(Person, Subject, Content) "Send an email to A. Subject B. Content C."
 
-The intent can be expressed by a single relation using variables. The variables can be filled in by arbitrarily complex structures. "Person" can be filled in with "Lord Byron", "the butcher's wife", or even "he who shall not be named", for example.
+The intent can typically be expressed by a single relation using variables. The variables can be filled in by arbitrarily complex structures. "Person" can be filled in with "Lord Byron", "the butcher's wife", or even "he who shall not be named", for example.
 
 The reason to separate the intent from the full meaning is that the way the sentence is processed depends solely on the intent. The modifiers are processed the same in any sentence. The intent makes each sentence different.
 
@@ -327,6 +327,7 @@ In order to understand the intent of the user, and fill in the modifiers, the sy
 - parse the sentence (using a lexicon and a grammar)
 - turn the syntactic structure into pieces of semantic information (___semantic attachment___)
 - compose these pieces into a semantic structure (___semantic composition___)
+- detect entity types
 
 The semantic structure may take the form of
 
@@ -518,6 +519,15 @@ https://en.wikipedia.org/wiki/Quantifier_(linguistics)
 
 https://en.wikipedia.org/wiki/Numeral_(linguistics)
 
+##### Entity type recognition
+
+The relations that form the semantic representation of a sentence imply the entity types of the entities in the sentence. For example, if this relation is found
+
+    has_capital(X, Y)
+
+It is clear to a human that X is a country and Y is a city. This information about the entity types of predicate arguments must be explicitly stored in the NLI.
+
+Once the entity types are known in the analysis, they may be used to limit the namespace for proper nouns. For example, once it is known that the name "Iran" in a sentence is a country, the Brazilian football player by the same name can be safely discarded as the subject of the sentence.
 
 #### Understand the User: Pragmatic analysis
 
