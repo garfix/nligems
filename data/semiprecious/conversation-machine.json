@@ -1,17 +1,17 @@
 {
   "NAME": "The Conversation Machine",
   "NAME_DESC": "",
-  "FIRST_YEAR": "1959?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1959",
+  "LAST_YEAR": "1959",
   "CONTRIBUTORS": [
-    "L. Green",
-    "E. Berkeley",
-    "C. Gotlieb"
+    "L.E.S. Green",
+    "E.C. Berkeley",
+    "C.C. Gotlieb"
   ],
   "INSTITUTIONS": [
+    "MIT", "University of Toronto"
   ],
   "INFLUENCED_BY": [],
-  "LONG_DESC": "",
   "ARTICLES": [
     "Conversation with a computer - Green, Berkeley, Gotlieb (1959)"
   ],

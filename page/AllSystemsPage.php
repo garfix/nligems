@@ -29,10 +29,20 @@ class AllSystemsPage extends FrontEndPage
         $systems = [];
 
         foreach (glob(__DIR__ . '/../data/*.json') as $jsonFile) {
-            $systems[] = json_decode(file_get_contents($jsonFile), true);
+            $mdFile = str_replace('.json', '.md', $jsonFile);
+            $data = json_decode(file_get_contents($jsonFile), true);
+            if (file_exists($mdFile)) {
+                $data['LONG_DESC'] = file_get_contents($mdFile);
+            }
+            $systems[] = $data;
         }
         foreach (glob(__DIR__ . '/../data/semiprecious/*.json') as $jsonFile) {
-            $systems[] = json_decode(file_get_contents($jsonFile), true);
+            $mdFile = str_replace('.json', '.md', $jsonFile);
+            $data = json_decode(file_get_contents($jsonFile), true);
+            if (file_exists($mdFile)) {
+                $data['LONG_DESC'] = file_get_contents($mdFile);
+            }
+            $systems[] = $data;
         }
 
         $sortedSystems = [];
