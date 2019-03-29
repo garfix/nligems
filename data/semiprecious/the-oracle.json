@@ -1,8 +1,8 @@
 {
   "NAME": "The Oracle",
   "NAME_DESC": "",
-  "FIRST_YEAR": "1960?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1960",
+  "LAST_YEAR": "1960",
   "CONTRIBUTORS": [
     "A.V. Philips"
   ],
@@ -10,9 +10,11 @@
     "MIT"
   ],
   "INFLUENCED_BY": [],
-  "LONG_DESC": "",
+  "PROG_LANGS": [
+      "LISP"
+  ],
   "ARTICLES": [
-    "A question-answering routine - Philips (1960)"
+    "A question-answering routine - Philips (1960) - ftp://publications.ai.mit.edu/ai-publications/pdf/AIM-016.pdf"
   ],
   "BOOKS": []
 }

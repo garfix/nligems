@@ -47,8 +47,8 @@
         "dependencyOf": ["rendezvous"]
     },
     {
-        "id": "Planner",
-        "year": "1969",
+        "id": "Micro-Planner",
+        "year": "1968",
         "desc": "Planner was created by Carl Hewitt (MIT), a theorem proving, procedural, programming language. It was used by SHRDLU.",
         "links": {
             "Wikipedia": "http://en.wikipedia.org/wiki/Planner_programming_language"
