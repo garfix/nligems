@@ -1,7 +1,7 @@
 {
   "NAME": "ALA",
   "NAME_DESC": "The Automatic Language Analyzer",
-  "FIRST_YEAR": "1962?",
+  "FIRST_YEAR": "1960",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "Householder",
@@ -15,7 +15,7 @@
   "LONG_DESC": "",
   "ARTICLES": [
     "Quart. rep. on automatic language analysis - Householder, Lyons, Thorne (1960 - 1962)",
-    "Automatic language analysis - Thorne (1962)"
+    "Automatic language analysis - Thorne (1962) - https://apps.dtic.mil/dtic/tr/fulltext/u2/297381.pdf"
   ],
   "BOOKS": []
 }

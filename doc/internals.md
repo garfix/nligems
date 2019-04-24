@@ -311,6 +311,8 @@ Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
 
 To understand a user, the system needs to extract the ___intent___ of the user's sentence.
 
+The intent is a domain specific representation of an intended action.
+
 Examples of the intent:
 
 - MARRIED_TO?(Person1, Person2) "Was A married to B?"

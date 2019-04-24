@@ -36,24 +36,24 @@ class TimeLinePage extends FrontEndPage
 
         $events = json_decode(file_get_contents(__DIR__ . '/../doc/history.json'), true);
 
-        foreach ($NliSystemApi->getAllSystems() as $System) {
-
-            $content = 'Start of ' . $System->getName() . '.';
-
-            $dependencies = array();
-            foreach ($events as $dependencyEvent) {
-                if (isset($dependencyEvent['dependencyOf']) && in_array($System->getId(), $dependencyEvent['dependencyOf'])) {
-                    $dependencies []= "<i>" . $dependencyEvent['id'] . "</i> (" . $dependencyEvent['year'] . ')';
-                }
-            }
-
-            if ($dependencies) {
-                $content .= " Main influences: " . implode(', ', $dependencies);
-            }
-
-            $TimeTable->addEntry($System->get(Features::FIRST_YEAR), $content);
-
-        }
+//        foreach ($NliSystemApi->getAllSystems() as $System) {
+//
+//            $content = 'Start of ' . $System->getName() . '.';
+//
+//            $dependencies = array();
+//            foreach ($events as $dependencyEvent) {
+//                if (isset($dependencyEvent['dependencyOf']) && in_array($System->getId(), $dependencyEvent['dependencyOf'])) {
+//                    $dependencies []= "<i>" . $dependencyEvent['id'] . "</i> (" . $dependencyEvent['year'] . ')';
+//                }
+//            }
+//
+//            if ($dependencies) {
+//                $content .= " Main influences: " . implode(', ', $dependencies);
+//            }
+//
+//            $TimeTable->addEntry($System->get(Features::FIRST_YEAR), $content);
+//
+//        }
     }
 
     private function fillTimeTableWithEvents(TimeTable $TimeTable)
