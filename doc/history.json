@@ -23,12 +23,30 @@
       "dependencyOf": ["shrdlu", "lunar", "team", "c-phrase"]
     },
     {
+        "id": "Programs with common sense",
+        "year": "1959",
+        "desc": "John McCarthy wrote the influential paper 'Programs with common sense'. The new idea was to use formal languages to solve ordinary commonsense reasoning, whereas logic was used before only to represent mathematical truths. The program to be written, 'Advice Taker', was to be a joint project with Marvin Minsky, but it was never completed.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Advice_taker"
+        }
+    },
+    {
         "id": "Speech Acts",
         "year": "1962",
         "desc": "Speech Acts: J.L. Austin showed in his \"How to do things with words\" that sentences are not just conveyors of declarative meanings that are true or false. They may also be actions in themselves. A sentence may inquire, command, promise, etc. A speech act may require pragmatic information to be interpreted.",
         "links": {
             "Wikipedia": "https://en.wikipedia.org/wiki/Speech_act"
         }
+    },
+    {
+        "id": "FOPC",
+        "year": "1967",
+        "desc": "In his PhD paper 'Semantics for a Question-Answering system' William A. Woods investigated the use of First Order Predicate Logic in question answering as a replacement for the ad-hoc representations in use at the time."
+    },
+    {
+        "id": "events",
+        "year": "1967",
+        "desc": "Donald Davidson first explicitly represents events as objects in a formal representation in his paper 'The logical form of action sentences'"
     },
     {
         "id": "Case Grammar",
@@ -82,16 +100,6 @@
         "id": "SCRIPTS",
         "year": "1975",
         "desc": "Roger Schank and Robert P. Abelson introduce Script Theory in AI. It is a psychological theory by Silvan Tomkins that explains how people know how to react in all sorts of stereotypical situations"
-    },
-    {
-        "id": "CYC",
-        "year": "1984",
-        "desc": "Cyc commonsense knowledge base started by Douglas Lenat",
-        "links": {
-            "Wikipedia": "https://en.wikipedia.org/wiki/Cyc",
-            "Cyc home": "http://www.cyc.com/"
-        },
-        "dependencyOf": ["thoughttreasure"]
     },
     {
         "id": "Society Of Mind",
