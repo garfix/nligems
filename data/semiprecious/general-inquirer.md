@@ -1,0 +1,1 @@
+An information retrieval system that uses a custom-built thesaurus to match a word to a cluster of concepts. Syntactic analysis is very limited and function words are removed from the search altogether.
