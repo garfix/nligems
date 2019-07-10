@@ -1,0 +1,19 @@
+{
+    "NAME": "ELIZA",
+    "FIRST_YEAR": "1964",
+    "LAST_YEAR": "1966",
+    "CONTRIBUTORS": [
+        "Joseph Weizenbaum"
+    ],
+    "INFLUENCED_BY": [],
+    "INSTITUTIONS": [
+        "MIT"
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "https://en.wikipedia.org/wiki/ELIZA"
+    ],
+    "BOOKS": [
+        "Computer Power and Human Reason: From Judgment to Calculation - Weizenbaum (1976)"
+    ]
+}
