@@ -39,11 +39,6 @@
         }
     },
     {
-        "id": "FOPC",
-        "year": "1967",
-        "desc": "In his PhD paper 'Semantics for a Question-Answering system' William A. Woods investigated the use of First Order Predicate Logic in question answering as a replacement for the ad-hoc representations in use at the time."
-    },
-    {
         "id": "events",
         "year": "1967",
         "desc": "Donald Davidson first explicitly represents events as objects in a formal representation in his paper 'The logical form of action sentences'"
