@@ -1,0 +1,18 @@
+{
+    "NAME": "The Darlington Logic Programs",
+    "FIRST_YEAR": "1964?",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "J.L. Darlington"
+    ],
+    "INFLUENCED_BY": [],
+    "INSTITUTIONS": [
+        "MIT"
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "A COMIT program for the David-Putnam algorithm - Darlington (1962)",
+        "Translating ordinary language into symbolic logic - Darlington (1964)"
+    ],
+    "BOOKS": []
+}
