@@ -1,0 +1,27 @@
+{
+    "NAME": "MARGIE",
+    "NAME_DESC": "Memory Analysis, Response Generation and Inference on English",
+    "FIRST_YEAR": "1973",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Roger C. Schank",
+        "Neil M. Goldman",
+        "Charles J. Rieger",
+        "Chris Riesbeck"
+    ],
+    "INSTITUTIONS": [
+        "Stanford University"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Conceptual dependency: a theory of natural language understanding - Schank (1972)",
+        "Primitive concepts underlying verbs of thought - Schank et al (1972)",
+        "The fourteen primitive actions and their inferences - Schank (1973)",
+        "Conceptual memory - Rieger (1973)",
+        "Computer analysis of natural language in context - Riesbeck (1973)",
+        "Inference and the computer understanding of English - Schank, Rieger (1973)",
+        "Margie memory, analysis, response generation, and inference on English - Schank, Goldman, Rieger, Riesbeck (1973)"
+    ],
+    "BOOKS": []
+}
