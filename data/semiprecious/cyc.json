@@ -1,0 +1,19 @@
+{
+    "NAME": "CYC",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "1984",
+    "LAST_YEAR": "today",
+    "CONTRIBUTORS": [
+        "Douglas Lenat"
+    ],
+    "INSTITUTIONS": [
+        "Microelectronics and Computer Technology Corporation, Cycorp"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "https://en.wikipedia.org/wiki/Cyc",
+        "https://www.cyc.com/natural-language-processing-in-cyc/"
+    ],
+    "BOOKS": []
+}

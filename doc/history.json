@@ -77,6 +77,11 @@
         "dependencyOf": ["shrdlu"]
     },
     {
+        "id": "CD",
+        "year": "1969",
+        "desc": "Roger Schank introduces \"Conceptual Dependency Theory\", a theory for natural language understanding that uses fundamental concepts like ATRANS, PTRANS and MTRANS to denote abstract transfers. "
+    },
+    {
         "id": "Prolog",
         "year": "1972",
         "desc": "Prolog was created by Alain Colmerauer and Philippe Roussel, based on Robert Kowalski's procedural interpretation of Horn clauses."
@@ -85,11 +90,6 @@
         "id": "Montague Grammar",
         "year": "1973",
         "desc": "Montague publishes \"The Proper Treatment of Quantification in Ordinary English\" (also known as PTQ), the first formal treatment of the semantics of natural languages. Since this article requires a good deal of prior knowledge of logic, you may wish to approach this article through Dowty et al's \"Introduction to Montague Semantics\"."
-    },
-    {
-        "id": "CD",
-        "year": "1975",
-        "desc": "Roger Schank introduces \"Conceptual Dependency Theory\", a theory for natural language understanding that uses fundamental concepts like ATRANS, PTRANS and MTRANS to denote abstract transfers. "
     },
     {
         "id": "SCRIPTS",
