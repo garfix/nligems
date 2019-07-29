@@ -370,6 +370,8 @@ In all systems, raw text is split into tokens. This means that words, numbers an
 
 In some systems the morphemes of words are distinguished. This helps keep the dictionary small, since inflections of words need not be stored.
 
+It can be useful to split up words like "wasn't" in "was" and "not".
+
 ##### Unlexical Word Forms
 
 Verbs, nouns, determiners, adverbs, etc. are called parts-of-speech.
