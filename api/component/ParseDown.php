@@ -467,6 +467,8 @@ class Parsedown
     #
     # Header
 
+    protected $orderGen = 0;
+
     protected function blockHeader($Line)
     {
         if (isset($Line['text'][1]))
@@ -488,6 +490,10 @@ class Parsedown
             $Block = array(
                 'element' => array(
                     'name' => 'h' . min(6, $level),
+                    'attributes' => [
+                        'order' => ++$this->orderGen,
+                        'id' => urlencode($text),
+                    ],
                     'text' => $text,
                     'handler' => 'line',
                 ),

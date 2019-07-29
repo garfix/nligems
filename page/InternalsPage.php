@@ -4,6 +4,7 @@ namespace nligems\page;
 
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
+use nligems\api\component\TocParser;
 use nligems\api\page\FrontEndPage;
 use Parsedown;
 
@@ -37,8 +38,12 @@ class InternalsPage extends FrontEndPage
         $pd = new Parsedown();
         $html = $pd->text($markdown);
 
+        $indexParser = new TocParser();
+        $tocHtml = $indexParser->createTocHtml($html);
+
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
+        $Body->addChildHtml($tocHtml);
         $Body->addChildHtml($html);
         $Page->addChildNode($Body);
 
