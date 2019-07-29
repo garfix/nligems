@@ -28,7 +28,7 @@ The goals of NLI follow from this definition:
 
 I will now explore these goals.
 
-### Goal: Interact
+### Interact
 
 A Knowledge Source can be a database, any other form of stored structured data (as opposed to unstructured text), and online services that provide an API.
 
@@ -70,7 +70,7 @@ When a question cannot be answered it is up to the system to provide precise fee
 
 When the user has reasoning capabilities, the user may also jump to the conclusion that the system is intelligent. The user will also need to be instructed about the possible reasoning capabilities of the system.
 
-### Goal: Knowledge Source
+### Knowledge Sources
 
 Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
@@ -80,6 +80,7 @@ The technology of these sources may be
 - a triple store (approachable through SPARQL)
 - an in-memory fact base (defined and approachable through code in some programming language)
 - an online service with a public API
+- plain text documents
 
 The information itself may consist of
 
@@ -114,7 +115,7 @@ As you can see, a sufficiently complex NLI is a proper intelligent agent.
 
 A knowledge source usually contains positive information (X is the case), but it may also contain negative information (Y is not the case).
 
-### Goal: Natural Language
+### Natural Language Syntax
 
 Natural language means one of these:
 
@@ -148,6 +149,8 @@ To be intelligible a sentence must be complete and syntactically and semanticall
 - spelling mistakes ("How manny")
 - ambiguity ("That person")
 - idioms ("the old ones")
+
+#### Syntactic structures
 
 Common syntactic structures that may need to be recognized are:
 
@@ -204,32 +207,39 @@ BE = auxiliary (is, was, are, were)
 DO = auxiliary (do, does, did)
 HAVE = auxiliary (has, have)
 MOD = modality (can, could, will, would, shall, should)
+NOT = negation (not)
 
-##### Factual yes/no-questions or choice questions (boolean / a selected object)
+##### Factual yes/no-questions or choice questions
 
 * DO NP VP (did Lord Byron marry Queen Elisabeth, did Lord Byron not marry Queen Elisabeth)
 * DO NP VP (did Lord Byron marry Queen Elisabeth or Anne Isabella Milbanke)
+* DO NOT NP VP (didn't Lord Byron marry Anne Isabella Milbanke)
 
 * EQ NP NP (was Lord Byron king of England, was Lord Byron not king of England)
 * EQ NP NP (was Lord Byron a king or a lord)
+* EQ NOT NP NP (wasn't Lord Byron a king)
 
 * BE NP ADJP (is the block red)
 * BE NP ADJP (is the block red or blue)
+* BE NOT NP ADJP (isn't the block red)
 
 * BE NP VP (was Lord Byron born in London, was Lord Byron not born in London)
 * BE NP VP (was Lord Byron born in London or Cambridge)
+* BE NOT NP VP (wasn't Lord Byron born in London)
 
 * HAVE NP VP (has Napoleon invaded Germany, has Napoleon not invaded Germany)
 * HAVE NP VP (has Napoleon invaded Germany or The Netherlands)
+* HAVE NOT NP VP (hasn't Napoleon invaded Germany)
 
 * MOD NP VP (would you like a cup of coffee, should I leave my things here, can dogs fly, can i ask you a question, can you stack a cube on a pyramid)
 * MOD NP VP (would you like coffee or tea)
+* MOD NOT NP VP (wouldn't you like coffee)
 
-##### Uninverted yes/no questions (boolean)
+##### Uninverted yes/no questions
 
 * NP VP (Lord Byron married Queen Elisabeth?) (question mark is required)
 
-##### Wh-questions (which, what, who; name one or more individuals)
+##### Wh-questions (which, what, who)
 
 * WHO VP (who married Lord Byron, who was Lord Byron's wife)
 * WHO BE NP VP (who are you seeing)
@@ -257,35 +267,35 @@ MOD = modality (can, could, will, would, shall, should)
 * WHOSE NP VP (whose autographs have you collected, whose parents will drive)
 * WHOSE NP BE NP (whose book is that)
 
-#####  Amount (a number, requires aggregation)
+#####  Amount
 
 * HOW MANY NP VP (how many children had Lord Byron, how many children did Lord Byron have)
 
-##### Degree (a number, the unit result depends on subject)
+##### Degree
 
 * HOW MUCH NP VP (how much sugar goes in a single drink)
 * HOW ADJP BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
 * HOW ADVP DO NP VP (how often do you go to the movies, how nicely do I need to dress tonight)
 
-##### Manner (a means)
+##### Manner
 
 * HOW BE NP VP (how was Napoleon crowned king)
 * HOW DO NP VP (how do you go to work)
 * HOW HAVE NP VP (how has Napoleon invaded Britain)
 * HOW MOD NP VP (how can I become more productive)
 
-##### State (a state)
+##### State
 
 * HOW BE NP (how are you)
 
-##### Reason (a cause)
+##### Reason
 
 * WHY BE NP VP (why was Napoleon crowned king)
 * WHY DO NP VP (why did Napoleon invade Germany)
 * WHY HAVE NP VP (why has John hit Jake)
 * WHY MOD NP VP (why should I go)
 
-##### Time (a time)
+##### Time
 
 * WHEN BE NP (when was the marriage)
 * WHEN BE NP VP (when was Napoleon crowned king)
@@ -295,7 +305,7 @@ MOD = modality (can, could, will, would, shall, should)
 
 * WHEN -> WHEN PP (when in the next hour do you want to go)
 
-##### Place (a place)
+##### Place
 
 * WHERE BE NP (where is it?)
 * WHERE BE NP VP (where is the concert taking place)
@@ -307,7 +317,7 @@ MOD = modality (can, could, will, would, shall, should)
 
 Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
 
-### Goal: Understand the User
+### Understand the User
 
 To understand a user, the system needs to extract the ___intent___ of the user's sentence.
 
@@ -350,7 +360,7 @@ All of these are just means to an end, and these steps may be combined or even s
 
 The goal of this is to create an Intent, a semantic representation of the meaning of the sentence as it was intended by the user. This representation often takes the form of a variant of First Order Predicate Logic.
 
-#### Understand the User: Syntactic analysis
+#### Syntactic analysis
 
 ##### Tokenization
 
@@ -459,7 +469,7 @@ The reason that one has to write his own grammar, is that the number of rules ha
 
 There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  http://nlp.stanford.edu:8080/parser/index.jsp
 
-#### Understand the User: Semantic Analysis
+#### Semantic Analysis
 
 Once the tree structure of the sentence is known, the syntactic information needs to be transformed and enriched into semantic information.
 
@@ -531,7 +541,7 @@ It is clear to a human that X is a country and Y is a city. This information abo
 
 Once the entity types are known in the analysis, they may be used to limit the namespace for proper nouns. For example, once it is known that the name "Iran" in a sentence is a country, the Brazilian football player by the same name can be safely discarded as the subject of the sentence.
 
-#### Understand the User: Pragmatic analysis
+#### Pragmatic analysis
 
 The difference between semantic and pragmatic analysis is that pragmatic analysis requires contextual information.
 
@@ -599,7 +609,7 @@ The meaning of these compounds is not purely analytical. A "city department" cou
 
 Each domain has its own expressions, that are meaningless outside it.
 
-### Goal: Process the Intent
+### Process the Intent
 
 To process the Intent of the sentence, it must be processed. This entails
 
@@ -611,9 +621,9 @@ To process the Intent of the sentence, it must be processed. This entails
 
 It must be noted that although "Understand the User" and "Process the Intent" are separated in this text, they are not always separate phrases in a system. Some older systems executed the user's intent __while__ analyzing the sentence. (DEACON)
 
-#### Process the Intent: Determine feasibility
+#### Determine feasibility
 
-Even if an intent is understood, it is another question whether it is possible to fulfill this intent. The NLI must check if it is able to process the question given its capabilities.
+Even if an intent is recognized, it is another question whether it is possible to fulfill this intent. The NLI must check if it is able to process the question given its capabilities.
 
 One thing that needs to be checked which of the knowledge bases under control has the information the user requested. For factual information this means selecting the knowledge base or bases that contain information of this type. There's no use querying the others.
 
@@ -625,7 +635,7 @@ A "why" or "how" question can only be answered with information from a goal base
 
 A question about meta information "Can a pyramid be supported by a block?" can only be answered with information from a knowledge base with meta information.
 
-#### Process the Intent: Inference
+#### Inference
 
 Inference allows an NLI to infer new information by applying (inference) rules to existing information.
 
@@ -669,19 +679,19 @@ When new data comes in, say b, the system only needs to evaluate the rules that 
 
 Forward chaining is used to assert new facts and even goals in the nli system. This enriches the user experience.
 
-#### Process the Intent: Executing plans
+#### Executing plans
 
 The NLI may have a set of built-in goals, or the system may respond to a user request by fulfilling a goal.
 
 A goal is reached by executing plans that are linked to it. The plans are usually built-in.
 
-#### Process the Intent: Interaction with knowledge sources
+#### Interaction with knowledge sources
 
 Different knowledge sources usually have different ontologies (ways of describing the world). Therefore, the ontology of the system needs to be mapped onto that of each of the knowledge sources.
 
 Open problem: if multiple knowledge sources contain information about the same entities (things), a shared identity must be found to link the information. For dates in time, this is simple. For persons, however, the name of the person may be insufficient to identify him or her in both sources. How to identify all types of entities in multiple heterogeneous knowledge sources is still an open problem.
 
-#### Process the Intent: Interaction with databases
+#### Interaction with databases
 
 This is the prototypical use of an NLI: interaction with external knowledge sources; to query, tell, and delete information. In order to do this the user intent must be turned into one or more database queries.
 
@@ -699,7 +709,7 @@ It is necessary to use aggregates (notably COUNT, MAX, MIN) for certain question
 
 In some NLI's the semantic structure that represents the intent of the user coincides with the database query.
 
-#### Process the Intent: Updating internal state
+#### Updating internal state
 
 I will now describe several types of internal knowledge sources.
 
@@ -727,7 +737,7 @@ Emotional state describes the relation of the NLI as a subject towards other ent
 
 An NLI may be modelled as a goal driven system beliefs (current representation of the world), desires (goals) and intentions (intended plans and actions).
 
-### Goal: Respond in a Helpful Manner
+### Respond in a Helpful Manner
 
 An NLI responds to the user by
 
