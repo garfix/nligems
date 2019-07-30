@@ -545,7 +545,7 @@ Once the entity types are known in the analysis, they may be used to limit the n
 
 #### Pragmatic analysis
 
-The difference between semantic and pragmatic analysis is that pragmatic analysis requires contextual information.
+The difference between semantic and pragmatic analysis is that pragmatic analysis requires contextual information: information that can't be obtained from the sentence alone.
 
 ##### Context
 
@@ -571,14 +571,14 @@ The word "and" is often used to denote disjunction rather than conjunction.
 
 To which constituent must the modifier (PP) be attached?
 
-##### Pronouns / Anaphora
+##### Anaphora
 
 Pronouns (he, she, it, that) are the variables of natural language. They refer to ever changing things. The system needs to keep track of recent subjects in the discourse,
 and link the pronoun to the subject.
 
 A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
 
-##### Verbs: Tense
+##### Tense
 
 If a system can handle time, it must interpret tensed sentences with respect to the deictic center of time.
 
@@ -592,13 +592,13 @@ Superficially these actions correspond with the mood of the sentence, but not al
 
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
 
-##### Proper Nouns: Named Entity Recognition (NER)
+##### Named Entity Recognition
 
 How to tell proper nouns (names) apart?
 
 A name is only meaningful if it is present, or introduced into, the present domain. This type of NER looks up names in a database.
 
-##### Nouns and Adjectives: Compound Noun Analysis
+##### Compound Noun Analysis
 
 Users may introduce compounds that are not in the lexicon. These come in two shapes:
 
@@ -622,6 +622,18 @@ To process the Intent of the sentence, it must be processed. This entails
 - updating internal state
 
 It must be noted that although "Understand the User" and "Process the Intent" are separated in this text, they are not always separate phrases in a system. Some older systems executed the user's intent __while__ analyzing the sentence. (DEACON)
+
+#### Functions
+
+The way an intent is handled depends on the function of the NLI of course. Historical systems have had the following functions:
+
+- Keeping a conversation (chat)
+- Answer questions (Q & A systems)
+- Execute commands
+- Learning new knowledge
+- Check for correctness (does a statement correspond with the available data?)
+- Provide natural inferences from the sentence
+- Create a paraphrase of the sentence
 
 #### Determine feasibility
 
@@ -680,6 +692,8 @@ Forward chaining is data-driven. It deduces all facts that may be derived from g
 When new data comes in, say b, the system only needs to evaluate the rules that have the new fact as an antecedent. If all antecedents are true, d is asserted. This means that fact d is added to the current context.
 
 Forward chaining is used to assert new facts and even goals in the nli system. This enriches the user experience.
+
+The assertions created by forward chaining may even be the purpose of the NLI. This is the case in Margie, for example.
 
 #### Executing plans
 
@@ -748,18 +762,24 @@ An NLI responds to the user by
 - asking for clarification ("Do you mean [a] ... [b] ...")
 - admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
 
+#### Admitting inability
+
+It is important to realize that a knowledge source may or may not have complete information about a domain. The domain is either closed or open.
+
+In a closed domain the knowledge of the source is complete. If it is not present in the knowledge source, it is not present in the world. This allows you to infer information about the absence of data. If a user aks "When did Michael Jackson graduate?" the system may infer from the absence of graduation information that "Michael Jackson did not graduate".
+
+On the other hand, if the system was put to an open domain source, the answer would have to be "Unknown", because the absence of information here does not imply the opposite.
+
+#### Extra information
+
 A cooperative response would always give some extra information that may be helpful but not explicitly asked.
 
 "How many children had Lord Byron?"
 "Two: Ada and Allegra"
 
-Having a mental model of the beliefs, desires and intentions may help to give a more helpful answer. But I know of no system that has implemented this.
+#### Mental model
 
-It is important to realize that a knowledge source may or may not have complete information about a domain. The domain is either closed or open.
-
-In a closed domain the knowledge of the source is complete. If it is not present in the knowledge source, it is not present in the world. This allows you to infer information about the absense of data. If a user aks "When did Michael Jackson graduate?" the system may infer from the absence of graduation information that "Michael Jackson did not graduate".
-
-On the other hand, if the system was put to an open domain source, the answer would have to be "Unknown", because the absence of information here does not imply the opposite.
+Having a mental model of the beliefs, desires and intentions of the user may help to give a more helpful answer. But I know of no system that has implemented this.
 
 ## General aspects
 
