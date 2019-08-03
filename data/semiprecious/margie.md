@@ -1,4 +1,4 @@
-MARGIE is based on the Schank's Conceptual Dependency framework. From the input it receives, it creates inferences and is able to paraphrase a text.
+MARGIE is based on Roger Schank's Conceptual Dependency framework. From the input it receives, it creates inferences and is able to paraphrase a text.
 
 Examples:
 

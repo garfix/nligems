@@ -1,0 +1,19 @@
+{
+    "NAME": "FAUSTUS (formerly: PAMELA)",
+    "NAME_DESC": "Frame-Activated Unified STory-Understanding System",
+    "FIRST_YEAR": "1978?",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Peter Norvig"
+    ],
+    "INSTITUTIONS": [
+        "University of California, Berkeley"
+    ],
+    "ARTICLES": [
+        "Frame Activated Inferences in a Story Understanding Program - Norvig (1983?) https://norvig.com/ijcai83.html"
+    ],
+    "INFLUENCED_BY": [
+        "PAM"
+    ],
+    "BOOKS": []
+}

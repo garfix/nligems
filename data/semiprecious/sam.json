@@ -1,9 +1,14 @@
 {
     "NAME": "SAM",
-    "FIRST_YEAR": "1978?",
+    "NAME_DESC": "Script-Applier Mechanism",
+    "FIRST_YEAR": "1978",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
+        "Roger Schank",
         "Cullingford"
+    ],
+    "INSTITUTIONS": [
+        "University of California, Berkeley"
     ],
     "INFLUENCED_BY": [],
     "LONG_DESC": "",

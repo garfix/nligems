@@ -1,13 +1,23 @@
 {
     "NAME": "PAM",
-    "FIRST_YEAR": "1978?",
+    "NAME_DESC": "Plan-Applier Mechanism",
+    "FIRST_YEAR": "1978",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
-        "Wilensky"
+        "Robert Wilensky"
+    ],
+    "INSTITUTIONS": [
+        "Yale University",
+        "University of California, Berkeley"
     ],
     "INFLUENCED_BY": [],
     "LONG_DESC": "",
     "ARTICLES": [
+        "PAM - A Program That Infers Intentions - Wilensky",
+        "PHRAN - A Knowledge-Based Natural Language Understander - Wilensky, Arens (1979?)"
+    ],
+    "INFLUENCED_BY": [
+        "SAM"
     ],
     "BOOKS": []
 }

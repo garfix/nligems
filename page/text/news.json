@@ -1,5 +1,9 @@
 [
   {
+    "date": "2019-08-03",
+    "story": "I read the systems that are based on Roger Schank's conceptual dependency theory and it comes as a shock. It's not so much CD by itself that is shocking. It is the idea that when a system is processing a sentence it can fill the dialog context with common sense information (scripts, frames). This information helps the processing of the following sentences. The dialog context is pro-actively filled with all kinds of related knowledge that helps shaping the context. Fascinating! This brings a whole new dimension to language processing!"
+  },
+  {
     "date": "2018-12-24",
     "story": "A revision of the website. It is somewhat responsive now. Also the background information on NLI systems has been extended a lot, and I placed it on a single page."
   },

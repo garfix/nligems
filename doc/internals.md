@@ -315,7 +315,7 @@ NOT = negation (not)
 
 * WHERE -> WHERE PP (where on the map is it)
 
-Also, check this page! https://www.myenglishteacher.eu/blog/types-of-questions/
+Also, check this page! <https://www.myenglishteacher.eu/blog/types-of-questions/>
 
 ### Understand the User
 
@@ -359,6 +359,38 @@ Once the raw semantic structure is built, it needs to be modified into the final
 All of these are just means to an end, and these steps may be combined or even skipped by an NLI.
 
 The goal of this is to create an Intent, a semantic representation of the meaning of the sentence as it was intended by the user. This representation often takes the form of a variant of First Order Predicate Logic.
+
+#### Internal representation
+
+The system has understood the user when the sentence has been transformed into an internal representation. This representation is called semantic, or logical, or quasi semantic or logical.
+
+The purpose of understanding is to be useful to the system. A sentence needs only to be understood to the level needed by the system. There is no absolute criterium that needs to be reached.
+
+While the established way of representing meaning is Predicate Logic, this formalism is almost never used literally. Some representations approach PL, others are completely different. There are as yet no standards. Every system has used its own unique representation.
+
+PL has some shortcomings: the quantifiers are too limited to be of much use.
+
+##### Raw-text representations
+
+ELIZA uses raw-text parts in it internal representation. Large parts of the sentence are not processed at all and are kept in their raw form. Therefore we say that ELIZA does not understand a sentence at all.
+
+##### Domain specific representations
+
+The spec list of Baseball is not extensible to more complex sentences.  
+
+##### Predicate Logic 
+
+Systems that use Montague Semantics use the original Predicate Logic. There's only a few of them, and they are not very expressive, since making them cover all types of sentences is very complicated.
+
+##### Predicate Logic variations
+
+CLE uses feature unification.
+
+##### Frames
+
+##### Conceptual Dependency
+
+Roger Schank's systems.
 
 #### Syntactic analysis
 
@@ -469,7 +501,7 @@ One has to build one's own grammar. The grammar describes only a subset of the n
 
 The reason that one has to write his own grammar, is that the number of rules has to be kept to a minimum. The fact that more rules means slower parsing is not so important. More rules, however, cause unnecessary ambiguity, and that is something to avoid.
 
-There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  http://nlp.stanford.edu:8080/parser/index.jsp
+There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  <http://nlp.stanford.edu:8080/parser/index.jsp>
 
 #### Semantic Analysis
 
@@ -529,9 +561,9 @@ Open problem: scopes are ambiguous. In the example above "children" outscopes "f
 
 Note: numbers like 2 (in "2 friend") are not quantifiers. They are treated just like other properties of entities.
 
-https://en.wikipedia.org/wiki/Quantifier_(linguistics)
+<https://en.wikipedia.org/wiki/Quantifier_(linguistics)>
 
-https://en.wikipedia.org/wiki/Numeral_(linguistics)
+<https://en.wikipedia.org/wiki/Numeral_(linguistics)>
 
 ##### Entity type recognition
 
@@ -669,7 +701,7 @@ The programming language Prolog is typically used for NLI's that rely on inferen
 
 Induction is deriving a uncertain conclusion based on an incomplete set of observations.
 
-https://en.wikipedia.org/wiki/Inductive_reasoning
+<https://en.wikipedia.org/wiki/Inductive_reasoning>
 
 It is used in expert systems, not much in database NLI's, A medical system may conclude from the presence of symptom A and symptom B that cause C is true with certainty T.
 

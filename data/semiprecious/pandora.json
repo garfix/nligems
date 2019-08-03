@@ -1,0 +1,18 @@
+{
+    "NAME": "PANDORA",
+    "NAME_DESC": "Plan Analyzer with Dynamic Organization, Revision and Application",
+    "FIRST_YEAR": "1982",
+    "LAST_YEAR": "1982",
+    "CONTRIBUTORS": [
+        "Joseph (Joe) Faletti"
+    ],
+    "INSTITUTIONS": [
+        "University of California, Berkeley"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "PANDORA - A Program for Doing Commonsense Planning in Complex Situations - Faletti (1982)"
+    ],
+    "BOOKS": []
+}
