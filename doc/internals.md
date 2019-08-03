@@ -24,7 +24,7 @@ This text shows you some of the ideas and techniques used in this field, and hig
 
 The goals of NLI follow from this definition:
 
-> An NLI allows a user to interact with a knowledge source through natural language. The system must understand the intent of the user's input, process it and respond in a helpful manner.
+> An NLI allows a user to interact with a knowledge source through natural language. The system must understand the intent of the user's input, use common sense to process it and respond in a helpful manner.
 
 I will now explore these goals.
 
@@ -156,19 +156,20 @@ Common syntactic structures that may need to be recognized are:
 
 - Noun Phrases (including proper nouns and pronouns)
 - Verb Phrases (modified by mood, voice and tense)
-- Preposition Phrases
-- Determiner Phrases
-- ADVerb Phrases
-- ADJective Phrases
+- Preposition Phrases (e.g. "on the table")
+- Determiner Phrases (e.g. "that book")
+- Quantifier Phrases (e.g. "all books")
+- Adverb Phrases (e.g. "quickly")
+- Adjective Phrases (e.g. "red")
 - Relative Clauses
-- Negations
-- Conjunctions
+- Negations ("not")
+- Conjunctions ("and", "or")
 - Auxiliaries
-- Modals
-- Comparative expressions
+- Modals ("should", "can")
+- Comparative expressions ("larger than")
 - Passives
 - Clefts
-- There be
+- There be ("there is a block that ...")
 - Clauses as objects
 - Extraposition
 
@@ -503,7 +504,7 @@ The reason that one has to write his own grammar, is that the number of rules ha
 
 There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  <http://nlp.stanford.edu:8080/parser/index.jsp>
 
-#### Semantic Analysis
+#### Semantic analysis
 
 Once the tree structure of the sentence is known, the syntactic information needs to be transformed and enriched into semantic information.
 
@@ -649,13 +650,12 @@ To process the Intent of the sentence, it must be processed. This entails
 
 - determine feasibility
 - performing inferences
-- setting goals and executing plans
 - interaction with databases
 - updating internal state
 
 It must be noted that although "Understand the User" and "Process the Intent" are separated in this text, they are not always separate phrases in a system. Some older systems executed the user's intent __while__ analyzing the sentence. (DEACON)
 
-#### Functions
+#### Function
 
 The way an intent is handled depends on the function of the NLI of course. Historical systems have had the following functions:
 
@@ -666,6 +666,14 @@ The way an intent is handled depends on the function of the NLI of course. Histo
 - Check for correctness (does a statement correspond with the available data?)
 - Provide natural inferences from the sentence
 - Create a paraphrase of the sentence
+
+#### Common sense
+
+All rules of an NLI system are programmed by humans. This always is a lot of work. But the important advantage of this approach is that the train of thought of the system that it uses to solve a problem can be traced back to individual inference rules. And more, the builder of the application can decide what kinds of inferences the system can and cannot make. 
+
+This is in distinct contradiction to the practise of machine learning (ML) where the programmer has less work and the system learns by itself. In such a system the machine determines the rules and there is a real chance that the user does not understand the reasoning of the computer. What's more, the results of an ML system tend to be inexact and the response has a small but real chance of not being correct.
+
+Now there are uses cases for NLI systems where this does not matter, but they are rare. In which cases would it be okay to specify a question in great detail and then get a response that is not certain and whose reasoning cannot be traced? 
 
 #### Determine feasibility
 
@@ -728,12 +736,6 @@ When new data comes in, say b, the system only needs to evaluate the rules that 
 Forward chaining is used to assert new facts and even goals in the nli system. This enriches the user experience.
 
 The assertions created by forward chaining may even be the purpose of the NLI. This is the case in Margie, for example.
-
-#### Executing plans
-
-The NLI may have a set of built-in goals, or the system may respond to a user request by fulfilling a goal.
-
-A goal is reached by executing plans that are linked to it. The plans are usually built-in.
 
 #### Interaction with knowledge sources
 
@@ -823,7 +825,7 @@ Having a mental model of the beliefs, desires and intentions of the user may hel
 
 If you are evaluating or designing an NLI, be aware of the following main aspects, that reoccur in all parts of the system:
 
-### Aspect: Modelling
+### Modelling
 
 In every module, data needs to be modelled in a distinct way. The grammar, the parse tree, the logical representation, rules, plans. For each of the models you need:
 
@@ -837,7 +839,7 @@ For each ontology holds that it can be
 
 Generic representations have the advantage of reuse: the same ontology may be used in other fields. Domain specific ontologies have the advantage that they restrict ambiguity. A word in a domain most often means just a single thing. A domain specific model is simpler to create, because the question of how generic each item is does not play a part.
 
-### Aspect: Ambiguity
+### Ambiguity
 
 An analysis may well lead to multiple interpretations. Parse trees, for example. Possible strategies to deal with them:
 
@@ -849,7 +851,7 @@ Use the first only works for simple domains with many constraints.
 The breadth first approach may have considerable computational and memory costs.
 The depth first approach has the problem that all "pipeline" phases are active at the same time. All components need to keep state while other components are active.
 
-### Aspect: Completeness
+### Completeness
 
 In every part of the system, one can ask if it is "complete". Are all words in the lexicon? Are all necessary rules in the grammar? Are all database mappings present?
 
@@ -857,7 +859,7 @@ Can all data from the previous phrase be converted to the next phase in a way th
 
 As long as a part is incomplete, how is this communicated to the user?
 
-### Aspect: Synchronicity
+### Synchronicity
 
 Parts of a system may respond to a request immediately, or require input from a third party that take some time.
 
@@ -868,7 +870,7 @@ So we distinguish
 
 Asynchronous events may be embedded in the dialog with the user. Such as a request for information, or a remark that the answer will take some time to prepare.
 
-### Aspect: Learning
+### Learning
 
 Learning may take place in several components of the system. Learning is the production and storage of new facts. Such a fact is stored with the other facts and will be used in a similar way from then on.
 
@@ -884,11 +886,11 @@ Learning can occur in several ways.
 * the user may tell it to the system
 * the system may deduce it
 
-### Aspect: Ease of Configuration
+### Ease of Configuration
 
 How hard is it for a user to setup and maintain this module?
 
-### Aspect: Portability
+### Portability
 
 How easy is it to use this part of the system in another domain, another language, another database?
 
@@ -897,7 +899,7 @@ The information of the module may be fixed in:
 * code: in which case a programmer is needed to port the module to another field
 * data: in which case a user with limited knowledge of the system may port it to another field
 
-### Aspect: Transparency
+### Transparency
 
 Transparency is about being able to inspect the internal processes of the system, to understand how and why it has chosen its actions.
 
