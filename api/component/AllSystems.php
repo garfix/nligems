@@ -74,8 +74,8 @@ class AllSystems extends HtmlElement
 		$html .= "<ul>
 		    <li>Answering English Questions by Computer: A Survey - R.F. Simmons (1965)</li>
 		    <li>Natural Language Question-Answering Systems: 1969 - R.F. Simmons (1970)</li>
+		    <li>Into the heart of the mind - F. Rose (1984)</li>
 		    <li>Natural Language Interfaces to Databases – An Introduction - I. Androutsopoulos, G.D. Ritchie, P. Thanisch (1995)</li>
-		    <li>Into the heart of the mind (1984), F. Rose</li>
 		</ul>
 		<p>\"Into the heart of the mind\" is translated in Dutch as \"De leerlingen van Frankenstein\", which I think is brilliant :)";
 

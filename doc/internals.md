@@ -689,6 +689,8 @@ There are two forms of inference: deduction and induction.
 
 Inference can be performed in two ways: backward chaining and forward chaining.
 
+Inference plays two very important roles in processing the sentence. It allows the system to deduce information that is not directly available from the database. And it extends the active context with common sense knowledge that a human would automatically infer from the given sentence. 
+
 ##### Deduction
 
 An inference form has one or more antecedents, and a consequent:
@@ -735,11 +737,13 @@ A goal is reached by executing plans that are linked to it. The plans are usuall
 
 #### Interaction with knowledge sources
 
+The system may read and write to all types of knowledge sources that are equiped with this facility.
+
 Different knowledge sources usually have different ontologies (ways of describing the world). Therefore, the ontology of the system needs to be mapped onto that of each of the knowledge sources.
 
 Open problem: if multiple knowledge sources contain information about the same entities (things), a shared identity must be found to link the information. For dates in time, this is simple. For persons, however, the name of the person may be insufficient to identify him or her in both sources. How to identify all types of entities in multiple heterogeneous knowledge sources is still an open problem.
 
-#### Interaction with databases
+##### Interaction with databases
 
 This is the prototypical use of an NLI: interaction with external knowledge sources; to query, tell, and delete information. In order to do this the user intent must be turned into one or more database queries.
 
@@ -763,27 +767,29 @@ I will now describe several types of internal knowledge sources.
 
 ##### Dialog context
 
-The "dialog context" keeps track of roles in the dialog. When the user mentions "Lord Byron", the NLI can store Lord Byron as the current subject of the dialog with the user, along with the gender of Lord Byron (male).
+The "dialog context" is a type of memory that is linked to a single conversion with a user. It does not survive outside of this conversation. It is filled with information that is inferred from perviously processed sentences and aids in processing new sentences. 
 
-When the next user question just uses "he" to mention Lord Byron, the NLI can look up the referent in the dialog context. The gender is an extra check for correctness.
+The dialog context has several functions:
 
-This current subject of conversation is called the deictic center. We have just seen the deictic center of person. There may also be deictic centers for time (where is 'now' in the active conversation) and space (where is 'here').
+* Anaphora resolution 
+* Deictic center
+* Common sense
 
-##### Domain model
+Anaphora resolution: It keeps track of roles in the dialog. When the user mentions "Lord Byron", the NLI can store Lord Byron as the current subject of the dialog with the user, along with the gender of Lord Byron (male). When the next user question just uses "he" to mention Lord Byron, the NLI can look up the referent in the dialog context. The gender is an extra check for correctness.
 
-A common application of an NLI is to have a knowledge source of metadata about a domain.
+Deictic center: This current subject of conversation is called the deictic center. We have just seen the deictic center of person. There may also be deictic centers for time (where is 'now' in the active conversation) and space (where is 'here').
 
-##### Goal hierarchy
+Common sense: From the sentence a user enters (e.g. "John went into a restaurant") the system may infer some information that is implied in the situation and store this in the dialog context (i.e. "John eats food", "John pays the bill").
 
-A goal based NLI needs to keep track of its goal hierarchy.
+##### Goal, plans and actions
+
+A goal based NLI needs to keep track of its goal hierarchy. The system may add a goal, process a plan or part of a plan, and perform actions.
+
+Goals are distinct from the dialog context, because the execution of plans often takes time and uses hardware resources and the system should be able to manage conflicting demands on these resources.
 
 ##### Emotional state
 
-Emotional state describes the relation of the NLI as a subject towards other entities.
-
-##### Beliefs, Desires, Intentions
-
-An NLI may be modelled as a goal driven system beliefs (current representation of the world), desires (goals) and intentions (intended plans and actions).
+A computer does not experience emotions, of course. But that does not mean it cannot react to input in the same way a human being would. For a conversational agent it is very useful to have simulated emotions. It would react more human. 
 
 ### Respond in a Helpful Manner
 
