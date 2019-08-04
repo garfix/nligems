@@ -1,7 +1,4 @@
 nligems
 =======
 
-Website: Natural Language Interface Gems (nligems)
-
-Minimal PHP version: 5.3.28
-
+This is the PHP code that generates the website <http://nli-gems.org>

@@ -789,9 +789,19 @@ A goal based NLI needs to keep track of its goal hierarchy. The system may add a
 
 Goals are distinct from the dialog context, because the execution of plans often takes time and uses hardware resources and the system should be able to manage conflicting demands on these resources.
 
+ ThoughtTreasure
+
+##### Beliefs, desires, intentions
+
+An NLI may keep track of its own beliefs, and of the beliefs of the user. These are mental models. It can be interesting to keep track of what you know that the other person knows. Further it can be useful for a system to have desires, and to be aware of the desires of the user. Intentions are strongly related to the goals in the previous section, of course. An intention to which the system commits itself is a goal. BDI is a level above goals, plans and actions.  
+
+A system may also have built-in desires and be aware of the desires of the user.
+
+ PANDORA
+
 ##### Emotional state
 
-A computer does not experience emotions, of course. But that does not mean it cannot react to input in the same way a human being would. For a conversational agent it is very useful to have simulated emotions. It would react more human. 
+A computer does not experience emotions, of course. But that does not mean it cannot react to input in the same way a human being would. For a conversational agent it is very useful to have simulated emotions. It would react more human.
 
 ### Respond in a Helpful Manner
 
