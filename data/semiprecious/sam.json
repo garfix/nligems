@@ -1,7 +1,7 @@
 {
     "NAME": "SAM",
     "NAME_DESC": "Script-Applier Mechanism",
-    "FIRST_YEAR": "1978",
+    "FIRST_YEAR": "1976?",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
         "Roger Schank",
@@ -10,9 +10,13 @@
     "INSTITUTIONS": [
         "University of California, Berkeley"
     ],
-    "INFLUENCED_BY": [],
+    "INFLUENCED_BY": [
+        "MARGIE"
+    ],
     "LONG_DESC": "",
     "ARTICLES": [
     ],
-    "BOOKS": []
+    "BOOKS": [
+        "Scripts Plans Goals and Understanding - Schank, Robert Abelson (1977)"
+    ]
 }

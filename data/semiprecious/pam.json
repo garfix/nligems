@@ -1,7 +1,7 @@
 {
     "NAME": "PAM",
     "NAME_DESC": "Plan-Applier Mechanism",
-    "FIRST_YEAR": "1978",
+    "FIRST_YEAR": "1977?",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
         "Robert Wilensky"
@@ -19,5 +19,7 @@
     "INFLUENCED_BY": [
         "SAM"
     ],
-    "BOOKS": []
+    "BOOKS": [
+        "Scripts Plans Goals and Understanding - Schank, Robert Abelson (1977)"
+    ]
 }

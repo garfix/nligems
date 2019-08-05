@@ -1,0 +1,34 @@
+{
+    "NAME": "Watson (formerly DeepQA)",
+    "NAME_DESC": "Named after the first CEO of IBM, Thomas J. Watson",
+    "FIRST_YEAR": "2006",
+    "LAST_YEAR": "2011",
+    "CONTRIBUTORS": [
+        "David Ferrucci and many others"
+    ],
+    "INSTITUTIONS": [
+        "IBM"
+    ],
+    "ARTICLES": [
+        "Building Watson: An Overview of the DeepQA Project - Ferrucci, D, et al. (2010)",
+        "Question analysis: How Watson reads a clue - Lally, A. et al (2012)",
+        "Deep parsing in Watson - McCord, M.C. et al (2012)",
+        "Relation extraction and scoring in DeepQA - Wang, C. et al (2012)",
+        "Finding needles in the haystack: Search and candidate generation - Chu-Carroll, J. et al (2012)",
+        "Typing candidate answers using type coercion - Murdock, J. et al (2012)",
+        "Textual evidence gathering and analysis - Murdock, J. et al (2012)",
+        "Relation extraction and scoring in DeepQA - Wang, C. et al (2012)",
+        "A Comparison of Hard Filters and Soft Evidence for Answer Typing in Watson - Welty, C. et al (2012)",
+        "A framework for merging and ranking of answers in DeepQA - Gondek, D.K. et al (2012)",
+        "Fact-based question decomposition in DeepQA - Kalyanpur, A. et al (2012)",
+        "Identifying implicit relationships - Chu-Carroll, J. et al. (2012)",
+        "Special Questions and techniques - Prager, J.M. et al. (2012)",
+        "Textual resource acquisition and engineering - Chu-Carroll, J. et al (2012)",
+        "Automatic knowledge extraction from documents - Fan, J. et al (2012)",
+        "Structured data and inference in DeepQA - Kalyanpur, A. et al (2012)"
+
+    ],
+    "BOOKS": [
+        "Final Jeopardy: The Story of Watson, the Computer That Will Transform Our World - Stephen Baker (2012)"
+    ]
+}
