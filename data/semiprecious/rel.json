@@ -1,12 +1,18 @@
 {
   "NAME": "REL",
+  "NAME_DESC": "Rapidly Extensible Language system",
   "FIRST_YEAR": "1969?",
   "LAST_YEAR": "1969?",
   "CONTRIBUTORS": [
     "Bozena H. Dostert",
     "Frederick B. Thomson"
   ],
-  "INFLUENCED_BY": [],
+  "INSTITUTIONS": [
+    "California Institute of Technology"
+  ],
+  "INFLUENCED_BY": [
+      "DEACON"
+  ],
   "LONG_DESC": "",
   "ARTICLES": [
     "REL: A Rapidly Extensible Language System (1969)",

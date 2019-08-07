@@ -1,4 +1,4 @@
-Watson is for Natural Language Interaction was Deep Blue was for Chess computers. It played on live television against some of the best contestants in the game of Jeopardy!, a game that requires you to find the question to an answer that is given.
+Watson is for Natural Language Interaction what Deep Blue was for Chess computers. It played on live American national television against some of the best contestants in the game of Jeopardy!, a game that requires you to find the question to an answer that is given.
 
 Watson, or DeepQA as it is called by the development team, is a Question Answering system. It is very good at searching for specific entities through large amounts of unstructured text documents  based on a question in natural language and providing the confidence it has in each of the answers it finds. It also integrates structured sources like triple stores and lookup tables. It is able to combine information of multiple sources of information to answer a single question. It handles nested subquestions and certain questions that require problem solving. At the time of the Jeopardy! event it just handled English questions.
 
