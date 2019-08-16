@@ -1,14 +1,18 @@
 {
   "NAME": "Lifer",
-  "FIRST_YEAR": "1977?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1976?",
+  "LAST_YEAR": "1977?",
   "CONTRIBUTORS": [
     "Gary G. Hendrix"
   ],
+    "INSTITUTIONS": [
+        "SRI International"
+    ],
   "INFLUENCED_BY": [],
-  "LONG_DESC": "",
   "ARTICLES": [
-    "Human engineering for applied natural language processing - Hendrix"
+    "LIFER: A Natural Language Interface Facility - Hendrix (1976)",
+    "The LIFER Manual: A Guide to Building Practical Natural Language Interfaces - Hendrix (1977)",
+    "Human engineering for applied natural language processing - Hendrix (1977)"
   ],
   "BOOKS": []
 }

@@ -161,7 +161,7 @@ Common syntactic structures that may need to be recognized are:
 - Quantifier Phrases (e.g. "all books")
 - Adverb Phrases (e.g. "quickly")
 - Adjective Phrases (e.g. "red")
-- Relative Clauses
+- Relative Clauses (e.g. "(the man) that took the money")
 - Negations ("not")
 - Conjunctions ("and", "or")
 - Auxiliaries
@@ -643,6 +643,10 @@ The meaning of these compounds is not purely analytical. A "city department" cou
 ##### Idioms
 
 Each domain has its own expressions, that are meaningless outside it.
+
+#### Domain Switching
+
+A system that handles multiple domains needs a way to automatically switch from active domain as the user changes subject (domain).
 
 ### Process the Intent
 

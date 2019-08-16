@@ -14,9 +14,33 @@
         "dependencyOf": ["thoughttreasure"]
     },
     {
+        "id": "IPL",
+        "year": "1956",
+        "desc": "IPL was invented by  Allen Newell, Cliff Shaw, and Herbert Simon at RAND Corp and Carnegie Institute of Technology. IPL invented the concept of list processing. It was just in several NLI systems.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Information_Processing_Language"
+        },
+        "dependencyOf": []
+    },
+    {
+        "id": "AI",
+        "year": "1956",
+        "desc": "At the Dartmouth conference the field of Artificial Intelligence was born. It was posed that \"every aspect of learning of any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.\" Main participants: Marvin Minsky, John McCarthy, Allen Newell, Herbert Simon. ",
+        "dependencyOf": []
+    },
+    {
+        "id": "COMIT",
+        "year": "1957",
+        "desc": "COMIT, the first string processing language, was invented by Victor Yngve as MIT. It was just in several NLI systems.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Information_Processing_Language"
+        },
+        "dependencyOf": []
+    },
+    {
       "id": "Lisp",
       "year": "1958",
-      "desc": "Lisp was invented by John McCarthy. The favored programming language for AI research.",
+      "desc": "Lisp was invented by John McCarthy. The favored programming language for AI research. Influenced by IPL.",
       "links": {
         "Wikipedia": "https://en.wikipedia.org/wiki/Lisp_(programming_language)"
       },
@@ -44,6 +68,15 @@
         "desc": "Donald Davidson first explicitly represents events as objects in a formal representation in his paper 'The logical form of action sentences'"
     },
     {
+        "id": "Chart parser",
+        "year": "1968",
+        "desc": "Jay Earley creates a chart parser for natural language parsing. Chart parsers use dynamic programming to memorize structures that have been built before in order to avoid double work.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Augmented_transition_network"
+        },
+        "dependencyOf": ["lunar"]
+    },
+    {
         "id": "Case Grammar",
         "year": "1968",
         "desc": "Case Grammar was developed by Charles J. Fillmore. It emphasises semantic roles of a sentence, Agent, Object, Benefactor, Location or Instrument.",
@@ -51,6 +84,20 @@
             "Wikipedia": "http://en.wikipedia.org/wiki/Case_grammar"
         },
         "dependencyOf": ["eufid"]
+    },
+    {
+        "id": "Micro-Planner",
+        "year": "1968",
+        "desc": "Planner was created by Carl Hewitt (MIT), the first procedural programming language, implemented in Lisp. It applied forward and backward chaining. It was used by SHRDLU.",
+        "links": {
+            "Wikipedia": "http://en.wikipedia.org/wiki/Planner_programming_language"
+        },
+        "dependencyOf": ["shrdlu"]
+    },
+    {
+        "id": "CD",
+        "year": "1969",
+        "desc": "Roger Schank introduces \"Conceptual Dependency Theory\", a theory for natural language understanding that uses fundamental concepts like ATRANS, PTRANS and MTRANS to denote abstract transfers. "
     },
     {
         "id": "Augmented Transition Network",
@@ -67,20 +114,16 @@
         "desc": "E.F. Codd (IBM) publishes \"A Relational Model of Data for Large Shared Data Banks\". The basis of modern relational databases.",
         "dependencyOf": ["rendezvous"]
     },
+
     {
-        "id": "Micro-Planner",
-        "year": "1968",
-        "desc": "Planner was created by Carl Hewitt (MIT), the first procedural programming language, implemented in Lisp. It applied forward and backward chaining. It was used by SHRDLU.",
+        "id": "Semantic Grammar",
+        "year": "1972",
+        "desc": "Yorick Wilks coins the term 'semantic grammars' for grammars that parse directly to semantic form, skipping syntax",
         "links": {
-            "Wikipedia": "http://en.wikipedia.org/wiki/Planner_programming_language"
-        },
-        "dependencyOf": ["shrdlu"]
+            "Wikipedia": "https://en.wikipedia.org/wiki/Semantic_parsing"
+        }
     },
-    {
-        "id": "CD",
-        "year": "1969",
-        "desc": "Roger Schank introduces \"Conceptual Dependency Theory\", a theory for natural language understanding that uses fundamental concepts like ATRANS, PTRANS and MTRANS to denote abstract transfers. "
-    },
+
     {
         "id": "Prolog",
         "year": "1972",
