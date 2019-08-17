@@ -1,6 +1,6 @@
 ELIZA was one of the first "chatterbots", systems that are able to freely communicate with humans, but lacking real understanding. The NLI was copied widely and many variations where made from it.
 
-ELIZA, running the DOCTOR script, was created to provide a parody of "the responses of a non-directional psychotherapist in an initial psychiatric interview".
+ELIZA was able to run different scripts. One script, called DOCTOR, provided a parody of "the responses of a non-directional psychotherapist in an initial psychiatric interview".
 
 Response to a question consists of these steps:
 

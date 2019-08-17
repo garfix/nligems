@@ -1,0 +1,25 @@
+{
+  "NAME": "PARRY",
+  "NAME_DESC": "",
+  "FIRST_YEAR": "1971",
+  "LAST_YEAR": "1971",
+  "CONTRIBUTORS": [
+    "K.M. Colby",
+    "H. Enea",
+      "L. Tesler",
+      "D.C. Smith"
+  ],
+  "INSTITUTIONS": [
+    "Carnegie Institute of Technology"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+      "Heuristic methods for computer understanding of natural language in context-restricted on-line dialogues - Colby, Enea (1967)",
+      "Inductive Inference by Intelligent Machines - Colby, Kenneth (1968)",
+      "Dialogues between humans and an artificial belief system - Colby, Smith (1969)",
+      "A directed graph representation for computer simulation of belief systems - Tesler, Enea, Colby (1968)",
+      "Idiolectic language-analysis for understanding doctor-patient dialogues - Enea, Colby"
+  ],
+  "BOOKS": []
+}

@@ -1,5 +1,6 @@
 {
     "NAME": "SHRDLU",
+    "NAME_DESC": "ETAOIN SHRDLU is the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English. It was also the title of a 1942 science fiction story by Frederic Brown in which an artificially intelligent Linotype machine (with natural language ability) learns everything it typesets and tries to take over the world.",
     "FIRST_YEAR": "1968",
     "LAST_YEAR": "1970",
     "CONTRIBUTORS": [
@@ -18,7 +19,6 @@
     "STATE_HISTORY": true,
     "KB_TYPE_DESC": "Planner databases",
     "SOURCE_CODE": "http:\/\/hci.stanford.edu\/winograd\/shrdlu\/",
-    "NAME_DESC": "The name SHRDLU was derived from ETAOIN SHRDLU, the arrangement of the alpha keys on a Linotype machine, arranged in descending order of usage frequency in English.",
     "LONG_DESC": "",
     "ARTICLES": [
       "Procedures a representation for data in a computer program for understanding  natural language - Winograd (1971)"

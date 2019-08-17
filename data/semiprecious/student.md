@@ -1,3 +1,5 @@
+PhD thesis of Bobrow under supervision of Minsky.
+
 An algebra problem solver which accepts programs phrased in a subset of English and transforms these into equations which can be solved arithmetically.
 
 It can handle problems such as this:

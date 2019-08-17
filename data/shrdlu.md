@@ -1,3 +1,5 @@
+PhD thesis of Winograd, supervised by Seymour Papert.
+
 SHRDLU has an impressive list of features. Over 50 years old, it still is the most expressive natural language processing system ever.
 
  - It allows question, imperative and declarative sentences
