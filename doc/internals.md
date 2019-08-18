@@ -74,6 +74,8 @@ When the user has reasoning capabilities, the user may also jump to the conclusi
 
 Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
+There are many types of learning. All of them result in a change in one of these knowledge sources.
+
 #### Storage Technology
 
 The technology of these sources may be
@@ -717,23 +719,25 @@ A "why" or "how" question can only be answered with information from a goal base
 
 A question about meta information "Can a pyramid be supported by a block?" can only be answered with information from a knowledge base with meta information.
 
-#### Inference
-
-Inference allows an NLI to infer new information by applying (inference) rules to existing information.
-
-There are two forms of inference: deduction and induction.
-
-Inference can be performed in two ways: backward chaining and forward chaining.
-
-Inference plays two very important roles in processing the sentence. It allows the system to deduce information that is not directly available from the database. And it extends the active context with common sense knowledge that a human would automatically infer from the given sentence. 
-
-##### Deduction
+#### Deduction
 
 An inference form has one or more antecedents, and a consequent:
 
 IF a AND b AND c THEN d
 
 The programming language Prolog is typically used for NLI's that rely on inference, since Prolog has a built in inference engine. Some databases also allow storing and processing rules. A reduced form of Prolog, along with a custom inference engine is sometimes implemented in the NLI itself.
+
+#### Plan execution
+
+If an NLI has goals, or even only the goal of responding to the user's question, the system may check its stock plans in order to reach the goal. These plans may in turn create new goals which need solving.
+
+#### Learning new information 
+
+##### Declaration
+
+Most learning exists of the user simply telling the system what is the case.
+
+The system may also conclude by itself what is the case, or what is probably the case. It may do this by applying scripts for example, or inference rules.
 
 ##### Induction
 
@@ -742,28 +746,6 @@ Induction is deriving a uncertain conclusion based on an incomplete set of obser
 <https://en.wikipedia.org/wiki/Inductive_reasoning>
 
 It is used in expert systems, not much in database NLI's, A medical system may conclude from the presence of symptom A and symptom B that cause C is true with certainty T.
-
-##### Backward chaining
-
-Backward chaining is goal-driven. It deduces a goal by checking its conditions.
-
-    IF a AND b AND c THEN d
-
-If the current goal is d, then, in order to establish d, it needs to establish a, b, and c first. These may be goals by themselves and require other rules to be resolved. It may cause an infinite loop.
-
-Backward chaining does not need a context of current facts, since all facts may be derived when needed. Using only backward chaining is sufficient for simple questions.
-
-##### Forward chaining
-
-Forward chaining is data-driven. It deduces all facts that may be derived from given input.
-
-    IF a AND b AND c THEN d
-
-When new data comes in, say b, the system only needs to evaluate the rules that have the new fact as an antecedent. If all antecedents are true, d is asserted. This means that fact d is added to the current context.
-
-Forward chaining is used to assert new facts and even goals in the nli system. This enriches the user experience.
-
-The assertions created by forward chaining may even be the purpose of the NLI. This is the case in Margie, for example.
 
 #### Interaction with knowledge sources
 
@@ -791,11 +773,7 @@ It is necessary to use aggregates (notably COUNT, MAX, MIN) for certain question
 
 In some NLI's the semantic structure that represents the intent of the user coincides with the database query.
 
-#### Updating internal state
-
-I will now describe several types of internal knowledge sources.
-
-##### Dialog context
+#### Update Dialog context
 
 The "dialog context" is a type of memory that is linked to a single conversion with a user. It does not survive outside of this conversation. It is filled with information that is inferred from perviously processed sentences and aids in processing new sentences. 
 
@@ -811,7 +789,7 @@ Deictic center: This current subject of conversation is called the deictic cente
 
 Common sense: From the sentence a user enters (e.g. "John went into a restaurant") the system may infer some information that is implied in the situation and store this in the dialog context (i.e. "John eats food", "John pays the bill").
 
-##### Goal, plans and actions
+#### Update Goal, plans and actions
 
 A goal based NLI needs to keep track of its goal hierarchy. The system may add a goal, process a plan or part of a plan, and perform actions.
 
@@ -819,7 +797,7 @@ Goals are distinct from the dialog context, because the execution of plans often
 
  ThoughtTreasure
 
-##### Beliefs, desires, intentions
+#### Update Beliefs, desires, intentions
 
 An NLI may keep track of its own beliefs, and of the beliefs of the user. These are mental models. It can be interesting to keep track of what you know that the other person knows. Further it can be useful for a system to have desires, and to be aware of the desires of the user. Intentions are strongly related to the goals in the previous section, of course. An intention to which the system commits itself is a goal. BDI is a level above goals, plans and actions.  
 
@@ -827,7 +805,7 @@ A system may also have built-in desires and be aware of the desires of the user.
 
  PANDORA
 
-##### Emotional state
+#### Update Emotional state
 
 A computer does not experience emotions, of course. But that does not mean it cannot react to input in the same way a human being would. For a conversational agent it is very useful to have simulated emotions. It would react more human.
 
