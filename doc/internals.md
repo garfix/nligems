@@ -425,6 +425,14 @@ Roger Schank's systems.
 
 In all systems, raw text is split into tokens. This means that words, numbers and punctuation characters are distinguished.
 
+- Lexicon lookup
+- Morphological analysis (Removes the prefixes and suffixes of a word to find the root form (present in the lexicon) For example: larger => large; finding => find; unable => able)
+- Open-ended token recognition (Recognizes words from an endless category that is not a good fit for a lexicon. Examples are ordinals: 42, forty-two, forty-second)
+- Proper names lookup in knowledge base 
+- Proper names by matching (Proper names are recognized by fitting them into a pattern. For example: [A-Z][a-z]* van der [A-Z][a-z]*)
+- Quoted string recognition (le film "Horizons lointains")
+- Uses a part-of-speech tagger  
+
 ##### Morphological Analysis
 
 In some systems the morphemes of words are distinguished. This helps keep the dictionary small, since inflections of words need not be stored.
@@ -602,6 +610,11 @@ It is clear to a human that X is a country and Y is a city. This information abo
 
 Once the entity types are known in the analysis, they may be used to limit the namespace for proper nouns. For example, once it is known that the name "Iran" in a sentence is a country, the Brazilian football player by the same name can be safely discarded as the subject of the sentence.
 
+Semantic selectional restrictions: Also called "S-selection". The lexicon stores semantic constraints for each argument of a verb.
+For example, the verb may contain these restrictions:
+subject: instance of living organism
+object: instance of a liquid
+
 #### Pragmatic analysis
 
 The difference between semantic and pragmatic analysis is that pragmatic analysis requires contextual information: information that can't be obtained from the sentence alone.
@@ -731,7 +744,13 @@ The programming language Prolog is typically used for NLI's that rely on inferen
 
 If an NLI has goals, or even only the goal of responding to the user's question, the system may check its stock plans in order to reach the goal. These plans may in turn create new goals which need solving.
 
-#### Learning new information 
+#### Learning new information
+
+- Learn new names 
+- Learn new words by telling 
+- Learn new words by deduction
+- Learn new facts 
+- Learn new rules 
 
 ##### Declaration
 
@@ -746,6 +765,25 @@ Induction is deriving a uncertain conclusion based on an incomplete set of obser
 <https://en.wikipedia.org/wiki/Inductive_reasoning>
 
 It is used in expert systems, not much in database NLI's, A medical system may conclude from the presence of symptom A and symptom B that cause C is true with certainty T.
+
+##### Learning by example
+
+Conclude that something is possible from the existence of at least a single instance.
+
+Example from SHRDLU:
+User	can a pyramid be supported by a block?
+SHRDLU	YES.
+The deductive system finds an actual example, so it knows this is possible. (Winograd)
+
+##### Proof by custom procedure
+
+A custom procedure implemented in code decides whether a statement is true or false.
+Example from ThoughtTreasure
+near(X, Y) is determined by invoking a space routine.
+
+##### Refuse to accept
+
+Something that is clearly wrong should not be added to the database.  
 
 #### Interaction with knowledge sources
 

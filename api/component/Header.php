@@ -63,7 +63,6 @@ class Header
         $menu = [
             'internals.php' => "The NLI system",
             'all-systems.php' => "Systems",
-            'filter.php' => "Comparison",
             'timeline.php' => "Timeline",
             'news.php' => "News"
         ];
