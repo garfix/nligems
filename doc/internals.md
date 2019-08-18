@@ -74,6 +74,8 @@ When the user has reasoning capabilities, the user may also jump to the conclusi
 
 Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
+#### Storage Technology
+
 The technology of these sources may be
 
 - a relational database (approachable through SQL)
@@ -82,14 +84,7 @@ The technology of these sources may be
 - an online service with a public API
 - plain text documents
 
-The information itself may consist of
-
-- factual information (persons, soil samples, countries, ...)
-- meta information (information about a class of objects)
-- inference rules (if A then B)
-- time based information (at time T is was the case that C)
-- position based information (at position P it is the case that C)
-- goal based information (event A was because of event B)
+#### Characteristics
 
 The source may be persistent or volatile. A ___volatile___ source is destroyed when the interaction with the user ends. A ___persistent___ source does not depend on the user session.
 
@@ -99,19 +94,48 @@ For a simple NLI the domain of the knowledge source is ___objective___, it conta
 
 More complex NLI systems even contain information about their own inner processes, and this information can even be queried by the user (i.e. "Why did you pick up the red cube?"). Let's call these knowledge sources ___subjective___.
 
+Note that NLI's have been created that could access and even modify all types of knowledge sources.
+
+#### Objective knowledge sources
+
+The information itself may consist of
+
+- factual information (persons, soil samples, countries, ...)
+- meta information (information about a class of objects)
+- procedures (to reach D, first do A, B and C)
+- inferences (to determine if D is the case, you must first determine if A, B, and C are the case)
+
+Factual information may further be
+
+- time based information (at time T is was the case that C)
+- position based information (at position P it is the case that C)
+
+#### Subjective knowledge sources
+
 Subjective knowledge sources are:
 
-- the dialog context (contains information about recently mentioned entities, and the place of self in time and space: deictic center)
-- declarative memory (keeps track of the information the user feeds it)
-- spatial memory (which object is located where)
-- time based memory (what happened to whom at what time)
-- the goals of the nli (goals added by the user, or built-in goals)
+- the dialog context / working memory 
 - emotional state
-- a model of the beliefs, desires and intentions of itself and of the user
+- BDI models (beliefs, desires and intentions; and also goals)
+
+The dialog context may contain information about
+
+- recently mentioned entities (for anaphora resolution)
+- the current place of self and others in time and space: deictic center
+
+Emotional state can influence the motivation of the NLI and change its goals and its output.
+
+The BDI models keep track of the goals of different agents, which helps establish the cause of their actions (why they do things).
+
+- a BDI model of the system itself (also: goals) (see SHRDLU)
+- a BDI model of the agents that are the subject of the conversation (see Schank)
+- a BDI model of the user
+
+A BDI model may have a history, that allows the NLI to query past motives.
 
 All types of combinations of these dimensions occur. Typical modern databases are persistent, external and objective. Emotional information is mostly volatile, internal and subjective.
 
-As you can see, a sufficiently complex NLI is a proper intelligent agent.
+As you can see, a sufficiently complex NLI is a proper intelligent agent. An NLI that has none of these is simple. An NLI that has all of these is very advanced. 
 
 A knowledge source usually contains positive information (X is the case), but it may also contain negative information (Y is not the case).
 
