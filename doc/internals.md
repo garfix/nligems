@@ -413,11 +413,17 @@ Systems that use Montague Semantics use the original Predicate Logic. There's on
 
 CLE uses feature unification.
 
-##### Frames
+##### Procedural knowledge
 
-##### Conceptual Dependency
+Planner, Prolog
 
-Roger Schank's systems.
+Both logical deductions and plan templates are stored in the form of procedural rules. This makes them easy to understand and code by humans.
+
+##### Frames, Scripts
+
+Minsky, Schank (Conceptual Dependency)
+
+Knowledge is stored as objects with slots. Slots have default values. There may be causal connections between these objects.
 
 #### Syntactic analysis
 
@@ -744,19 +750,31 @@ The programming language Prolog is typically used for NLI's that rely on inferen
 
 If an NLI has goals, or even only the goal of responding to the user's question, the system may check its stock plans in order to reach the goal. These plans may in turn create new goals which need solving.
 
-#### Learning new information
+#### Learning by being told
+
+When a user tells a system something, the system may remember this. This is a simple yet powerful way of learning. 
 
 - Learn new names 
 - Learn new words by telling 
 - Learn new words by deduction
 - Learn new facts 
-- Learn new rules 
-
-##### Declaration
+- Learn new rules
 
 Most learning exists of the user simply telling the system what is the case.
 
 The system may also conclude by itself what is the case, or what is probably the case. It may do this by applying scripts for example, or inference rules.
+
+##### Refuse to accept
+
+Something that is clearly wrong should not be added to the database.  
+
+#### Finding new solutions
+
+When the system encounters a goal for which there is no known plan, or a request for information it does not have, it may need to create a new plan or actively find this new knowledge.   
+
+##### Search
+
+Trial-and-error. If there is a search space, the system may try possible alternatives and remember the ones that receive positive feedback.
 
 ##### Induction
 
@@ -766,24 +784,20 @@ Induction is deriving a uncertain conclusion based on an incomplete set of obser
 
 It is used in expert systems, not much in database NLI's, A medical system may conclude from the presence of symptom A and symptom B that cause C is true with certainty T.
 
-##### Learning by example
-
-Conclude that something is possible from the existence of at least a single instance.
+Also: conclude that something is possible from the existence of at least a single instance.
 
 Example from SHRDLU:
 User	can a pyramid be supported by a block?
 SHRDLU	YES.
 The deductive system finds an actual example, so it knows this is possible. (Winograd)
 
+##### Making Analogies
+
 ##### Proof by custom procedure
 
 A custom procedure implemented in code decides whether a statement is true or false.
 Example from ThoughtTreasure
 near(X, Y) is determined by invoking a space routine.
-
-##### Refuse to accept
-
-Something that is clearly wrong should not be added to the database.  
 
 #### Interaction with knowledge sources
 
@@ -855,6 +869,10 @@ An NLI responds to the user by
 - generating a custom response ("She married to Lord Byron")
 - asking for clarification ("Do you mean [a] ... [b] ...")
 - admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
+
+#### Sentence generation
+
+Compound sentences need to be built from smaller pieces, just as an input sentence is broken down in pieces. Sometimes even the same grammar is used.
 
 #### Admitting inability
 
