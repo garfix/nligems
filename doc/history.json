@@ -49,7 +49,7 @@
     {
         "id": "Programs with common sense",
         "year": "1959",
-        "desc": "John McCarthy wrote the influential paper 'Programs with common sense'. The new idea was to use formal languages to solve ordinary commonsense reasoning, whereas logic was used before only to represent mathematical truths. The program to be written, 'Advice Taker', was to be a joint project with Marvin Minsky, but it was never completed.",
+        "desc": "John McCarthy wrote the influential paper 'Programs with common sense'. The new idea was to use formal languages to solve ordinary commonsense reasoning, whereas logic was used before only to represent mathematical truths. The program to be written, 'Advice Taker', was to be a joint project with Marvin Minsky, but it was not realized. Reasoning is done by processing rules containing premises and conclusions (a(x, y), b(y, z), c(z, a) -> d(x, a)). Fischer Black later made a first implementation of this system (1964)",
         "links": {
             "Wikipedia": "https://en.wikipedia.org/wiki/Advice_taker"
         }
