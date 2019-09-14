@@ -656,6 +656,66 @@ and link the pronoun to the subject.
 
 A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
 
+SHRDLU processes many types of anaphora. The numbers are sentence numbers from the sample dialog.
+
+an object (objects) in the scene (no stored referent)
+
+- 1 "a big red block": one of the "big" red blocks in the scene
+- 3a "a block which is taller than the one you are holding": a complex reference to an object in the scene
+- 4 "the box": the single box in the scene
+- 6 "blocks": all blocks in the scene
+- 12 "two pyramids": exactly two of the pyramids in the scene
+- 13 "the blue pyramid": a single object in the scene
+- 16 "anything in the box" - any type of object in the scene
+- 17 "both of the red blocks and either a green cube or a pyramid": complex reference to objects in the scene
+- 21a "the littlest pyramid": from all pyramids in the scene the one with the smallest height 
+- 34 "the blue pyramid on the block" / "the blue pyramid on the block in the box" (ambiguous, but one interpretation has
+    a reference)
+- 38 "any steeples" object from the scene
+- 41 "superblock" a proper name of an object in the scene
+
+an object from the same sentence
+
+- 3b "it": refers to the object in 3a
+
+an object from the previous question
+
+- 20 "a small one": "one" refers to the type "block" from previous question; extended with "small" 
+- 21b "it": refers to "a small one", the direct object of the previous question
+
+an object from the previous response
+
+- 5 "the pyramid": one of the two objects mentioned in the conjunction of the previous response
+- 7a "one of them": refers to "four of them" from the previous response
+- 8 "it": refers to the the object in the previous response 
+- 27 "that cube" refers to the direct object from the previous response
+
+an event from the previous response
+
+- 26 "that" refers to the action in the previous response
+
+an object from an earlier question
+
+- 7b "the one which I told you to pick up": a complex reference to the direct object the last event in which "I tell you
+    to pick up" ("pick up") is true
+    
+a concept, an abstract object
+    
+- 10 "a pyramid", "a block": a pyramid-concept and a block-concept in the metadata knowledge base
+
+a description of an object (no stored referent)
+
+- 14a "blocks which are not red" - this is a description of objects that have no direct reference
+- 14b "anything which supports a pyramid" - this is a description of objects that have no direct reference
+- 37 "a stack which contains two green cubes and a pyramid" the description of a concept
+   
+none found
+
+- 2 "the pyramid": reference unknown
+
+Any noun phrase can become a referent, so all of them need to be stored in the dialog context as subject. Referents can
+be singular or plural. When a reference is a description, the full description needs to match the possible referent.
+
 ##### Tense
 
 If a system can handle time, it must interpret tensed sentences with respect to the deictic center of time.
