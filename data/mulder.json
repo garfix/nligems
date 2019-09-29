@@ -1,0 +1,16 @@
+{
+    "NAME": "MULDER",
+    "FIRST_YEAR": "2000?",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Cody Kwok",
+        "Oren Etzioni",
+        "Daniel S. Weld"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Scaling Question Answering to the Web - Kwok, Etzioni, Weld (2000)"
+    ],
+    "BOOKS": []
+}

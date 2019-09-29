@@ -1,0 +1,20 @@
+{
+    "NAME": "Falcon",
+    "FIRST_YEAR": "2000?",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Moldovan D.",
+        "Harabagiu S.",
+        "Pasca M.",
+        "Mihalcea R.",
+        "Goodrum R.",
+        "Girju R.",
+        "Rus V."
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Falcon - Boosting Knowledge for Answer Engines - Moldovan et al (2000)"
+    ],
+    "BOOKS": []
+}

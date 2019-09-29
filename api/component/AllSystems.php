@@ -76,6 +76,7 @@ class AllSystems extends HtmlElement
 		    <li>Natural Language Question-Answering Systems: 1969 - R.F. Simmons (1970)</li>
 		    <li>Into the heart of the mind - F. Rose (1984)</li>
 		    <li>Natural Language Interfaces to Databases – An Introduction - I. Androutsopoulos, G.D. Ritchie, P. Thanisch (1995)</li>
+		    <li>Question Answering Systems: Survey and Trends - A. Bouziane, D. Bouchiha, N. Doumi, M. Malki (2015)</li>
 		</ul>
 		<p>\"Into the heart of the mind\" is translated in Dutch as \"De leerlingen van Frankenstein\", which I think is brilliant :)";
 
