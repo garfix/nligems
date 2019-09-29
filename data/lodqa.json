@@ -1,0 +1,15 @@
+{
+  "NAME": "LodQA",
+  "FIRST_YEAR": "2013?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Kim J. D.",
+      "Cohen K. B."
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Natural language query processing for SPARQL generation: A prototype system for SNOMEDCT - Kim, Cohen (2013)"
+  ],
+  "BOOKS": []
+}

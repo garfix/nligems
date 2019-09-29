@@ -1,0 +1,17 @@
+{
+  "NAME": "FREyA",
+    "NAME_DESC": "Feedback, Refinement and Extended Vocabulary Aggregation",
+  "FIRST_YEAR": "2010?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Damljanovic D.",
+      "Agatonovic M.",
+      "Cunningham H,"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Natural Language interface to ontologies: Combining syntactic analysis and ontology-based lookup through the user interaction - Damljanovic, Agatonovic, Cunningham (2010)"
+  ],
+  "BOOKS": []
+}

@@ -1,0 +1,16 @@
+{
+  "NAME": "Swip",
+  "FIRST_YEAR": "2014?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Pradel C.",
+      "Haemmerlé O.",
+      "Hernandez N."
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Swip: A Natural Language to SPARQL Interface Implemented with SPARQL - Pradel, Haemmerlé, Hernandez (2014)"
+  ],
+  "BOOKS": []
+}

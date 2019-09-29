@@ -1,0 +1,18 @@
+{
+  "NAME": "QAKiS",
+  "FIRST_YEAR": "2012?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Cabrio E.",
+      "Cojan J.",
+      "Aprosio A. P.",
+      "Magnini B.",
+      "Lavelli A.",
+      "Gandon F."
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "QAKiS: an open domain QA system based on relational patterns - Cabrio et al (2012)"
+  ],"BOOKS": []
+}

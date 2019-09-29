@@ -1,0 +1,18 @@
+{
+  "NAME": "Ginseng",
+    "NAME_DESC": "Guided Input Natural language Search ENGine for the semantic web",
+  "FIRST_YEAR": "2006?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Bernstein A.",
+      "Kauffmann E.",
+      "Kaiser C.",
+      "Kiefer C."
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "Ginseng: A Guided Input Natural Language Search Engine - Bernstein, Kauffmann, Kaiser, Kiefer (2006)"
+  ],
+  "BOOKS": []
+}

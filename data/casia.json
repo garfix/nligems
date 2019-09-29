@@ -1,0 +1,17 @@
+{
+  "NAME": "CASIA@V2",
+  "FIRST_YEAR": "2014?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Shizhu H.",
+      "Yuanzhe Z.",
+      "Liu K.",
+      "Zhao J."
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "CASIA@V2: A MLN-based question answering system over linked data - Shizhu, Yuanzhe, Liu, Zhao (2014)"
+  ],
+  "BOOKS": []
+}

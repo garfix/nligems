@@ -1,0 +1,17 @@
+{
+  "NAME": "Panto",
+  "FIRST_YEAR": "2007?",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+      "Wang C.",
+      "Xiong M.",
+      "Zhou Q.",
+      "Yu Y."
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "PANTO: A portable Natural Language Interface to Ontologies - Wang, Xiong, Zhou, Yu (2007)"
+  ],
+  "BOOKS": []
+}
