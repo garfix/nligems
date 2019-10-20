@@ -3,10 +3,13 @@
   "FIRST_YEAR": "2007?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-      "Lopez V.",
-      "Uren V.",
-      "Motta E.",
-      "Pasin M."
+      "Vanessa Lopez",
+      "Victoria Uren",
+      "Enrico Motta",
+      "Michele Pasin"
+  ],
+  "PROG_LANGS": [
+    "Java"
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
