@@ -1,5 +1,6 @@
 {
-  "NAME": "Ladder",
+  "NAME": "LADDER",
+  "NAME_DESC": "Language Access to Distributed Data with Error Recovery",
   "FIRST_YEAR": "1978?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
@@ -9,9 +10,18 @@
     "Jonathan Slocum"
   ],
   "INFLUENCED_BY": [],
+    "PROG_LANGS": [
+        "Lisp"
+    ],
+    "INSTITUTIONS": [
+        "SRI International"
+    ],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Developing a Natural Language Interface to Complex Data - Hendrix, Sacerdoti, Sagalowicz, Slocum (1978)"
+    "Developing a Natural Language Interface to Complex Data - Hendrix, Sacerdoti, Sagalowicz, Slocum (1978)",
+    "Managing network access to a distributed data base - Morris, Sagalowicz (1977)",
+    "Language access to distributed data with error recovery - Sacerdoti (1977)",
+    "IDA: An intelligent data access program - Sagalowicz (1977)"
   ],
   "BOOKS": []
 }
