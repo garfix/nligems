@@ -140,6 +140,14 @@
         "desc": "Roger Schank and Robert P. Abelson introduce Script Theory in AI. It is a psychological theory by Silvan Tomkins that explains how people know how to react in all sorts of stereotypical situations"
     },
     {
+        "id": "Feature Unification",
+        "year": "1979",
+        "desc": "Kay invents Feature Structure Unification, an enhancement to phrase structure grammars that enforces features such as tense and number",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Feature_structure"
+        }
+    },
+    {
         "id": "Society Of Mind",
         "year": "1986",
         "desc": "The book \"The Society of Mind\", written by Marvin Minsky, was published.",
