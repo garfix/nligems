@@ -63,6 +63,14 @@
         }
     },
     {
+        "id": "Selectional Restrictions",
+        "year": "1963",
+        "desc": "Selectional restrictions specify the allowed values for predicate arguments. Work on selectional restrictions as a way of characterizing semantic well-formedness began with Katz and Fodor",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Selection_(linguistics)"
+        }
+    },
+    {
         "id": "events",
         "year": "1967",
         "desc": "Donald Davidson first explicitly represents events as objects in a formal representation in his paper 'The logical form of action sentences'"
