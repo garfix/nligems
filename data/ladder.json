@@ -1,15 +1,17 @@
 {
   "NAME": "LADDER",
   "NAME_DESC": "Language Access to Distributed Data with Error Recovery",
-  "FIRST_YEAR": "1978?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1977",
+  "LAST_YEAR": "1978",
   "CONTRIBUTORS": [
     "Gary G. Hendrix",
     "Earl D. Sacerdoti",
     "Doniel Sagalowicz",
     "Jonathan Slocum"
   ],
-  "INFLUENCED_BY": [],
+  "INFLUENCED_BY": [
+      "LIFER"
+  ],
     "PROG_LANGS": [
         "Lisp"
     ],

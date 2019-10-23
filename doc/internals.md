@@ -726,6 +726,14 @@ The input sentence must be converted into one of the systems' actions: ASK (quer
 
 Superficially these actions correspond with the mood of the sentence, but not always ("Can you put the red block on the table?" is a DO action)
 
+##### Question classification
+
+If the input is a question then the type of question needs to be established: yes/no, when, which, why?
+
+##### Answer type detection
+
+The type of answer that the user expects from the system strongly influences the procedure of finding the answer. See Watson for good example.
+
 ##### Ellipsis
 
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.

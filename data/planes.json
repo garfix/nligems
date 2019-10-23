@@ -1,11 +1,14 @@
 {
   "NAME": "Planes",
-  "FIRST_YEAR": "1978?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1975",
+  "LAST_YEAR": "1978",
   "CONTRIBUTORS": [
-    ""
+    "David Waltz"
   ],
-  "INFLUENCED_BY": [],
+  "INFLUENCED_BY": [
+      "SHRDLU",
+      "LUNAR"
+  ],
   "LONG_DESC": "",
   "ARTICLES": [
     "Natural Language Access to a Large Data Base: An Engineering Approach - Waltz (1975)",

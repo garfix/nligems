@@ -1,8 +1,8 @@
 {
   "NAME": "LIFER",
   "NAME_DESC": "Language Interface Facility with Ellipsis and Recursion",
-  "FIRST_YEAR": "1976?",
-  "LAST_YEAR": "1977?",
+  "FIRST_YEAR": "1976",
+  "LAST_YEAR": "1977",
   "CONTRIBUTORS": [
     "Gary G. Hendrix"
   ],
