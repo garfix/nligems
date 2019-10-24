@@ -156,15 +156,6 @@
         }
     },
     {
-        "id": "Society Of Mind",
-        "year": "1986",
-        "desc": "The book \"The Society of Mind\", written by Marvin Minsky, was published.",
-        "links": {
-            "Wikipedia": "https://en.wikipedia.org/wiki/Society_of_Mind"
-        },
-        "dependencyOf": ["thoughttreasure"]
-    },
-    {
       "id": "BDI",
       "year": "1987",
       "desc": "The book \"Intention, Plans, and Practical Reason\", written by Michael Bratman, was published. It describes the BDI model (Belief-Desire-Intention) of action selection.",
