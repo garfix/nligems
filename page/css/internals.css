@@ -22,10 +22,6 @@ li {
     color: #5F445F;
 }
 
-.toc .level5 {
-    color: #657a87;
-}
-
 @media only screen and (min-width: 1100px) {
     .toc {
         position: fixed;
@@ -44,6 +40,7 @@ li {
         bottom: 0;
         overflow: scroll;
         padding-right: 15px;
+        scroll-behavior: smooth;
     }
 }
 
