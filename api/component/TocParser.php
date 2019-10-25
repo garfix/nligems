@@ -29,6 +29,6 @@ class TocParser
 
     protected function createHtml($text, $level, $id)
     {
-        return str_repeat("&nbsp;", 4 * ($level - 1)) . "<a href='#" . $id . "'>" . htmlspecialchars($text) . "</a><br>";
+        return str_repeat("&nbsp;", 4 * ($level - 1)) . "<a class='level" . $level . "' href='#" . $id . "'>" . htmlspecialchars($text) . "</a><br>";
     }
 }
