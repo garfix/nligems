@@ -24,7 +24,7 @@ class TocParser
 
         ksort($htmlArray);
 
-        return implode($htmlArray);
+        return "<div class='toc'>" . implode($htmlArray) . "</div>";
     }
 
     protected function createHtml($text, $level, $id)

@@ -1,3 +1,30 @@
 li {
     list-style: square;
 }
+
+@media only screen and (min-width: 1100px) {
+    .toc {
+        position: fixed;
+        top: 160px;
+        bottom: 0;
+        right: 0;
+        width: 400px;
+        overflow: scroll;
+        padding-bottom: 30px;
+    }
+    div.textPage {
+        margin: 0 20px 0 20px;
+        position: fixed;
+        right: 400px;
+        top: 140px;
+        bottom: 0;
+        overflow: scroll;
+        padding-right: 15px;
+    }
+}
+
+@media print {
+    .toc {
+        display: none;
+    }
+}
