@@ -6,6 +6,7 @@ use nligems\api\component\HtmlElement;
 use nligems\api\component\Header;
 use nligems\api\component\AllSystems;
 use nligems\api\component\ParseDown;
+use nligems\api\component\TitleParser;
 use nligems\api\page\FrontEndPage;
 
 /**
@@ -21,6 +22,7 @@ class AllSystemsPage extends FrontEndPage
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('all-systems');
+        $this->addStyleSheet('toc');
 
         $this->allSystems = $this->getAllSystems();
    	}
@@ -36,6 +38,8 @@ class AllSystemsPage extends FrontEndPage
             if (file_exists($mdFile)) {
                 $data['LONG_DESC'] = $parseDown->parse(file_get_contents($mdFile));
             }
+            preg_match('|([^./]+).json|', $jsonFile, $matches);
+            $data['ID'] = $matches[1];
             $systems[] = $data;
         }
 
@@ -68,10 +72,17 @@ class AllSystemsPage extends FrontEndPage
         $Page->addChildNode($LinkBar);
 
         $AllSystems = new AllSystems($this->allSystems);
+        $html = (string)$AllSystems;
+
+        $indexParser = new TitleParser();
+        $tocHtml = $indexParser->createTocHtml($html);
+
+        $content = "<div class='content'>" . $html . "</div>";
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
-        $Body->addChildNode($AllSystems);
+        $Body->addChildHtml($tocHtml);
+        $Body->addChildHtml($content);
         $Page->addChildNode($Body);
 
         return (string)$Page;

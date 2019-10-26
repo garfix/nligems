@@ -38,7 +38,9 @@ class AllSystems extends HtmlElement
                 $description = "";
             }
 
-			$html .= "<h3>" . htmlspecialchars($systemInfo['NAME']) . $period . $description . "</h3>";
+            $id = $systemInfo['ID'];
+
+			$html .= "<h3 id='{$id}'>" . htmlspecialchars($systemInfo['NAME']) . $period . $description . "</h3>";
 
             $html .= "<div class='contributors'>" .
                 implode(", ", $systemInfo['CONTRIBUTORS']) .

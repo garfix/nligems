@@ -1,5 +1,9 @@
 [
   {
+      "date": "2019-10-26",
+      "story": "I added a table-of-contents to the Systems and The NLI system pages to allow for quicker lookup."
+  },
+  {
       "date": "2019-08-25",
       "story": "This seemingly simple construction is the basis of NLI reasoning: a(x) b(y) -> c(x, y). It is the application of the Modus Ponens logical rule. It can be used to assert new statements in order to extend the body of known knowledge, but it can also be used to deduce information just needed to answer a query. It is a form of logic that is easy to comprehend by humans and quick to compute by computers. Further, each relation can serve as a pre-condition, a premise, an assertion (side effect), a procedural step in a plan, and a subgoal. A relation may take second order relations. This use of logic must have been known long before there were computers, but it was introduced by McCarthy's Advice Taker in 1958. It was the basis of Hewitt's Planner (1968) and Prolog (1972). It is also the basis of common sense reasoning and allows the computer to explain why it does what it does. This introspective property is a distinct advantage over Machine Learning. Other forms of logical deductions are used, mostly by automatic theorem provers, by logicians."
   },

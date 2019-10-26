@@ -22,6 +22,7 @@ class InternalsPage extends FrontEndPage
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('internals');
+        $this->addStyleSheet('toc');
     }
 
     protected function getBody()
