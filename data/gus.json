@@ -1,0 +1,20 @@
+{
+    "NAME": "GUS",
+    "NAME_DESC": "Genial Understander System",
+    "FIRST_YEAR": "1977",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Daniel G. Bobrow",
+        "Ronald M. Kaplan",
+        "Martin Kay",
+        "Donald A. Norman",
+        "Henry Thompson",
+        "Terry Winograd"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "GUS, a frame-driven dialog system - Bobrow, Kaplan, Kay, Norman, Thompson, Winograd (1977)"
+    ],
+    "BOOKS": []
+}
