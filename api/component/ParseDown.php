@@ -1,5 +1,7 @@
 <?php
 
+namespace nligems\api\component;
+
 #
 #
 # Parsedown
@@ -13,7 +15,7 @@
 #
 #
 
-class Parsedown
+class ParseDown
 {
     # ~
 

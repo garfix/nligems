@@ -5,6 +5,7 @@ namespace nligems\page;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\Header;
 use nligems\api\component\AllSystems;
+use nligems\api\component\ParseDown;
 use nligems\api\page\FrontEndPage;
 
 /**
@@ -27,12 +28,13 @@ class AllSystemsPage extends FrontEndPage
    	protected function getAllSystems()
     {
         $systems = [];
+        $parseDown = new ParseDown();
 
         foreach (glob(__DIR__ . '/../data/*.json') as $jsonFile) {
             $mdFile = str_replace('.json', '.md', $jsonFile);
             $data = json_decode(file_get_contents($jsonFile), true);
             if (file_exists($mdFile)) {
-                $data['LONG_DESC'] = file_get_contents($mdFile);
+                $data['LONG_DESC'] = $parseDown->parse(file_get_contents($mdFile));
             }
             $systems[] = $data;
         }

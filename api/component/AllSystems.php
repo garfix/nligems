@@ -46,7 +46,7 @@ class AllSystems extends HtmlElement
                 "</div>";
 
             if (!empty($systemInfo['LONG_DESC'])) {
-                $html .= "<p class='story'>" . nl2br(htmlspecialchars($systemInfo['LONG_DESC'])) . "</p>";
+                $html .= "<p class='story'>" . $systemInfo['LONG_DESC'] . "</p>";
             }
 
             if (!empty($systemInfo['BOOKS'])) {

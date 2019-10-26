@@ -4,24 +4,19 @@ namespace nligems\page;
 
 use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
-use nligems\api\component\ParseDown;
-use nligems\api\component\TocParser;
+use nligems\api\component\Interview;
 use nligems\api\page\FrontEndPage;
-
-require_once __DIR__ . '/../api/component/ParseDown.php';
 
 /**
  * @author Patrick van Bergen
  */
-class InternalsPage extends FrontEndPage
+class InterviewPage extends FrontEndPage
 {
-
     public function __construct()
     {
-        $this->Header = new Header('internals.php', 'NLI internals');
-
+        $this->Header = new Header('interview.php', 'Interview');
         $this->addStyleSheet('common');
-        $this->addStyleSheet('internals');
+        $this->addStyleSheet('interview');
     }
 
     protected function getBody()
@@ -33,18 +28,13 @@ class InternalsPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $markdown = file_get_contents(__DIR__ . '/../doc/internals.md');
-
-        $pd = new ParseDown();
-        $html = "<div class='content'>" . $pd->text($markdown) . "</div>";
-
-        $indexParser = new TocParser();
-        $tocHtml = $indexParser->createTocHtml($html);
+        $LinkBar = new HtmlElement('div');
+        $LinkBar->addClass('linkPanel');
+        $Page->addChildNode($LinkBar);
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
-        $Body->addChildHtml($tocHtml);
-        $Body->addChildHtml($html);
+        $Body->addChildNode(new Interview(null));
         $Page->addChildNode($Body);
 
         return (string)$Page;
