@@ -35,12 +35,22 @@ li {
     div.textPage {
         margin: 0 20px 0 20px;
         position: fixed;
+        left: 0;
         right: 400px;
         top: 140px;
         bottom: 0;
         overflow: scroll;
         padding-right: 15px;
-        scroll-behavior: smooth;
+    }
+
+    div.textPage .content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 60em;
+    }
+
+    p, li, blockquote, code {
+        max-width: inherit;
     }
 }
 

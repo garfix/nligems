@@ -28,7 +28,7 @@ The goals of NLI follow from this definition:
 
 I will now explore these goals.
 
-### Interact
+## Interact
 
 A Knowledge Source can be a database, any other form of stored structured data (as opposed to unstructured text), and online services that provide an API.
 
@@ -56,7 +56,7 @@ The system may answer with one of these sentences
 
 Interaction with an NLI is not limited to a simple Question/Answer. Since language is ambiguous on all levels, it is often necessary for the system to ask the user to clarify his/her intent. So the interaction is always a dialog.
 
-#### User Expectations
+### User Expectations
 
 The NLI has a massive affordance problem. The affordance of a system shows a user how to use it. NLI has none of that by itself. So when you tell a user he or she can talk to the system in plain English, his or her expectations will be too high and will quickly be disappointed.
 
@@ -70,13 +70,13 @@ When a question cannot be answered it is up to the system to provide precise fee
 
 When the user has reasoning capabilities, the user may also jump to the conclusion that the system is intelligent. The user will also need to be instructed about the possible reasoning capabilities of the system.
 
-### Knowledge Sources
+## Knowledge Sources
 
 Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source that a user may want to query. That's why we talk about a knowledge source rather than just a database.
 
 There are many types of learning. All of them result in a change in one of these knowledge sources.
 
-#### Storage Technology
+### Storage Technology
 
 The technology of these sources may be
 
@@ -86,7 +86,7 @@ The technology of these sources may be
 - an online service with a public API
 - plain text documents
 
-#### Characteristics
+### Characteristics
 
 The source may be persistent or volatile. A ___volatile___ source is destroyed when the interaction with the user ends. A ___persistent___ source does not depend on the user session.
 
@@ -98,7 +98,7 @@ More complex NLI systems even contain information about their own inner processe
 
 Note that NLI's have been created that could access and even modify all types of knowledge sources.
 
-#### Objective knowledge sources
+### Objective knowledge sources
 
 The information itself may consist of
 
@@ -112,7 +112,7 @@ Factual information may further be
 - time based information (at time T is was the case that C)
 - position based information (at position P it is the case that C)
 
-#### Subjective knowledge sources
+### Subjective knowledge sources
 
 Subjective knowledge sources are:
 
@@ -141,7 +141,7 @@ As you can see, a sufficiently complex NLI is a proper intelligent agent. An NLI
 
 A knowledge source usually contains positive information (X is the case), but it may also contain negative information (Y is not the case).
 
-### Natural Language Syntax
+## Natural Language Syntax
 
 Natural language means one of these:
 
@@ -176,7 +176,7 @@ To be intelligible a sentence must be complete and syntactically and semanticall
 - ambiguity ("That person")
 - idioms ("the old ones")
 
-#### Syntactic structures
+### Syntactic structures
 
 Common syntactic structures that may need to be recognized are:
 
@@ -199,7 +199,7 @@ Common syntactic structures that may need to be recognized are:
 - Clauses as objects
 - Extraposition
 
-#### Imperative sentence syntax
+### Imperative sentence syntax
 
 An imperative sentence commands the system to do something:
 
@@ -212,7 +212,7 @@ The syntactic structure of these sentences is always a single verb phrase
 
 It may be followed by an exclamation mark.
 
-#### Declarative sentence syntax
+### Declarative sentence syntax
 
 A declarative sentence gives information to the system:
 
@@ -223,7 +223,7 @@ It has the structure
 
 * NP VP
 
-#### Question sentence syntax
+### Question sentence syntax
 
 There are so many syntactic structures for questions. You might not need all of them, but it is always good to know there's not just two or three of them.
 
@@ -236,7 +236,7 @@ HAVE = auxiliary (has, have)
 MOD = modality (can, could, will, would, shall, should)
 NOT = negation (not)
 
-##### Factual yes/no-questions or choice questions
+#### Factual yes/no-questions or choice questions
 
 * DO NP VP (did Lord Byron marry Queen Elisabeth, did Lord Byron not marry Queen Elisabeth)
 * DO NP VP (did Lord Byron marry Queen Elisabeth or Anne Isabella Milbanke)
@@ -262,11 +262,11 @@ NOT = negation (not)
 * MOD NP VP (would you like coffee or tea)
 * MOD NOT NP VP (wouldn't you like coffee)
 
-##### Uninverted yes/no questions
+#### Uninverted yes/no questions
 
 * NP VP (Lord Byron married Queen Elisabeth?) (question mark is required)
 
-##### Wh-questions (which, what, who)
+#### Wh-questions (which, what, who)
 
 * WHO VP (who married Lord Byron, who was Lord Byron's wife)
 * WHO BE NP VP (who are you seeing)
@@ -294,35 +294,35 @@ NOT = negation (not)
 * WHOSE NP VP (whose autographs have you collected, whose parents will drive)
 * WHOSE NP BE NP (whose book is that)
 
-#####  Amount
+####  Amount
 
 * HOW MANY NP VP (how many children had Lord Byron, how many children did Lord Byron have)
 
-##### Degree
+#### Degree
 
 * HOW MUCH NP VP (how much sugar goes in a single drink)
 * HOW ADJP BE NP (how high is the Mount Everest, how tall is the tallest man, how small is a mouse, how old are you)
 * HOW ADVP DO NP VP (how often do you go to the movies, how nicely do I need to dress tonight)
 
-##### Manner
+#### Manner
 
 * HOW BE NP VP (how was Napoleon crowned king)
 * HOW DO NP VP (how do you go to work)
 * HOW HAVE NP VP (how has Napoleon invaded Britain)
 * HOW MOD NP VP (how can I become more productive)
 
-##### State
+#### State
 
 * HOW BE NP (how are you)
 
-##### Reason
+#### Reason
 
 * WHY BE NP VP (why was Napoleon crowned king)
 * WHY DO NP VP (why did Napoleon invade Germany)
 * WHY HAVE NP VP (why has John hit Jake)
 * WHY MOD NP VP (why should I go)
 
-##### Time
+#### Time
 
 * WHEN BE NP (when was the marriage)
 * WHEN BE NP VP (when was Napoleon crowned king)
@@ -332,7 +332,7 @@ NOT = negation (not)
 
 * WHEN -> WHEN PP (when in the next hour do you want to go)
 
-##### Place
+#### Place
 
 * WHERE BE NP (where is it?)
 * WHERE BE NP VP (where is the concert taking place)
@@ -344,7 +344,7 @@ NOT = negation (not)
 
 Also, check this page! <https://www.myenglishteacher.eu/blog/types-of-questions/>
 
-### Understand the User
+## Understand the User
 
 To understand a user, the system needs to extract the ___intent___ of the user's sentence.
 
@@ -387,7 +387,7 @@ All of these are just means to an end, and these steps may be combined or even s
 
 The goal of this is to create an Intent, a semantic representation of the meaning of the sentence as it was intended by the user. This representation often takes the form of a variant of First Order Predicate Logic.
 
-#### Internal representation
+### Internal representation
 
 The system has understood the user when the sentence has been transformed into an internal representation. This representation is called semantic, or logical, or quasi semantic or logical.
 
@@ -397,37 +397,37 @@ While the established way of representing meaning is Predicate Logic, this forma
 
 PL has some shortcomings: the quantifiers are too limited to be of much use.
 
-##### Raw-text representations
+#### Raw-text representations
 
 ELIZA uses raw-text parts in it internal representation. Large parts of the sentence are not processed at all and are kept in their raw form. Therefore we say that ELIZA does not understand a sentence at all.
 
-##### Domain specific representations
+#### Domain specific representations
 
 The spec list of Baseball is not extensible to more complex sentences.  
 
-##### Predicate Logic 
+#### Predicate Logic 
 
 Systems that use Montague Semantics use the original Predicate Logic. There's only a few of them, and they are not very expressive, since making them cover all types of sentences is very complicated.
 
-##### Predicate Logic variations
+#### Predicate Logic variations
 
 CLE uses feature unification.
 
-##### Procedural knowledge
+#### Procedural knowledge
 
 Planner, Prolog
 
 Both logical deductions and plan templates are stored in the form of procedural rules. This makes them easy to understand and code by humans.
 
-##### Frames, Scripts
+#### Frames, Scripts
 
 Minsky, Schank (Conceptual Dependency)
 
 Knowledge is stored as objects with slots. Slots have default values. There may be causal connections between these objects.
 
-#### Syntactic analysis
+### Syntactic analysis
 
-##### Tokenization
+#### Tokenization
 
 In all systems, raw text is split into tokens. This means that words, numbers and punctuation characters are distinguished.
 
@@ -439,13 +439,13 @@ In all systems, raw text is split into tokens. This means that words, numbers an
 - Quoted string recognition (le film "Horizons lointains")
 - Uses a part-of-speech tagger  
 
-##### Morphological Analysis
+#### Morphological Analysis
 
 In some systems the morphemes of words are distinguished. This helps keep the dictionary small, since inflections of words need not be stored.
 
 It can be useful to split up words like "wasn't" in "was" and "not".
 
-##### Unlexical Word Forms
+#### Unlexical Word Forms
 
 Verbs, nouns, determiners, adverbs, etc. are called parts-of-speech.
 
@@ -466,7 +466,7 @@ Some tokens can only be recognized using pattern recognition:
 - prices
 - quoted strings
 
-##### Sentence Structure Analysis
+#### Sentence Structure Analysis
 
 From the individual words the structure of the sentence must be analysed. There are two ways in which this can be done:
 
@@ -544,7 +544,7 @@ The reason that one has to write his own grammar, is that the number of rules ha
 
 There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  <http://nlp.stanford.edu:8080/parser/index.jsp>
 
-#### Semantic analysis
+### Semantic analysis
 
 Once the tree structure of the sentence is known, the syntactic information needs to be transformed and enriched into semantic information.
 
@@ -588,7 +588,7 @@ ___Montague grammar___ is Montague's attempt to express natural language in Pred
 
 ___Feature unification___ is based on the idea that each semantic constituent has some features (like "number", "passive", "agr"). When the constituents are connected, the features must match and their values are inherited up the tree. This is the approach CLE has taken, and they were able to address many grammatical phenomena with it.
 
-##### Quantifier Scoping
+#### Quantifier Scoping
 
 In forming a semantic structure (logical form), a system may first create some intermediate representations (sometimes called quasi logical forms). Quantifier scoping is one of these.
 
@@ -606,7 +606,7 @@ Note: numbers like 2 (in "2 friend") are not quantifiers. They are treated just 
 
 <https://en.wikipedia.org/wiki/Numeral_(linguistics)>
 
-##### Entity type recognition
+#### Entity type recognition
 
 The relations that form the semantic representation of a sentence imply the entity types of the entities in the sentence. For example, if this relation is found
 
@@ -621,11 +621,11 @@ For example, the verb may contain these restrictions:
 subject: instance of living organism
 object: instance of a liquid
 
-#### Pragmatic analysis
+### Pragmatic analysis
 
 The difference between semantic and pragmatic analysis is that pragmatic analysis requires contextual information: information that can't be obtained from the sentence alone.
 
-##### Context
+#### Context
 
 The context consists of these aspects:
 
@@ -641,15 +641,15 @@ There are three types of deictic center:
 
 Each domain has its own meanings for words and expressions, so you can only know the meaning of a sentence if you know the domain.
 
-##### Conjunction and Disjunction
+#### Conjunction and Disjunction
 
 The word "and" is often used to denote disjunction rather than conjunction.
 
-##### Modifier Attachment
+#### Modifier Attachment
 
 To which constituent must the modifier (PP) be attached?
 
-##### Anaphora
+#### Anaphora
 
 Pronouns (he, she, it, that) are the variables of natural language. They refer to ever changing things. The system needs to keep track of recent subjects in the discourse,
 and link the pronoun to the subject.
@@ -716,35 +716,35 @@ none found
 Any noun phrase can become a referent, so all of them need to be stored in the dialog context as subject. Referents can
 be singular or plural. When a reference is a description, the full description needs to match the possible referent.
 
-##### Tense
+#### Tense
 
 If a system can handle time, it must interpret tensed sentences with respect to the deictic center of time.
 
-##### Action detection
+#### Action detection
 
 The input sentence must be converted into one of the systems' actions: ASK (query the database), TELL (update the database), DO (perform a task)
 
 Superficially these actions correspond with the mood of the sentence, but not always ("Can you put the red block on the table?" is a DO action)
 
-##### Question classification
+#### Question classification
 
 If the input is a question then the type of question needs to be established: yes/no, when, which, why?
 
-##### Answer type detection
+#### Answer type detection
 
 The type of answer that the user expects from the system strongly influences the procedure of finding the answer. See Watson for good example.
 
-##### Ellipsis
+#### Ellipsis
 
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
 
-##### Named Entity Recognition
+#### Named Entity Recognition
 
 How to tell proper nouns (names) apart?
 
 A name is only meaningful if it is present, or introduced into, the present domain. This type of NER looks up names in a database.
 
-##### Compound Noun Analysis
+#### Compound Noun Analysis
 
 Users may introduce compounds that are not in the lexicon. These come in two shapes:
 
@@ -753,15 +753,15 @@ Users may introduce compounds that are not in the lexicon. These come in two sha
 
 The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
 
-##### Idioms
+#### Idioms
 
 Each domain has its own expressions, that are meaningless outside it.
 
-#### Domain Switching
+### Domain Switching
 
 A system that handles multiple domains needs a way to automatically switch from active domain as the user changes subject (domain).
 
-### Process the Intent
+## Process the Intent
 
 To process the Intent of the sentence, it must be processed. This entails
 
@@ -772,7 +772,7 @@ To process the Intent of the sentence, it must be processed. This entails
 
 It must be noted that although "Understand the User" and "Process the Intent" are separated in this text, they are not always separate phrases in a system. Some older systems executed the user's intent __while__ analyzing the sentence. (DEACON)
 
-#### Function
+### Function
 
 The way an intent is handled depends on the function of the NLI of course. Historical systems have had the following functions:
 
@@ -784,7 +784,7 @@ The way an intent is handled depends on the function of the NLI of course. Histo
 - Provide natural inferences from the sentence
 - Create a paraphrase of the sentence
 
-#### Common sense
+### Common sense
 
 All rules of an NLI system are programmed by humans. This always is a lot of work. But the important advantage of this approach is that the train of thought of the system that it uses to solve a problem can be traced back to individual inference rules. And more, the builder of the application can decide what kinds of inferences the system can and cannot make. 
 
@@ -792,7 +792,7 @@ This is in distinct contradiction to the practise of machine learning (ML) where
 
 Now there are uses cases for NLI systems where this does not matter, but they are rare. In which cases would it be okay to specify a question in great detail and then get a response that is not certain and whose reasoning cannot be traced? 
 
-#### Determine feasibility
+### Determine feasibility
 
 Even if an intent is recognized, it is another question whether it is possible to fulfill this intent. The NLI must check if it is able to process the question given its capabilities.
 
@@ -806,7 +806,7 @@ A "why" or "how" question can only be answered with information from a goal base
 
 A question about meta information "Can a pyramid be supported by a block?" can only be answered with information from a knowledge base with meta information.
 
-#### Deduction
+### Deduction
 
 An inference form has one or more antecedents, and a consequent:
 
@@ -814,11 +814,11 @@ IF a AND b AND c THEN d
 
 The programming language Prolog is typically used for NLI's that rely on inference, since Prolog has a built in inference engine. Some databases also allow storing and processing rules. A reduced form of Prolog, along with a custom inference engine is sometimes implemented in the NLI itself.
 
-#### Plan execution
+### Plan execution
 
 If an NLI has goals, or even only the goal of responding to the user's question, the system may check its stock plans in order to reach the goal. These plans may in turn create new goals which need solving.
 
-#### Learning by being told
+### Learning by being told
 
 When a user tells a system something, the system may remember this. This is a simple yet powerful way of learning. 
 
@@ -832,19 +832,19 @@ Most learning exists of the user simply telling the system what is the case.
 
 The system may also conclude by itself what is the case, or what is probably the case. It may do this by applying scripts for example, or inference rules.
 
-##### Refuse to accept
+#### Refuse to accept
 
 Something that is clearly wrong should not be added to the database.  
 
-#### Finding new solutions
+### Finding new solutions
 
 When the system encounters a goal for which there is no known plan, or a request for information it does not have, it may need to create a new plan or actively find this new knowledge.   
 
-##### Search
+#### Search
 
 Trial-and-error. If there is a search space, the system may try possible alternatives and remember the ones that receive positive feedback.
 
-##### Induction
+#### Induction
 
 Induction is deriving a uncertain conclusion based on an incomplete set of observations.
 
@@ -859,15 +859,15 @@ User	can a pyramid be supported by a block?
 SHRDLU	YES.
 The deductive system finds an actual example, so it knows this is possible. (Winograd)
 
-##### Making Analogies
+#### Making Analogies
 
-##### Proof by custom procedure
+#### Proof by custom procedure
 
 A custom procedure implemented in code decides whether a statement is true or false.
 Example from ThoughtTreasure
 near(X, Y) is determined by invoking a space routine.
 
-#### Interaction with knowledge sources
+### Interaction with knowledge sources
 
 The system may read and write to all types of knowledge sources that are equiped with this facility.
 
@@ -875,7 +875,7 @@ Different knowledge sources usually have different ontologies (ways of describin
 
 Open problem: if multiple knowledge sources contain information about the same entities (things), a shared identity must be found to link the information. For dates in time, this is simple. For persons, however, the name of the person may be insufficient to identify him or her in both sources. How to identify all types of entities in multiple heterogeneous knowledge sources is still an open problem.
 
-##### Interaction with databases
+#### Interaction with databases
 
 This is the prototypical use of an NLI: interaction with external knowledge sources; to query, tell, and delete information. In order to do this the user intent must be turned into one or more database queries.
 
@@ -893,7 +893,7 @@ It is necessary to use aggregates (notably COUNT, MAX, MIN) for certain question
 
 In some NLI's the semantic structure that represents the intent of the user coincides with the database query.
 
-#### Update Dialog context
+### Update Dialog context
 
 The "dialog context" is a type of memory that is linked to a single conversion with a user. It does not survive outside of this conversation. It is filled with information that is inferred from perviously processed sentences and aids in processing new sentences. 
 
@@ -909,7 +909,7 @@ Deictic center: This current subject of conversation is called the deictic cente
 
 Common sense: From the sentence a user enters (e.g. "John went into a restaurant") the system may infer some information that is implied in the situation and store this in the dialog context (i.e. "John eats food", "John pays the bill").
 
-#### Update Goal, plans and actions
+### Update Goal, plans and actions
 
 A goal based NLI needs to keep track of its goal hierarchy. The system may add a goal, process a plan or part of a plan, and perform actions.
 
@@ -917,7 +917,7 @@ Goals are distinct from the dialog context, because the execution of plans often
 
  ThoughtTreasure
 
-#### Update Beliefs, desires, intentions
+### Update Beliefs, desires, intentions
 
 An NLI may keep track of its own beliefs, and of the beliefs of the user. These are mental models. It can be interesting to keep track of what you know that the other person knows. Further it can be useful for a system to have desires, and to be aware of the desires of the user. Intentions are strongly related to the goals in the previous section, of course. An intention to which the system commits itself is a goal. BDI is a level above goals, plans and actions.  
 
@@ -925,11 +925,11 @@ A system may also have built-in desires and be aware of the desires of the user.
 
  PANDORA
 
-#### Update Emotional state
+### Update Emotional state
 
 A computer does not experience emotions, of course. But that does not mean it cannot react to input in the same way a human being would. For a conversational agent it is very useful to have simulated emotions. It would react more human.
 
-### Respond in a Helpful Manner
+## Respond in a Helpful Manner
 
 An NLI responds to the user by
 
@@ -938,11 +938,11 @@ An NLI responds to the user by
 - asking for clarification ("Do you mean [a] ... [b] ...")
 - admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
 
-#### Sentence generation
+### Sentence generation
 
 Compound sentences need to be built from smaller pieces, just as an input sentence is broken down in pieces. Sometimes even the same grammar is used.
 
-#### Admitting inability
+### Admitting inability
 
 It is important to realize that a knowledge source may or may not have complete information about a domain. The domain is either closed or open.
 
@@ -950,14 +950,14 @@ In a closed domain the knowledge of the source is complete. If it is not present
 
 On the other hand, if the system was put to an open domain source, the answer would have to be "Unknown", because the absence of information here does not imply the opposite.
 
-#### Extra information
+### Extra information
 
 A cooperative response would always give some extra information that may be helpful but not explicitly asked.
 
 "How many children had Lord Byron?"
 "Two: Ada and Allegra"
 
-#### Mental model
+### Mental model
 
 Having a mental model of the beliefs, desires and intentions of the user may help to give a more helpful answer. But I know of no system that has implemented this.
 

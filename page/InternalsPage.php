@@ -36,7 +36,7 @@ class InternalsPage extends FrontEndPage
         $markdown = file_get_contents(__DIR__ . '/../doc/internals.md');
 
         $pd = new Parsedown();
-        $html = $pd->text($markdown);
+        $html = "<div class='content'>" . $pd->text($markdown) . "</div>";
 
         $indexParser = new TocParser();
         $tocHtml = $indexParser->createTocHtml($html);
