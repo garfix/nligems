@@ -4,15 +4,10 @@
  */
 
 use nligems\api\NliSystemApi;
-use nligems\api\PageApi;
+use nligems\page\TimeLinePage;
 
 require __DIR__ . '/autoload.php';
 
-$NliSystemApi = new NliSystemApi();
-$PageApi = new PageApi();
-
-$Page = $PageApi->getTimeLinePage($NliSystemApi);
+$Page = new TimeLinePage(new NliSystemApi());
 
 echo (string)$Page;
-
-$PageApi->setSecondaryPage('timeline');

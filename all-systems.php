@@ -3,14 +3,10 @@
  * This page shows new developments of the site.
  */
 
-use nligems\api\PageApi;
+use nligems\page\AllSystemsPage;
 
 require __DIR__ . '/autoload.php';
 
-$PageApi = new PageApi();
-
-$Page = $PageApi->getAllSystemsPage();
+$Page = new AllSystemsPage();
 
 echo (string)$Page;
-
-$PageApi->setSecondaryPage('all-systems');

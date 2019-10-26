@@ -19,7 +19,7 @@ class NewsPage extends FrontEndPage
    	{
         $this->Header = new Header('news.php', 'Website news');
 
-        $news = json_decode(file_get_contents(__DIR__ . '/text/news.json'), true);
+        $news = json_decode(file_get_contents(__DIR__ . '/../doc/news.json'), true);
         $this->News = new News($news);
 
         $this->addStyleSheet('common');

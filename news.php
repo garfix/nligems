@@ -3,14 +3,10 @@
  * This page shows new developments of the site.
  */
 
-use nligems\api\PageApi;
+use nligems\page\NewsPage;
 
 require __DIR__ . '/autoload.php';
 
-$PageApi = new PageApi();
-
-$Page = $PageApi->getNewsPage();
+$Page = new NewsPage();
 
 echo (string)$Page;
-
-$PageApi->setSecondaryPage('news');

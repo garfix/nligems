@@ -3,12 +3,10 @@
  * This is the main page of the website.
  */
 
-use nligems\api\PageApi;
+use nligems\page\IndexPage;
 
 require __DIR__ . '/autoload.php';
 
-$PageApi = new PageApi();
-
-$Page = $PageApi->getIndexPage();
+$Page = new IndexPage();
 
 echo (string)$Page;
