@@ -12,8 +12,12 @@ use nligems\api\page\FrontEndPage;
  */
 class InterviewPage extends FrontEndPage
 {
-    public function __construct()
+    protected $subject;
+
+    public function __construct($subject)
     {
+        $this->subject = $subject;
+
         $this->Header = new Header('interview.php', 'Interview');
         $this->addStyleSheet('common');
         $this->addStyleSheet('interview');
@@ -34,7 +38,7 @@ class InterviewPage extends FrontEndPage
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
-        $Body->addChildNode(new Interview(null));
+        $Body->addChildNode(new Interview($this->subject));
         $Page->addChildNode($Body);
 
         return (string)$Page;

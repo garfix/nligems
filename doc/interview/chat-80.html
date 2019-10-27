@@ -1,0 +1,77 @@
+<h2>Interview with David Warren and Fernando Pereira / Chat-80</h2>
+<p>October 2019</p>
+<p>I spoke to David Warren because I was looking for an old article on the internet, as I frequently do. He would gladly put it online, and then it occurred to me that this would be a nice opportunity to speak to one of the pioneers of natural language interaction (NLI). He suggested that I'd invite Fernando Pereira as well. A connection was made promptly, and so this interview starts.</p>
+
+<h3>David, Fernando, I wanted to ask you some questions about Chat-80, one of the first Prolog-based NLI systems, that you built as a team in the early eighties. Can you tell me something about the time you started Chat-80. How did you two decide to spend three years building a new NLI system?</h3>
+
+<p>DW: It was probably more than 3 years, but Fernando can probably better remember.</p>
+<p>FP: I got very interested in Prolog for natural-language understanding while still in Portugal, thanks to Luis Moniz Pereira (no relation) and David. Luis had been a postdoc in Edinburgh, and he caught the Prolog "virus" there. David gives a bit more context in his answer below.
+</p>
+
+<h3>When and where did you two first meet? You worked together before that time, building a Prolog compiler for the DEC-10 machine, in 1977. What was it like to develop software on the DEC-10?</h3>
+
+<p>DW: I think we were introduced at the Lisbon National Civil Engineering Laboratory (LNEC) by Luis Moniz Pereira, who had been visiting Edinburgh from LNEC.  Fernando had a lot of knowledge of the DEC-10, amongst an incredibly wide range of interests and talents.  This led to us working together to produce DEC-10 Prolog, the first high-performance Prolog system.</p>
+
+<p>FP: Although I had gotten quite deep into various operating systems and programming language matters while working at LNEC, my "true love" was natural-language understanding (NLU) and its connections with logic and machine learning (yes, machine learning was a topic of interest even back then, although it took a lot longer to make it useful for NLU). </p>
+
+<h3>Prolog was very much still in development at this time. Has the language Prolog undergone changes initiated by work on Chat-80?</h3>
+
+<p>DW:  Hmm, none that I can think of.  Prolog, and Edinburgh Prolog in particular, was relatively mature by the time we started working on Chat-80.  Chat-80 drew on the capabilities of a high-performance Prolog system, but that was already in place.</p>
+
+<h3>Your articles from the Chat-80 period come from SRI and Edinburgh. Where did you live at the time of Chat-80? How was the work divided between the two of you?</h3>
+
+<p>DW: Chat-80 was entirely produced at Edinburgh.  I moved to SRI in 1981, and Fernando joined me soon afterwards.  A number of our papers from Edinburgh were reproduced as SRI tech notes.</p>
+
+<p>FP: Pretty much all of the Chat-80 work had been done by the time I left Edinburgh for SRI in September 1982. However, I did use some ideas from Chat-80 in some later research on dialog understanding at SRI (see my answer to the Montague grammar question below).</p>
+
+<h3>Chat-80 was a complete rewrite of a program called Chat, which itself was a reimplementation of Veronica Dahl's system. Did you choose this system because it was written in Prolog or were there other reasons? Why the first system named "Chat", and the second "Chat-80"?</h3>
+
+<p>DW: Partly because it was implemented in Prolog, but perhaps more importantly because it was based on Alain Colmerauer’s innovative approach to NL processing.</p>
+
+<p>FP: There were a number of innovations in Chat-80 that justified the "renumbering":
+<ol>
+    <li>Using extraposition grammars, which avoided the awkward encoding of syntactic movement with terminal symbols in Colmeraurer's original metamorphosis grammars.</li>
+    <li>A somewhat more principled handling of syntactic attachment and scope ambiguities. In Veronica's pioneering work, semantic scope was totally determined by syntactic attachment, which is empirically not the case. In Chat-80, I started to experiment with increased scoping flexibility, which I continued to investigate and improve on in the 80s and 90s (<a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/0004370291900907">https://www.sciencedirect.com/science/article/abs/pii/0004370291900907</a>) </li></ol></p>
+
+<h3>Chat-80 was developed at SRI at about the same time as TEAM, another important NLI. Were you working on two systems at the same time? Could you tell us something about your role in TEAM? How are the two systems related?</h3>
+
+<p>DW: No, Chat-80 was developed and completed at Edinburgh, before we moved to SRI.  TEAM was a NL system that was under development at SRI when I arrived.  Although I was attached to the TEAM group, the two systems were developed independently, with little interaction.  The TEAM group was very much Lisp-oriented, and had little time for Prolog, which was considered outré, or for NL ideas developed outside the US mainstream.  I did hook up TEAM to DEC-10 Prolog to show how there was potential for a mixed-language implementation, drawing on diverse ideas, but it didn’t lead to anything (during the time I was at SRI - Fernando may have more to add)..</p>
+
+<p>FP: I used Prolog in one small piece of TEAM, which searched for connections between the semantic representation of NL queries and the underlying database schema. This problem is still not fully solved, BTW, we are doing new work on it in my team (not using Prolog, though). Later, I used Prolog a lot more extensively in various projects at SRI with Mary Dalrymple, Martha Pollack, Phil Cohen, Bob Moore, Doug Moran, and others.</p>
+
+<h3>Fernando, your name appears in documentation on the Core Language Engine as well, on the field of Quantifier Scoping. Is that your main influence on the CLE? Have you both worked on other NLI systems?</h3>
+
+<p>FP: SRI asked me to lead the SRI Cambridge lab after Bob Moore returned to the US. Besides managing the team, I worked with them on what would be called now graph-based representations of syntactic and semantic ambiguity, and on quantifier scope ambiguity.</p>
+
+<h3>How would you describe the type of semantic analysis used in Chat-80? How does it differ from Montague's approach?</h3>
+
+<p>FP: First, it is radically simplified relative to Montague grammar, leaving out all the important complexities of intensional logic that did not matter for extensional question answering. Second, the treatment of variable binding and scope is designed to exploit Prolog variable binding (as the work of the Marseille team was), rather than using lambda terms and beta reduction. It turns out that all of this second part is a lot subtler than it seems. I can't give a full bibliography here, but I suggest interested parties to check out these papers and references therein:<br><a target="_blank" href="https://dl.acm.org/citation.cfm?id=89088">https://dl.acm.org/citation.cfm?id=89088</a><br><a target="_blank" href="https://dl.acm.org/citation.cfm?id=67494">https://dl.acm.org/citation.cfm?id=67494</a><br><a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/0004370291900907">https://www.sciencedirect.com/science/article/abs/pii/0004370291900907</a><br><a target="_blank" href="https://arxiv.org/abs/cmp-lg/9504012">https://arxiv.org/abs/cmp-lg/9504012</a><br><a target="_blank" href="https://link.springer.com/article/10.1023/A:1008224124336">https://link.springer.com/article/10.1023/A:1008224124336</a><br><a target="_blank" href="https://link.springer.com/article/10.1007/BF00632780">https://link.springer.com/article/10.1007/BF00632780</a>
+
+
+<h3>Chat-80 was in part intended to demonstrate the power of Extraposition Grammar (XG), an extension to Definite Clause Grammar (DCG), for treating left extraposition in English (e.g. sentences like "The man that John met is a grammarian"). Did you succeed? Do you feel your work on XG has been influential?</h3>
+
+<p>FP: XGs where not as influential as I thought they'd be at the time. But that's typical. What seems most important when you do the work turns out to be less important, and what you just handled as a matter of course becomes a lot more relevant. What Chat-80 did was to teach a lot of students how to bootstrap a relatively competent natural language-to-logical semantics translator. Even when machine-learning took over to learn those mappings, derivatives of Chat-80 were used to generate training and test examples, especially in the pioneering work on learned semantic parsing by Ray Mooney and his students at UT Austin.
+</p>
+
+<h3>Wikipedia recounts that Chat-80 created some spin-offs. Which systems are these? Have they added new ideas? What influence has Chat-80 had on other systems?</h3>
+
+-
+
+<h3>Can you tell us something about how got you interested in natural language processing?</h3>
+
+<p>DW: I’ve always been interested in languages, and logic, and the relationship between them.  I was particularly inspired by Alain Colmerauer’s approach to NL processing, which was conceived hand-in-hand with the development of logic programming and specifically Prolog (which Alain conceived).  I was also interested in the relationship between logic programming and relational databases, and how to represent a human-oriented knowledge base.  Chat-80 was intended to demonstrate how such a knowledge base could be constructed and efficiently accessed via a natural language interface.</p>
+
+<p>FP: One of Luis Moniz Pereira's Lisbon friends, José António Meireles, was a transformational linguist. I started trying to encode in Prolog some of the syntactic transformations I learned from him when I was still at LNEC, and some of that led eventually to XGs. But I was also very motivated by some of the early language understanding papers in Feigenbaum and Feldman's <a target="_blank" href="https://mitpress.mit.edu/books/computers-and-thought">Computers and Thought</a> collection, which Luis had lent me.</p>
+
+<h3>Turning to the present, how has the field changed since then? Can you name recent developments on Natural Language Interaction that interest you?</h3>
+
+<p>DW: Hmmm, I retired in 1997, and haven’t been following such things since then!  (Interests have turned more to geology, and the evolutionary history of the planet).</p>
+
+<p>FP: It's my life's work still, more exciting than ever, as exemplified by <a target="_blank" href="https://www.blog.google/products/search/search-language-understanding-bert">this project</a>, in which my Google research team had a big role. Although the techniques we are using are very different from anything we were doing for Chat-80, the ideas we developed there still play a strong role in my analysis and critique of proposed approaches to language understanding. </p>
+
+<h3>Did I forget anything? Is there anything you would like to mention?</h3>
+
+<p>DW: You’ve focussed mainly on the NL side, whereas my main focus in Chat-80 was on the knowledge base and question-answering side.</p>
+
+<p>FP: David's work on query optimization in Chat-80 was well ahead of its time, and in fact I keep seeing other queries-to-databases projects stumble on the issues that he solved back then. I'd go even further: most approaches to dealing with ambiguity in natural language to semantic interpretation ignore the structure and statistics of the underlying data/knowledge base at their peril. Just yesterday I was discussing a kind of interpretation/search failure that would have been avoided if the kind of analysis David developed for Chat-80 had been part of the interpretation system.
+</p>

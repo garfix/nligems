@@ -64,7 +64,8 @@ class Header
             'internals.php' => "The NLI system",
             'all-systems.php' => "Systems",
             'timeline.php' => "Timeline",
-            'news.php' => "News"
+            'news.php' => "News",
+            'interview.php' => "Interview",
         ];
 
         $Bar = new HtmlElement('div');

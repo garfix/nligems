@@ -1,12 +1,14 @@
 <?php
 /**
- * This page shows new developments of the site.
+ * This page shows the interview (hopefully more later).
  */
 
 use nligems\page\InterviewPage;
 
 require __DIR__ . '/autoload.php';
 
-$Page = new InterviewPage();
+$subject = isset($_GET['subject']) ? $_GET['subject'] : null;
+
+$Page = new InterviewPage($subject);
 
 echo (string)$Page;
