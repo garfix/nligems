@@ -36,7 +36,7 @@ class AllSystemsPage extends FrontEndPage
             $mdFile = str_replace('.json', '.md', $jsonFile);
             $data = json_decode(file_get_contents($jsonFile), true);
             if (file_exists($mdFile)) {
-                $data['LONG_DESC'] = $parseDown->parse(file_get_contents($mdFile));
+                $data['LONG_DESC'] = $this->addGems($parseDown->parse(file_get_contents($mdFile)));
             }
             preg_match('|([^./]+).json|', $jsonFile, $matches);
             $data['ID'] = $matches[1];
@@ -56,6 +56,11 @@ class AllSystemsPage extends FrontEndPage
         ksort($sortedSystems);
 
         return $sortedSystems;
+    }
+
+    protected function addGems($text)
+    {
+        return str_replace('<li>!', '<li class="gem">', $text);
     }
 
     protected function getBody()

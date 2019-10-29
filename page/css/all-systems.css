@@ -19,6 +19,10 @@ ul li {
     color: #be2622;
 }
 
+li.gem {
+    list-style-image: url('../img/gem.png');
+}
+
 @media print {
 
     h3 span {
