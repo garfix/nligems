@@ -1,0 +1,1 @@
+This system integrates a natural language component in a full-blown AI architecture that includes scripts, spatial orientation, planning, understanding, and even emotions. It also has a wide support for various natural language constructs. It makes commonsense reasoning explicit in the form of understanding agents.

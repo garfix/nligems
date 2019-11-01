@@ -4,3 +4,4 @@ The Darlington system can be appreciated as a specialized question answerer whic
 
 The example question "Do all who draw circles draw figures?" is answered by the deduction "All circles are figures. Therefore all who draw circles draw figures."
 
++ ! Uses the [Davis-Putnam algorithm](https://en.wikipedia.org/wiki/Davis%E2%80%93Putnam_algorithm) to test the validity of arguments

@@ -25,7 +25,6 @@
     "KB_TYPE_DESC": "Any RDBMS",
     "SOURCE_CODE": null,
     "NAME_DESC": "End-User Friendly Interface to Data management",
-    "LONG_DESC": "It makes the distinction between the user's view and the database's view on application data. This leads to the distinct position that the interpretation of a question goes through two separate domain specific phases. First the question is interpreted in a domain specific way that leads to a representation of the user's view of the domain. Next this representation is transformed into the database's view of the question.\r\n",
     "ARTICLES": [
         "EUFID: A Friendly And Flexible Front-End For Data Management Systems",
         "Problems in natural-language interface with examples from EUFID",

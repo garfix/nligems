@@ -20,3 +20,5 @@ I hate (1) => 'Why do you hate (1)?'
 
 'because'
 Because (1) => 'Tell me more about it'
+
++ ! Shows that simple pattern matching combined with many canned responses can go far to create the illusion of understanding

@@ -12,3 +12,5 @@ From this prior knowledge the system is then able to deduce the answer to the qu
 
 A question is transformed into a simple relation. This relation is matched to the consequent of each of the available IF/THEN rules. If it matches the antecedents are processed. A rules with no antecedents always matches.
 
++ ! Its knowledge base is a set of conditional statements IF A THEN B
++ ! A declarative statement is a conditional with an empty antecedent  

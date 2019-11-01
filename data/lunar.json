@@ -19,7 +19,6 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": null,
     "NAME_DESC": null,
-    "LONG_DESC": "It was created in the wake of the Apollo 11 space mission that brought the first men to the moon. The soil samples that came back were catalogued in a database and LUNAR allowed this database to be queried with plain English sentences.",
     "ARTICLES": [
       "Progress in natural language understanding - An application to lunar geology",
       "Semantics and quantification in natural language question answering",

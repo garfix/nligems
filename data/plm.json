@@ -1,7 +1,7 @@
 {
   "NAME": "PLM",
   "NAME_DESC": "The Picture Language Machine",
-  "FIRST_YEAR": "1961?",
+  "FIRST_YEAR": "1961",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "R. Kirsch",
@@ -13,8 +13,7 @@
     "Carnegie Institute of Technology"
   ],
   "INFLUENCED_BY": [],
-  "LONG_DESC": "PLM accepts both pictures and English statements as input and translates both into a common logical language. Then it determines whether the statement about the picture is true. It is composed of three subsystems: a parser, a formalizer and a predicate evaluator. The formalizer creates a first-order functional calculus expression like (∀X1)[ Cir(X1) → (∃X2)[ Cir(X2) & Bk(X2) & (X2 = X1) ] ]. The predicate evaluator tests the truth value of the expression against the predicate representation of the pictures in the input.",
-  "ARTICLES": [
+    "ARTICLES": [
     "Computer interpretation of English text and picture patterns - Kirsch (1964)",
     "Picture processing in a picture language machine - Cohen (1962)",
     "A programmable grammar for a fragment of English for use in an information retrieval system - Rankin (1961)",

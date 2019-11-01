@@ -8,6 +8,10 @@ h3 span.desc {
     font-size: 16px;
 }
 
+h3 a {
+    text-decoration: none;
+}
+
 ul li {
     font-size: 16px;
     font-family: sans-serif;

@@ -32,7 +32,6 @@
     "KB_TYPE_DESC": "Custom Prolog database",
     "SOURCE_CODE": null,
     "NAME_DESC": "Core Language Engine",
-    "LONG_DESC": "CLE distinguishes several distinct stages in the processing of the semantic representation.\r\nCLE uses unification for semantic composition.",
     "ARTICLES": [
         "CLARE - A Contextual Reasoning and Cooperative Response Framework for the Core Language Engine (1992)"
     ],

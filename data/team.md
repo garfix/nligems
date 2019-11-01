@@ -1,0 +1,1 @@
+TEAM is the first system that could be used in a new domain by users that had no technical knowledge of the system. Users did not need to have any linguistic knowledge. A database expert with knowledge of the database was all that was needed to transport the system to a new domain.

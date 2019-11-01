@@ -17,7 +17,6 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": "https:\/\/github.com\/eriktmueller\/thoughttreasure",
     "NAME_DESC": "\"ThoughtTreasure was originally called ThoughtTr\u00e9sor, where tr\u00e9sor is the French word for treasury (treasure as well). The idea was that the system would be a treasury of thoughts. The combination of English and French in the name reflected the fact that the system supported both English and French. This original name was difficult for English speakers to pronounce, so I changed the name to ThoughtTreasure. ThoughtTreasury contained an extra syllable and didn't sound right to me.\" -- Erik T. Mueller",
-    "LONG_DESC": "This system integrates a natural language component in a full-blown AI architecture that includes scripts, spatial orientation, planning, understanding, and even emotions. It also has a wide support for various natural language constructs. It makes commonsense reasoning explicit in the form of understanding agents.",
     "ARTICLES": [],
     "BOOKS": [
         "Natural Language Processing with ThoughtTreasure"

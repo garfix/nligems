@@ -8,3 +8,4 @@ If the number of customers Tom gets is 2 times the square 20 percent of the numb
 
 Analysis is done by replacing words as "twice" by two time, detect words as "plus" and "times" as operators. The rest of the analysis consists of a series of heuristics.
 
++ ! Transforms the input into a set of mathematical equations

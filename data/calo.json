@@ -20,7 +20,6 @@
     "KB_TYPE_DESC": null,
     "SOURCE_CODE": "https:\/\/pal.sri.com\/downloads\/",
     "NAME_DESC": "Cognitive Assistant that Learns and Organizes. The name was inspired by the Latin word \"calonis,\" which means \"soldier\u2019s servant.\"",
-    "LONG_DESC": "It is part of the largest NLI attempt in history, the SRI \/ DARPA project PAL, and was an important influence for the popular commercial system SIRI.\r\n\r\nIts main function is that of meeting planner. It integrates heterogeneous knowledge sources that each return subgoals or ground facts.\r\n",
     "ARTICLES": [
         "Integration of Heterogeneous Knowledge Sources in the CALO Query Manager"
     ],
