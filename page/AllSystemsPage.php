@@ -77,7 +77,8 @@ class AllSystemsPage extends FrontEndPage
         $Page->addChildNode($LinkBar);
 
         $AllSystems = new AllSystems($this->allSystems);
-        $html = (string)$AllSystems;
+        $html = "<p class='intro'>A collection of historic NLI systems. It is meant to give you a quick overview of the field, as a sort of index. The bullet points in the form of a gem - <img src='page/img/gem.png' /> - mark innovations. Note that is a work-in-progress.<br>-- Patrick</p>";
+        $html .= (string)$AllSystems;
 
         $indexParser = new TitleParser();
         $tocHtml = $indexParser->createTocHtml($html);

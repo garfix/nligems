@@ -12,19 +12,25 @@ h3 a {
     text-decoration: none;
 }
 
-ul li {
+p.intro {
+    margin-bottom: 50px;
+}
+
+.articles li, .books li {
     font-size: 16px;
     font-family: sans-serif;
     list-style: square;
 }
 
+li.gem {
+    list-style-image: url('../img/gem.png');
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
 .contributors {
     font-family: Oswald, Helvetica, Arial, sans-serif;
     color: #be2622;
-}
-
-li.gem {
-    list-style-image: url('../img/gem.png');
 }
 
 @media print {
