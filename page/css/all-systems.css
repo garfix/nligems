@@ -16,6 +16,13 @@ p.intro {
     margin-bottom: 50px;
 }
 
+code {
+    font-size: 14px;
+    background-color: #dfd9fd;
+    padding: 10px;
+    white-space: pre-wrap;       /* css-3 */
+}
+
 .articles li, .books li {
     font-size: 16px;
     font-family: sans-serif;

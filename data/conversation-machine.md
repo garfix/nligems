@@ -8,7 +8,12 @@ Each word was given an id and a degree. For example (3, 1) for "drizzle" (light 
 
 The program determined whether the contents of the user's sentence was in agreement with its own knowledge of the weather.
 
-Based on keywords in the input, and the agreement with its own knowledge, the program selected an answer frame. For example: "Well, we don't usually have ... weather in ..., so you will probably not be disappointed".
+Based on keywords in the input, and the agreement with its own knowledge, the program selected an answer frame. For example: 
+
+~~~
+Q: I do not enjoy rain during July.
+A: Well, we don't usually have rainy weather in July, so you will probably not be disappointed.
+~~~
 
 + ! First natural language system
 + ! The meaning of each word is stored as an attribute-value pair 

@@ -1,4 +1,4 @@
-ELIZA was one of the first "chatterbots", systems that are able to freely communicate with humans, but lacking real understanding. The NLI was copied widely and many variations where made from it.
+[ELIZA](https://en.wikipedia.org/wiki/ELIZA) was one of the first "chatterbots", systems that are able to freely communicate with humans, but lacking real understanding. The NLI was copied widely and many variations where made from it.
 
 ELIZA was able to run different scripts. One script, called DOCTOR, provided a parody of "the responses of a non-directional psychotherapist in an initial psychiatric interview".
 
@@ -20,5 +20,14 @@ I hate (1) => 'Why do you hate (1)?'
 
 'because'
 Because (1) => 'Tell me more about it'
+
+~~~
+Q: Men are all alike.
+A: In what way?
+Q: They're always bugging us about something specific or other.
+A: Can you think of a specific example?
+Q: Well, my boyfriend made me come here.
+A: Your boyfriend made you come here?
+~~~
 
 + ! Shows that simple pattern matching combined with many canned responses can go far to create the illusion of understanding

@@ -8,4 +8,11 @@ In the matching phase the question was compared to each of the sentences in the 
 
 The program handled yes/no questions (does ...?; which were answered with "YES" or "THE ORACLE SAYS NO") and wh-questions (who, what, whom, when, where; they were answered with the requested noun or by the text "THE ORACLE DOES NOT KNOW").
 
+~~~
+The teacher went to school.
+
+Q: Where did the teacher go?
+A: to school
+~~~
+
 + ! The question is syntactically analyzed into a canonical form and matched to the stored canonical forms

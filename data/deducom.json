@@ -1,0 +1,17 @@
+{
+    "NAME": "DEDUCOM",
+    "NAME_DESC": "DEDUctive COMmunicator",
+    "FIRST_YEAR": "1965",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "J.R. Slagle"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "ARTICLES": [
+        "Experiments with a deductive question-answering program - Slagle (1965)"
+    ],
+    "BOOKS": []
+}
