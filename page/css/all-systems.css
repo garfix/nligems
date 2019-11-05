@@ -18,9 +18,14 @@ p.intro {
 
 code {
     font-size: 14px;
+    font-weight: bold;
+    max-width: 100%;
     background-color: #dfd9fd;
-    padding: 10px;
-    white-space: pre-wrap;       /* css-3 */
+    padding: 20px 25px;
+    white-space: pre-wrap;
+    border: #9b9bfd solid;
+    border-width: 4px 0 4px 0;
+    margin: 30px 0 40px 0;
 }
 
 .articles li, .books li {

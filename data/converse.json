@@ -1,12 +1,17 @@
 {
   "NAME": "Converse",
-  "FIRST_YEAR": "",
+  "FIRST_YEAR": "1968",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Charles H. Kellogg"
+  ],
+  "INSTITUTIONS": [
+    "System Development Corporation"
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
-  "ARTICLES": [],
+  "ARTICLES": [
+      "A natural language compiler for on-line data management - Kellogg (1968)"
+  ],
   "BOOKS": []
 }

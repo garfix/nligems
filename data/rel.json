@@ -1,8 +1,8 @@
 {
   "NAME": "REL",
   "NAME_DESC": "Rapidly Extensible Language system",
-  "FIRST_YEAR": "1969?",
-  "LAST_YEAR": "1969?",
+  "FIRST_YEAR": "1969",
+  "LAST_YEAR": "1969",
   "CONTRIBUTORS": [
     "Bozena H. Dostert",
     "Frederick B. Thomson"
