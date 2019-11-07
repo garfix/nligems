@@ -14,6 +14,8 @@ class InterviewPage extends FrontEndPage
 {
     protected $subject;
 
+    protected $title = "Interview";
+
     public function __construct($subject)
     {
         $this->subject = $subject;

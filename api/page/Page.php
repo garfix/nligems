@@ -9,6 +9,8 @@ use nligems\api\component\Header;
  */
 abstract class Page
 {
+    protected $title = "NLI Gems";
+
 	/** @var  Header */
 	 protected $Header;
 
@@ -26,10 +28,12 @@ abstract class Page
 		$body = $this->getBody();
 
 		return str_replace(array(
+            '##title##',
 			'##body##',
 			'##styles##',
 			'##scripts##',
 		), array(
+		    $this->title,
 			$body,
 			$this->getStyles(),
 			$this->getScripts(),

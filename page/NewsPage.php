@@ -15,6 +15,8 @@ class NewsPage extends FrontEndPage
     /** @var News  */
     private $News;
 
+    protected $title = "News";
+
     public function __construct()
    	{
         $this->Header = new Header('news.php', 'Website news');

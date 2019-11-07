@@ -17,6 +17,8 @@ class TimeLinePage extends FrontEndPage
     /** @var TimeTable  */
     private $TimeTable;
 
+    protected $title = "Timeline";
+
     public function __construct(NliSystemApi $NliSystemApi)
     {
         $this->Header = new Header('timeline.php', 'Timeline');

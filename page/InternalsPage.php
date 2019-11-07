@@ -15,6 +15,7 @@ require_once __DIR__ . '/../api/component/ParseDown.php';
  */
 class InternalsPage extends FrontEndPage
 {
+    protected $title = "Internals";
 
     public function __construct()
     {

@@ -16,6 +16,8 @@ class AllSystemsPage extends FrontEndPage
 {
     protected $allSystems;
 
+    protected $title = "Systems";
+
     public function __construct()
    	{
         $this->Header = new Header('all-systems.php', 'Systems');
