@@ -103,6 +103,14 @@
         "dependencyOf": ["shrdlu"]
     },
     {
+        "id": "Semantic Memory",
+        "year": "1969",
+        "desc": "Quillian introduces Semantic Memory into NLI. Semantic Memory holds factual world knowledge.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Semantic_memory"
+        }
+    },
+    {
         "id": "CD",
         "year": "1969",
         "desc": "Roger Schank introduces \"Conceptual Dependency Theory\", a theory for natural language understanding that uses fundamental concepts like ATRANS, PTRANS and MTRANS to denote abstract transfers. "
