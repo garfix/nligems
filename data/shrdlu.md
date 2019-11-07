@@ -52,7 +52,7 @@ A: TO PUT IT ON A LARGE GREEN CUBE.
 This system is really full of innovations, but I will sum them up as follows
 
 + ! Procedural representation of knowledge that used both for questioning, commanding and teaching
-+ ! Explicit representation of goals and past events, and allowing the user to question them
++ ! Explicit representation of goals and past events, and allowing the user to ask "how" and "why" questions
 + ! Uses an ontology to help parsing and to ask meta-questions about the characteristics of the objects in the domain
 + ! Allows pronouns to refer to objects and events previously mentioned
 + ! Learns names, rules and concepts from the user

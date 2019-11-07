@@ -11,19 +11,27 @@ In its essence, Watson executes the following "pipeline" as it answers a questio
 - Hypothesis and evidence scoring: determine the confidence on each hypothesis: how well does it match the question?
 - Final merging and ranking: merge and rank the hypotheses based on the confidence values
 
-Example questions ans answers:
+Example questions and answers:
 
+~~~
 Puzzle: ASTRONOMICAL RHYME TIME: Any song about earth’s natural satellite. 
-    (Answer: "Moon tune")
+Answer: "Moon tune"
+
 Multiple Choice: BUSY AS A BEAVER: Of 1, 5, or 15, the rough maximum number of minutes a beaver can hold its breath underwater. 
-    (Answer: "15")
+Answer: "15"
+
 Common Bond: BOND, COMMON BOND: Fan, form, poison pen. 
-    (Answer: "letters")
+Answer: "letters"
+
 Fill-in-the-Blank (FITB): SCHOOL OF ROCK: History: Herman’s Hermits hit number 1 in 1965 singing "I’m" this man, "I Am." 
-    (Answer: "Henry VIII")
+Answer: "Henry VIII"
+
 Constraint Bearing: ARE YOU A FOOD"E"?: Escoffier says to leave them in their shells & soak them in a mixture of water, vinegar, salt, and flour. 
-    (Answer: "Escargots")
+Answer: "Escargots"
+
 Pun bearing: HIP-HOP ON POP: From this "M.D.": "It’s like this & like that & like this & uh, its like that & like this & like that & uh" 
-    (Answer: "Dr. Dre")
-    
-    
+Answer: "Dr. Dre"
+~~~    
+ 
++ ! Creates top-level performance at Jeopardy! 
++ ! Integrates the ranked responses of many sources of information 

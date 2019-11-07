@@ -16,10 +16,15 @@ p.intro {
     margin-bottom: 50px;
 }
 
+.toc a {
+    color: #00008b;
+}
+
 code {
     font-size: 14px;
     font-weight: bold;
     max-width: 100%;
+    color: #292951;
     background-color: #dfd9fd;
     padding: 20px 25px;
     white-space: pre-wrap;
@@ -59,7 +64,6 @@ li.gem {
 
 .ruler {
     font-family: Lusitana, serif;
-    max-width: 40em;
     border: solid #be2622;
     border-width: 1px 0 0 0;
 }

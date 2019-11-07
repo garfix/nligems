@@ -94,7 +94,8 @@ a:visited {
 /* HEADER */
 
 div.header {
-    background-color: #ffdbfd;
+    /*background-color: #ffe2ee;*/
+    background-color: #fcd3e8;
     border-bottom: 5px solid #343240;
 }
 

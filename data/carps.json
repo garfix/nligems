@@ -1,0 +1,15 @@
+{
+    "NAME": "CARPS",
+    "NAME_DESC": "CAlculus Rate Problem Solver",
+    "FIRST_YEAR": "1969",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Eugene Charniak"
+    ],
+    "INFLUENCED_BY": [],
+    "ARTICLES": [
+        "Computer solution of calculus word problems - Charniak (1969)"
+    ],
+    "BOOKS": [
+    ]
+}

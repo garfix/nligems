@@ -1,0 +1,19 @@
+{
+    "NAME": "SAMENLAQ",
+    "NAME_DESC": "Semantic Association MEmory Net that Learns and Answers Questions",
+    "FIRST_YEAR": "1969",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Stuart C. Shapiro"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "A net structure based relational question answerer - Shapiro (1969)"
+    ],
+    "BOOKS": [
+    ]
+}
