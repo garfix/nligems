@@ -28,7 +28,7 @@ The goals of NLI follow from this definition:
 
 I will now explore these goals.
 
-## Interact
+## Interaction
 
 A Knowledge Source can be a database, any other form of stored structured data (as opposed to unstructured text), and online services that provide an API.
 
@@ -344,6 +344,66 @@ NOT = negation (not)
 
 Also, check this page! <https://www.myenglishteacher.eu/blog/types-of-questions/>
 
+## Internal representation
+
+Some early systems translated the user query to a database query directly, without an intermediate representation. This was inflexible and not very extendible. So called "semantic grammars" needed to be rewritten for each new database. Most systems now use this internal representation, but there is no consensus to what it looks like, and it may very well depend on the function of the system. 
+
+The system has understood the user when the sentence has been transformed into an internal representation. This representation is called semantic, or logical, or quasi semantic or logical.
+
+The purpose of understanding is to be useful to the system. A sentence needs only to be understood to the level needed by the system. There is no absolute criterium that needs to be reached.
+
+While the established way of representing meaning is Predicate Logic, this formalism is almost never used literally. Some representations approach PL, others are completely different. There are as yet no standards. Every system has used its own unique representation.
+
+PL has some shortcomings: the quantifiers are too limited to be of much use.
+
+### Raw-text representations
+
+ELIZA uses raw-text parts in it internal representation. Large parts of the sentence are not processed at all and are kept in their raw form. Therefore we say that ELIZA does not understand a sentence at all.
+
+### Domain specific representations
+
+The spec list of Baseball is not extensible to more complex sentences.  
+
+### Predicate Logic 
+
+Systems that use Montague Semantics use the original Predicate Logic. There's only a few of them, and they are not very expressive, since making them cover all types of sentences is very complicated.
+
+Pure predicate logic is useful for logic problems for which the system must find a solution. It is impractical for problems for which a solution is available; it is just a waste of time to find a solution from first principles, when a procedure is already available and could just be executed. 
+
+### Predicate Logic variations
+
+Standard predicate logic lacks support for most quantifiers, for tense and mode, and for argument restrictions. Therefore most systems extend it. 
+
+CLE uses feature unification.
+
+### Procedural knowledge
+
+Planner, Prolog
+
+Both logical deductions and plan templates are stored in the form of procedural rules. This makes them easy to understand and code by humans.
+
+### Conceptual Dependency
+
+Schank
+
+### Frames, Scripts
+
+Minsky
+
+Knowledge is stored as objects with slots. Slots have default values. There may be causal connections between these objects.
+
+### Dialog context
+
+### Goals, plans, actions
+
+### Beliefs, desires, intentions
+
+### Spatial
+
+ThoughtTreasure uses a spatial map to represent object locations.
+
+### Emotions
+
 ## Understand the User
 
 To understand a user, the system needs to extract the ___intent___ of the user's sentence.
@@ -386,44 +446,6 @@ Once the raw semantic structure is built, it needs to be modified into the final
 All of these are just means to an end, and these steps may be combined or even skipped by an NLI.
 
 The goal of this is to create an Intent, a semantic representation of the meaning of the sentence as it was intended by the user. This representation often takes the form of a variant of First Order Predicate Logic.
-
-### Internal representation
-
-The system has understood the user when the sentence has been transformed into an internal representation. This representation is called semantic, or logical, or quasi semantic or logical.
-
-The purpose of understanding is to be useful to the system. A sentence needs only to be understood to the level needed by the system. There is no absolute criterium that needs to be reached.
-
-While the established way of representing meaning is Predicate Logic, this formalism is almost never used literally. Some representations approach PL, others are completely different. There are as yet no standards. Every system has used its own unique representation.
-
-PL has some shortcomings: the quantifiers are too limited to be of much use.
-
-#### Raw-text representations
-
-ELIZA uses raw-text parts in it internal representation. Large parts of the sentence are not processed at all and are kept in their raw form. Therefore we say that ELIZA does not understand a sentence at all.
-
-#### Domain specific representations
-
-The spec list of Baseball is not extensible to more complex sentences.  
-
-#### Predicate Logic 
-
-Systems that use Montague Semantics use the original Predicate Logic. There's only a few of them, and they are not very expressive, since making them cover all types of sentences is very complicated.
-
-#### Predicate Logic variations
-
-CLE uses feature unification.
-
-#### Procedural knowledge
-
-Planner, Prolog
-
-Both logical deductions and plan templates are stored in the form of procedural rules. This makes them easy to understand and code by humans.
-
-#### Frames, Scripts
-
-Minsky, Schank (Conceptual Dependency)
-
-Knowledge is stored as objects with slots. Slots have default values. There may be causal connections between these objects.
 
 ### Syntactic analysis
 
