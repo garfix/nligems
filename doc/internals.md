@@ -1,5 +1,9 @@
 # The NLI System
 
+A natural language interaction system (NLI) allows a user to interact with it using the normal language he or she uses to communicate with other people.
+
+NLI is a discipline that touches the fields of artificial intelligence, linguistics, databases, and cognitive ergonomics. At the same time it has concepts and techniques that are unique to it. It is a complex problem with a rich history.  
+
 ## Reasons for NLI
 
 Ever since there are computers, people have wanted to interact with them using their natural language (like English or French).
@@ -354,55 +358,61 @@ The purpose of understanding is to be useful to the system. A sentence needs onl
 
 While the established way of representing meaning is Predicate Logic, this formalism is almost never used literally. Some representations approach PL, others are completely different. There are as yet no standards. Every system has used its own unique representation.
 
-PL has some shortcomings: the quantifiers are too limited to be of much use.
+Several forms of representation have been used. Different systems have different types of content they store. Each form of representation can be used to represent any type of content, but some are more suited than others.
 
-### Raw-text representations
+### Form
+
+#### Raw-text representations
 
 ELIZA uses raw-text parts in it internal representation. Large parts of the sentence are not processed at all and are kept in their raw form. Therefore we say that ELIZA does not understand a sentence at all.
 
-### Domain specific representations
-
-The spec list of Baseball is not extensible to more complex sentences.  
-
-### Predicate Logic 
+#### Predicate Logic 
 
 Systems that use Montague Semantics use the original Predicate Logic. There's only a few of them, and they are not very expressive, since making them cover all types of sentences is very complicated.
 
 Pure predicate logic is useful for logic problems for which the system must find a solution. It is impractical for problems for which a solution is available; it is just a waste of time to find a solution from first principles, when a procedure is already available and could just be executed. 
 
-### Predicate Logic variations
+#### Predicate Logic variations
 
 Standard predicate logic lacks support for most quantifiers, for tense and mode, and for argument restrictions. Therefore most systems extend it. 
 
 CLE uses feature unification.
 
-### Procedural knowledge
+#### Procedural knowledge
 
 Planner, Prolog
 
 Both logical deductions and plan templates are stored in the form of procedural rules. This makes them easy to understand and code by humans.
 
-### Conceptual Dependency
+#### Conceptual Dependency
 
 Schank
 
-### Frames, Scripts
+#### Frames, Scripts
 
 Minsky
 
 Knowledge is stored as objects with slots. Slots have default values. There may be causal connections between these objects.
 
-### Dialog context
+#### Domain specific representations
 
-### Goals, plans, actions
+The spec list of Baseball is not extensible to more complex sentences.  
 
-### Beliefs, desires, intentions
+### Content
 
-### Spatial
+#### Facts
+
+#### Dialog context
+
+#### Goals, plans, actions
+
+#### Beliefs, desires, intentions
+
+#### Spatial
 
 ThoughtTreasure uses a spatial map to represent object locations.
 
-### Emotions
+#### Emotions
 
 ## Understand the User
 
@@ -576,7 +586,9 @@ Semantic analysis is necessary only when the sentence is parsed using a phrase s
 
 Semantic analysis consists of two parts: semantic attachment and semantic composition.
 
-___Semantic attachment___ links partial semantic structures to words and syntactic structures. The attachments are stored in the lexicon with the word forms, and in the grammar, with the rewrite rules. Semantic attachment can take place during the parsing process, or as a separate step.
+#### Semantic attachment
+
+Semantic attachment links partial semantic structures to words and syntactic structures. The attachments are stored in the lexicon with the word forms, and in the grammar, with the rewrite rules. Semantic attachment can take place during the parsing process, or as a separate step.
 
 Both words and phrases may have pieces of semantics attached. For example:
 
@@ -604,11 +616,17 @@ There are several techniques with which to compose semantics:
 - Montague grammar
 - feature unification
 
-___semantic specialists___ are hard-coded functions that transform parts of a syntactic structure into a semantic structure. They are used heavily by Winograd's SHRDLU. The technique is not portable to other domains and requires expert information about a system's inner workings.
+#### Semantic specialists
 
-___Montague grammar___ is Montague's attempt to express natural language in Predicate Logic. The composition techniques are ___lambda abstraction___ and ___lambda reduction___. The resulting semantic expression is in classic Predicate Logic and includes many quantifiers (∀ and ∃), and logical operators (→, =). Apparently it is hard to extend to anything other than simple sentences.
+semantic specialists are hard-coded functions that transform parts of a syntactic structure into a semantic structure. They are used heavily by Winograd's SHRDLU. The technique is not portable to other domains and requires expert information about a system's inner workings.
 
-___Feature unification___ is based on the idea that each semantic constituent has some features (like "number", "passive", "agr"). When the constituents are connected, the features must match and their values are inherited up the tree. This is the approach CLE has taken, and they were able to address many grammatical phenomena with it.
+#### Montague grammar
+
+Montague grammar is Montague's attempt to express natural language in Predicate Logic. The composition techniques are ___lambda abstraction___ and ___lambda reduction___. The resulting semantic expression is in classic Predicate Logic and includes many quantifiers (∀ and ∃), and logical operators (→, =). Apparently it is hard to extend to anything other than simple sentences.
+
+#### Feature unification
+
+Feature unification is based on the idea that each semantic constituent has some features (like "number", "passive", "agr"). When the constituents are connected, the features must match and their values are inherited up the tree. This is the approach CLE has taken, and they were able to address many grammatical phenomena with it.
 
 #### Quantifier Scoping
 
