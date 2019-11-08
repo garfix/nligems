@@ -2,7 +2,7 @@
 
 A natural language interaction system (NLI) allows a user to interact with it using the normal language he or she uses to communicate with other people.
 
-NLI is a discipline that touches the fields of artificial intelligence, linguistics, databases, and cognitive ergonomics. At the same time it has concepts and techniques that are unique to it. It is a complex problem with a rich history.  
+NLI is a discipline that touches the fields of artificial intelligence, linguistics, databases, information retrieval, and cognitive ergonomics. At the same time it has concepts and techniques that are unique to it. It is a complex problem with a rich history.
 
 ## Reasons for NLI
 

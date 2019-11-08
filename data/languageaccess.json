@@ -1,0 +1,17 @@
+{
+    "NAME": "LanguageAccess",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "1992",
+    "LAST_YEAR": "1992",
+    "CONTRIBUTORS": [
+        "N. Ott and others"
+    ],
+    "INSTITUTIONS": [
+        "IBM"
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Aspects of the Automatic Generation of SQL Statements in a Natural Language Query Interface - Ott (1992)"
+    ],
+    "BOOKS": []
+}

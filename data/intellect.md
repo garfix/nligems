@@ -1,0 +1,1 @@
+Intellect from Trinzic (formed by the merger of AICorp and Aion). This system is based on experience from ROBOT.
