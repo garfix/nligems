@@ -12,7 +12,7 @@ use nligems\api\page\FrontEndPage;
 /**
  * @author Patrick van Bergen
  */
-class AllSystemsPage extends FrontEndPage
+class SystemsPage extends FrontEndPage
 {
     protected $allSystems;
 

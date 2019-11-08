@@ -3,10 +3,10 @@
  * This page shows new developments of the site.
  */
 
-use nligems\page\AllSystemsPage;
+use nligems\page\SystemsPage;
 
 require __DIR__ . '/autoload.php';
 
-$Page = new AllSystemsPage();
+$Page = new SystemsPage();
 
 echo (string)$Page;

@@ -33,14 +33,16 @@ class AllSystems extends HtmlElement
             }
 
             if (!empty($systemInfo['NAME_DESC'])) {
-                $description = " <br><span class='desc'>" . $systemInfo['NAME_DESC'] . "</span>";
+                $description = "<div class='desc'>" . $systemInfo['NAME_DESC'] . "</div>";
             } else {
                 $description = "";
             }
 
             $id = $systemInfo['ID'];
 
-			$html .= "<h3 id='{$id}'><a href='#{$id}'>" . htmlspecialchars($systemInfo['NAME']) . $period . $description . "</a></h3>";
+			$html .= "<a class='system-header' href='#{$id}'><h2 id='{$id}'>" . htmlspecialchars($systemInfo['NAME']) . "</h2>" . $period . "</a>";
+
+			$html .= $description;
 
             $html .= "<div class='contributors'>" .
                 implode(", ", $systemInfo['CONTRIBUTORS']) .

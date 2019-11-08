@@ -1,15 +1,25 @@
-h3 span.year {
+a.system-header {
+    display: block;
+    text-decoration: none;
+}
+
+a.system-header h2 {
+    display: inline;
+}
+
+a.system-header span {
+    font-family: Oswald, Helvetica, Arial, sans-serif;
+    display: inline;
     color: black;
     font-size: 18px;
+    margin-left: 10px;
 }
 
-h3 span.desc {
+div.desc {
+    font-family: Oswald, Helvetica, Arial, sans-serif;
     color: grey;
     font-size: 16px;
-}
-
-h3 a {
-    text-decoration: none;
+    margin-bottom: 10px;
 }
 
 p.intro {
@@ -66,4 +76,5 @@ li.gem {
     font-family: Lusitana, serif;
     border: solid #be2622;
     border-width: 1px 0 0 0;
+    margin-bottom: 30px;
 }

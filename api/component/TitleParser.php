@@ -11,7 +11,7 @@ class TitleParser
     {
         $htmlArray = [];
 
-        preg_match_all("|<h3 id='([^']+)'><a href='[^']+'>([^<]+)|", $html, $matches);
+        preg_match_all("|<h2 id='([^']+)'>([^<]+)|", $html, $matches);
 
         foreach ($matches[1] as $index => $id) {
             $title = $matches[2][$index];
