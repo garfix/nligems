@@ -360,6 +360,32 @@ While the established way of representing meaning is Predicate Logic, this forma
 
 Several forms of representation have been used. Different systems have different types of content they store. Each form of representation can be used to represent any type of content, but some are more suited than others.
 
+### Architecture: tiers
+
+When processing a question, a system goes though several phases. These phases may each have its own distinct representation, which I will call tiers. These tiers form the basic structure of a system, and are thus often called the architecture of the system.
+
+Most combination of tiers named here have been used, in various combinations. More tiers means more work for the implementer, but is also means more flexibility, better reuse, and clearer representation. The architecture chosen depends on the task of the system and is a balance of these factors.
+
+#### Syntax tree
+
+Most systems parse the raw sentence into a parse tree. This tree consists of nested phrases and its leafs are words. 
+
+#### Generic semantics
+
+This representation contains a literal interpretation of the words of the sentence. It is created when a syntax tree is turned into a semantic representation by a generic tool.
+
+#### Domain specific semantics
+
+This representation contains domain specific concepts. It is a good representation to have when working with multiple databases, or reasoning in a domain, when a database representation is awkward to use.
+
+#### Generic database
+
+This representation contains specific database terms, but it is abstract enough to be used for multiple (similar) databases, such as different relational databases. 
+
+#### Specific database
+
+This is a database query.    
+
 ### Form
 
 #### Raw-text representations
@@ -498,12 +524,13 @@ Some tokens can only be recognized using pattern recognition:
 - prices
 - quoted strings
 
-#### Sentence Structure Analysis
+#### Pattern matching
 
-From the individual words the structure of the sentence must be analysed. There are two ways in which this can be done:
+By pattern matching in this context we mean that a system simply recognizes some words in a sentence, and does not care about their position or their part-of-speech. 
 
-- template matching
-- parsing
+ELIZA
+
+#### Template matching
 
 For simple sentence structures it is possible to use ___template matching___. The template is a fixed form like this:
 
@@ -511,37 +538,13 @@ For simple sentence structures it is possible to use ___template matching___. Th
 
 When the sentence is analysed it is simply compared to the template. All words must match literally to the template, with the exception of ?x, which matches a variable text.
 
-For more complex sentences ___parsing___ is required. The parsing process uses a ___parser___, an algorithm that uses rewrite rules to transform a sentence into a ___parse tree___. These rewrite rules form a ___grammar___.
+#### Parsing
 
-There are three main types of grammar used to parse a sentence:
+For sentences that contain nested, recursive structures, ___parsing___ is required. The parsing process uses a ___parser___, an algorithm that uses rewrite rules to transform a sentence into a ___parse tree___. These rewrite rules form a ___grammar___.
 
-- phrase structure grammars
-- dependency grammars
-- semantic grammars
+There are different types of grammar used to parse a sentence:
 
-___semantic grammars___ form a parse tree of semantic nodes. An example parse tree is:
-
-    - S
-        - Specimen_question
-            - Specimen_spec
-                - "which rock"
-            - Contains_info
-                - "contains"
-                - Substance
-                    - "magnesium"
-
-The advantage is that semantic, domain specific information is present right from the parse tree. The disadvantage is that the grammar must be completely rewritten for each new domain.
-
-__dependency grammars___ form a parse tree of dependency relations. An example parse tree:
-
-    - "contains"
-        - subject: "rock"
-            - det?: "which"
-        - object: "magnesium"
-
-The advantage is that the syntactic functions that form the dependency relations (i.e. subject, object, etc) are closely associated with semantic relations.
-
-__phrase structure grammars___ form a parse tree of phrase nodes. An example parse tree is:
+__phrase structure grammars__ are most commonly used. They form a parse tree of phrase nodes. An example parse tree is:
 
     - S
         - WH_NP
@@ -576,9 +579,31 @@ The reason that one has to write his own grammar, is that the number of rules ha
 
 There's an online parser that may help you to find rewrite rules for a sentence. It is the Stanford Parser:  <http://nlp.stanford.edu:8080/parser/index.jsp>
 
+__dependency grammars__ form a parse tree of dependency relations. An example parse tree:
+
+    - "contains"
+        - subject: "rock"
+            - det?: "which"
+        - object: "magnesium"
+
+The advantage is that the syntactic functions that form the dependency relations (i.e. subject, object, etc) are closely associated with semantic relations.
+
+When the grammar contains semantic constructs (or even database constructs) in stead of syntactic constructs, it is called a __semantic grammars__. An example parse tree is:
+
+    - S
+        - Specimen_question
+            - Specimen_spec
+                - "which rock"
+            - Contains_info
+                - "contains"
+                - Substance
+                    - "magnesium"
+
+A semantic grammar merges the phases of syntactic analysis and semantic analysis. The latter is the subject of the next paragraph.
+
 ### Semantic analysis
 
-Once the tree structure of the sentence is known, the syntactic information needs to be transformed and enriched into semantic information.
+Once the tree structure of the sentence is known, and the system does not use a semantic grammar, the syntactic information needs to be transformed and enriched into semantic information.
 
 Semantic Analysis maps words and word structures to semantic structures through a process of semantic composition. Semantic structures differ from syntactic structures in that they do not depend on the surface form of the sentence.
 
@@ -616,9 +641,7 @@ There are several techniques with which to compose semantics:
 - Montague grammar
 - feature unification
 
-#### Semantic specialists
-
-semantic specialists are hard-coded functions that transform parts of a syntactic structure into a semantic structure. They are used heavily by Winograd's SHRDLU. The technique is not portable to other domains and requires expert information about a system's inner workings.
+__Semantic specialists__ are hard-coded functions that transform parts of a syntactic structure into a semantic structure. They are used heavily by Winograd's SHRDLU. The technique is not portable to other domains and requires expert information about a system's inner workings.
 
 #### Montague grammar
 
