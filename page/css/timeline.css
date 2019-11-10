@@ -18,9 +18,6 @@ ul.yearList h2 {
 	margin: 0;
 }
 
-ul.yearList ul {
-}
-
 ul.yearList ul li {
 	list-style: square;
 	padding: 10px 5px 10px 5px;

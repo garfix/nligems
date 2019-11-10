@@ -2,13 +2,7 @@
 
 /* BODY */
 
-html {
-    margin: 0 0 0 0;
-    padding: 0;
-}
-
-body {
-	color: #343240;
+html, body {
     margin: 0;
     padding: 0;
 }
@@ -22,19 +16,15 @@ h2, h3, h4, h5 {
 }
 
 h2 {
-    color: #5f445f;
-}
-
-h3 {
     color: #9c231f;
 }
 
-h4 {
-    color: #68978c;
+h3 {
+    color: #629186;
 }
 
-h5 {
-    color: #72aa9f;
+h4 {
+    color: #2b4238;
 }
 
 a {
@@ -43,10 +33,6 @@ a {
     word-wrap: break-word;
     word-break: break-word;
     hyphens: auto
-}
-
-a:visited {
-    color: #8B668B;
 }
 
 @media screen {
@@ -95,19 +81,19 @@ a:visited {
 
 div.header {
     /*background-color: #ffe2ee;*/
-    background-color: #fcd3e8;
-    border-bottom: 5px solid #343240;
+    background-color: #FFFDA1;
+    border-bottom: 4px solid #8c5946;
 }
 
 div.header h1 {
     font-family: 'Domine', serif;
     font-size: 40px;
-    color: #343240;
+    color: #B3292E;
     margin: 0;
     padding-top: 5px;
 }
 
-a.backButton {
+a.homeButton {
     display: block;
     margin: 8px 10px 30px 10px;
     float: left;
@@ -135,10 +121,11 @@ div.linkBar div {
 div.linkBar div a {
     font-size: 40px;
     padding: 5px;
+    color: #e09780;
 }
 
 div.linkBar div a.active {
-    color: #362536;
+    color: #8c5946;
 }
 
 @media print {
@@ -152,14 +139,6 @@ div.linkBar div a.active {
 
 p, li, blockquote {
     font-family: Lusitana, serif;
-}
-
-code {
-    display: block;
-    font-family: monospace;
-    max-width: 100%;
-    overflow: hidden;
-    background-color: #fdefff
 }
 
 p, li, blockquote, code {
@@ -198,10 +177,4 @@ p.story {
 
 .hidden {
 	display: none;
-}
-
-blockquote {
-    border: solid #cb050b;
-    border-width: 1px 0 1px 0;
-    color: #cb050b;
 }

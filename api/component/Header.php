@@ -35,28 +35,15 @@ class Header
         $Header = new HtmlElement('div');
         $Header->addAttribute('class', 'header');
 
-        if ($this->backPage) {
 
-            $Link = new HtmlElement('a');
-            $Link->addAttribute('href', $LinkApi->getLink($this->backPage));
-            $Link->addClass('backButton');
-            $Header->addChildNode($Link);
+        $Link = new HtmlElement('a');
+        $Link->addAttribute('href', $LinkApi->getLink("index"));
+        $Link->addClass('homeButton');
+        $Header->addChildNode($Link);
 
-            $BackImage = new HtmlElement('img', false);
-            $BackImage->addAttribute('src', 'page/img/back.png');
-            $Link->addChildNode($BackImage);
-
-        } else {
-
-            $Link = new HtmlElement('a');
-            $Link->addAttribute('href', $LinkApi->getLink("index"));
-            $Link->addClass('backButton');
-            $Header->addChildNode($Link);
-
-            $HomeImage = new HtmlElement('img', false);
-            $HomeImage->addAttribute('src', 'page/img/home.png');
-            $Link->addChildNode($HomeImage);
-        }
+        $HomeImage = new HtmlElement('img', false);
+        $HomeImage->addAttribute('src', 'page/img/home.png');
+        $Link->addChildNode($HomeImage);
 
         $Header->addChildNode($H1);
 

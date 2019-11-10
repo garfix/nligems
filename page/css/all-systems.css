@@ -27,18 +27,20 @@ p.intro {
 }
 
 .toc a {
-    color: #00008b;
+    color: #2b4238;
 }
 
 code {
+    display: block;
+    font-family: monospace;
     font-size: 14px;
     font-weight: bold;
     max-width: 100%;
     color: #292951;
-    background-color: #dfd9fd;
+    background-color: #aaefe4;
+    border: solid #68978c;
     padding: 20px 25px;
     white-space: pre-wrap;
-    border: #9b9bfd solid;
     border-width: 4px 0 4px 0;
     margin: 30px 0 40px 0;
 }
