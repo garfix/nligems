@@ -24,13 +24,13 @@ NLI aims to combine the strictness of SQL with the ease of use of text search.
 
 This text shows you some of the ideas and techniques used in this field, and highlights its choice points. It is certainly not necessary to use all of this information to create a useful NLI. Just pick the stuff you need.
 
-## Goals
+## Goal
 
-The goals of NLI follow from this definition:
+The goal of NLI follow from this definition:
 
 > An NLI allows a user to interact with a knowledge source through natural language. The system must understand the intent of the user's input, use common sense to process it and respond in a helpful manner.
 
-I will now explore these goals.
+I will now explore this goal.
 
 ## Interaction
 
@@ -826,7 +826,7 @@ A system that handles multiple domains needs a way to automatically switch from 
 
 ## Process the Intent
 
-To process the Intent of the sentence, it must be processed. This entails
+Processing the intent of the sentence entails
 
 - determine feasibility
 - performing inferences

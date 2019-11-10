@@ -34,10 +34,6 @@ class InterviewPage extends FrontEndPage
         $Header->addChildHtml((string)$this->Header);
         $Page->addChildNode($Header);
 
-        $LinkBar = new HtmlElement('div');
-        $LinkBar->addClass('linkPanel');
-        $Page->addChildNode($LinkBar);
-
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
         $Body->addChildNode(new Interview($this->subject));

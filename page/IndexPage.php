@@ -30,10 +30,6 @@ class IndexPage extends FrontEndPage
 
         $html = file_get_contents(__DIR__ . '/../doc/intro.html');
 
-        $LinkBar = new HtmlElement('div');
-        $LinkBar->addClass('linkPanel');
-        $Page->addChildNode($LinkBar);
-
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
         $Body->addChildHtml($html);
