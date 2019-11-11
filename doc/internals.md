@@ -483,7 +483,7 @@ All of these are just means to an end, and these steps may be combined or even s
 
 The goal of this is to create an Intent, a semantic representation of the meaning of the sentence as it was intended by the user. This representation often takes the form of a variant of First Order Predicate Logic.
 
-### Syntactic analysis
+### Recognize tokens
 
 #### Tokenization
 
@@ -523,6 +523,8 @@ Some tokens can only be recognized using pattern recognition:
 - numbers
 - prices
 - quoted strings
+
+### Recognize structures
 
 #### Pattern matching
 
@@ -588,7 +590,19 @@ __dependency grammars__ form a parse tree of dependency relations. An example pa
 
 The advantage is that the syntactic functions that form the dependency relations (i.e. subject, object, etc) are closely associated with semantic relations.
 
-When the grammar contains semantic constructs (or even database constructs) in stead of syntactic constructs, it is called a __semantic grammars__. An example parse tree is:
+There are several types of parsers:
+
+- top-down parser
+- chart parser
+- Augmented Transition Network
+
+### Semantic analysis
+
+This phase links semantic information to the syntactic information.
+
+#### Semantic grammar
+
+When the grammar contains semantic constructs (or even database constructs) in stead of syntactic constructs, it is called a __semantic grammar__. An example parse tree is:
 
     - S
         - Specimen_question
@@ -601,17 +615,15 @@ When the grammar contains semantic constructs (or even database constructs) in s
 
 A semantic grammar merges the phases of syntactic analysis and semantic analysis. The latter is the subject of the next paragraph.
 
-### Semantic analysis
+#### Semantic attachment
 
-Once the tree structure of the sentence is known, and the system does not use a semantic grammar, the syntactic information needs to be transformed and enriched into semantic information.
+Once the tree structure of the sentence is known, the syntactic information needs to be transformed and enriched into semantic information.
 
 Semantic Analysis maps words and word structures to semantic structures through a process of semantic composition. Semantic structures differ from syntactic structures in that they do not depend on the surface form of the sentence.
 
 Semantic analysis is necessary only when the sentence is parsed using a phrase structure grammar.
 
 Semantic analysis consists of two parts: semantic attachment and semantic composition.
-
-#### Semantic attachment
 
 Semantic attachment links partial semantic structures to words and syntactic structures. The attachments are stored in the lexicon with the word forms, and in the grammar, with the rewrite rules. Semantic attachment can take place during the parsing process, or as a separate step.
 
@@ -641,6 +653,8 @@ There are several techniques with which to compose semantics:
 - Montague grammar
 - feature unification
 
+#### Semantic specialists
+
 __Semantic specialists__ are hard-coded functions that transform parts of a syntactic structure into a semantic structure. They are used heavily by Winograd's SHRDLU. The technique is not portable to other domains and requires expert information about a system's inner workings.
 
 #### Montague grammar
@@ -650,6 +664,8 @@ Montague grammar is Montague's attempt to express natural language in Predicate 
 #### Feature unification
 
 Feature unification is based on the idea that each semantic constituent has some features (like "number", "passive", "agr"). When the constituents are connected, the features must match and their values are inherited up the tree. This is the approach CLE has taken, and they were able to address many grammatical phenomena with it.
+
+### Semantic post-processing
 
 #### Quantifier Scoping
 
