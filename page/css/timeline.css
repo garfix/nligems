@@ -6,7 +6,7 @@ ul.yearList {
 	padding: 0;
     margin: auto;
 	background-color: #E6EDE4;
-    max-width: 40em;
+    max-width: 60em;
 }
 
 ul.yearList h2 {
@@ -20,5 +20,5 @@ ul.yearList h2 {
 
 ul.yearList ul li {
 	list-style: square;
-	padding: 10px 5px 10px 5px;
+    margin: 30px 0 30px 0;
 }

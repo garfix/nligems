@@ -33,6 +33,6 @@ class News extends HtmlElement
 
 		}
 
-		return implode($elements);
+		return "<div class='content'>" . implode($elements) . "</div>";
 	}
 }
