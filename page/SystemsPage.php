@@ -7,7 +7,6 @@ use nligems\api\component\Header;
 use nligems\api\component\AllSystems;
 use nligems\api\component\ParseDown;
 use nligems\api\component\TitleParser;
-use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen

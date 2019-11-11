@@ -4,7 +4,6 @@ namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
 use nligems\api\component\Header;
-use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen
@@ -32,7 +31,7 @@ class IndexPage extends FrontEndPage
 
         $Body = new HtmlElement('div');
         $Body->addClass('textPage');
-        $Body->addChildHtml($html);
+        $Body->addChildHtml("<div class='content'>" . $html . "</div>");
         $Page->addChildNode($Body);
 
         return (string)$Page;

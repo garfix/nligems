@@ -6,7 +6,6 @@ use nligems\api\component\Header;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\ParseDown;
 use nligems\api\component\TocParser;
-use nligems\api\page\FrontEndPage;
 
 require_once __DIR__ . '/../api/component/ParseDown.php';
 

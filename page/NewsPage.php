@@ -5,7 +5,6 @@ namespace nligems\page;
 use nligems\api\component\HtmlElement;
 use nligems\api\component\Header;
 use nligems\api\component\News;
-use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen

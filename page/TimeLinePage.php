@@ -4,10 +4,8 @@ namespace nligems\page;
 
 use nligems\api\component\HtmlElement;
 use nligems\api\component\TimeTable;
-use nligems\api\Features;
 use nligems\api\NliSystemApi;
 use nligems\api\component\Header;
-use nligems\api\page\FrontEndPage;
 
 /**
  * @author Patrick van Bergen
@@ -25,37 +23,10 @@ class TimeLinePage extends FrontEndPage
 
         $this->TimeTable = new TimeTable();
 
-        $this->fillTimeTableWithSystems($this->TimeTable);
         $this->fillTimeTableWithEvents($this->TimeTable);
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('timeline');
-    }
-
-    private function fillTimeTableWithSystems(TimeTable $TimeTable)
-    {
-        $NliSystemApi = new NliSystemApi();
-
-        $events = json_decode(file_get_contents(__DIR__ . '/../doc/history.json'), true);
-
-//        foreach ($NliSystemApi->getAllSystems() as $System) {
-//
-//            $content = 'Start of ' . $System->getName() . '.';
-//
-//            $dependencies = array();
-//            foreach ($events as $dependencyEvent) {
-//                if (isset($dependencyEvent['dependencyOf']) && in_array($System->getId(), $dependencyEvent['dependencyOf'])) {
-//                    $dependencies []= "<i>" . $dependencyEvent['id'] . "</i> (" . $dependencyEvent['year'] . ')';
-//                }
-//            }
-//
-//            if ($dependencies) {
-//                $content .= " Main influences: " . implode(', ', $dependencies);
-//            }
-//
-//            $TimeTable->addEntry($System->get(Features::FIRST_YEAR), $content);
-//
-//        }
     }
 
     private function fillTimeTableWithEvents(TimeTable $TimeTable)
