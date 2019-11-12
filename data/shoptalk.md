@@ -1,0 +1,1 @@
+Uses both menus and natural language.

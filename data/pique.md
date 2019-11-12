@@ -1,0 +1,3 @@
+Pique maintains a connection graph, which models the user's view of the database structure. Whenever a user utterence reflects awareness or presupposition of a database object, link, restriction, etc., the graph is modified accordingly. Every time an ambiguous update request is encountered, the system consults the connection graph to determine which of the possible interpretations of the update request are meaningful with respect to the user's current view of the underlying database. It then ranks the remaining candidate interpretations, using a set of heuristic rules.
+
++ ! Models the user's view of the database structure

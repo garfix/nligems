@@ -1,0 +1,1 @@
+The system first generates a logic query, expressed in a version of untyped lambda-calculus. The lambda-calculus expression is then transformed into a first-order predicate logic expression, which is subsequently translated into universal-domain relational calculus, domain relational calculus, tuple relational calculus, and finally SQL.

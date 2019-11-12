@@ -1,0 +1,16 @@
+{
+    "NAME": "QE-III",
+    "FIRST_YEAR": "1988",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "James Clifford"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Natural language querying of historical databases - Clifford (1988)",
+        "Formal semantics and pragmatics for natural language language querying - Clifford (1990)",
+        "Formal semantics for time in databases - Clifford, Warren (1983)"
+    ],
+    "BOOKS": []
+}
