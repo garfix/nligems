@@ -1036,6 +1036,13 @@ A cooperative response would always give some extra information that may be help
 "How many children had Lord Byron?"
 "Two: Ada and Allegra"
 
+"Does RV work on Loqui?"
+"No. RV works on Bim-Prolog."
+
+### Reformulation
+
+The system can explain to the user how it interprets his question, by reformulating the semantic intent into natural language. The final SQL query may even be transformed into natural language.  
+
 ### Mental model
 
 Having a mental model of the beliefs, desires and intentions of the user may help to give a more helpful answer. But I know of no system that has implemented this.
