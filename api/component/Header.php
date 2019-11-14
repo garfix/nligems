@@ -37,22 +37,22 @@ class Header
 
 
         $Link = new HtmlElement('a');
-        $Link->addAttribute('href', $LinkApi->getLink("index"));
+        $Link->addAttribute('href', $LinkApi->getLink("/"));
         $Link->addClass('homeButton');
         $Header->addChildNode($Link);
 
         $HomeImage = new HtmlElement('img', false);
-        $HomeImage->addAttribute('src', 'page/img/home.png');
+        $HomeImage->addAttribute('src', '/page/img/home.png');
         $Link->addChildNode($HomeImage);
 
         $Header->addChildNode($H1);
 
         $menu = [
-            'internals.php' => "The NLI system",
-            'all-systems.php' => "Systems",
-            'timeline.php' => "Timeline",
-            'news.php' => "News",
-            'interview.php' => "Interview",
+            '/internals' => "The NLI system",
+            '/all-systems' => "Systems",
+            '/timeline' => "Timeline",
+            '/news' => "News",
+            '/interview' => "Interview",
         ];
 
         $Bar = new HtmlElement('div');

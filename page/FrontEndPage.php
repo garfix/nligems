@@ -51,7 +51,7 @@ abstract class FrontEndPage
         $styleHtml = '';
 
         foreach ($this->styleSheets as $styleSheet) {
-            $styleHtml .= "<link rel='stylesheet' type='text/css' href='page/css/" . $styleSheet . ".css' />\n";
+            $styleHtml .= "<link rel='stylesheet' type='text/css' href='/page/css/" . $styleSheet . ".css' />\n";
         }
 
         return $styleHtml;

@@ -19,7 +19,7 @@ class InterviewPage extends FrontEndPage
     {
         $this->subject = $subject;
 
-        $this->Header = new Header('interview.php', 'Interview');
+        $this->Header = new Header('interview', 'Interview');
         $this->addStyleSheet('common');
         $this->addStyleSheet('interview');
     }

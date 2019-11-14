@@ -18,7 +18,7 @@ class LinkApi
 			return $rel;
 
 		} else {
-			return $page . '.php' . ($params ? '?' . http_build_query($params) : '');
+			return $page . ($params ? '?' . http_build_query($params) : '');
 		}
 	}
 }

@@ -23,7 +23,7 @@ class Interview extends HtmlElement
 
             $html = "
                 <h2>Interview &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </h2>
-                <a href='interview.php?subject=chat-80'>
+                <a href='/interview/chat-80'>
                     <h3>Interview with David Warren and Fernando Pereira / Chat-80</h3>
                 </a>";
 
