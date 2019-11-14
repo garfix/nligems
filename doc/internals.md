@@ -2,7 +2,7 @@
 
 A natural language interaction system (NLI) allows a user to interact with it using the normal language he or she uses to communicate with other people.
 
-NLI is a discipline that touches the fields of artificial intelligence, linguistics, databases, information retrieval, and cognitive ergonomics. At the same time it has concepts and techniques that are unique to it. It is a complex problem with a rich history.
+NLI is a discipline that touches the fields of computer science, artificial intelligence, linguistics, databases, information retrieval, cognitive architecture, and cognitive ergonomics. At the same time it has concepts and techniques that are unique to it. It is a complex problem field with a rich history.
 
 ## Reasons for using NLI
 
@@ -321,8 +321,10 @@ NOT = negation (not)
 
 #### Reason
 
+Why questions may be about an objective knowledge source (a database) or a subjective (asking the system why it has made an action in the past).
+
 * WHY BE NP VP (why was Napoleon crowned king)
-* WHY DO NP VP (why did Napoleon invade Germany)
+* WHY DO NP VP (why did you put the green block on the table)
 * WHY HAVE NP VP (why has John hit Jake)
 * WHY MOD NP VP (why should I go)
 
@@ -345,6 +347,11 @@ NOT = negation (not)
 * WHERE MOD NP VP (where can I find a pub)
 
 * WHERE -> WHERE PP (where on the map is it)
+
+#### What if
+
+* WHAT ... WOULD ... IF (What utensils would I get dirty if I made a cake? - LUIGI)
+* WHAT ... WOULD ... AFTER (What utensils would be left on the counter after I made cookies? - LUIGI)
 
 Also, check this page! <https://www.myenglishteacher.eu/blog/types-of-questions/>
 

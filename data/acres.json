@@ -1,0 +1,18 @@
+{
+    "NAME": "ACRES",
+    "NAME_DESC": "The Artificial Concern REalization System",
+    "FIRST_YEAR": "1987",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Jaap Swagerman"
+    ],
+    "PROG_LANGS": [
+        "Prolog"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "The Artificial Concern REalization System ACRES - A computermodel of emotion - Swagerman (1987)"
+    ],
+    "BOOKS": []
+}

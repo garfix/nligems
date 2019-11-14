@@ -19,4 +19,3 @@ A: If I want to toast bread, then I must do the following:
 ~~~
 
 + ! Answers "What if" questions in a hypothetical world
-
