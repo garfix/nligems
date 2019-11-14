@@ -31,7 +31,7 @@
     {
         "id": "COMIT",
         "year": "1957",
-        "desc": "COMIT, the first string processing language, was invented by Victor Yngve as MIT. It was just in several NLI systems.",
+        "desc": "COMIT, the first string processing language, was invented by Victor Yngve as MIT. It was used in several NLI systems.",
         "links": {
             "Wikipedia": "https://en.wikipedia.org/wiki/Information_Processing_Language"
         },
