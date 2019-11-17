@@ -1,10 +1,20 @@
 RewriteEngine On
 
-RewriteCond %{REQUEST_URI} interview
-RewriteRule ^interview/(.*?)$ interview.php?subject=$1 [L]
+# redirect old interview link
+RewriteCond %{QUERY_STRING} subject=chat-80
+RewriteRule ^interview\.php$ http://%{HTTP_HOST}/interview/chat-80? [R=301,L]
 
+# redirect all old .php requests, except index.php
+RewriteCond %{REQUEST_URI} !index.php
+RewriteRule ^(.*)\.php$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+# home
 RewriteCond %{REQUEST_URI} ^/?$
-RewriteRule ^(.*)$ index.php [L]
+RewriteRule ^(.*)$ index.php?page=index [L]
 
+# interview subjects
+RewriteRule ^interview/(.*)$ index.php?page=interview&subject=$1 [L]
+
+# all top-level pages (except home)
 RewriteCond %{REQUEST_URI} !\.
-RewriteRule ^(.*)$ $1.php [L]
+RewriteRule ^(.*)$ index.php?page=$1 [L]
