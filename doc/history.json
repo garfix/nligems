@@ -16,7 +16,7 @@
     {
         "id": "IPL",
         "year": "1956",
-        "desc": "IPL was invented by  Allen Newell, Cliff Shaw, and Herbert Simon at RAND Corp and Carnegie Institute of Technology. IPL invented the concept of list processing. It was just in several NLI systems.",
+        "desc": "IPL was invented by  Allen Newell, Cliff Shaw, and Herbert Simon at RAND Corp and Carnegie Institute of Technology. IPL invented the concept of list processing. It was used in several NLI systems.",
         "links": {
             "Wikipedia": "https://en.wikipedia.org/wiki/Information_Processing_Language"
         },
