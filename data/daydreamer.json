@@ -1,15 +1,18 @@
 {
     "NAME": "DAYDREAMER",
-    "FIRST_YEAR": "1987",
+    "FIRST_YEAR": "1985",
     "LAST_YEAR": "1987",
     "CONTRIBUTORS": [
-        "Erik T. Mueller"
+        "Erik T. Mueller",
+        "Michael G. Dyer"
     ],
     "INSTITUTIONS": [
         "UCLA"
     ],
     "INFLUENCED_BY": [],
     "ARTICLES": [
+        "Daydreaming in humans and computers - Mueller, Dyer (1985)",
+        "Towards a computational theory of human daydreaming - Mueller, Dyer (1985)"
     ],
     "BOOKS": [
         "Daydreaming in humans and machines - Mueller (1990)"

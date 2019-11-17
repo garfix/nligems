@@ -25,3 +25,5 @@ Emotions, Daydreaming goals, learning, and creativity
 It continues with the description of the personal goals that are specific to daydreaming: rationalization, roving, revenge, reversal, recovery, rehearsal, and repercussions. These goals are activated when a person is idle. "Daydreaming goals are heuristics for how to exploit surplus processing time in a useful way." They are activated by emotions and directed, among others, towards the reduction of negative emotional states, and the exploration of consequences of possible actions.
 
 The natural language interface is almost taken for granted in this work, but it is there nevertheless, and forms an important part of its interface.
+
++ ! Produces impressively human-like thought processes
