@@ -1,14 +1,20 @@
 {
   "NAME": "Rus",
-  "FIRST_YEAR": "1978?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1976",
+  "LAST_YEAR": "1978",
   "CONTRIBUTORS": [
-    ""
+    "Robert J. Bobrow"
   ],
-  "INFLUENCED_BY": [],
+    "INSTITUTIONS": [
+        "Bolt Beranek and Newton"
+    ],
+  "INFLUENCED_BY": [
+      "LUNAR",
+      "Sophie"
+  ],
   "LONG_DESC": "",
   "ARTICLES": [
-    "The RUS System (1978)"
+    "The RUS System, in: Research in Natural Language Understanding - William A. Woods, Ronald J. Brachman, editors (1978)"
   ],
   "BOOKS": []
 }

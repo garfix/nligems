@@ -1,0 +1,17 @@
+{
+    "NAME": "SOPHIE",
+    "FIRST_YEAR": "1976",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Burton"
+    ],
+    "INSTITUTIONS": [
+        "Bolt Beranek and Newton"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Semantic Grammar: An engineering technique for constructing natural language understanding systems - Burton (1976)"
+    ],
+    "BOOKS": []
+}

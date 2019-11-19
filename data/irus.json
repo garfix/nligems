@@ -1,14 +1,16 @@
 {
   "NAME": "IRUS",
-  "FIRST_YEAR": "1986?",
+  "FIRST_YEAR": "1986",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Madeleine Bates",
+      "M. G. Moser",
+      "David Stallard"
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "The IRUS transportable natural language database interface (1986)"
+    "The IRUS transportable natural language database interface - Bates, Moser, Stallard (1986)"
   ],
   "BOOKS": []
 }
