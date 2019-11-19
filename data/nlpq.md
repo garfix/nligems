@@ -1,0 +1,1 @@
+Heidorn developed this automatic programming system, which allows users to describe simulation problems in English. The system takes an English partial description of a problem and fits it into an internal description language, building pieces of the problem. From the partial internal description, questions are generated which request missing pieces of information.

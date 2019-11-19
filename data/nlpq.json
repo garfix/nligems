@@ -1,0 +1,18 @@
+{
+    "NAME": "NLPQ",
+    "FIRST_YEAR": "1972",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "G.E. Heidorn"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Natural Language Inputs to a Simulation Programming System - Heidorn (1972)",
+        "English as a Very High Level Language for Programming - Heidorn (1972)",
+        "Augmented Phrase Structure Grammars, in: Proceedings of a Workshop on Theoretical Issues in Natural Language Processing. -Eds. R. Schank and B.L. Nash-Webber (1975)"
+    ],
+    "BOOKS": []
+}

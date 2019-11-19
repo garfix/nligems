@@ -4,3 +4,6 @@ The user was allowed to enter one or more sentences, or sentence-parts. He or sh
 
 In contrast to other systems, this system does not parse the user's sentence into a parse tree.
 In stead, using conditional rules, patterns of words were interpreted directly as parts of a relational query.
+
++ ! The use of clarification dialog to unveil the real intent of the user
+ 

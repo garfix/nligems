@@ -1,0 +1,20 @@
+{
+  "NAME": "Construct",
+  "FIRST_YEAR": "1974",
+  "LAST_YEAR": "",
+  "CONTRIBUTORS": [
+    "N.W. Smith",
+      "R.L. Smith",
+      "R.L. Rawson"
+  ],
+  "INSTITUTIONS": [
+      "Institute for Mathematical Studies in the Social Sciences"
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+      "A question-answering system for elementary mathematics - Smith (1974)",
+      "CONSTRUCT: In search of a theory of meaning - Smith, Smith, Rawson (1974)"
+  ],
+  "BOOKS": []
+}
