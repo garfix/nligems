@@ -74,7 +74,7 @@ class SystemsPage extends FrontEndPage
         $Page->addChildNode($Header);
 
         $AllSystems = new AllSystems($this->allSystems);
-        $html = "<p class='intro'>A collection of historic NLI systems. It is meant to give you a quick overview of the field, as a sort of index. The bullet points in the form of a gem - <img src='page/img/gem.png' /> - mark innovations. Note that is a work-in-progress.<br>-- Patrick</p>";
+        $html = "<p class='intro'>A collection of historic NLI systems. It is meant to give you a quick overview of the field, as a sort of index. The bullet points in the form of a gem - <img src='page/img/gem.png' /> - mark innovations. In the dialogs, Q always means the user, and A the system.<BR>Note that is a work-in-progress. -- Patrick</p>";
         $html .= (string)$AllSystems;
 
         $indexParser = new TitleParser();
