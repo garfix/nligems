@@ -96,40 +96,53 @@ The source may be persistent or volatile. A ___volatile___ source is destroyed w
 
 The source may be internal or external to the NLI system. An ___external___ database is located outside of the NLI and has its own query language. An ___internal___ source is part of the NLI. Many older systems had all their knowledge sources stored internally.
 
-For a simple NLI the domain of the knowledge source is ___objective___, it contains soil sample data, geographical data or other factual worldly information. Objective sources contain information that is shared with others.
+For a simple NLI the domain of the knowledge source is ___objective___, it contains soil sample data, geographical data or other factual worldly information. Objective sources contain information that is shared with others. More complex NLI systems even contain information about their own inner processes, and this information can even be queried by the user (i.e. "Why did you pick up the red cube?"). Let's call these knowledge sources ___subjective___.
 
-More complex NLI systems even contain information about their own inner processes, and this information can even be queried by the user (i.e. "Why did you pick up the red cube?"). Let's call these knowledge sources ___subjective___.
+Each type of knowledge base may either hold ___current information___ or ___time-bound information___. A time bound system usually uses events to link its data to.
 
-Note that NLI's have been created that could access and even modify all types of knowledge sources.
+And finally knowledge may either be ___direct___ or ___indirect___. Direct, factual, information tells you directly what is the case. Rule based information allows you to infer what is the case, or to reach a state by following a procedure. It is unusual for a relational database to contain indirect information, but it is quite common for a Prolog program to contain indirect information.
 
-### Objective knowledge sources
-
-The information itself may consist of
-
-- factual information (persons, soil samples, countries, ...)
-- meta information (information about a class of objects)
 - procedures (to reach D, first do A, B and C)
 - inferences (to determine if D is the case, you must first determine if A, B, and C are the case)
 
-Factual information may further be
+Note that NLI's have been created that could access and even modify all types of knowledge sources.
 
-- time based information (at time T is was the case that C)
-- position based information (at position P it is the case that C)
+As you will see, a sufficiently complex NLI is a proper intelligent agent. An NLI that has none of these is simple. An NLI that has all of these is very advanced. 
+
+A knowledge source usually contains positive information (X is the case), but it may also contain negative information (Y is not the case).
+
+A single database may very well hold several knowledge sources. This makes it easier to create global identities for all entities involved (the same id can be used everywhere). 
+
+### Objective knowledge sources
+
+#### Object data
+
+A database holds factual information about the objects in a domain: their attributes and relations.
+
+persons, soil samples, countries, ...
+
+Object data is usually persistent, external, and direct. It is usually not time bound, but some systems use it.
+
+#### Metadata 
+
+Metadata is information about the concepts in the domain. This information can be in the form of facts, but also rules.
 
 ### Subjective knowledge sources
 
-Subjective knowledge sources are:
-
-- the dialog context / working memory 
-- emotional state
-- BDI models (beliefs, desires and intentions; and also goals)
+#### Dialog Context
 
 The dialog context may contain information about
 
 - recently mentioned entities (for anaphora resolution)
 - the current place of self and others in time and space: deictic center
 
-Emotional state can influence the motivation of the NLI and change its goals and its output.
+#### Goal model
+
+The goal model keeps track of the active goals of the system and the current procedure that is being executed.
+
+SHRDLU
+
+#### BDI model
 
 The BDI models keep track of the goals of different agents, which helps establish the cause of their actions (why they do things).
 
@@ -139,11 +152,11 @@ The BDI models keep track of the goals of different agents, which helps establis
 
 A BDI model may have a history, that allows the NLI to query past motives.
 
-All types of combinations of these dimensions occur. Typical modern databases are persistent, external and objective. Emotional information is mostly volatile, internal and subjective.
+#### Emotional state
 
-As you can see, a sufficiently complex NLI is a proper intelligent agent. An NLI that has none of these is simple. An NLI that has all of these is very advanced. 
+Emotional state can influence the motivation of the NLI and change its goals and its output.
 
-A knowledge source usually contains positive information (X is the case), but it may also contain negative information (Y is not the case).
+DAYDREAMER, ACRES
 
 ## Natural Language Syntax
 
@@ -899,10 +912,6 @@ An inference form has one or more antecedents, and a consequent:
 IF a AND b AND c THEN d
 
 The programming language Prolog is typically used for NLI's that rely on inference, since Prolog has a built in inference engine. Some databases also allow storing and processing rules. A reduced form of Prolog, along with a custom inference engine is sometimes implemented in the NLI itself.
-
-### Plan execution
-
-If an NLI has goals, or even only the goal of responding to the user's question, the system may check its stock plans in order to reach the goal. These plans may in turn create new goals which need solving.
 
 ### Learning by being told
 
