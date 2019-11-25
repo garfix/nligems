@@ -131,7 +131,7 @@ Metadata is information about the concepts in the domain. This information can b
 
 #### Dialog Context
 
-The dialog context may contain information about
+The dialog context holds information about the active dialog with a user. It may contain information about
 
 - recently mentioned entities (for anaphora resolution)
 - the current place of self and others in time and space: deictic center
@@ -142,15 +142,30 @@ The goal model keeps track of the active goals of the system and the current pro
 
 SHRDLU
 
-#### BDI model
+#### Mental models
+
+In a simple system, it has direct access to the truth (as stored in a knowledge source). More advanced systems avoid this simplification by keeping track of mental models.
 
 The BDI models keep track of the goals of different agents, which helps establish the cause of their actions (why they do things).
 
-- a BDI model of the system itself (also: goals) (see SHRDLU)
-- a BDI model of the agents that are the subject of the conversation (see Schank)
-- a BDI model of the user
+Two things can be modeled:
 
-A BDI model may have a history, that allows the NLI to query past motives.
+- Beliefs: what an agent believes to be the case; its mental model 
+- Motives: the desires and intentions of the agent
+
+#### Model of the system's own beliefs about the world
+
+LUIGI
+
+#### Model of the user's beliefs of the database 
+
+PIQUE
+
+#### Model of the motives of the agents in a story
+
+Schank 
+
+#### Model of the user's motives
 
 #### Emotional state
 
