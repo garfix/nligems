@@ -1,11 +1,15 @@
 {
   "NAME": "PHLIQA1",
-  "FIRST_YEAR": "1983?",
-  "LAST_YEAR": "",
+    "NAME_DESC": "Philips Question Answerer",
+  "FIRST_YEAR": "1975",
+  "LAST_YEAR": "1983",
   "CONTRIBUTORS": [
     "Remko J.H. Scha",
       "Bronnenberg W J H J"
   ],
+    "INSTITUTIONS": [
+        "Philips Research Laboratories"
+    ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
@@ -14,5 +18,7 @@
     "Logical foundations for Question Answering, proefschrift - Scha (1983)",
     "PHLIQA 1, a question-answering system for data-base consultation in natural English - PHLIQA Project Group"
   ],
-  "BOOKS": []
+  "BOOKS": [
+      "Natural Language Question Answering systems (contains \"The question answering system PHLIQA1\") - Bolc editor (1980)"
+  ]
 }
