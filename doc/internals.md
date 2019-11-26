@@ -1066,6 +1066,7 @@ An NLI responds to the user by
 - generating a custom response ("She married to Lord Byron")
 - asking for clarification ("Do you mean [a] ... [b] ...")
 - admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
+- initiating a question
 
 ### Sentence generation
 
@@ -1089,13 +1090,13 @@ A cooperative response would always give some extra information that may be help
 "Does RV work on Loqui?"
 "No. RV works on Bim-Prolog."
 
+### Initiating a question
+
+A system that helps the user make a selection may have a Dialog Plan that helps it decide which question to ask the user. In such a system the system takes the initiative to pose questions, and the user responds.
+
 ### Reformulation
 
 The system can explain to the user how it interprets his question, by reformulating the semantic intent into natural language. The final SQL query may even be transformed into natural language.  
-
-### Mental model
-
-Having a mental model of the beliefs, desires and intentions of the user may help to give a more helpful answer. But I know of no system that has implemented this.
 
 ## General aspects
 
