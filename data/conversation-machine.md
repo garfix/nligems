@@ -11,8 +11,8 @@ The program determined whether the contents of the user's sentence was in agreem
 Based on keywords in the input, and the agreement with its own knowledge, the program selected an answer frame. For example: 
 
 ~~~
-Q: I do not enjoy rain during July.
-A: Well, we don't usually have rainy weather in July, so you will probably not be disappointed.
+H: I do not enjoy rain during July.
+C: Well, we don't usually have rainy weather in July, so you will probably not be disappointed.
 ~~~
 
 + ! First natural language system

@@ -10,10 +10,10 @@ John is a boy / SETR(John, Boy)
 Any person has two hands / PARTRN(Hand, Person, 2)
 A finger is part of a hand / PARTR(Finger, Hand)
 
-Q: How many fingers are on John? / PARTRNQ(Finger, John)
-A: How many fingers per hand?
-Q: Every hand has five fingers / PARTRN(Finger, Hand, 5)
-A: The answer is 10
+H: How many fingers are on John? / PARTRNQ(Finger, John)
+C: How many fingers per hand?
+H: Every hand has five fingers / PARTRN(Finger, Hand, 5)
+C: The answer is 10
 ~~~
 
 + ! Queries the user about missing information

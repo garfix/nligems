@@ -5,8 +5,8 @@ Example interaction
 ~~~ 
 John needed money so he took a gun and went to the liquor store and said to the owner that he wanted money and the owner gave John money and John left.
 
-Q: Why did the owner give John the money?
-A: The owner was afraid John would shoot him.
+H: Why did the owner give John the money?
+C: The owner was afraid John would shoot him.
 ~~~
     
 Uses PHRAN (PHRase ANalyzer) by Yigal Arens) as a frontend to convert raw text into a semantic representation. PHRAN uses a set of text patterns that map directly to conceptual dependency structures.

@@ -9,7 +9,7 @@ If the number of customers Tom gets is 2 times the square 20 percent of the numb
 Analysis is done by replacing words as "twice" by two time, detect words as "plus" and "times" as operators. The rest of the analysis consists of a series of heuristics.
 
 ~~~
-Q: If the number of customers Tom gets is 2 times the square 20 percent of the number of advertisements he runs, and the number of advertisements he runs is 45, what is the number of customers Tom gets?
+H: If the number of customers Tom gets is 2 times the square 20 percent of the number of advertisements he runs, and the number of advertisements he runs is 45, what is the number of customers Tom gets?
 ~~~
 
 + ! Transforms the input into a set of mathematical equations

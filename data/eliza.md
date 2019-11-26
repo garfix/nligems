@@ -22,12 +22,12 @@ I hate (1) => 'Why do you hate (1)?'
 Because (1) => 'Tell me more about it'
 
 ~~~
-Q: Men are all alike.
-A: In what way?
-Q: They're always bugging us about something specific or other.
-A: Can you think of a specific example?
-Q: Well, my boyfriend made me come here.
-A: Your boyfriend made you come here?
+H: Men are all alike.
+C: In what way?
+H: They're always bugging us about something specific or other.
+C: Can you think of a specific example?
+H: Well, my boyfriend made me come here.
+C: Your boyfriend made you come here?
 ~~~
 
 + ! Shows that simple pattern matching combined with many canned responses can go far to create the illusion of understanding

@@ -11,6 +11,6 @@ and inference rules in the form of conditional statements that included variable
 By substituting data statements for the variables in conditional expressions, DEDUCOM answers questions such as the following:
 
 ~~~
-Q: How many fingers on a man?
-A: 10
+H: How many fingers on a man?
+C: 10
 ~~~

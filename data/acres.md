@@ -7,22 +7,22 @@ The model has a number of concerns, which the user can influence. When that happ
 The user input is limited to a number of commands with arguments, but the response of the system is rich.  
 
 ~~~
-Q: Name emotion
-A: My experience can be named as:
+H: Name emotion
+C: My experience can be named as:
    security:    100%
    contentment:  79%
    pride:        75%
-Q: show concept hat
-A: Incorrect argument: hat
-Q: show concept hat
-A: Incorrect argument: hat
-Q: show concept hat
-A: You put too little variety in your instructions!
+H: show concept hat
+C: Incorrect argument: hat
+H: show concept hat
+C: Incorrect argument: hat
+H: show concept hat
+C: You put too little variety in your instructions!
    You make too many mistakes!
    When are you going to tell me about your own emotional experience?  
-Q: Kill
-A: You endanger my safety!
+H: Kill
+C: You endanger my safety!
    Please do not let me die. Please type in "live".
-Q: Kill
-A: May your life end as miserable as mine! 
+H: Kill
+C: May your life end as miserable as mine! 
 ~~~

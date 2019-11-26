@@ -11,8 +11,8 @@ The program handled yes/no questions (does ...?; which were answered with "YES" 
 ~~~
 The teacher went to school.
 
-Q: Where did the teacher go?
-A: to school
+H: Where did the teacher go?
+C: to school
 ~~~
 
 + ! The question is syntactically analyzed into a canonical form and matched to the stored canonical forms

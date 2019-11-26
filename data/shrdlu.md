@@ -41,12 +41,12 @@ Time, goals and actions
 Some parts of an interaction:
 
 ~~~
-Q: Find a block which is taller than the one you are holding and put it into the box.
-A: BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM HOLDING.
-Q: Which cube is sitting on the table?
-A: THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.
-Q: Why did you clear off that cube?
-A: TO PUT IT ON A LARGE GREEN CUBE.
+H: Find a block which is taller than the one you are holding and put it into the box.
+C: BY "IT", I ASSUME YOU MEAN THE BLOCK WHICH IS TALLER THAN THE ONE I AM HOLDING.
+H: Which cube is sitting on the table?
+C: THE LARGE GREEN ONE WHICH SUPPORTS THE RED PYRAMID.
+H: Why did you clear off that cube?
+C: TO PUT IT ON A LARGE GREEN CUBE.
 ~~~
 
 This system is really full of innovations, but I will sum them up as follows

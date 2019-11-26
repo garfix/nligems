@@ -9,8 +9,8 @@ Mars is next smaller than Venus
 If X is next smaller than Y, then X is smaller than Y.
 If X is next smaller than Y and Y is smaller than Z then X is smaller than Z.
 
-Q: Is Pluto smaller than Venus?
-A: Yes
+H: Is Pluto smaller than Venus?
+C: Yes
 ~~~
 
 + ! Its knowledge base is a set of conditional statements IF A THEN B

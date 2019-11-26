@@ -1,3 +1,3 @@
 ~~~
-Q: What is the capital of each country bordering Greece?
+H: What is the capital of each country bordering Greece?
 ~~~

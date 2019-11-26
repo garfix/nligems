@@ -9,10 +9,10 @@ Rules of inference are also embedded in this structure in the form of conditiona
 Beliefs are evaluated by a technique that computes credibility as a weighted function of consistency and evidential foundation of each belief.
 
 ~~~
-Q: Why are you in the hospital?
-A: I shouldn't be here.
-Q: Who brought you here?
-A: The police.
-Q: What trouble did you have with the police?
-A: Cops don't do their jobs.
+H: Why are you in the hospital?
+C: I shouldn't be here.
+H: Who brought you here?
+C: The police.
+H: What trouble did you have with the police?
+C: Cops don't do their jobs.
 ~~~
