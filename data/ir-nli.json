@@ -1,15 +1,19 @@
 {
   "NAME": "IR-NLI",
+  "NAME_DESC": "Information Retrieval Natural Language Interface",
   "FIRST_YEAR": "1982?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "Giovanni Guida",
     "Carlo Tasso"
   ],
+    "INSTITUTIONS": [
+        "Università di Udine"
+    ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "IR-NLI: An expert natural language interface to online data bases"
+    "IR-NLI: An expert natural language interface to online data bases - Guida, Tasso (1982?)"
   ],
   "BOOKS": []
 }

@@ -163,7 +163,7 @@ PIQUE
 
 #### Model of the motives of the agents in a story
 
-Schank 
+MARGIE 
 
 #### Model of the user's motives
 
