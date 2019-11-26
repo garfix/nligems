@@ -74,6 +74,14 @@ When a question cannot be answered it is up to the system to provide precise fee
 
 When the user has reasoning capabilities, the user may also jump to the conclusion that the system is intelligent. The user will also need to be instructed about the possible reasoning capabilities of the system.
 
+### Direction of dialog
+
+When a user interacts with a system, this can be considered to be a dialog. A dialog may be directed, or be free form.
+
+- The user directs the questions (most systems)
+- The system directs the questions (IR-NLI)
+- Both user and system may initiate questions (Chatbots)
+
 ## Knowledge Sources
 
 Since the main purpose of an NLI is to interact with knowledge sources, it should be no surprise that historic NLI's have interacted with a wide variety of databases and in-memory storages. Anything that contains information may be the source that a user may want to query. That's why we talk about a knowledge source rather than just a database.
