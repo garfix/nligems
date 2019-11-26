@@ -1,3 +1,6 @@
+Helps the user to build an information retrieval query for online databases using a generated dialog.
+
++ ! Generates a strategy for asking the user questions in order to help him with information retrieval 
 
 ~~~
 C: Please specify your request!

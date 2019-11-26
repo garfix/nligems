@@ -144,9 +144,15 @@ The dialog context holds information about the active dialog with a user. It may
 - recently mentioned entities (for anaphora resolution)
 - the current place of self and others in time and space: deictic center
 
+#### Dialog Plan
+
+A system that helps the user make some selection, needs to plan its questions. This plan may be dynamic.
+
+IR-NLI  
+
 #### Goal model
 
-The goal model keeps track of the active goals of the system and the current procedure that is being executed.
+The goal model keeps track of the active and previous goals of the system and the current procedure that is being executed.
 
 SHRDLU
 
@@ -899,6 +905,7 @@ It must be noted that although "Understand the User" and "Process the Intent" ar
 The way an intent is handled depends on the function of the NLI of course. Historical systems have had the following functions:
 
 - Keeping a conversation (chat)
+- Help the user make a selection by making directed questions (IR-NLI)
 - Answer questions (Q & A systems)
 - Execute commands
 - Learning new knowledge
@@ -1026,6 +1033,10 @@ Anaphora resolution: It keeps track of roles in the dialog. When the user mentio
 Deictic center: This current subject of conversation is called the deictic center. We have just seen the deictic center of person. There may also be deictic centers for time (where is 'now' in the active conversation) and space (where is 'here').
 
 Common sense: From the sentence a user enters (e.g. "John went into a restaurant") the system may infer some information that is implied in the situation and store this in the dialog context (i.e. "John eats food", "John pays the bill").
+
+### Update Dialog plan
+
+In a system that helps the user make a selection, the system usually takes the initiative for questions. It has a dialog plan to guide it. When the user has answered the system's question, the plan needs to be updated and a new question prepared.
 
 ### Update Goal, plans and actions
 
