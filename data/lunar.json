@@ -1,6 +1,6 @@
 {
-    "NAME": "LUNAR",
-    "NAME_DESC": "",
+    "NAME": "LUNAR (aka LSNLIS)",
+    "NAME_DESC": "Lunar Sciences Natural Language Interface System",
     "FIRST_YEAR": "1967",
     "LAST_YEAR": "1971",
     "CONTRIBUTORS": [
@@ -19,7 +19,7 @@
       "Progress in natural language understanding - An application to lunar geology - Woods",
       "Semantics and quantification in natural language question answering - Woods",
       "What's in a link: Foundations for Semantic Networks - Woods (1975)",
-      "The Lunar Sciences Natural Language Information System (1972)"
+      "The Lunar Sciences Natural Language Information System - Woods, Kaplan, Nash-Webber (1972)"
     ],
     "BOOKS": [
         "The Lunar Sciences Natural Language Information System: Final Report"

@@ -1,0 +1,19 @@
+{
+    "NAME": "USL",
+    "NAME_DESC": "User Specialty Languages",
+    "FIRST_YEAR": "1978",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "H. Lehmann",
+        "N. Ott",
+        "M. Zoeppritz"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Interpretation of natural language in an information system - Lehmann (1978)"
+    ],
+    "BOOKS": []
+}

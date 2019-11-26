@@ -1,14 +1,20 @@
 {
-  "NAME": "Teli",
+  "NAME": "TELI",
+  "NAME_DESC": "Transportable English-Language Interface",
   "FIRST_YEAR": "1986",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Bruce W. Ballard",
+    "Douglas E. Stumberger"
+  ],
+  "INSTITUTIONS": [
+    "AT&T Bell Laboratories"
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Semantic Acquisition in TELI (1986)"
+    "Semantic Acquisition in TELI - Ballard, Stumberger (1986)",
+    "User Specification of Syntactic Case Frames in TELI, A Transportable, User-Customized Natural Language Processor - Ballard (1986)"
   ],
   "BOOKS": []
 }

@@ -3,13 +3,15 @@
   "FIRST_YEAR": "1984?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Ballard, B",
+    "Lusth, J.",
+    "Tinkham, N"
   ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
     "The Syntax and Semantics of User-Defined Modifiers in a Transportable Natural Language Processor (1984)",
-    "LDC-1: A Transportable, Knowledge-based Natural Language Processor for Office Environments (1984)"
+    "LDC-1: A Transportable, Knowledge-based Natural Language Processor for Office Environments - Ballard, Lusth, Tinkham (1984)"
   ],
   "BOOKS": []
 }
