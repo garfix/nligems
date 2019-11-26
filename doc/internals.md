@@ -181,6 +181,10 @@ MARGIE
 
 #### Model of the user's motives
 
+Same as Propositional Attitudes KNOW BELIEVE WANT (?)
+
+WISBER
+
 #### Emotional state
 
 Emotional state can influence the motivation of the NLI and change its goals and its output.

@@ -1,14 +1,19 @@
 {
-  "NAME": "Wisber",
+  "NAME": "WISBER",
   "FIRST_YEAR": "1989?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Michael Gerlach",
+      "Helmut Horacek"
   ],
+    "INSTITUTIONS": [
+        "Universität Hamburg"
+    ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Dialog Control in a Natural Language System (1989)"
+    "From Meaning to Meaning - a Walk through WISBER - Horacek, Bergmann, Block, Fliegner, Gerlach, Poesio, Sprenger (1988)",
+    "Dialog Control in a Natural Language System - Gerlach, Horacek (1989)"
   ],
   "BOOKS": []
 }

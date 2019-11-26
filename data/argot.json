@@ -1,0 +1,19 @@
+{
+  "NAME": "ARGOT",
+  "FIRST_YEAR": "1982",
+  "LAST_YEAR": "1984",
+  "CONTRIBUTORS": [
+    "James F. Allen",
+    "A.M. Frisch",
+    "Diane J. Litman"
+  ],
+  "INSTITUTIONS": [
+  ],
+  "INFLUENCED_BY": [],
+  "LONG_DESC": "",
+  "ARTICLES": [
+    "ARGOT: The Rochester Dialogue System - Allen, Frisch, Litman (1982)",
+      "A Plan Recognition Model for Clarification Subdialogues - Litman, Allen (1984)"
+  ],
+  "BOOKS": []
+}
