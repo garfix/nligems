@@ -3,12 +3,15 @@
   "FIRST_YEAR": "1983?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Jerrold M. Ginsparg"
   ],
+    "INSTITUTIONS": [
+        "Bell Laboratories"
+    ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "A Robust Portable Natural Language Database Interface (1983)"
+    "A Robust Portable Natural Language Database Interface - Ginsparg (1983)"
   ],
   "BOOKS": []
 }
