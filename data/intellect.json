@@ -1,14 +1,20 @@
 {
   "NAME": "Intellect",
-  "FIRST_YEAR": "1984?",
-  "LAST_YEAR": "",
+  "FIRST_YEAR": "1980",
+  "LAST_YEAR": "1984",
   "CONTRIBUTORS": [
-    ""
+    "Larry R. Harris "
   ],
-  "INFLUENCED_BY": [],
+  "INSTITUTIONS": [
+    "Artificial Intelligence Corporation"
+  ],
+  "INFLUENCED_BY": [
+      "ROBOT"
+  ],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Experience with INTELLECT (1984)"
+    "Experience with INTELLECT: Artificial Intelligence Technology Transfer  - Harris (1984)",
+    "INTELLECT Query System User's Guide, 2nd. Edition (1980)"
   ],
   "BOOKS": []
 }

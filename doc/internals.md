@@ -1038,6 +1038,10 @@ Common sense: From the sentence a user enters (e.g. "John went into a restaurant
 
 In a system that helps the user make a selection, the system usually takes the initiative for questions. It has a dialog plan to guide it. When the user has answered the system's question, the plan needs to be updated and a new question prepared.
 
+### Update mental models
+
+A system may have mental models of the user or the agents in a story. The information given can be used to update these models.
+
 ### Update Goal, plans and actions
 
 A goal based NLI needs to keep track of its goal hierarchy. The system may add a goal, process a plan or part of a plan, and perform actions.

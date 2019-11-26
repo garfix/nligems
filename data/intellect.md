@@ -1,1 +1,7 @@
-Intellect from Trinzic (formed by the merger of AICorp and Aion). This system is based on experience from ROBOT.
+INTELLECT is a commercial system from Trinzic (formed by the merger of AICorp and Aion). This system is based on experience with ROBOT.
+
+~~~
+H: I WONDER HOW ACTUAL SALES FOR LAST MONTH COMPARES TO THE FORECAST FOR PEOPLE UNDER QUOTA IN NEW ENGLAND
+C: PRINT A COMPARISON OF LAST NAME, 82 JUL ACT SALES AND 82 JUL EST SALES OF ALL SALES PEOPLE WITH REGION = NORTHEAST & 82 YTD ACT % QUOTA UNDER 100 00
+   THE NUMBER OF RECORDS TO BE SEARCHED IS 40   
+~~~

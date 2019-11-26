@@ -1,15 +1,22 @@
 {
   "NAME": "Datalog",
+    "NAME_DESC": "Database Dialogue",
   "FIRST_YEAR": "1984?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
-    ""
+    "Carole D. Hafner",
+    "K.S. Godden"
   ],
+    "INSTITUTIONS": [
+        "General Motors Research Laboratories"
+    ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-    "Interaction of Knowledge Sources in a Portable Natural Language Interface (1984)",
-    "Portability of Syntax and Semantics in Datalog (1985)"
+    "Interaction of Knowledge Sources in a Portable Natural Language Interface - Hafner (1984)",
+    "Portability of Syntax and Semantics in Datalog (1985)",
+    "Design of Natural Language Interfaces: A Case Study - Hafner, Godden (1984)",
+    "Categorizing Natural Language Queries for Intelligent Responses - Godden (1984)"
   ],
   "BOOKS": []
 }
