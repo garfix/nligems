@@ -1,10 +1,15 @@
 {
-    "NAME": "SHOPTALK",
+    "NAME": "Shoptalk",
     "NAME_DESC": "",
     "FIRST_YEAR": "1991",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
-        "P.R. Cohen"
+        "Philip R. Cohen",
+        "Mary Dalrymple",
+        "David Kashtan",
+        "Doug Moran",
+        "Sharon Oviatt",
+        "Fernando Pereira"
     ],
     "INSTITUTIONS": [
         "SRI International"
@@ -13,7 +18,7 @@
     ],
     "LONG_DESC": "",
     "ARTICLES": [
-        "The role of natural language in multimodal interface - Cohen (1991)"
+        "The role of natural language in a multimodal interface - Cohen (1991)"
     ],
     "BOOKS": [
     ]

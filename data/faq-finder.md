@@ -1,0 +1,1 @@
+Tries to match the user's question to one of the questions in a FAQ file. Information retrieval.

@@ -35,11 +35,12 @@ The goals may be hard-coded in the system, or be available declaratively.
 Historical systems have had the following goals:
 
 - Answer questions (Q & A systems)
-- Keeping a conversation alive (chat)
-- Help the user make a selection by asking directed questions (IR-NLI, WISBER)
-- Execute commands (virtual assistent)
-- Learn new knowledge (all systems might do this)
-- Create a paraphrase (SAM)
+- Execute commands (virtual assistants)
+- Keeping a conversation alive (chatbots)
+- Help the user make a selection by asking directed questions (decision support: IR-NLI, WISBER)
+- Locate information in raw text sources (information retrieval) 
+- Create a paraphrase of a story (story understanding)
+- Prototype / proof-of-concept (show how a certain technique can be used)
 
 ## Interaction
 
@@ -94,7 +95,9 @@ When a user interacts with a system, this can be considered to be a dialog. A di
 
 A system that handles anaphora (pronouns and other references) must be able to match these references to entities previously mentioned in the dialog. Possibly it must also be able to remember the current place and time of discourse. This is why a system needs a ___Dialog Context___.
 
-Systems that help the user make a selection or make a choice enter a real dialog with the user. They need to plan this dialog in order to reach the intended goal efficiently. For this goal they create a ___Dialog Plan___. A plan is a hierarchical structure of goals and actions. This plan steers the conversation. It may be changed dynamically as the conversation progresses, but it must be aimed at reaching the preset goal. 
+Systems that help the user make a selection or make a choice enter a real dialog with the user. They need to plan this dialog in order to reach the intended goal efficiently. For this goal they create a ___Dialog Plan___. A plan is a hierarchical structure of goals and actions. This plan steers the conversation. It may be changed dynamically as the conversation progresses, but it must be aimed at reaching the preset goal.
+
+Systems that guide the user often make use of a mental model of the user. 
 
 In a system with a dialog plan, this structure must be made the basis of the architecture. 
 
