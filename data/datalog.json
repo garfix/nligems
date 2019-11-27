@@ -1,15 +1,16 @@
 {
+  "FUNCTION": "question-answering",
   "NAME": "Datalog",
-    "NAME_DESC": "Database Dialogue",
+  "NAME_DESC": "Database Dialogue",
   "FIRST_YEAR": "1984?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "Carole D. Hafner",
     "K.S. Godden"
   ],
-    "INSTITUTIONS": [
-        "General Motors Research Laboratories"
-    ],
+  "INSTITUTIONS": [
+    "General Motors Research Laboratories"
+  ],
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [

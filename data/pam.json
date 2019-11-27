@@ -1,4 +1,5 @@
 {
+    "FUNCTION": "story-understanding",
     "NAME": "PAM",
     "NAME_DESC": "Plan-Applier Mechanism",
     "FIRST_YEAR": "1976",
@@ -10,7 +11,6 @@
         "Yale University",
         "University of California, Berkeley"
     ],
-    "INFLUENCED_BY": [],
     "LONG_DESC": "",
     "ARTICLES": [
         "PAM - A Program That Infers Intentions - Wilensky",

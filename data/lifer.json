@@ -1,4 +1,5 @@
 {
+  "FUNCTION": "question-answering",
   "NAME": "LIFER",
   "NAME_DESC": "Language Interface Facility with Ellipsis and Recursion",
   "FIRST_YEAR": "1976",

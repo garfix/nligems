@@ -38,6 +38,7 @@ Historical systems have had the following goals:
 - Execute commands (virtual assistants)
 - Keeping a conversation alive (chatbots)
 - Help the user make a selection by asking directed questions (decision support: IR-NLI, WISBER)
+- Help the user fix a problem (troubleshooting: SOPHIE)
 - Locate information in raw text sources (information retrieval) 
 - Create a paraphrase of a story (story understanding)
 - Prototype / proof-of-concept (show how a certain technique can be used)

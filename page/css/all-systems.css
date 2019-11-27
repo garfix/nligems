@@ -22,6 +22,10 @@ div.desc {
     margin-bottom: 10px;
 }
 
+span.functions {
+    color: #3430be !important;
+}
+
 p.intro {
     margin-bottom: 50px;
 }

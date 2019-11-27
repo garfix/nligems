@@ -1,6 +1,7 @@
 {
+  "FUNCTION": "question-answering",
   "NAME": "PHLIQA1",
-    "NAME_DESC": "Philips Question Answerer",
+  "NAME_DESC": "Philips Question Answerer",
   "FIRST_YEAR": "1975",
   "LAST_YEAR": "1983",
   "CONTRIBUTORS": [
