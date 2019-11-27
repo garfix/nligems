@@ -24,13 +24,22 @@ NLI aims to combine the strictness of SQL with the ease of use of text search.
 
 This text shows you some of the ideas and techniques used in this field, and highlights its choice points. It is certainly not necessary to use all of this information to create a useful NLI. Just pick the stuff you need.
 
-## Goal
+## Function
 
-The goal of NLI follow from this definition:
+The function of an NLI follows from this definition:
 
-> An NLI allows a user to interact with a knowledge source through natural language. The system must understand the intent of the user's input, use common sense to process it and respond in a helpful manner.
+> An NLI allows a user to use natural language to interact with a with a computer system to fulfill predefined goals. The system must understand the intent of the user's input, use common sense to process it, communicate with knowledge sources, and respond in a helpful manner.
 
-I will now explore this goal.
+The goals may be hard-coded in the system, or be available declaratively.
+
+Historical systems have had the following goals:
+
+- Answer questions (Q & A systems)
+- Keeping a conversation alive (chat)
+- Help the user make a selection by asking directed questions (IR-NLI, WISBER)
+- Execute commands (virtual assistent)
+- Learn new knowledge (all systems might do this)
+- Create a paraphrase (SAM)
 
 ## Interaction
 
@@ -55,10 +64,11 @@ The system may answer with one of these sentences
 - a database result ("Yes", "Ada Lovelace")
 - a generated sentence ("She was married to Lord Byron on March 2, 1844")
 - a paraphrase of the question (to verify that it was understood correctly)
+- an initiated question ("Do you want to be able to have access to your money during the term of the investment?")
 - a request for clarification ("Do you mean [a] or [b]?")
 - an admission of inability ("I do not know this person", "I do not understand the word 'vehicle'")
 
-Interaction with an NLI is not limited to a simple Question/Answer. Since language is ambiguous on all levels, it is often necessary for the system to ask the user to clarify his/her intent. So the interaction is always a dialog.
+Interaction with an NLI is not limited to a simple Question/Answer. Since language is ambiguous on all levels, it is often necessary for the system to ask the user to clarify his/her intent. So the interaction is always a sort of dialog.
 
 ### User Expectations
 
@@ -74,13 +84,19 @@ When a question cannot be answered it is up to the system to provide precise fee
 
 When the user has reasoning capabilities, the user may also jump to the conclusion that the system is intelligent. The user will also need to be instructed about the possible reasoning capabilities of the system.
 
-### Direction of dialog
+## Dialog
 
 When a user interacts with a system, this can be considered to be a dialog. A dialog may be directed, or be free form.
 
 - The user directs the questions (most systems)
-- The system directs the questions (IR-NLI)
+- The system directs the questions (IR-NLI, WISBER)
 - Both user and system may initiate questions (Chatbots)
+
+A system that handles anaphora (pronouns and other references) must be able to match these references to entities previously mentioned in the dialog. Possibly it must also be able to remember the current place and time of discourse. This is why a system needs a ___Dialog Context___.
+
+Systems that help the user make a selection or make a choice enter a real dialog with the user. They need to plan this dialog in order to reach the intended goal efficiently. For this goal they create a ___Dialog Plan___. A plan is a hierarchical structure of goals and actions. This plan steers the conversation. It may be changed dynamically as the conversation progresses, but it must be aimed at reaching the preset goal. 
+
+In a system with a dialog plan, this structure must be made the basis of the architecture. 
 
 ## Knowledge Sources
 
@@ -903,19 +919,6 @@ Processing the intent of the sentence entails
 - updating internal state
 
 It must be noted that although "Understand the User" and "Process the Intent" are separated in this text, they are not always separate phrases in a system. Some older systems executed the user's intent __while__ analyzing the sentence. (DEACON)
-
-### Function
-
-The way an intent is handled depends on the function of the NLI of course. Historical systems have had the following functions:
-
-- Keeping a conversation (chat)
-- Help the user make a selection by making directed questions (IR-NLI)
-- Answer questions (Q & A systems)
-- Execute commands
-- Learning new knowledge
-- Check for correctness (does a statement correspond with the available data?)
-- Provide natural inferences from the sentence
-- Create a paraphrase of the sentence
 
 ### Common sense
 

@@ -1,5 +1,7 @@
 "The communication behavior of a system designed for consultation dialogs must be very flexible. Both partners may initiate new subdialogs, e.g., by asking for explanation or additional facts. In order to master this task a system must be able to infer the relevant intentions behind each user utterance. In WISBER those intentions are the basis for determining how the dialog will continue."
 
+ The chosen domain of application is financial investment. 
+
 ~~~
 C: Hello, this is WISBER
 H: I have inherited 40000 DM and want to invest this sum. 
