@@ -28,19 +28,20 @@ This text shows you some of the ideas and techniques used in this field, and hig
 
 The function of an NLI follows from this definition:
 
-> An NLI allows a user to use natural language to interact with a with a computer system to fulfill predefined goals. The system must understand the intent of the user's input, use common sense to process it, communicate with knowledge sources, and respond in a helpful manner.
+> An NLI allows a user to use natural language to interact with a computer system to meet predefined goals. The system must understand the intent of the user's input, use common sense to process it, communicate with knowledge sources, and respond in a helpful manner.
 
 The goals may be hard-coded in the system, or be available declaratively.
 
 Historical systems have had the following goals:
 
-- Answer questions (Q & A systems)
+- Answer questions (question-answering)
 - Execute commands (virtual assistants)
 - Keeping a conversation alive (chatbots)
-- Help the user make a selection by asking directed questions (decision support: IR-NLI, WISBER)
+- Help the user make a selection (decision support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)
 - Locate information in raw text sources (information retrieval) 
 - Create a paraphrase of a story (story understanding)
+- Model human cognition (cognitive model: DAYDREAMER, ACRES)
 - Prototype / proof-of-concept (show how a certain technique can be used)
 
 ## Interaction
