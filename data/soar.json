@@ -1,0 +1,18 @@
+{
+    "FUNCTION": "cognitive-model",
+    "NAME": "SOAR",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "1983",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "John E. Laird and many others"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "A Building Block Approach to a Unified Language Capability - Lehman, J., VanDyke, J. Lonsdale, D., Green, N., and Smith, M"
+    ],
+    "BOOKS": []
+}
