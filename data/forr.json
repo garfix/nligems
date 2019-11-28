@@ -1,0 +1,18 @@
+{
+    "FUNCTION": "cognitive-model",
+    "NAME": "FORR",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "1992",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Epstein, S. L. and many others"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "http://www.compsci.hunter.cuny.edu/~epstein/html/publications.html"
+    ],
+    "BOOKS": []
+}

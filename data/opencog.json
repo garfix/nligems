@@ -1,0 +1,18 @@
+{
+    "FUNCTION": "cognitive-model",
+    "NAME": "OpenCog",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "2008",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Ben Goertzel and many others"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "A General Intelligence Oriented Architecture for Embodied Natural\nLanguage Processing - Ben Goertzel et al"
+    ],
+    "BOOKS": []
+}
