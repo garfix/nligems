@@ -1,5 +1,5 @@
 {
-  "FUNCTION": "",
+  "FUNCTION": "question-answering",
     "NAME": "SIR",
   "NAME_DESC": "Semantic Information Retriever",
   "FIRST_YEAR": "1964",

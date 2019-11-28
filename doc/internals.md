@@ -34,12 +34,12 @@ The goals may be hard-coded in the system, or be available declaratively.
 
 Historical systems have had the following goals:
 
-- Answer questions (question-answering)
+- Find an exact answer (question-answering)
+- Locate information in unstructured text sources (information retrieval) 
 - Execute commands (virtual assistants)
 - Keeping a conversation alive (chatbots)
 - Help the user make a selection (decision support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)
-- Locate information in raw text sources (information retrieval) 
 - Create a paraphrase of a story (story understanding)
 - Model human cognition (cognitive model: DAYDREAMER, ACRES)
 - Prototype / proof-of-concept (show how a certain technique can be used)
@@ -1029,6 +1029,16 @@ For larger databases it is necessary to optimize the queries for speed.
 It is necessary to use aggregates (notably COUNT, MAX, MIN) for certain questions. This can be integrated in the query that is sent to the database, but it is also possible that the systems perform the aggregations on the results when they come back from the database.
 
 In some NLI's the semantic structure that represents the intent of the user coincides with the database query.
+
+#### Information extraction from text files
+
+When the knowledge source is a library of text files, the answer may be located in these phases:
+
+- determine the answer type of the question
+- locate the document (information retrieval). an index should be used for this
+- locate the relevant sentences in the document 
+- match the question to these sentences to find the answer
+- ideally process each sentence syntactically and semantically  
 
 ### Update Dialog context
 

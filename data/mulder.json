@@ -1,7 +1,7 @@
 {
-    "FUNCTION": "",
+    "FUNCTION": "question-answering",
     "NAME": "MULDER",
-    "FIRST_YEAR": "2000?",
+    "FIRST_YEAR": "2000",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
         "Cody Kwok",

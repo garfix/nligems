@@ -1,7 +1,7 @@
 {
     "FUNCTION": "question-answering",
     "NAME": "Qalc",
-    "FIRST_YEAR": "2000?",
+    "FIRST_YEAR": "2000",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
         "Ferret O.",

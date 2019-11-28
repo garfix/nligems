@@ -1,7 +1,7 @@
 {
-    "FUNCTION": "",
+    "FUNCTION": "question-answering",
     "NAME": "Lasso",
-    "FIRST_YEAR": "1999?",
+    "FIRST_YEAR": "1999",
     "LAST_YEAR": "",
     "CONTRIBUTORS": [
         "Moldovan D.",
@@ -11,6 +11,9 @@
         "Goodrum R.",
         "Girju R.",
         "Rus V."
+    ],
+    "INSTITUTIONS": [
+        "Southern Methodist University"
     ],
     "INFLUENCED_BY": [],
     "LONG_DESC": "",
