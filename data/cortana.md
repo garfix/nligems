@@ -1,3 +1,3 @@
-Microsoft's virtual assistent
+Microsoft's virtual assistant
 
 See https://en.wikipedia.org/wiki/Cortana

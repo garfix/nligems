@@ -4,7 +4,7 @@ A natural language interaction system (NLI) allows a user to interact with it us
 
 NLI is a discipline that touches the fields of computer science, artificial intelligence, linguistics, databases, information retrieval, cognitive architecture, and cognitive ergonomics. At the same time it has concepts and techniques that are unique to it. It is a complex problem field with a rich history.
 
-## Reasons for using NLI
+## Why NLI?
 
 Ever since there are computers, people have wanted to interact with them using their natural language (like English or French).
 
@@ -24,7 +24,7 @@ NLI aims to combine the strictness of SQL with the ease of use of text search.
 
 This text shows you some of the ideas and techniques used in this field, and highlights its choice points. It is certainly not necessary to use all of this information to create a useful NLI. Just pick the stuff you need.
 
-## Function
+## Functions of NLI systems
 
 The generic function of an NLI can be described like this:
 
@@ -36,7 +36,7 @@ Historical systems have had the following functions:
 
 - Find an exact answer (question-answering)
 - Locate information in unstructured text sources (information-retrieval) 
-- Interact with several services (virtual-assistant: SIRI, ALEXA)
+- Interact (command, question and teach) with an agent (virtual-assistant: SHRDLU, SIRI)
 - Keeping a conversation alive (chatbot: ELIZA, JABBERWACKY)
 - Help the user make a selection (decision-support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)

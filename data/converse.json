@@ -1,8 +1,8 @@
 {
-  "FUNCTION": "",
-    "NAME": "Converse",
-  "FIRST_YEAR": "1968",
-  "LAST_YEAR": "",
+  "FUNCTION": "virtual-assistant",
+  "NAME": "Converse",
+  "FIRST_YEAR": "1966",
+  "LAST_YEAR": "1968",
   "CONTRIBUTORS": [
     "Charles H. Kellogg"
   ],
@@ -12,7 +12,12 @@
   "INFLUENCED_BY": [],
   "LONG_DESC": "",
   "ARTICLES": [
-      "A natural language compiler for on-line data management - Kellogg (1968)"
+      "An approach to the on-line interrogation of structural files of facts using natural language - Kellogg (1966)",
+      "CONVERSE-A system for the on-line description and retrieval of structured data using natural language - Kellogg",
+      "Data management in ordinary English: examples - Kellogg",
+      "Designing artificial languages for information storage and retrieval In Borko H (Ed) Automated Language Processing",
+      "A natural language compiler for on-line data management - Kellogg (1968)",
+      "On-line translation of natural language questions into artificial language queries - Kellogg"
   ],
   "BOOKS": []
 }
