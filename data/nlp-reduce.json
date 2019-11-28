@@ -1,0 +1,18 @@
+{
+    "FUNCTION": "question-answering",
+    "NAME": "NLP-Reduce",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "2006",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Kaufmann, E.",
+        "Bernstein, A.",
+        "Zumstein, R."
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "NLP-Reduce: A naive but domain-independent natural language interface for querying ontologies - Kaufmann, Bernstein, Zumstein (2006)"
+    ],
+    "BOOKS": []
+}

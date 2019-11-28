@@ -30,14 +30,12 @@ The generic function of an NLI can be described like this:
 
 > An NLI allows a user to use natural language to interact with a computer system to meet predefined goals. The system must understand the intent of the user's input, use common sense to process it, communicate with knowledge sources, and respond in a helpful manner.
 
-The goals may be hard-coded in the system, or be available declaratively.
-
 Historical systems have had the following functions:
 
 - Find an exact answer (question-answering)
 - Locate information in unstructured text sources (information-retrieval) 
-- Interact (command, question and teach) with an agent (virtual-assistant: SHRDLU, SIRI)
-- Keeping a conversation alive (chatbot: ELIZA, JABBERWACKY)
+- Make an agent perform tasks (virtual-assistant: SHRDLU, SIRI)
+- Keep a conversation alive (chatbot: ELIZA, JABBERWACKY)
 - Help the user make a selection (decision-support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)
 - Create a paraphrase of a story (story-understanding, MARGIE, SAM)

@@ -1,6 +1,7 @@
 {
-  "FUNCTION": "",
-    "NAME": "Squall",
+  "FUNCTION": "question-answering",
+  "NAME": "Squall",
+  "NAME_DESC": "Semantic Query and Update High-Level Language",
   "FIRST_YEAR": "2013?",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [

@@ -1,0 +1,1 @@
+Ginseng provides a quasi natural language querying access to any OWL knowledge base.

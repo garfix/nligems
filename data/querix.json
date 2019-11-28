@@ -1,0 +1,18 @@
+{
+    "FUNCTION": "question-answering",
+    "NAME": "Querix",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "2006",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Kaufmann, E.",
+        "Bernstein, A.",
+        "Zumstein, R."
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Querix: A natural language interface\nto query ontologies based on clarification dialogs - Kaufmann, Bernstein, Zumstein (2006)"
+    ],
+    "BOOKS": []
+}

@@ -1,8 +1,8 @@
 {
-  "FUNCTION": "",
-    "NAME": "FREyA",
+  "FUNCTION": "question-answering",
+  "NAME": "FREyA",
   "NAME_DESC": "Feedback, Refinement and Extended Vocabulary Aggregation",
-  "FIRST_YEAR": "2010?",
+  "FIRST_YEAR": "2010",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
       "Damljanovic D.",

@@ -1,0 +1,19 @@
+{
+    "FUNCTION": "question-answering",
+    "NAME": "QuestIO",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "2008",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Tablan, V.",
+        "Damljanovic, D.",
+        "Bontcheva, K"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "A text-based query interface to owl ontologies - Damljanovic, Tablan, Bontcheva, (2008)",
+        "A natural language query interface to structured information - Tablan, Damljanovic, Bontcheva, (2008)"
+    ],
+    "BOOKS": []
+}

@@ -1,7 +1,7 @@
 {
-  "FUNCTION": "",
+  "FUNCTION": "question-answering",
     "NAME": "Panto",
-  "FIRST_YEAR": "2007?",
+  "FIRST_YEAR": "2007",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
       "Wang C.",
