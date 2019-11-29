@@ -71,6 +71,10 @@
         }
     },
     {
+        "id": "Chatbot",
+        "year": "1964",
+        "desc": "Joseph Weizenbaum invents the chatbot. Chatbots are accessible for the user and simple to create for a programmer. Many chatbots have since been created and they are still popular. In their basic form they are mindless, but they can be enhanced with other functions such as virtual assistance and decision support."},
+    {
         "id": "events",
         "year": "1967",
         "desc": "Donald Davidson first explicitly represents events as objects in a formal representation in his paper 'The logical form of action sentences'"
@@ -171,6 +175,13 @@
         "Wikipedia": "https://en.wikipedia.org/wiki/Belief-desire-intention_software_model"
       },
       "dependencyOf": ["calo"]
+    },
+    {
+        "id": "Linked Open Data",
+        "year": "2006",
+        "desc": "Tim Berners-Lee, inventor of the WWW and director of the W3C coined the term Linked (Open) Data to described structured data which is interlinked with other data over the internet. Large interconnected open databases have spawned many new question answering systems that mean to access this data. Many of these databases are triple stores that are accessible via the query language Sparql.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Linked_data"
+        }
     }
-
 ]
