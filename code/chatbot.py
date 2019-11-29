@@ -1,8 +1,35 @@
-import sys
 import random
 import re
 
-def findResponse(answer):
+def findResponse(answer, cases):
+
+    response = ""
+
+    for case in cases:
+        match = re.search(case['pattern'], answer)
+        if match:
+            # select a random response
+            response = random.choice(case['responses'])
+
+            # replace the placeholders
+            for i, group in enumerate(match.groups()):
+
+                # invert possesive pronouns
+                group = re.sub('\\bmy\\b', 'your', group)
+                group = re.sub('\\bour\\b', 'your', group)
+                group = re.sub('\\byou\\b', 'me', group)
+                group = re.sub('\\bme\\b', 'you', group)
+                group = re.sub('\\bmyself\\b', 'you', group)
+
+                response = response.replace('%' + str(i + 1), group)
+
+            # capitalize the first letter
+            response = response.capitalize()
+            break
+
+    return response
+
+def main():
 
     cases = [
         {
@@ -24,32 +51,6 @@ def findResponse(answer):
         {'pattern': 'depressed', 'responses': ['I\'m sorry to hear that you are depressed']}
     ]
 
-    for case in cases:
-        match = re.search(case['pattern'], answer)
-        if match:
-            # select a random response
-            response = random.choice(case['responses'])
-
-            # replace the placeholders
-            for i, group in enumerate(match.groups()):
-
-                # invert possesive pronouns
-                group = re.sub('\\bmy\\b', 'your', group)
-                group = re.sub('\\bour\\b', 'your', group)
-                group = re.sub('\\byou\\b', 'me', group)
-                group = re.sub('\\bme\\b', 'you', group)
-                group = re.sub('\\bmyself\\b', 'you', group)
-
-                response = response.replace('%' + str(i + 1), group)
-
-            # capitalize the first letter and return
-            return response.capitalize()
-
-    # random remarks
-    return random.choice(['Tell me more!', 'Interesting', 'OK'])
-
-def main():
-
     print "Hello there!"
 
     while True:
@@ -68,7 +69,11 @@ def main():
             break
 
         # generate a response
-        response = findResponse(answer)
+        response = findResponse(answer, cases)
+
+        # random remarks
+        if response == "":
+            response = random.choice(['Tell me more!', 'Interesting', 'OK'])
 
         print response
 
