@@ -91,20 +91,11 @@ def findResponse(answer, cases, caseMemory):
         match = re.search(case['pattern'], answer)
         if match:
 
-            # find the index of the previous response that was used
-            if case['pattern'] in caseMemory:
-                responseIndex = caseMemory[case['pattern']]
-            else:
-                responseIndex = 0
+            # get the index of the next response
+            responseIndex = getResponseIndex(case, caseMemory)
 
             # use this index to select a response
             response = case['responses'][responseIndex]
-
-            # save the new index for next time
-            if responseIndex + 1 < len(case['responses']):
-                caseMemory[case['pattern']] = responseIndex + 1
-            else:
-                caseMemory[case['pattern']] = 0
 
             # replace the placeholders
             for i, group in enumerate(match.groups()):
@@ -120,6 +111,21 @@ def findResponse(answer, cases, caseMemory):
             break
 
     return response
+
+def getResponseIndex(case, caseMemory):
+    # find the index of the previous response that was used
+    if case['pattern'] in caseMemory:
+        responseIndex = caseMemory[case['pattern']]
+    else:
+        responseIndex = 0
+
+    # save the new index for next time
+    if responseIndex + 1 < len(case['responses']):
+        caseMemory[case['pattern']] = responseIndex + 1
+    else:
+        caseMemory[case['pattern']] = 0
+
+    return responseIndex
 
 def invertPronouns(text):
     """Replaces all I pronouns to You pronouns and vice versa"""
