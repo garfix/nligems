@@ -1,6 +1,31 @@
 import random
 import re
 
+# Chatbot
+#
+# Sample code for a simple chatbot
+
+def invertPronouns(text):
+
+    inverts = {
+        'my': 'your',
+        'your': 'my',
+        'you': 'me',
+        'me': 'you',
+        'myself': 'you'
+    }
+
+    words = text.split(' ')
+    newWords = []
+
+    for word in words:
+        if word in inverts:
+            newWords.append(inverts[word])
+        else:
+            newWords.append(word)
+
+    return ' '.join(newWords)
+
 def findResponse(answer, cases):
 
     response = ""
@@ -14,12 +39,8 @@ def findResponse(answer, cases):
             # replace the placeholders
             for i, group in enumerate(match.groups()):
 
-                # invert possesive pronouns
-                group = re.sub('\\bmy\\b', 'your', group)
-                group = re.sub('\\bour\\b', 'your', group)
-                group = re.sub('\\byou\\b', 'me', group)
-                group = re.sub('\\bme\\b', 'you', group)
-                group = re.sub('\\bmyself\\b', 'you', group)
+                # invert pronouns (me -> you)
+                group = invertPronouns(group)
 
                 response = response.replace('%' + str(i + 1), group)
 
@@ -57,11 +78,10 @@ def main():
 
         # get an answer from the user
         answer = raw_input("> ")
-
         # move the answer to lower case
-        # remove punctuation marks
-        # split the words
-        answer = answer.lower().translate(None, '!?.,')
+        answer = answer.lower()
+        # remove punctuation and superfluous whitespace
+        answer = re.sub('[?!., ]+', ' ', answer)
 
         # allow the user to exit
         if answer == 'exit' or answer == 'quit':
