@@ -4,6 +4,8 @@ import re
 # Chatbot
 #
 # Sample code for a simple chatbot
+#
+#
 
 def invertPronouns(text):
 
@@ -26,15 +28,29 @@ def invertPronouns(text):
 
     return ' '.join(newWords)
 
-def findResponse(answer, cases):
+# note: caseMemory is changed by this function
+def findResponse(answer, cases, caseMemory):
 
     response = ""
 
     for case in cases:
         match = re.search(case['pattern'], answer)
         if match:
-            # select a random response
-            response = random.choice(case['responses'])
+
+            # find the index of the previous response that was used
+            if case['pattern'] in caseMemory:
+                responseIndex = caseMemory[case['pattern']]
+            else:
+                responseIndex = 0
+
+            # use this index to select a response
+            response = case['responses'][responseIndex]
+
+            # save the new index for next time
+            if responseIndex + 1 < len(case['responses']):
+                caseMemory[case['pattern']] = responseIndex + 1
+            else:
+                caseMemory[case['pattern']] = 0
 
             # replace the placeholders
             for i, group in enumerate(match.groups()):
@@ -52,11 +68,15 @@ def findResponse(answer, cases):
     return response
 
 def doTests(cases):
-    test(cases, 'idiot', 'I apologize for my shortcomings')
+    caseMemory = {}
+    test(cases, caseMemory, 'idiot', 'I apologize for my shortcomings')
+    test(cases, caseMemory, 'i like you', 'I like me too!')
+    test(cases, caseMemory, 'i like you', 'What do you like about me?')
+    test(cases, caseMemory, 'i like you', 'I like me too!')
 
-def test(cases, answer, expected):
-    print answer
-    response = findResponse(answer, cases)
+def test(cases, caseMemory, answer, expected):
+    print '# ' + answer
+    response = findResponse(answer, cases, caseMemory)
     print response
     if response != expected:
         print 'ERROR!'
@@ -66,7 +86,7 @@ def main():
     cases = [
         {
             'pattern': 'i like (.*)',
-            'responses': ['i like %1 too!', 'what do you like about it?']
+            'responses': ['i like %1 too!', 'what do you like about %1?']
         },
         {
             'pattern': 'i don\'t like (.*)',
@@ -83,6 +103,8 @@ def main():
         {'pattern': 'depressed', 'responses': ['I\'m sorry to hear that you are depressed']},
         {'pattern': 'idiot', 'responses': ['I apologize for my shortcomings']},
     ]
+
+    caseMemory = {}
 
     print "Hello there!"
 
@@ -110,7 +132,7 @@ def main():
             answer = re.sub('[ ]+', ' ', clause)
 
             # generate a response
-            response = findResponse(answer, cases)
+            response = findResponse(answer, cases, caseMemory)
 
             # stop evaluating other clauses if a good response was found
             if response != '':
