@@ -42,6 +42,7 @@ def findResponse(answer, cases):
                 # invert pronouns (me -> you)
                 group = invertPronouns(group)
 
+                # replace placeholder
                 response = response.replace('%' + str(i + 1), group)
 
             # capitalize the first letter
@@ -49,6 +50,16 @@ def findResponse(answer, cases):
             break
 
     return response
+
+def doTests(cases):
+    test(cases, 'idiot', 'I apologize for my shortcomings')
+
+def test(cases, answer, expected):
+    print answer
+    response = findResponse(answer, cases)
+    print response
+    if response != expected:
+        print 'ERROR!'
 
 def main():
 
@@ -69,7 +80,8 @@ def main():
             'pattern': '(.*) are all (.*)',
             'responses': ['in what way?', 'i\'m sure there are exceptions']
         },
-        {'pattern': 'depressed', 'responses': ['I\'m sorry to hear that you are depressed']}
+        {'pattern': 'depressed', 'responses': ['I\'m sorry to hear that you are depressed']},
+        {'pattern': 'idiot', 'responses': ['I apologize for my shortcomings']},
     ]
 
     print "Hello there!"
@@ -80,19 +92,32 @@ def main():
         answer = raw_input("> ")
         # move the answer to lower case
         answer = answer.lower()
-        # remove punctuation and superfluous whitespace
-        answer = re.sub('[?!., ]+', ' ', answer)
 
         # allow the user to exit
         if answer == 'exit' or answer == 'quit':
             print "Bye!"
             break
 
-        # generate a response
-        response = findResponse(answer, cases)
+        # self-test
+        if answer == 'test':
+            doTests(cases)
+            continue
 
-        # random remarks
-        if response == "":
+        # treat all punctuation marks as clause separators
+        for clause in re.split('[.,!?]+', answer):
+
+            # remove superfluous whitespace
+            answer = re.sub('[ ]+', ' ', clause)
+
+            # generate a response
+            response = findResponse(answer, cases)
+
+            # stop evaluating other clauses if a good response was found
+            if response != '':
+                break
+
+        # if no good remark could be found, at least say something
+        if response == '':
             response = random.choice(['Tell me more!', 'Interesting', 'OK'])
 
         print response
