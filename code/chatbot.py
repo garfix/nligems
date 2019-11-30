@@ -19,6 +19,10 @@ def main():
             'responses': ['i like %1 too!', 'what do you like about %1?']
         },
         {
+            'pattern': '(.*) you (.*) me',
+            'responses': ['what makes you think that I %2 you?']
+        },
+        {
             'pattern': 'i don\'t like (.*)',
             'responses': ['why don\'t do you like %1?']
         },
@@ -134,7 +138,7 @@ def findResponse(answer, cases, caseMemory):
                 response = response.replace('%' + str(i + 1), group)
 
             # capitalize the first letter
-            response = response.capitalize()
+            response = response[0].upper() + response[1:]
             break
 
     return response
