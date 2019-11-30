@@ -13,7 +13,7 @@ The bot remembers which responses have been given, rather than giving a random r
 
 def main():
 
-    cases = [
+    cases = (
         {
             'pattern': 'i like (.*)',
             'responses': ['i like %1 too!', 'what do you like about %1?']
@@ -36,12 +36,12 @@ def main():
         },
         {'pattern': 'depressed', 'responses': ['I\'m sorry to hear that you are depressed']},
         {'pattern': 'idiot', 'responses': ['I apologize for my shortcomings']},
-    ]
+    )
 
     caseMemory = {}
 
     print "Hello there!"
-    print "Let's have a chat. Type 'exit' or 'quit' to leave. Type 'test' to run some tests"
+    print "Let's have a chat. Type 'exit' or 'quit' to leave. Type 'test' to run some tests."
 
     while True:
 
@@ -78,28 +78,6 @@ def main():
             response = random.choice(['Tell me more!', 'Interesting', 'OK'])
 
         print response
-
-def invertPronouns(text):
-    """Replaces all I pronouns to You pronouns and vice versa"""
-
-    inverts = {
-        'my': 'your',
-        'your': 'my',
-        'you': 'me',
-        'me': 'you',
-        'myself': 'you'
-    }
-
-    words = text.split(' ')
-    newWords = []
-
-    for word in words:
-        if word in inverts:
-            newWords.append(inverts[word])
-        else:
-            newWords.append(word)
-
-    return ' '.join(newWords)
 
 def findResponse(answer, cases, caseMemory):
     """Returns a textual response to 'answer'.
@@ -142,6 +120,28 @@ def findResponse(answer, cases, caseMemory):
             break
 
     return response
+
+def invertPronouns(text):
+    """Replaces all I pronouns to You pronouns and vice versa"""
+
+    inverts = {
+        'my': 'your',
+        'your': 'my',
+        'you': 'me',
+        'me': 'you',
+        'myself': 'you'
+    }
+
+    words = text.split(' ')
+    newWords = []
+
+    for word in words:
+        if word in inverts:
+            newWords.append(inverts[word])
+        else:
+            newWords.append(word)
+
+    return ' '.join(newWords)
 
 def doTests(cases):
     caseMemory = {}
