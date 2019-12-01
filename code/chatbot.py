@@ -6,7 +6,7 @@ Sample code for a simple chatbot
 
 Possible responses are declared by cases. Each case has a pattern and several possible responses.
 
-The user's input sentence is split into clauses on commas and punctuation marks. Each clause is treated separately.
+The user's input sentence is split into parts on commas and punctuation marks. Each part is treated separately.
 
 The bot remembers which responses have been given, rather than giving a random response.
 """
@@ -60,16 +60,16 @@ def main():
             doTests(cases)
             continue
 
-        # treat all punctuation marks as clause separators
-        for clause in re.split('[.,!?]+', answer):
+        # treat all punctuation marks as separators
+        for answerPart in re.split('[.,!?]+', answer):
 
             # remove superfluous whitespace
-            answer = re.sub('[ ]+', ' ', clause)
+            answerPart = re.sub('[ ]+', ' ', answerPart)
 
             # generate a response
-            response = findResponse(answer, cases, caseMemory)
+            response = findResponse(answerPart, cases, caseMemory)
 
-            # stop evaluating other clauses if a good response was found
+            # stop evaluating other parts if a good response was found
             if response != '':
                 break
 
