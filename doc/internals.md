@@ -93,7 +93,7 @@ When a user interacts with a system, this can be considered to be a dialog. A di
 - The system directs the questions (IR-NLI, WISBER)
 - Both user and system may initiate questions (Chatbots)
 
-A system that handles anaphora (pronouns and other references) must be able to match these references to entities previously mentioned in the dialog. Possibly it must also be able to remember the current place and time of discourse. This is why a system needs a ___Dialog Context___.
+A system that handles anaphora (pronouns and other references) must be able to match these references to entities previously mentioned in the dialog. That's why a ___Dialog History___ is kept. Possibly it must also be able to remember the current place and time of discourse. This is why a system needs a ___Dialog Context___.
 
 Systems that help the user make a selection or make a choice enter a real dialog with the user. They need to plan this dialog in order to reach the intended goal efficiently. For this goal they create a ___Dialog Plan___. A plan is a hierarchical structure of goals and actions. This plan steers the conversation. It may be changed dynamically as the conversation progresses, but it must be aimed at reaching the preset goal.
 
@@ -162,6 +162,10 @@ The dialog context holds information about the active dialog with a user. It may
 
 - recently mentioned entities (for anaphora resolution)
 - the current place of self and others in time and space: deictic center
+
+#### Dialog History
+
+A track of all (or the most recent) previous sentences in the dialog.
 
 #### Dialog Plan
 
@@ -1057,6 +1061,10 @@ Common sense: From the sentence a user enters (e.g. "John went into a restaurant
 ### Update Dialog plan
 
 In a system that helps the user make a selection, the system usually takes the initiative for questions. It has a dialog plan to guide it. When the user has answered the system's question, the plan needs to be updated and a new question prepared.
+
+#### Update dialog history
+
+Add the user's sentence and the systems's response. 
 
 ### Update mental models
 
