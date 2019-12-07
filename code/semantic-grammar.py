@@ -11,5 +11,6 @@ tokens = tokenizer.tokenize(input)
 
 print tokens
 
-parser.parse(tokens)
+trees = parser.parse(tokens)
 
+print trees
