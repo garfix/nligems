@@ -1,5 +1,5 @@
 """
-    A rule like this
+    A syntactic rewrite rule with semantic attachment (sense) like this
         vgp(P1) -> put(P1) np(E1) into(P1) np(E2),                      sense: put_into(P1, E1, E2)
 """
 class GrammarRule:
@@ -12,28 +12,28 @@ class GrammarRule:
         self.entityVariables = entityVariables
         self.sense = sense
 
-    def getAntecedent():
+    def getAntecedent(self):
 	    return self.syntacticCategories[0]
 
-    def getConsequents():
+    def getConsequents(self):
 	    return self.syntacticCategories[1:]
 
-    def getConsequent(i):
-	    return self.syntacticCategories[i+1]
+    def getConsequent(self, i):
+	    return self.syntacticCategories[i + 1]
 
-    def getConsequentCount():
+    def getConsequentCount(self):
 	    return len(self.syntacticCategories) - 1
 
-    def equals(otherRule):
+    def equals(self, otherRule):
         if len(self.syntacticCategories) != len(otherRule.syntacticCategories):
     		return false
         for i, v in enumerate(self.syntacticCategories):
             if v != otherRule.syntacticCategories[i]:
-                return false
-    	return true
+                return False
+    	return True
 
-    def getConsequentIndexByVariable(variable):
+    def getConsequentIndexByVariable(self, variable):
         for i, entityVariable in enumerate(rule.entityVariables[1:]):
             if entityVariable == variable:
-                return (i, true)
-        return (0, false)
+                return (i, True)
+        return (0, False)

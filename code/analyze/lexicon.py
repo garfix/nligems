@@ -1,3 +1,6 @@
 class Lexicon:
-    def abc():
-        return 1
+    def findRules(self):
+        return []
+
+    def getLexItem(self, word, consequent):
+        return False

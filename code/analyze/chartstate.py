@@ -17,3 +17,6 @@ class ChartState:
 
     def isLeaf(self):
         return len(self.childStateIds) == 0
+
+    def isIncomplete(self):
+        return self.dotPosition < self.rule.getConsequentCount() + 1
