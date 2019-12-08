@@ -37,3 +37,14 @@ class GrammarRule:
             if entity_variable == variable:
                 return (i, True)
         return (0, False)
+
+    def __repr__(self):
+        s = ""
+        sep = ""
+        for i, cat in enumerate(self.syntactic_categories):
+            s = s + sep + self.syntactic_categories[i] + "(" + self.entity_variables[i] + ")"
+            if i == 0:
+                sep = " -> "
+            elif i == 1:
+                sep = " "
+        return s

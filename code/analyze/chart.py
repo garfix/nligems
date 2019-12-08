@@ -25,7 +25,7 @@ class Chart:
 
     def is_state_in_chart(self, state, position):
         for _, present_state in enumerate(self.states[position]):
-            if present_state.rule.Equals(state.rule) and \
+            if present_state.rule.equals(state.rule) and \
                 present_state.dot_position == state.dot_position and \
                 present_state.start_word_index == state.start_word_index and \
                 present_state.end_word_index == state.end_word_index:

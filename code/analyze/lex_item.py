@@ -8,3 +8,6 @@ class LexItem:
             self.canonical_form = form
         else:
            self.canonical_form = canonical_form
+
+    def __repr__(self):
+        return "[" + self.form + ", " + self.canonical_form + "]"
