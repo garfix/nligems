@@ -1,9 +1,14 @@
 from chart import Chart
 from chartstate import ChartState
 from grammarrule import GrammarRule
+from extracttrees import extractTrees
 
 """
 This Earley parser reads input (an array of tokens) and returns a set of parse trees.
+
+Earley's top-down chart parsing algorithm as described in
+"Speech and Language Processing" - Daniel Jurafsky & James H. Martin
+It is the basic algorithm. Semantics (sense) is only calculated after the parse is complete.
 """
 class Parser:
     lexicon = None
@@ -18,9 +23,9 @@ class Parser:
         chart = self.buildChart(words)
 
         if chart.isOk():
-            trees = self.extractTrees(chart)
+            trees = extractTrees(chart)
         else:
-            [lastParsedWordIndex, nextWord] = self.findLastCompletedWordIndex(chart)
+            lastParsedWordIndex, nextWord = chart.findLastCompletedWordIndex()
             if nextWord != "":
                 error = "Incomplete. Could not parse word: " + nextWord
             elif len(words) == 0:
@@ -28,7 +33,7 @@ class Parser:
             elif lastParsedWordIndex == len(words) - 1:
                 error = "All words are parsed but some word or token is missing to make the sentence complete."
             trees = []
-        return [trees, chart.getError()]
+        return trees, chart.getError()
 
     def buildChart(self, words):
         chart = Chart(words)
@@ -39,7 +44,7 @@ class Parser:
      	chart.enqueue(initialState, 0)
 
      	# go through all word positions in the sentence
-     	# note: the end value in Python's range() is one more than the last created index
+     	# note: the end value in Python's range() is 1 larger than the last created index
      	for i in range(0, wordCount + 1):
 
      		# go through all chart entries in this position (entries will be added while we're in the loop)
@@ -70,8 +75,8 @@ class Parser:
 
       	return chart
 
-    # Adds all entries to the chart that have the current consequent of $state as their antecedent.
     def predict(self, chart, state):
+        """Adds all entries to the chart that have the current consequent of $state as their antecedent"""
 
         nextConsequent = state.rule.getConsequent(state.dotPosition - 1)
         endWordIndex = state.endWordIndex
@@ -81,11 +86,12 @@ class Parser:
             predictedState = ChartState(newRule, 1, endWordIndex, endWordIndex)
             chart.enqueue(predictedState, endWordIndex)
 
-    # If the current consequent in state (which non-abstract, like noun, verb, adjunct) is one
-    # of the parts of speech associated with the current word in the sentence,
-    # then a new, completed, entry is added to the chart: (cat => word)
     def scan(self, chart, state):
-
+        """
+        If the current consequent in state (which non-abstract, like noun, verb, adjunct) is one
+        of the parts of speech associated with the current word in the sentence,
+        then a new, completed, entry is added to the chart: (cat => word)
+        """
         nextConsequent = state.rule.getConsequent(state.dotPosition - 1)
         endWordIndex = state.endWordIndex
         endWord = chart.words[endWordIndex]
@@ -96,14 +102,15 @@ class Parser:
             scannedState = ChartState(rule, 2, endWordIndex, endWordIndex + 1)
             chart.enqueue(scannedState, endWordIndex + 1)
 
-    # This function is called whenever a state is completed.
-    # Its purpose is to advance other states.
-    #
-    # For example:
-    # - this state is NP -> noun, it has been completed
-    # - now proceed all other states in the chart that are waiting for an NP at the current position
     def complete(self, chart, completedState):
+        """
+        This function is called whenever a state is completed.
+        Its purpose is to advance other states.
 
+        For example:
+         - this state is NP -> noun, it has been completed
+         - now proceed all other states in the chart that are waiting for an NP at the current position
+        """
         treeComplete = False
         completedAntecedent = completedState.rule.getAntecedent()
         for i, chartedState in enumerate(chart.states[completedState.startWordIndex]):
@@ -125,7 +132,4 @@ class Parser:
             chart.enqueue(advancedState, completedState.endWordIndex)
 
         return treeComplete
-
-    def extractTrees(self, chart):
-        return ()
 
