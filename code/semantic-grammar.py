@@ -5,9 +5,9 @@ input = "put all blue blocks on the red block"
 tokenizer = Tokenizer()
 
 lexicon = Lexicon()
-lexicon.addLexItem(LexItem('put'))
-lexicon.addLexItem(LexItem('all'))
-lexicon.addLexItem(LexItem('blue'))
+lexicon.add_lex_item(LexItem('put'))
+lexicon.add_lex_item(LexItem('all'))
+lexicon.add_lex_item(LexItem('blue'))
 
 grammar = Grammar()
 parser = Parser(lexicon, grammar)

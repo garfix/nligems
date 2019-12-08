@@ -1,10 +1,10 @@
 class LexItem:
     form = None
-    canonicalForm = None
+    canonical_form = None
 
-    def __init__(self, form, canonicalForm = None):
+    def __init__(self, form, canonical_form = None):
         self.form = form
-        if canonicalForm == None:
-            self.canonicalForm = form
+        if canonical_form == None:
+            self.canonical_form = form
         else:
-           self.canonicalForm = canonicalForm
+           self.canonical_form = canonical_form

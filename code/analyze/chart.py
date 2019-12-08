@@ -4,68 +4,68 @@ class Chart:
     states = None
     words = None
 
-    sentenceStates = None
-    indexedStates = None
-    stateIdGenerator = None
+    sentence_states = None
+    indexed_states = None
+    state_id_generator = None
 
     error = ""
 
     def __init__(self, words):
         self.states = [[] for i in range(len(words) + 1)]
         self.words = words
-        self.sentenceStates = ()
-        self.indexedStates = {}
-        self.stateIdGenerator = 0
+        self.sentence_states = ()
+        self.indexed_states = {}
+        self.state_id_generator = 0
 
-    def isOk(self):
+    def is_ok(self):
         return self.error == ""
 
-    def getError(self):
+    def get_error(self):
         return self.error
 
-    def isStateInChart(self, state, position):
-        for _, presentState in enumerate(self.states[position]):
-            if presentState.rule.Equals(state.rule) and \
-                presentState.dotPosition == state.dotPosition and \
-                presentState.startWordIndex == state.startWordIndex and \
-                presentState.endWordIndex == state.endWordIndex:
+    def is_state_in_chart(self, state, position):
+        for _, present_state in enumerate(self.states[position]):
+            if present_state.rule.Equals(state.rule) and \
+                present_state.dot_position == state.dot_position and \
+                present_state.start_word_index == state.start_word_index and \
+                present_state.end_word_index == state.end_word_index:
                 return True
         return False
 
     def enqueue(self, state, position):
-    	if not self.isStateInChart(state, position):
-		    self.pushState(state, position)
+    	if not self.is_state_in_chart(state, position):
+		    self.push_state(state, position)
 
-    def pushState(self, state, position):
+    def push_state(self, state, position):
         # index the state for later lookup
-        self.stateIdGenerator = self.stateIdGenerator + 1
-        state.id = self.stateIdGenerator
-        self.indexedStates[state.id] = state
+        self.state_id_generator = self.state_id_generator + 1
+        state.id = self.state_id_generator
+        self.indexed_states[state.id] = state
 
         self.states[position].append(state)
 
-    def storeStateInfo(self, completedState, chartedState, advancedState):
+    def store_state_info(self, completed_state, charted_state, advanced_state):
 
-        treeComplete = False
+        tree_complete = False
 
         # store the state's "children" to ease building the parse trees from the packed forest
-        chartedState.childStateIds.append(completedState.id)
+        charted_state.child_state_ids.append(completed_state.id)
 
         # rule complete?
-        if chartedState.dotPosition == chartedState.rule.getConsequentCount():
+        if charted_state.dot_position == charted_state.rule.get_consequent_count():
 
             # complete sentence?
-            if chartedState.rule.getAntecedent() == "gamma":
+            if charted_state.rule.get_antecedent() == "gamma":
 
                 # that matches all words?
-                if completedState.endWordIndex == len(chart.words):
+                if completed_state.end_word_index == len(chart.words):
 
-                    self.sentenceStates.append(advancedState)
+                    self.sentence_states.append(advanced_state)
 
                     # set a flag to allow the Parser to stop at the first complete parse
-                    treeComplete = true
+                    tree_complete = true
 
-        return treeComplete, advancedState
+        return tree_complete, advanced_state
 
-    def findLastCompletedWordIndex(self):
+    def find_last_completed_word_index(self):
         return ""

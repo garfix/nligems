@@ -1,3 +1,3 @@
 class Grammar:
-    def findRules(self, consequent):
+    def find_rules(self, consequent):
         return []

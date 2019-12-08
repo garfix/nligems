@@ -1,2 +1,0 @@
-def extractTrees(chart):
-    return ()
