@@ -1,7 +1,9 @@
 import random
 import re
 
-"""Chatbot
+"""
+Chatbot
+
 Sample code for a simple chatbot
 
 Possible responses are declared by cases. Each case has a pattern and several possible responses.
@@ -38,7 +40,7 @@ def main():
         {'pattern': 'idiot', 'responses': ['I apologize for my shortcomings']},
     )
 
-    caseMemory = {}
+    case_memory = {}
 
     print "Hello there!"
     print "Let's have a chat. Type 'exit' or 'quit' to leave. Type 'test' to run some tests."
@@ -57,17 +59,17 @@ def main():
 
         # self-test
         if answer == 'test':
-            doTests(cases)
+            do_tests(cases)
             continue
 
         # treat all punctuation marks as separators
-        for answerPart in re.split('[.,!?]+', answer):
+        for answer_part in re.split('[.,!?]+', answer):
 
             # remove superfluous whitespace
-            answerPart = re.sub('[ ]+', ' ', answerPart)
+            answer_part = re.sub('[ ]+', ' ', answer_part)
 
             # generate a response
-            response = findResponse(answerPart, cases, caseMemory)
+            response = find_response(answer_part, cases, case_memory)
 
             # stop evaluating other parts if a good response was found
             if response != '':
@@ -79,10 +81,10 @@ def main():
 
         print response
 
-def findResponse(answer, cases, caseMemory):
+def find_response(answer, cases, case_memory):
     """Returns a textual response to 'answer'.
     cases provide possible answers
-    caseMemory holds per case an index of the last given response. It is changed by this function.
+    case_memory holds per case an index of the last given response. It is changed by this function.
     """
 
     response = ""
@@ -92,16 +94,16 @@ def findResponse(answer, cases, caseMemory):
         if match:
 
             # get the index of the next response
-            responseIndex = getResponseIndex(case, caseMemory)
+            response_index = get_response_index(case, case_memory)
 
             # use this index to select a response
-            response = case['responses'][responseIndex]
+            response = case['responses'][response_index]
 
             # replace the placeholders
             for i, group in enumerate(match.groups()):
 
                 # invert pronouns (me -> you)
-                group = invertPronouns(group)
+                group = invert_pronouns(group)
 
                 # replace placeholder
                 response = response.replace('%' + str(i + 1), group)
@@ -112,22 +114,22 @@ def findResponse(answer, cases, caseMemory):
 
     return response
 
-def getResponseIndex(case, caseMemory):
+def get_response_index(case, case_memory):
     # find the index of the previous response that was used
-    if case['pattern'] in caseMemory:
-        responseIndex = caseMemory[case['pattern']]
+    if case['pattern'] in case_memory:
+        response_index = case_memory[case['pattern']]
     else:
-        responseIndex = 0
+        response_index = 0
 
     # save the new index for next time
-    if responseIndex + 1 < len(case['responses']):
-        caseMemory[case['pattern']] = responseIndex + 1
+    if response_index + 1 < len(case['responses']):
+        case_memory[case['pattern']] = response_index + 1
     else:
-        caseMemory[case['pattern']] = 0
+        case_memory[case['pattern']] = 0
 
-    return responseIndex
+    return response_index
 
-def invertPronouns(text):
+def invert_pronouns(text):
     """Replaces all I pronouns to You pronouns and vice versa"""
 
     inverts = {
@@ -139,26 +141,26 @@ def invertPronouns(text):
     }
 
     words = text.split(' ')
-    newWords = []
+    new_words = []
 
     for word in words:
         if word in inverts:
-            newWords.append(inverts[word])
+            new_words.append(inverts[word])
         else:
-            newWords.append(word)
+            new_words.append(word)
 
-    return ' '.join(newWords)
+    return ' '.join(new_words)
 
-def doTests(cases):
-    caseMemory = {}
-    test(cases, caseMemory, 'idiot', 'I apologize for my shortcomings')
-    test(cases, caseMemory, 'i like you', 'I like me too!')
-    test(cases, caseMemory, 'i like you', 'What do you like about me?')
-    test(cases, caseMemory, 'i like you', 'I like me too!')
+def do_tests(cases):
+    case_memory = {}
+    test(cases, case_memory, 'idiot', 'I apologize for my shortcomings')
+    test(cases, case_memory, 'i like you', 'I like me too!')
+    test(cases, case_memory, 'i like you', 'What do you like about me?')
+    test(cases, case_memory, 'i like you', 'I like me too!')
 
-def test(cases, caseMemory, answer, expected):
+def test(cases, case_memory, answer, expected):
     print '# ' + answer
-    response = findResponse(answer, cases, caseMemory)
+    response = find_response(answer, cases, case_memory)
     print response
     if response != expected:
         print 'ERROR!'
