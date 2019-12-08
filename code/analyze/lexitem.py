@@ -1,7 +1,10 @@
 class LexItem:
     form = None
-    partOfSpeech = None
+    canonicalForm = None
 
-    def __init__(self, form, partOfSpeech):
+    def __init__(self, form, canonicalForm = None):
         self.form = form
-        self.partOfSpeech = partOfSpeech
+        if canonicalForm == None:
+            self.canonicalForm = form
+        else:
+           self.canonicalForm = canonicalForm

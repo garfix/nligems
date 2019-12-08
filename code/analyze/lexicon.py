@@ -7,11 +7,11 @@ class Lexicon:
             self.lexItems[lexItem.form] = []
         self.lexItems[lexItem.form].append(lexItem)
 
-    def getLexItem(self, word, partOfSpeech):
-        if not word in self.lexItems:
+    def getLexItem(self, form, canonicalForm):
+        if not form in self.lexItems:
             return False
-        for lexItem in self.lexItems[word]:
-            if lexItem.partOfSpeech == partOfSpeech:
+        for lexItem in self.lexItems[form]:
+            if lexItem.canonicalForm == canonicalForm:
                 return True
         return False
 
