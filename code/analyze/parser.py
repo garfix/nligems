@@ -128,9 +128,7 @@ class Parser:
             advanced_state = ChartState(rule, dot_position + 1, charted_state.start_word_index, completed_state.end_word_index)
 
             # store extra information to make it easier to extract parse trees later
-            print charted_state
             tree_complete, advanced_state = chart.store_state_info(completed_state, charted_state, advanced_state)
-            print charted_state
             #if tree_complete:
             #    break
             tree_complete = False

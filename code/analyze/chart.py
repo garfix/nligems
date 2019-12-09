@@ -68,7 +68,27 @@ class Chart:
         return tree_complete, advanced_state
 
     def find_last_completed_word_index(self):
-        return ""
+        next_word = ""
+        last_index = -1
+
+        # find the last completed nextWord
+        i = len(chart.states) - 1
+        done = False
+        while i >= 0:
+            states = chart.states[i]
+            for state in states:
+                if not state.is_incomplete():
+                    last_index = state.end_word_index - 1
+                    done = True
+                    break
+            if done:
+                break
+            i = i - 1
+
+        if last_index <= len(chart.words) - 2:
+        	nextWord = chart.words[last_index + 1]
+
+        return last_index, next_word
 
     def __repr__(self):
         return "{states: " + repr(self.states) + "}"

@@ -2,9 +2,7 @@ from node import Node
 
 def extract_trees(chart):
     trees = []
-    print 'extract'
     for i in range(len(chart.sentence_states)):
-        print chart.sentence_states[i]
         rootStateId = chart.sentence_states[i].child_state_ids[0]
         root = chart.indexed_states[rootStateId]
         tree = extract_parse_tree_branch(chart, root)
