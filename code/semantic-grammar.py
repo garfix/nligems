@@ -1,8 +1,6 @@
-from analyze import Tokenizer, Parser, Grammar, GrammarRule, Lexicon, LexItem
+from analyze import Analyzer, Grammar, GrammarRule, Lexicon, LexItem
 
 input = "put all blue blocks on the red block"
-
-tokenizer = Tokenizer()
 
 lexicon = Lexicon()
 lexicon.add_lex_item(LexItem('put'))
@@ -41,12 +39,8 @@ grammar.add_grammar_rule(GrammarRule(('adjective', 'red'), ('A1', 'A1'), ()))
 # adjective(A1) -> blue(A1)
 grammar.add_grammar_rule(GrammarRule(('adjective', 'blue'), ('A1', 'A1'), ()))
 
-parser = Parser(lexicon, grammar)
+analyzer = Analyzer(lexicon, grammar)
 
-tokens = tokenizer.tokenize(input)
-
-print tokens
-
-trees = parser.parse(tokens)
+trees = analyzer.get_trees(input)
 
 print trees

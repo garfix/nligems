@@ -1,7 +1,6 @@
 from chart import Chart
 from chart_state import ChartState
 from grammar_rule import GrammarRule
-from extract_trees import extract_trees
 
 """
 This Earley parser reads input (an array of tokens) and returns a set of parse trees.
@@ -19,24 +18,6 @@ class Parser:
         self.grammar = grammar
 
     def parse(self, words):
-        """return an array with 0) parse trees and 1) error"""
-        chart = self.build_chart(words)
-        error = ""
-
-        trees = extract_trees(chart)
-
-        if len(trees) == 0:
-            last_parsed_word_index, next_word = chart.find_last_completed_word_index()
-            if next_word != "":
-                error = "Incomplete. Could not parse word: " + next_word
-            elif len(words) == 0:
-                error = "No sentence given."
-            elif last_parsed_word_index == len(words) - 1:
-                error = "All words are parsed but some word or token is missing to make the sentence complete."
-            trees = []
-        return trees, error
-
-    def build_chart(self, words):
         """the core algorithm"""
         chart = Chart(words)
         word_count = len(words)
@@ -46,11 +27,9 @@ class Parser:
      	chart.enqueue(initial_state, 0)
 
      	# go through all word positions in the sentence
-     	# note: the end value in Python's range() is 1 larger than the last created index
      	for i in range(0, word_count + 1):
 
      		# go through all chart entries in this position (entries will be added while we're in the loop)
-     		#for j in range(0, len(chart.states[i])):
      		j = 0
      		while j < len(chart.states[i]):
 
