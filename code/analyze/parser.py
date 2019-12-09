@@ -70,10 +70,7 @@ class Parser:
      			else:
 
      				# proceed all other entries in the chart that have this entry's antecedent as their next consequent
-     				tree_complete = self.complete(chart, state)
-
-     				if tree_complete:
-     					return chart
+     				self.complete(chart, state)
 
      			j = j + 1
 
@@ -115,7 +112,6 @@ class Parser:
          - this state is NP -> noun, it has been completed
          - now proceed all other states in the chart that are waiting for an NP at the current position
         """
-        tree_complete = False
         completed_antecedent = completed_state.rule.get_antecedent()
         for i, charted_state in enumerate(chart.states[completed_state.start_word_index]):
 
@@ -129,11 +125,6 @@ class Parser:
             advanced_state = ChartState(rule, dot_position + 1, charted_state.start_word_index, completed_state.end_word_index)
 
             # store extra information to make it easier to extract parse trees later
-            tree_complete, advanced_state = chart.store_state_info(completed_state, charted_state, advanced_state)
-            #if tree_complete:
-            #    break
-            tree_complete = False
+            advanced_state = chart.store_state_info(completed_state, charted_state, advanced_state)
 
             chart.enqueue(advanced_state, completed_state.end_word_index)
-
-        return tree_complete

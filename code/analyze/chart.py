@@ -38,8 +38,6 @@ class Chart:
 
     def store_state_info(self, completed_state, charted_state, advanced_state):
 
-        tree_complete = False
-
         # store the state's "children" to ease building the parse trees from the packed forest
         advanced_state.child_state_ids = charted_state.child_state_ids + [completed_state.id]
 
@@ -54,10 +52,7 @@ class Chart:
 
                     self.sentence_states.append(advanced_state)
 
-                    # set a flag to allow the Parser to stop at the first complete parse
-                    #tree_complete = True
-
-        return tree_complete, advanced_state
+        return advanced_state
 
     def find_last_completed_word_index(self):
         next_word = ""
