@@ -8,20 +8,12 @@ class Chart:
     indexed_states = None
     state_id_generator = None
 
-    error = ""
-
     def __init__(self, words):
         self.states = [[] for i in range(len(words) + 1)]
         self.words = words
         self.sentence_states = []
         self.indexed_states = {}
         self.state_id_generator = 0
-
-    def is_ok(self):
-        return self.error == ""
-
-    def get_error(self):
-        return self.error
 
     def is_state_in_chart(self, state, position):
         for _, present_state in enumerate(self.states[position]):
@@ -72,10 +64,10 @@ class Chart:
         last_index = -1
 
         # find the last completed nextWord
-        i = len(chart.states) - 1
+        i = len(self.states) - 1
         done = False
         while i >= 0:
-            states = chart.states[i]
+            states = self.states[i]
             for state in states:
                 if not state.is_incomplete():
                     last_index = state.end_word_index - 1
@@ -85,8 +77,8 @@ class Chart:
                 break
             i = i - 1
 
-        if last_index <= len(chart.words) - 2:
-        	nextWord = chart.words[last_index + 1]
+        if last_index <= len(self.words) - 2:
+        	next_word = self.words[last_index + 1]
 
         return last_index, next_word
 

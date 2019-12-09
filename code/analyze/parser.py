@@ -21,10 +21,11 @@ class Parser:
     def parse(self, words):
         """return an array with 0) parse trees and 1) error"""
         chart = self.build_chart(words)
+        error = ""
 
-        if chart.is_ok():
-            trees = extract_trees(chart)
-        else:
+        trees = extract_trees(chart)
+
+        if len(trees) == 0:
             last_parsed_word_index, next_word = chart.find_last_completed_word_index()
             if next_word != "":
                 error = "Incomplete. Could not parse word: " + next_word
@@ -33,7 +34,7 @@ class Parser:
             elif last_parsed_word_index == len(words) - 1:
                 error = "All words are parsed but some word or token is missing to make the sentence complete."
             trees = []
-        return trees, chart.get_error()
+        return trees, error
 
     def build_chart(self, words):
         """the core algorithm"""
