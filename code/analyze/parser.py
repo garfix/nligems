@@ -36,10 +36,11 @@ class Parser:
         return trees, chart.get_error()
 
     def build_chart(self, words):
+        """the core algorithm"""
         chart = Chart(words)
         word_count = len(words)
 
-        # gamma(g1) => s(s1)
+        # gamma(g1) -> s(s1)
      	initial_state = ChartState(GrammarRule(("gamma", "s"), ("g1", "s1"), ()), 1, 0, 0)
      	chart.enqueue(initial_state, 0)
 
@@ -48,7 +49,9 @@ class Parser:
      	for i in range(0, word_count + 1):
 
      		# go through all chart entries in this position (entries will be added while we're in the loop)
-     		for j in range(0, len(chart.states[i])):
+     		#for j in range(0, len(chart.states[i])):
+     		j = 0
+     		while j < len(chart.states[i]):
 
      			# a state is a complete entry in the chart (rule, dot_position, start_word_index, end_word_index)
      			state = chart.states[i][j]
@@ -56,13 +59,11 @@ class Parser:
      			# check if the entry is parsed completely
      			if state.is_incomplete():
 
-     				# note: we make no distinction between part-of-speech and not part-of-speech; a category can be both
-
      				# add all entries that have this abstract consequent as their antecedent
      				self.predict(chart, state)
 
-     				# if the current word in the sentence has this part-of-speech, then
-     				# we add a completed entry to the chart (part-of-speech => word)
+     				# if the current word in the sentence has this form, then
+     				# we add a completed entry to the chart
      				if i < word_count:
      					self.scan(chart, state)
      			else:
@@ -72,6 +73,8 @@ class Parser:
 
      				if tree_complete:
      					return chart
+
+     			j = j + 1
 
       	return chart
 
@@ -98,7 +101,7 @@ class Parser:
 
         lex_item_found = self.lexicon.get_lex_item(end_word, next_consequent)
         if lex_item_found:
-            rule = Grammar_rule((next_consequent, end_word), ("a", "b"), ())
+            rule = GrammarRule((next_consequent, end_word), ("a", "b"), ())
             scanned_state = ChartState(rule, 2, end_word_index, end_word_index + 1)
             chart.enqueue(scanned_state, end_word_index + 1)
 
@@ -119,17 +122,19 @@ class Parser:
             rule = charted_state.rule
 
             # check if the antecedent of the completed state matches the charted state's consequent at the dot position
-            if (dot_position > rule.get_consequent_count()) or (rule.get_consequent(dot_position-1) != completed_antecedent):
+            if (dot_position > rule.get_consequent_count()) or (rule.get_consequent(dot_position - 1) != completed_antecedent):
                 continue
 
             advanced_state = ChartState(rule, dot_position + 1, charted_state.start_word_index, completed_state.end_word_index)
 
             # store extra information to make it easier to extract parse trees later
+            print charted_state
             tree_complete, advanced_state = chart.store_state_info(completed_state, charted_state, advanced_state)
-            if tree_complete:
-                break
+            print charted_state
+            #if tree_complete:
+            #    break
+            tree_complete = False
 
             chart.enqueue(advanced_state, completed_state.end_word_index)
 
         return tree_complete
-

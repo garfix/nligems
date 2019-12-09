@@ -20,3 +20,6 @@ class ChartState:
 
     def is_incomplete(self):
         return self.dot_position < self.rule.get_consequent_count() + 1
+
+    def __repr__(self):
+        return "(" + repr(self.id) + " " + repr(self.child_state_ids) + " " + repr(self.rule) + " *" + str(self.dot_position) + " " + str(self.start_word_index) + "-" + str(self.end_word_index) + ")"

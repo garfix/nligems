@@ -23,14 +23,23 @@ grammar.add_grammar_rule(GrammarRule(('vp', 'put', 'object', 'on', 'object'), ('
 grammar.add_grammar_rule(GrammarRule(('object', 'np'), ('E1', 'E1'), ()))
 # np(E1) -> quantifier(Q1) nbar(E1)
 grammar.add_grammar_rule(GrammarRule(('np', 'quantifier', 'nbar'), ('E1', 'Q1', 'E1'), ()))
-# quantifier(Q1) -> the(Q1)
-grammar.add_grammar_rule(GrammarRule(('quantifier', 'the'), ('Q1', 'Q1'), ()))
-# quantifier(Q1) -> all(Q1)
-grammar.add_grammar_rule(GrammarRule(('quantifier', 'all'), ('Q1', 'Q1'), ()))
 # nbar(E1) -> adjp(A1) nbar(E1)
 grammar.add_grammar_rule(GrammarRule(('nbar', 'adjp', 'nbar'), ('E1', 'A1', 'E1'), ()))
 # nbar(E1) -> noun(E1)
 grammar.add_grammar_rule(GrammarRule(('nbar', 'noun'), ('E1', 'E1'), ()))
+# adjp(A1) -> adjective(A1)
+grammar.add_grammar_rule(GrammarRule(('adjp', 'adjective'), ('A1', 'A1'), ()))
+
+# quantifier(Q1) -> the(Q1)
+grammar.add_grammar_rule(GrammarRule(('quantifier', 'the'), ('Q1', 'Q1'), ()))
+# quantifier(Q1) -> all(Q1)
+grammar.add_grammar_rule(GrammarRule(('quantifier', 'all'), ('Q1', 'Q1'), ()))
+# noun(E1) -> block(E1)
+grammar.add_grammar_rule(GrammarRule(('noun', 'block'), ('E1', 'E1'), ()))
+# adjective(A1) -> red(A1)
+grammar.add_grammar_rule(GrammarRule(('adjective', 'red'), ('A1', 'A1'), ()))
+# adjective(A1) -> blue(A1)
+grammar.add_grammar_rule(GrammarRule(('adjective', 'blue'), ('A1', 'A1'), ()))
 
 parser = Parser(lexicon, grammar)
 
@@ -41,5 +50,3 @@ print tokens
 trees = parser.parse(tokens)
 
 print trees
-
-print str(lexicon)

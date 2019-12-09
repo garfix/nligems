@@ -8,6 +8,8 @@ class GrammarRule:
     sense = None
 
     def __init__(self, syntactic_categories, entity_variables, sense):
+        if len(syntactic_categories) != len(entity_variables):
+            raise Exception('Number of elements in syntactic_categories must match that in entity_variables')
         self.syntactic_categories = syntactic_categories
         self.entity_variables = entity_variables
         self.sense = sense
@@ -26,7 +28,7 @@ class GrammarRule:
 
     def equals(self, other_rule):
         if len(self.syntactic_categories) != len(other_rule.syntactic_categories):
-    		return false
+    		return False
         for i, v in enumerate(self.syntactic_categories):
             if v != other_rule.syntactic_categories[i]:
                 return False

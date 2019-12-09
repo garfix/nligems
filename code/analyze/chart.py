@@ -13,7 +13,7 @@ class Chart:
     def __init__(self, words):
         self.states = [[] for i in range(len(words) + 1)]
         self.words = words
-        self.sentence_states = ()
+        self.sentence_states = []
         self.indexed_states = {}
         self.state_id_generator = 0
 
@@ -49,7 +49,7 @@ class Chart:
         tree_complete = False
 
         # store the state's "children" to ease building the parse trees from the packed forest
-        charted_state.child_state_ids.append(completed_state.id)
+        advanced_state.child_state_ids = charted_state.child_state_ids + [completed_state.id]
 
         # rule complete?
         if charted_state.dot_position == charted_state.rule.get_consequent_count():
@@ -58,14 +58,17 @@ class Chart:
             if charted_state.rule.get_antecedent() == "gamma":
 
                 # that matches all words?
-                if completed_state.end_word_index == len(chart.words):
+                if completed_state.end_word_index == len(self.words):
 
                     self.sentence_states.append(advanced_state)
 
                     # set a flag to allow the Parser to stop at the first complete parse
-                    tree_complete = true
+                    #tree_complete = True
 
         return tree_complete, advanced_state
 
     def find_last_completed_word_index(self):
         return ""
+
+    def __repr__(self):
+        return "{states: " + repr(self.states) + "}"
