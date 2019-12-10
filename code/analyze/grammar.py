@@ -2,7 +2,7 @@ class Grammar:
 
     rules = {}
 
-    def add_grammar_rule(self, rule):
+    def add_rule(self, rule):
         antecedent = rule.syntactic_categories[0]
         if antecedent not in self.rules:
             self.rules[antecedent] = []

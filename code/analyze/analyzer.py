@@ -1,6 +1,7 @@
 from parser import Parser
 from tokenizer import Tokenizer
 from extract_trees import extract_trees
+from extract_semantics import extract_semantics
 
 class Analyzer:
     lexicon = None
@@ -32,3 +33,10 @@ class Analyzer:
                 error = "All words are parsed but some word or token is missing to make the sentence complete."
             trees = []
         return trees, error
+
+    def get_semantics(self, input):
+        trees, error = self.get_trees(input)
+        if error != "":
+            return [], ""
+
+        return extract_semantics(trees)
