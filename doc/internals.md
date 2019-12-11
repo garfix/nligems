@@ -214,7 +214,7 @@ Emotional state can influence the motivation of the NLI and change its goals and
 
 DAYDREAMER, ACRES
 
-## Natural Language Syntax
+## Natural Language
 
 Natural language means one of these:
 
@@ -516,7 +516,7 @@ ThoughtTreasure uses a spatial map to represent object locations.
 
 #### Emotions
 
-## Understand the User
+## Understanding the User
 
 To understand a user, the system needs to extract the ___intent___ of the user's sentence.
 
@@ -875,20 +875,6 @@ be singular or plural. When a reference is a description, the full description n
 
 If a system can handle time, it must interpret tensed sentences with respect to the deictic center of time.
 
-#### Action detection
-
-The input sentence must be converted into one of the systems' actions: ASK (query the database), TELL (update the database), DO (perform a task)
-
-Superficially these actions correspond with the mood of the sentence, but not always ("Can you put the red block on the table?" is a DO action)
-
-#### Question classification
-
-If the input is a question then the type of question needs to be established: yes/no, when, which, why?
-
-#### Answer type detection
-
-The type of answer that the user expects from the system strongly influences the procedure of finding the answer. See Watson for good example.
-
 #### Ellipsis
 
 Can the system handle sentences where one or more words or phrases have been left out, because they can be filled in.
@@ -912,11 +898,35 @@ The meaning of these compounds is not purely analytical. A "city department" cou
 
 Each domain has its own expressions, that are meaningless outside it.
 
+### Forming the intent
+
+What a user says should be taken as just a hint of what the system should actually do. It needs a transformation of the surface request of the user to formal representation the system can work with.
+
+#### Action detection
+
+The input sentence must be converted into one of the systems' actions: ASK (query the database), TELL (update the database), DO (perform a task)
+
+Superficially these actions correspond with the mood of the sentence, but not always ("Can you put the red block on the table?" is a DO action)
+
+#### Question classification
+
+If the input is a question then the type of question needs to be established: yes/no, when, which, why?
+
+#### Answer type detection
+
+The type of answer that the user expects from the system strongly influences the procedure of finding the answer. See Watson for good example.
+
+#### Operationalization
+
+This is the part where the system derives the "true meaning" from the user's questions. While the user asks "Give me the most recent articles on global warming". What the user "really means" is "Select the first 5 articles with titles like 'global warming' sorted descendingly by publication date".
+
+Of course the user just means what he just said. So this step is not so much about "interpretation". It is a matter of __operationalization__, that is: transforming the request to a form that can be executed by the system and yields the result that the user expects. 
+
 ### Domain Switching
 
 A system that handles multiple domains needs a way to automatically switch from active domain as the user changes subject (domain).
 
-## Process the Intent
+## Processing the Intent
 
 Processing the intent of the sentence entails
 
@@ -1090,7 +1100,7 @@ A system may also have built-in desires and be aware of the desires of the user.
 
 A computer does not experience emotions, of course. But that does not mean it cannot react to input in the same way a human being would. For a conversational agent it is very useful to have simulated emotions. It would react more human.
 
-## Respond in a Helpful Manner
+## Responding in a Helpful Manner
 
 An NLI responds to the user by
 
