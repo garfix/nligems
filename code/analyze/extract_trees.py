@@ -12,7 +12,7 @@ def extract_trees(chart):
 def extract_parse_tree_branch(chart, state):
 
 	rule = state.rule
-	branch = Node(rule.get_antecedent(), [], "")
+	branch = Node(rule.get_antecedent(), [], "", rule)
 
 	if state.is_leaf():
 		branch.form = rule.get_consequent(0)

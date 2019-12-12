@@ -13,14 +13,12 @@ class Analyzer:
 
     def get_trees(self, input):
         """return an array with 0) parse trees and 1) error"""
+        error = ""
         tokenizer = Tokenizer()
         parser = Parser(self.lexicon, self.grammar)
 
         tokens = tokenizer.tokenize(input)
-
         chart = parser.parse(tokens)
-        error = ""
-
         trees = extract_trees(chart)
 
         if len(trees) == 0:
@@ -39,4 +37,4 @@ class Analyzer:
         if error != "":
             return [], ""
 
-        return extract_semantics(trees)
+        return extract_semantics(trees, self.lexicon)

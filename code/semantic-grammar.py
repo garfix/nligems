@@ -10,7 +10,7 @@ lexicon.add_lex_item(LexItem('all'))
 lexicon.add_lex_item(LexItem('blue'))
 lexicon.add_lex_item(LexItem('red'))
 lexicon.add_lex_item(LexItem('block'))
-lexicon.add_lex_item(LexItem('blocks', 'block'))
+lexicon.add_lex_item(LexItem('blocks', (), 'block'))
 
 grammar = Grammar()
 # s(P1) -> vp(P1)

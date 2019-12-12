@@ -10,11 +10,11 @@ class Lexicon:
     def get_lex_item(self, form, canonical_form):
 
         if not form in self.lex_items:
-            return False
+            return None, False
         for lex_item in self.lex_items[form]:
             if lex_item.canonical_form == canonical_form:
-                return True
-        return False
+                return lex_item, True
+        return None, False
 
     def __repr__(self):
         return "{lex_items: " + str(self.lex_items) + "}"

@@ -1,7 +1,25 @@
 class Relation:
-    predicate: None
-    arguments: None
+    predicate = None
+    arguments = None
 
-    def __init__(predicate, arguments):
+    def __init__(self, predicate, arguments):
         self.predicate = predicate
         self.arguments = arguments
+
+class Variable:
+    name = None
+
+    def __init__(self, name):
+        self.name = name
+
+class Value:
+    value = None
+
+    def __init__(self, value):
+        self.value = value
+
+class List:
+    values = None
+
+    def __init__(self, values):
+        self.values = values

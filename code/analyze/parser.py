@@ -76,7 +76,7 @@ class Parser:
         end_word_index = state.end_word_index
         end_word = chart.words[end_word_index]
 
-        lex_item_found = self.lexicon.get_lex_item(end_word, next_consequent)
+        lex_item, lex_item_found = self.lexicon.get_lex_item(end_word, next_consequent)
         if lex_item_found:
             rule = GrammarRule((next_consequent, end_word), ("a", "b"), ())
             scanned_state = ChartState(rule, 2, end_word_index, end_word_index + 1)
