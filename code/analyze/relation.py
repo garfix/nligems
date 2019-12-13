@@ -6,6 +6,9 @@ class Relation:
         self.predicate = predicate
         self.arguments = arguments
 
+    def __repr__(self):
+        return self.predicate + '(' + ', '.join(self.arguments) + ')'
+
 class Variable:
     name = None
 

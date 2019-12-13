@@ -106,7 +106,7 @@ def collect_children_with_parent_references(parent_relations, child_sets):
 
 	for s, child_set in enumerate(child_sets):
 		for  child_relation in child_set:
-			for argument in child_relation.Arguments:
+			for argument in child_relation.arguments:
 				if isinstance(argument, List):
 					for argument_relation in argument.Term_value_relation_set:
 						if argument_relation.predicate == "sem" and argument_relation.arguments[0].value == "parent":
@@ -125,11 +125,10 @@ def include_child_senses(parent_relation, child_index, child_sets, rule, child_i
     rule_relation = rule.sense[child_index]
 
     for i, formal_argument in enumerate(rule_relation.arguments):
-		if isinstance(formal_argument, List):
-			first_relation = formal_argument.values[0]
-			if first_relation.predicate == "sem":
-				index = int(first_relation.arguments[0].value)
-                index = index - 1
+        if isinstance(formal_argument, List):
+            first_relation = formal_argument.values[0]
+            if first_relation.predicate == "sem":
+                index = int(first_relation.arguments[0].value) - 1
                 child_indexes.append(index)
                 sub_set = child_sets[index]
                 relation_set_argument = List(sub_set)

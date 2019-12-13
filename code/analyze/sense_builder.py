@@ -1,3 +1,4 @@
+import copy
 from relation import *
 
 var_index_counter = {}
@@ -48,7 +49,7 @@ def create_grammar_rule_relations(relation_templates, variable_map):
 
 		new_relation = copy.deepcopy(relation)
 
-		for a, argument in enumeration(new_relation.arguments):
+		for a, argument in enumerate(new_relation.arguments):
 
 			if isinstance(argument, Variable):
 
@@ -56,7 +57,7 @@ def create_grammar_rule_relations(relation_templates, variable_map):
 
 			elif isinstance(argument, List):
 
-				new_relation.arguments[a] = List(create_grammar_rule_relations(variable_map))
+				new_relation.arguments[a] = List(create_grammar_rule_relations(argument.values, variable_map))
 
 		relations.append(new_relation)
 
