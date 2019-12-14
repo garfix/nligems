@@ -2,12 +2,10 @@
 
 namespace nligems\page;
 
-use nligems\api\component\Header;
-use nligems\api\component\HtmlElement;
-use nligems\api\component\ParseDown;
-use nligems\api\component\TocParser;
-
-require_once __DIR__ . '/../api/component/ParseDown.php';
+use nligems\page\api\component\Header;
+use nligems\page\api\component\HtmlElement;
+use nligems\page\api\component\ParseDown;
+use nligems\page\api\component\TocParser;
 
 /**
  * @author Patrick van Bergen

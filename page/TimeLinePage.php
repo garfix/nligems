@@ -2,10 +2,10 @@
 
 namespace nligems\page;
 
-use nligems\api\component\HtmlElement;
-use nligems\api\component\TimeTable;
-use nligems\api\NliSystemApi;
-use nligems\api\component\Header;
+use nligems\page\api\component\HtmlElement;
+use nligems\page\api\component\TimeTable;
+use nligems\page\api\NliSystemApi;
+use nligems\page\api\component\Header;
 
 /**
  * @author Patrick van Bergen

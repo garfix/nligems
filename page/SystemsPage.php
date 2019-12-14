@@ -2,11 +2,11 @@
 
 namespace nligems\page;
 
-use nligems\api\component\HtmlElement;
-use nligems\api\component\Header;
-use nligems\api\component\AllSystems;
-use nligems\api\component\ParseDown;
-use nligems\api\component\TitleParser;
+use nligems\page\api\component\HtmlElement;
+use nligems\page\api\component\Header;
+use nligems\page\api\component\AllSystems;
+use nligems\page\api\component\ParseDown;
+use nligems\page\api\component\TitleParser;
 
 /**
  * @author Patrick van Bergen

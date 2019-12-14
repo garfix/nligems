@@ -19,7 +19,7 @@ grammar.add_rule(GrammarRule(('s', 'vp'), ('P1', 'P1'), []))
 grammar.add_rule(GrammarRule(('vp', 'put', 'np', 'on', 'np'), ('P1', 'P1', 'E1', 'P1', 'E2'), [ Relation('put_on', [Variable('E1'), Variable('E2')]) ] ))
 # np(E1) -> quantifier(Q1) nbar(E1)
 grammar.add_rule(GrammarRule(('np', 'quantifier', 'nbar'), ('R1', 'Q1', 'R1'),
-    [ Relation('quantifier', [
+    [ Relation('quant', [
         Variable('Q1'), [ Relation('sem', [Value('1')]) ],
         Variable('R1'), [ Relation('sem', [Value('2')]) ],
         [ Relation('sem', [Value('parent')]) ]]) ]))

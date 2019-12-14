@@ -2,9 +2,9 @@
 
 namespace nligems\page;
 
-use nligems\api\component\Header;
-use nligems\api\component\HtmlElement;
-use nligems\api\component\Interview;
+use nligems\page\api\component\Header;
+use nligems\page\api\component\HtmlElement;
+use nligems\page\api\component\Interview;
 
 /**
  * @author Patrick van Bergen

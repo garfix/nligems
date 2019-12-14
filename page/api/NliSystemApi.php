@@ -1,6 +1,6 @@
 <?php
 
-namespace nligems\api;
+namespace nligems\page\api;
 
 /**
  * @author Patrick van Bergen

@@ -2,7 +2,7 @@
 
 namespace nligems\page;
 
-use nligems\api\component\Header;
+use nligems\page\api\component\Header;
 
 /**
  * @author Patrick van Bergen

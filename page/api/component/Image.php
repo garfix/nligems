@@ -1,6 +1,6 @@
 <?php
 
-namespace nligems\api\component;
+namespace nligems\page\api\component;
 
 /**
  * @author Patrick van Bergen

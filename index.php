@@ -3,7 +3,7 @@
  * This is the main page of the website.
  */
 
-use nligems\api\NliSystemApi;
+use nligems\page\api\NliSystemApi;
 use nligems\page\IndexPage;
 use nligems\page\InternalsPage;
 use nligems\page\InterviewPage;

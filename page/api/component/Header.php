@@ -1,8 +1,8 @@
 <?php
 
-namespace nligems\api\component;
+namespace nligems\page\api\component;
 
-use nligems\api\LinkApi;
+use nligems\page\api\LinkApi;
 
 /**
  * @author Patrick van Bergen

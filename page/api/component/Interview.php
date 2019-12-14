@@ -1,6 +1,6 @@
 <?php
 
-namespace nligems\api\component;
+namespace nligems\page\api\component;
 
 /**
  * @author Patrick van Bergen
@@ -16,7 +16,7 @@ class Interview extends HtmlElement
 
     public function __toString()
     {
-        $file = __DIR__ . '/../../doc/interview/' . $this->subject . '.html';
+        $file = __DIR__ . '/../../../doc/interview/' . $this->subject . '.html';
         if ($this->subject && file_exists($file)) {
             $html =  file_get_contents($file);
         } else {
