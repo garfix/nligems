@@ -121,6 +121,7 @@ a.homeButton {
 
 div.header img {
     display: block;
+    width: 75px;
     height: 75px;
     margin: 5px 16px 5px 0;
     float: left;
