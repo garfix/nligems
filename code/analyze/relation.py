@@ -7,7 +7,13 @@ class Relation:
         self.arguments = arguments
 
     def __repr__(self):
-        return self.predicate + '(' + ', '.join(self.arguments) + ')'
+        str = self.predicate + '('
+        sep = ''
+        for arg in self.arguments:
+            str += sep + repr(arg)
+            sep = ', '
+        str += ')'
+        return str
 
 class Variable:
     name = None
@@ -15,14 +21,29 @@ class Variable:
     def __init__(self, name):
         self.name = name
 
+    def __repr__(self):
+        return self.name
+
 class Value:
     value = None
 
     def __init__(self, value):
         self.value = value
 
+    def __repr__(self):
+        return self.value
+
 class List:
     values = None
 
     def __init__(self, values):
         self.values = values
+
+    def __repr__(self):
+        str = '['
+        sep = ''
+        for val in self.values:
+            str += sep + repr(val)
+            sep = ', '
+        str += ']'
+        return str

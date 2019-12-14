@@ -13,7 +13,7 @@ def get_new_variable(formal_variable):
 	else:
 		var_index_counter[initial] = var_index_counter[initial] + 1
 
-	return var_index_counter[initial]
+	return initial + str(var_index_counter[initial])
 
 # Creates a map of formal variables to actual variables (new variables are created)
 def create_variable_map(actual_antecedent, formal_variables):
@@ -43,25 +43,24 @@ def create_variable_map(actual_antecedent, formal_variables):
 # Create actual relations given a set of templates and a variable map (formal to actual variables)
 def create_grammar_rule_relations(relation_templates, variable_map):
 
-	relations = []
+    relations = []
 
-	for relation in relation_templates:
+    for relation in relation_templates:
 
-		new_relation = copy.deepcopy(relation)
+        new_relation = copy.deepcopy(relation)
 
-		for a, argument in enumerate(new_relation.arguments):
+        for a, argument in enumerate(new_relation.arguments):
 
-			if isinstance(argument, Variable):
+            if isinstance(argument, Variable):
+                new_relation.arguments[a] = copy.deepcopy(variable_map[argument.name])
 
-				new_relation.arguments[a] = copy.deepcopy(variable_map[argument.name])
+            elif isinstance(argument, List):
 
-			elif isinstance(argument, List):
+                new_relation.arguments[a] = List(create_grammar_rule_relations(argument.values, variable_map))
 
-				new_relation.arguments[a] = List(create_grammar_rule_relations(argument.values, variable_map))
+        relations.append(new_relation)
 
-		relations.append(new_relation)
-
-	return relations
+    return relations
 
 # Create actual relations given a set of templates and an actual variable to replace any * positions
 def create_lex_item_relations(relation_templates, variable):
