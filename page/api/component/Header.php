@@ -65,6 +65,10 @@ class Header
 
         $Header->addChildNode($Bar);
 
-        return (string)$Header;
+        $Wrapper = new HtmlElement('div');
+        $Wrapper->addClass('headerWrapper');
+        $Wrapper->addChildNode($Header);
+
+        return (string)$Wrapper;
     }
 }

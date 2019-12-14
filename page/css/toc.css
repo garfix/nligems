@@ -22,7 +22,7 @@
 @media only screen and (min-width: 1100px) {
     .toc {
         position: fixed;
-        top: 160px;
+        top: 100px;
         bottom: 0;
         right: 0;
         width: 400px;
@@ -34,7 +34,7 @@
         position: fixed;
         left: 0;
         right: 400px;
-        top: 140px;
+        top: 88px;
         bottom: 0;
         overflow: scroll;
         padding-right: 15px;
