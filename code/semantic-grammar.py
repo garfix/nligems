@@ -14,20 +14,21 @@ lexicon.add_lex_item(LexItem('blocks', (), 'block'))
 
 grammar = Grammar()
 # s(P1) -> vp(P1)
-grammar.add_rule(GrammarRule(('s', 'vp'), ('P1', 'P1'), ()))
+grammar.add_rule(GrammarRule(('s', 'vp'), ('P1', 'P1'), []))
 # vp(P1) -> put(P1) np(E1) on(P1) np(E2)
-grammar.add_rule(GrammarRule(('vp', 'put', 'object', 'on', 'object'), ('P1', 'P1', 'E1', 'P1', 'E2'), [ Relation('put_on', [Variable('E1'), Variable('E2')]) ] ))
-# object(E1) -> np(E1)
-grammar.add_rule(GrammarRule(('object', 'np'), ('E1', 'E1'), ()))
+grammar.add_rule(GrammarRule(('vp', 'put', 'np', 'on', 'np'), ('P1', 'P1', 'E1', 'P1', 'E2'), [ Relation('put_on', [Variable('E1'), Variable('E2')]) ] ))
 # np(E1) -> quantifier(Q1) nbar(E1)
 grammar.add_rule(GrammarRule(('np', 'quantifier', 'nbar'), ('R1', 'Q1', 'R1'),
-    [ Relation('quantifier', [Variable('Q1'), [ Relation('sem', [Value('1')]) ], Variable('R1'), [ Relation('sem', [Value('2')]) ], [ Relation('sem', [Value('parent')]) ]]) ]))
+    [ Relation('quantifier', [
+        Variable('Q1'), [ Relation('sem', [Value('1')]) ],
+        Variable('R1'), [ Relation('sem', [Value('2')]) ],
+        [ Relation('sem', [Value('parent')]) ]]) ]))
 # nbar(E1) -> adjp(A1) nbar(E1)
-grammar.add_rule(GrammarRule(('nbar', 'adjp', 'nbar'), ('E1', 'A1', 'E1'), ()))
+grammar.add_rule(GrammarRule(('nbar', 'adjp', 'nbar'), ('E1', 'E1', 'E1'), []))
 # nbar(E1) -> noun(E1)
-grammar.add_rule(GrammarRule(('nbar', 'noun'), ('E1', 'E1'), ()))
+grammar.add_rule(GrammarRule(('nbar', 'noun'), ('E1', 'E1'), []))
 # adjp(A1) -> adjective(A1)
-grammar.add_rule(GrammarRule(('adjp', 'adjective'), ('A1', 'A1'), ()))
+grammar.add_rule(GrammarRule(('adjp', 'adjective'), ('A1', 'A1'), []))
 
 # quantifier(Q1) -> the(Q1)
 grammar.add_rule(GrammarRule(('quantifier', 'the'), ('Q1', 'Q1'), [ Relation('the', [Variable('Q1')]) ]))
@@ -43,8 +44,10 @@ grammar.add_rule(GrammarRule(('adjective', 'blue'), ('A1', 'A1'), [ Relation('bl
 analyzer = Analyzer(lexicon, grammar)
 trees = analyzer.get_trees(input)
 
+#print 'Trees'
 #print trees
 
 semantics = analyzer.get_semantics(input)
 
+print 'Semantics:'
 print semantics

@@ -32,18 +32,3 @@ class Value:
 
     def __repr__(self):
         return self.value
-
-class List:
-    values = None
-
-    def __init__(self, values):
-        self.values = values
-
-    def __repr__(self):
-        str = '['
-        sep = ''
-        for val in self.values:
-            str += sep + repr(val)
-            sep = ', '
-        str += ']'
-        return str

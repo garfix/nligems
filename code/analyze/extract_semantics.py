@@ -57,7 +57,6 @@ def combine_parents_and_children(parent_set, child_sets, rule):
     """
 
     referenced_children_indexes = []
-    compound_relation = None
 
 	# process sem(1) sem(2)
     new_set1 = []
@@ -72,12 +71,12 @@ def combine_parents_and_children(parent_set, child_sets, rule):
 
 	# add simple children
     for i, child_set in enumerate(child_sets):
-		if (not i in referenced_children_indexes) and (not i in children_with_parent_reference_indexes, i):
-			combination.extend(child_set)
+        if (not i in referenced_children_indexes) and (not i in children_with_parent_reference_indexes):
+            combination.extend(child_set)
 
 	# raise children with sem(parent), eg. quants
     for i in children_with_parent_reference_indexes:
-		combination = bind_parent(combination, child_sets[i])
+        combination = bind_parent(combination, child_sets[i])
 
     return combination
 
@@ -88,15 +87,15 @@ def bind_parent(parent_relations, child_set):
     new_parent_relations = parent_relations
 
     for r, child_relation in enumerate(child_set):
-		for a, argument in enumerate(child_relation.Arguments):
-			if isinstance(argument, List):
-				for argument_relation in argument.values:
+		for a, argument in enumerate(child_relation.arguments):
+			if isinstance(argument, list):
+				for argument_relation in argument:
 					if argument_relation.predicate == "sem" and argument_relation.arguments[0].value == "parent":
 						prev_parent = new_parent_relations
 						# the the sem of P is replaced by this quant
 						new_parent_relations = copy.deepcopy(child_set)
 						# the argument 'scope' in the quant of C is replaced by the current sem of P
-						new_parent_relations[r].arguments[a] = List((prev_parent))
+						new_parent_relations[r].arguments[a] = prev_parent
 
     return new_parent_relations
 
@@ -107,8 +106,8 @@ def collect_children_with_parent_references(parent_relations, child_sets):
 	for s, child_set in enumerate(child_sets):
 		for  child_relation in child_set:
 			for argument in child_relation.arguments:
-				if isinstance(argument, List):
-					for argument_relation in argument.Term_value_relation_set:
+				if isinstance(argument, list):
+					for argument_relation in argument:
 						if argument_relation.predicate == "sem" and argument_relation.arguments[0].value == "parent":
 							child_indexes.append(s)
 
@@ -125,13 +124,13 @@ def include_child_senses(parent_relation, child_index, child_sets, rule, child_i
     rule_relation = rule.sense[child_index]
 
     for i, formal_argument in enumerate(rule_relation.arguments):
-        if isinstance(formal_argument, List):
-            first_relation = formal_argument.values[0]
-            if first_relation.predicate == "sem":
+        if isinstance(formal_argument, list):
+            first_relation = formal_argument[0]
+            if first_relation.predicate == "sem" and first_relation.arguments[0].value != "parent":
                 index = int(first_relation.arguments[0].value) - 1
                 child_indexes.append(index)
                 sub_set = child_sets[index]
-                relation_set_argument = List(sub_set)
-                parent_relation.Arguments[i] = relation_set_argument
+                relation_set_argument = sub_set
+                parent_relation.arguments[i] = relation_set_argument
 
     return parent_relation, child_indexes
