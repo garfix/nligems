@@ -741,6 +741,10 @@ Montague grammar is Montague's attempt to express natural language in Predicate 
 
 Feature unification is based on the idea that each semantic constituent has some features (like "number", "passive", "agr"). When the constituents are connected, the features must match and their values are inherited up the tree. This is the approach CLE has taken, and they were able to address many grammatical phenomena with it.
 
+#### Selectional restrictions
+
+An ontology can be used to type the arguments of the relations. This helps to prune possible interpretations.  
+
 ### Semantic post-processing
 
 #### Quantifier Scoping
@@ -893,6 +897,10 @@ Users may introduce compounds that are not in the lexicon. These come in two sha
 * adjective-noun compounds ("large company")
 
 The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
+
+#### Common sense restrictions
+
+"A steel ball fell on a glass table and it shattered." (Melanie Mitchell) Only common sense tells us that it is the glass that shattered. I.e. knowledge of material properties helps to select the referent of the pronoun "it".
 
 #### Idioms
 
