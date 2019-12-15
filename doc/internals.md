@@ -38,8 +38,9 @@ Historical systems have had the following functions:
 - Keep a conversation alive (chatbot: ELIZA, JABBERWACKY)
 - Help the user make a selection (decision-support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)
-- Create a paraphrase of a story (story-understanding, MARGIE, SAM)
+- Emulate a therapist (therapy: Woebot)
 - Model human cognition (cognitive-model: DAYDREAMER, ACRES)
+- Create a paraphrase of a story (story-understanding, MARGIE, SAM)
 - Prototype / proof-of-concept (show how a certain technique can be used)
 
 ## Interaction
