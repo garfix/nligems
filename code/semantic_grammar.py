@@ -1,6 +1,15 @@
 from analyze import Analyzer, Grammar, GrammarRule, Lexicon, LexItem, Relation, Variable, Value
+from semantic_grammar_program import process_relations
 
 input = "put all blue blocks on the red block"
+
+db = [
+    {'id': 11,  'type': 'table', 'color': 'brown', 'on': None},
+    {'id': 21,  'type': 'block', 'color': 'red', 'on': 1},
+    {'id': 22,  'type': 'block', 'color': 'blue', 'on': 1},
+    {'id': 23,  'type': 'block', 'color': 'blue', 'on': 1},
+    {'id': 24,  'type': 'block', 'color': 'green', 'on': 1}
+]
 
 lexicon = Lexicon()
 lexicon.add_lex_item(LexItem('put'))
@@ -44,10 +53,12 @@ grammar.add_rule(GrammarRule(('adjective', 'blue'), ('A1', 'A1'), [ Relation('bl
 analyzer = Analyzer(lexicon, grammar)
 trees = analyzer.get_trees(input)
 
-#print 'Trees'
-#print trees
-
 semantics = analyzer.get_semantics(input)
 
 print 'Semantics:'
 print semantics
+
+#if len(semantics) > 0:
+#    process_relations(semantics[0])
+
+#print db

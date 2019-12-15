@@ -11,7 +11,6 @@ class GrammarRule:
         if len(syntactic_categories) != len(entity_variables):
             raise Exception('Number of elements in syntactic_categories must match that in entity_variables')
         if not isinstance(sense, (tuple, list)):
-            print sense
             raise Exception('Sense must either be tuple or list')
         self.syntactic_categories = syntactic_categories
         self.entity_variables = entity_variables
