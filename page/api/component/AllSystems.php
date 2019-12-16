@@ -19,7 +19,7 @@ class AllSystems extends HtmlElement
 	{
 		date_default_timezone_set('Europe/Amsterdam');
 
-        $html = "<p>A collection of historic NLI systems. It is meant to give you a quick overview of the field, as a sort of index.</p><p>The term in <span class='functions'>blue</span> shows the main function.<br>The bullet points in the form of a gem - <img src='page/img/gem.png' /> - mark innovations.<br>In the dialogs, H: means the human user, and C: the computer system.</p><p class='intro'>Note that is a work-in-progress. -- Patrick</p>";
+        $html = "<p>A collection of historic NLI systems. It is meant to give you a quick overview of the field, as a sort of index.</p><p>The term in <span class='functions'>blue</span> shows the main function.<br>The bullet points in the form of a gem - <img src='page/img/gem.png' /> - mark innovations.<br>In the dialogs, H: means the human user, and C: the computer system.</p><p class='intro'>Note that is a work-in-progress. -- Patrick</p><center><img class='communication' src='page/img/communication.png'></center>";
 
         foreach ($this->allSystemInfo as $systemInfo) {
 
