@@ -16,7 +16,7 @@ class InternalsPage extends FrontEndPage
 
     public function __construct()
     {
-        $this->Header = new Header('internals', 'NLI internals');
+        $this->Header = new Header('/internals', 'NLI internals');
 
         $this->addStyleSheet('common');
         $this->addStyleSheet('internals');
