@@ -1,0 +1,26 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "Sounding Board",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "2017",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Hao Fang",
+        "Hao Cheng",
+        "Elizabeth Clark",
+        "Ariel Holtzman",
+        "Maarten Sap",
+        "Mari Ostendorf",
+        "Yejin Choi",
+        "Noah A. Smith"
+    ],
+    "INSTITUTIONS": [
+        "University of Washington"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Sounding Board – University of Washington’s Alexa Prize Submission - Fang et al (2017)"
+    ],
+    "BOOKS": []
+}
