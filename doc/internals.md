@@ -1081,7 +1081,7 @@ Common sense: From the sentence a user enters (e.g. "John went into a restaurant
 
 In a system that helps the user make a selection, the system usually takes the initiative for questions. It has a dialog plan to guide it. When the user has answered the system's question, the plan needs to be updated and a new question prepared.
 
-#### Update dialog history
+### Update dialog history
 
 Add the user's sentence and the systems's response. 
 

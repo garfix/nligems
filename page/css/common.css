@@ -149,7 +149,6 @@ div.linkBar div a {
 
 div.linkBar div a.active {
     color: #4a2c25;
-    text-decoration: overline;
 }
 
 @media print {
