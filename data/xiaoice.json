@@ -1,0 +1,20 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "XiaoIce",
+    "NAME_DESC": "Little Ice",
+    "FIRST_YEAR": "2014",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "INSTITUTIONS": [
+        "Microsoft"
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Empathic computing. In Ambient Intelligence in Everyday Life - Cai (2006)",
+        "The Design and Implementation of XiaoIce, an Empathetic Social Chatbot - Zhou, Gao, Li, Shum (2018)"
+    ],
+    "BOOKS": []
+}
