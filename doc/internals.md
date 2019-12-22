@@ -35,15 +35,27 @@ Historical systems have had the following functions:
 - Find an exact answer (question-answering)
 - Locate information in unstructured text sources (information-retrieval)
 - Perform tasks like an assistant (virtual-assistant: SIRI, Alexa)
-- Keep a conversation alive (chatbot: ELIZA, JABBERWACKY)
+- Keep the conversation alive (chatbot: ELIZA, JABBERWACKY)
 - Direct a robot (robot: SHRDLU) 
 - Help the user make a selection (decision-support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)
 - Perform therapy (therapy: Woebot)
-- Perform customer support  
+- Perform customer support (customer-support)
 - Model human cognition (cognitive-model: DAYDREAMER, ACRES)
 - Create a paraphrase of a story (story-understanding, MARGIE, SAM)
 - Prototype / proof-of-concept (show how a certain technique can be used)
+
+Note that I use the term "chatbot" only for systems that aim to keep the conversation alive. The industry currently uses the term for all kinds of NLI systems, however, and this only leads to confusion and misguided expectations. 
+
+Chatbots can have a number of skills to entertain the user. Some of these are:
+
+- Tell a joke
+- Name a news headline
+- Compose a poem
+- Provide information about the weather
+- Answer questions (through an external service)
+
+A single skill may involve a series of interactions with the user.
 
 ## Interaction
 
@@ -102,7 +114,7 @@ A system that handles anaphora (pronouns and other references) must be able to m
 
 Systems that help the user make a selection or make a choice enter a real dialog with the user. They need to plan this dialog in order to reach the intended goal efficiently. For this goal they create a ___Dialog Plan___. A plan is a hierarchical structure of goals and actions. This plan steers the conversation. It may be changed dynamically as the conversation progresses, but it must be aimed at reaching the preset goal.
 
-A dialog can have two levels: "a top-level process manages the overall conversation and selects skills to handle different types of conversation modes (e.g., chatting casually, question answering, ticket booking), and a lowlevel process, controlled by the selected skill, chooses primitive actions (responses) to generate a conversation segment or complete a task." (XiaoIce)
+A dialog can have two levels: "a top-level process manages the overall conversation and selects skills to handle different types of conversation modes (e.g., chatting casually, question answering, ticket booking), and a lowlevel process, controlled by the selected ___Skill___, chooses primitive actions (responses) to generate a conversation segment or complete a task." (XiaoIce)
 
 Systems that guide the user often make use of a mental model of the user. 
 
@@ -196,6 +208,12 @@ Two things can be modeled:
 
 - Beliefs: what an agent believes to be the case; its mental model 
 - Motives: the desires and intentions of the agent
+
+#### Personality
+
+Information about the personality of the agent itself. Used to give consistent answers to user's questions about the agent himself/herself.
+
+XiaoIce
 
 #### Model of the system's own beliefs about the world
 
