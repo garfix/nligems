@@ -33,12 +33,14 @@ The generic function of an NLI can be described like this:
 Historical systems have had the following functions:
 
 - Find an exact answer (question-answering)
-- Locate information in unstructured text sources (information-retrieval) 
-- Make an agent perform tasks (virtual-assistant: SHRDLU, SIRI)
+- Locate information in unstructured text sources (information-retrieval)
+- Perform tasks like an assistant (virtual-assistant: SIRI, Alexa)
 - Keep a conversation alive (chatbot: ELIZA, JABBERWACKY)
+- Direct a robot (robot: SHRDLU) 
 - Help the user make a selection (decision-support: IR-NLI, WISBER)
 - Help the user fix a problem (troubleshooting: SOPHIE)
-- Emulate a therapist (therapy: Woebot)
+- Perform therapy (therapy: Woebot)
+- Perform customer support  
 - Model human cognition (cognitive-model: DAYDREAMER, ACRES)
 - Create a paraphrase of a story (story-understanding, MARGIE, SAM)
 - Prototype / proof-of-concept (show how a certain technique can be used)
@@ -94,9 +96,13 @@ When a user interacts with a system, this can be considered to be a dialog. A di
 - The system directs the questions (IR-NLI, WISBER)
 - Both user and system may initiate questions (Chatbots)
 
+The module that handles dialog is usually called a ___Dialog Manager___.
+
 A system that handles anaphora (pronouns and other references) must be able to match these references to entities previously mentioned in the dialog. That's why a ___Dialog History___ is kept. Possibly it must also be able to remember the current place and time of discourse. This is why a system needs a ___Dialog Context___.
 
 Systems that help the user make a selection or make a choice enter a real dialog with the user. They need to plan this dialog in order to reach the intended goal efficiently. For this goal they create a ___Dialog Plan___. A plan is a hierarchical structure of goals and actions. This plan steers the conversation. It may be changed dynamically as the conversation progresses, but it must be aimed at reaching the preset goal.
+
+A dialog can have two levels: "a top-level process manages the overall conversation and selects skills to handle different types of conversation modes (e.g., chatting casually, question answering, ticket booking), and a lowlevel process, controlled by the selected skill, chooses primitive actions (responses) to generate a conversation segment or complete a task." (XiaoIce)
 
 Systems that guide the user often make use of a mental model of the user. 
 
