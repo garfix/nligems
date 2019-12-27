@@ -1,0 +1,23 @@
+{
+    "FUNCTION": "question-answering",
+    "NAME": "Orbis",
+    "NAME_DESC": null,
+    "FIRST_YEAR": "1982",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Alain M. Colmerauer",
+        "Richard Kittredge"
+    ],
+    "INSTITUTIONS": [
+    ],
+    "PROG_LANGS": [
+        "Prolog"
+    ],
+    "ARTICLES": [
+        "ORBIS - 9th International Conference on Computational Linguistics, COLING - Colmerauer, Kittredge (1982)"
+    ],
+    "NAT_LANGS": [
+        "English",
+        "French"
+    ]
+}
