@@ -1,0 +1,21 @@
+{
+    "FUNCTION": "question-answering",
+    "NAME": "Trains",
+    "NAME_DESC": null,
+    "FIRST_YEAR": "1980",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "James F. Alan",
+        "C.R. Perrault"
+    ],
+    "INSTITUTIONS": [
+        "University of Rochester"
+    ],
+    "PROG_LANGS": [
+    ],
+    "ARTICLES": [
+        "Analyzing intention in utterances - Allan, Perrault (1980)",
+        "Recognizing intentions from natural language utterances, in: Computational Models of Discourse, Brady and Berwick eds (1983)",
+        "Discourse Structure in the TRAINS Project - Allan (1991)"
+    ]
+}
