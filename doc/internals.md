@@ -269,10 +269,45 @@ The type of sentence often corresponds with the act that the user wishes to perf
 
 To be intelligible a sentence must be complete and syntactically and semantically correct. In practice a system may have to deal with
 
+- names
 - partial sentences ("and the country?")
 - spelling mistakes ("How manny")
 - ambiguity ("That person")
 - idioms ("the old ones")
+
+### Names
+
+Names (proper nouns) are very common in nli-interactions. It is important to handle them in an early stage of the design.
+
+~~~
+H: When was Lord Byron born? 
+
+H: Play me something by Alanis Morissette
+~~~
+
+The problem with names is that they are not part of the basic lexicon (the set of known words used to parse a sentence), and they cannot be recognized by simple pattern recognition, like numbers or email addresses. 
+
+Don't be misguided by the idea that you can recognize the pattern (words that start with capitals); here are some fun counter examples: "Ludwig van Beethoven, iPhone, IBM, MasterCard," and the insidious name of the English rock band ["the Who"](https://en.wikipedia.org/wiki/The_Who). More importantly, many people don't bother to correctly capitalize names. 
+
+The other thing to note is that names are ambiguous. Different persons can have the same name ("Over 50 people are called Michael Jackson on DBPedia"). And different types of things may have the same name. "België" is both an album by the dutch band Het Goede Doel and the name of a country. If the system cannot keep these apart it will create some hilarious responses. 
+
+While speaking of Michael Jackson, it is worth mentioning that while there may be many people called Michael Jackson, most people will expect the name to refer to the king of pop, in most circumstances. The system may want to support this expectation, but it may also want to keep open the possibility that the user meant a lesser known variant.   
+
+In many older NLI systems these names were just added to the lexicon and became part of the known words. And even now this is still an option in some domains. Import the names into the lexicon on a regular basis. If this is possible it makes the design quite simple.
+
+When dealing with large databases other solutions are needed.
+
+There are tools available to recognize named entities. This is called Named Entity Recognition (NER) and it works independent of the database you use. This approach works for most but not all names.
+
+But why use tools when the names can be found in the database? It is just a matter of placing the right queries to find them. This approach queries the database for the id's of names, _while parsing the sentence_, and only when a proper noun is expected. 
+
+When done smartly, it is even possible to preselect the entity type of the name from the sentence that is parsed. For example, when parsing
+
+~~~
+What is the capitol of België?
+~~~  
+
+It is possible to read from the sentence that "België" must be the name of a country, not an album of a pop band. And while this is such an important thing, it is a good idea to incorporate this into the design of the NLI early.
 
 ### Syntactic structures
 
