@@ -1,0 +1,1 @@
+Gives a specification of _semantically tractable questions_: user questions that are guaranteed to be translatable into a database query and to produce a precise result.  
