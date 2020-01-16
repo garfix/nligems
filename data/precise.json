@@ -2,7 +2,7 @@
   "FUNCTION": "question-answering",
   "NAME": "Precise",
   "NAME_DESC": "The system is designed to produce precise results",
-  "FIRST_YEAR": "2003?",
+  "FIRST_YEAR": "2003",
   "LAST_YEAR": "",
   "CONTRIBUTORS": [
     "Ana-Maria Popescu",
