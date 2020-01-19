@@ -870,10 +870,9 @@ To which constituent must the modifier (PP) be attached?
 
 #### Anaphora
 
-Pronouns (he, she, it, that) are the variables of natural language. They refer to ever changing things. The system needs to keep track of recent subjects in the discourse,
-and link the pronoun to the subject.
+Pronouns (he, she, it, that) are the variables of natural language. They refer to ever changing things. The system needs to keep track of recent subjects in the discourse, and link the pronoun to the subject. A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
 
-A pronoun may refer to an entity in the same sentence, to an entity in a recent previous sentence, or to an implicit entity.
+But there's more to anaphora than just pronouns. A phrase like "the pyramid" may also refer to the blue pyramid in the previous sentence. And "such thing" can refer to a previously performed action. 
 
 SHRDLU processes many types of anaphora. The numbers are sentence numbers from the sample dialog.
 
@@ -934,6 +933,30 @@ none found
 
 Any noun phrase can become a referent, so all of them need to be stored in the dialog context as subject. Referents can
 be singular or plural. When a reference is a description, the full description needs to match the possible referent.
+
+Several issues are relevant in building anaphora resolution:
+
+What information needs to be stored to allow anaphora resolution?
+
+- the last full interactions from the dialog history, or
+- just the last noun phrases (and some other phrases) of the dialog history
+
+How do you recognize references? Why is "that pyramid" a reference in a sentence? Since "that pyramid" can be matched against the base database, the noun phrases may be stored in a special data source, so that "that pyramid" can be matched the same way it is matched in the base database. 
+
+Anaphoric references may be resolved by matching entries from
+
+- the dialog history (it, that pyramid, a pyramid)
+- the domain database (the pyramid, a pyramid)
+- the metadata database (a pyramid)
+
+Anaphoric matching. How do the following phrases match each other?
+
+- "it" to "the blue pyramid"
+- "the pyramid" to "the blue pyramid" 
+- "that thing" to "the blue pyramid"
+- "a small one" to "the cubes in the box"
+
+Matching is not textual, it is conceptual. Each NP (other than simply names) in the user input forms a description of the entity to match. The system attempts to apply this description to the scene, using the entity as a value.
 
 #### Tense
 
