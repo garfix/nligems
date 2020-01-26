@@ -9,9 +9,9 @@ class TimeTable
 {
     private $entries = array();
 
-    public function addEntry($year, $contents)
+    public function addEntry($year, $id, $contents)
     {
-        $this->entries[$year][] = $contents;
+        $this->entries[$year][$id] = $contents;
     }
 
     public function __toString()
@@ -24,11 +24,16 @@ class TimeTable
 
         foreach ($entries as $year => $entriesPerYear) {
 
+            $ids = [];
+            foreach ($entriesPerYear as $id => $entry) {
+                $ids[] = $id;
+            }
+
             $YearItem = new HtmlElement('li');
             $YearList->addChildNode($YearItem);
 
             $Year = new HtmlElement('h2');
-            $Year->addChildText($year);
+            $Year->addChildText($year. ": "  . implode(', ', $ids));
             $YearItem->addChildNode($Year);
 
             $EntryList = new HtmlElement('ul');

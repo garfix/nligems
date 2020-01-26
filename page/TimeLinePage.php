@@ -35,6 +35,7 @@ class TimeLinePage extends FrontEndPage
 
         foreach ($events as $event) {
             $year = $event['year'];
+            $id = $event['id'];
             $content = $event['desc'];
 
             if (isset($event['links'])) {
@@ -49,7 +50,7 @@ class TimeLinePage extends FrontEndPage
                 }
             }
 
-            $TimeTable->addEntry($year, $content);
+            $TimeTable->addEntry($year, $id, $content);
         }
     }
 

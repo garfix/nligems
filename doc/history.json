@@ -1,6 +1,6 @@
 [
     {
-        "id": "Frege",
+        "id": "Frege's work",
         "year": "1880-1900",
         "desc": "In the late nineteenth century Gottlob Frege laid the ground work for modern logic and the philosophy of language with his function-argument analysis of the proposition, the distinction between concept and object, the principle of compositionality, the context principle and the distinction between sense and reference.",
         "links": {
@@ -83,7 +83,7 @@
         "year": "1966",
         "desc": "Joseph Weizenbaum invents the chatbot. Chatbots are accessible for the user and simple to create for a programmer. Many chatbots have since been created and they are still popular. In their basic form they are mindless, but they can be enhanced with other functions such as virtual assistance and decision support."},
     {
-        "id": "events",
+        "id": "Events as objects",
         "year": "1967",
         "desc": "Donald Davidson first explicitly represents events as objects in a formal representation in his paper 'The logical form of action sentences'"
     },
@@ -123,7 +123,7 @@
         }
     },
     {
-        "id": "CD",
+        "id": "Conceptual Dependency",
         "year": "1969",
         "desc": "Roger Schank introduces \"Conceptual Dependency Theory\", a theory for natural language understanding that uses fundamental concepts like ATRANS, PTRANS and MTRANS to denote abstract transfers. "
     },
@@ -163,9 +163,17 @@
         "desc": "Montague publishes \"The Proper Treatment of Quantification in Ordinary English\" (also known as PTQ), the first formal treatment of the semantics of natural languages. Since this article requires a good deal of prior knowledge of logic, you may wish to approach this article through Dowty et al's \"Introduction to Montague Semantics\"."
     },
     {
-        "id": "SCRIPTS",
+        "id": "Scripts",
         "year": "1975",
         "desc": "Roger Schank and Robert P. Abelson introduce Script Theory in AI. It is a psychological theory by Silvan Tomkins that explains how people know how to react in all sorts of stereotypical situations"
+    },
+    {
+        "id": "Gricean maxims",
+        "year": "1975",
+        "desc": "Paul Grice states the implied assumptions in a conversation. These so called Gricean maxims are: conversation should be informative, true, relevant and clear",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Paul_Grice#Intention-based_semantics"
+        }
     },
     {
         "id": "Feature Unification",
