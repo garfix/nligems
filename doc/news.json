@@ -1,5 +1,9 @@
 [
     {
+        "date": "2020-02-22",
+        "story": "I am just now learning about discontinuities in linguistics. And that's because I am only now handling my first sentence that has discontinuities. And because my type of grammar happened to be able to deal with it to some extent. I checked Wikipedia looking for the term \"unbounded dependencies\" that occurred in \"The Core Language Engine\" (4.6). And then I found this wonderfully clear article: https://en.wikipedia.org/wiki/Discontinuity_(linguistics) It becomes clear that handling these discontinuities is the main achievement of CHAT-80 and CLE."
+    },
+    {
         "date": "2019-11-02",
         "story": "I started adding gems to the systems, to highlight their innovations. This allows you to scan the systems page even better, and it tells you what it is exactly that this system added to the knowledge in the field. Before, I considered some special systems themselves to be gems. But I understand that most systems have been built to provide a different angle to the field. So now I consider systems to _contain_ gems, and that it is up to us to find them :)"
     },

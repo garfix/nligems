@@ -13,9 +13,9 @@
         "desc": "In his 1950 paper \"Computing Machinery and Intelligence\" Alan Turing poses the question \"Can machines think?\" and proposes to interpret it in terms of an \"imitation game\". In this game an interrogator must decide whether the agent in the other room is a man or a machine. He is only allowed to communicate with him or it via typed print. This game is now known as the Turing Test."
     },
     {
-        "id": "Syntactic Structures",
+        "id": "Transformational grammar",
         "year": "1957",
-        "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he describes Phrase Structure Grammars and introduces Transformational Grammar. This is the start of modern linguistics.",
+        "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he introduces Transformational Grammar. They've have some influence on NLI systems, but not much.",
         "links": {
             "Wikipedia": "http://en.wikipedia.org/wiki/Syntactic_Structures"
         },
