@@ -15,7 +15,7 @@
     {
         "id": "Transformational grammar",
         "year": "1957",
-        "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he introduces Transformational Grammar. They've have some influence on NLI systems, but not much.",
+        "desc": "Noam Chomsky publishes \"Syntactic Structures\", in which he introduces Transformational Grammar. It was used by a few NLI systems.",
         "links": {
             "Wikipedia": "http://en.wikipedia.org/wiki/Syntactic_Structures"
         },
