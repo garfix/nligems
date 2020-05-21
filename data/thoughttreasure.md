@@ -4,7 +4,7 @@ This system integrates a natural language component in a full-blown AI architect
 H: What time is it?
 C: It is a quarter past ten am.
 H: Are elephants purple?
-C: No, the are not purple, they are gray.
+C: No, they are not purple, they are gray.
 H: What is the circumference of the earth?
 C: 40003236 meters is its circumference.
 ~~~

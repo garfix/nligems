@@ -1,5 +1,9 @@
 [
     {
+        "date": "2020-05-21",
+        "story": "In the first months of this year we see the appearance of neural-net based chatbots by large companies: DialoGPT by Microsoft, Meena by Google, and BlenderBot by Facebook. Al based on seq-2-seq transformers: huge neural nets that are trained on enormous datasets. I am not showing the cherry-picked sample dialogues, because they are meant to convince the reader of the deep understanding of such a system, when in fact all they do is mimic other dialogues and even other systems."
+    },
+    {
         "date": "2020-02-22",
         "story": "I am just now learning about discontinuities in linguistics. And that's because I am only now handling my first sentence that has discontinuities. And because my type of grammar happened to be able to deal with it to some extent. I checked Wikipedia looking for the term \"unbounded dependencies\" that occurred in \"The Core Language Engine\" (4.6). And then I found this wonderfully clear article: https://en.wikipedia.org/wiki/Discontinuity_(linguistics) It becomes clear that handling these discontinuities is the main achievement of CHAT-80 and CLE."
     },

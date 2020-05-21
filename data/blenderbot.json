@@ -1,0 +1,30 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "BlenderBot",
+    "NAME_DESC": "Blends together the skills of empathy, personality and knowledge",
+    "FIRST_YEAR": "2020",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Stephen Roller",
+        "Emily Dinan",
+        "Naman Goyal",
+        "Da Ju",
+        "Mary Williamson",
+        "Yinhan Liu",
+        "Jing Xu",
+        "Myle Ott",
+        "Kurt Shuster",
+        "Eric M. Smith",
+        "Y-Lan Boureau",
+        "Jason Weston"
+    ],
+    "INSTITUTIONS": [
+        "Facebook"
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "ARTICLES": [
+        "Recipes for building an open-domain chatbot - Stephen Roller et al (2020)"
+    ],
+    "BOOKS": []
+}

@@ -1,0 +1,27 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "DialoGPT",
+    "NAME_DESC": "dialogue generative pre-trained transformer",
+    "FIRST_YEAR": "2020",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Yizhe Zhang",
+        "Siqi Sun",
+        "Michel Galley",
+        "Yen-Chun Chen",
+        "Chris Brockett",
+        "Xiang Gao",
+        "Jianfeng Gao",
+        "Jingjing Liu",
+        "Bill Dolan"
+    ],
+    "INSTITUTIONS": [
+        "Microsoft"
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "ARTICLES": [
+        "DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation - Yizhe et al (2019)"
+    ],
+    "BOOKS": []
+}

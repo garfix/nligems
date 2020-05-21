@@ -1,0 +1,30 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "Meena",
+    "NAME_DESC": "",
+    "FIRST_YEAR": "2020",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Daniel Adiwardana",
+        "Minh-Thang Luong",
+        "David R. So",
+        "Jamie Hall",
+        "Noah Fiedel",
+        "Romal Thoppilan",
+        "Zi Yang",
+        "Apoorv Kulshreshtha",
+        "Gaurav Nemade",
+        "Yifeng Lu",
+        "Quoc V. Le"
+    ],
+    "INSTITUTIONS": [
+        "Google"
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Towards a Human-like Open-Domain Chatbot - Adiwardana et al (2020)"
+    ],
+    "BOOKS": []
+}
