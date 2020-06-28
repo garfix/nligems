@@ -1,0 +1,21 @@
+{
+    "FUNCTION": "automatic-programming",
+    "NAME": "SAFE",
+    "FIRST_YEAR": "1978",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        "Robert Balzer",
+        "Neil Goldman",
+        "David Wile"
+    ],
+    "INSTITUTIONS": [
+        "University of Southern California"
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "ARTICLES": [
+        "A 15 year perspective on automatic programming - Robert Balzer (1980)",
+        "Informality in program specifications - Balzer, Goldman, Wile (1978)"
+    ],
+    "BOOKS": []
+}

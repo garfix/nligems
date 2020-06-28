@@ -1,0 +1,22 @@
+{
+    "FUNCTION": "automatic-programming",
+    "NAME": "SEMPRE",
+    "NAME_DESC": "Semantic Parsing with Execution",
+    "FIRST_YEAR": "2013",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+        " Percy Liang", "Jonathan Berant", "Andrew Chou", "Roy Frostig"
+    ],
+    "INSTITUTIONS": [
+        "Stanford University"
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Semantic Parsing on Freebase from Question-Answer Pairs - Jonathan Berant, Andrew Chou, Roy Frostig, Percy Liang (2013)",
+        "Semantic Parsing via Paraphrasing - Jonathan Berant, Percy Liang (2013)"
+    ],
+    "BOOKS": [
+    ]
+}

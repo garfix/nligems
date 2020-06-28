@@ -1,5 +1,13 @@
 [
     {
+        "date": "2020-06-28",
+        "story": "Reading 'Commonsense Reasoning' by Erik T. Mueller, I noted a function of NLI systems that I nad not heard of: automatic programming. These systems take as input restricted natural language, and executable computer programs. SAFE and OWL are such systems. But SEMPRE is one as well."
+    },
+    {
+        "date": "2020-06-16",
+        "story": "I heard of semantic grammars but I did not hear the term 'semantic parser' until now. A semantic parser is a parser that transforms tokens directly into a semantic representation. SEMPRE uses a representation that reminds me of the work of Montague: it is (lambda) function based. SEMPRE is also an execution engine, and this term is also new for me in this context."
+    },
+    {
         "date": "2020-05-21",
         "story": "In the first months of this year we see the appearance of neural-net based chatbots by large companies: DialoGPT by Microsoft, Meena by Google, and BlenderBot by Facebook. Al based on seq-2-seq transformers: huge neural nets that are trained on enormous datasets. I am not showing the cherry-picked sample dialogues, because they are meant to convince the reader of the deep understanding of such a system, when in fact all they do is mimic other dialogues and even other systems."
     },

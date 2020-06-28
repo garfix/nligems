@@ -43,7 +43,8 @@ Historical systems have had the following functions:
 - Perform customer support (customer-support)
 - Model human cognition (cognitive-model: DAYDREAMER, ACRES)
 - Create a paraphrase of a story (story-understanding, MARGIE, SAM)
-- Prototype / proof-of-concept (show how a certain technique can be used)
+- Produce a computer program (automatic-programming: SAFE, OWL) 
+- Prototype / proof-of-concept (show how a certain technique can be used) 
 
 Note that I use the term "chatbot" only for systems that aim to keep the conversation alive. The industry currently uses the term for all kinds of NLI systems, however, and this only leads to confusion and misguided expectations. 
 
