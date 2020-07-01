@@ -68,7 +68,7 @@ This interaction consists of
 - keyboard based input and text based output
 - gui based sentence generation (NLMenu)
 
-Most historical systems are based on the latter.
+Most historical systems are text based.
 
 The type of interaction can be:
 
@@ -332,6 +332,147 @@ Common syntactic structures that may need to be recognized are:
 - There be ("there is a block that ...")
 - Clauses as objects
 - Extraposition
+
+Syntactic structures are the raw material of a natural language interface. The number of different structures that can be used by a user determines the expressibility of the NLI to a large extent. More structures is better.
+
+#### Nouns
+
+A noun names a thing, a person, a concept or an idea, or in general: an _entity_. Some examples of nouns:
+
+* product
+* order
+* employer
+* block
+    
+Nouns can be singular ("block") or plural ("blocks").
+
+The simplest semantic representation of a noun is a one-place predicate, like this:
+
+    block(E)
+    
+Singularity or plurality usually doesn't change the semantic representation.            
+
+#### Compound nouns
+
+A compound noun is a noun that is composed of two words. Users may introduce compounds that are not in the lexicon. They come in two shapes:
+
+* noun-noun compounds ("city department")
+* adjective-noun compounds ("large company")
+
+The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
+  
+When the compound noun is known beforehand, it can be represented by a single construct:
+
+    city_department(E)    
+
+However, compound nouns can also be created by a language user. How can we derive the meaning of a compound when it is not in the lexicon? And a minor problem: how to place groups of words in the lexicon?
+
+#### Adjectives
+
+An adjective is much like a noun. It is a label for an entity.
+
+* red
+* big
+
+So the meaning can be expressed similarly
+
+    red(E)
+
+#### Pronouns
+
+Pronouns are words like "he", "she" and "it". They refer to entities in the active context. This means that their reference isn't fixed, it depends on the previous sentence, or even a previous part of the same sentence.
+
+* he
+* she
+* it
+
+The meaning of the pronoun may be determined at parse time, or in a later phase of the process. If the meaning is determined at parse time, the meaning of the word is simply the identifier of the entity. 
+
+    jake-sheldon-2364
+
+If the meaning is determined later, the meaning describes the reference, such as this one for "him":
+
+    back_reference(E, male(E))
+
+#### Determiners
+
+A determiner connects a noun to the world. Without a determiner "horse" is just "horse". With the determiner, it's "this horse", "all horses", or "my horse". 
+
+It also specifies the quantity and the definiteness of a noun. Quantity is the amount of entities. Definite means that it refers to one specific entity, or a specific set of entities.
+
+#### Articles
+
+Articles are the simplest determiners. English has only two of them:
+
+* a / an
+* the
+
+"a" is written as "an" when the noun that follows starts with a vowel sound. There is no semantic difference. 
+
+"a" refers to a single nonspecific entity.
+
+"the" refers to a specific entity or entity set. The noun that follows tells you if it's plural or not ("the cat" / "the cats"). 
+
+"the" is not only different from "a" because it is definite; it actually refers to a specific entity that has been named before, or one that can be easily made out in the world. 
+
+#### Quantifiers
+
+Quantifiers are words like "some", "all", "many" and "no". They refer to nonspecific entities, just like the article "a", but in plural.
+
+All quantifiers compare the number of specific type of entities in the world, to the number of these entities that fulfill some predication. For example: 
+
+    some people go to church
+    some people are people that go to church
+    (number of people that go to church / number of people) * 100%  
+
+The difference between them is in the relative quantity. "no" = 0%, "all" = 100%. Some of them are vague, and need to receive a specific number (for example: most = over 50%, but what about "many"?)
+
+#### Demonstratives
+
+Demonstratives are words like "this" and "that". Their meaning is like "the", but there is a spatial component. "This" is near, "that" is farther away. This spatial distinction is not used often in NLI.
+
+* this
+* that 
+
+#### Numerals
+
+Numerals are just numbers or number-words, like "1", "12" and "sixteen". They signify the quantity of the entity in an exact way.
+
+Sometimes a numeral means this number _or higher_; as in "You need a 6 to pass the exam." 
+
+#### Possessive Determiners
+
+Possessive determiners (or possessive pronouns) are words like
+
+* my
+* his
+* their
+
+They express a relationship of ownership or belonging. The semantic representation of the word depends on the noun:
+
+    "my pen" = own(i, E)
+    "my father" = father(E, i)
+
+#### Prepositions
+
+#### Verbs
+
+#### Auxiliary verbs
+
+#### Copula
+
+#### Noun Phrases
+
+#### Verb Phrases
+
+Tenses
+Modals
+
+#### Preposition Phrases
+
+#### Relative Clauses 
+
+#### Conjunctions
 
 ### Imperative sentence syntax
 
@@ -972,15 +1113,6 @@ Can the system handle sentences where one or more words or phrases have been lef
 How to tell proper nouns (names) apart?
 
 A name is only meaningful if it is present, or introduced into, the present domain. This type of NER looks up names in a database.
-
-#### Compound Noun Analysis
-
-Users may introduce compounds that are not in the lexicon. These come in two shapes:
-
-* noun-noun compounds ("city department")
-* adjective-noun compounds ("large company")
-
-The meaning of these compounds is not purely analytical. A "city department" could denote a department located in a city, or a department responsible for a city. A "large company" can be a company with a large volume of sales or a company with many employees.
 
 #### Common sense restrictions
 
