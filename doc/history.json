@@ -144,9 +144,9 @@
     },
 
     {
-        "id": "Semantic Grammar",
+        "id": "Semantic Parsing",
         "year": "1972",
-        "desc": "Yorick Wilks coins the term 'semantic grammars' for grammars that parse directly to semantic form, skipping syntax",
+        "desc": "Yorick Wilks coins the term 'semantic parsing' for parsing directly to semantic form, skipping syntax",
         "links": {
             "Wikipedia": "https://en.wikipedia.org/wiki/Semantic_parsing"
         }
