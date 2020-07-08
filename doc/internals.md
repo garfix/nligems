@@ -335,6 +335,8 @@ Common syntactic structures that may need to be recognized are:
 
 Syntactic structures are the raw material of a natural language interface. The number of different structures that can be used by a user determines the expressibility of the NLI to a large extent. More structures is better.
 
+The "semantics" I use here is just an example. It is not a standard. 
+
 #### Nouns
 
 A noun names a thing, a person, a concept or an idea, or in general: an _entity_. Some examples of nouns:
@@ -348,7 +350,7 @@ Nouns can be singular ("block") or plural ("blocks").
 
 The simplest semantic representation of a noun is a one-place predicate, like this:
 
-    block(E)
+    "blocks" | block(E)
     
 Singularity or plurality usually doesn't change the semantic representation.            
 
@@ -363,7 +365,7 @@ The meaning of these compounds is not purely analytical. A "city department" cou
   
 When the compound noun is known beforehand, it can be represented by a single construct:
 
-    city_department(E)    
+    "city department" | city_department(E)    
 
 However, compound nouns can also be created by a language user. How can we derive the meaning of a compound when it is not in the lexicon? And a minor problem: how to place groups of words in the lexicon?
 
@@ -376,7 +378,7 @@ An adjective is much like a noun. It is a label for an entity.
 
 So the meaning can be expressed similarly
 
-    red(E)
+    "red" | red(E)
 
 #### Pronouns
 
@@ -388,17 +390,19 @@ Pronouns are words like "he", "she" and "it". They refer to entities in the acti
 
 The meaning of the pronoun may be determined at parse time, or in a later phase of the process. If the meaning is determined at parse time, the meaning of the word is simply the identifier of the entity. 
 
-    jake-sheldon-2364
+    "he" | jake-sheldon-2364
 
 If the meaning is determined later, the meaning describes the reference, such as this one for "him":
 
-    back_reference(E, male(E))
+    "he" | back_reference(E, male(E))
 
 #### Determiners
 
 A determiner connects a noun to the world. Without a determiner "horse" is just "horse". With the determiner, it's "this horse", "all horses", or "my horse". 
 
 It also specifies the quantity and the definiteness of a noun. Quantity is the amount of entities. Definite means that it refers to one specific entity, or a specific set of entities.
+
+https://en.wikipedia.org/wiki/Determiner
 
 #### Articles
 
@@ -415,11 +419,14 @@ Articles are the simplest determiners. English has only two of them:
 
 "the" is not only different from "a" because it is definite; it actually refers to a specific entity that has been named before, or one that can be easily made out in the world. 
 
+    "a" | count(E, 1)
+    "the" | definite_reference(E)
+
 #### Quantifiers
 
 Quantifiers are words like "some", "all", "many" and "no". They refer to nonspecific entities, just like the article "a", but in plural.
 
-All quantifiers compare the number of specific type of entities in the world, to the number of these entities that fulfill some predication. For example: 
+All quantifiers compare the number of specific type of entities in the world (the range), to the number of these entities that fulfill some predication (the scope). For example: 
 
     some people go to church
     some people are people that go to church
@@ -427,18 +434,28 @@ All quantifiers compare the number of specific type of entities in the world, to
 
 The difference between them is in the relative quantity. "no" = 0%, "all" = 100%. Some of them are vague, and need to receive a specific number (for example: most = over 50%, but what about "many"?)
 
+    "all" | all(E, <range>, <scope>)
+    "all" | percentage(E, 100%, <range>, <scope>)
+    "most" | percentage(E, 50%, <range>, <scope>) 
+
 #### Demonstratives
 
-Demonstratives are words like "this" and "that". Their meaning is like "the", but there is a spatial component. "This" is near, "that" is farther away. This spatial distinction is not used often in NLI.
+Demonstratives are words like
 
 * this
 * that 
+
+Their meaning is like "the", but there is a spatial component. "This" is near, "that" is farther away (from the _deictic center_). This spatial distinction is not used often in NLI.
+
+    "that" | definite_reference(E) distance(E, 3m)
 
 #### Numerals
 
 Numerals are just numbers or number-words, like "1", "12" and "sixteen". They signify the quantity of the entity in an exact way.
 
 Sometimes a numeral means this number _or higher_; as in "You need a 6 to pass the exam." 
+
+    "sixteen" | count(E, 16)
 
 #### Possessive Determiners
 
@@ -450,12 +467,43 @@ Possessive determiners (or possessive pronouns) are words like
 
 They express a relationship of ownership or belonging. The semantic representation of the word depends on the noun:
 
-    "my pen" = own(i, E)
-    "my father" = father(E, i)
+    "my pen" | own(i, E)
+    "my father" | father(E, i)
 
 #### Prepositions
 
+A prepositions ads a restriction to the meaning of a noun. Compare
+
+    the cat
+    the cat on the table
+    
+The preposition here is "on".
+
+A preposition is often about time and place, but not always. 
+
+Semantically the prepositional phrase is a relation between two entities.
+
+    on(Cat1, Table1)    
+
 #### Verbs
+
+A verb denotes a predication: something that says something about something else. There are action verbs 
+
+* pick
+* walk
+* find
+* sleep
+
+and state verbs
+
+* be
+* exist
+
+https://en.wikipedia.org/wiki/Verb
+
+A verb connects noun phrases.
+
+    "The small boy picks up the red ball" | pick_up(Person1, Ball1)
 
 #### Auxiliary verbs
 
