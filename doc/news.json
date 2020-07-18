@@ -1,5 +1,9 @@
 [
     {
+        "date": "2020-07-18",
+        "story": "Barbara Partee, who played a major role in the development of formal semantics, looks back on the last 5 decades. I find this a very nice informal introduction to the field that names many of the issues and people involved. http://people.umass.edu/partee/docs/BHP_Essay_Feb05.pdf"
+    },
+    {
         "date": "2020-06-28",
         "story": "Reading 'Commonsense Reasoning' by Erik T. Mueller, I noted a function of NLI systems that I nad not heard of: automatic programming. These systems take as input restricted natural language, and executable computer programs. SAFE and OWL are such systems. But SEMPRE is one as well."
     },

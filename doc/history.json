@@ -184,6 +184,14 @@
         }
     },
     {
+        "id": "Discourse Representation Theory",
+        "year": "1981",
+        "desc": "Hans Kamp invents Discourse Representation Theory, which creates representations for inter-sentential references",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Discourse_representation_theory"
+        }
+    },
+    {
       "id": "BDI",
       "year": "1987",
       "desc": "The book \"Intention, Plans, and Practical Reason\", written by Michael Bratman, was published. It describes the BDI model (Belief-Desire-Intention) of action selection.",
