@@ -1,0 +1,19 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "GPT",
+    "NAME_DESC": "generative pre-trained transformer",
+    "FIRST_YEAR": "2018",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Alec Radford and many others"
+    ],
+    "INSTITUTIONS": [
+        "Open AI"
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "ARTICLES": [
+        "Language Models are Few-Shot Learners - Brown et al (2019)"
+    ],
+    "BOOKS": []
+}
