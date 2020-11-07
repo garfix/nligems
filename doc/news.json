@@ -1,5 +1,9 @@
 [
     {
+        "date": "2020-11-07",
+        "story": "I read about the Winograd Schema Challenge, a test of machine intelligence (an alternative to the Turing Test) based on the use of common sense in anaphora resolution. It ran from 2011 to 2016 and continues to be a source of inspiration for new NLI systems  -- https://en.wikipedia.org/wiki/Winograd_Schema_Challenge"
+    },
+    {
         "date": "2020-07-18",
         "story": "Barbara Partee, who played a major role in the development of formal semantics, looks back on the last 5 decades. I find this a very nice informal introduction to the field that names many of the issues and people involved. http://people.umass.edu/partee/docs/BHP_Essay_Feb05.pdf"
     },
