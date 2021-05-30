@@ -35,6 +35,7 @@ Historical systems have had the following functions:
 - Find an exact answer (question-answering)
 - Locate information in unstructured text sources (information-retrieval)
 - Perform tasks like an assistant (virtual-assistant: SIRI, Alexa)
+- Help teaching (teaching-assistant: Jill Watson)  
 - Keep the conversation alive (chatbot: ELIZA, JABBERWACKY)
 - Direct a robot (robot: SHRDLU) 
 - Help the user make a selection (decision-support: IR-NLI, WISBER)
