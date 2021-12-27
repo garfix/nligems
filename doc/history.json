@@ -192,6 +192,14 @@
         }
     },
     {
+        "id": "Centering Theory",
+        "year": "1983",
+        "desc": "Barbara Grosz, Aravind K. Joshi and Scott Weinstein present a unified account of anaphora resolution that describes the preferences for pronouns and definite noune phrases. Their 1995 paper 'Centering: A Framework for Modeling the Local Coherence of Discourse' provides a more complete theory",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Anaphora_(linguistics)#Anaphora_resolution_%E2%80%93_centering_theory"
+        }
+    },
+    {
       "id": "BDI",
       "year": "1987",
       "desc": "The book \"Intention, Plans, and Practical Reason\", written by Michael Bratman, was published. It describes the BDI model (Belief-Desire-Intention) of action selection.",
