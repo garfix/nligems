@@ -46,6 +46,16 @@
         "dependencyOf": []
     },
     {
+        "id": "Generalized quantifiers",
+        "year": "1957",
+        "desc": "A. Mostowski extends the logical universal and existential quantifiers to generalized quantifiers. Natural language uses a wide range of quantifiers.",
+        "links": {
+            "Article": "http://matwbn.icm.edu.pl/ksiazki/fm/fm44/fm4412.pdf",
+            "Encyclopedia.com": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/quantifiers-natural-language"
+        },
+        "dependencyOf": []
+    },
+    {
       "id": "Lisp",
       "year": "1958",
       "desc": "Lisp was invented by John McCarthy. The favored programming language for AI research. Influenced by IPL.",
