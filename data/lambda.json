@@ -1,0 +1,21 @@
+{
+    "FUNCTION": "chatbot",
+    "NAME": "LaMBDA",
+    "NAME_DESC": "Language Models for Dialog Applications",
+    "FIRST_YEAR": "2021",
+    "LAST_YEAR": "",
+    "CONTRIBUTORS": [
+    ],
+    "INFLUENCED_BY": [
+    ],
+    "PROG_LANGS": [
+    ],
+    "INSTITUTIONS": [
+        "Google"
+    ],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "LaMDA: Language Models for Dialog Applications - Romal Thoppilan et al (2022)"
+    ],
+    "BOOKS": []
+}
