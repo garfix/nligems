@@ -91,7 +91,7 @@
     {
         "id": "Chatbot",
         "year": "1966",
-        "desc": "Joseph Weizenbaum invents the chatbot. Chatbots are accessible for the user and simple to create for a programmer. Many chatbots have since been created and they are still popular. In their basic form they are mindless, but they can be enhanced with other functions such as virtual assistance and decision support."},
+        "desc": "Joseph Weizenbaum invents the chatbot. Chatbots are accessible for the user and simple to create for a programmer. The chatbot uses hard-coded request-response rules. Many chatbots have since been created and they are still popular. In their basic form they are mindless, but they can be enhanced with other functions such as virtual assistance and decision support."},
     {
         "id": "Events as objects",
         "year": "1967",
@@ -224,6 +224,14 @@
         "desc": "Tim Berners-Lee, inventor of the WWW and director of the W3C coined the term Linked (Open) Data to described structured data which is interlinked with other data over the internet. Large interconnected open databases have spawned many new question answering systems that mean to access this data. Many of these databases are triple stores that are accessible via the query language Sparql.",
         "links": {
             "Wikipedia": "https://en.wikipedia.org/wiki/Linked_data"
+        }
+    },
+    {
+        "id": "The generative pre-trained transformer",
+        "year": "2018",
+        "desc": "The invention of the transformer neural network model by Google Brain, Google Research, and University of Toronto, lead Researchers of OpenAI to develop GPT, a language model that is able to generate syntactically correct sentences based on an unbound set of conversation subjects. It opens the door for a variety of language tasks without the need for hard-coded request-response rules (see chatbot).",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/GPT-2"
         }
     }
 ]
