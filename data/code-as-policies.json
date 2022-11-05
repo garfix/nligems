@@ -1,0 +1,14 @@
+{
+    "FUNCTION": "robot",
+    "NAME": "Code as Policies",
+    "FIRST_YEAR": "2022",
+    "LAST_YEAR": "present",
+    "CONTRIBUTORS": [
+        "Jacky Liang" , "Wenlong Huang", "Fei Xia", "Peng Xu", "Karol Hausman", "Brian Ichter", "Pete Florence", "Andy Zeng"
+    ],
+    "INFLUENCED_BY": [],
+    "LONG_DESC": "",
+    "ARTICLES": [
+        "Code as Policies: Language Model Programs for Embodied Control - Jacky Liang et all (2022)"
+    ]
+}
