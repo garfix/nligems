@@ -1,5 +1,13 @@
 [
     {
+        "id": "Boolean algebra",
+        "year": "1854",
+        "desc": "George Boole starts modern logic with his book 'The laws of thought', in which expounds an algebra of logic",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/The_Laws_of_Thought"
+        }
+    },
+    {
         "id": "Frege's work",
         "year": "1880-1900",
         "desc": "In the late nineteenth century Gottlob Frege laid the ground work for modern logic and the philosophy of language with his function-argument analysis of the proposition, the distinction between concept and object, the principle of compositionality, the context principle and the distinction between sense and reference.",
