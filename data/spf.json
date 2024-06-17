@@ -1,0 +1,19 @@
+{
+    "FUNCTION": "framework",
+    "NAME": "SPF",
+    "NAME_DESC": "Semantic Parsing Framework",
+    "FIRST_YEAR": "2013",
+    "LAST_YEAR": "2016",
+    "CONTRIBUTORS": [
+        "Yoav Artzi"
+    ],
+    "INSTITUTIONS": [
+        "Cornell University"
+    ],
+    "PROG_LANGS": [
+        "Java"
+    ],
+    "ARTICLES": [
+        "Cornell SPF: Cornell Semantic Parsing Framework - Yoav Artzi (2016)"
+    ]
+}

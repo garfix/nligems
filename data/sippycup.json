@@ -1,0 +1,16 @@
+{
+    "FUNCTION": "prototype",
+    "NAME": "SippyCup",
+    "NAME_DESC": "The goal is to make semantic parsing look easy!",
+    "FIRST_YEAR": "2015",
+    "LAST_YEAR": "2016",
+    "CONTRIBUTORS": [
+        "Bill MacCartney"
+    ],
+    "INSTITUTIONS": [
+        "Stanford University"
+    ],
+    "PROG_LANGS": [
+        "Python"
+    ]
+}
