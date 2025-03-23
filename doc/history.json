@@ -226,6 +226,14 @@
         }
     },
     {
+        "id": "Case-based Reasoning",
+        "year": "1983",
+        "desc": "Janet Kolodner, a student of Roger Schank, develops CYRUS, the first CBR system. It creates new plans by modifying existing plans, rather than deriving them from first principles.",
+        "links": {
+            "Wikipedia": "https://en.wikipedia.org/wiki/Case-based_reasoning"
+        }
+    },
+    {
       "id": "BDI",
       "year": "1987",
       "desc": "The book \"Intention, Plans, and Practical Reason\", written by Michael Bratman, was published. It describes the BDI model (Belief-Desire-Intention) of action selection.",
